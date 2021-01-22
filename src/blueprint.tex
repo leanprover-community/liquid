@@ -196,90 +196,89 @@
 
 \setcounter{tocdepth}{1}
 
-\title{Blueprint for Liquid Tensor Experiment}
+\title{Blueprint for the Liquid Tensor Experiment}
 
-\author{Peter Scholze (all results joint with Dustin Clausen),
-edited by Johan Commelin}
+\author{Johan Commelin (all results by Peter Scholze and Dustin Clausen)}
 
 \begin{document}
 
 \maketitle
 
 \begin{remark}
-This text is based on the lecture notes on Analytic Geometry,
-by Peter Scholze.
+	This text is based on the lecture notes on Analytic Geometry~\cite{Analytic},
+	by Peter Scholze.
 \end{remark}
 
 \section{Lecture IX: End of proof}
 
-Recall that in the last lecture, we reduced Theorem~\ref{thm:key} to the following result.
+% Recall that in the last lecture, we reduced Theorem~\ref{thm:key} to the following result.
 
-\begin{theorem}\label{thm:explicit1} Fix radii $1>r'>r>0$. Then for all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$ and all profinite sets $S$, the map
-\[
-R\Hom_{\mathbb Z[T^{-1}]}(\mathcal M(S,\mathbb Z((T))_{r'}),\widehat{V})\to \widehat{V}(S)
-\]
-is a quasi-isomorphism.
-\end{theorem}
+% \begin{theorem}\label{thm:explicit1} Fix radii $1>r'>r>0$. Then for all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$ and all profinite sets $S$, the map
+% \[
+% R\Hom_{\mathbb Z[T^{-1}]}(\mathcal M(S,\mathbb Z((T))_{r'}),\widehat{V})\to \widehat{V}(S)
+% \]
+% is a quasi-isomorphism.
+% \end{theorem}
 
-We note that actually the case of $\widehat{V}=\mathbb Z((T))_r^B$ itself seems to carry all essential difficulty: We believe that any argument one can give in that case will work in general.
+% We note that actually the case of $\widehat{V}=\mathbb Z((T))_r^B$ itself seems to carry all essential difficulty: We believe that any argument one can give in that case will work in general.
 
-In that sense, we have simplified the target of the $R\Hom$ as far as possible. It is time to understand the source. In the last lecture, we observed that the theorem automatically implies a more precise version bounding the norms of preimages of differentials. Our proof will actually go back to such explicit bounds, but for explicit resolutions of the source, which we will now construct. Write
-\[
-\overline{\mathcal M}_{r'}(S) := \mathcal M(S,\mathbb Z((T))_{r'})/\mathbb Z[T^{-1}][S].
-\]
-This is, as a condensed abelian group (but not as $\mathbb Z[T^{-1}]$-module), a direct summand $\mathcal M(S,T\mathbb Z[[T]]_{r'})$ of $\mathcal M(S,\mathbb Z((T))_{r'})$, allowing only positive powers of $T$.\footnote{At this point, we critically use that we chose $\mathbb Z[T^{-1}]$ as our base ring; already taking $\mathbb Z[T^{\pm 1}]$ would destroy this argument.} To see this, use Proposition~\ref{prop:freecondensedgroup} to see that the contribution to $\mathcal M(S,\mathbb Z((T))_{r'})$ from nonpositive powers of $T$ is exactly $\mathbb Z[T^{-1}][S]$. In particular, we can write
-\[
-\overline{\mathcal M}_{r'}(S) = \bigcup_{c>0} \overline{\mathcal M}_{r'}(S)_{\leq c},
-\]
-where
-\[
-\overline{\mathcal M}_{r'}(S)_{\leq c} = \varprojlim_i \overline{\mathcal M}_{r'}(S_i)_{\leq c}
-\]
-when writing $S$ as an inverse limit of finite sets $S_i$, and for finite $S$
-\[
-\overline{\mathcal M}_{r'}(S)_{\leq c} = \{(\sum_{n\geq 1} a_{n,s} T^n)_s\mid \sum_{n\geq 1,s\in S} |a_{n,s}|r^n\leq c\}.
-\]
+% In that sense, we have simplified the target of the $R\Hom$ as far as possible. It is time to understand the source. In the last lecture, we observed that the theorem automatically implies a more precise version bounding the norms of preimages of differentials. Our proof will actually go back to such explicit bounds, but for explicit resolutions of the source, which we will now construct. Write
+% \[
+% \overline{\mathcal M}_{r'}(S) := \mathcal M(S,\mathbb Z((T))_{r'})/\mathbb Z[T^{-1}][S].
+% \]
+% This is, as a condensed abelian group (but not as $\mathbb Z[T^{-1}]$-module), a direct summand $\mathcal M(S,T\mathbb Z[[T]]_{r'})$ of $\mathcal M(S,\mathbb Z((T))_{r'})$, allowing only positive powers of $T$.\footnote{At this point, we critically use that we chose $\mathbb Z[T^{-1}]$ as our base ring; already taking $\mathbb Z[T^{\pm 1}]$ would destroy this argument.} To see this, use Proposition~\ref{prop:freecondensedgroup} to see that the contribution to $\mathcal M(S,\mathbb Z((T))_{r'})$ from nonpositive powers of $T$ is exactly $\mathbb Z[T^{-1}][S]$. In particular, we can write
+% \[
+% \overline{\mathcal M}_{r'}(S) = \bigcup_{c>0} \overline{\mathcal M}_{r'}(S)_{\leq c},
+% \]
+% where
+% \[
+% \overline{\mathcal M}_{r'}(S)_{\leq c} = \varprojlim_i \overline{\mathcal M}_{r'}(S_i)_{\leq c}
+% \]
+% when writing $S$ as an inverse limit of finite sets $S_i$, and for finite $S$
+% \[
+% \overline{\mathcal M}_{r'}(S)_{\leq c} = \{(\sum_{n\geq 1} a_{n,s} T^n)_s\mid \sum_{n\geq 1,s\in S} |a_{n,s}|r^n\leq c\}.
+% \]
 
-We need to resolve this explicitly as a condensed $\mathbb Z[T^{-1}]$-module. The Breen-Deligne resolution gives us the resolution
-\[
-\ldots\to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)]\to \overline{\mathcal M}_{r'}(S)\to 0
-\]
-as condensed $\mathbb Z[T^{-1}]$-modules; as in the appendix, we assume (for notational convenience) that each term is of the form $\mathbb Z[\overline{\mathcal M}_{r'}(S)^a]$ (instead of some finite direct sum of such). Moreover, each term $\mathbb Z[\overline{\mathcal M}_{r'}(S)^a]$ admits a two-term resolution
-\[
-0\to \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^a]\xrightarrow{T^{-1}-[T^{-1}]} \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^a]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)^a]\to 0
-\]
-that is functorial in the $\mathbb Z[T^{-1}]$-module $\mathbb Z[\overline{\mathcal M}_{r'}(S)^a]$. This gives a resolution of $\overline{\mathcal M}_{r'}(S)$ by the double complex
-\[\xymatrix{
-\ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2]\ar[d]^{T^{-1}-[T^{-1}]}\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)]\ar[d]^{T^{-1}-[T^{-1}]}\\
-\ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2]\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)].
-}\]
-Unfortunately, the terms are not of the form $\mathbb Z[T^{-1}][E_i]$ with profinite $E_i$. To remedy this, we write the double complex as the filtered colimit of the double complexes
-\begin{equation}\label{eq:doublecomplex}
-\xymatrix{
-\ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2_{\leq r'c_1c}]\ar[d]^{T^{-1}-[T^{-1}]}\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)_{\leq r'c}]\ar[d]^{T^{-1}-[T^{-1}]}\\
-\ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2_{\leq c_1c}]\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)_{\leq c}]
-}\end{equation}
-for varying $c>0$, where the constants $c_1,\ldots>0$ are fixed and chosen so that the transition maps are well-defined, cf.~Lemma~\ref{lem:constantsdeligne} in the appendix to this lecture.
+% We need to resolve this explicitly as a condensed $\mathbb Z[T^{-1}]$-module. The Breen-Deligne resolution gives us the resolution
+% \[
+% \ldots\to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)]\to \overline{\mathcal M}_{r'}(S)\to 0
+% \]
+% as condensed $\mathbb Z[T^{-1}]$-modules; as in the appendix, we assume (for notational convenience) that each term is of the form $\mathbb Z[\overline{\mathcal M}_{r'}(S)^a]$ (instead of some finite direct sum of such). Moreover, each term $\mathbb Z[\overline{\mathcal M}_{r'}(S)^a]$ admits a two-term resolution
+% \[
+% 0\to \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^a]\xrightarrow{T^{-1}-[T^{-1}]} \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^a]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)^a]\to 0
+% \]
+% that is functorial in the $\mathbb Z[T^{-1}]$-module $\mathbb Z[\overline{\mathcal M}_{r'}(S)^a]$. This gives a resolution of $\overline{\mathcal M}_{r'}(S)$ by the double complex
+% \[\xymatrix{
+% \ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2]\ar[d]^{T^{-1}-[T^{-1}]}\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)]\ar[d]^{T^{-1}-[T^{-1}]}\\
+% \ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2]\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)].
+% }\]
+% Unfortunately, the terms are not of the form $\mathbb Z[T^{-1}][E_i]$ with profinite $E_i$. To remedy this, we write the double complex as the filtered colimit of the double complexes
+% \begin{equation}\label{eq:doublecomplex}
+% \xymatrix{
+% \ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2_{\leq r'c_1c}]\ar[d]^{T^{-1}-[T^{-1}]}\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)_{\leq r'c}]\ar[d]^{T^{-1}-[T^{-1}]}\\
+% \ldots\ar[r] &\mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)^2_{\leq c_1c}]\ar[r] & \mathbb Z[T^{-1}][\overline{\mathcal M}_{r'}(S)_{\leq c}]
+% }\end{equation}
+% for varying $c>0$, where the constants $c_1,\ldots>0$ are fixed and chosen so that the transition maps are well-defined, cf.~Lemma~\ref{lem:constantsdeligne} in the appendix to this lecture.
 
-It is easy to understand what happens to the vertical part under mapping to $V$:
+% It is easy to understand what happens to the vertical part under mapping to $V$:
 
-\begin{lemma}\label{lem:Tinv} For any $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$, any $c>0$ and any $a$, the map
-\[
-\widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c}^a)\xrightarrow{T^{-1}-[T^{-1}]^\ast} \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq r'c}^a)
-\]
-is surjective, has norm bounded by $r^{-1}+1$, and for any $f\in \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq r'c}^a)$ and $\epsilon>0$ there is some $g\in \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c}^a)$ with $f(x)=T^{-1}g(x)-g(T^{-1}x)$ and $||g||\leq \frac{r}{1-r}(1+\epsilon) ||f||$.
-\end{lemma}
+% \begin{lemma}\label{lem:Tinv} For any $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$, any $c>0$ and any $a$, the map
+% \[
+% \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c}^a)\xrightarrow{T^{-1}-[T^{-1}]^\ast} \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq r'c}^a)
+% \]
+% is surjective, has norm bounded by $r^{-1}+1$, and for any $f\in \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq r'c}^a)$ and $\epsilon>0$ there is some $g\in \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c}^a)$ with $f(x)=T^{-1}g(x)-g(T^{-1}x)$ and $||g||\leq \frac{r}{1-r}(1+\epsilon) ||f||$.
+% \end{lemma}
 
-\begin{proof} Given $f: \overline{\mathcal M}_{r'}(S)_{\leq r'c}^a\to \widehat{V}$, choose an extension to a map $\tilde{f}: \overline{\mathcal M}_{r'}(S)^a\to \widehat{V}$ with $||\tilde{f}||\leq (1+\epsilon)||f||$. Such an extension exists: By induction (and using a sequence of $\epsilon_n$'s with $\prod_n (1+\epsilon_n)\leq 1+\epsilon$), it suffices to see that for any closed immersion $A\subset B$ of profinite sets and a map $f_A: A\to \widehat{V}$, there is an extension $f_B: B\to \widehat{V}$ of $f_A$ with $||f_B||\leq (1+\epsilon)||f_A||$. To see this, write $f_A$ as a (fast) convergent sum of maps that factor over a finite quotient of $A$; for maps factoring over a finite quotient of $A$, the extension is clear (and can be done in a norm-preserving way), as any map from $A$ to a finite set can be extended to a map from $B$ to the same finite set.
+% \begin{proof} Given $f: \overline{\mathcal M}_{r'}(S)_{\leq r'c}^a\to \widehat{V}$, choose an extension to a map $\tilde{f}: \overline{\mathcal M}_{r'}(S)^a\to \widehat{V}$ with $||\tilde{f}||\leq (1+\epsilon)||f||$. Such an extension exists: By induction (and using a sequence of $\epsilon_n$'s with $\prod_n (1+\epsilon_n)\leq 1+\epsilon$), it suffices to see that for any closed immersion $A\subset B$ of profinite sets and a map $f_A: A\to \widehat{V}$, there is an extension $f_B: B\to \widehat{V}$ of $f_A$ with $||f_B||\leq (1+\epsilon)||f_A||$. To see this, write $f_A$ as a (fast) convergent sum of maps that factor over a finite quotient of $A$; for maps factoring over a finite quotient of $A$, the extension is clear (and can be done in a norm-preserving way), as any map from $A$ to a finite set can be extended to a map from $B$ to the same finite set.
 
-Given $\tilde{f}$, we can now define $g: \overline{\mathcal M}_{r'}(S)_{\leq c}^a$ by
-\[
-g(x) = T\tilde{f}(x)+T^2\tilde{f}(T^{-1}x)+\ldots+T^{n+1}\tilde{f}(T^{-n}x)+\ldots\in \widehat{V};
-\]
-then $||g||\leq \frac r{1-r}||\tilde{f}||\leq \frac r{1-r}(1+\epsilon)||f||$.
-\end{proof}
+% Given $\tilde{f}$, we can now define $g: \overline{\mathcal M}_{r'}(S)_{\leq c}^a$ by
+% \[
+% g(x) = T\tilde{f}(x)+T^2\tilde{f}(T^{-1}x)+\ldots+T^{n+1}\tilde{f}(T^{-n}x)+\ldots\in \widehat{V};
+% \]
+% then $||g||\leq \frac r{1-r}||\tilde{f}||\leq \frac r{1-r}(1+\epsilon)||f||$.
+% \end{proof}
 
-Let $\widehat{V}(\overline{\mathcal M}(S)_{\leq c})^{T^{-1}}\subset \widehat{V}(\overline{\mathcal M}(S)_{\leq c})$ be the kernel of this map, with the subspace norm. For varying $c$, we now get varying normed complexes. We will need to use the following qualitative notion of exactness.
+% Let $\widehat{V}(\overline{\mathcal M}(S)_{\leq c})^{T^{-1}}\subset \widehat{V}(\overline{\mathcal M}(S)_{\leq c})$ be the kernel of this map, with the subspace norm. For varying $c$, we now get varying normed complexes. We will need to use the following qualitative notion of exactness.
 
 \begin{definition} For each sufficiently large $c$ (i.e.~all $c\geq c_0$ for some $c_0>0$), let
 \[
@@ -297,25 +296,31 @@ We apply this to
 \[
 C_c^\bullet: \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}}\to \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}}\to \ldots
 \]
-given by mapping \eqref{eq:doublecomplex} into $\hat{V}$ and using Lemma~\ref{lem:Tinv}. Now we state the following result.
+given by mapping \eqref{eq:doublecomplex} into $\hat{V}$ and using Lemma~\ref{lem:Tinv}.
+Now we state the following result, which is our main goal.
+It differs from Theorem~9.4 of \cite{Analytic} only in one aspect:
+we assume that the sets $S$ are finite, rather than profinite.
 
-\begin{theorem}\label{thm:explicit2} Fix radii $1>r'>r>0$. For any $m$ there is some $k$ and $c_0$ such that for all profinite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
+\begin{theorem}\label{thm:explicit2}
+	Fix radii $1>r'>r>0$. For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
 \[
 C_c^\bullet: \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}}\to \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}}\to \ldots
 \]
 is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
 \end{theorem}
 
-Let us first check that this implies Theorem~\ref{thm:explicit1}.
+% Let us first check that this implies Theorem~\ref{thm:explicit1}.
 
-\begin{proof}[Theorem~\ref{thm:explicit2} implies Theorem~\ref{thm:explicit1}] By the preceding discussion, one can compute
-\[
-R\Hom_{\mathbb Z[T^{-1}]}(\overline{\mathcal M}_{r'}(S),\widehat{V})
-\]
-as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{thm:explicit2} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
-\end{proof}
+% \begin{proof}[Theorem~\ref{thm:explicit2} implies Theorem~\ref{thm:explicit1}] By the preceding discussion, one can compute
+% \[
+% R\Hom_{\mathbb Z[T^{-1}]}(\overline{\mathcal M}_{r'}(S),\widehat{V})
+% \]
+% as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{thm:explicit2} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
+% \end{proof}
 
-We remark that Theorem~\ref{thm:explicit2} reduces formally to the case that $S$ is finite; we make this reduction. We will prove Theorem~\ref{thm:explicit2} by induction on $m$. Unfortunately, the induction requires us to prove a stronger statement. This goes as follows. Consider any polyhedral lattice $\Lambda$, by which we mean a finite free abelian group equipped with a norm $||\cdot||_\Lambda: \Lambda\otimes \mathbb R\to \mathbb R$ (so $\Lambda\otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients; equivalently, the ``unit ball'' $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
+% We remark that Theorem~\ref{thm:explicit2} reduces formally to the case that $S$ is finite; we make this reduction.
+
+We will prove Theorem~\ref{thm:explicit2} by induction on $m$. Unfortunately, the induction requires us to prove a stronger statement. This goes as follows. Consider any polyhedral lattice $\Lambda$, by which we mean a finite free abelian group equipped with a norm $||\cdot||_\Lambda: \Lambda\otimes \mathbb R\to \mathbb R$ (so $\Lambda\otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients; equivalently, the ``unit ball'' $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
 
 Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
 \[
