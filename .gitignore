@@ -6,3 +6,6 @@
 *.log
 *.out
 *.pdf
+*.paux
+web
+.python-version
