@@ -28,3 +28,20 @@ if you are stuck in the past).
 
 In order to build the html version you need to generate `blueprint.bbl` using bibtex,
 copy it to `web.bbl` and run `plastex -c plastex.cfg web.tex`.
+
+## Authoring
+
+The main TeX file to edit is `content.tex`. It is a normal TeX file except that
+each definition and statement must have a `\label` and there are four special LaTeX macros:
+* `\lean{name}` indicates the fully namespaced Lean declaration that formalizes
+  the current definition or statement.
+* `\leanok` means the current definition, statement or proof has been fully formalized (in particular
+  a lemma can have `\leanok` in its statement without having it in its proof environment.
+* `\uses{refs}` where `refs` is a comma-separated list of LaTeX label can be
+  put inside a definition, statement or proof environment. It means each of
+  those labels is used by the current environment. This is what creates edges
+  in the dependency graph. This mechanism is completely independent from
+  `\ref`. With `leanok` this is the most important command to organize work.
+* `\proves{label}` can be put in a `proof` environment to indicate which
+  statement is proved if this is not obvious (ie it is not proving the
+  preceding statement).
