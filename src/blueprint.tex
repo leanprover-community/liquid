@@ -1,13 +1,14 @@
 \documentclass[11pt]{amsart}
 \usepackage{amsfonts, amsthm, amssymb, amsmath, stmaryrd, color, enumerate, relsize}
-\usepackage[pdftex]{graphicx}
-\usepackage{mathrsfs,array}
-\usepackage{xy}
-\usepackage{hyperref}
+% \usepackage[pdftex]{graphicx}
+% \usepackage{mathrsfs,array}
+% % \usepackage{xy}
+% \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usetikzlibrary{snakes}
-\input xy
-\xyoption{all}
+% % \input xy
+% % \xyoption{all}
 
 
 \setlength{\textwidth}{6.5in}
@@ -348,12 +349,14 @@ will have bounded norm, independently of $V$ (as they are a certain universal fi
 \begin{proposition}\label{prop:key} Fix an integer $m\geq 0$ and a constant $k$. Then there exists an $\epsilon>0$ and a constant $k_0$, depending (only) on $k$ and $m$, with the following property.
 
 Consider an admissible system of double complexes $M^{p,q}_c$, $p,q\geq 0$, $c\geq c_0$, of complete normed abelian groups as well as some $k'\geq k_0$ and some $H>0$, such that
-\[\xymatrix{
-M^{0,0}_c\ar[r]^{d'^{0,0}_c}\ar[d]^{d^{0,0}_c} & M^{0,1}_c\ar[r]^{d'^{0,1}_c}\ar[d]^{d^{0,1}_c} & M^{0,2}_c\ar[r]^{d'^{0,2}_c}\ar[d]^{d^{0,2}_c} & \ldots\\
-M^{1,0}_c\ar[r]^{d'^{1,0}_c}\ar[d]^{d^{1,0}_c} & M^{1,1}_c\ar[r]^{d'^{1,1}_c}\ar[d]^{d^{1,1}_c} & M^{1,2}_c\ar[r]^{d'^{1,2}_c}\ar[d]^{d^{1,2}_c} & \ldots\\
-M^{2,0}_c\ar[r]^{d'^{2,0}_c}\ar[d]^{d^{2,0}_c} & M^{2,1}_c\ar[r]^{d'^{2,1}_c}\ar[d]^{d^{2,1}_c} & \ddots\\
+\[
+	\begin{tikzcd}
+		M^{0,0}_c \ar[r]{d'^{0,0}_c}\ar[d]{d^{0,0}_c} & M^{0,1}_c\ar[r]{d'^{0,1}_c}\ar[d]{d^{0,1}_c} & M^{0,2}_c\ar[r]{d'^{0,2}_c}\ar[d]{d^{0,2}_c} & \ldots\\
+M^{1,0}_c\ar[r]{d'^{1,0}_c}\ar[d]{d^{1,0}_c} & M^{1,1}_c\ar[r]{d'^{1,1}_c}\ar[d]{d^{1,1}_c} & M^{1,2}_c\ar[r]{d'^{1,2}_c}\ar[d]{d^{1,2}_c} & \ldots\\
+M^{2,0}_c\ar[r]{d'^{2,0}_c}\ar[d]{d^{2,0}_c} & M^{2,1}_c\ar[r]{d'^{2,1}_c}\ar[d]{d^{2,1}_c} & \ddots\\
 \vdots & \vdots
-}\]
+	\end{tikzcd}
+\]
 \begin{enumerate}
 \item for $j=0,\ldots,m$, the columns $M^{p,j}_c$ are $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$;
 \item for $i=0,\ldots,m+1$, the rows $M^{i,q}_c$ are $\leq k$-exact in degrees $\leq m-1$ for $c\geq c_0$;
