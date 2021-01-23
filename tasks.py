@@ -32,7 +32,7 @@ def decls(ctx):
     """Rebuild the Lean declarations database"""
     proj = LeanProject.from_path((ROOT/'project').resolve())
     proj.build()
-    proj.pickle_decls(ROOT/'decls.pickle')
+    proj.pickle_decls(ROOT/'project'/'decls.pickle')
 
 @task(decls, pdf)
 def web(ctx):
