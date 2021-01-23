@@ -55,7 +55,7 @@ It differs from Theorem~9.4 of \cite{Analytic} only in one aspect:
 we assume that the sets $S$ are finite, rather than profinite.
 
 \begin{theorem}
-  \label{explicit2}
+  \label{main_target}
 	Fix radii $1>r'>r>0$. For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
 \[
 C_c^\bullet: \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}}\to \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}}\to \ldots
@@ -65,16 +65,16 @@ is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
 
 % Let us first check that this implies Theorem~\ref{explicit1}.
 
-% \begin{proof}[Theorem~\ref{explicit2} implies Theorem~\ref{explicit1}] By the preceding discussion, one can compute
+% \begin{proof}[Theorem~\ref{main_target} implies Theorem~\ref{explicit1}] By the preceding discussion, one can compute
 % \[
 % R\Hom_{\mathbb Z[T^{-1}]}(\overline{\mathcal M}_{r'}(S),\widehat{V})
 % \]
-% as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{explicit2} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
+% as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{main_target} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
 % \end{proof}
 
-% We remark that Theorem~\ref{explicit2} reduces formally to the case that $S$ is finite; we make this reduction.
+% We remark that Theorem~\ref{main_target} reduces formally to the case that $S$ is finite; we make this reduction.
 
-We will prove Theorem~\ref{explicit2} by induction on $m$. Unfortunately, the induction requires us to prove a stronger statement. This goes as follows. Consider any polyhedral lattice $\Lambda$, by which we mean a finite free abelian group equipped with a norm $||\cdot||_\Lambda: \Lambda\otimes \mathbb R\to \mathbb R$ (so $\Lambda\otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients; equivalently, the ``unit ball'' $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
+We will prove Theorem~\ref{main_target} by induction on $m$. Unfortunately, the induction requires us to prove a stronger statement. This goes as follows. Consider any polyhedral lattice $\Lambda$, by which we mean a finite free abelian group equipped with a norm $||\cdot||_\Lambda: \Lambda\otimes \mathbb R\to \mathbb R$ (so $\Lambda\otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients; equivalently, the ``unit ball'' $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
 
 Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
 \[
@@ -82,21 +82,29 @@ Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
 \]
 As $\Lambda$ is polyhedral, it is enough to check the given condition for finitely many $x$.
 
-We can then define double complexes like \eqref{eq:doublecomplex}. Lemma~\ref{lem:Tinv} stays true with the same constants. Now we claim the following generalization of Theorem~\ref{explicit2}.
+We can then define double complexes like \eqref{eq:doublecomplex}.
+Lemma~\ref{lem:Tinv} stays true with the same constants.
+Now we claim the following generalization of Theorem~\ref{main_target}.
 
 \begin{theorem}
-  \label{explicit3} Fix radii $1>r'>r>0$. For any $m$ there is some $k$ such that for all polyhedral lattices $\Lambda$ there is a constant $c_0(\Lambda)>0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
+  \label{explicit} Fix radii $1>r'>r>0$. For any $m$ there is some $k$ such that for all polyhedral lattices $\Lambda$ there is a constant $c_0(\Lambda)>0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
 \[
 C_{\Lambda,c}^\bullet: \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots
 \]
 is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
 \end{theorem}
 
+\begin{proof}
+  \proves{main_target}
+  \uses{explicit}
+  Use $\Lambda = \mathbb Z$, and the isomorphism $\Hom(\mathbb Z, A) \cong A$.
+\end{proof}
+
 We note that the constants $c_1,c_2,\ldots$ implicit in the choice of the complex are chosen once and for all (after fixing $r$ and $r'$), and it can be ensured that the transition maps in the complex are norm-nonincreasing. Indeed, with the $c_i$ chosen as in Lemma~\ref{lem:constantsdeligne}, the maps
 \[
 \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})
 \]
-will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem~\ref{explicit3}, and the rest of the proof.
+will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem~\ref{explicit}, and the rest of the proof.
 
 \begin{proposition}
   \label{spectral}
@@ -250,7 +258,19 @@ Now we have the key lemma:
 
 
 
-\begin{proof}[Proof of Theorem~\ref{explicit3}] We argue by induction on $m$, so assume the result for $m-1$ (this is no assumption for $m=0$, so we do not need an induction start). This gives us some $k>1$ for which the statement of Theorem~\ref{explicit3} holds true for $m-1$; if $m=0$, simply take any $k>1$. In the proof below, we will increase $k$ further in a way that depends only on $m$ and $r$. After this modified choice of $k$, we fix $\epsilon$ and $k_0$ as provided by Proposition~\ref{spectral}. Moreover, we let $k'$ be the supremum of $k_0$ and the $c_i'$ from Lemma~\ref{lem:basehomotopy} (and~\ref{lem:homotopyNelements}) for $i=0,\ldots,m$. Finally, choose a positive integer $b$ so that $2k'(\tfrac r{r'})^b\leq \epsilon$, and let $N$ be the minimal power of $2$ that satisfies
+\begin{proof}[Proof of Theorem~\ref{explicit}]
+\proves{explicit}
+\uses{spectral,combi,basehomotopy,homotopyNelements}
+  We argue by induction on $m$, so assume the result for $m-1$
+  (this is no assumption for $m=0$, so we do not need an induction start).
+  This gives us some $k>1$ for which the statement of Theorem~\ref{explicit} holds true for $m-1$;
+  if $m=0$, simply take any $k>1$.
+  In the proof below, we will increase $k$ further in a way that depends only on $m$ and $r$.
+  After this modified choice of $k$, we fix $\epsilon$ and $k_0$ as provided by Proposition~\ref{spectral}.
+  Moreover, we let $k'$ be the supremum of $k_0$ and the $c_i'$ from
+  Lemma~\ref{basehomotopy} (and~\ref{homotopyNelements}) for $i=0,\ldots,m$.
+  Finally, choose a positive integer $b$ so that $2k'(\tfrac r{r'})^b\leq \epsilon$,
+  and let $N$ be the minimal power of $2$ that satisfies
 \[
 k'/N\leq (r')^b.
 \]
@@ -290,7 +310,7 @@ and
 \]
 and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{prop:normedcompletion}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{snakelemma}. At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
 
-Finally, to check the third condition, we use Lemma~\ref{lem:homotopyNelements} to find, in degrees $\leq m$, a homotopy between the two maps from the first row
+Finally, to check the third condition, we use Lemma~\ref{homotopyNelements} to find, in degrees $\leq m$, a homotopy between the two maps from the first row
 \[
 \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots
 \]
@@ -302,7 +322,7 @@ respectively induced by the addition $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S)
 \[
 \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}\subset \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}.
 \]
-By Lemma~\ref{lem:homotopyNelements}, we can find this homotopy between the complex for $k'c$ and the complex for $c$, by our choice of $k'\geq c_i'$ for $i=0,\ldots,m$. As $N$ is fixed, the homotopy is the universal homotopy from Lemma~\ref{lem:homotopyNelements}, and in particular its norm is bounded by some universal constant $H$.
+By Lemma~\ref{homotopyNelements}, we can find this homotopy between the complex for $k'c$ and the complex for $c$, by our choice of $k'\geq c_i'$ for $i=0,\ldots,m$. As $N$ is fixed, the homotopy is the universal homotopy from Lemma~\ref{homotopyNelements}, and in particular its norm is bounded by some universal constant $H$.
 
 Finally, it remains to establish the estimate \eqref{eq:homotopicmapsmall} on the homotopic map. We note that this takes $x\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of \eqref{eq:homotopicmapsmall}) to the element
 \[
@@ -444,7 +464,7 @@ for all pseudo-normed abelian group objects in any topos as above, and all $c>0$
 
 We also need some homotopies. More precisely, we start with the following homotopy.
 
-\begin{lemma}\label{lem:basehomotopy} For an abelian group $M$, the maps $\sigma_1,\sigma_2$ from
+\begin{lemma}\label{basehomotopy} For an abelian group $M$, the maps $\sigma_1,\sigma_2$ from
 \[
 C(M^2): \ldots \to \mathbb Z[M^{2a_i}]\to\ldots\to\mathbb Z[M^{2a_1}]\to\mathbb Z[M^{2a_0}]
 \]
@@ -480,7 +500,7 @@ for all $c>0$.
 
 Now we need the following generalization to adding $N$ elements.
 
-\begin{lemma}\label{lem:homotopyNelements} Let $N$ be a power of $2$. The maps of complexes $\sigma_1,\sigma_2$ from
+\begin{lemma}\label{homotopyNelements} Let $N$ be a power of $2$. The maps of complexes $\sigma_1,\sigma_2$ from
 \[
 C(M^N): \ldots \to \mathbb Z[M^{Na_i}]\to\ldots\to\mathbb Z[M^{Na_1}]\to\mathbb Z[M^{Na_0}]
 \]
