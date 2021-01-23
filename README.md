@@ -17,9 +17,10 @@ Then you can install:
 ```bash
 pip install git+https://github.com/plastex/plastex.git
 pip install git+https://github.com/PatrickMassot/leanblueprint.git
+pip install invoke
 ```
 
-Also install `pdf2svg` and `pdfcrop`:
+Also installing `pdf2svg` and `pdfcrop` may be useful:
 
 ```bash
 apt install pdf2svg
@@ -45,11 +46,12 @@ If you only want to build it as a `pdf` file then you can simply run
 `xelatex blueprint.tex` or `lualatex blueprint.tex` (or even `pdflatex blueprint.tex`
 if you are stuck in the past).
 
-In order to build the html version you need to generate `blueprint.bbl` using bibtex,
-copy it to `web.bbl` and run `plastex -c plastex.cfg web.tex`. The webpage will be built inside a `web` folder in the repository root folder.
+More complicated goals are easier to handle using [python invoke](https://www.pyinvoke.org/).
+You can run `inv -l` to see the available actions. In particular `inv web` will build the website
+and `inv serve` will serve it locally on port 8000.
 
 Note that the dependency graph using graph-viz won't work if you simply open `web/dep_graph.html` in 
-a browser because of browser paranoia. It has to be accessed through a web server. For instance you can go to the `web` folder and type `python -m http.server` and then follow the instructions.
+a browser because of browser paranoia. It has to be accessed through a web server. 
 
 ## Authoring
 
@@ -64,6 +66,7 @@ each definition and statement must have a `\label` and there are four special La
   those labels is used by the current environment. This is what creates edges
   in the dependency graph. This mechanism is completely independent from
   `\ref`. With `leanok` this is the most important command to organize work.
+  Note that `\uses` in proofs don't need to repeat those in the statement.
 * `\proves{label}` can be put in a `proof` environment to indicate which
   statement is proved if this is not obvious (ie it is not proving the
   preceding statement).
