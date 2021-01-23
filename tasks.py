@@ -38,8 +38,9 @@ def decls(ctx):
 def web(ctx):
     """Builds the web version in the web folder"""
     cwd = os.getcwd()
-    os.chdir(ROOT/'src')
+    os.chdir(ROOT)
     run('cp print/blueprint.bbl src/web.bbl')
+    os.chdir(ROOT/'src')
     run('plastex -c plastex.cfg web.tex')
     os.chdir(cwd)
 
