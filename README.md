@@ -15,8 +15,27 @@ You first need to make sure you have a decent python (at least 3.6).
 Then you can install:
 
 ```bash
-pip install git@github.com:plastex/plastex.git
-pip install git@github.com:PatrickMassot/leanblueprint.git
+pip install git+https://github.com/plastex/plastex.git
+pip install git+https://github.com/PatrickMassot/leanblueprint.git
+```
+
+Also install `pdf2svg` and `pdfcrop`:
+
+```bash
+apt install pdf2svg
+apt install texlive-extra-utils
+```
+
+## Initial setup
+
+The blueprint needs to know where a compiled version
+of the Lean source code lives.
+In the root directory of the blueprint repo,
+create a symlink `project` pointing to the root of
+the `lean-liquid` repository:
+
+```bash
+ln -s ../lean-liquid project   # modify as needed
 ```
 
 ## Building
