@@ -74,10 +74,175 @@
 
 \section{Breen--Deligne data}
 
-To be written.
+The goal of this section is to a give a precise statement of the Breen--Deligne resolution.
+We first give the statement, and provide details later.
+
+\begin{theorem}[Breen--Deligne]
+  \label{BD_orig}
+  For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
+  \[
+    \ldots \to \bigoplus_{i=1}^{n_i} \mathbb Z[A^{r_{ij}}] \to \ldots
+    \to \mathbb Z[A^3] \oplus \mathbb Z[A^2] \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
+  \]
+\end{theorem}
+
+I (Johan Commelin) have not figure out the details.
+But it seems to be possible to avoid the $\bigoplus_{i=1}^{n_i}$,
+so we will aim for something like the following statement.
+
+\begin{theorem}[Breen--Deligne]
+  \label{BD_reso}
+  For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
+  \[
+    \ldots \to \mathbb Z[A^{n_{i}}] \to \ldots \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
+  \]
+\end{theorem}
+
+What does a homomorphism $f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]$
+that is functorial in~$A$ look like?
+
+Well, such a ``universal map'' is specified
+by what it does to the generators $(a_1, a_2, a_3, \dots, a_m)$.
+It can send such an element to an arbitrary element of $\mathbb Z[A^n]$,
+but it has to be ``universal''.
+
+In the end, this means that $f$ will be a $\mathbb Z$-linear combination of
+``basic universal maps'', where a ``basic universal map'' is one that
+sends $(a_1, a_2, \dots, a_m)$ to $(b_1, \dots, b_n)$,
+where $b_i$ is a $\mathbb Z$-linear combination $c_{i,1} \cdot a_1 + \dots + c_{i,m} \cdot a_m$.
+So a ``basic universal map'' is specified by the $n \times m$-matrix $c$.
+
+\begin{definition}
+  \label{basic_universal_map}
+  \lean{breen_deligne.basic_universal_map}
+  \leanok
+  A \emph{basic universal map} from exponent $m$ to $n$,
+  is an $n \times m$-matrix with coefficients in~$\mathbb Z$.
+\end{definition}
+
+\begin{definition}
+  \label{universal_map}
+  \lean{breen_deligne.universal_map}
+  \leanok
+  \uses{basic_universal_map}
+  A \emph{universal map} from exponent $m$ to $n$,
+  is a formal $\mathbb Z$-linear combination of basic universal maps from exponent $m$ to $n$.
+\end{definition}
+
+We point out that basic universal maps can be composed by matrix multiplication,
+and this formally induces a composition of universal maps.
+
+\begin{definition}
+  \label{sigma_add}
+  \lean{breen_deligne.σ_add}
+  \leanok
+  \uses{universal_map}
+  The addition on $A^n$ induces a universal map
+  $\sigma_\alpha \colon \mathbb Z[A^{2n}] \to \mathbb Z[A^n]$,
+  namely the formal generator $(I_n I_n)$, where $I_n$ denotes the $n \times n$ identity matrix.
+\end{definition}
+
+\begin{definition}
+  \label{sigma_proj}
+  \lean{breen_deligne.σ_proj}
+  \leanok
+  \uses{universal_map}
+  The formal sum of the two projections $A^{2n} \to A^n$
+  induces a universal map $\sigma_\pi \colon \mathbb Z[A^{2n}] \to \mathbb Z[A^n]$,
+  namely the formal sum $(I_n 0) + (0 I_n)$,
+  where $I_n$ denotes the $n \times n$ identity matrix, and $0$ the $n \times n$ zero matrix.
+\end{definition}
+
+\begin{definition}
+  \label{BD_double}
+  \lean{breen_deligne.universal_map.double}
+  \leanok
+  \uses{universal_map}
+  Let $f$ be a universal map from exponent~$m$ to~$n$.
+  Then $f \oplus f$ denotes the universal map from exponent~$2m$ to~$2n$,
+  that applies $f$ componentwise.
+  In other words, if $f$ is a generator (i.e.\ a basic universal map) 
+  then $f \oplus f$ is
+  \[
+    \begin{pmatrix}
+    f & 0 \\
+    0 & f
+    \end{pmatrix}.
+  \]
+\end{definition}
+
+\begin{definition}
+  \label{BD_data}
+  \lean{breen_deligne.data}
+  \lean{breen_deligne.is_complex}
+  \leanok
+  \uses{sigma_add, sigma_proj}
+  A tuple $(n, f)$ of \emph{Breen--Deligne data}
+  consists of a sequence of exponents $n_0, n_1, n_2, \dots \in \mathbb N$,
+  and universal maps $f_i$ from exponent $n_{i+1}$ to $n_i$.
+
+  Such a tuples is a \emph{complex} if for all $i$ we have $f_i \circ f_{i+1} = 0$.
+\end{definition}
+
+\begin{definition}
+  \label{BD_data_double}
+  % There is no corresponding Lean code. Maybe we should add it.
+  \uses{BD_data, BD_double}
+  If $(n, f)$ is a tuple of Breen--Deligne data,
+  then $(n, f) \oplus (n, f)$ is the tuple
+  consisting of exponents $2n_i$ and universal maps $f_i \oplus f_i$.
+\end{definition}
+
+The two universal map $\sigma_\alpha$ and~$\sigma_\pi$ explained in the examples above,
+can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
+
+\begin{definition}
+  \label{BD_homotopy}
+  \lean{breen_deligne.homotopy}
+  \leanok
+  \uses{BD_data, sigma_add, sigma_proj, BD_double}
+  A \emph{homotopy} for a tuple $(n, f)$ of Breen--Deligne data
+  is a homotopy between the maps of complexes
+  \[
+    \sigma_\alpha, \sigma_\pi \colon (n,f) \oplus (n,f) \to (n,f)
+  \]
+  In other words, it consists of universal maps $h_i$ from exponent $2n_i$ to $n_{i+1}$,
+  such that
+  \[
+    f_{i+1} \circ h_{i+1} + h_i \circ (f_i \oplus f_i) = \sigma_\alpha - \sigma_\pi.
+  \]
+\end{definition}
+
+\begin{definition}
+  \label{BD_package}
+  \lean{breen_deligne.package}
+  \leanok
+  \uses{BD_data, BD_homotopy}
+  A \emph{Breen--Deligne package}
+  is a triple $(n, f, h)$,
+  such that $(n, f)$ is Breen--Deligne data that is a complex,
+  and $h$ is a homotopy for $(n,f)$.
+\end{definition}
+
+\begin{definition}
+  \label{BD_eg}
+  \lean{breen_deligne.eg}
+  \leanok
+  \uses{BD_package}
+  We will now construct an example of a Breen--Deligne package.
+  In some sense, it is the ``easiest'' solution to the conditions posed above.
+  The exponents will be $n_i = 2^i$, and the homotopies $h_i$ will be the identity.
+  Under these constraints, we inductively construct the universal maps $f_i$:
+  \[
+    f_0 = \sigma_\alpha - \sigma_\pi,
+    \quad
+    f_{i+1} = (\sigma_\alpha - \sigma_\pi) - (f_i \oplus f_i).
+  \]
+  We leave it as exercise for the reader, to verify that
+  with these definition $(n, f, h)$ forms a Breen--Deligne package.
+\end{definition}
 
 \section{Lecture IX: End of proof}
-
 
 \begin{definition}
   \label{system_of_complexes}
