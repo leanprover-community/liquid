@@ -600,8 +600,9 @@ Let us make this precise.
   assemble into a complex of normed abelian groups
   \[
     \dots \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}} \to
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{-1}}
+    \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}}
     \to \dots \to 0.
   \]
   Together, these complexes fit into a system of complexes
@@ -644,7 +645,19 @@ we assume that the sets $S$ are finite, rather than profinite.
 
 % We remark that Theorem~\ref{first_target} reduces formally to the case that $S$ is finite; we make this reduction.
 
-We will prove Theorem~\ref{first_target} by induction on $m$. Unfortunately, the induction requires us to prove a stronger statement. This goes as follows. Consider any polyhedral lattice $\Lambda$, by which we mean a finite free abelian group equipped with a norm $||\cdot||_\Lambda: \Lambda\otimes \mathbb R\to \mathbb R$ (so $\Lambda\otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients; equivalently, the ``unit ball'' $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
+We will prove Theorem~\ref{first_target} by induction on $m$.
+Unfortunately, the induction requires us to prove a stronger statement.
+Before stating it, we need another definition.
+
+\begin{definition}
+  \label{polyhedral_lattice}
+  A \emph{polyhedral lattice} is a finite free abelian group~$\Lambda$
+  equipped with a norm $||\cdot||_\Lambda \colon \Lambda\otimes \mathbb R\to \mathbb R$
+  (so $\Lambda\otimes \mathbb R$ is a Banach space)
+  that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients;
+  equivalently, the ``unit ball''
+  $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
+\end{definition}
 
 Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
 \[
@@ -657,11 +670,20 @@ Lemma~\ref{lem:Tinv} stays true with the same constants.
 Now we claim the following generalization of Theorem~\ref{first_target}.
 
 \begin{theorem}
-  \label{explicit} Fix radii $1>r'>r>0$. For any $m$ there is some $k$ such that for all polyhedral lattices $\Lambda$ there is a constant $c_0(\Lambda)>0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
-\[
-C_{\Lambda,c}^\bullet: \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots
-\]
-is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
+  \label{explicit}
+  \uses{polyhedral_lattice}
+  Fix radii $1>r'>r>0$. For any $m$ there is some $k$
+  such that for all polyhedral lattices $\Lambda$
+  there is a constant $c_0(\Lambda)>0$
+  such that for all finite sets $S$
+  and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  the system of complexes
+  \[
+  C_{\Lambda,c}^\bullet \colon
+  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}} \to
+  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}} \to \ldots
+  \]
+  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
 \end{theorem}
 
 \begin{proof}
@@ -670,7 +692,11 @@ is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
   Use $\Lambda = \mathbb Z$, and the isomorphism $\Hom(\mathbb Z, A) \cong A$.
 \end{proof}
 
-We note that the constants $c_1,c_2,\ldots$ implicit in the choice of the complex are chosen once and for all (after fixing $r$ and $r'$), and it can be ensured that the transition maps in the complex are norm-nonincreasing. Indeed, with the $c_i$ chosen as in Lemma~\ref{lem:constantsdeligne}, the maps
+We note that the constants $c_1,c_2,\ldots$ implicit in the choice of the complex
+are chosen once and for all (after fixing $r$ and $r'$),
+and it can be ensured that the transition maps in the complex are norm-nonincreasing.
+Indeed, if the $c_i$ are suitable as in Definition~\ref{BD_suitable},
+the maps
 \[
 \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})
 \]
@@ -1020,16 +1046,16 @@ Z[M^{a_1}]\to\mathbb Z[M^{a_0}]\to M\to 0
 \]
 of an abelian group $M$; purely for notational convenience, we can and do assume that each term is of the form $\mathbb Z[M^{a_i}]$ (as opposed to a finite direct sum of such). The possibility of doing this follows from the proof of \cite[Theorem 4.10]{Condensed}, noting that a functor of the form $A\mapsto \mathbb Z[A^n]\oplus \mathbb Z[A^m]$ admits a surjection from the functor $A\mapsto \mathbb Z[A^{n+m}]\oplus \mathbb Z$; this gives a resolution where all terms are of the form $\mathbb Z[A^{a_i}]\oplus \mathbb Z^m$. Now pass to the quotient of these complexes corresponding to the map $0\to A$; this gives a complex all of whose terms are of the form $\mathbb Z[A^{a_i}]/\mathbb Z$. Noting that $\mathbb Z[A^{a_i}]$ is functorially isomorphic to $\mathbb Z[A^{a_i}]/\mathbb Z\oplus \mathbb Z$ (via splitting $0\to A^{a_i}\to 0$), we can then add an acyclic complex of $\mathbb Z$'s in each degree to get a resolution all of whose terms are of the form $\mathbb Z[A^{a_i}]$.
 
-\begin{lemma}\label{lem:constantsdeligne} There are universal constants $c_0=1,c_1,c_2,\ldots$ so that the Breen-Deligne resolution admits the subcomplex
-\[
-C(M)_{\leq c}: \ldots \to \mathbb Z[M^{a_i}_{\leq c_ic}]\to\ldots\to\mathbb
-Z[M^{a_1}_{\leq c_1c}]\to\mathbb Z[M^{a_0}_{\leq c}]
-\]
-for all pseudo-normed abelian group objects in any topos as above, and all $c>0$.
-\end{lemma}
+%% \begin{lemma}\label{lem:constantsdeligne} There are universal constants $c_0=1,c_1,c_2,\ldots$ so that the Breen-Deligne resolution admits the subcomplex
+%% \[
+%% C(M)_{\leq c}: \ldots \to \mathbb Z[M^{a_i}_{\leq c_ic}]\to\ldots\to\mathbb
+%% Z[M^{a_1}_{\leq c_1c}]\to\mathbb Z[M^{a_0}_{\leq c}]
+%% \]
+%% for all pseudo-normed abelian group objects in any topos as above, and all $c>0$.
+%% \end{lemma}
 
-\begin{proof} Each differential in the Breen-Deligne resolution is a finite sum of maps induced by maps $M^{a_{i+1}}\to M^{a_i}$ given by some $a_i\times a_{i+1}$-matrix of integers. Given $c_i$, one can thus find some $c_{i+1}$ so that $M^{a_{i+1}}_{\leq c_{i+1}c}$ maps into $M^{a_i}_{\leq c_ic}$ for each of those finitely many maps, which gives the claim.
-\end{proof}
+%% \begin{proof} Each differential in the Breen-Deligne resolution is a finite sum of maps induced by maps $M^{a_{i+1}}\to M^{a_i}$ given by some $a_i\times a_{i+1}$-matrix of integers. Given $c_i$, one can thus find some $c_{i+1}$ so that $M^{a_{i+1}}_{\leq c_{i+1}c}$ maps into $M^{a_i}_{\leq c_ic}$ for each of those finitely many maps, which gives the claim.
+%% \end{proof}
 
 We also need some homotopies. More precisely, we start with the following homotopy.
 
