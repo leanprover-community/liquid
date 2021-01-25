@@ -3,6 +3,8 @@
 \begin{remark}
 	This text is based on the lecture notes on Analytic Geometry~\cite{Analytic},
 	by Peter Scholze.
+  The final section is copy-pasted from those lecture notes almost verbatim.
+  This text is meant as a blueprint for the Liquid Tensor Experiment.
 \end{remark}
 
 \section{Breen--Deligne data}
@@ -10,26 +12,26 @@
 The goal of this section is to a give a precise statement of the Breen--Deligne resolution.
 We first give the statement, and provide details later.
 
-\begin{theorem}[Breen--Deligne]
+\begin{theoremx}[Breen--Deligne]
   \label{BD_orig}
   For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
   \[
     \ldots \to \bigoplus_{i=1}^{n_i} \mathbb Z[A^{r_{ij}}] \to \ldots
     \to \mathbb Z[A^3] \oplus \mathbb Z[A^2] \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
   \]
-\end{theorem}
+\end{theoremx}
 
 I (Johan Commelin) have not figure out the details.
 But it seems to be possible to avoid the $\bigoplus_{i=1}^{n_i}$,
 so we will aim for something like the following statement.
 
-\begin{theorem}[Breen--Deligne]
+\begin{theoremx}
   \label{BD_reso}
   For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
   \[
     \ldots \to \mathbb Z[A^{n_{i}}] \to \ldots \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
   \]
-\end{theorem}
+\end{theoremx}
 
 What does a homomorphism $f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]$
 that is functorial in~$A$ look like?
@@ -133,7 +135,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \label{BD_homotopy}
   \lean{breen_deligne.homotopy}
   \leanok
-  \uses{BD_data, sigma_add, sigma_proj, BD_double}
+  \uses{BD_data, BD_double}
   A \emph{homotopy} for a tuple $(n, f)$ of Breen--Deligne data
   is a homotopy between the maps of complexes
   \[
@@ -191,7 +193,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \label{Mbar}
   \lean{Mbar}
   \leanok
-  Let $r \ge 0$ be a real number, and let $S$ be a finite set.
+  Let $r > 0$ be a real number, and let $S$ be a finite set.
   Denote by $\overline{\mathcal M}_r(S)$ the set
   \[
     \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n \le \infty \right\}
@@ -202,7 +204,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \label{Mbar_le}
   \lean{Mbar_le}
   \leanok
-  Let $r \ge 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
+  Let $r > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
   Denote by $\overline{\mathcal M}_r(S)_{\le c}$ the set
   \[
     \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n \le c \right\}
@@ -228,7 +230,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \lean{Mbar_le.eqv}
   \leanok
   \uses{Mbar_le}
-  Let $r \ge 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
+  Let $r > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
   The space $\overline{\mathcal M}_r(S)_{\le c}$ is the profinite limit of the finite sets
   \[
     \overline{\mathcal M}_r(S)_{\le c, \le N} =
@@ -242,6 +244,10 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \leanok
   Omitted.
 \end{proof}
+
+For the remainder of this section,
+let $r > 0, c \ge 0$ be real numbers,
+and let $S$ be a finite set.
 
 \begin{definition}
   \label{Mbar_Tinv}
@@ -260,21 +266,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \label{Mbar_le_Tinv}
   \lean{Mbar_le.Tinv}
   \leanok
-  \uses{Mbar_le, Mbar.Tinv}
-  The natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$ restricts to maps
-  \[
-    T^{-1} \cdot \_ \colon
-    \overline{\mathcal M}_r(S)_{\le c}
-    \overline{\mathcal M}_r(S)_{\le c'}
-  \]
-  for all $c' \ge c/r$.
-\end{definition}
-
-\begin{definition}
-  \label{Mbar_le_Tinv}
-  \lean{Mbar_le.Tinv}
-  \leanok
-  \uses{Mbar_le, Mbar.Tinv}
+  \uses{Mbar_le, Mbar_Tinv}
   The natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$ restricts to maps
   \[
     T^{-1} \cdot \_ \colon
@@ -286,9 +278,9 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
 
 \begin{lemma}
   \label{Mbar_le_Tinv_ctu}
-  \lean{Mbar_le.Tinv_continuous}
+  \lean{Mbar_le.continuous_Tinv}
   \leanok
-  \uses{Mbar_le, Mbar.Tinv}
+  \uses{Mbar_le_profinite, Mbar_Tinv}
   For all $c' \ge c/r$, the natural maps
   \[
     T^{-1} \cdot \_ \colon
@@ -303,11 +295,230 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   Omitted.
 \end{proof}
 
+\begin{lemma}
+  \label{basic_eval_Mbar}
+  \lean{breen_deligne.basic_universal_map.eval_png_mem_filtration}
+  \leanok
+  \uses{Mbar, basic_universal_map}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$.
+  We get an induced homomorphism of pseudo normed groups
+  \[
+    \overline{\mathcal M}_r(S)^m \to \overline{\mathcal M}_r(S)^n
+  \]
+  bounded by the maximum (over all $i$) of $\sum_j |f_{ij}|$,
+  where the $f_{ij}$ are the coefficients of the $n \times m$-matrix representing~$f$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Omitted.
+\end{proof}
+
+\begin{definition}
+  \label{basic_suitable}
+  \lean{breen_deligne.basic_universal_map.suitable}
+  \leanok
+  \uses{basic_universal_map}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$.
+  Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
+  We say that $c_1, c_2$ are $f$-suitable, if for all $i$
+  \[
+    \sum_j |f_{ij}| * c_1 \le c_2.
+  \]
+  (Note! The order of $c_1$ and $c_2$ matters!)
+\end{definition}
+
+\begin{lemma}
+  \label{basic_eval_Mbar_le_ctu}
+  \lean{breen_deligne.basic_universal_map.eval_Mbar_le_continuous}
+  \leanok
+  \uses{Mbar_le_profinite, Mbar_png, basic_suitable, basic_eval_Mbar}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$,
+  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  We get an induced map
+  \[
+    \overline{\mathcal M}_r(S)_{\le c_1}^m \to \overline{\mathcal M}_r(S)_{\le c_2}^n
+  \]
+  that is continuous.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Omitted.
+\end{proof}
+
+\section{Completions of locally constant functions}
+
+\begin{definition}
+  \label{Vhat}
+  \lean{NormedGroup.LCC}
+  \leanok
+  Let $V$ be a normed abelian group, and $X$ a compact topological space.
+  We denote by $\hat V(X)$ the completion
+  of the normed abelian group of locally constant functions $X \to V$
+  with respect to the sup norm.
+
+  This construction is functorial in bounded group homomorphisms $V \to V'$
+  and contravariantly functorial in continuous maps $X \to X'$.
+\end{definition}
+
+We continue to use the notation of before:
+let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
+
+\begin{definition}
+  \label{Vhat_basic_eval_Mbar}
+  \lean{breen_deligne.basic_universal_map.eval_Mbar_pow}
+  \leanok
+  \uses{basic_eval_Mbar_le_ctu, Vhat}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$,
+  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  We get an induced map
+  \[
+    \hat V(f) \colon
+    \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to
+    \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).
+  \]
+\end{definition}
+
+\begin{definition}
+  \label{universal_suitable}
+  \lean{breen_deligne.universal_map.suitable}
+  \leanok
+  \uses{universal_map, basic_suitable}
+  Let $f$ be a universal map from exponent~$m$ to~$n$.
+  Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
+  We say that $c_1, c_2$ are $f$-suitable, if for all basic universal maps $g$
+  that occur in the formal sum $f$,
+  the nonnegative reals $c_1$ and $c_2$ are $g$-suitable.
+  (Note! The order of $c_1$ and $c_2$ matters!)
+\end{definition}
+
+\begin{definition}
+  \label{Vhat_eval_Mbar}
+  \lean{breen_deligne.universal_map.eval_Mbar_pow}
+  \leanok
+  \uses{universal_suitable, Vhat_basic_eval_Mbar}
+  Let $f$ be a universal map from exponent~$m$ to~$n$,
+  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  We get an induced map
+  \[
+    \colon
+    \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to
+    \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).
+  \]
+  that is the sum $\sum n_g V(g)$,
+  if $f$ is the formal sum $\sum n_g g$
+  of basic universal maps.
+\end{definition}
+
+\begin{definition}
+  \label{normed_with_aut}
+  \lean{normed_with_aut}
+  \leanok
+  Let $r \in \mathbb R_{\ge 0}$.
+  An $r$-normed $\mathbb Z[T^{\pm 1}]$-module
+  is a normed abelian group $V$
+  endowed with an automorphism $T \colon V \to V$ such that
+  for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
+\end{definition}
+
+\begin{lemma}
+  \label{Vhat_T_aut}
+  \lean{NormedGroup.normed_with_aut_LCC}
+  \leanok
+  \uses{Vhat, normed_with_aut}
+  Let $r \in \mathbb R_{\ge 0}$,
+  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+  Let $X$ be a compact space.
+  Then $\hat V(X)$ is naturally an $r$-normed $\mathbb Z[T^{\pm 1}]$-module,
+  with the action of $T$ given by post-composition.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Omitted.
+\end{proof}
+
+\begin{definition}
+  \label{Vhat_Mbar_Tinv}
+  \lean{LCC_Mbar_pow_Tinv}
+  \leanok
+  \uses{Mbar_le_Tinv_ctu, Vhat_T_aut}
+  Let $r, r' c \in \mathbb R_{>0}$,
+  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+  Assume $r' \le 1$.
+  Let $S$ be a finite set.
+
+  There are two natural actions of $T^{-1}$ on
+  $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})$.
+  The first comes from Definition~\ref{Mbar_le_Tinv},
+  which gives a continuous map
+  \[
+    \overline{\mathcal M}_{r'}(S)_{\le c*r'} \to
+    \overline{\mathcal M}_{r'}(S)_{\le c}
+  \]
+  and thus a map
+  \[
+    (T^{\pm 1})^* \colon
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).
+  \]
+  The other comes from Lemma~\ref{Vhat_normed_with_aut},
+  using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
+  We get a map
+  \[
+    [T^{\pm 1}] \colon
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}),
+  \]
+  that we can compose with the map
+  \[
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}),
+  \]
+  obtained from the natural inclusion
+  \[
+    \overline{\mathcal M}_{r'}(S)_{\le c*r'} \to
+    \overline{\mathcal M}_{r'}(S)_{\le c}.
+  \]
+  We thus end up with two maps
+  \[
+    (T^{\pm 1})^*, [T^{\pm 1}] \colon
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).
+  \]
+  and we define
+  $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})^{T^{\pm 1}}$
+  to be the equalizer of $(T^{\pm 1})^*$, and $[T^{\pm 1}]$.
+  In other words, the kernel of $(T^{\pm 1})^* - [T^{\pm 1}]$.
+\end{definition}
+
+\begin{definition}
+  \label{Vhat_eval_Mbar_Tinv}
+  \lean{breen_deligne.universal_map.eval_Mbar_pow_Tinv}
+  \leanok
+  \uses{Vhat_Mbar_Tinv, Vhat_eval_Mbar}
+  Let $r, r' \in \mathbb R_{>0}$,
+  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+  Assume $r' \le 1$.
+  Let $S$ be a finite set.
+  Let $f$ be a universal map from exponent~$m$ to~$n$,
+  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+
+  The natural map from Definition~\ref{Vhat_eval_Mbar}
+  restricts to a map
+  \[
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_2}^n)^{T^{\pm 1}} \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_1}^m)^{T^{\pm 1}}
+  \]
+\end{definition}
+
 \section{Lecture IX: End of proof}
 
 \begin{definition}
   \label{system_of_complexes}
   \lean{system_of_complexes}
+  \leanok
   A system of complexes of complete normed abelian groups
   is for each sufficiently large $c$ (i.e.~all $c\geq c_0$ for some $c_0>0$),
   a complex
@@ -323,6 +534,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
 \begin{definition}
   \label{admissible}
   \lean{system_of_complexes.admissible}
+  \leanok
   \uses{system_of_complexes}
   A system of complexes is \emph{admissible}
   if all differentials and maps $\mathrm{res}_{c',c}^i$ are norm-nonincreasing.
@@ -331,6 +543,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
 \begin{definition}
   \label{is_bdd_exact_for_bdd_degree_above_idx}
   \lean{system_of_complexes.is_bdd_exact_for_bdd_degree_above_idx}
+  \leanok
   \uses{system_of_complexes}
   Let $(C_c^\bullet)_c$ be a system of complexes.
   For integers $m\geq 0$ and constants $k>0$, $c_0'>0$,
@@ -345,9 +558,56 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
 
 We apply this to
 \[
-C_c^\bullet: \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}}\to \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}}\to \ldots
+  C_c^\bullet \colon
+  \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
+  \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}} \to \ldots
 \]
 given by mapping \eqref{eq:doublecomplex} into $\hat{V}$ and using Lemma~\ref{lem:Tinv}.
+Let us make this precise.
+
+\begin{definition}
+  \label{BD_suitable}
+  \lean{breen_deligne.package.suitable}
+  \leanok
+  \uses{BD_package, universal_suitable}
+  Let $(n, f, h)$ be a Breen--Deligne package,
+  and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
+  We say that $c$ is $(n,f,h)$-suitable,
+  if for all $i$, the constants $c_{i+1}, c_i$ are $f_i$-suitable.
+
+  (Note! The order $c_{i+1}, c_i$ is contravariant
+  compared to Definition~\ref{universal_suitable}.
+  This is because of the contravariance of $\hat V(\_)$;
+  see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
+\end{definition}
+
+\begin{definition}
+  \label{Mbar_system}
+  \lean{Mbar_system}
+  \leanok
+  \uses{BD_suitable, Vhat_eval_Mbar_Tinv, system_of_complexes}
+  Let $r, r' \in \mathbb R_{>0}$,
+  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+  Assume $r' \le 1$.
+  Let $S$ be a finite set.
+  Let $(n,f,h)$ be a Breen--Deligne package,
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+  that is $(n,f,h)$-suitable.
+
+  For every $c \in \mathbb R_{\ge 0}$,
+  the maps from Definition~\ref{Vhat_eval_Mbar_Tinv}
+  induced by the universal maps $f_i$ from the Breen--Deligne package $(n,f,h)$
+  assemble into a complex of normed abelian groups
+  \[
+    \dots \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{\pm 1}} \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{\pm 1}}
+    \to \dots \to 0.
+  \]
+  Together, these complexes fit into a system of complexes
+  with the natural restriction maps.
+\end{definition}
+
 Now we state the following result, which is our main goal.
 
 \textbf{N.b.:}
@@ -356,11 +616,21 @@ we assume that the sets $S$ are finite, rather than profinite.
 
 \begin{theorem}
   \label{first_target}
-	Fix radii $1>r'>r>0$. For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes
-\[
-C_c^\bullet: \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}}\to \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}}\to \ldots
-\]
-is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
+  \lean{first_target}
+  \leanok
+  \uses{Mbar_system}
+  Let $(n,f,h)$ be a Breen--Deligne package,
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+	Fix radii $1>r'>r>0$.
+  For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  the system of complexes
+  \[
+    C_c^\bullet \colon
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c'_1c}^2)^{T^{-1}}
+    \to \ldots
+  \]
+  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
 \end{theorem}
 
 % Let us first check that this implies Theorem~\ref{explicit1}.
@@ -659,8 +929,7 @@ In this appendix, we gather a few results about homological algebra with normed 
 
 \begin{proposition}
   \label{snakelemma}
-  \uses{admissible}
-  \uses{is_bdd_exact_for_bdd_degree_above_idx}
+  \uses{is_bdd_exact_for_bdd_degree_above_idx, admissible}
   Let $M^\bullet_c$ and $M'^\bullet_c$ be two admissible collections
   of complexes of complete normed abelian groups, where $c\geq c_0$.
   Let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
