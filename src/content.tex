@@ -196,7 +196,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   Let $r > 0$ be a real number, and let $S$ be a finite set.
   Denote by $\overline{\mathcal M}_r(S)$ the set
   \[
-    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n \le \infty \right\}
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n < \infty \right\}
   \]
 \end{definition}
 
@@ -459,7 +459,7 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \]
   and thus a map
   \[
-    (T^{\pm 1})^* \colon
+    (T^{-1})^* \colon
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).
   \]
@@ -467,7 +467,7 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
   We get a map
   \[
-    [T^{\pm 1}] \colon
+    [T^{-1}] \colon
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}),
   \]
@@ -483,14 +483,14 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \]
   We thus end up with two maps
   \[
-    (T^{\pm 1})^*, [T^{\pm 1}] \colon
+    (T^{-1})^*, [T^{-1}] \colon
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).
   \]
   and we define
-  $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})^{T^{\pm 1}}$
-  to be the equalizer of $(T^{\pm 1})^*$, and $[T^{\pm 1}]$.
-  In other words, the kernel of $(T^{\pm 1})^* - [T^{\pm 1}]$.
+  $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})^{T^{-1}}$
+  to be the equalizer of $(T^{-1})^*$, and $[T^{-1}]$.
+  In other words, the kernel of $(T^{-1})^* - [T^{-1}]$.
 \end{definition}
 
 \begin{definition}
@@ -508,8 +508,8 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   The natural map from Definition~\ref{Vhat_eval_Mbar}
   restricts to a map
   \[
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_2}^n)^{T^{\pm 1}} \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_1}^m)^{T^{\pm 1}}
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_2}^n)^{T^{-1}} \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_1}^m)^{T^{-1}}
   \]
 \end{definition}
 
@@ -600,8 +600,8 @@ Let us make this precise.
   assemble into a complex of normed abelian groups
   \[
     \dots \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{\pm 1}} \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{\pm 1}}
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}} \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{-1}}
     \to \dots \to 0.
   \]
   Together, these complexes fit into a system of complexes
