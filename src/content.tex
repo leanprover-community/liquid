@@ -5,6 +5,77 @@
 	by Peter Scholze.
 \end{remark}
 
+\section{Spaces of convergent power series}
+
+\begin{definition}
+  \label{pseudo_normed_group}
+  \lean{pseudo_normed_group}
+  \leanok
+  A \emph{pseudo-normed group} is an abelian group $A$,
+  together with an increasing filtration $A_c \subset A$ of subsets $A_c$ indexed by $\mathbb R_{\ge 0}$,
+  such that each $A_c$ contains $0$, is closed under negation,
+  and $A_{c_1} + A_{c_2} \subset A_{c_1 + c_2}$.
+\end{definition}
+
+\begin{definition}
+  \label{Mbar}
+  \lean{Mbar}
+  \leanok
+  Let $r \ge 0$ be a real number, and let $S$ be a finite set.
+  Denote by $\overline{\mathcal M}_r(S)$ the set
+  \[
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n \le \infty \right\}
+  \]
+\end{definition}
+
+\begin{definition}
+  \label{Mbar_le}
+  \lean{Mbar_le}
+  \leanok
+  Let $r \ge 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
+  Denote by $\overline{\mathcal M}_r(S)_{\le c}$ the set
+  \[
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n \le c \right\}
+  \]
+\end{definition}
+
+\begin{lemma}
+  \label{Mbar_png}
+  \lean{Mbar.pseudo_normed_group}
+  \leanok
+  \uses{pseudo_normed_group,Mbar,Mbar_le}
+  The space $\overline{\mathcal M}_r(S)$ is a pseudo-normed group,
+  with filtration $\overline{\mathcal M}_r(S)_{\le c}$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Obvious.
+\end{proof}
+
+\begin{lemma}
+  \label{Mbar_le_profinite}
+  \lean{Mbar_le.eqv}
+  \leanok
+  \uses{Mbar_le}
+  Let $r \ge 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
+  The space $\overline{\mathcal M}_r(S)_{\le c}$ is the profinite limit of the finite sets
+  \[
+    \overline{\mathcal M}_r(S)_{\le c, \le N} =
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert
+    \sum_{1 \le n \le N, s \in S} |a_{n,s}| r^n \le c \right\}
+  \]
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Omitted.
+\end{proof}
+
+\section{Breen--Deligne data}
+
+To be written.
+
 \section{Lecture IX: End of proof}
 
 
