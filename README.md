@@ -20,11 +20,12 @@ pip install git+https://github.com/PatrickMassot/leanblueprint.git
 pip install invoke
 ```
 
-Also installing `pdf2svg` and `pdfcrop` may be useful:
+Also installing `pdf2svg`, `pdfcrop`, and `xelatex` may be useful:
 
 ```bash
 apt install pdf2svg
 apt install texlive-extra-utils
+apt install texlive-xetex
 ```
 
 ## Initial setup
