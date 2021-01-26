@@ -36,7 +36,7 @@ jobs:
           exclude: '/boot /data /dev /mnt /proc /run /sys'
 
       - name: Link and fetch mathlib
-        run: sh ./workflows/fetch.sh
+        run: sh .github/workflows/fetch.sh
        
       - run: inv web
 
