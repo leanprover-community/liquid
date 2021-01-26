@@ -1,0 +1,3 @@
+[submodule "lean-liquid"]
+	path = lean-liquid
+	url = https://github.com/leanprover-community/lean-liquid
