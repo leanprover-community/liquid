@@ -31,7 +31,7 @@ jobs:
         with:
           script: 'install.sh'
           is_cached: ${{ steps.cache-id.outputs.cache-hit }}
-          cache: ${{ runner.temp }}/cache-directory-example
+          cache: ${{ runner.temp }}/cache
           snapshot: '/'
           exclude: '/boot /data /dev /mnt /proc /run /sys'
 
