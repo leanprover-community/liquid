@@ -58,7 +58,7 @@ jobs:
         with: 
           run: |
             apk update
-            apk add -y graphviz libgraphviz-dev gcc texlive-xetex
+            apk add -v graphviz libgraphviz-dev gcc texlive-xetex
             set -o pipefail
             curl https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh -sSf | sh -s -- -v -y
             ln -s $HOME/.elan/bin/* /usr/local/bin;
