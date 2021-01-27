@@ -17,23 +17,23 @@ jobs:
       #   with:
       #     python-version: '3.8'
 
-      # - name: Install apt for graphs
-      #   run: |
-      #     echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-      #     apt-get update
-      #     apt-get install -y dialog apt-utils
-      #     apt-get install -y graphviz libgraphviz-dev pdf2svg texlive-extra-utils texlive-xetex gcc musl-dev
+      # # - name: Install apt for graphs
+      # #   run: |
+      # #     echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+      # #     apt-get update
+      # #     apt-get install -y dialog apt-utils
+      # #     apt-get install -y graphviz libgraphviz-dev pdf2svg texlive-extra-utils texlive-xetex gcc musl-dev
 
-      # - name: Prepare cache
-      #   uses: actions/cache@v2
-      #   id: cache-id
-      #   with:
-      #     path: ${{ runner.temp }}/cache
-      #     key: ${{ runner.os }}-cache-key-v1.0
+      # # - name: Prepare cache
+      # #   uses: actions/cache@v2
+      # #   id: cache-id
+      # #   with:
+      # #     path: ${{ runner.temp }}/cache
+      # #     key: ${{ runner.os }}-cache-key-v1.0
 
-      # - name: Install apt basics
-      #   run: |
-      #     apt-get update && apt-get install -y --no-install-recommends sudo less wget man-db python3-dev python3-pip python3-setuptools
+      # # - name: Install apt basics
+      # #   run: |
+      # #     apt-get update && apt-get install -y --no-install-recommends sudo less wget man-db python3-dev python3-pip python3-setuptools
 
       # - name: Install elan
       #   run: |
@@ -47,24 +47,21 @@ jobs:
       # - name: link and fetch mathlib
       #   run: |
       #     ln -s lean-liquid project
-      #     cd project
-      #     leanproject get-m
-       
+      #     cd project && leanproject get-m && cd ..
+      #     inv decls
+
       - name: Install Leanblueprint and dependencies
         uses: xu-cheng/texlive-action/full@v1
         with: 
           run: |
               apk update
-              python -m pip install --upgrade pip requests wheel markdown2 toml toposort invoke
+              apk add --update py3-pip
+              python -m pip install --upgrade pip requests wheel
               apk add pkgconfig graphviz graphviz-dev gcc musl-dev && \
               python -m pip install pygraphviz --install-option="--library-path=/usr/lib/graphviz/"
-              set -o pipefail
-              curl https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh -sSf | sh -s -- -v -y
-              ln -s $HOME/.elan/bin/* /usr/local/bin;
               python -m pip install mathlibtools invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
-              ln -s lean-liquid project
-              pushd project && leanproject get-m && popd
-              inv web
+              inv decls; inv pdf; cp print/blueprint.bbl src/web.bbl; inv qweb
+              # inv web
 
       # - name: Generate pages
       #   run: inv web
