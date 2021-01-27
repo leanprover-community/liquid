@@ -28,6 +28,7 @@ jobs:
 
       - name: Link and fetch mathlib
         run: |
+          leanproject get leanprover-community/lean-liquid
           ln -s lean-liquid project
           cd project && leanproject get-m && cd ..
           inv decls
