@@ -49,24 +49,25 @@ jobs:
       #     ln -s lean-liquid project
       #     cd project
       #     leanproject get-m
-      #     # leanproject decls
-      #     # cd ..
-      #     inv decls
        
       - name: Install Leanblueprint and dependencies
         uses: xu-cheng/texlive-action/full@v1
         with: 
           run: |
-            apk update
-            apk add -v graphviz libgraphviz-dev gcc texlive-xetex
-            set -o pipefail
-            curl https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh -sSf | sh -s -- -v -y
-            ln -s $HOME/.elan/bin/* /usr/local/bin;
-            python -m pip install --upgrade pip requests wheel markdown2 toml mathlibtools toposort invoke
-            python -m pip install invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
-            ln -s lean-liquid project
-            pushd project && leanproject get-m && popd
-            inv web
+              apk update
+              python -m pip install --upgrade pip requests wheel markdown2 toml toposort invoke
+              apk add pkgconfig graphviz graphviz-dev gcc musl-dev && \
+              python -m pip install pygraphviz --install-option="--library-path=/usr/lib/graphviz/"
+              set -o pipefail
+              curl https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh -sSf | sh -s -- -v -y
+              ln -s $HOME/.elan/bin/* /usr/local/bin;
+              python -m pip install mathlibtools invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
+              ln -s lean-liquid project
+              pushd project && leanproject get-m && popd
+              inv web
+
+      # - name: Generate pages
+      #   run: inv web
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
