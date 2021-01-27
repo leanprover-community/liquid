@@ -1,13 +1,23 @@
 #!/bin/bash -e
 
 sudo apt-get update
-# sudo apt-get install -y libgraphviz-dev
-# sudo apt-get install -y pdf2svg
-# sudo apt-get install -y texlive-extra-utils
-# sudo apt-get install -y texlive-xetex
+sudo apt-get install -y libgraphviz-dev
+sudo apt-get install -y pdf2svg
+sudo apt-get install -y texlive-extra-utils
+sudo apt-get install -y texlive-xetex
+sudo apt-get install -y --no-install-recommends sudo less wget man-db
+sudo apt-get install -y git curl python3 python3-pip python3-venv
 
-python3 -m pip install --upgrade pip
-# sudo pip install invoke
-sudo pip install mathlibtools
-# sudo pip install git+https://github.com/plastex/plastex.git
-# sudo pip install git+https://github.com/PatrickMassot/leanblueprint.git
+# from leancommunity docs
+set -x; \
+  wget https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh; \
+  bash elan-init.sh -y; \
+  python3 -m pip install --user pipx; \
+  python3 -m pipx ensurepath; \
+  mv ~/.profile ~/.bash_profile; \
+  . ~/.bash_profile; \
+  sudo pipx install mathlibtools;
+
+sudo pipx install invoke
+sudo pipx install git+https://github.com/plastex/plastex.git
+sudo pipx install git+https://github.com/PatrickMassot/leanblueprint.git

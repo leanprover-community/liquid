@@ -27,21 +27,22 @@ jobs:
           key: ${{ runner.os }}-cache-key-v1.0
 
       - name: Install prerequisites
-        uses: airvzxf/cache-anything-new-action@v1.0.1
-        with:
-          script: 'install.sh'
-          is_cached: ${{ steps.cache-id.outputs.cache-hit }}
-          cache: ${{ runner.temp }}/cache
-          snapshot: '/'
-          exclude: '/boot /data /dev /mnt /proc /run /sys'
+        run: sh .github/workflows/install.sh
+      #   uses: airvzxf/cache-anything-new-action@v1.0.1
+      #   with:
+      #     script: 'install.sh'
+      #     is_cached: ${{ steps.cache-id.outputs.cache-hit }}
+      #     cache: ${{ runner.temp }}/cache
+      #     snapshot: '/'
+      #     exclude: '/boot /data /dev /mnt /proc /run /sys'
 
-      - name: Link and fetch mathlib
-        run: sh .github/workflows/fetch.sh
+      # - name: link and fetch mathlib
+      #   run: sh .github/workflows/fetch.sh
        
-      - run: inv web
+      # - run: inv web
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./web
+      # - name: deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.github_token }}
+      #     publish_dir: ./web
