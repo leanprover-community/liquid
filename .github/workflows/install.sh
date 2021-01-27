@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-sudo apt update
-sudo apt install -y libgraphviz-dev
-sudo apt install -y pdf2svg
-sudo apt install -y texlive-extra-utils
-sudo apt install -y texlive-xetex
+sudo apt-get update
+sudo apt-get install -y libgraphviz-dev
+sudo apt-get install -y pdf2svg
+sudo apt-get install -y texlive-extra-utils
+sudo apt-get install -y texlive-xetex
 
 python3 -m pip install --upgrade pip
 pip install --user invoke
