@@ -1,5 +1,3 @@
-name: github pages
-
 on:
   push:
     branches:
@@ -14,34 +12,64 @@ jobs:
         with:
           submodules: true
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
+      # - name: Setup Python
+      #   uses: actions/setup-python@v2
+      #   with:
+      #     python-version: '3.8'
 
-      - name: Prepare cache
-        uses: actions/cache@v2
-        id: cache-id
-        with:
-          path: ${{ runner.temp }}/cache
-          key: ${{ runner.os }}-cache-key-v1.0
+      # - name: Install apt for graphs
+      #   run: |
+      #     echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+      #     apt-get update
+      #     apt-get install -y dialog apt-utils
+      #     apt-get install -y graphviz libgraphviz-dev pdf2svg texlive-extra-utils texlive-xetex gcc musl-dev
 
-      - name: Install prerequisites
-        uses: airvzxf/cache-anything-new-action@v1.0.1
-        with:
-          script: 'install.sh'
-          is_cached: ${{ steps.cache-id.outputs.cache-hit }}
-          cache: ${{ runner.temp }}/cache
-          snapshot: '/'
-          exclude: '/boot /data /dev /mnt /proc /run /sys'
+      # - name: Prepare cache
+      #   uses: actions/cache@v2
+      #   id: cache-id
+      #   with:
+      #     path: ${{ runner.temp }}/cache
+      #     key: ${{ runner.os }}-cache-key-v1.0
+
+      # - name: Install apt basics
+      #   run: |
+      #     apt-get update && apt-get install -y --no-install-recommends sudo less wget man-db python3-dev python3-pip python3-setuptools
+
+      # - name: Install elan
+      #   run: |
+      #     set -o pipefail
+      #     curl https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh -sSf | sh -s -- -v -y
+      #     ln -s $HOME/.elan/bin/* /usr/local/bin;
+
+      # - name: Install python Lean dependencies
+      #   run: python -m pip install --upgrade pip requests markdown2 toml mathlibtools toposort invoke
 
       # - name: link and fetch mathlib
-      #   run: sh .github/workflows/fetch.sh
+      #   run: |
+      #     ln -s lean-liquid project
+      #     cd project
+      #     leanproject get-m
+      #     # leanproject decls
+      #     # cd ..
+      #     inv decls
        
-      # - run: inv web
+      - name: Install Leanblueprint and dependencies
+        uses: xu-cheng/texlive-action/full@v1
+        with: 
+          run: |
+            apk update
+            apk add -y graphviz libgraphviz-dev gcc texlive-xetex
+            set -o pipefail
+            curl https://raw.githubusercontent.com/Kha/elan/master/elan-init.sh -sSf | sh -s -- -v -y
+            ln -s $HOME/.elan/bin/* /usr/local/bin;
+            python -m pip install --upgrade pip requests wheel markdown2 toml mathlibtools toposort invoke
+            python -m pip install invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
+            ln -s lean-liquid project
+            pushd project && leanproject get-m && popd
+            inv web
 
-      # - name: deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.github_token }}
-      #     publish_dir: ./web
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.github_token }}
+          publish_dir: ./web
