@@ -16,8 +16,9 @@ set -x; \
   python3 -m pipx ensurepath; \
   mv ~/.profile ~/.bash_profile; \
   . ~/.bash_profile; \
-  sudo -H pipx install mathlibtools;
+  python3 -m pipx install mathlibtools;
 
-sudo -H pipx install invoke
-sudo -H pipx install git+https://github.com/plastex/plastex.git
-sudo -H pipx install git+https://github.com/PatrickMassot/leanblueprint.git
+python3 -m pipx install invoke
+python3 -m pipx install git+https://github.com/plastex/plastex.git
+python3 -m pipx install git+https://github.com/PatrickMassot/leanblueprint.git
+python3 -m pipx ensurepath
