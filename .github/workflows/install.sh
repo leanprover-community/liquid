@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 sudo apt-get update
-sudo apt-get install -y libgraphviz-dev
+sudo apt-get install -y graphviz libgraphviz-dev
 sudo apt-get install -y pdf2svg
 sudo apt-get install -y texlive-extra-utils
 sudo apt-get install -y texlive-xetex
@@ -20,5 +20,5 @@ set -x; \
 
 python3 -m pipx install invoke
 python3 -m pipx install git+https://github.com/plastex/plastex.git
-python3 -m pipx install git+https://github.com/PatrickMassot/leanblueprint.git
+python3 -m pipx install --include-deps git+https://github.com/PatrickMassot/leanblueprint.git
 python3 -m pipx ensurepath
