@@ -1,0 +1,1285 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML">
+  </script>
+
+
+</head>
+
+<body>
+<header>
+  <a href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+	<div id="Legend">
+		<span class="title">Legend:</span>
+		<dl>
+			<dt>Boxes</dt><dd>definitions</dd>
+			<dt>Ellipses</dt><dd>theorems </dd>
+			<dt>Blue border</dt><dd>ready</dd>
+			<dt>Blue bg</dt><dd>proof ready</dd>
+			<dt>Green border</dt><dd>statement done</dd>
+			<dt>Green bg</dt><dd>proof done</dd>
+		</dl>
+	</div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="admissible_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="admissible" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2</span></div>
+    <div class="thm_thmcontent"><p>   A system of complexes is <em>admissible</em> if all differentials and maps $\mathrm{res}_{c',c}^i$ are norm-nonincreasing. </p>
+</div>
+
+    <a class="latex_link" href="index.html#admissible">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/system_of_complexes.lean#L129">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="basehomotopy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="basehomotopy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">15</span></div>
+    <div class="thm_thmcontent"><p> For an abelian group $M$, the maps $\sigma _1,\sigma _2$ from </p>
+<div class="displaymath" id="a0000000094">
+  \[  C(M^2): \ldots \to \mathbb Z[M^{2a_i}]\to \ldots \to \mathbb Z[M^{2a_1}]\to \mathbb Z[M^{2a_0}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000095">
+  \[  C(M): \ldots \to \mathbb Z[M^{a_i}]\to \ldots \to \mathbb Z[M^{a_1}]\to \mathbb Z[M^{a_0}],  \]
+</div>
+<p> induced by addition $M^2\to M$, respectively the sum of the two maps induced by two projections $M^2\to M$, are homotopic, via some functorial homotopy </p>
+<div class="displaymath" id="a0000000096">
+  \[  h_i: \mathbb Z[M^{2a_i}]\to \mathbb Z[M^{a_{i+1}}].  \]
+</div>
+<p>If $M$ is a pseudo-normed abelian group object in any topos, then $\sigma _1$ and $\sigma _2$ are well-defined as maps of complexes from </p>
+<div class="displaymath" id="a0000000097">
+  \[  C(M^2)_{\leq c/2}: \ldots \to \mathbb Z[M^{2a_i}_{\leq c_ic/2}]\to \ldots \to \mathbb Z[M^{2a_1}_{\leq c_1c/2}]\to \mathbb Z[M^{2a_0}_{\leq c/2}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000098">
+  \[  C(M)_{\leq c}: \ldots \to \mathbb Z[M^{a_i}_{\leq c_ic}]\to \ldots \to \mathbb Z[M^{a_1}_{\leq c_1c}]\to \mathbb Z[M^{a_0}_{\leq c}]  \]
+</div>
+<p> for all $c>0$. In that case, for all $i\geq 0$ there are universal constants $c_i’$ such that $h_i$ defines well-defined maps </p>
+<div class="displaymath" id="a0000000099">
+  \[  \mathbb Z[M^{2a_i}_{\leq c_ic/2}]\to \mathbb Z[M^{a_{i+1}}_{\leq c_i'c_{i+1}c}]  \]
+</div>
+<p> for all $c>0$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#basehomotopy">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="basic_eval_Mbar_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="basic_eval_Mbar" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">9</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a basic universal map from exponent&#160;$m$ to&#160;$n$. We get an induced homomorphism of pseudo normed groups </p>
+<div class="displaymath" id="a0000000020">
+  \[  \overline{\mathcal M}_r(S)^m \to \overline{\mathcal M}_r(S)^n  \]
+</div>
+<p> bounded by the maximum (over all $i$) of $\sum _j |f_{ij}|$, where the $f_{ij}$ are the coefficients of the $n \times m$-matrix representing&#160;$f$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#basic_eval_Mbar">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/pseudo_normed_group/breen_deligne.lean#L41">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="basic_eval_Mbar_le_ctu_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="basic_eval_Mbar_le_ctu" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">11</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a basic universal map from exponent&#160;$m$ to&#160;$n$, and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable. We get an induced map </p>
+<div class="displaymath" id="a0000000023">
+  \[  \overline{\mathcal M}_r(S)_{\le c_1}^m \to \overline{\mathcal M}_r(S)_{\le c_2}^n  \]
+</div>
+<p> that is continuous. </p>
+</div>
+
+    <a class="latex_link" href="index.html#basic_eval_Mbar_le_ctu">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/breen_deligne.lean#L136">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="basic_suitable_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="basic_suitable" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">10</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a basic universal map from exponent&#160;$m$ to&#160;$n$. Let $c_1, c_2 \in \mathbb R_{\ge 0}$. We say that $c_1, c_2$ are $f$-suitable, if for all $i$ </p>
+<div class="displaymath" id="a0000000021">
+  \[  \sum _j |f_{ij}| * c_1 \le c_2.  \]
+</div>
+<p> (Note! The order of $c_1$ and $c_2$ matters!) </p>
+</div>
+
+    <a class="latex_link" href="index.html#basic_suitable">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/breen_deligne.lean#L38">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="basic_universal_map_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="basic_universal_map" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1</span></div>
+    <div class="thm_thmcontent"><p>  A <em>basic universal map</em> from exponent $m$ to $n$, is an $n \times m$-matrix with coefficients in&#160;$\mathbb Z$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#basic_universal_map">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L57">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_data_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_data" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">6</span></div>
+    <div class="thm_thmcontent"><p>    A tuple $(n, f)$ of <em>Breen–Deligne data</em> consists of a sequence of exponents $n_0, n_1, n_2, \dots \in \mathbb N$, and universal maps $f_i$ from exponent $n_{i+1}$ to $n_i$. </p>
+<p>Such a tuples is a <em>complex</em> if for all $i$ we have $f_i \circ f_{i+1} = 0$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#BD_data">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L215">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_data_double_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_data_double" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">7</span></div>
+    <div class="thm_thmcontent"><p>  If $(n, f)$ is a tuple of Breen–Deligne data, then $(n, f) \oplus (n, f)$ is the tuple consisting of exponents $2n_i$ and universal maps $f_i \oplus f_i$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#BD_data_double">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_double_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_double" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">5</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a universal map from exponent&#160;$m$ to&#160;$n$. Then $f \oplus f$ denotes the universal map from exponent&#160;$2m$ to&#160;$2n$, that applies $f$ componentwise. In other words, if $f$ is a generator (i.e. a basic universal map) then $f \oplus f$ is </p>
+<div class="displaymath" id="a0000000005">
+  \[  \begin{pmatrix}  f 
+
+&  0 
+
+\\ 0 
+
+&  f 
+
+\end{pmatrix}.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#BD_double">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L178">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_eg_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_eg" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">10</span></div>
+    <div class="thm_thmcontent"><p>   We will now construct an example of a Breen–Deligne package. In some sense, it is the “easiest” solution to the conditions posed above. The exponents will be $n_i = 2^i$, and the homotopies $h_i$ will be the identity. Under these constraints, we inductively construct the universal maps $f_i$: </p>
+<div class="displaymath" id="a0000000008">
+  \[  f_0 = \sigma _\alpha - \sigma _\pi , \quad f_{i+1} = (\sigma _\alpha - \sigma _\pi ) - (f_i \oplus f_i).  \]
+</div>
+<p> We leave it as exercise for the reader, to verify that with these definitions $(n, f, h)$ forms a Breen–Deligne package. </p>
+</div>
+
+    <a class="latex_link" href="index.html#BD_eg">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L417">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_homotopy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_homotopy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">8</span></div>
+    <div class="thm_thmcontent"><p>   A <em>homotopy</em> for a tuple $(n, f)$ of Breen–Deligne data is a homotopy between the maps of complexes </p>
+<div class="displaymath" id="a0000000006">
+  \[  \sigma _\alpha , \sigma _\pi \colon (n,f) \oplus (n,f) \to (n,f)  \]
+</div>
+<p> In other words, it consists of universal maps $h_i$ from exponent $2n_i$ to $n_{i+1}$, such that </p>
+<div class="displaymath" id="a0000000007">
+  \[  f_{i+1} \circ h_{i+1} + h_i \circ (f_i \oplus f_i) = \sigma _\alpha - \sigma _\pi .  \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#BD_homotopy">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L315">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_package_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_package" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">9</span></div>
+    <div class="thm_thmcontent"><p>   A <em>Breen–Deligne package</em> is a triple $(n, f, h)$, such that $(n, f)$ is Breen–Deligne data that is a complex, and $h$ is a homotopy for $(n,f)$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#BD_package">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L326">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="BD_suitable_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="BD_suitable" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">4</span></div>
+    <div class="thm_thmcontent"><p>   Let $(n, f, h)$ be a Breen–Deligne package, and let $c = (c_0, c_1, \dots )$ be a sequence of nonnegative real numbers. We say that $c$ is $(n,f,h)$-suitable, if for all $i$, the constants $c_{i+1}, c_i$ are $f_i$-suitable. </p>
+<p>(Note! The order $c_{i+1}, c_i$ is contravariant compared to Definition&#160;<a href="index.html#universal_suitable">3</a>. This is because of the contravariance of $\hat V(\_ )$; see Definition&#160;<a href="index.html#Vhat_eval_Mbar_Tinv">8</a>.) </p>
+</div>
+
+    <a class="latex_link" href="index.html#BD_suitable">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_pow.lean#L606">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="combi_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="combi" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">12</span></div>
+    <div class="thm_thmcontent"><p>   Let $\Lambda $ be a polyhedral lattice. Then for all positive integers $N$ there is a constant $d$ such that for all $c>0$ one can write any $x\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as </p>
+<div class="displaymath" id="a0000000055">
+  \[  x=x_1+\ldots +x_N  \]
+</div>
+<p> where all $x_i\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#combi">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/combinatorial_lemma.lean#L51">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="combi_aux_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="combi_aux" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">11</span></div>
+    <div class="thm_thmcontent"><p>  Let $\Lambda $ be a finite free abelian group, let $N$ be a positive integer, and let $\lambda _1,\ldots ,\lambda _m\in \Lambda $ be elements. Then there is a finite subset $A\subset \Lambda ^\vee $ such that for all $x\in \Lambda ^\vee =\operatorname{Hom}(\Lambda ,\mathbb Z)$ there is some $x’\in A$ such that $x-x’\in N\Lambda ^\vee $ and for all $i=1,\ldots ,m$, the numbers $x’(\lambda _i)$ and $(x-x’)(\lambda _i)$ have the same sign, i.e.&#160;are both nonnegative or both nonpositive. </p>
+</div>
+
+    <a class="latex_link" href="index.html#combi_aux">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/combinatorial_lemma.lean#L18">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="explicit_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="explicit" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">9</span></div>
+    <div class="thm_thmcontent"><p>  Fix radii $1>r’>r>0$. For any $m$ there is some $k$ such that for all polyhedral lattices $\Lambda $ there is a constant $c_0(\Lambda )>0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes </p>
+<div class="displaymath" id="a0000000044">
+  \[  C_{\Lambda ,c}^\bullet \colon \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}} \to \ldots  \]
+</div>
+<p> is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda )$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#explicit">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="first_target_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="first_target" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">6</span></div>
+    <div class="thm_thmcontent"><p>   Let $(n,f,h)$ be a Breen–Deligne package, and let $c’ = (c’_0, c’_1, c’_2, \dots )$ be a sequence of constants in $\mathbb R_{\ge 0}$ Fix radii $1>r’>r>0$. For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$, the system of complexes </p>
+<div class="displaymath" id="a0000000041">
+  \[  C_c^\bullet \colon \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c'_1c}^2)^{T^{-1}} \to \ldots  \]
+</div>
+<p> is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#first_target">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/liquid.lean#L29">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="homotopyNelements_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="homotopyNelements" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">16</span></div>
+    <div class="thm_thmcontent"><p> Let $N$ be a power of $2$. The maps of complexes $\sigma _1,\sigma _2$ from </p>
+<div class="displaymath" id="a0000000101">
+  \[  C(M^N): \ldots \to \mathbb Z[M^{Na_i}]\to \ldots \to \mathbb Z[M^{Na_1}]\to \mathbb Z[M^{Na_0}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000102">
+  \[  C(M): \ldots \to \mathbb Z[M^{a_i}]\to \ldots \to \mathbb Z[M^{a_1}]\to \mathbb Z[M^{a_0}],  \]
+</div>
+<p> induced by addition $M^N\to M$, respectively the sum of the $N$ maps induced by the $N$ projections $M^N\to M$, are homotopic, via some functorial homotopy </p>
+<div class="displaymath" id="a0000000103">
+  \[  h_i^N: \mathbb Z[M^{Na_i}]\to \mathbb Z[M^{a_{i+1}}]  \]
+</div>
+<p> which moreover satisfies the following bound, with the same constants $c_0’,c_1’,\ldots $ as in the previous lemma: </p>
+<p>If $M$ is a pseudo-normed abelian group object in any topos, then $\sigma _1$ and $\sigma _2$ are well-defined as maps of complexes from </p>
+<div class="displaymath" id="a0000000104">
+  \[  C(M^N)_{\leq c/N}: \ldots \to \mathbb Z[M^{Na_i}_{\leq c_ic/N}]\to \ldots \to \mathbb Z[M^{Na_1}_{\leq c_1c/N}]\to \mathbb Z[M^{Na_0}_{\leq c/N}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000105">
+  \[  C(M)_{\leq c}: \ldots \to \mathbb Z[M^{a_i}_{\leq c_ic}]\to \ldots \to \mathbb Z[M^{a_1}_{\leq c_1c}]\to \mathbb Z[M^{a_0}_{\leq c}]  \]
+</div>
+<p> for all $c>0$. In that case, $h_i^N$ defines well-defined maps </p>
+<div class="displaymath" id="a0000000106">
+  \[  \mathbb Z[M^{Na_i}_{\leq c_ic/N}]\to \mathbb Z[M^{a_{i+1}}_{\leq c_i'c_{i+1}c}]  \]
+</div>
+<p> for all $c>0$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#homotopyNelements">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="is_bdd_exact_for_bdd_degree_above_idx_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="is_bdd_exact_for_bdd_degree_above_idx" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3</span></div>
+    <div class="thm_thmcontent"><p>   Let $(C_c^\bullet )_c$ be a system of complexes. For integers $m\geq 0$ and constants $k>0$, $c_0’>0$, the datum $(C_c^\bullet )_c$ is $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ if the following condition is satisfied. For all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ there is some $y\in C_c^{i-1}$ (which is defined to be $0$ when $i=0$) such that </p>
+<div class="displaymath" id="a0000000037">
+  \[  \| \mathrm{res}_{kc,c}^i(x)-d_c^{i-1}(y)\| _{C_c^i}\leq k\| d_{kc}^i(x)\| _{C_{kc}^{i+1}}.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#is_bdd_exact_for_bdd_degree_above_idx">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/system_of_complexes.lean#L163">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2</span></div>
+    <div class="thm_thmcontent"><p>  Let $r > 0$ be a real number, and let $S$ be a finite set. Denote by $\overline{\mathcal M}_r(S)$ the set </p>
+<div class="displaymath" id="a0000000010">
+  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| r^n < \infty \right\}   \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/basic.lean#L38">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_le_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_le" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3</span></div>
+    <div class="thm_thmcontent"><p>  Let $r > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set. Denote by $\overline{\mathcal M}_r(S)_{\le c}$ the set </p>
+<div class="displaymath" id="a0000000011">
+  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| r^n \le c \right\}   \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_le">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_le.lean#L29">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_le_profinite_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_le_profinite" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">5</span></div>
+    <div class="thm_thmcontent"><p>   Let $r > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set. The space $\overline{\mathcal M}_r(S)_{\le c}$ is the profinite limit of the finite sets </p>
+<div class="displaymath" id="a0000000014">
+  \[  \overline{\mathcal M}_r(S)_{\le c, \le N} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{1 \le n \le N, s \in S} |a_{n,s}| r^n \le c \right\}   \]
+</div>
+<p> This endows $\overline{\mathcal M}_r(S)_{\le c}$ with the profinite topology. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_le_profinite">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_le.lean#L274">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_le_Tinv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_le_Tinv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">7</span></div>
+    <div class="thm_thmcontent"><p>   The natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$ restricts to maps </p>
+<div class="displaymath" id="a0000000016">
+  \[  T^{-1} \cdot \_  \colon \overline{\mathcal M}_r(S)_{\le c} \overline{\mathcal M}_r(S)_{\le c'}  \]
+</div>
+<p> for all $c’ \ge c/r$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_le_Tinv">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_le.lean#L548">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_le_Tinv_ctu_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_le_Tinv_ctu" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">8</span></div>
+    <div class="thm_thmcontent"><p>   For all $c’ \ge c/r$, the natural maps </p>
+<div class="displaymath" id="a0000000018">
+  \[  T^{-1} \cdot \_  \colon \overline{\mathcal M}_r(S)_{\le c} \overline{\mathcal M}_r(S)_{\le c'}  \]
+</div>
+<p> are continuous </p>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_le_Tinv_ctu">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_le.lean#L557">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_png_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_png" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">4</span></div>
+    <div class="thm_thmcontent"><p>   The space $\overline{\mathcal M}_r(S)$ is a pseudo-normed group, with filtration $\overline{\mathcal M}_r(S)_{\le c}$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_png">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/basic.lean#L136">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_system_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_system" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">5</span></div>
+    <div class="thm_thmcontent"><p>   Let $r, r’ \in \mathbb R_{>0}$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module. Assume $r’ \le 1$. Let $S$ be a finite set. Let $(n,f,h)$ be a Breen–Deligne package, and let $c’ = (c’_0, c’_1, c’_2, \dots )$ be a sequence of constants in $\mathbb R_{\ge 0}$ that is $(n,f,h)$-suitable. </p>
+<p>For every $c \in \mathbb R_{\ge 0}$, the maps from Definition&#160;<a href="index.html#Vhat_eval_Mbar_Tinv">8</a> induced by the universal maps $f_i$ from the Breen–Deligne package $(n,f,h)$ assemble into a complex of normed abelian groups </p>
+<div class="displaymath" id="a0000000039">
+  \[  \dots \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{-1}} \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}} \to \dots \to 0.  \]
+</div>
+<p> Together, these complexes fit into a system of complexes with the natural restriction maps. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_system">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/complex.lean#L155">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Mbar_Tinv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Mbar_Tinv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">6</span></div>
+    <div class="thm_thmcontent"><p>   There is a natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$, via </p>
+<div class="displaymath" id="a0000000015">
+  \[  T^{-1} \cdot \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} = \left( \sum _{n \ge 1} a_{n+1,s} T^n \right)_{s \in S}.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#Mbar_Tinv">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/basic.lean#L219">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="normed_with_aut_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="normed_with_aut" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">5</span></div>
+    <div class="thm_thmcontent"><p>  Let $r \in \mathbb R_{\ge 0}$. An $r$-normed $\mathbb Z[T^{\pm 1}]$-module is a normed abelian group $V$ endowed with an automorphism $T \colon V \to V$ such that for all $v \in V$ we have $\| T(v)\|  = r\| v\| $. </p>
+</div>
+
+    <a class="latex_link" href="index.html#normed_with_aut">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/normed_group/normed_with_aut.lean#L9">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="polyhedral_lattice_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="polyhedral_lattice" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">8</span></div>
+    <div class="thm_thmcontent"><p>  A <em>polyhedral lattice</em> is a finite free abelian group&#160;$\Lambda $ equipped with a norm $||\cdot ||_\Lambda \colon \Lambda \otimes \mathbb R\to \mathbb R$ (so $\Lambda \otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda $ with rational coefficients; equivalently, the “unit ball” $\{ \lambda \in \Lambda \otimes \mathbb R\mid ||\lambda ||_\Lambda \leq 1\} $ is a rational polyhedron. </p>
+</div>
+
+    <a class="latex_link" href="index.html#polyhedral_lattice">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/polyhedral_lattice.lean#L17">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="pseudo_normed_group_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="pseudo_normed_group" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1</span></div>
+    <div class="thm_thmcontent"><p>  A <em>pseudo-normed group</em> is an abelian group $A$, together with an increasing filtration $A_c \subset A$ of subsets $A_c$ indexed by $\mathbb R_{\ge 0}$, such that each $A_c$ contains $0$, is closed under negation, and $A_{c_1} + A_{c_2} \subset A_{c_1 + c_2}$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#pseudo_normed_group">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/pseudo_normed_group/basic.lean#L86">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="sigma_add_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="sigma_add" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3</span></div>
+    <div class="thm_thmcontent"><p>   The addition on $A^n$ induces a universal map $\sigma _\alpha \colon \mathbb Z[A^{2n}] \to \mathbb Z[A^n]$, namely the formal generator $(I_n I_n)$, where $I_n$ denotes the $n \times n$ identity matrix. </p>
+</div>
+
+    <a class="latex_link" href="index.html#sigma_add">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L225">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="sigma_proj_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="sigma_proj" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">4</span></div>
+    <div class="thm_thmcontent"><p>   The formal sum of the two projections $A^{2n} \to A^n$ induces a universal map $\sigma _\pi \colon \mathbb Z[A^{2n}] \to \mathbb Z[A^n]$, namely the formal sum $(I_n 0) + (0 I_n)$, where $I_n$ denotes the $n \times n$ identity matrix, and $0$ the $n \times n$ zero matrix. </p>
+</div>
+
+    <a class="latex_link" href="index.html#sigma_proj">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L231">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="snakelemma_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="snakelemma" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">14</span></div>
+    <div class="thm_thmcontent"><p>  Let $M^\bullet _c$ and $M’^\bullet _c$ be two admissible collections of complexes of complete normed abelian groups, where $c\geq c_0$. Let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that is strictly compatible with the norm and commutes with restriction maps, and assume that it satisfies </p>
+<div class="displaymath" id="a0000000080">
+  \[  ||\mathrm{res}^i_{kc,c}(x)||_{M^i_c}\leq k||f^i_{kc}(x)||_{M'^i_{kc}}  \]
+</div>
+<p> for all $i=0,\ldots ,m+1$ and all $x\in M^i_{kc}$. Let $N^\bullet _c=M’^\bullet _c/\overline{M^\bullet _c}$ (which equals the completion of $M’^{\bullet }_c/M^\bullet _c$) be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
+<p>Assume that $M^\bullet _c$ and $M’^\bullet _c$ are $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$. Then $N^\bullet _c$ is $\leq \max (k^4,k^3+k+1)$-exact in degrees $\leq m-1$ for $c\geq c_0$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#snakelemma">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="spectral_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="spectral" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">10</span></div>
+    <div class="thm_thmcontent"><p>   Fix an integer $m\geq 0$ and a constant $k$. Then there exists an $\epsilon >0$ and a constant $k_0$, depending (only) on $k$ and $m$, with the following property. </p>
+<p>Consider an admissible system of double complexes $M^{p,q}_c$, $p,q\geq 0$, $c\geq c_0$, of complete normed abelian groups as well as some $k’\geq k_0$ and some $H>0$, such that </p>
+<div class="centered"> <div class="tikzcd" id="a0000000047">
+    <img src="images/img-0001.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+      M^{0,0}_c \ar[r]{d&#39;^{0,0}_c}\ar[d]{d^{0,0}_c} &amp; M^{0,1}_c\ar[r]{d&#39;^{0,1}_c}\ar[d]{d^{0,1}_c} &amp; M^{0,2}_c\ar[r]{d&#39;^{0,2}_c}\ar[d]{d^{0,2}_c} &amp; \ldots\\
+  M^{1,0}_c\ar[r]{d&#39;^{1,0}_c}\ar[d]{d^{1,0}_c} &amp; M^{1,1}_c\ar[r]{d&#39;^{1,1}_c}\ar[d]{d^{1,1}_c} &amp; M^{1,2}_c\ar[r]{d&#39;^{1,2}_c}\ar[d]{d^{1,2}_c} &amp; \ldots\\
+  M^{2,0}_c\ar[r]{d&#39;^{2,0}_c}\ar[d]{d^{2,0}_c} &amp; M^{2,1}_c\ar[r]{d&#39;^{2,1}_c}\ar[d]{d^{2,1}_c} &amp; \ddots\\
+  \vdots &amp; \vdots
+    \end{tikzcd}" />
+</div> </div>
+<ol class="enumerate">
+  <li><p>for $j=0,\ldots ,m$, the columns $M^{p,j}_c$ are $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$; </p>
+</li>
+  <li><p>for $i=0,\ldots ,m+1$, the rows $M^{i,q}_c$ are $\leq k$-exact in degrees $\leq m-1$ for $c\geq c_0$; </p>
+</li>
+  <li><p>for $q=0,\ldots ,m$ and $c\geq c_0$, there is a map $h^q_{k'c}: M^{0,q+1}_{k'c}\to M^{1,q}_c$ with </p>
+<div class="displaymath" id="a0000000048">
+  \[  ||h^q_{k'c}(x)||_{M^{1,q}_c}\leq H||x||_{M^{0,q+1}_{k'c}}  \]
+</div>
+<p> for all $x\in M^{0,q+1}_c$, and such that for all $c\geq c_0$ and $x\in M^{0,q}_{k'^2c}$, one has </p>
+<div class="equation" id="eq:homotopicmapsmall">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:homotopicmapsmall} ||\mathrm{res}_{k'^2c,k'c}^{1,q}(d^{0,q}(x))\pm h^q_{k'^2c}(d’^{0,q}_{k'^2c}(x))\pm d’^{1,q-1}_{k'c}(h^{q-1}_{k'^2c}(x))||_{M^{1,q}_{k'c}}\leq \epsilon ||\mathrm{res}_{k'^2c,c}^{0,q}(x)||_{M^{0,q}_c}. \end{equation}
+  </div>
+  <span class="equation_label">4.1</span>
+</p>
+</div>
+</li>
+</ol>
+<p> Then the first row is $\leq \max (k’^2,2k_0H)$-exact in degrees $\leq m$ for $c\geq c_0$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#spectral">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="system_of_complexes_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="system_of_complexes" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1</span></div>
+    <div class="thm_thmcontent"><p>  A system of complexes of complete normed abelian groups is for each sufficiently large $c$ (i.e.&#160;all $c\geq c_0$ for some $c_0>0$), a complex </p>
+<div class="displaymath" id="a0000000036">
+  \[  C_c^\bullet : C_c^0\to C_c^1\to \ldots  \]
+</div>
+<p> together with maps of complexes $\mathrm{res}_{c',c}^i: C_{c'}^\bullet \to C_c^\bullet $, for $c’>c$, satisfying the obvious associativity condition. </p>
+</div>
+
+    <a class="latex_link" href="index.html#system_of_complexes">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/system_of_complexes.lean#L37">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="universal_map_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="universal_map" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2</span></div>
+    <div class="thm_thmcontent"><p>   A <em>universal map</em> from exponent $m$ to $n$, is a formal $\mathbb Z$-linear combination of basic universal maps from exponent $m$ to $n$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#universal_map">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/breen_deligne.lean#L107">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="universal_suitable_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="universal_suitable" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a universal map from exponent&#160;$m$ to&#160;$n$. Let $c_1, c_2 \in \mathbb R_{\ge 0}$. We say that $c_1, c_2$ are $f$-suitable, if for all basic universal maps $g$ that occur in the formal sum $f$, the nonnegative reals $c_1$ and $c_2$ are $g$-suitable. (Note! The order of $c_1$ and $c_2$ matters!) </p>
+</div>
+
+    <a class="latex_link" href="index.html#universal_suitable">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_pow.lean#L311">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Vhat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Vhat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1</span></div>
+    <div class="thm_thmcontent"><p>  Let $V$ be a normed abelian group, and $X$ a compact topological space. We denote by $\hat V(X)$ the completion of the normed abelian group of locally constant functions $X \to V$ with respect to the sup norm. </p>
+<p>This construction is functorial in bounded group homomorphisms $V \to V’$ and contravariantly functorial in continuous maps $X \to X’$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Vhat">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/locally_constant/Vhat.lean#L205">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Vhat_basic_eval_Mbar_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Vhat_basic_eval_Mbar" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a basic universal map from exponent&#160;$m$ to&#160;$n$, and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable. We get an induced map </p>
+<div class="displaymath" id="a0000000025">
+  \[  \hat V(f) \colon \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).  \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#Vhat_basic_eval_Mbar">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_pow.lean#L228">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Vhat_eval_Mbar_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Vhat_eval_Mbar" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">4</span></div>
+    <div class="thm_thmcontent"><p>   Let $f$ be a universal map from exponent&#160;$m$ to&#160;$n$, and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable. We get an induced map </p>
+<div class="displaymath" id="a0000000026">
+  \[  \colon \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).  \]
+</div>
+<p> that is the sum $\sum n_g V(g)$, if $f$ is the formal sum $\sum n_g g$ of basic universal maps. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Vhat_eval_Mbar">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/Mbar_pow.lean#L427">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Vhat_eval_Mbar_Tinv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Vhat_eval_Mbar_Tinv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">8</span></div>
+    <div class="thm_thmcontent"><p>   Let $r, r’ \in \mathbb R_{>0}$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module. Assume $r’ \le 1$. Let $S$ be a finite set. Let $f$ be a universal map from exponent&#160;$m$ to&#160;$n$, and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable. </p>
+<p>The natural map from Definition&#160;<a href="index.html#Vhat_eval_Mbar">4</a> restricts to a map </p>
+<div class="displaymath" id="a0000000034">
+  \[  \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_2}^n)^{T^{-1}} \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_1}^m)^{T^{-1}}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="index.html#Vhat_eval_Mbar_Tinv">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/complex.lean#L77">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Vhat_Mbar_Tinv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Vhat_Mbar_Tinv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">7</span></div>
+    <div class="thm_thmcontent"><p>   Let $r, r’ c \in \mathbb R_{>0}$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module. Assume $r’ \le 1$. Let $S$ be a finite set. </p>
+<p>There are two natural actions of $T^{-1}$ on $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})$. The first comes from Definition&#160;<a href="index.html#Mbar_le_Tinv">7</a>, which gives a continuous map </p>
+<div class="displaymath" id="a0000000028">
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c*r'} \to \overline{\mathcal M}_{r'}(S)_{\le c}  \]
+</div>
+<p> and thus a map </p>
+<div class="displaymath" id="a0000000029">
+  \[  (T^{-1})^* \colon \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).  \]
+</div>
+<p> The other comes from Lemma&#160;??, using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$. We get a map </p>
+<div class="displaymath" id="a0000000030">
+  \[  [T^{-1}] \colon \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}),  \]
+</div>
+<p> that we can compose with the map </p>
+<div class="displaymath" id="a0000000031">
+  \[  \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}),  \]
+</div>
+<p> obtained from the natural inclusion </p>
+<div class="displaymath" id="a0000000032">
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c*r'} \to \overline{\mathcal M}_{r'}(S)_{\le c}.  \]
+</div>
+<p> We thus end up with two maps </p>
+<div class="displaymath" id="a0000000033">
+  \[  (T^{-1})^*, [T^{-1}] \colon \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).  \]
+</div>
+<p> and we define $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})^{T^{-1}}$ to be the equalizer of $(T^{-1})^*$, and $[T^{-1}]$. In other words, the kernel of $(T^{-1})^* - [T^{-1}]$. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Vhat_Mbar_Tinv">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/Mbar/complex.lean#L33">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Vhat_T_aut_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Vhat_T_aut" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">6</span></div>
+    <div class="thm_thmcontent"><p>   Let $r \in \mathbb R_{\ge 0}$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module. Let $X$ be a compact space. Then $\hat V(X)$ is naturally an $r$-normed $\mathbb Z[T^{\pm 1}]$-module, with the action of $T$ given by post-composition. </p>
+</div>
+
+    <a class="latex_link" href="index.html#Vhat_T_aut">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/81b10397d3c0d26b951ba0c4ea8a1aac382bc490/src/locally_constant/Vhat.lean#L239">Lean</a></div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot('strict digraph "" {	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	basic_universal_map	[color=green,		fillcolor="#b0eca3",		label=basic_universal_map,		shape=box,		style=filled];	basic_suitable	[color=green,		fillcolor="#b0eca3",		label=basic_suitable,		shape=box,		style=filled];	basic_universal_map -> basic_suitable	[style=dashed];	basic_eval_Mbar	[color=green,		fillcolor="#9cec8b",		label=basic_eval_Mbar,		shape=ellipse,		style=filled];	basic_universal_map -> basic_eval_Mbar	[style=dashed];	universal_map	[color=green,		fillcolor="#b0eca3",		label=universal_map,		shape=box,		style=filled];	basic_universal_map -> universal_map	[style=dashed];	Mbar	[color=green,		fillcolor="#b0eca3",		label=Mbar,		shape=box,		style=filled];	Mbar_png	[color=green,		fillcolor="#9cec8b",		label=Mbar_png,		shape=ellipse,		style=filled];	Mbar -> Mbar_png	[style=dashed];	Mbar -> basic_eval_Mbar	[style=dashed];	Mbar_Tinv	[color=green,		fillcolor="#b0eca3",		label=Mbar_Tinv,		shape=box,		style=filled];	Mbar -> Mbar_Tinv	[style=dashed];	is_bdd_exact_for_bdd_degree_above_idx	[color=green,		fillcolor="#b0eca3",		label=is_bdd_exact_for_bdd_degree_above_idx,		shape=box,		style=filled];	spectral	[color=blue,		label=spectral,		shape=ellipse];	is_bdd_exact_for_bdd_degree_above_idx -> spectral	[style=dashed];	snakelemma	[color=blue,		fillcolor="#a3d6ff",		label=snakelemma,		shape=ellipse,		style=filled];	is_bdd_exact_for_bdd_degree_above_idx -> snakelemma	[style=dashed];	basic_eval_Mbar_le_ctu	[color=green,		fillcolor="#9cec8b",		label=basic_eval_Mbar_le_ctu,		shape=ellipse,		style=filled];	Mbar_png -> basic_eval_Mbar_le_ctu	[style=dashed];	Vhat_basic_eval_Mbar	[color=green,		fillcolor="#b0eca3",		label=Vhat_basic_eval_Mbar,		shape=box,		style=filled];	basic_eval_Mbar_le_ctu -> Vhat_basic_eval_Mbar	[style=dashed];	Mbar_le_Tinv	[color=green,		fillcolor="#b0eca3",		label=Mbar_le_Tinv,		shape=box,		style=filled];	basic_suitable -> basic_eval_Mbar_le_ctu	[style=dashed];	universal_suitable	[color=green,		fillcolor="#b0eca3",		label=universal_suitable,		shape=box,		style=filled];	basic_suitable -> universal_suitable	[style=dashed];	basehomotopy	[color=blue,		fillcolor="#a3d6ff",		label=basehomotopy,		shape=ellipse,		style=filled];	explicit	[color=blue,		label=explicit,		shape=ellipse];	basehomotopy -> explicit;	BD_data	[color=green,		fillcolor="#b0eca3",		label=BD_data,		shape=box,		style=filled];	BD_package	[color=green,		fillcolor="#b0eca3",		label=BD_package,		shape=box,		style=filled];	BD_data -> BD_package	[style=dashed];	BD_data_double	[color=blue,		label=BD_data_double,		shape=box];	BD_data -> BD_data_double	[style=dashed];	BD_homotopy	[color=green,		fillcolor="#b0eca3",		label=BD_homotopy,		shape=box,		style=filled];	BD_data -> BD_homotopy	[style=dashed];	BD_eg	[color=green,		fillcolor="#b0eca3",		label=BD_eg,		shape=box,		style=filled];	BD_package -> BD_eg	[style=dashed];	BD_suitable	[color=green,		fillcolor="#b0eca3",		label=BD_suitable,		shape=box,		style=filled];	BD_package -> BD_suitable	[style=dashed];	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	pseudo_normed_group -> Mbar_png	[style=dashed];	Mbar_le	[color=green,		fillcolor="#b0eca3",		label=Mbar_le,		shape=box,		style=filled];	Mbar_le -> Mbar_png	[style=dashed];	Mbar_le -> Mbar_le_Tinv	[style=dashed];	Mbar_le_profinite	[color=green,		fillcolor="#9cec8b",		label=Mbar_le_profinite,		shape=ellipse,		style=filled];	Mbar_le -> Mbar_le_profinite	[style=dashed];	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	Vhat_T_aut	[color=green,		fillcolor="#9cec8b",		label=Vhat_T_aut,		shape=ellipse,		style=filled];	normed_with_aut -> Vhat_T_aut	[style=dashed];	Vhat_Mbar_Tinv	[color=green,		fillcolor="#b0eca3",		label=Vhat_Mbar_Tinv,		shape=box,		style=filled];	Vhat_eval_Mbar_Tinv	[color=green,		fillcolor="#b0eca3",		label=Vhat_eval_Mbar_Tinv,		shape=box,		style=filled];	Vhat_Mbar_Tinv -> Vhat_eval_Mbar_Tinv	[style=dashed];	Mbar_le_profinite -> basic_eval_Mbar_le_ctu	[style=dashed];	Mbar_le_Tinv_ctu	[color=green,		fillcolor="#9cec8b",		label=Mbar_le_Tinv_ctu,		shape=ellipse,		style=filled];	Mbar_le_profinite -> Mbar_le_Tinv_ctu	[style=dashed];	basic_eval_Mbar -> basic_eval_Mbar_le_ctu	[style=dashed];	homotopyNelements	[color=blue,		fillcolor="#a3d6ff",		label=homotopyNelements,		shape=ellipse,		style=filled];	homotopyNelements -> explicit;	first_target	[color=green,		label=first_target,		shape=ellipse];	Mbar_system	[color=green,		fillcolor="#b0eca3",		label=Mbar_system,		shape=box,		style=filled];	Vhat_eval_Mbar_Tinv -> Mbar_system	[style=dashed];	polyhedral_lattice	[color=green,		fillcolor="#b0eca3",		label=polyhedral_lattice,		shape=box,		style=filled];	combi	[color=green,		fillcolor="#a3d6ff",		label=combi,		shape=ellipse,		style=filled];	polyhedral_lattice -> combi	[style=dashed];	polyhedral_lattice -> explicit	[style=dashed];	Vhat_T_aut -> Vhat_Mbar_Tinv	[style=dashed];	combi -> explicit;	BD_homotopy -> BD_package	[style=dashed];	Vhat_eval_Mbar	[color=green,		fillcolor="#b0eca3",		label=Vhat_eval_Mbar,		shape=box,		style=filled];	Vhat_eval_Mbar -> Vhat_eval_Mbar_Tinv	[style=dashed];	spectral -> explicit;	BD_double	[color=green,		fillcolor="#b0eca3",		label=BD_double,		shape=box,		style=filled];	BD_double -> BD_data_double	[style=dashed];	BD_double -> BD_homotopy	[style=dashed];	sigma_proj	[color=green,		fillcolor="#b0eca3",		label=sigma_proj,		shape=box,		style=filled];	sigma_proj -> BD_data	[style=dashed];	Mbar_Tinv -> Mbar_le_Tinv	[style=dashed];	Mbar_Tinv -> Mbar_le_Tinv_ctu	[style=dashed];	universal_suitable -> Vhat_eval_Mbar	[style=dashed];	universal_suitable -> BD_suitable	[style=dashed];	system_of_complexes	[color=green,		fillcolor="#b0eca3",		label=system_of_complexes,		shape=box,		style=filled];	system_of_complexes -> is_bdd_exact_for_bdd_degree_above_idx	[style=dashed];	admissible	[color=green,		fillcolor="#b0eca3",		label=admissible,		shape=box,		style=filled];	system_of_complexes -> admissible	[style=dashed];	system_of_complexes -> Mbar_system	[style=dashed];	Mbar_le_Tinv_ctu -> Vhat_Mbar_Tinv	[style=dashed];	Vhat_basic_eval_Mbar -> Vhat_eval_Mbar	[style=dashed];	admissible -> snakelemma	[style=dashed];	snakelemma -> spectral;	explicit -> first_target;	sigma_add	[color=green,		fillcolor="#b0eca3",		label=sigma_add,		shape=box,		style=filled];	sigma_add -> BD_data	[style=dashed];	universal_map -> BD_double	[style=dashed];	universal_map -> sigma_proj	[style=dashed];	universal_map -> universal_suitable	[style=dashed];	universal_map -> sigma_add	[style=dashed];	Vhat	[color=green,		fillcolor="#b0eca3",		label=Vhat,		shape=box,		style=filled];	Vhat -> Vhat_T_aut	[style=dashed];	Vhat -> Vhat_basic_eval_Mbar	[style=dashed];	BD_suitable -> Mbar_system	[style=dashed];	Mbar_system -> first_target	[style=dashed];	combi_aux	[color=green,		fillcolor="#a3d6ff",		label=combi_aux,		shape=ellipse,		style=filled];	combi_aux -> combi;}')
+    .on("end", interactive);
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+    console.log(node_id);
+  console.log('#'+node_id.replace(':', '\\:'));
+  $('.thm').hide();
+  $('#'+node_id.replace(':', '\\:')).show().children().show();
+}
+function interactive() {
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+title.replace(':', '\\:')+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>
