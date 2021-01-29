@@ -963,7 +963,182 @@ This completes the proof of all results announced so far.
 
 \section*{Appendix to Lecture IX: Some normed homological algebra}
 
-In this appendix, we gather a few results about homological algebra with normed abelian groups, the proofs of which are just obtained by keeping track of constants in the standard proofs.
+In this appendix, we gather a few results about homological algebra with normed abelian groups, the proofs of which are just obtained by keeping track of constants in the standard proofs. The argument we use, originated by a discussion with the author of ~\cite{Analytic}, is a modification of the original one. We need the following definition.
+
+\begin{definition}
+  \label{is_weak_bdd_exact_for_bdd_degree_above_idx}
+  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx}
+  \leanok
+  \uses{system_of_complexes}
+  Let $(C_c^\bullet)_c$ be a system of complexes.
+  For integers $m\geq 0$ and constants $k>0$, $c_0'>0$,
+  the datum $(C_c^\bullet)_c$ is
+  weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ if the following condition is satisfied.
+  For all $c\geq c_0'$, all $x\in C_{kc}^i$ with $i\leq m$ and any $\epsilon > 0$
+  there is some $y\in C_c^{i-1}$ (which is defined to be $0$ when $i=0$) such that
+  \[
+    \|\mathrm{res}_{kc,c}^i(x)-d_c^{i-1}(y)\|_{C_c^i}\leq k\|d_{kc}^i(x)\|_{C_{kc}^{i+1}} + \epsilon.
+  \]
+\end{definition}
+
+\begin{lemma}
+  \label{completion_is_weakexact}
+  \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, admissible}
+  Let $M^\bullet_c$ be an admissible collection
+  of complexes of normed abelian groups, where $c\geq c_0$.
+
+  Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
+  Then the completion $\overline{M^\bullet_c}$ is weakly $\leq k^2$-exact in degrees $\leq m-1$ for $c\geq c_0$.
+\end{lemma}
+
+\begin{proof}
+Let $x_{k^2c} \in \overline{M^i_{k^2c}}$, where $c \geq c_0$ and $i \leq m$ and let $\epsilon > 0$. We can write $x_{k^2c} = \sum_j x^j_{k^2c}$ where
+\begin{itemize}
+ \item $x^j_{k^2c} \in M^i_{k^2c}$ for all $j \geq 0$,
+ \item $||x_{k^2c} - x^0_{k^2c}|| \leq \frac{\epsilon}{4k}$: this implies that $||d(x_{k^2c}) - d(x_{k^2c}^0)|| = ||d(x_{k^2c} - x_{k^2c}^0)|| \leq ||x_{k^2c} - x_{k^2c}^0|| \leq \frac{\epsilon}{4k}$ and in particular $||d(x_{k^2c}^0)|| \leq ||d(x_{k^2c})|| + \frac{\epsilon}{4k}$,
+ \item $||x^j_{k^2c}|| \leq \frac{\epsilon}{k2^{j+2}}$ if $j > 0$, so $\sum_{j > 0} ||x^j_{k^2c}|| \leq \epsilon/(4k)$.
+\end{itemize}
+We denote by $x^j_{kc}$ the restriction of $x^j_{k^2c}$, and similarly for other elements. By definition, for all $j \geq 0$, we can find $y^j_{kc} \in M^{i-1}_{kc}$ such that
+\[
+|| x^j_{kc} - d(y^j_{kc}) || \leq k||d(x^j_{k^2c})|| + \frac{\epsilon}{2^{j+2}}.
+\]
+By admissibility, we have
+\[
+|| d(y^j_{kc}) || \leq ||x^j_{kc}|| + k||d(x^j_{k^2c})|| + \frac{\epsilon}{2^{j+2}} \leq ||x^j_{k^2c}||(1 + k) + \frac{\epsilon}{2^{j+2}} \leq \epsilon(1+k)\frac{1}{k2^{j+2}} + \frac{1}{2^{j+2}}.
+\]
+For any $j \geq 0$, using weakly exactness relative to $i-1 \leq m$, we can find $z^j_c \in M^{i-2}_c$ such that
+\[
+|| y^j_c - d(z^j_c) || \leq k||d(y^j_{kc})|| + 2^{-j}.
+\]
+We set $y'^j_c := y^j_c - d(z^j_c)$ so we have
+\[
+||y'^j_c|| \leq k||d(y^j_{kc})|| + 2^{-j} \leq k(\epsilon(1+k)\frac{1}{k2^{j+2}} + \frac{1}{2^{j+2}}) + 2^{-j}
+\]
+Since $\sum _j ||y'^j_c||$ converges, $y' = \sum_j y'^j_c$ is well defined and
+\[\begin{aligned}
+||x_c - d(y')|| = ||\sum_j ( x^j_c - d(y'^j_c))|| = ||\sum_j ( x^j_c - d(y^j_c - d(z^j_c)))|| = \\
+= ||\sum_j ( x^j_c - d(y^j_c))|| \leq \sum_j || x^j_c - d(y^j_c) || \leq \sum_j || x^j_{kc} - d(y^j_{kc}) || \leq \sum_j (k||d(x^j_{k^2c})|| + \frac{\epsilon}{2^{j+2}}) =\\
+= k||d(x^0_{k^2c})|| + \frac{\epsilon}{4} + \sum_{j > 0} (k||d(x^j_{k^2c})|| + \frac{\epsilon}{2^{j+2}}) \leq k||d(x_{k^2c})|| + \frac{\epsilon}{4} + \frac{\epsilon}{4} + \sum_{j > 0} (k||x^j_{k^2c}|| + \frac{\epsilon}{2^{j+2}}) \leq \\
+\leq k||d(x_{k^2c})|| + \frac{\epsilon}{2} + \sum_{j > 0} (k\frac{\epsilon}{k2^{j+2}} + \frac{\epsilon}{2^{j+2}}) = k||d(x_{k^2c})|| + \epsilon \leq k^2||d(x_{k^2c})|| + \epsilon
+\end{aligned}\]
+as required.
+\end{proof}
+
+\begin{lemma}
+  \label{weakexact_implies_exact}
+  \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, is_bdd_exact_for_bdd_degree_above_idx, admissible}
+  Let $M^\bullet_c$ be an admissible collection
+  of complexes of complete normed abelian groups, where $c\geq c_0$.
+
+  Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
+  Then $M^\bullet_c$ is $\leq k^2 + \delta$-exact in degrees $\leq m-1$ for $c\geq c_0$ for any $\delta > 0$.
+\end{lemma}
+\begin{proof}
+We use the same notation as in the proof of the previous lemma. Let $x_{k^2c + \delta} \in M^i_{k^2c + \delta}$, where $c \geq c_0$ and $i \leq m$.
+
+Assume first of all that $d(x_{k^2c}) \neq 0$. Applying weakly $\leq k$-exactness to $x_{k^2c}$ we have that there is $y_{kc} \in M^{i-1}_{kc}$ such that
+\[
+|| x_{kc} - d(y_{kc}) || \leq k||d(x_{k^2c})|| + \delta ||d(x_{k^2c})||
+\]
+and in particular
+\[
+|| x_c - d(y_c) || \leq || x_{kc} - d(y_{kc}) || \leq (k^2 + \delta)||d(x_{k^2c})|| \leq (k^2 + \delta)||d(x_{k^2c + \delta})||,
+\]
+so we can assume $d(x_{k^2c}) = 0$ and we need to find $y_c \in M^{i-1}_c$ such that $d(y_c) = x_c$. Again by weakly $\leq k$-exactness applied to $x_{k^2c}$, we can find $y_{kc}^j \in M^{i-1}_{kc}$ such that
+\[
+|| x_{kc} - d(y_{kc}^j) || \leq \frac{1}{2^{j+1}}.
+\]
+This implies that
+\[
+||d(y_{kc}^{j+1} - y_{kc}^j)|| = ||d(y_{kc}^{j+1}) - d(y_{kc}^j))|| \leq \frac{1}{2^j}.
+\]
+For any $j \geq 0$, using weakly $\leq k$-exactness relative to $i-1 \leq m$ applied to $y_{kc}^{j+1} - y_{kc}^j$, we can find $z^j_c \in M^{i-2}_c$ such that
+\[
+||(y_c^{j+1} - y_c^j) - d(z^j_c)|| \leq k||d(y_{kc}^{j+1} - y_{kc}^j)|| + \frac{1}{2^j} \leq \frac{1}{2^j}(k+1).
+\]
+We set $y'^j_c := y_c^j - \sum_{k=0}^{j-1} d(z_c^k)$. If $j_1 > j_2$, we have
+\[ \begin{aligned}
+||y'^{j_1}_c - y'^{j_2}_c|| = || y_c^{j_1} - \sum_{h=0}^{j_1-1} d(z_c^h) - y_c^{j_2} + \sum_{h=0}^{j_2-1} d(z_c^h) || = || y_c^{j_1} - \sum_{h=j_2}^{j_1-1} d(z_c^h) - y_c^{j_2} || = \\
+= || \sum_{h = j_2}^{j_1 - 1} (y_c^{h+1} - y_c^h) - d(z_c^h) || \leq \sum_{h = j_2}^{j_1 - 1} || (y_c^{h+1} - y_c^h) - d(z_c^h) || \leq \sum_{h = j_2}^{j_1 - 1} \frac{1}{2^h}(k+1) \leq \frac{k+1}{2^{j_2 - 1}}
+\end{aligned}\]
+and the $y'^j_c$ form a Cauchy sequence. We let $y'_c := \lim_j y'^j_c$ be its limit. We have
+\[
+|| x_c - d(y_c'^j) || = || x_c - d(y_c^j - \sum_{k=0}^{j-1} d(z_c^k)) || = || x_c - d(y_c^j) || \leq || x_{kc} - d(y_{kc}^j) || \leq \frac{1}{2^{j+1}}.
+\]
+Taking the limit for $j \to \infty$ we obtain
+\[
+ || x_c - d(y_c') || = 0
+\]
+as required.
+\end{proof}
+
+\begin{proposition}
+  \label{weaksnakelemma}
+  \leanok
+  \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, admissible}
+  Let $M^\bullet_c$ and $M'^\bullet_c$ be two admissible collections
+  of complexes of complete normed abelian groups, where $c\geq c_0$.
+  Let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
+  between these collections of complexes
+  that is strictly compatible with the norm and commutes with restriction maps,
+  and assume that it satisfies
+  \[
+  ||\mathrm{res}^i_{kc,c}(x)||_{M^i_c}\leq k||f^i_{kc}(x)||_{M'^i_{kc}}
+  \]
+  for all $i=0,\ldots,m+1$ and all $x\in M^i_{kc}$.
+  Let $N^\bullet_c=M'^\bullet_c/M^\bullet_c$
+  be the collection of quotient complexes, with the quotient norm;
+  this is again an admissible collection of complexes.
+
+  Assume that $M^\bullet_c$ and $M'^\bullet_c$ are weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
+  Then $N^\bullet_c$ is weakly $\leq k^3+k$-exact in degrees $\leq m-1$ for $c\geq c_0$.
+\end{proposition}
+
+\begin{proof}
+\leanok
+Let $n^i_{(k^3+k)c}\in N^i_{(k^3+k)c}$ for $i\leq m-1$, with image $n^{i+1}_{(k^3+k)c}\in N^{i+1}_{(k^3+k)c}$. We fix $\epsilon > 0$. It is enough to find an element $n^i_c\in N^{i-1}_c$ such that
+\[
+||n^i_c - d^{i-1}_{N,c}(n^{i-1}_c)||_{N^i_c}\leq (k^3+k)C + \epsilon,
+\]
+where we change the subscript when applying restriction maps and $C:=||n^{i+1}_{k^3c}||_{N^{i+1}_{k^3c}}$
+
+Pick any preimage $m'^i_{k^3c}\in M'^i_{k^3c}$ of $n^i_{k^3c}$, and let $m'^{i+1}_{k^3c}\in M'^{i+1}_{k^3c}$ be its image. By definition of the quotient norm, we can find $m^{i+1}_{k^3c}\in M^{i+1}_{k^3c}$ such that
+\[
+m'^{i+1}_{k^3c} = f^{i+1}_{k^3c}(m^{i+1}_{k^3c}) + m''^{i+1}_{k^3c}
+\]
+with $||m''^{i+1}_{k^3c}||_{M'^{i+1}_{k^3c}}\leq C + \epsilon_1$, where we choose $\epsilon_1 = \frac{\epsilon}{k ^ 3 + 2 * k + 1}$.
+
+Let $m^{i+2}_{k^3c}\in M^{i+2}_{k^3c}$ be the image of $m^{i+1}_{k^3c}$. Applying the differential to the last displayed equation, and using that this kills $m'^{i+1}_{k^3c}$, and that $f^\bullet_{k^3c}$ is a map of complexes, we see that
+\[
+f^{i+2}_{k^3c}(m^{i+2}_{k^3c}) = -m''^{i+2}_{k^3c},
+\]
+where similarly $m''^{i+2}_{k^3c}$ is the differential of $m''^{i+1}_{k^3c}$. We get
+\[\begin{aligned}
+||m^{i+2}_{k^2c}||_{M^{i+2}_{k^2c}}&\leq k||f^{i+2}_{k^3c}(m^{i+2}_{k^3c})||_{M'^{i+2}_{k^3c}} = k||m''^{i+2}_{k^3c}||_{M'^{i+2}_{k^3c}}\\
+&\leq k||m''^{i+1}_{k^3c}||_{M'^{i+1}_{k^3c}}\leq k(C+\epsilon_1).
+\end{aligned}\]
+On the other hand, we can find some $m^i_{kc}\in M^i_{kc}$ such that
+\[
+||m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})||\leq k||m^{i+2}_{k^2c}||_{M^{i+2}_{k^2c}} + \epsilon_1 \leq k^2(C+\epsilon_1) + \epsilon_1.
+\]
+Now let $m'^i_{kc,\mathrm{new}} = m'^i_{kc}-f^i_{kc}(m^i_{kc})\in M'^i_{kc}$; this is a lift of $n^i_{kc}$. Then the image $m'^{i+1}_{kc,\mathrm{new}}$ in $M'^{i+1}_{kc}$ satisfies
+\[
+m'^{i+1}_{kc,\mathrm{new}} = m'^{i+1}_{kc}-f^{i+1}_{kc}(m^{i+1}_{kc}) + f^{i+1}_{kc}(m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})) = m''^{i+1}_{kc} + f^{i+1}_{kc}(m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})).
+\]
+In particular,
+\[
+||m'^{i+1}_{kc,\mathrm{new}}||_{M'^{i+1}_{kc}}\leq (k^2 + 1)(C+\epsilon_1) + \epsilon_1.
+\]
+Now we can find $m'^{i-1}_c\in M'^{i-1}_c$ such that
+\[
+||m'^i_{c,\mathrm{new}} - d'^{i-1}_c(m'^{i-1}_c)||_{M'^i_c}\leq k||m'^{i+1}_{kc,\mathrm{new}}||_{M'^{i+1}_{kc}} + \epsilon_1 \leq (k^3+k)(C+\epsilon_1) + k\epsilon_1 + \epsilon_1.
+\]
+In particular, letting $n^{i-1}_c\in N^{i-1}_c$ be the image of $m'^{i-1}_c$, we get
+\[
+||n^i_c - d^{i-1}_{N,c}(n^{i-1}_c)||_{N^i_c}\leq (k^3+k)C+(k^3+2k+1)\epsilon_1,
+\]
+so by our choice of $\epsilon_1$ this gives the desired result.
+\end{proof}
 
 
 \begin{proposition}
