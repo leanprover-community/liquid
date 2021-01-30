@@ -21,7 +21,7 @@ We first give the statement, and provide details later.
   \]
 \end{theoremx}
 
-I (Johan Commelin) have not figure out the details.
+I (Johan Commelin) have not figured out the details.
 But it seems to be possible to avoid the $\bigoplus_{i=1}^{n_i}$,
 so we will aim for something like the following statement.
 
@@ -73,8 +73,9 @@ and this formally induces a composition of universal maps.
   \leanok
   \uses{universal_map}
   The addition on $A^n$ induces a universal map
-  $\sigma_\alpha \colon \mathbb Z[A^{2n}] \to \mathbb Z[A^n]$,
+  $\sigma_\alpha \colon \mathbb Z[(A^n)^2] \to \mathbb Z[A^n]$,
   namely the formal generator $(I_n I_n)$, where $I_n$ denotes the $n \times n$ identity matrix.
+  (Here $\alpha$ stands for ``addition''.)
 \end{definition}
 
 \begin{definition}
@@ -82,10 +83,11 @@ and this formally induces a composition of universal maps.
   \lean{breen_deligne.σ_proj}
   \leanok
   \uses{universal_map}
-  The formal sum of the two projections $A^{2n} \to A^n$
-  induces a universal map $\sigma_\pi \colon \mathbb Z[A^{2n}] \to \mathbb Z[A^n]$,
+  The formal sum of the two projections $(A^n)^2 \to A^n$
+  induces a universal map $\sigma_\pi \colon \mathbb Z[(A^n)^2] \to \mathbb Z[A^n]$,
   namely the formal sum $(I_n 0) + (0 I_n)$,
   where $I_n$ denotes the $n \times n$ identity matrix, and $0$ the $n \times n$ zero matrix.
+  (Here $\pi$ stands for ``projections''.)
 \end{definition}
 
 \begin{definition}
@@ -96,7 +98,7 @@ and this formally induces a composition of universal maps.
   Let $f$ be a universal map from exponent~$m$ to~$n$.
   Then $f \oplus f$ denotes the universal map from exponent~$2m$ to~$2n$,
   that applies $f$ componentwise.
-  In other words, if $f$ is a generator (i.e.\ a basic universal map) 
+  If $f$ is a generator (i.e.\ a basic universal map) 
   then $f \oplus f$ is
   \[
     \begin{pmatrix}
@@ -184,9 +186,9 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   \lean{pseudo_normed_group}
   \leanok
   A \emph{pseudo-normed group} is an abelian group $A$,
-  together with an increasing filtration $A_c \subset A$ of subsets $A_c$ indexed by $\mathbb R_{\ge 0}$,
+  together with an increasing filtration $A_c \subseteq A$ of subsets $A_c$ indexed by $\mathbb R_{\ge 0}$,
   such that each $A_c$ contains $0$, is closed under negation,
-  and $A_{c_1} + A_{c_2} \subset A_{c_1 + c_2}$.
+  and $A_{c_1} + A_{c_2} \subseteq A_{c_1 + c_2}$.
 \end{definition}
 
 \begin{definition}
@@ -196,7 +198,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   Let $r > 0$ be a real number, and let $S$ be a finite set.
   Denote by $\overline{\mathcal M}_r(S)$ the set
   \[
-    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n < \infty \right\}
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \,\middle\vert\, \sum_{n \ge 1, s \in S} |a_{n,s}| r^n < \infty \right\}
   \]
 \end{definition}
 
@@ -242,7 +244,7 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
 
 \begin{proof}
   \leanok
-  Omitted.
+  Formalised, but omitted from this text.
 \end{proof}
 
 For the remainder of this section,
@@ -287,12 +289,12 @@ and let $S$ be a finite set.
     \overline{\mathcal M}_r(S)_{\le c} \to
     \overline{\mathcal M}_r(S)_{\le c'}
   \]
-  are continuous
+  are continuous.
 \end{lemma}
 
 \begin{proof}
   \leanok
-  Omitted.
+  Formalised, but omitted from this text.
 \end{proof}
 
 \begin{lemma}
@@ -301,7 +303,7 @@ and let $S$ be a finite set.
   \leanok
   \uses{Mbar, basic_universal_map}
   Let $f$ be a basic universal map from exponent~$m$ to~$n$.
-  We get an induced homomorphism of pseudo normed groups
+  We get an induced homomorphism of pseudo-normed groups
   \[
     \overline{\mathcal M}_r(S)^m \to \overline{\mathcal M}_r(S)^n
   \]
@@ -321,11 +323,10 @@ and let $S$ be a finite set.
   \uses{basic_universal_map}
   Let $f$ be a basic universal map from exponent~$m$ to~$n$.
   Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
-  We say that $c_1, c_2$ are $f$-suitable, if for all $i$
+  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all $i$
   \[
-    \sum_j |f_{ij}| * c_1 \le c_2.
+    \sum_j c_1|f_{ij}| \le c_2.
   \]
-  (Note! The order of $c_1$ and $c_2$ matters!)
 \end{definition}
 
 \begin{lemma}
@@ -334,7 +335,7 @@ and let $S$ be a finite set.
   \leanok
   \uses{Mbar_le_profinite, Mbar_png, basic_suitable, basic_eval_Mbar}
   Let $f$ be a basic universal map from exponent~$m$ to~$n$,
-  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  and let $(c_1, c_2)$ be $f$-suitable.
   We get an induced map
   \[
     \overline{\mathcal M}_r(S)_{\le c_1}^m \to \overline{\mathcal M}_r(S)_{\le c_2}^n
@@ -344,7 +345,7 @@ and let $S$ be a finite set.
 
 \begin{proof}
   \leanok
-  Omitted.
+  Formalised, but omitted from this text.
 \end{proof}
 
 \section{Completions of locally constant functions}
@@ -363,7 +364,7 @@ and let $S$ be a finite set.
 \end{definition}
 
 We continue to use the notation of before:
-let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
+let $r > 0, c \ge 0$ be real numbers, and let $S$ be a finite set.
 
 \begin{definition}
   \label{Vhat_basic_eval_Mbar}
@@ -371,7 +372,7 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \leanok
   \uses{basic_eval_Mbar_le_ctu, Vhat}
   Let $f$ be a basic universal map from exponent~$m$ to~$n$,
-  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  and let $(c_1, c_2)$ be $f$-suitable.
   We get an induced map
   \[
     \hat V(f) \colon
@@ -387,10 +388,9 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \uses{universal_map, basic_suitable}
   Let $f$ be a universal map from exponent~$m$ to~$n$.
   Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
-  We say that $c_1, c_2$ are $f$-suitable, if for all basic universal maps $g$
+  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all basic universal maps $g$
   that occur in the formal sum $f$,
-  the nonnegative reals $c_1$ and $c_2$ are $g$-suitable.
-  (Note! The order of $c_1$ and $c_2$ matters!)
+  the pair of nonnegative reals $(c_1, c_2)$ is $g$-suitable.
 \end{definition}
 
 \begin{definition}
@@ -399,12 +399,12 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \leanok
   \uses{universal_suitable, Vhat_basic_eval_Mbar}
   Let $f$ be a universal map from exponent~$m$ to~$n$,
-  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  and let $(c_1, c_2)$ be $f$-suitable.
   We get an induced map
   \[
-    \colon
+    \hat V(f) \colon
     \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to
-    \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).
+    \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n)
   \]
   that is the sum $\sum n_g V(g)$,
   if $f$ is the formal sum $\sum n_g g$
@@ -415,15 +415,15 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \label{normed_with_aut}
   \lean{normed_with_aut}
   \leanok
-  Let $r \in \mathbb R_{\ge 0}$.
-  An $r$-normed $\mathbb Z[T^{\pm 1}]$-module
+  Let $r > 0$ be a real number.
+  An \emph{$r$-normed $\mathbb Z[T^{\pm 1}]$-module}
   is a normed abelian group $V$
   endowed with an automorphism $T \colon V \to V$ such that
   for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
 \end{definition}
 
 \begin{lemma}
-  \label{Vhat_T_aut}
+  \label{Vhat_normed_with_aut}
   \lean{NormedGroup.normed_with_aut_LCC}
   \leanok
   \uses{Vhat, normed_with_aut}
@@ -436,15 +436,15 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
 
 \begin{proof}
   \leanok
-  Omitted.
+  Formalised, but omitted from this text.
 \end{proof}
 
 \begin{definition}
   \label{Vhat_Mbar_Tinv}
   \lean{LCC_Mbar_pow_Tinv}
   \leanok
-  \uses{Mbar_le_Tinv_ctu, Vhat_T_aut}
-  Let $r, r' c \in \mathbb R_{>0}$,
+  \uses{Mbar_le_Tinv_ctu, Vhat_normed_with_aut}
+  Let $r > 0$, $r' > 0$, $c \ge 0$ be real numbers.
   and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
   Assume $r' \le 1$.
   Let $S$ be a finite set.
@@ -454,14 +454,14 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   The first comes from Definition~\ref{Mbar_le_Tinv},
   which gives a continuous map
   \[
-    \overline{\mathcal M}_{r'}(S)_{\le c*r'} \to
+    \overline{\mathcal M}_{r'}(S)_{\le cr'} \to
     \overline{\mathcal M}_{r'}(S)_{\le c}
   \]
   and thus a map
   \[
     (T^{-1})^* \colon
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le cr'}).
   \]
   The other comes from Lemma~\ref{Vhat_normed_with_aut},
   using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
@@ -474,22 +474,22 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   that we can compose with the map
   \[
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}),
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le cr'}),
   \]
   obtained from the natural inclusion
   \[
-    \overline{\mathcal M}_{r'}(S)_{\le c*r'} \to
+    \overline{\mathcal M}_{r'}(S)_{\le cr'} \to
     \overline{\mathcal M}_{r'}(S)_{\le c}.
   \]
   We thus end up with two maps
   \[
     (T^{-1})^*, [T^{-1}] \colon
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c*r'}).
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le cr'}).
   \]
   and we define
   $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})^{T^{-1}}$
-  to be the equalizer of $(T^{-1})^*$, and $[T^{-1}]$.
+  to be the equalizer of $(T^{-1})^*$ and $[T^{-1}]$.
   In other words, the kernel of $(T^{-1})^* - [T^{-1}]$.
 \end{definition}
 
@@ -503,11 +503,12 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   Assume $r' \le 1$.
   Let $S$ be a finite set.
   Let $f$ be a universal map from exponent~$m$ to~$n$,
-  and let $c_1, c_2 \in \mathbb R_{\ge 0}$ be $f$-suitable.
+  and let $(c_1, c_2)$ be $f$-suitable.
 
   The natural map from Definition~\ref{Vhat_eval_Mbar}
   restricts to a map
   \[
+    \hat V(f)^{T^{-1}} \colon
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_2}^n)^{T^{-1}} \to
     \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_1}^m)^{T^{-1}}
   \]
@@ -519,12 +520,13 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \label{system_of_complexes}
   \lean{system_of_complexes}
   \leanok
-  A system of complexes of complete normed abelian groups
+  A \emph{system of complexes} of complete normed abelian groups
   is for each sufficiently large $c$ (i.e.~all $c\geq c_0$ for some $c_0>0$),
   a complex
   \[
   C_c^\bullet: C_c^0\to C_c^1\to\ldots
   \]
+  of complete normed abelian groups
   together with maps of complexes
   $\mathrm{res}_{c',c}^i: C_{c'}^\bullet\to C_c^\bullet$,
   for $c'>c$,
@@ -548,7 +550,7 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   Let $(C_c^\bullet)_c$ be a system of complexes.
   For integers $m\geq 0$ and constants $k>0$, $c_0'>0$,
   the datum $(C_c^\bullet)_c$ is
-  $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ if the following condition is satisfied.
+  \emph{$\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$} if the following condition is satisfied.
   For all $c\geq c_0'$ and all $x\in C_{kc}^i$ with $i\leq m$
   there is some $y\in C_c^{i-1}$ (which is defined to be $0$ when $i=0$) such that
   \[
@@ -556,14 +558,14 @@ let $r, c \in \mathbb R_{\ge 0}$, and let $S$ be a finite set.
   \]
 \end{definition}
 
-We apply this to
-\[
-  C_c^\bullet \colon
-  \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
-  \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}} \to \ldots
-\]
-given by mapping \eqref{eq:doublecomplex} into $\hat{V}$ and using Lemma~\ref{lem:Tinv}.
-Let us make this precise.
+%% We apply this to
+%% \[
+%%   C_c^\bullet \colon
+%%   \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
+%%   \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}} \to \ldots
+%% \]
+%% given by mapping \eqref{eq:doublecomplex} into $\hat{V}$ and using Lemma~\ref{lem:Tinv}.
+%% Let us make this precise.
 
 \begin{definition}
   \label{BD_suitable}
@@ -572,10 +574,10 @@ Let us make this precise.
   \uses{BD_package, universal_suitable}
   Let $(n, f, h)$ be a Breen--Deligne package,
   and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
-  We say that $c$ is $(n,f,h)$-suitable,
-  if for all $i$, the constants $c_{i+1}, c_i$ are $f_i$-suitable.
+  We say that $c$ is \emph{$(n,f,h)$-suitable},
+  if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
 
-  (Note! The order $c_{i+1}, c_i$ is contravariant
+  (Note! The order $(c_{i+1}, c_i)$ is contravariant
   compared to Definition~\ref{universal_suitable}.
   This is because of the contravariance of $\hat V(\_)$;
   see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
@@ -621,7 +623,7 @@ we assume that the sets $S$ are finite, rather than profinite.
   \leanok
   \uses{Mbar_system}
   Let $(n,f,h)$ be a Breen--Deligne package,
-  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$.
 	Fix radii $1>r'>r>0$.
   For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
   the system of complexes
@@ -1106,7 +1108,7 @@ Pick any preimage $m'^i_{k^3c}\in M'^i_{k^3c}$ of $n^i_{k^3c}$, and let $m'^{i+1
 \[
 m'^{i+1}_{k^3c} = f^{i+1}_{k^3c}(m^{i+1}_{k^3c}) + m''^{i+1}_{k^3c}
 \]
-with $||m''^{i+1}_{k^3c}||_{M'^{i+1}_{k^3c}}\leq C + \epsilon_1$, where we choose $\epsilon_1 = \frac{\epsilon}{k ^ 3 + 2 * k + 1}$.
+with $||m''^{i+1}_{k^3c}||_{M'^{i+1}_{k^3c}}\leq C + \epsilon_1$, where we choose $\epsilon_1 = \frac{\epsilon}{k ^ 3 + 2k + 1}$.
 
 Let $m^{i+2}_{k^3c}\in M^{i+2}_{k^3c}$ be the image of $m^{i+1}_{k^3c}$. Applying the differential to the last displayed equation, and using that this kills $m'^{i+1}_{k^3c}$, and that $f^\bullet_{k^3c}$ is a map of complexes, we see that
 \[
