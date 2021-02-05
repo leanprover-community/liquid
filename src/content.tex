@@ -98,7 +98,7 @@ and this formally induces a composition of universal maps.
   Let $f$ be a universal map from exponent~$m$ to~$n$.
   Then $f \oplus f$ denotes the universal map from exponent~$2m$ to~$2n$,
   that applies $f$ componentwise.
-  If $f$ is a generator (i.e.\ a basic universal map) 
+  If $f$ is a generator (i.e.\ a basic universal map)
   then $f \oplus f$ is
   \[
     \begin{pmatrix}
@@ -258,7 +258,7 @@ and let $S$ be a finite set.
   \uses{Mbar}
   There is a natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$, via
   \[
-    T^{-1} \cdot 
+    T^{-1} \cdot
     \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} =
     \left( \sum_{n \ge 1} a_{n+1,s} T^n \right)_{s \in S}.
   \]
@@ -514,7 +514,9 @@ let $r > 0, c \ge 0$ be real numbers, and let $S$ be a finite set.
   \]
 \end{definition}
 
-\section{Lecture IX: End of proof}
+\section{Some normed homological algebra}%
+\label{sec:some_normed_homological_algebra}
+
 
 \begin{definition}
   \label{system_of_complexes}
@@ -558,413 +560,7 @@ let $r > 0, c \ge 0$ be real numbers, and let $S$ be a finite set.
   \]
 \end{definition}
 
-%% We apply this to
-%% \[
-%%   C_c^\bullet \colon
-%%   \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
-%%   \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c_1c}^2)^{T^{-1}} \to \ldots
-%% \]
-%% given by mapping \eqref{eq:doublecomplex} into $\hat{V}$ and using Lemma~\ref{lem:Tinv}.
-%% Let us make this precise.
 
-\begin{definition}
-  \label{BD_suitable}
-  \lean{breen_deligne.package.suitable}
-  \leanok
-  \uses{BD_package, universal_suitable}
-  Let $(n, f, h)$ be a Breen--Deligne package,
-  and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
-  We say that $c$ is \emph{$(n,f,h)$-suitable},
-  if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
-
-  (Note! The order $(c_{i+1}, c_i)$ is contravariant
-  compared to Definition~\ref{universal_suitable}.
-  This is because of the contravariance of $\hat V(\_)$;
-  see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
-\end{definition}
-
-\begin{definition}
-  \label{Mbar_system}
-  \lean{Mbar_system}
-  \leanok
-  \uses{BD_suitable, Vhat_eval_Mbar_Tinv, system_of_complexes}
-  Let $r, r' \in \mathbb R_{>0}$,
-  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
-  Assume $r' \le 1$.
-  Let $S$ be a finite set.
-  Let $(n,f,h)$ be a Breen--Deligne package,
-  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
-  that is $(n,f,h)$-suitable.
-
-  For every $c \in \mathbb R_{\ge 0}$,
-  the maps from Definition~\ref{Vhat_eval_Mbar_Tinv}
-  induced by the universal maps $f_i$ from the Breen--Deligne package $(n,f,h)$
-  assemble into a complex of normed abelian groups
-  \[
-    \dots \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{-1}}
-    \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}}
-    \to \dots \to 0.
-  \]
-  Together, these complexes fit into a system of complexes
-  with the natural restriction maps.
-\end{definition}
-
-Now we state the following result, which is our main goal.
-
-\textbf{N.b.:}
-It differs from Theorem~9.4 of \cite{Analytic} only in one aspect:
-we assume that the sets $S$ are finite, rather than profinite.
-
-\begin{theorem}
-  \label{first_target}
-  \lean{first_target}
-  \leanok
-  \uses{Mbar_system}
-  Let $(n,f,h)$ be a Breen--Deligne package,
-  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$.
-	Fix radii $1>r'>r>0$.
-  For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
-  the system of complexes
-  \[
-    C_c^\bullet \colon
-    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
-    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c'_1c}^2)^{T^{-1}}
-    \to \ldots
-  \]
-  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
-\end{theorem}
-
-\begin{remark}
-  \label{boundary-text}
-  \textbf{Note: the text below is copied almost verbatim from \cite{Analytic}.
-  Small parts have been formalized.
-  We expect that the text will be rewritten and expanded as the formalization project progresses.}
-\end{remark}
-
-% Let us first check that this implies Theorem~\ref{explicit1}.
-
-% \begin{proof}[Theorem~\ref{first_target} implies Theorem~\ref{explicit1}] By the preceding discussion, one can compute
-% \[
-% R\Hom_{\mathbb Z[T^{-1}]}(\overline{\mathcal M}_{r'}(S),\widehat{V})
-% \]
-% as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{first_target} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
-% \end{proof}
-
-% We remark that Theorem~\ref{first_target} reduces formally to the case that $S$ is finite; we make this reduction.
-
-We will prove Theorem~\ref{first_target} by induction on $m$.
-Unfortunately, the induction requires us to prove a stronger statement.
-Before stating it, we need another definition.
-
-\begin{definition}
-  \label{polyhedral_lattice}
-  \lean{polyhedral_lattice}
-  A \emph{polyhedral lattice} is a finite free abelian group~$\Lambda$
-  equipped with a norm $||\cdot||_\Lambda \colon \Lambda\otimes \mathbb R\to \mathbb R$
-  (so $\Lambda\otimes \mathbb R$ is a Banach space)
-  that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients;
-  equivalently, the ``unit ball''
-  $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
-\end{definition}
-
-Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c} = \{f: \Lambda\to \overline{\mathcal M}_{r'}(S)\mid \forall x\in \Lambda, f(x)\in \overline{\mathcal M}_{r'}(S)_{\leq c||x||}\}.
-\]
-As $\Lambda$ is polyhedral, it is enough to check the given condition for finitely many $x$.
-
-We can then define double complexes like \eqref{eq:doublecomplex}.
-Lemma~\ref{lem:Tinv} stays true with the same constants.
-Now we claim the following generalization of Theorem~\ref{first_target}.
-
-\begin{theorem}
-  \label{explicit}
-  \uses{polyhedral_lattice}
-  Fix radii $1>r'>r>0$. For any $m$ there is some $k$
-  such that for all polyhedral lattices $\Lambda$
-  there is a constant $c_0(\Lambda)>0$
-  such that for all finite sets $S$
-  and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
-  the system of complexes
-  \[
-  C_{\Lambda,c}^\bullet \colon
-  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}} \to
-  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}} \to \ldots
-  \]
-  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
-\end{theorem}
-
-\begin{proof}
-  \proves{first_target}
-  \uses{explicit}
-  Use $\Lambda = \mathbb Z$, and the isomorphism $\Hom(\mathbb Z, A) \cong A$.
-\end{proof}
-
-We note that the constants $c_1,c_2,\ldots$ implicit in the choice of the complex
-are chosen once and for all (after fixing $r$ and $r'$),
-and it can be ensured that the transition maps in the complex are norm-nonincreasing.
-Indeed, if the $c_i$ are suitable as in Definition~\ref{BD_suitable},
-the maps
-\[
-\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})
-\]
-will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem~\ref{explicit}, and the rest of the proof.
-
-\begin{proposition}
-  \label{spectral}
-  \uses{admissible}
-  \uses{is_bdd_exact_for_bdd_degree_above_idx}
-  Fix an integer $m\geq 0$ and a constant $k$.
-  Then there exists an $\epsilon>0$ and a constant $k_0$,
-  depending (only) on $k$ and $m$, with the following property.
-
-  Consider an admissible system of double complexes $M^{p,q}_c$, $p,q\geq 0$, $c\geq c_0$,
-  of complete normed abelian groups as well as some $k'\geq k_0$ and some $H>0$, such that
-  \begin{center}
-    \begin{tikzcd}
-      M^{0,0}_c \ar[r]{d'^{0,0}_c}\ar[d]{d^{0,0}_c} & M^{0,1}_c\ar[r]{d'^{0,1}_c}\ar[d]{d^{0,1}_c} & M^{0,2}_c\ar[r]{d'^{0,2}_c}\ar[d]{d^{0,2}_c} & \ldots\\
-  M^{1,0}_c\ar[r]{d'^{1,0}_c}\ar[d]{d^{1,0}_c} & M^{1,1}_c\ar[r]{d'^{1,1}_c}\ar[d]{d^{1,1}_c} & M^{1,2}_c\ar[r]{d'^{1,2}_c}\ar[d]{d^{1,2}_c} & \ldots\\
-  M^{2,0}_c\ar[r]{d'^{2,0}_c}\ar[d]{d^{2,0}_c} & M^{2,1}_c\ar[r]{d'^{2,1}_c}\ar[d]{d^{2,1}_c} & \ddots\\
-  \vdots & \vdots
-    \end{tikzcd}
-  \end{center}
-  \begin{enumerate}
-  \item for $j=0,\ldots,m$, the columns $M^{p,j}_c$ are $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$;
-  \item for $i=0,\ldots,m+1$, the rows $M^{i,q}_c$ are $\leq k$-exact in degrees $\leq m-1$ for $c\geq c_0$;
-  \item for $q=0,\ldots,m$ and $c\geq c_0$, there is a map $h^q_{k'c}: M^{0,q+1}_{k'c}\to M^{1,q}_c$ with
-  \[
-  ||h^q_{k'c}(x)||_{M^{1,q}_c}\leq H||x||_{M^{0,q+1}_{k'c}}
-  \]
-  for all $x\in M^{0,q+1}_c$, and such that for all $c\geq c_0$ and $x\in M^{0,q}_{k'^2c}$, one has
-  \begin{equation}\label{eq:homotopicmapsmall}
-  ||\mathrm{res}_{k'^2c,k'c}^{1,q}(d^{0,q}(x))\pm h^q_{k'^2c}(d'^{0,q}_{k'^2c}(x))\pm d'^{1,q-1}_{k'c}(h^{q-1}_{k'^2c}(x))||_{M^{1,q}_{k'c}}\leq \epsilon ||\mathrm{res}_{k'^2c,c}^{0,q}(x)||_{M^{0,q}_c}.
-  \end{equation}
-  \end{enumerate}
-  Then the first row is $\leq \max(k'^2,2k_0H)$-exact in degrees $\leq m$ for $c\geq c_0$.
-\end{proposition}
-
-We note that the bound on the homotopy is of a peculiar nature, in that the bound only depends on a deep restriction of $x$.
-
-\begin{proof}
-  \proves{spectral}
-  \uses{snakelemma}
-  First, we treat the case $m=0$.
-  If $m=0$, we claim that one can take $\epsilon=\tfrac 1{2k}$ and $k_0=k$.
-  We have to prove exactness at the first step.
-  Let $x_{k'^2c}\in M^{0,0}_{k'^2c}$ and
-  denote $x_{k'c}=\mathrm{res}_{k'^2c,k'c}^{0,0}(x)$
-  and $x_c=\mathrm{res}_{k'^2c,c}^{0,0}(x)$.
-  Then by assumption (1) (and $k'\geq k$), we have
-  \[
-  ||x_c||_{M^{0,0}_c}\leq k||d^{0,0}_{k'c}(x_{k'c})||_{M^{1,0}_{k'c}}.
-  \]
-  On the other hand, by (3),
-  \[
-  ||\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x))\pm h^0_{k'^2c}(d'^{0,0}_{k'^2c}(x))||_{M^{1,0}_{k'c}}\leq \epsilon ||x_c||_{M^{0,0}_c}.
-  \]
-  In particular, noting that $\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x)) = d^{0,0}_{k'c}(x_{k'c})$, we get
-  \[
-  ||x_c||_{M^{0,0}_c}\leq k||d^{0,0}_{k'c}(x_{k'c})||_{M^{1,0}_{k'c}}\leq k\epsilon ||x_c||_{M^{0,0}_c} + kH ||d'^{0,0}_{k'^2c}(x)||_{M^{0,1}_{k'^2c}}.
-  \]
-  Thus, taking $\epsilon=\tfrac 1{2k}$ as promised, this implies
-  \[
-  ||x_c||_{M^{0,0}_c}\leq 2kH ||d'^{0,0}_{k'^2c}(x)||_{M^{0,1}_{k'^2c}}.
-  \]
-  This gives the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$.
-
-  Now we argue by induction on $m$.
-  Consider the complex $N^{p,q}$ given by $M^{p,q+1}$ for $q\geq 1$
-  and $N^{p,0} = M^{p,1}/\overline{M^{p,0}}$
-  (the quotient by the closure of the image, which is also the completion of $M^{p,1}/M^{p,0}$),
-  equipped with the quotient norm.
-  Using the normed version of the snake lemma,
-  Proposition~\ref{snakelemma} in the appendix to this lecture,
-  one checks that this satisfies the assumptions for $m-1$,
-  with $k$ replaced by $\max(k^4,k^3+k+1)$.
-\end{proof}
-
-Finally, we can prove the key combinatorial lemma,
-ensuring that any element of $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$
-can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element.
-As preparation, we have the following simple result.
-
-\begin{lemma}
-  \label{combi_aux}
-  \lean{lem97}
-  \leanok
-  Let $\Lambda$ be a finite free abelian group,
-  let $N$ be a positive integer,
-  and let $\lambda_1,\ldots,\lambda_m\in \Lambda$ be elements.
-  Then there is a finite subset $A\subset \Lambda^\vee$
-  such that for all $x\in \Lambda^\vee=\Hom(\Lambda,\mathbb Z)$
-  there is some $x'\in A$ such that $x-x'\in N\Lambda^\vee$
-  and for all $i=1,\ldots,m$,
-  the numbers $x'(\lambda_i)$ and $(x-x')(\lambda_i)$ have the same sign,
-  i.e.~are both nonnegative or both nonpositive.
-\end{lemma}
-
-\begin{proof}
-  It suffices to prove the statement for all $x$ such that $\lambda_i(x)\geq 0$ for all $i$;
-  indeed, applying this variant to all $\pm \lambda_i$, one gets the full statement.
-
-  Thus, consider the submonoid $\Lambda^\vee_+\subset \Lambda^\vee$
-  of all $x$ that pair nonnegatively with all $\lambda_i$.
-  This is a finitely generated monoid by standard results;
-  let $y_1,\ldots,y_M$ be a set of generators.
-  Then we can take for $A$ all sums $n_1y_1+\ldots+n_My_M$ where all $n_j\in \{0,\ldots,N-1\}$.
-\end{proof}
-
-Now we have the key lemma:
-
-\begin{lemma}
-  \label{combi}
-  \lean{lem98}
-  \leanok
-  \uses{polyhedral_lattice}
-  Let $\Lambda$ be a polyhedral lattice.
-  Then for all positive integers $N$ there is a constant $d$
-  such that for all $c>0$ one can write any
-  $x\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as
-  \[
-    x=x_1+\ldots+x_N
-  \]
-  where all $x_i\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$.
-\end{lemma}
-
-\begin{proof}
-  \proves{combi}
-  \uses{combi_aux}
-  Pick $\lambda_1,\ldots,\lambda_m\in \Lambda$ generating the norm. We fix a finite subset $A\subset \Lambda^\vee$ satisfying the conclusion of the previous lemma. Write
-  \[
-  x=\sum_{n\geq 1, s\in S} x_{n,s} T^n [s]
-  \]
-  with $x_{n,s}\in \Lambda^\vee$. Then we can decompose
-  \[
-  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1
-  \]
-  where $x_{n,s}^1\in A$ and we have the same-sign property of the last lemma. Letting $x^0 = \sum_{n\geq 1, s\in S} x_{n,s}^0 T^n [s]$, we get a decomposition
-  \[
-  x = Nx^0 + \sum_{a\in A} a x_a
-  \]
-  with $x_a\in \overline{\mathcal M}_{r'}(S)$ (with the property that in the
-  basis given by the $T^n [s]$, all coefficients are $0$ or $1$). Crucially,
-  we know that for all $i=1,\ldots,m$, we have
-  \[
-  ||x(\lambda_i)|| = N ||x^0(\lambda_i)|| + \sum_{a\in A} |a(\lambda_i)| ||x_a(\lambda_i)||
-  \]
-  by using the same sign property of the decomposition.
-
-  Using this decomposition of $x$, we decompose each term into $N$ summands.
-  This is trivial for the first term $Nx^0$,
-  and each summand of the second term reduces to the similar problem for $\Lambda=\mathbb Z$.
-  In that case, one can take $d=1$,
-  as follows by decomposing any sum with terms of size at most $1$
-  into $N$ such partial sums whose sums differ by at most $1$.
-  (It follows that in general one can take for $d$
-  the supremum over all $i$ of $\sum_{a\in A} |a(\lambda_i)|$.)
-\end{proof}
-
-
-
-\begin{proof}[Proof of Theorem~\ref{explicit}]
-\proves{explicit}
-\uses{spectral,combi,basehomotopy,homotopyNelements}
-  We argue by induction on $m$, so assume the result for $m-1$
-  (this is no assumption for $m=0$, so we do not need an induction start).
-  This gives us some $k>1$ for which the statement of Theorem~\ref{explicit} holds true for $m-1$;
-  if $m=0$, simply take any $k>1$.
-  In the proof below, we will increase $k$ further in a way that depends only on $m$ and $r$.
-  After this modified choice of $k$, we fix $\epsilon$ and $k_0$ as provided by Proposition~\ref{spectral}.
-  Moreover, we let $k'$ be the supremum of $k_0$ and the $c_i'$ from
-  Lemma~\ref{basehomotopy} (and~\ref{homotopyNelements}) for $i=0,\ldots,m$.
-  Finally, choose a positive integer $b$ so that $2k'(\tfrac r{r'})^b\leq \epsilon$,
-  and let $N$ be the minimal power of $2$ that satisfies
-\[
-k'/N\leq (r')^b.
-\]
-Then in particular $r^bN\leq \frac 2{k'}(\tfrac{r}{r'})^b\leq \epsilon$.
-
-We consider the diagonal embedding
-\[
-\Lambda\hookrightarrow \Lambda' = \Lambda^N,
-\]
-where we endow $\Lambda'$ with the norm
-\[
-||(\lambda_1,\ldots,\lambda_N)||_{\Lambda'} = \tfrac 1N(||\lambda_1||_\Lambda+\ldots+||\lambda_N||_\Lambda).
-\]
-For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$; then $\Lambda'^{(\bullet)}$ is cosimplicial polyhedral lattice, the \v{C}ech conerve of $\Lambda\to \Lambda'$. For $m=0$, we set $\Lambda'^{(0)} = \Lambda$. It is clear that all of these are polyhedral lattices.
-
-In particular, for any $c>0$, we have
-\[
-\Hom(\Lambda'^{(m)},\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}^{m/\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}},
-\]
-the $m$-fold fibre product of $\Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}$ over $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$; and
-\[
-\Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N,
-\]
-with the map to $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ given by the sum map.
-
-Consider the collection of double complexes $C_{\Lambda'^{(\bullet)},c}^\bullet$ associated to this cosimplicial polyhedral lattice by Dold-Kan. Up to rescaling the norms in the complex for $\Lambda'^{(m)}$ by a universal constant (something like $(m+2)!$), the differentials are strictly compatible with norms (as they are an alternating sum of $m+1$ face maps, all of which are of norm $\leq 1$), so this collection of normed double complexes is admissible. By induction, the first condition of Proposition~\ref{spectral} is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda$ but not $V$ or $S$). By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
-\]
-also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
-\]
-and
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
-\]
-and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{prop:normedcompletion}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{snakelemma}. At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
-
-Finally, to check the third condition, we use Lemma~\ref{homotopyNelements} to find, in degrees $\leq m$, a homotopy between the two maps from the first row
-\[
-\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots
-\]
-to the second row
-\[
-\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c/N}^{2N})^{T^{-1}}\to \ldots
-\]
-respectively induced by the addition $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ (which is the map that forms part of the double complex), and the map that is the sum of the $N$ maps induced by the $N$ projection maps
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}\subset \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}.
-\]
-By Lemma~\ref{homotopyNelements}, we can find this homotopy between the complex for $k'c$ and the complex for $c$, by our choice of $k'\geq c_i'$ for $i=0,\ldots,m$. As $N$ is fixed, the homotopy is the universal homotopy from Lemma~\ref{homotopyNelements}, and in particular its norm is bounded by some universal constant $H$.
-
-Finally, it remains to establish the estimate \eqref{eq:homotopicmapsmall} on the homotopic map. We note that this takes $x\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of \eqref{eq:homotopicmapsmall}) to the element
-\[
-y\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}
-\]
-that is the sum of the $N$ pullbacks along the $N$ projection maps $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i}$. We note that these actually take image in $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i}$ as $N\geq k'$, so this actually gives a well-defined map
-\[
-\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.
-\]
-We need to see that this map is of norm $\leq \epsilon$. Now note that by our choice of $N$, we actually have $k'c_ic/N\leq (r')^b c_ic$, so this can be written as the composite of the restriction map
-\[
-\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}
-\]
-and
-\[
-\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.
-\]
-The first map has norm exactly $r^b$, by $T^{-1}$-invariance, and as multiplication by $T$ scales the norm with a factor of $r$ on $\widehat{V}$.\footnote{Here is where we use $r'>r$, ensuring different scaling behaviour of the norm on source and target.} The second map has norm at most $N$ (as it is a sum of $N$ maps of norm $\leq 1$). Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon$, giving the result.
-
-Thus, we can apply Proposition~\ref{spectral}, and get the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$, where $k'$, $k_0$ and $H$ were defined only in terms of $k$, $m$, $r'$ and $r$, while $c_0$ depends on $\Lambda$ (but not on $V$ or $S$). This proves the inductive step.
-\end{proof}
-
-\begin{question} Can one make the constants explicit, and how large are they?\footnote{A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.} Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the $c_i$ and $c_i'$.
-\end{question}
-
-This completes the proof of all results announced so far.
-
-\newpage
-
-\section*{Appendix to Lecture IX: Some normed homological algebra}
-
-In this appendix, we gather a few results about homological algebra with normed abelian groups, the proofs of which are just obtained by keeping track of constants in the standard proofs. The argument we use, originated by a discussion with the author of ~\cite{Analytic}, is a modification of the original one. We need the following definition.
 
 \begin{definition}
   \label{is_weak_bdd_exact_for_bdd_degree_above_idx}
@@ -1226,6 +822,86 @@ In particular, letting $n^{i-1}_c\in N^{i-1}_c$ be the image of $m'^{i-1}_c$, we
 so by our choice of $\epsilon$ this gives the desired result.
 \end{proof}
 
+
+
+
+\begin{proposition}
+  \label{spectral}
+  \uses{admissible}
+  \uses{is_bdd_exact_for_bdd_degree_above_idx}
+  Fix an integer $m\geq 0$ and a constant $k$.
+  Then there exists an $\epsilon>0$ and a constant $k_0$,
+  depending (only) on $k$ and $m$, with the following property.
+
+  Consider an admissible system of double complexes $M^{p,q}_c$, $p,q\geq 0$, $c\geq c_0$,
+  of complete normed abelian groups as well as some $k'\geq k_0$ and some $H>0$, such that
+  \begin{center}
+    \begin{tikzcd}
+      M^{0,0}_c \ar[r]{d'^{0,0}_c}\ar[d]{d^{0,0}_c} & M^{0,1}_c\ar[r]{d'^{0,1}_c}\ar[d]{d^{0,1}_c} & M^{0,2}_c\ar[r]{d'^{0,2}_c}\ar[d]{d^{0,2}_c} & \ldots\\
+  M^{1,0}_c\ar[r]{d'^{1,0}_c}\ar[d]{d^{1,0}_c} & M^{1,1}_c\ar[r]{d'^{1,1}_c}\ar[d]{d^{1,1}_c} & M^{1,2}_c\ar[r]{d'^{1,2}_c}\ar[d]{d^{1,2}_c} & \ldots\\
+  M^{2,0}_c\ar[r]{d'^{2,0}_c}\ar[d]{d^{2,0}_c} & M^{2,1}_c\ar[r]{d'^{2,1}_c}\ar[d]{d^{2,1}_c} & \ddots\\
+  \vdots & \vdots
+    \end{tikzcd}
+  \end{center}
+  \begin{enumerate}
+  \item for $j=0,\ldots,m$, the columns $M^{p,j}_c$ are $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$;
+  \item for $i=0,\ldots,m+1$, the rows $M^{i,q}_c$ are $\leq k$-exact in degrees $\leq m-1$ for $c\geq c_0$;
+  \item for $q=0,\ldots,m$ and $c\geq c_0$, there is a map $h^q_{k'c}: M^{0,q+1}_{k'c}\to M^{1,q}_c$ with
+  \[
+  ||h^q_{k'c}(x)||_{M^{1,q}_c}\leq H||x||_{M^{0,q+1}_{k'c}}
+  \]
+  for all $x\in M^{0,q+1}_c$, and such that for all $c\geq c_0$ and $x\in M^{0,q}_{k'^2c}$, one has
+  \begin{equation}\label{eq:homotopicmapsmall}
+  ||\mathrm{res}_{k'^2c,k'c}^{1,q}(d^{0,q}(x))\pm h^q_{k'^2c}(d'^{0,q}_{k'^2c}(x))\pm d'^{1,q-1}_{k'c}(h^{q-1}_{k'^2c}(x))||_{M^{1,q}_{k'c}}\leq \epsilon ||\mathrm{res}_{k'^2c,c}^{0,q}(x)||_{M^{0,q}_c}.
+  \end{equation}
+  \end{enumerate}
+  Then the first row is $\leq \max(k'^2,2k_0H)$-exact in degrees $\leq m$ for $c\geq c_0$.
+\end{proposition}
+
+We note that the bound on the homotopy is of a peculiar nature, in that the bound only depends on a deep restriction of $x$.
+
+\begin{proof}
+  \proves{spectral}
+  \uses{snakelemma}
+  First, we treat the case $m=0$.
+  If $m=0$, we claim that one can take $\epsilon=\tfrac 1{2k}$ and $k_0=k$.
+  We have to prove exactness at the first step.
+  Let $x_{k'^2c}\in M^{0,0}_{k'^2c}$ and
+  denote $x_{k'c}=\mathrm{res}_{k'^2c,k'c}^{0,0}(x)$
+  and $x_c=\mathrm{res}_{k'^2c,c}^{0,0}(x)$.
+  Then by assumption (1) (and $k'\geq k$), we have
+  \[
+  ||x_c||_{M^{0,0}_c}\leq k||d^{0,0}_{k'c}(x_{k'c})||_{M^{1,0}_{k'c}}.
+  \]
+  On the other hand, by (3),
+  \[
+  ||\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x))\pm h^0_{k'^2c}(d'^{0,0}_{k'^2c}(x))||_{M^{1,0}_{k'c}}\leq \epsilon ||x_c||_{M^{0,0}_c}.
+  \]
+  In particular, noting that $\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x)) = d^{0,0}_{k'c}(x_{k'c})$, we get
+  \[
+  ||x_c||_{M^{0,0}_c}\leq k||d^{0,0}_{k'c}(x_{k'c})||_{M^{1,0}_{k'c}}\leq k\epsilon ||x_c||_{M^{0,0}_c} + kH ||d'^{0,0}_{k'^2c}(x)||_{M^{0,1}_{k'^2c}}.
+  \]
+  Thus, taking $\epsilon=\tfrac 1{2k}$ as promised, this implies
+  \[
+  ||x_c||_{M^{0,0}_c}\leq 2kH ||d'^{0,0}_{k'^2c}(x)||_{M^{0,1}_{k'^2c}}.
+  \]
+  This gives the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$.
+
+  Now we argue by induction on $m$.
+  Consider the complex $N^{p,q}$ given by $M^{p,q+1}$ for $q\geq 1$
+  and $N^{p,0} = M^{p,1}/\overline{M^{p,0}}$
+  (the quotient by the closure of the image, which is also the completion of $M^{p,1}/M^{p,0}$),
+  equipped with the quotient norm.
+  Using the normed version of the snake lemma,
+  Proposition~\ref{snakelemma} in the appendix to this lecture,
+  one checks that this satisfies the assumptions for $m-1$,
+  with $k$ replaced by $\max(k^4,k^3+k+1)$.
+\end{proof}
+
+\section{More Breen-Deligne}%
+\label{sec:more_breen_deligne}
+
+
 We need the following results about the Breen-Deligne resolution for normed abelian groups. Let us consider here abelian groups $M$ (in any topos) equipped with an increasing filtration $M_{\leq c}\subset M$ by subobjects indexed by the positive real numbers, such that $0\in M_{\leq c}$, $-M_{\leq c} = M_{\leq c}$ and $M_{\leq c}+M_{\leq c'}\subset M_{\leq c+c'}$; we need no further conditions. Let us call these pseudo-normed abelian groups.
 
 Fix a choice of a functorial Breen-Deligne resolution
@@ -1315,3 +991,339 @@ for all $c>0$.
 
 \begin{proof} Let $N=2^m$. For each $j=0,\ldots,m-1$, the two maps from $C(M^{2^{j+1}})$ to $C(M^{2^j})$ from the previous lemma are homotopic, and we use the homotopy from that lemma. Composing homotopies (which amounts concretely to a certain sum) we get the desired homotopy from $C(M^{2^m})$ to $C(M)$. It follows directly from this construction that the constants $c_i'$ are unchanged.
 \end{proof}
+
+\section{End of proof}
+
+\begin{definition}
+  \label{BD_suitable}
+  \lean{breen_deligne.package.suitable}
+  \leanok
+  \uses{BD_package, universal_suitable}
+  Let $(n, f, h)$ be a Breen--Deligne package,
+  and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
+  We say that $c$ is \emph{$(n,f,h)$-suitable},
+  if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
+
+  (Note! The order $(c_{i+1}, c_i)$ is contravariant
+  compared to Definition~\ref{universal_suitable}.
+  This is because of the contravariance of $\hat V(\_)$;
+  see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
+\end{definition}
+
+\begin{definition}
+  \label{Mbar_system}
+  \lean{Mbar_system}
+  \leanok
+  \uses{BD_suitable, Vhat_eval_Mbar_Tinv, system_of_complexes}
+  Let $r, r' \in \mathbb R_{>0}$,
+  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+  Assume $r' \le 1$.
+  Let $S$ be a finite set.
+  Let $(n,f,h)$ be a Breen--Deligne package,
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+  that is $(n,f,h)$-suitable.
+
+  For every $c \in \mathbb R_{\ge 0}$,
+  the maps from Definition~\ref{Vhat_eval_Mbar_Tinv}
+  induced by the universal maps $f_i$ from the Breen--Deligne package $(n,f,h)$
+  assemble into a complex of normed abelian groups
+  \[
+    \dots \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{-1}}
+    \to
+    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}}
+    \to \dots \to 0.
+  \]
+  Together, these complexes fit into a system of complexes
+  with the natural restriction maps.
+\end{definition}
+
+Now we state the following result, which is our main goal.
+
+\textbf{N.b.:}
+It differs from Theorem~9.4 of \cite{Analytic} only in one aspect:
+we assume that the sets $S$ are finite, rather than profinite.
+
+\begin{theorem}
+  \label{first_target}
+  \lean{first_target}
+  \leanok
+  \uses{Mbar_system}
+  Let $(n,f,h)$ be a Breen--Deligne package,
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$.
+	Fix radii $1>r'>r>0$.
+  For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  the system of complexes
+  \[
+    C_c^\bullet \colon
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c'_1c}^2)^{T^{-1}}
+    \to \ldots
+  \]
+  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
+\end{theorem}
+
+\begin{remark}
+  \label{boundary-text}
+  \textbf{Note: the text below is copied almost verbatim from \cite{Analytic}.
+  Small parts have been formalized.
+  We expect that the text will be rewritten and expanded as the formalization project progresses.}
+\end{remark}
+
+% Let us first check that this implies Theorem~\ref{explicit1}.
+
+% \begin{proof}[Theorem~\ref{first_target} implies Theorem~\ref{explicit1}] By the preceding discussion, one can compute
+% \[
+% R\Hom_{\mathbb Z[T^{-1}]}(\overline{\mathcal M}_{r'}(S),\widehat{V})
+% \]
+% as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{first_target} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
+% \end{proof}
+
+% We remark that Theorem~\ref{first_target} reduces formally to the case that $S$ is finite; we make this reduction.
+
+We will prove Theorem~\ref{first_target} by induction on $m$.
+Unfortunately, the induction requires us to prove a stronger statement.
+Before stating it, we need another definition.
+
+\begin{definition}
+  \label{polyhedral_lattice}
+  \lean{polyhedral_lattice}
+  A \emph{polyhedral lattice} is a finite free abelian group~$\Lambda$
+  equipped with a norm $||\cdot||_\Lambda \colon \Lambda\otimes \mathbb R\to \mathbb R$
+  (so $\Lambda\otimes \mathbb R$ is a Banach space)
+  that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients;
+  equivalently, the ``unit ball''
+  $\{\lambda\in \Lambda\otimes \mathbb R\mid ||\lambda||_\Lambda\leq 1\}$ is a rational polyhedron.
+\end{definition}
+
+Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c} = \{f: \Lambda\to \overline{\mathcal M}_{r'}(S)\mid \forall x\in \Lambda, f(x)\in \overline{\mathcal M}_{r'}(S)_{\leq c||x||}\}.
+\]
+As $\Lambda$ is polyhedral, it is enough to check the given condition for finitely many $x$.
+
+We can then define double complexes like \eqref{eq:doublecomplex}.
+Lemma~\ref{lem:Tinv} stays true with the same constants.
+Now we claim the following generalization of Theorem~\ref{first_target}.
+
+\begin{theorem}
+  \label{explicit}
+  \uses{polyhedral_lattice}
+  Fix radii $1>r'>r>0$. For any $m$ there is some $k$
+  such that for all polyhedral lattices $\Lambda$
+  there is a constant $c_0(\Lambda)>0$
+  such that for all finite sets $S$
+  and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  the system of complexes
+  \[
+  C_{\Lambda,c}^\bullet \colon
+  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}} \to
+  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}} \to \ldots
+  \]
+  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
+\end{theorem}
+
+\begin{proof}
+  \proves{first_target}
+  \uses{explicit}
+  Use $\Lambda = \mathbb Z$, and the isomorphism $\Hom(\mathbb Z, A) \cong A$.
+\end{proof}
+
+We note that the constants $c_1,c_2,\ldots$ implicit in the choice of the complex
+are chosen once and for all (after fixing $r$ and $r'$),
+and it can be ensured that the transition maps in the complex are norm-nonincreasing.
+Indeed, if the $c_i$ are suitable as in Definition~\ref{BD_suitable},
+the maps
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})
+\]
+will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem~\ref{explicit}, and the rest of the proof.
+
+
+Finally, we can prove the key combinatorial lemma,
+ensuring that any element of $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$
+can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element.
+As preparation, we have the following simple result.
+
+\begin{lemma}
+  \label{combi_aux}
+  \lean{lem97}
+  \leanok
+  Let $\Lambda$ be a finite free abelian group,
+  let $N$ be a positive integer,
+  and let $\lambda_1,\ldots,\lambda_m\in \Lambda$ be elements.
+  Then there is a finite subset $A\subset \Lambda^\vee$
+  such that for all $x\in \Lambda^\vee=\Hom(\Lambda,\mathbb Z)$
+  there is some $x'\in A$ such that $x-x'\in N\Lambda^\vee$
+  and for all $i=1,\ldots,m$,
+  the numbers $x'(\lambda_i)$ and $(x-x')(\lambda_i)$ have the same sign,
+  i.e.~are both nonnegative or both nonpositive.
+\end{lemma}
+
+\begin{proof}
+  It suffices to prove the statement for all $x$ such that $\lambda_i(x)\geq 0$ for all $i$;
+  indeed, applying this variant to all $\pm \lambda_i$, one gets the full statement.
+
+  Thus, consider the submonoid $\Lambda^\vee_+\subset \Lambda^\vee$
+  of all $x$ that pair nonnegatively with all $\lambda_i$.
+  This is a finitely generated monoid by standard results;
+  let $y_1,\ldots,y_M$ be a set of generators.
+  Then we can take for $A$ all sums $n_1y_1+\ldots+n_My_M$ where all $n_j\in \{0,\ldots,N-1\}$.
+\end{proof}
+
+Now we have the key lemma:
+
+\begin{lemma}
+  \label{combi}
+  \lean{lem98}
+  \leanok
+  \uses{polyhedral_lattice}
+  Let $\Lambda$ be a polyhedral lattice.
+  Then for all positive integers $N$ there is a constant $d$
+  such that for all $c>0$ one can write any
+  $x\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as
+  \[
+    x=x_1+\ldots+x_N
+  \]
+  where all $x_i\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$.
+\end{lemma}
+
+\begin{proof}
+  \proves{combi}
+  \uses{combi_aux}
+  Pick $\lambda_1,\ldots,\lambda_m\in \Lambda$ generating the norm. We fix a finite subset $A\subset \Lambda^\vee$ satisfying the conclusion of the previous lemma. Write
+  \[
+  x=\sum_{n\geq 1, s\in S} x_{n,s} T^n [s]
+  \]
+  with $x_{n,s}\in \Lambda^\vee$. Then we can decompose
+  \[
+  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1
+  \]
+  where $x_{n,s}^1\in A$ and we have the same-sign property of the last lemma. Letting $x^0 = \sum_{n\geq 1, s\in S} x_{n,s}^0 T^n [s]$, we get a decomposition
+  \[
+  x = Nx^0 + \sum_{a\in A} a x_a
+  \]
+  with $x_a\in \overline{\mathcal M}_{r'}(S)$ (with the property that in the
+  basis given by the $T^n [s]$, all coefficients are $0$ or $1$). Crucially,
+  we know that for all $i=1,\ldots,m$, we have
+  \[
+  ||x(\lambda_i)|| = N ||x^0(\lambda_i)|| + \sum_{a\in A} |a(\lambda_i)| ||x_a(\lambda_i)||
+  \]
+  by using the same sign property of the decomposition.
+
+  Using this decomposition of $x$, we decompose each term into $N$ summands.
+  This is trivial for the first term $Nx^0$,
+  and each summand of the second term reduces to the similar problem for $\Lambda=\mathbb Z$.
+  In that case, one can take $d=1$,
+  as follows by decomposing any sum with terms of size at most $1$
+  into $N$ such partial sums whose sums differ by at most $1$.
+  (It follows that in general one can take for $d$
+  the supremum over all $i$ of $\sum_{a\in A} |a(\lambda_i)|$.)
+\end{proof}
+
+
+
+\begin{proof}[Proof of Theorem~\ref{explicit}]
+\proves{explicit}
+\uses{spectral,combi,basehomotopy,homotopyNelements}
+  We argue by induction on $m$, so assume the result for $m-1$
+  (this is no assumption for $m=0$, so we do not need an induction start).
+  This gives us some $k>1$ for which the statement of Theorem~\ref{explicit} holds true for $m-1$;
+  if $m=0$, simply take any $k>1$.
+  In the proof below, we will increase $k$ further in a way that depends only on $m$ and $r$.
+  After this modified choice of $k$, we fix $\epsilon$ and $k_0$ as provided by Proposition~\ref{spectral}.
+  Moreover, we let $k'$ be the supremum of $k_0$ and the $c_i'$ from
+  Lemma~\ref{basehomotopy} (and~\ref{homotopyNelements}) for $i=0,\ldots,m$.
+  Finally, choose a positive integer $b$ so that $2k'(\tfrac r{r'})^b\leq \epsilon$,
+  and let $N$ be the minimal power of $2$ that satisfies
+\[
+k'/N\leq (r')^b.
+\]
+Then in particular $r^bN\leq \frac 2{k'}(\tfrac{r}{r'})^b\leq \epsilon$.
+
+We consider the diagonal embedding
+\[
+\Lambda\hookrightarrow \Lambda' = \Lambda^N,
+\]
+where we endow $\Lambda'$ with the norm
+\[
+||(\lambda_1,\ldots,\lambda_N)||_{\Lambda'} = \tfrac 1N(||\lambda_1||_\Lambda+\ldots+||\lambda_N||_\Lambda).
+\]
+For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$; then $\Lambda'^{(\bullet)}$ is cosimplicial polyhedral lattice, the \v{C}ech conerve of $\Lambda\to \Lambda'$. For $m=0$, we set $\Lambda'^{(0)} = \Lambda$. It is clear that all of these are polyhedral lattices.
+
+In particular, for any $c>0$, we have
+\[
+\Hom(\Lambda'^{(m)},\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}^{m/\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}},
+\]
+the $m$-fold fibre product of $\Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}$ over $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$; and
+\[
+\Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N,
+\]
+with the map to $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ given by the sum map.
+
+Consider the collection of double complexes $C_{\Lambda'^{(\bullet)},c}^\bullet$ associated to this cosimplicial polyhedral lattice by Dold-Kan. Up to rescaling the norms in the complex for $\Lambda'^{(m)}$ by a universal constant (something like $(m+2)!$), the differentials are strictly compatible with norms (as they are an alternating sum of $m+1$ face maps, all of which are of norm $\leq 1$), so this collection of normed double complexes is admissible. By induction, the first condition of Proposition~\ref{spectral} is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda$ but not $V$ or $S$). By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
+\]
+also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
+\]
+and
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
+\]
+and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{prop:normedcompletion}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{snakelemma}. At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
+
+Finally, to check the third condition, we use Lemma~\ref{homotopyNelements} to find, in degrees $\leq m$, a homotopy between the two maps from the first row
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots
+\]
+to the second row
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c/N}^{2N})^{T^{-1}}\to \ldots
+\]
+respectively induced by the addition $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ (which is the map that forms part of the double complex), and the map that is the sum of the $N$ maps induced by the $N$ projection maps
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}\subset \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}.
+\]
+By Lemma~\ref{homotopyNelements}, we can find this homotopy between the complex for $k'c$ and the complex for $c$, by our choice of $k'\geq c_i'$ for $i=0,\ldots,m$. As $N$ is fixed, the homotopy is the universal homotopy from Lemma~\ref{homotopyNelements}, and in particular its norm is bounded by some universal constant $H$.
+
+Finally, it remains to establish the estimate \eqref{eq:homotopicmapsmall} on the homotopic map. We note that this takes $x\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of \eqref{eq:homotopicmapsmall}) to the element
+\[
+y\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}
+\]
+that is the sum of the $N$ pullbacks along the $N$ projection maps $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i}$. We note that these actually take image in $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i}$ as $N\geq k'$, so this actually gives a well-defined map
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.
+\]
+We need to see that this map is of norm $\leq \epsilon$. Now note that by our choice of $N$, we actually have $k'c_ic/N\leq (r')^b c_ic$, so this can be written as the composite of the restriction map
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}
+\]
+and
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.
+\]
+The first map has norm exactly $r^b$, by $T^{-1}$-invariance, and as multiplication by $T$ scales the norm with a factor of $r$ on $\widehat{V}$.\footnote{Here is where we use $r'>r$, ensuring different scaling behaviour of the norm on source and target.} The second map has norm at most $N$ (as it is a sum of $N$ maps of norm $\leq 1$). Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon$, giving the result.
+
+Thus, we can apply Proposition~\ref{spectral}, and get the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$, where $k'$, $k_0$ and $H$ were defined only in terms of $k$, $m$, $r'$ and $r$, while $c_0$ depends on $\Lambda$ (but not on $V$ or $S$). This proves the inductive step.
+\end{proof}
+
+\begin{question} Can one make the constants explicit, and how large are they?\footnote{A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.} Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the $c_i$ and $c_i'$.
+\end{question}
+
+This completes the proof of all results announced so far.
+
+
+
+
+
+
+
+
+
+
+
+
+
