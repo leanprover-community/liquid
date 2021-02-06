@@ -831,78 +831,29 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
   that is strictly compatible with the norm and commutes with restriction maps,
   and assume that it satisfies
   \[
-  ‖\mathrm{res}^i_{kc,c}(x)‖_{M^i_c}\leq k‖f^i_{kc}(x)‖_{M'^i_{kc}}
+    ‖x_{|c}‖ ≤ K''‖f(x)‖
   \]
-  for all $i=0,\ldots,m+1$ and all $x\in M^i_{kc}$.
+  for all $i ≤ m+1$ and all $x\in M^i_{k''c}$.
   Let $N^\bullet_c=M'^\bullet_c/\overline{M^\bullet_c}$
-  (which equals the completion of $M'^{\bullet}_c/M^\bullet_c$)
   be the collection of quotient complexes, with the quotient norm;
   this is again an admissible collection of complexes.
 
-  Assume that $M^\bullet_c$ and $M'^\bullet_c$ are $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
-  Then $N^\bullet_c$ is $\leq \max(k^4,k^3+k+1)$-exact in degrees $\leq m-1$ for $c\geq c_0$.
+  Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is $\leq k$-exact
+  (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
+  (resp. $K'$).
+  Then, for every $δ > 0$, $N^\bullet_c$ is $\leq (kk'k'')²$-exact in
+  degrees $\leq m-1$ for $c\geq c_0$
+  with bound $K'(KK'' + 1) + δ$.
 \end{proposition}
 
 \begin{proof}
-  We make the following preliminary observation.
-  Take any $i=0,\ldots,m+1$ and $m'_{kc}\in M'^i_{kc}$ with image $n_{kc}\in N^i_{kc}$.
-  By the definition of the quotient norm,
-  for any $\epsilon>0$ we can find some $m_{kc}\in M^i_{kc}$
-  such that $‖m'_{kc}-f^i_{kc}(m_{kc})‖\leq ‖n_{kc}‖+\epsilon$.
-  We would like to replace this by the stronger assertion that we can find $m_{kc}\in M^i_{kc}$ such that
-\[
-‖m'_{kc}-f^i_{kc}(m_{kc})‖\leq (1+\epsilon)‖n_{kc}‖.
-\]
-This is obviously possible as long as $‖n_{kc}‖>0$, but in case $‖n_{kc}‖=0$, it may not be possible, because $M^\bullet_c\to M'^\bullet_c$ may not have closed image.
-
-However, we claim that, letting $m'_c\in M'^i_c$ be the restriction of $m'_{kc}\in M'^i_{kc}$, with image $n_c\in N^i_c$, we can always find some $m_c\in M^i_c$ such that
-\[
-‖m'_c-f^i_c(m_c)‖\leq (1+\epsilon)‖n_{kc}‖.
-\]
-By the above, we only need to prove this when $‖n_{kc}‖=0$. Choose a sequence $m_{kc,0},m_{kc,1},\ldots$ in $M^i_{kc}$ such that $‖m'_{kc}-f^i_{kc}(m_{kc,j})‖\to 0$ for $j\to \infty$. In particular, $‖f^i_{kc}(m_{kc,j}-m_{kc,j'})‖\to 0$ for $j,j'\to \infty$. By the displayed bound in the statement of the proposition, this ensure that $‖m_{c,j}-m_{c,j'}‖\to 0$ where $m_{c,j}\in M^i_c$ is the image of $m_{kc,j}$. Thus, we get a Cauchy sequence in $M^i_c$ whose limit $m_c\in M^i_c$ will satisfy $‖m'_c-f^i_c(m_c)‖=0$ (i.e.~$m'_c=f^i_c(m_c)$).
-
-Now we start the proof of the proposition. Let $n^i_{k^4c}\in N^i_{k^4c}$ for $i\leq m-1$, with image $n^{i+1}_{k^4c}\in N^{i+1}_{k^4c}$, and let $C:=‖n^{i+1}_{k^4c}‖_{N^{i+1}_{k^4c}}$. We need to find an element $n^i_c\in N^{i-1}_c$ such that
-\[
-‖n^i_c - d^{i-1}_{N,c}(n^{i-1}_c)‖_{N^i_c}\leq (k^3+k+1)C,
-\]
-where we change the subscript when applying restriction maps.
-
-Pick any preimage $m'^i_{k^4c}\in M'^i_{k^4c}$ of $n^i_{k^4c}$, and let $m'^{i+1}_{k^4c}\in M'^{i+1}_{k^4c}$ be its image. By the preliminary observation, we can find $m^{i+1}_{k^3c}\in M^{i+1}_{k^3c}$ such that
-\[
-m'^{i+1}_{k^3c} = f^{i+1}_{k^3c}(m^{i+1}_{k^3c}) + m''^{i+1}_{k^3c}
-\]
-with $‖m''^{i+1}_{k^3c}‖_{M'^{i+1}_{k^3c}}\leq (1+\epsilon)C$, where we choose $\epsilon$ so that $(k^3+k)(1+\epsilon)\leq k^3+k+1$.
-
-Let $m^{i+2}_{k^3c}\in M^{i+2}_{k^3c}$ be the image of $m^{i+1}_{k^3c}$. Applying the differential to the last displayed equation, and using that this kills $m'^{i+1}_{k^3c}$, and that $f^\bullet_{k^3c}$ is a map of complexes, we see that
-\[
-f^{i+2}_{k^3c}(m^{i+2}_{k^3c}) = -m''^{i+2}_{k^3c},
-\]
-where similarly $m''^{i+2}_{k^3c}$ is the differential of $m''^{i+1}_{k^3c}$. We get
-\[\begin{aligned}
-‖m^{i+2}_{k^2c}‖_{M^{i+2}_{k^2c}}&\leq k‖f^{i+2}_{k^3c}(m^{i+2}_{k^3c})‖_{M'^{i+2}_{k^3c}} = k‖m''^{i+2}_{k^3c}‖_{M'^{i+2}_{k^3c}}\\
-&\leq k‖m'^{i+1}_{k^3c}‖_{M'^{i+1}_{k^3c}}\leq k(1+\epsilon)C.
-\end{aligned}\]
-On the other hand, we can find some $m^i_{kc}\in M^i_{kc}$ such that
-\[
-‖m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})‖\leq k‖m^{i+2}_{k^2c}‖_{M^{i+2}_{k^2c}}\leq k^2(1+\epsilon)C.
-\]
-Now let $m'^i_{kc,\mathrm{new}} = m'^i_{kc}-f^i_{kc}(m^i_{kc})\in M'^i_{kc}$; this is a lift of $n^i_{kc}$. Then the image $m'^{i+1}_{kc,\mathrm{new}}$ in $M'^{i+1}_{kc}$ satisfies
-\[
-m'^{i+1}_{kc,\mathrm{new}} = m'^{i+1}_{kc}-f^{i+1}_{kc}(m^{i+1}_{kc}) + f^{i+1}_{kc}(m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})) = m''^{i+1}_{kc} + f^{i+1}_{kc}(m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})).
-\]
-In particular,
-\[
-‖m'^{i+1}_{kc,\mathrm{new}}‖_{M'^{i+1}_{kc}}\leq (1+\epsilon)C+ k^2(1+\epsilon)C.
-\]
-Now we can find $m'^{i-1}_c\in M'^{i-1}_c$ such that
-\[
-‖m'^i_{c,\mathrm{new}} - d'^{i-1}_c(m'^{i-1}_c)‖_{M'^i_c}\leq k‖m'^{i+1}_{kc,\mathrm{new}}‖_{M'^{i+1}_{kc}}\leq (k^3+k)(1+\epsilon)C.
-\]
-In particular, letting $n^{i-1}_c\in N^{i-1}_c$ be the image of $m'^{i-1}_c$, we get
-\[
-‖n^i_c - d^{i-1}_{N,c}(n^{i-1}_c)‖_{N^i_c}\leq (k^3+k)(1+\epsilon)C,
-\]
-so by our choice of $\epsilon$ this gives the desired result.
+  \uses{weaksnakelemma, weakexact_implies_exact}
+  The exactness assumptions on $M$ and $M'$ give the corresponding
+  weak exactness condition. Hence Proposition~\ref{weaksnakelemma}
+  ensures that $N^\bullet_c$ is weakly $\leq kk'k''$-exact in degrees
+  $\leq m-1$ for $c\geq c_0$ with bound $K'(KK'' + 1)$.
+  Since $N^\bullet_c$ is a complex of complete groups,
+  Lemma~\ref{weakexact_implies_exact} gives the required exactness.
 \end{proof}
 
 
