@@ -38,6 +38,7 @@ jobs:
         with:
           run: |
             apk update
+            apt install texlive-fonts-extra
             apk add --update py3-pip git
             python3 -m pip install --upgrade pip requests wheel
             apk add pkgconfig graphviz graphviz-dev gcc musl-dev && \
