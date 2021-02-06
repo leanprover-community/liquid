@@ -747,61 +747,77 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
   that is strictly compatible with the norm and commutes with restriction maps,
   and assume that it satisfies
   \[
-  ‖\mathrm{res}^i_{kc,c}(x)‖_{M^i_c}\leq k‖f^i_{kc}(x)‖_{M'^i_{kc}}
+    ‖x_{|c}‖ ≤ K''‖f(x)‖
   \]
-  for all $i=0,\ldots,m+1$ and all $x\in M^i_{kc}$.
+  for all $i ≤ m+1$ and all $x\in M^i_{k''c}$.
   Let $N^\bullet_c=M'^\bullet_c/M^\bullet_c$
   be the collection of quotient complexes, with the quotient norm;
   this is again an admissible collection of complexes.
 
-  Assume that $M^\bullet_c$ and $M'^\bullet_c$ are weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
-  Then $N^\bullet_c$ is weakly $\leq k^3+k$-exact in degrees $\leq m-1$ for $c\geq c_0$.
+  Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is weakly $\leq k$-exact
+  (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
+  (resp. $K'$).
+  Then $N^\bullet_c$ is weakly $\leq kk'k''$-exact in degrees $\leq m-1$ for $c\geq c_0$
+  with bound $K'(KK'' + 1)$.
 \end{proposition}
 
 \begin{proof}
 \leanok
-Let $n^i_{(k^3+k)c}\in N^i_{(k^3+k)c}$ for $i\leq m-1$, with image $n^{i+1}_{(k^3+k)c}\in N^{i+1}_{(k^3+k)c}$. We fix $\epsilon > 0$. It is enough to find an element $n^i_c\in N^{i-1}_c$ such that
+\def\ndn{\left\|dn\right\|}
+Let $n \in N^i_{kk'k''c}$ for $i\leq m-1$.
+We fix $ε > 0$. We need to find an element $y \in N^{i-1}_c$ such that
 \[
-‖n^i_c - d^{i-1}_{N,c}(n^{i-1}_c)‖_{N^i_c}\leq (k^3+k)C + \epsilon,
+  ‖n_{|c} - dy‖ \leq K'(KK'' + 1)‖dn‖ + \epsilon.
 \]
-where we change the subscript when applying restriction maps and $C:=‖n^{i+1}_{k^3c}‖_{N^{i+1}_{k^3c}}$
 
-Pick any preimage $m'^i_{k^3c}\in M'^i_{k^3c}$ of $n^i_{k^3c}$, and let $m'^{i+1}_{k^3c}\in M'^{i+1}_{k^3c}$ be its image. By definition of the quotient norm, we can find $m^{i+1}_{k^3c}\in M^{i+1}_{k^3c}$ such that
+Pick any preimage $m' \in M'^i_{kk'k''c}$ of $n$. In particular $dm'$ is
+a preimage of $dn$.
+By definition of the quotient norm,
+we can find $m₁ ∈ M^{i+1}_{kk'k''c}$ and $m₁'' ∈ (M')^{i+1}_{kk'k''c}$ such that
 \[
-m'^{i+1}_{k^3c} = f^{i+1}_{k^3c}(m^{i+1}_{k^3c}) + m''^{i+1}_{k^3c}
+dm' = f(m₁) + m₁''
 \]
-with $‖m''^{i+1}_{k^3c}‖_{M'^{i+1}_{k^3c}}\leq C + \epsilon_1$, where we choose $\epsilon_1 = \frac{\epsilon}{k ^ 3 + 2k + 1}$.
+with $‖m₁''‖ \leq ‖dn‖ + ε_1$, for some positive $ε_1$ to be chosen later.
 
-Let $m^{i+2}_{k^3c}\in M^{i+2}_{k^3c}$ be the image of $m^{i+1}_{k^3c}$. Applying the differential to the last displayed equation, and using that this kills $m'^{i+1}_{k^3c}$, and that $f^\bullet_{k^3c}$ is a map of complexes, we see that
+Applying the differential to the last displayed equation, and using that this
+kills the image of $d$, and that $f$ is a map of complexes, we see that
 \[
-f^{i+2}_{k^3c}(m^{i+2}_{k^3c}) = -m''^{i+2}_{k^3c},
+f(dm₁) = -dm₁''.
 \]
-where similarly $m''^{i+2}_{k^3c}$ is the differential of $m''^{i+1}_{k^3c}$. We get
+Using the norm bound on $f$, we get
 \[\begin{aligned}
-‖m^{i+2}_{k^2c}‖_{M^{i+2}_{k^2c}}&\leq k‖f^{i+2}_{k^3c}(m^{i+2}_{k^3c})‖_{M'^{i+2}_{k^3c}} = k‖m''^{i+2}_{k^3c}‖_{M'^{i+2}_{k^3c}}\\
-&\leq k‖m''^{i+1}_{k^3c}‖_{M'^{i+1}_{k^3c}}\leq k(C+\epsilon_1).
+  ‖dm_{1|kk'c}‖ &≤ K''‖f(dm₁)‖ = K''‖dm₁''‖\\
+                &≤ K''‖m₁''‖ ≤ K''‖dn‖ + K''ε_1.
 \end{aligned}\]
-On the other hand, we can find some $m^i_{kc}\in M^i_{kc}$ such that
+On the other hand, weak exactness of $M$ applied to $m_{1|kk'c}$
+gives $m_0 ∈ M^i_{k'c}$ such that
 \[
-‖m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})‖\leq k‖m^{i+2}_{k^2c}‖_{M^{i+2}_{k^2c}} + \epsilon_1 \leq k^2(C+\epsilon_1) + \epsilon_1.
+  ‖m_{1|kk'c|k'c} - dm_0‖ \leq K‖dm_{1|kk'c}‖ + ε_1
 \]
-Now let $m'^i_{kc,\mathrm{new}} = m'^i_{kc}-f^i_{kc}(m^i_{kc})\in M'^i_{kc}$; this is a lift of $n^i_{kc}$. Then the image $m'^{i+1}_{kc,\mathrm{new}}$ in $M'^{i+1}_{kc}$ satisfies
+which combines with the previous estimate to give:
 \[
-m'^{i+1}_{kc,\mathrm{new}} = m'^{i+1}_{kc}-f^{i+1}_{kc}(m^{i+1}_{kc}) + f^{i+1}_{kc}(m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})) = m''^{i+1}_{kc} + f^{i+1}_{kc}(m^{i+1}_{kc}-d^i_{kc}(m^i_{kc})).
+  ‖m_{1|k'c} - dm_0‖ \leq K K'' \left\|d n\right\| + (KK'' + 1)ε_1.
+\]
+Now let $m'_{\mathrm{new}} = m'_{|k'c} - f(m_0) \in M'^i_{k'c}$; this is a lift of $n_{|k'c}$.
+Then
+\[
+dm'_{\mathrm{new}} = dm'_{|k'c} - f(m_{1|k'c}) + f(m_{1|k'c} - dm_0) = m''_{1|k'c} + f(m_{1|k'c} - dm_0).
 \]
 In particular,
 \[
-‖m'^{i+1}_{kc,\mathrm{new}}‖_{M'^{i+1}_{kc}}\leq (k^2 + 1)(C+\epsilon_1) + \epsilon_1.
+‖dm'_{\mathrm{new}}‖ ≤ (KK'' + 1)\ndn + (KK'' + 2) ε_1.
 \]
-Now we can find $m'^{i-1}_c\in M'^{i-1}_c$ such that
+Now weak exactness of $M'$ gives $x \in M'^{i-1}_c$ such that
 \[
-‖m'^i_{c,\mathrm{new}} - d'^{i-1}_c(m'^{i-1}_c)‖_{M'^i_c}\leq k‖m'^{i+1}_{kc,\mathrm{new}}‖_{M'^{i+1}_{kc}} + \epsilon_1 \leq (k^3+k)(C+\epsilon_1) + k\epsilon_1 + \epsilon_1.
+  ‖m'_{\mathrm{new}|c} - dx‖ ≤ K'‖dm'_\mathrm{new}‖ + ε_1 \leq
+    K'((K K'' + 1) \ndn + (KK'' + 2) ε₁) + ε₁.
 \]
-In particular, letting $n^{i-1}_c\in N^{i-1}_c$ be the image of $m'^{i-1}_c$, we get
+In particular, letting $y \in N^{i-1}_c$ be the image of $x$, we get
 \[
-‖n^i_c - d^{i-1}_{N,c}(n^{i-1}_c)‖_{N^i_c}\leq (k^3+k)C+(k^3+2k+1)\epsilon_1,
+  ‖n_{|c} - dy‖ ≤ K'(K K'' + 1)\ndn + (K'(K  K'' + 2) + 1) ε_1,
 \]
-so by our choice of $\epsilon_1$ this gives the desired result.
+which exactly what we wanted if we choose
+$ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 \end{proof}
 
 
