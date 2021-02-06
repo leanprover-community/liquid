@@ -588,6 +588,7 @@ a tiny something on the norm bound $K$.
 
 \begin{lemma}
   \label{is_bdd_exact_for_bdd_degree_above_idx_of_weakly}
+  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.to_exact}
   \uses{is_bdd_exact_for_bdd_degree_above_idx, is_weak_bdd_exact_for_bdd_degree_above_idx}
   Let $(C_c^\bullet)_c$ be a system of complexes. If $(C_c^\bullet)_c$ is
   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$ and if,
@@ -607,7 +608,7 @@ a tiny something on the norm bound $K$.
   gives some $y\in C_c^{i-1}$ such that
   \begin{align*}
     ‖x_{|c} - dy‖ &≤ K‖dx‖ + δ‖dx‖ \\
-                  &= (K + δ)‖dx‖ \qedhere
+                  &= (K + δ)‖dx‖
   \end{align*}
 \end{proof}
 
@@ -617,6 +618,7 @@ control on the norm of $y$ if we are ready to square the restriction depth facto
 \begin{lemma}
   \label{is_weak_bdd_exact_controlled_y}
   \uses{ is_weak_bdd_exact_for_bdd_degree_above_idx}
+  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.controlled_y}
   Let $(C_c^\bullet)_c$ be a system of complexes which is
   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$.
   For all $c\geq c_0'$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$
@@ -653,6 +655,7 @@ control on the norm of $y$ if we are ready to square the restriction depth facto
 \begin{lemma}
   \label{completion_is_weakexact}
   \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, admissible}
+  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.completion}
   Let $M^\bullet_c$ be an admissible collection
   of complexes of normed abelian groups, where $c\geq c_0$.
 
@@ -698,6 +701,7 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
 
 \begin{lemma}
   \label{weakexact_implies_exact}
+  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.strong_of_complete}
   \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, is_bdd_exact_for_bdd_degree_above_idx, admissible}
   Let $M^\bullet_c$ be an admissible collection
   of complexes of complete normed abelian groups, where $c\geq c_0$.
@@ -739,6 +743,7 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
 \begin{proposition}
   \label{weaksnakelemma}
   \leanok
+  \lean{weak_normed_snake}
   \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, admissible}
   Let $M^\bullet_c$ and $M'^\bullet_c$ be two admissible collections
   of complexes of complete normed abelian groups, where $c\geq c_0$.
