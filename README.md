@@ -3,6 +3,9 @@
 This repository hosts the Liquid tensor experiment blueprint and website.
 The Lean code for this project can be found [there](https://github.com/leanprover-community/lean-liquid).
 
+* [blueprint](https://leanprover-community.github.io/liquid/)
+* [dependency graph](https://leanprover-community.github.io/liquid/dep_graph.html)
+
 ## Dependencies
 
 If you simply want to produce the `pdf` version of the blueprint, you don't
