@@ -38,13 +38,14 @@ jobs:
         with:
           run: |
             apk update
-            apt install texlive-fonts-extra
             apk add --update py3-pip git
             python3 -m pip install --upgrade pip requests wheel
+            apk add texlive-fonts-extra
             apk add pkgconfig graphviz graphviz-dev gcc musl-dev && \
             python3 -m pip install pygraphviz --global-option=build_ext --global-option="-L/usr/lib/graphviz/" --global-option="-R/usr/lib/graphviz/"
             python3 -m pip install mathlibtools invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
             inv pdf; cp print/blueprint.bbl src/web.bbl; inv qweb
+            cp print/blueprint.pdf web/
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
