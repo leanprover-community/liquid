@@ -4,8 +4,6 @@ import http.server
 import socketserver
 from invoke import run, task
 
-from mathlibtools.lib import LeanProject
-
 ROOT = Path(__file__).parent
 
 @task
@@ -29,6 +27,8 @@ def qpdf(ctx):
 
 @task
 def decls(ctx):
+    from mathlibtools.lib import LeanProject
+
     """Rebuild the Lean declarations database"""
     proj = LeanProject.from_path((ROOT/'project').resolve())
     proj.build()
