@@ -51,7 +51,6 @@ jobs:
       - name: Generate web
         run: |
             inv qweb
-            cp print/blueprint.pdf web/
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
