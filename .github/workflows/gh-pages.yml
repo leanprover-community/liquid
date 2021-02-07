@@ -43,9 +43,10 @@ jobs:
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
-            mkdir -p print && cd src && xelatex -output-directory=../print blueprint.tex && cd ..
-            cd print && ln -s ../src/Analytic.bib . && bibtex blueprint.aux & cd ..
-            cd src && xelatex -output-directory=../print blueprint.tex && xelatex -output-directory=../print blueprint.tex
+            apk update
+            apk add --update py3-pip git
+            python3 -m pip install --upgrade pip requests wheel invoke
+            inv pdf; cp print/blueprint.bbl src/web.bbl
 
       - name: Generate web
         run: |
