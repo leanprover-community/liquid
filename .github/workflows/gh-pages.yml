@@ -39,13 +39,13 @@ jobs:
           cd project && leanproject get-m && cd ..
           inv decls
 
-      - name: Install Leanblueprint and generate web in tex env
+      - name: Generate pdf in tex env
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             apk update
-            apk add --update py3-pip git
-            python3 -m pip install --upgrade pip requests wheel invoke
+            apk add --update py3-pip
+            python3 -m pip install --upgrade pip requests wheel invoke mathlibtools
             inv pdf; cp print/blueprint.bbl src/web.bbl
 
       - name: Generate web
