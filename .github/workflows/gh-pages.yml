@@ -28,8 +28,7 @@ jobs:
 
       - name: Install Leanblueprint
         run: |
-          # python -m pip install pygraphviz --global-option=build_ext --global-option="-L/usr/lib/graphviz/" --global-option="-R/usr/lib/graphviz/"
-          apt-get install graphviz graphviz-dev
+          sudo apt-get install graphviz graphviz-dev
           python -m pip install pygraphviz
           python -m pip install git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
 
