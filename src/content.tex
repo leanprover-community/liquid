@@ -690,8 +690,8 @@ summable.
 
 We then set $y = ∑ y^j$ and compute:
 \begin{align*}
-  ‖x_{|c} - dy‖ &= \left‖∑_{j ≥ 0} x^j_{|c} - dy^j\right‖ \\
-    &≤ ∑_{j ≥ 0} \left‖x^j_{|c} - dy^j\right‖ \\
+  ‖x_{|c} - dy‖ &= \left\|∑_{j ≥ 0} x^j_{|c} - dy^j\right\| \\
+    &≤ ∑_{j ≥ 0} \left\|x^j_{|c} - dy^j\right\| \\
     &≤ ∑_{j ≥ 0} K‖dx^j‖ + δ_j \\
     &≤ K‖dx‖ + Kε_0 + δ_0 +  ∑_{j > 0} (Kε_j + δ_j)
 \end{align*}
@@ -731,7 +731,7 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
 
   We have
   \begin{align*}
-    ‖y^{j + 1} - y^j‖ &=  \left‖(w^{j + 1} - w^j)_{|c} - dz^j\right‖ \\
+    ‖y^{j + 1} - y^j‖ &=  \left\|(w^{j + 1} - w^j)_{|c} - dz^j\right\| \\
                       &≤  K‖dw^{j+1} - dw^j‖ + δ_j \\
                       &≤  2Kε_j + δ_j.
   \end{align*}
