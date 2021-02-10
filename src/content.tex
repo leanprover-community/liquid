@@ -1358,7 +1358,22 @@ Thus, we can apply Proposition~\ref{spectral}, and get the desired $\leq \max(k'
 
 This completes the proof of all results announced so far.
 
+
+
 \section{Relevant material that should move to a better place}
+
+We often use the following exactness property:
+
+\begin{proposition}\label{prop:completeexact} Let $M'\xrightarrow{f} M\xrightarrow{g} M''$ be maps of normed abelian groups with $gf=0$ and such that for all $m\in \ker(M\to M'')$ there is some $m'\in M'$ with $f(m')=m$ with $||m'||\leq C||m||$.
+
+Then $\widehat{M'}\xrightarrow{\widehat{f}} \widehat{M}\xrightarrow{\widehat{g}} \widehat{M''}$ satisfy $\widehat{g}\widehat{f}=0$ and for all $m\in \ker(\widehat{M}\to \widehat{M''})$ and all $\epsilon>0$ there is some $m'\in \widehat{M'}$ with $\widehat{f}(\widehat{m'})=\widehat{m}$ and $||m'||\leq (C+\epsilon)||m||$.
+\end{proposition}
+
+\begin{proof} One can write any element $m\in \widehat{M}$ as a sum $m_0+m_1+\ldots$ with $m_i\in M$ and $||m_i||\leq \epsilon_i$ for $i>0$ for any given sequence of positive numbers $\epsilon_1\geq \epsilon_2\geq \ldots$. Indeed, we can inductively choose the $m_i$ so that $||m-m_0-\ldots-m_i||\leq \tfrac 12 \epsilon_{i+1}$, in which case $||m_i||\leq \tfrac 12(\epsilon_i+\epsilon_{i+1})\leq \epsilon_i$. Taking the sequence of $\epsilon_i$'s sufficiently small so that $\sum_{i>0} \epsilon_i\leq \tfrac {||m||}{2C} \epsilon$, we can lift all $m_i$ to $m_i'$ with $||m_i'||\leq C||m_i||$, and then $m'=m_0'+m_1'+\ldots$ satisfies
+\[
+||m'||\leq ||m_0'||+C\sum_{i>0} \epsilon_i\leq C||m_0||+C\sum_{i>0} \epsilon_i\leq C||m||+2C\sum_{i>0} \epsilon_i\leq (C+\epsilon)||m||.
+\]
+\end{proof}
 
 \begin{definition} Let $M$ be a normed abelian group. Let $\widehat{M}$ be the condensed abelian group taking any profinite $S$ to the completion of the normed abelian group of locally constant maps from $S$ to $M$ (equipped with the supremum norm).
 \end{definition}
