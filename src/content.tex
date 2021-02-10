@@ -1141,8 +1141,8 @@ Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
 \]
 As $\Lambda$ is polyhedral, it is enough to check the given condition for finitely many $x$.
 
-We can then define double complexes like \eqref{eq:doublecomplex}.
-Lemma~\ref{lem:Tinv} stays true with the same constants.
+% We can then define double complexes like \eqref{eq:doublecomplex}.
+% Lemma~\ref{lem:Tinv} stays true with the same constants.
 Now we claim the following generalization of Theorem~\ref{first_target}.
 
 \begin{theorem}
@@ -1312,7 +1312,11 @@ and
 \[
 \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
 \]
-and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{prop:normedcompletion}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{snakelemma}. At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
+and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{prop:normedcompletion},
+	% Lemma~\ref{lem:Tinv},
+	and Proposition~\ref{snakelemma}
+	(plus probably some other results of which we need to work out the details).
+	At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
 
 Finally, to check the third condition, we use Lemma~\ref{homotopyNelements} to find, in degrees $\leq m$, a homotopy between the two maps from the first row
 \[
@@ -1354,8 +1358,29 @@ Thus, we can apply Proposition~\ref{spectral}, and get the desired $\leq \max(k'
 
 This completes the proof of all results announced so far.
 
+\section{Relevant material that should move to a better place}
 
+\begin{definition} Let $M$ be a normed abelian group. Let $\widehat{M}$ be the condensed abelian group taking any profinite $S$ to the completion of the normed abelian group of locally constant maps from $S$ to $M$ (equipped with the supremum norm).
+\end{definition}
 
+We note that implicit here is that this actually is a condensed abelian group.
+
+\begin{proposition}\label{prop:normedcompletion} The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets
+\[
+||\cdot||: \widehat{M}\to \mathbb R_{\geq 0}.
+\]
+
+Moreover, for any hypercover $S_\bullet\to S$ of a profinite set $S$ by profinite sets $S_i$, the complex
+\[
+0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
+\]
+is exact, and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $||f||\leq c$, then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $||g||\leq (1+\epsilon)c$ such that $d(g)=f$.
+\end{proposition}
+
+\begin{proof} For the final assertion, follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the hypercover splits, so a contracting homotopy gives the result with constant $1$. In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
+
+For the identification with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$, note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $||\cdot||$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$.
+\end{proof}
 
 
 
