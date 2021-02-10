@@ -2802,7 +2802,7 @@
 <div class="displaymath" id="a0000000106">
   \[  \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,  \]
 </div>
-<p> and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition&#160;<a href="index.html#prop:normedcompletion">7.2</a>, and Proposition&#160;<a href="index.html#snakelemma">4.10</a> (plus probably some other results of which we need to work out the details). At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon $, $k’$ and $N$ from the first paragraph of the proof. </p>
+<p> and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition&#160;<a href="index.html#prop:normedcompletion">7.3</a>, and Proposition&#160;<a href="index.html#snakelemma">4.10</a> (plus probably some other results of which we need to work out the details). At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon $, $k’$ and $N$ from the first paragraph of the proof. </p>
 <p>Finally, to check the third condition, we use Lemma&#160;<a href="index.html#homotopyNelements">5.2</a> to find, in degrees $\leq m$, a homotopy between the two maps from the first row </p>
 <div class="displaymath" id="a0000000107">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots  \]
@@ -2859,14 +2859,50 @@
 </div> </p>
 <p>This completes the proof of all results announced so far. </p>
 <h1 id="a0000000117">7 Relevant material that should move to a better place</h1>
-<p><div class="definition_thmwrapper" id="a0000000118">
+<p>We often use the following exactness property: </p>
+<p><div class="proposition_thmwrapper" id="prop:completeexact">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">7.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="index.html#prop:completeexact">#</a>
+    <a class="icon proof" href="index.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p> Let $M’\xrightarrow {f} M\xrightarrow {g} M”$ be maps of normed abelian groups with $gf=0$ and such that for all $m\in \ker (M\to M”)$ there is some $m’\in M’$ with $f(m’)=m$ with $||m’||\leq C||m||$. </p>
+<p>Then $\widehat{M'}\xrightarrow {\widehat{f}} \widehat{M}\xrightarrow {\widehat{g}} \widehat{M''}$ satisfy $\widehat{g}\widehat{f}=0$ and for all $m\in \ker (\widehat{M}\to \widehat{M''})$ and all $\epsilon >0$ there is some $m’\in \widehat{M'}$ with $\widehat{f}(\widehat{m'})=\widehat{m}$ and $||m’||\leq (C+\epsilon )||m||$. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000118">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>One can write any element $m\in \widehat{M}$ as a sum $m_0+m_1+\ldots $ with $m_i\in M$ and $||m_i||\leq \epsilon _i$ for $i>0$ for any given sequence of positive numbers $\epsilon _1\geq \epsilon _2\geq \ldots $. Indeed, we can inductively choose the $m_i$ so that $||m-m_0-\ldots -m_i||\leq \tfrac 12 \epsilon _{i+1}$, in which case $||m_i||\leq \tfrac 12(\epsilon _i+\epsilon _{i+1})\leq \epsilon _i$. Taking the sequence of $\epsilon _i$’s sufficiently small so that $\sum _{i>0} \epsilon _i\leq \tfrac {||m||}{2C} \epsilon $, we can lift all $m_i$ to $m_i’$ with $||m_i’||\leq C||m_i||$, and then $m’=m_0’+m_1’+\ldots $ satisfies </p>
+<div class="displaymath" id="a0000000119">
+  \[  ||m’||\leq ||m_0’||+C\sum _{i>0} \epsilon _i\leq C||m_0||+C\sum _{i>0} \epsilon _i\leq C||m||+2C\sum _{i>0} \epsilon _i\leq (C+\epsilon )||m||.  \]
+</div>
+
+  </div>
+</div>
+<p><div class="definition_thmwrapper" id="a0000000120">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">7.1</span>
+    <span class="definition_thmlabel">7.2</span>
     <div class="thm_icons">
-    <a class="icon proof" href="index.html#a0000000118">#</a>
+    <a class="icon proof" href="index.html#a0000000120">#</a>
 
   </div>
   </div>
@@ -2881,28 +2917,28 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">7.2</span>
+    <span class="proposition_thmlabel">7.3</span>
     <div class="thm_icons">
     <a class="icon proof" href="index.html#prop:normedcompletion">#</a>
-    <a class="icon proof" href="index.html#a0000000119"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="index.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
 
   </div>
   </div>
   <div class="proposition_thmcontent">
   <p> The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets </p>
-<div class="displaymath" id="a0000000120">
+<div class="displaymath" id="a0000000122">
   \[  ||\cdot ||: \widehat{M}\to \mathbb R_{\geq 0}.  \]
 </div>
 <p>Moreover, for any hypercover $S_\bullet \to S$ of a profinite set $S$ by profinite sets $S_i$, the complex </p>
-<div class="displaymath" id="a0000000121">
+<div class="displaymath" id="a0000000123">
   \[  0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots  \]
 </div>
 <p> is exact, and whenever $f\in \ker (\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $||f||\leq c$, then for any $\epsilon >0$ there is some $g\in \widehat{M}(S_{m-1})$ with $||g||\leq (1+\epsilon )c$ such that $d(g)=f$. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000119">
+<div class="proof_wrapper" id="a0000000121">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2917,7 +2953,7 @@
 	, 
 	Theorem 3.3
 	]
-</span>: When $S$ and all $S_i$ are finite, the hypercover splits, so a contracting homotopy gives the result with constant $1$. In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition&#160;??. </p>
+</span>: When $S$ and all $S_i$ are finite, the hypercover splits, so a contracting homotopy gives the result with constant $1$. In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition&#160;<a href="index.html#prop:completeexact">7.1</a>. </p>
 <p>For the identification with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$, note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $||\cdot ||$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$. </p>
 
   </div>
