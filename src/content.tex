@@ -550,8 +550,8 @@ $x_{|c} := \mathrm{res}_{c', c}(x)$.
 \end{definition}
 
 \begin{definition}
-  \label{is_bdd_exact_for_bdd_degree_above_idx}
-  \lean{system_of_complexes.is_bdd_exact_for_bdd_degree_above_idx}
+  \label{is_bounded_exact}
+  \lean{system_of_complexes.is_bounded_exact}
   \leanok
   \uses{system_of_complexes}
   Let $(C_c^\bullet)_c$ be a system of complexes.
@@ -568,8 +568,8 @@ $x_{|c} := \mathrm{res}_{c', c}(x)$.
 We will also need a version where the inequality is relaxed by some arbitrary small additive constant.
 
 \begin{definition}
-  \label{is_weak_bdd_exact_for_bdd_degree_above_idx}
-  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx}
+  \label{is_weak_bounded_exact}
+  \lean{system_of_complexes.is_weak_bounded_exact}
   \leanok
   \uses{system_of_complexes}
   Let $(C_c^\bullet)_c$ be a system of complexes.
@@ -587,9 +587,9 @@ We first note that the difference between those two definitions is only about co
 a tiny something on the norm bound $K$.
 
 \begin{lemma}
-  \label{is_bdd_exact_for_bdd_degree_above_idx_of_weakly}
-  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.to_exact}
-  \uses{is_bdd_exact_for_bdd_degree_above_idx, is_weak_bdd_exact_for_bdd_degree_above_idx}
+  \label{is_bounded_exact_of_weakly}
+  \lean{system_of_complexes.is_weak_bounded_exact.to_exact}
+  \uses{is_bounded_exact, is_weak_bounded_exact}
   Let $(C_c^\bullet)_c$ be a system of complexes. If $(C_c^\bullet)_c$ is
   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$ and if,
   for all $c\geq c_0'$ and all $x\in C_{kc}^i$ with $i\leq m$ such that $dx = 0$
@@ -617,8 +617,8 @@ control on the norm of $y$ if we are ready to square the restriction depth facto
 
 \begin{lemma}
   \label{is_weak_bdd_exact_controlled_y}
-  \uses{ is_weak_bdd_exact_for_bdd_degree_above_idx}
-  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.controlled_y}
+  \uses{ is_weak_bounded_exact}
+  \lean{system_of_complexes.is_weak_bounded_exact.controlled_y}
   Let $(C_c^\bullet)_c$ be a system of complexes which is
   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$.
   For all $c\geq c_0'$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$
@@ -654,8 +654,8 @@ control on the norm of $y$ if we are ready to square the restriction depth facto
 
 \begin{lemma}
   \label{completion_is_weakexact}
-  \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, admissible}
-  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.completion}
+  \uses{is_weak_bounded_exact, admissible}
+  \lean{system_of_complexes.is_weak_bounded_exact.completion}
   Let $M^\bullet_c$ be an admissible collection
   of complexes of normed abelian groups, where $c\geq c_0$.
 
@@ -701,8 +701,8 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
 
 \begin{lemma}
   \label{weakexact_implies_exact}
-  \lean{system_of_complexes.is_weak_bdd_exact_for_bdd_degree_above_idx.strong_of_complete}
-  \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, is_bdd_exact_for_bdd_degree_above_idx, admissible}
+  \lean{system_of_complexes.is_weak_bounded_exact.strong_of_complete}
+  \uses{is_weak_bounded_exact, is_bounded_exact, admissible}
   Let $M^\bullet_c$ be an admissible collection
   of complexes of complete normed abelian groups, where $c\geq c_0$.
 
@@ -711,8 +711,8 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
   with bound $K+δ$.
 \end{lemma}
 \begin{proof}
-  \uses{is_bdd_exact_for_bdd_degree_above_idx_of_weakly}
-  Lemma~\ref{is_bdd_exact_for_bdd_degree_above_idx_of_weakly} ensures we only need to care about cocycles
+  \uses{is_bounded_exact_of_weakly}
+  Lemma~\ref{is_bounded_exact_of_weakly} ensures we only need to care about cocycles
   of $M$. More precisely, let $x$ be a cocycle in $M^i_{k^2c}$ for some $i ≤ m$ and $c ≥ c_0$.
   We need to find $y \in M^{i-1}_c$ such that $dy = x_{|c}$.
 
@@ -744,7 +744,7 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
   \label{weaksnakelemma}
   \leanok
   \lean{weak_normed_snake}
-  \uses{is_weak_bdd_exact_for_bdd_degree_above_idx, admissible}
+  \uses{is_weak_bounded_exact, admissible}
   Let $M^\bullet_c$ and $M'^\bullet_c$ be two admissible collections
   of complexes of complete normed abelian groups, where $c\geq c_0$.
   Let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
@@ -828,7 +828,7 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 
 \begin{proposition}
   \label{snakelemma}
-  \uses{is_bdd_exact_for_bdd_degree_above_idx, admissible}
+  \uses{is_bounded_exact, admissible}
   Let $M^\bullet_c$ and $M'^\bullet_c$ be two admissible collections
   of complexes of complete normed abelian groups, where $c\geq c_0$.
   Let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
@@ -867,7 +867,7 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 \begin{proposition}
   \label{spectral}
   \uses{admissible}
-  \uses{is_bdd_exact_for_bdd_degree_above_idx}
+  \uses{is_bounded_exact}
   Fix an integer $m\geq 0$ and a constant $k$.
   Then there exists an $\epsilon>0$ and a constant $k_0$,
   depending (only) on $k$ and $m$, with the following property.
