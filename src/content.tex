@@ -221,70 +221,98 @@ when we construct Breen--Deligne complexes of normed abelian groups.
   (Note! The order $(c_{i+1}, c_i)$ is contravariant
   compared to Definition~\ref{universal_suitable}.
   This is because of the contravariance of $\hat V(\_)$;
-  see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
+  see Definition~\ref{eval_CLCFPTinv}.)
 \end{definition}
 
 \section{Spaces of convergent power series}
 
 \begin{definition}
   \label{pseudo_normed_group}
-  \lean{pseudo_normed_group}
+  \lean{pseudo_normed_group,profinitely_filtered_pseudo_normed_group,
+  profinitely_filtered_pseudo_normed_group_hom}
   \leanok
-  A \emph{pseudo-normed group} is an abelian group $A$,
-  together with an increasing filtration $A_c \subseteq A$ of subsets $A_c$ indexed by $\mathbb R_{\ge 0}$,
-  such that each $A_c$ contains $0$, is closed under negation,
-  and $A_{c_1} + A_{c_2} \subseteq A_{c_1 + c_2}$.
+  A \emph{pseudo-normed group} is an abelian group $M$,
+  together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$,
+  such that each $M_c$ contains $0$, is closed under negation,
+  and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$.
+
+  M pseudo-normed group is \emph{profinitely filtered}
+  if the the sets $M_c$ are profinite
+  and the following maps are continuous:
+  \begin{itemize}
+    \item the inclusion $M_{c_1} \to M_{c_2}$ (for $c_1 \le c_2$);
+    \item the negation $M_c \to M_c$;
+    \item the addition $M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}$.
+  \end{itemize}
+
+  A morphism of profinitely filtered pseudo-normed groups $M \to N$.
+  is a group homomorphism $f$ that is
+  \begin{itemize}
+    \item \emph{bounded}:
+      there is a constant $C$
+      such that $x \in M_c$ implies $f(x) \in N_{Cc}$;
+    \item \emph{continuous}:
+      for a constant $C$ as above,
+      the induced map $M_c \to N_{Cc}$ is
+      a morphism of profinite sets, i.e. continuous.
+  \end{itemize}
 \end{definition}
+
+\begin{definition}
+  \label{profinitely_filtered_pseudo_normed_group_with_Tinv}
+  \lean{profinitely_filtered_pseudo_normed_group_with_Tinv}
+  Let $r'$ be a positive real number.
+  A profinitely filtered pseudo-normed group $M$
+  has an \emph{$r'$-action of $T^{-1}$}
+  if it comes endowed with a distinguished morphism
+  of profinitely filtered pseudo-normed groups
+  $T^{-1} \colon M \to M$
+  that is bound by $r'^{-1}$:
+  if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$.
+
+  A morphism $M \to N$
+  of profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$
+  is a morphism of profinitely filtered pseudo-normed groups $f$
+  that commutes with the action of $T^{-1}$
+  and is \emph{strict}: if $x \in M_c$ then $f(x) \in N_c$.
+\end{definition}
+
+We will now construct the central example of
+profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
 
 \begin{definition}
   \label{Mbar}
-  \lean{Mbar}
+  \lean{Mbar,Mbar_le,Mbar.pseudo_normed_group}
+  \uses{pseudo_normed_group}
   \leanok
-  Let $r > 0$ be a real number, and let $S$ be a finite set.
-  Denote by $\overline{\mathcal M}_r(S)$ the set
+  Let $r' > 0$ be a real number, and let $S$ be a finite set.
+  Denote by $\overline{\mathcal M}_{r'}(S)$ the set
   \[
-    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \,\middle\vert\, \sum_{n \ge 1, s \in S} |a_{n,s}| r^n < \infty \right\}
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \,\middle\vert\, \sum_{n \ge 1, s \in S} |a_{n,s}| (r')^n < \infty \right\}.
   \]
-\end{definition}
 
-\begin{definition}
-  \label{Mbar_le}
-  \lean{Mbar_le}
-  \leanok
-  Let $r > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
-  Denote by $\overline{\mathcal M}_r(S)_{\le c}$ the set
+  Note that $\overline{\mathcal M}_{r'}(S)$ is naturally a pseudo-normed group
+  with filtration given by
   \[
-    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| r^n \le c \right\}
+    \overline{\mathcal M}_{r'}(S)_{\le c} =
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| (r')^n \le c \right\}.
   \]
 \end{definition}
 
 \begin{lemma}
-  \label{Mbar_png}
-  \lean{Mbar.pseudo_normed_group}
+  \label{Mbar_profinite_filtered}
+  \lean{Mbar.profinitely_filtered_pseudo_normed_group}
   \leanok
-  \uses{pseudo_normed_group,Mbar,Mbar_le}
-  The space $\overline{\mathcal M}_r(S)$ is a pseudo-normed group,
-  with filtration $\overline{\mathcal M}_r(S)_{\le c}$.
-\end{lemma}
-
-\begin{proof}
-  \leanok
-  Obvious.
-\end{proof}
-
-\begin{lemma}
-  \label{Mbar_le_profinite}
-  \lean{Mbar_le.eqv}
-  \leanok
-  \uses{Mbar_le}
-  Let $r > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
-  The space $\overline{\mathcal M}_r(S)_{\le c}$ is the profinite limit of the finite sets
+  \uses{Mbar}
+  Let $r' > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
+  The space $\overline{\mathcal M}_{r'}(S)_{\le c}$ is the profinite limit of the finite sets
   \[
-    \overline{\mathcal M}_r(S)_{\le c, \le N} =
+    \overline{\mathcal M}_{r'}(S)_{\le c, \le N} =
     \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert
-    \sum_{1 \le n \le N, s \in S} |a_{n,s}| r^n \le c \right\}
+    \sum_{1 \le n \le N, s \in S} |a_{n,s}| (r')^n \le c \right\}
   \]
-  This endows $\overline{\mathcal M}_r(S)_{\le c}$ with the profinite topology.
+  This endows $\overline{\mathcal M}_{r'}(S)_{\le c}$ with the profinite topology.
+  In particular, it is a profinitely filtered pseudo-normed group.
 \end{lemma}
 
 \begin{proof}
@@ -293,7 +321,7 @@ when we construct Breen--Deligne complexes of normed abelian groups.
 \end{proof}
 
 For the remainder of this section,
-let $r > 0, c \ge 0$ be real numbers,
+let $r' > 0, c \ge 0$ be real numbers,
 and let $S$ be a finite set.
 
 \begin{definition}
@@ -301,7 +329,7 @@ and let $S$ be a finite set.
   \lean{Mbar.Tinv}
   \leanok
   \uses{Mbar}
-  There is a natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$, via
+  There is a natural action of $T^{-1}$ on $\overline{\mathcal M}_{r'}(S)$, via
   \[
     T^{-1} \cdot
     \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} =
@@ -309,32 +337,20 @@ and let $S$ be a finite set.
   \]
 \end{definition}
 
-\begin{definition}
-  \label{Mbar_le_Tinv}
-  \lean{Mbar_le.Tinv}
-  \leanok
-  \uses{Mbar_le, Mbar_Tinv}
-  The natural action of $T^{-1}$ on $\overline{\mathcal M}_r(S)$ restricts to maps
-  \[
-    T^{-1} \cdot \_ \colon
-    \overline{\mathcal M}_r(S)_{\le c} \to
-    \overline{\mathcal M}_r(S)_{\le c'}
-  \]
-  for all $c' \ge c/r$.
-\end{definition}
-
 \begin{lemma}
-  \label{Mbar_le_Tinv_ctu}
-  \lean{Mbar_le.continuous_Tinv}
+  \label{Mbar_with_Tinv}
+  \lean{Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv}
   \leanok
-  \uses{Mbar_le_profinite, Mbar_Tinv}
-  For all $c' \ge c/r$, the natural maps
+  \uses{Mbar_profinitely_filtered, Mbar_Tinv}
+  The natural action of $T^{-1}$ on $\overline{\mathcal M}_{r'}(S)$
+  restricts to continuous maps
   \[
     T^{-1} \cdot \_ \colon
     \overline{\mathcal M}_r(S)_{\le c} \to
-    \overline{\mathcal M}_r(S)_{\le c'}
+    \overline{\mathcal M}_r(S)_{\le c/r'}.
   \]
-  are continuous.
+  In particular, $\overline{\mathcal M}_{r'}(S)$
+  has an $r'$-action of $T^{-1}$.
 \end{lemma}
 
 \begin{proof}
@@ -343,14 +359,16 @@ and let $S$ be a finite set.
 \end{proof}
 
 \begin{lemma}
-  \label{basic_eval_Mbar}
-  \lean{breen_deligne.basic_universal_map.eval_png_mem_filtration}
+  \label{basic_eval_FP}
+  \lean{breen_deligne.basic_universal_map.eval_FP}
   \leanok
-  \uses{Mbar, basic_universal_map}
+  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv,
+    basic_universal_map}
   Let $f$ be a basic universal map from exponent~$m$ to~$n$.
-  We get an induced homomorphism of pseudo-normed groups
+  We get an induced homomorphism of
+  profinitely filtered pseudo-normed groups
   \[
-    \overline{\mathcal M}_r(S)^m \to \overline{\mathcal M}_r(S)^n
+    \overline{\mathcal M}_{r'}(S)^m \to \overline{\mathcal M}_{r'}(S)^n
   \]
   bounded by the maximum (over all $i$) of $\sum_j |f_{ij}|$,
   where the $f_{ij}$ are the coefficients of the $n \times m$-matrix representing~$f$.
@@ -361,25 +379,6 @@ and let $S$ be a finite set.
   Omitted.
 \end{proof}
 
-\begin{lemma}
-  \label{basic_eval_Mbar_le_ctu}
-  \lean{breen_deligne.basic_universal_map.eval_Mbar_le_continuous}
-  \leanok
-  \uses{Mbar_le_profinite, Mbar_png, basic_suitable, basic_eval_Mbar}
-  Let $f$ be a basic universal map from exponent~$m$ to~$n$,
-  and let $(c_1, c_2)$ be $f$-suitable.
-  We get an induced map
-  \[
-    \overline{\mathcal M}_r(S)_{\le c_1}^m \to \overline{\mathcal M}_r(S)_{\le c_2}^n
-  \]
-  that is continuous.
-\end{lemma}
-
-\begin{proof}
-  \leanok
-  Formalised, but omitted from this text.
-\end{proof}
-
 \section{Completions of locally constant functions}
 
 \begin{definition}
@@ -387,44 +386,41 @@ and let $S$ be a finite set.
   \lean{NormedGroup.LCC}
   \leanok
   Let $V$ be a normed abelian group, and $X$ a compact topological space.
-  We denote by $\hat V(X)$ the completion
-  of the normed abelian group of locally constant functions $X \to V$
+  We denote by $V(X)$ the normed abelian group of locally constant functions $X \to V$
   with respect to the sup norm.
+  With $\hat V(X)$ we denote the completion of $V(X)$.
 
-  This construction is functorial in bounded group homomorphisms $V \to V'$
+  These constructions are functorial in bounded group homomorphisms $V \to V'$
   and contravariantly functorial in continuous maps $X \to X'$.
 \end{definition}
 
 We continue to use the notation of before:
-let $r > 0, c \ge 0$ be real numbers, and let $S$ be a finite set.
+let $r' > 0, c \ge 0$ be real numbers,
+and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T^{-1}$.
 
 \begin{definition}
-  \label{Vhat_basic_eval_Mbar}
-  \lean{breen_deligne.basic_universal_map.eval_Mbar_pow}
+  \label{basic_eval_CLCFP}
+  \lean{breen_deligne.basic_universal_map.eval_CLCFP}
   \leanok
-  \uses{basic_eval_Mbar_le_ctu, Vhat}
+  \uses{basic_eval_FP, Vhat}
   Let $f$ be a basic universal map from exponent~$m$ to~$n$,
   and let $(c_1, c_2)$ be $f$-suitable.
   We get an induced map
   \[
-    \hat V(f) \colon
-    \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to
-    \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).
+    \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n).
   \]
 \end{definition}
 
 \begin{definition}
-  \label{Vhat_eval_Mbar}
-  \lean{breen_deligne.universal_map.eval_Mbar_pow}
+  \label{eval_CLCFP}
+  \lean{breen_deligne.universal_map.eval_CLCFP}
   \leanok
   \uses{universal_suitable, Vhat_basic_eval_Mbar}
   Let $f$ be a universal map from exponent~$m$ to~$n$,
   and let $(c_1, c_2)$ be $f$-suitable.
   We get an induced map
   \[
-    \hat V(f) \colon
-    \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to
-    \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n)
+    \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n)
   \]
   that is the sum $\sum n_g V(g)$,
   if $f$ is the formal sum $\sum n_g g$
@@ -459,84 +455,59 @@ let $r > 0, c \ge 0$ be real numbers, and let $S$ be a finite set.
   Formalised, but omitted from this text.
 \end{proof}
 
-\begin{definition}
-  \label{Vhat_Mbar_Tinv}
-  \lean{LCC_Mbar_pow_Tinv}
-  \leanok
-  \uses{Mbar_le_Tinv_ctu, Vhat_normed_with_aut}
-  Let $r > 0$, $r' > 0$, $c \ge 0$ be real numbers.
-  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
-  Assume $r' \le 1$.
-  Let $S$ be a finite set.
+Let $r > 0$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+Assume $r' \le 1$.
 
-  There are two natural actions of $T^{-1}$ on
-  $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})$.
-  The first comes from Definition~\ref{Mbar_le_Tinv},
+\begin{definition}
+  \label{CLCFPTinv}
+  \lean{CLCFPTinv}
+  \leanok
+  \uses{Mbar_with_Tinv, Vhat_normed_with_aut}
+  There are two natural actions of $T^{-1}$ on $\hat V(M_{\le c})$.
+  The first comes from the $r'$-action of $T^{-1}$ on $M$
   which gives a continuous map
   \[
-    \overline{\mathcal M}_{r'}(S)_{\le cr'} \to
-    \overline{\mathcal M}_{r'}(S)_{\le c}
+    M_{\le cr'} \to M_{\le c}
   \]
   and thus a map
   \[
-    (T^{-1})^* \colon
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le cr'}).
+    (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
   \]
   The other comes from Lemma~\ref{Vhat_normed_with_aut},
   using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
   We get a map
   \[
-    [T^{-1}] \colon
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}),
+    [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le c}),
   \]
   that we can compose with the map
-  \[
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le cr'}),
-  \]
-  obtained from the natural inclusion
-  \[
-    \overline{\mathcal M}_{r'}(S)_{\le cr'} \to
-    \overline{\mathcal M}_{r'}(S)_{\le c}.
-  \]
+  $\hat V(M_{\le c}) \to \hat V(M_{\le cr'})$,
+  obtained from the natural inclusion $M_{\le cr'} \to M_{\le c}$.
   We thus end up with two maps
   \[
-    (T^{-1})^*, [T^{-1}] \colon
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c}) \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le cr'}).
+    (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
   \]
-  and we define
-  $\hat V(\overline{\mathcal M}_{r'}(S)_{\le c})^{T^{-1}}$
+  and we define $\hat V(M_{\le c})^{T^{-1}}$
   to be the equalizer of $(T^{-1})^*$ and $[T^{-1}]$.
   In other words, the kernel of $(T^{-1})^* - [T^{-1}]$.
 \end{definition}
 
 \begin{definition}
-  \label{Vhat_eval_Mbar_Tinv}
-  \lean{breen_deligne.universal_map.eval_Mbar_pow_Tinv}
+  \label{eval_CLCFPTinv}
+  \lean{breen_deligne.universal_map.eval_CLCFPTinv}
   \leanok
-  \uses{Vhat_Mbar_Tinv, Vhat_eval_Mbar}
-  Let $r, r' \in \mathbb R_{>0}$,
-  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
-  Assume $r' \le 1$.
-  Let $S$ be a finite set.
+  \uses{CLCFPTinv, eval_CLCFP}
   Let $f$ be a universal map from exponent~$m$ to~$n$,
   and let $(c_1, c_2)$ be $f$-suitable.
 
-  The natural map from Definition~\ref{Vhat_eval_Mbar}
+  The natural map from Definition~\ref{eval_CLCFP}
   restricts to a map
   \[
-    \hat V(f)^{T^{-1}} \colon
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_2}^n)^{T^{-1}} \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_1}^m)^{T^{-1}}
+    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_2}^n)^{T^{-1}} \to \hat V(M_{\le c_1}^m)^{T^{-1}}
   \]
 \end{definition}
 
 \section{Some normed homological algebra}%
 \label{sec:some_normed_homological_algebra}
-
 
 \begin{definition}
   \label{system_of_complexes}
@@ -1054,27 +1025,28 @@ for all $c>0$.
 \section{End of proof}
 
 \begin{definition}
-  \label{Mbar_system}
-  \lean{Mbar_system}
+  \label{BD_system}
+  \lean{breen_deligne.package.system}
   \leanok
-  \uses{BD_suitable, Vhat_eval_Mbar_Tinv, system_of_complexes}
+  \uses{BD_suitable, eval_CLCFPTinv, system_of_complexes}
   Let $r, r' \in \mathbb R_{>0}$,
   and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
   Assume $r' \le 1$.
-  Let $S$ be a finite set.
-  Let $(n,f,h)$ be a Breen--Deligne package,
+  Let $M$ be a profinitely filtered pseudo-normed group with $r'$-action of $T^{-1}$.
+  Let $\text{BD} = (n,f,h)$ be a Breen--Deligne package,
   and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
-  that is $(n,f,h)$-suitable.
+  that is $\text{BD}$-suitable.
 
   For every $c \in \mathbb R_{\ge 0}$,
-  the maps from Definition~\ref{Vhat_eval_Mbar_Tinv}
+  the maps from Definition~\ref{eval_CLCFPTinv}
   induced by the universal maps $f_i$ from the Breen--Deligne package $(n,f,h)$
   assemble into a complex of normed abelian groups
   \[
+    C^{\text{BD}}_{c'}(M)_c^\bullet \colon
     \dots \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_i}^{n_i})^{T^{-1}}
+    \hat V(M_{\le c_i}^{n_i})^{T^{-1}}
     \to
-    \hat V(\overline{\mathcal M}_{r'}(S)_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}}
+    \hat V(M_{\le c_{i+1}}^{n_{i+1}})^{T^{-1}}
     \to \dots \to 0.
   \]
   Together, these complexes fit into a system of complexes
@@ -1091,14 +1063,15 @@ we assume that the sets $S$ are finite, rather than profinite.
   \label{first_target}
   \lean{first_target}
   \leanok
-  \uses{Mbar_system}
-  Let $(n,f,h)$ be a Breen--Deligne package,
-  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$.
+  \uses{BD_system}
+  Let $\text{BD} = (n,f,h)$ be a Breen--Deligne package,
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+  that is $\text{BD}$-suitable.
 	Fix radii $1>r'>r>0$.
   For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
   the system of complexes
   \[
-    C_c^\bullet \colon
+    C^{\text{BD}}_{c'}(\overline{\mathcal M}_{r'}(S))_c^\bullet \colon
     \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
     \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c'_1c}^2)^{T^{-1}}
     \to \ldots
@@ -1151,7 +1124,7 @@ Now we claim the following generalization of Theorem~\ref{first_target}.
 
 \begin{theorem}
   \label{explicit}
-  \uses{polyhedral_lattice}
+  \uses{polyhedral_lattice, BD_system}
   Fix radii $1>r'>r>0$. For any $m$ there is some $k$
   such that for all polyhedral lattices $\Lambda$
   there is a constant $c_0(\Lambda)>0$
@@ -1336,7 +1309,7 @@ respectively induced by the addition $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S)
 \]
 By Lemma~\ref{homotopyNelements}, we can find this homotopy between the complex for $k'c$ and the complex for $c$, by our choice of $k'\geq c_i'$ for $i=0,\ldots,m$. As $N$ is fixed, the homotopy is the universal homotopy from Lemma~\ref{homotopyNelements}, and in particular its norm is bounded by some universal constant $H$.
 
-Finally, it remains to establish the estimate \eqref{eq:homotopicmapsmall} on the homotopic map. We note that this takes $x\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of \eqref{eq:homotopicmapsmall}) to the element
+Finally, it remains to establish the estimate (\ref{eq:homotopicmapsmall}) on the homotopic map. We note that this takes $x\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of (\ref{eq:homotopicmapsmall})) to the element
 \[
 y\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}
 \]
