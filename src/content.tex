@@ -179,6 +179,51 @@ can be viewed as universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
   with these definitions $(n, f, h)$ forms a Breen--Deligne package.
 \end{definition}
 
+We now make three definitions that will make precise
+some conditions between constants that will be needed
+when we construct Breen--Deligne complexes of normed abelian groups.
+
+\begin{definition}
+  \label{basic_suitable}
+  \lean{breen_deligne.basic_universal_map.suitable}
+  \leanok
+  \uses{basic_universal_map}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$.
+  Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
+  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all $i$
+  \[
+    \sum_j c_1|f_{ij}| \le c_2.
+  \]
+\end{definition}
+
+\begin{definition}
+  \label{universal_suitable}
+  \lean{breen_deligne.universal_map.suitable}
+  \leanok
+  \uses{universal_map, basic_suitable}
+  Let $f$ be a universal map from exponent~$m$ to~$n$.
+  Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
+  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all basic universal maps $g$
+  that occur in the formal sum $f$,
+  the pair of nonnegative reals $(c_1, c_2)$ is $g$-suitable.
+\end{definition}
+
+\begin{definition}
+  \label{BD_suitable}
+  \lean{breen_deligne.package.suitable}
+  \leanok
+  \uses{BD_package, universal_suitable}
+  Let $(n, f, h)$ be a Breen--Deligne package,
+  and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
+  We say that $c$ is \emph{$(n,f,h)$-suitable},
+  if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
+
+  (Note! The order $(c_{i+1}, c_i)$ is contravariant
+  compared to Definition~\ref{universal_suitable}.
+  This is because of the contravariance of $\hat V(\_)$;
+  see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
+\end{definition}
+
 \section{Spaces of convergent power series}
 
 \begin{definition}
@@ -316,19 +361,6 @@ and let $S$ be a finite set.
   Omitted.
 \end{proof}
 
-\begin{definition}
-  \label{basic_suitable}
-  \lean{breen_deligne.basic_universal_map.suitable}
-  \leanok
-  \uses{basic_universal_map}
-  Let $f$ be a basic universal map from exponent~$m$ to~$n$.
-  Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
-  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all $i$
-  \[
-    \sum_j c_1|f_{ij}| \le c_2.
-  \]
-\end{definition}
-
 \begin{lemma}
   \label{basic_eval_Mbar_le_ctu}
   \lean{breen_deligne.basic_universal_map.eval_Mbar_le_continuous}
@@ -379,18 +411,6 @@ let $r > 0, c \ge 0$ be real numbers, and let $S$ be a finite set.
     \hat V(\overline{\mathcal M}_r(S)_{\le c_1}^m) \to
     \hat V(\overline{\mathcal M}_r(S)_{\le c_2}^n).
   \]
-\end{definition}
-
-\begin{definition}
-  \label{universal_suitable}
-  \lean{breen_deligne.universal_map.suitable}
-  \leanok
-  \uses{universal_map, basic_suitable}
-  Let $f$ be a universal map from exponent~$m$ to~$n$.
-  Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
-  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all basic universal maps $g$
-  that occur in the formal sum $f$,
-  the pair of nonnegative reals $(c_1, c_2)$ is $g$-suitable.
 \end{definition}
 
 \begin{definition}
@@ -1032,22 +1052,6 @@ for all $c>0$.
 \end{proof}
 
 \section{End of proof}
-
-\begin{definition}
-  \label{BD_suitable}
-  \lean{breen_deligne.package.suitable}
-  \leanok
-  \uses{BD_package, universal_suitable}
-  Let $(n, f, h)$ be a Breen--Deligne package,
-  and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
-  We say that $c$ is \emph{$(n,f,h)$-suitable},
-  if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
-
-  (Note! The order $(c_{i+1}, c_i)$ is contravariant
-  compared to Definition~\ref{universal_suitable}.
-  This is because of the contravariance of $\hat V(\_)$;
-  see Definition~\ref{Vhat_eval_Mbar_Tinv}.)
-\end{definition}
 
 \begin{definition}
   \label{Mbar_system}
