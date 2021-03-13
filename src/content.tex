@@ -1164,7 +1164,23 @@ will have bounded norm, independently of $V$ (as they are a certain universal fi
 Finally, we can prove the key combinatorial lemma,
 ensuring that any element of $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$
 can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element.
-As preparation, we have the following results.
+
+\begin{lemma}
+  \label{combi}
+  \lean{lem98}
+  \leanok
+  \uses{polyhedral_lattice}
+  Let $\Lambda$ be a polyhedral lattice.
+  Then for all positive integers $N$ there is a constant $d$
+  such that for all $c>0$ one can write any
+  $x\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as
+  \[
+    x=x_1+\ldots+x_N
+  \]
+  where all $x_i\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$.
+\end{lemma}
+
+As preparation for the proof, we have the following results.
 
 \begin{lemma}[Gordan's lemma]
   \label{explicit_gordan}
@@ -1209,26 +1225,34 @@ As preparation, we have the following results.
   Then we can take for $A$ all sums $n_1y_1+\ldots+n_My_M$ where all $n_j\in \{0,\ldots,N-1\}$.
 \end{proof}
 
-Now we have the key lemma:
-
 \begin{lemma}
-  \label{combi}
-  \lean{lem98}
+  \label{exists_partition}
+  \lean{exists_partition}
   \leanok
-  \uses{polyhedral_lattice}
-  Let $\Lambda$ be a polyhedral lattice.
-  Then for all positive integers $N$ there is a constant $d$
-  such that for all $c>0$ one can write any
-  $x\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as
-  \[
-    x=x_1+\ldots+x_N
-  \]
-  where all $x_i\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$.
+  Let $x_0, x_1, \dots$ be a sequence of reals,
+  and assume that $\sum_{i=0}^\infty x_i$ converges absolutely.
+  For every natural number $N > 0$,
+  there exists a partition $\mathbb N = A_1 \sqcup A_2 \sqcup \dots \sqcup A_N$
+  such that for each $j = 1,\dots,N$ we have
+  $\sum_{i \in A_j} x_i \le (\sum_{i=0}^\infty x_i)/N + 1$
 \end{lemma}
 
 \begin{proof}
+  \leanok
+  Define the $A_j$ recursively:
+  assume that the natural numbers $0, \dots, n$
+  have been placed into the sets $A_1, \dots, A_N$.
+  Then add the number $n+1$ to the set $A_j$ for which
+  \[
+    \sum_{i=0, i\in A_j}^n x_i
+  \]
+  is minimal.
+\end{proof}
+
+\begin{proof}[{Proof of Lemma~\ref{combi}}]
   \proves{combi}
   \uses{combi_aux}
+  \uses{exists_partition}
   \leanok
   Pick $\lambda_1,\ldots,\lambda_m\in \Lambda$ generating the norm. We fix a finite subset $A\subset \Lambda^\vee$ satisfying the conclusion of the previous lemma. Write
   \[
