@@ -1249,10 +1249,29 @@ As preparation for the proof, we have the following results.
   is minimal.
 \end{proof}
 
+\begin{lemma}
+  \label{combi_int}
+  \lean{lem98_int}
+  \leanok
+  For all natural numbers $N > 0$,
+  and for all $x\in \overline{\mathcal M}_{r'}(S)_{\leq c}$
+  one can decompose $x$ as a sum
+  \[
+    x=x_1+\ldots+x_N
+  \]
+  with all $x_i\in \overline{\mathcal M}_{r'}(S)_{\leq c/N+1}$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  \uses{exists_partition}
+  Choose a bijection $S \times \N \cong \N$,
+  and transport the result from Lemma~\ref{exists_partition}.
+\end{proof}
+
 \begin{proof}[{Proof of Lemma~\ref{combi}}]
   \proves{combi}
-  \uses{combi_aux}
-  \uses{exists_partition}
+  \uses{combi_aux, lem98_int}
   \leanok
   Pick $\lambda_1,\ldots,\lambda_m\in \Lambda$ generating the norm. We fix a finite subset $A\subset \Lambda^\vee$ satisfying the conclusion of the previous lemma. Write
   \[
