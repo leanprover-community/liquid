@@ -856,12 +856,11 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 \end{proof}
 
 
-
-
 \begin{proposition}
   \label{spectral}
   \uses{admissible}
   \uses{is_bounded_exact}
+  \lean{system_of_double_complexes.normed_spectral}
   Fix an integer $m\geq 0$ and a constant $k$.
   Then there exists an $\epsilon>0$ and a constant $k_0$,
   depending (only) on $k$ and $m$, with the following property.
@@ -1145,6 +1144,7 @@ Now we claim the following generalization of Theorem~\ref{first_target}.
 \begin{proof}
   \proves{first_target}
   \uses{explicit}
+  \leanok
   Use $\Lambda = \mathbb Z$, and the isomorphism $\Hom(\mathbb Z, A) \cong A$.
 \end{proof}
 
@@ -1162,7 +1162,23 @@ will have bounded norm, independently of $V$ (as they are a certain universal fi
 Finally, we can prove the key combinatorial lemma,
 ensuring that any element of $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$
 can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element.
-As preparation, we have the following simple result.
+As preparation, we have the following results.
+
+\begin{lemma}[Gordan's lemma]
+  \label{explicit_gordan}
+  \lean{explicit_gordan}
+  \leanok
+  Let $\Lambda$ be a finite free abelian group,
+  and let $\lambda_1, \ldots, \lambda_m \in \Lambda$ be elements.
+  Let $M \subset \Hom(\Lambda, \mathbb Z)$ be the submonoid
+  $\{x \mid x(\lambda_i) \ge 0 \text{ for all $i = 1, \dots, m$}\}$.
+  Then $M$ is finitely generated as monoid.
+\end{lemma}
+
+\begin{proof}
+  This is a standard result.
+  We have not formalised it yet, but it is work in progress.
+\end{proof}
 
 \begin{lemma}
   \label{combi_aux}
@@ -1180,12 +1196,13 @@ As preparation, we have the following simple result.
 \end{lemma}
 
 \begin{proof}
+  \uses{explicit_gordan}
   It suffices to prove the statement for all $x$ such that $\lambda_i(x)\geq 0$ for all $i$;
   indeed, applying this variant to all $\pm \lambda_i$, one gets the full statement.
 
   Thus, consider the submonoid $\Lambda^\vee_+\subset \Lambda^\vee$
   of all $x$ that pair nonnegatively with all $\lambda_i$.
-  This is a finitely generated monoid by standard results;
+  This is a finitely generated monoid by Lemma~\ref{explicit_gordan};
   let $y_1,\ldots,y_M$ be a set of generators.
   Then we can take for $A$ all sums $n_1y_1+\ldots+n_My_M$ where all $n_j\in \{0,\ldots,N-1\}$.
 \end{proof}
@@ -1210,6 +1227,7 @@ Now we have the key lemma:
 \begin{proof}
   \proves{combi}
   \uses{combi_aux}
+  \leanok
   Pick $\lambda_1,\ldots,\lambda_m\in \Lambda$ generating the norm. We fix a finite subset $A\subset \Lambda^\vee$ satisfying the conclusion of the previous lemma. Write
   \[
   x=\sum_{n\geq 1, s\in S} x_{n,s} T^n [s]
