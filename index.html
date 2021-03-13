@@ -2471,123 +2471,17 @@
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})  \]
 </div>
 <p> will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem&#160;<a href="index.html#explicit">6.5</a>, and the rest of the proof. </p>
-<p>Finally, we can prove the key combinatorial lemma, ensuring that any element of $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))$ can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element. As preparation, we have the following results. </p>
-<p><div class="lemma_thmwrapper" id="explicit_gordan">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">6.6</span>
-    <span class="lemma_thmtitle">Gordan’s lemma</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="index.html#explicit_gordan">#</a>
-    <a class="icon proof" href="index.html#a0000000086"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/5b97f945cbf29d57b10ef5d3c3f768d45df81d4e/src/lem97.lean#L76">explicit_gordan</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   Let $\Lambda $ be a finite free abelian group, and let $\lambda _1, \ldots , \lambda _m \in \Lambda $ be elements. Let $M \subset \operatorname{Hom}(\Lambda , \mathbb Z)$ be the submonoid $\{ x \mid x(\lambda _i) \ge 0 $</p>
-
-  </div>
-</div> for all $$i = 1, …, m$$}$$. Then $M$ is finitely generated as monoid. <div class="lemma_thmwrapper" id="a0000000087">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <div class="thm_icons">
-    <a class="icon proof" href="index.html#a0000000087">#</a>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000086">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p>This is a standard result. We have not formalised it yet, but it is work in progress. </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="combi_aux">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">6.7</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="index.html#combi_aux">#</a>
-    <a class="icon proof" href="index.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/5b97f945cbf29d57b10ef5d3c3f768d45df81d4e/src/lem97.lean#L91">lem97</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  Let $\Lambda $ be a finite free abelian group, let $N$ be a positive integer, and let $\lambda _1,\ldots ,\lambda _m\in \Lambda $ be elements. Then there is a finite subset $A\subset \Lambda ^\vee $ such that for all $x\in \Lambda ^\vee =\operatorname{Hom}(\Lambda ,\mathbb Z)$ there is some $x’\in A$ such that $x-x’\in N\Lambda ^\vee $ and for all $i=1,\ldots ,m$, the numbers $x’(\lambda _i)$ and $(x-x’)(\lambda _i)$ have the same sign, i.e.&#160;are both nonnegative or both nonpositive. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000088">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p> It suffices to prove the statement for all $x$ such that $\lambda _i(x)\geq 0$ for all $i$; indeed, applying this variant to all $\pm \lambda _i$, one gets the full statement. </p>
-<p>Thus, consider the submonoid $\Lambda ^\vee _+\subset \Lambda ^\vee $ of all $x$ that pair nonnegatively with all $\lambda _i$. This is a finitely generated monoid by Lemma&#160;<a href="index.html#explicit_gordan">6.6</a>; let $y_1,\ldots ,y_M$ be a set of generators. Then we can take for $A$ all sums $n_1y_1+\ldots +n_My_M$ where all $n_j\in \{ 0,\ldots ,N-1\} $. </p>
-
-  </div>
-</div>
-<p>Now we have the key lemma: </p>
+<p>Finally, we can prove the key combinatorial lemma, ensuring that any element of $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))$ can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element. </p>
 <p><div class="lemma_thmwrapper" id="combi">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.8</span>
+    <span class="lemma_thmlabel">6.6</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="index.html#combi">#</a>
-    <a class="icon proof" href="index.html#a0000000089"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="index.html#a0000000086"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -2623,14 +2517,61 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let $\Lambda $ be a polyhedral lattice. Then for all positive integers $N$ there is a constant $d$ such that for all $c>0$ one can write any $x\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as </p>
-<div class="displaymath" id="a0000000090">
+<div class="displaymath" id="a0000000087">
   \[  x=x_1+\ldots +x_N  \]
 </div>
 <p> where all $x_i\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000089">
+<p>As preparation for the proof, we have the following results. </p>
+<p><div class="lemma_thmwrapper" id="explicit_gordan">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.7</span>
+    <span class="lemma_thmtitle">Gordan’s lemma</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="index.html#explicit_gordan">#</a>
+    <a class="icon proof" href="index.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/5b97f945cbf29d57b10ef5d3c3f768d45df81d4e/src/lem97.lean#L76">explicit_gordan</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let $\Lambda $ be a finite free abelian group, and let $\lambda _1, \ldots , \lambda _m \in \Lambda $ be elements. Let $M \subset \operatorname{Hom}(\Lambda , \mathbb Z)$ be the submonoid $\{ x \mid x(\lambda _i) \ge 0 $</p>
+
+  </div>
+</div> for all $$i = 1, …, m$$}$$. Then $M$ is finitely generated as monoid. <div class="lemma_thmwrapper" id="a0000000089">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <div class="thm_icons">
+    <a class="icon proof" href="index.html#a0000000089">#</a>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000088">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2639,20 +2580,129 @@
 
   </div>
   <div class="proof_content">
-  <p>  Pick $\lambda _1,\ldots ,\lambda _m\in \Lambda $ generating the norm. We fix a finite subset $A\subset \Lambda ^\vee $ satisfying the conclusion of the previous lemma. Write </p>
-<div class="displaymath" id="a0000000091">
+  <p>This is a standard result. We have not formalised it yet, but it is work in progress. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="combi_aux">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="index.html#combi_aux">#</a>
+    <a class="icon proof" href="index.html#a0000000090"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/5b97f945cbf29d57b10ef5d3c3f768d45df81d4e/src/lem97.lean#L91">lem97</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let $\Lambda $ be a finite free abelian group, let $N$ be a positive integer, and let $\lambda _1,\ldots ,\lambda _m\in \Lambda $ be elements. Then there is a finite subset $A\subset \Lambda ^\vee $ such that for all $x\in \Lambda ^\vee =\operatorname{Hom}(\Lambda ,\mathbb Z)$ there is some $x’\in A$ such that $x-x’\in N\Lambda ^\vee $ and for all $i=1,\ldots ,m$, the numbers $x’(\lambda _i)$ and $(x-x’)(\lambda _i)$ have the same sign, i.e.&#160;are both nonnegative or both nonpositive. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000090">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p> It suffices to prove the statement for all $x$ such that $\lambda _i(x)\geq 0$ for all $i$; indeed, applying this variant to all $\pm \lambda _i$, one gets the full statement. </p>
+<p>Thus, consider the submonoid $\Lambda ^\vee _+\subset \Lambda ^\vee $ of all $x$ that pair nonnegatively with all $\lambda _i$. This is a finitely generated monoid by Lemma&#160;<a href="index.html#explicit_gordan">6.7</a>; let $y_1,\ldots ,y_M$ be a set of generators. Then we can take for $A$ all sums $n_1y_1+\ldots +n_My_M$ where all $n_j\in \{ 0,\ldots ,N-1\} $. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="exists_partition">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.9</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="index.html#exists_partition">#</a>
+    <a class="icon proof" href="index.html#a0000000091"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/5b97f945cbf29d57b10ef5d3c3f768d45df81d4e/src/partition.lean#L102">exists_partition</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let $x_0, x_1, \dots $ be a sequence of reals, and assume that $\sum _{i=0}^\infty x_i$ converges absolutely. For every natural number $N > 0$, there exists a partition $\mathbb N = A_1 \sqcup A_2 \sqcup \dots \sqcup A_N$ such that for each $j = 1,\dots ,N$ we have $\sum _{i \in A_j} x_i \le (\sum _{i=0}^\infty x_i)/N + 1$ </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000091">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Define the $A_j$ recursively: assume that the natural numbers $0, \dots , n$ have been placed into the sets $A_1, \dots , A_N$. Then add the number $n+1$ to the set $A_j$ for which </p>
+<div class="displaymath" id="a0000000092">
+  \[  \sum _{i=0, i\in A_j}^n x_i  \]
+</div>
+<p> is minimal. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000086">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof of Lemma&#160;<a href="index.html#combi">6.6</a>
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>    Pick $\lambda _1,\ldots ,\lambda _m\in \Lambda $ generating the norm. We fix a finite subset $A\subset \Lambda ^\vee $ satisfying the conclusion of the previous lemma. Write </p>
+<div class="displaymath" id="a0000000093">
   \[  x=\sum _{n\geq 1, s\in S} x_{n,s} T^n [s]  \]
 </div>
 <p> with $x_{n,s}\in \Lambda ^\vee $. Then we can decompose </p>
-<div class="displaymath" id="a0000000092">
+<div class="displaymath" id="a0000000094">
   \[  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1  \]
 </div>
 <p> where $x_{n,s}^1\in A$ and we have the same-sign property of the last lemma. Letting $x^0 = \sum _{n\geq 1, s\in S} x_{n,s}^0 T^n [s]$, we get a decomposition </p>
-<div class="displaymath" id="a0000000093">
+<div class="displaymath" id="a0000000095">
   \[  x = Nx^0 + \sum _{a\in A} a x_a  \]
 </div>
 <p> with $x_a\in \overline{\mathcal M}_{r'}(S)$ (with the property that in the basis given by the $T^n [s]$, all coefficients are $0$ or $1$). Crucially, we know that for all $i=1,\ldots ,m$, we have </p>
-<div class="displaymath" id="a0000000094">
+<div class="displaymath" id="a0000000096">
   \[  ‖x(\lambda _i)‖ = N ‖x^0(\lambda _i)‖ + \sum _{a\in A} |a(\lambda _i)| ‖x_a‖  \]
 </div>
 <p> by using the same sign property of the decomposition. </p>
@@ -2670,97 +2720,97 @@
   </div>
   <div class="proof_content">
   <p>   We argue by induction on $m$, so assume the result for $m-1$ (this is no assumption for $m=0$, so we do not need an induction start). This gives us some $k>1$ for which the statement of Theorem&#160;<a href="index.html#explicit">6.5</a> holds true for $m-1$; if $m=0$, simply take any $k>1$. In the proof below, we will increase $k$ further in a way that depends only on $m$ and $r$. After this modified choice of $k$, we fix $\epsilon $ and $k_0$ as provided by Proposition&#160;<a href="index.html#spectral">4.11</a>. Moreover, we let $k’$ be the supremum of $k_0$ and the $c_i’$ from Lemma&#160;<a href="index.html#basehomotopy">5.1</a> (and&#160;<a href="index.html#homotopyNelements">5.2</a>) for $i=0,\ldots ,m$. Finally, choose a positive integer $b$ so that $2k’(\tfrac r{r’})^b\leq \epsilon $, and let $N$ be the minimal power of $2$ that satisfies </p>
-<div class="displaymath" id="a0000000095">
+<div class="displaymath" id="a0000000097">
   \[  k’/N\leq (r’)^b.  \]
 </div>
 <p> Then in particular $r^bN\leq \frac2{k'}(\tfrac {r}{r’})^b\leq \epsilon $. </p>
 <p>We consider the diagonal embedding </p>
-<div class="displaymath" id="a0000000096">
+<div class="displaymath" id="a0000000098">
   \[  \Lambda \hookrightarrow \Lambda ’ = \Lambda ^N,  \]
 </div>
 <p> where we endow $\Lambda ’$ with the norm </p>
-<div class="displaymath" id="a0000000097">
+<div class="displaymath" id="a0000000099">
   \[  ‖(\lambda _1,\ldots ,\lambda _N)‖_{\Lambda '} = \tfrac 1N(‖\lambda _1‖_\Lambda +\ldots +‖\lambda _N‖_\Lambda ).  \]
 </div>
 <p> For any $m\geq 1$, let $\Lambda ’^{(m)}$ be given by $\Lambda ’^m / \Lambda \otimes (\mathbb Z^m)_{\sum =0}$; then $\Lambda ’^{(\bullet )}$ is cosimplicial polyhedral lattice, the Čech conerve of $\Lambda \to \Lambda ’$. For $m=0$, we set $\Lambda ’^{(0)} = \Lambda $. It is clear that all of these are polyhedral lattices. </p>
 <p>In particular, for any $c>0$, we have </p>
-<div class="displaymath" id="a0000000098">
+<div class="displaymath" id="a0000000100">
   \[  \operatorname{Hom}(\Lambda ’^{(m)},\overline{\mathcal M}_{r'}(S))_{\leq c} = \operatorname{Hom}(\Lambda ’,\overline{\mathcal M}_{r'}(S))_{\leq c}^{m/\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}},  \]
 </div>
 <p> the $m$-fold fibre product of $\operatorname{Hom}(\Lambda ’,\overline{\mathcal M}_{r'}(S))_{\leq c}$ over $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}$; and </p>
-<div class="displaymath" id="a0000000099">
+<div class="displaymath" id="a0000000101">
   \[  \operatorname{Hom}(\Lambda ’,\overline{\mathcal M}_{r'}(S))_{\leq c} = \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N,  \]
 </div>
 <p> with the map to $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}$ given by the sum map. </p>
-<p>Consider the collection of double complexes $C_{\Lambda '^{(\bullet )},c}^\bullet $ associated to this cosimplicial polyhedral lattice by Dold-Kan. Up to rescaling the norms in the complex for $\Lambda ’^{(m)}$ by a universal constant (something like $(m+2)!$), the differentials are strictly compatible with norms (as they are an alternating sum of $m+1$ face maps, all of which are of norm $\leq 1$), so this collection of normed double complexes is admissible. By induction, the first condition of Proposition&#160;<a href="index.html#spectral">4.11</a> is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda $ but not $V$ or $S$). By Lemma&#160;<a href="index.html#combi">6.8</a>, and noting that $\operatorname{Hom}(\Lambda ’^{(\bullet )},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the Čech nerve of </p>
-<div class="displaymath" id="a0000000100">
+<p>Consider the collection of double complexes $C_{\Lambda '^{(\bullet )},c}^\bullet $ associated to this cosimplicial polyhedral lattice by Dold-Kan. Up to rescaling the norms in the complex for $\Lambda ’^{(m)}$ by a universal constant (something like $(m+2)!$), the differentials are strictly compatible with norms (as they are an alternating sum of $m+1$ face maps, all of which are of norm $\leq 1$), so this collection of normed double complexes is admissible. By induction, the first condition of Proposition&#160;<a href="index.html#spectral">4.11</a> is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda $ but not $V$ or $S$). By Lemma&#160;<a href="index.html#combi">6.6</a>, and noting that $\operatorname{Hom}(\Lambda ’^{(\bullet )},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the Čech nerve of </p>
+<div class="displaymath" id="a0000000102">
   \[  \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow {\sum } \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c},  \]
 </div>
-<p> also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r’c_ic_0/N$ is at least the $d$ of Lemma&#160;<a href="index.html#combi">6.8</a> for all $i=0,\ldots ,m$ (so this choice of $c_0$ again depends on $\Lambda $). Indeed, then one can splice a surjection of profinite sets between the maps </p>
-<div class="displaymath" id="a0000000101">
+<p> also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r’c_ic_0/N$ is at least the $d$ of Lemma&#160;<a href="index.html#combi">6.6</a> for all $i=0,\ldots ,m$ (so this choice of $c_0$ again depends on $\Lambda $). Indeed, then one can splice a surjection of profinite sets between the maps </p>
+<div class="displaymath" id="a0000000103">
   \[  \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a  \]
 </div>
 <p> and </p>
-<div class="displaymath" id="a0000000102">
+<div class="displaymath" id="a0000000104">
   \[  \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,  \]
 </div>
 <p> and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition&#160;<a href="index.html#prop:normedcompletion">7.2</a>, and Proposition&#160;<a href="index.html#snakelemma">4.10</a> (plus probably some other results of which we need to work out the details). At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon $, $k’$ and $N$ from the first paragraph of the proof. </p>
 <p>Finally, to check the third condition, we use Lemma&#160;<a href="index.html#homotopyNelements">5.2</a> to find, in degrees $\leq m$, a homotopy between the two maps from the first row </p>
-<div class="displaymath" id="a0000000103">
+<div class="displaymath" id="a0000000105">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots  \]
 </div>
 <p> to the second row </p>
-<div class="displaymath" id="a0000000104">
+<div class="displaymath" id="a0000000106">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_1c/N}^{2N})^{T^{-1}}\to \ldots  \]
 </div>
 <p> respectively induced by the addition $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}$ (which is the map that forms part of the double complex), and the map that is the sum of the $N$ maps induced by the $N$ projection maps </p>
-<div class="displaymath" id="a0000000105">
+<div class="displaymath" id="a0000000107">
   \[  \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N}\subset \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}.  \]
 </div>
 <p> By Lemma&#160;<a href="index.html#homotopyNelements">5.2</a>, we can find this homotopy between the complex for $k’c$ and the complex for $c$, by our choice of $k’\geq c_i’$ for $i=0,\ldots ,m$. As $N$ is fixed, the homotopy is the universal homotopy from Lemma&#160;<a href="index.html#homotopyNelements">5.2</a>, and in particular its norm is bounded by some universal constant $H$. </p>
 <p>Finally, it remains to establish the estimate (<a href="index.html#eq:homotopicmapsmall">4.3</a>) on the homotopic map. We note that this takes $x\in \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of (<a href="index.html#eq:homotopicmapsmall">4.3</a>)) to the element </p>
-<div class="displaymath" id="a0000000106">
+<div class="displaymath" id="a0000000108">
   \[  y\in \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}  \]
 </div>
 <p> that is the sum of the $N$ pullbacks along the $N$ projection maps $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i}\to \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i}$. We note that these actually take image in $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i}$ as $N\geq k’$, so this actually gives a well-defined map </p>
-<div class="displaymath" id="a0000000107">
+<div class="displaymath" id="a0000000109">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.  \]
 </div>
 <p> We need to see that this map is of norm $\leq \epsilon $. Now note that by our choice of $N$, we actually have $k’c_ic/N\leq (r’)^b c_ic$, so this can be written as the composite of the restriction map </p>
-<div class="displaymath" id="a0000000108">
+<div class="displaymath" id="a0000000110">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}  \]
 </div>
 <p> and </p>
-<div class="displaymath" id="a0000000109">
+<div class="displaymath" id="a0000000111">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.  \]
 </div>
-<p> The first map has norm exactly $r^b$, by $T^{-1}$-invariance, and as multiplication by $T$ scales the norm with a factor of $r$ on $\widehat{V}$.<a class="footnote" href="#a0000000110">
+<p> The first map has norm exactly $r^b$, by $T^{-1}$-invariance, and as multiplication by $T$ scales the norm with a factor of $r$ on $\widehat{V}$.<a class="footnote" href="#a0000000112">
   <sup class="footnotemark">1</sup>
 </a> The second map has norm at most $N$ (as it is a sum of $N$ maps of norm $\leq 1$). Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon $, giving the result. </p>
 <p>Thus, we can apply Proposition&#160;<a href="index.html#spectral">4.11</a>, and get the desired $\leq \max (k’^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$, where $k’$, $k_0$ and $H$ were defined only in terms of $k$, $m$, $r’$ and $r$, while $c_0$ depends on $\Lambda $ (but not on $V$ or $S$). This proves the inductive step. </p>
 
   </div>
 </div>
-<p><div class="question_thmwrapper" id="a0000000111">
+<p><div class="question_thmwrapper" id="a0000000113">
   <div class="question_thmheading">
     <span class="question_thmcaption">
     Question
     </span>
-    <span class="question_thmlabel">6.9</span>
+    <span class="question_thmlabel">6.10</span>
     <div class="thm_icons">
-    <a class="icon proof" href="index.html#a0000000111">#</a>
+    <a class="icon proof" href="index.html#a0000000113">#</a>
 
   </div>
   </div>
   <div class="question_thmcontent">
-  <p>Can one make the constants explicit, and how large are they?<a class="footnote" href="#a0000000112">
+  <p>Can one make the constants explicit, and how large are they?<a class="footnote" href="#a0000000114">
   <sup class="footnotemark">2</sup>
 </a> Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the $c_i$ and $c_i’$. </p>
 
   </div>
 </div> </p>
 <p>This completes the proof of all results announced so far. </p>
-<h1 id="a0000000113">7 Relevant material that should move to a better place</h1>
+<h1 id="a0000000115">7 Relevant material that should move to a better place</h1>
 <p>We often use the following exactness property: </p>
 <p><div class="proposition_thmwrapper" id="prop:completeexact">
   <div class="proposition_thmheading">
@@ -2770,7 +2820,7 @@
     <span class="proposition_thmlabel">7.1</span>
     <div class="thm_icons">
     <a class="icon proof" href="index.html#prop:completeexact">#</a>
-    <a class="icon proof" href="index.html#a0000000114"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="index.html#a0000000116"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
 
   </div>
@@ -2781,7 +2831,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000114">
+<div class="proof_wrapper" id="a0000000116">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2791,7 +2841,7 @@
   </div>
   <div class="proof_content">
   <p>One can write any element $m\in \widehat{M}$ as a sum $m_0+m_1+\ldots $ with $m_i\in M$ and $||m_i||\leq \epsilon _i$ for $i>0$ for any given sequence of positive numbers $\epsilon _1\geq \epsilon _2\geq \ldots $. Indeed, we can inductively choose the $m_i$ so that $||m-m_0-\ldots -m_i||\leq \tfrac 12 \epsilon _{i+1}$, in which case $||m_i||\leq \tfrac 12(\epsilon _i+\epsilon _{i+1})\leq \epsilon _i$. Taking the sequence of $\epsilon _i$’s sufficiently small so that $\sum _{i>0} \epsilon _i\leq \tfrac {||m||}{2C} \epsilon $, we can lift all $m_i$ to $m_i’$ with $||m_i’||\leq C||m_i||$, and then $m’=m_0’+m_1’+\ldots $ satisfies </p>
-<div class="displaymath" id="a0000000115">
+<div class="displaymath" id="a0000000117">
   \[  ||m’||\leq ||m_0’||+C\sum _{i>0} \epsilon _i\leq C||m_0||+C\sum _{i>0} \epsilon _i\leq C||m||+2C\sum _{i>0} \epsilon _i\leq (C+\epsilon )||m||.  \]
 </div>
 
@@ -2806,7 +2856,7 @@
     <span class="proposition_thmlabel">7.2</span>
     <div class="thm_icons">
     <a class="icon proof" href="index.html#prop:normedcompletion">#</a>
-    <a class="icon proof" href="index.html#a0000000116"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="index.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -2828,18 +2878,18 @@
   </div>
   <div class="proposition_thmcontent">
   <p>  The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets </p>
-<div class="displaymath" id="a0000000117">
+<div class="displaymath" id="a0000000119">
   \[  ||\cdot ||: \widehat{M}\to \mathbb R_{\geq 0}.  \]
 </div>
 <p>Moreover, for any hypercover $S_\bullet \to S$ of a profinite set $S$ by profinite sets $S_i$, the complex </p>
-<div class="displaymath" id="a0000000118">
+<div class="displaymath" id="a0000000120">
   \[  0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots  \]
 </div>
 <p> is exact, and whenever $f\in \ker (\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $||f||\leq c$, then for any $\epsilon >0$ there is some $g\in \widehat{M}(S_{m-1})$ with $||g||\leq (1+\epsilon )c$ such that $d(g)=f$. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000116">
+<div class="proof_wrapper" id="a0000000118">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2875,8 +2925,8 @@
 </div> <!--main-text -->
 <footer id="footnotes">
 <ol>
-  <li id="a0000000110">Here is where we use $r’>r$, ensuring different scaling behaviour of the norm on source and target.</li>
-  <li id="a0000000112">A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.</li>
+  <li id="a0000000112">Here is where we use $r’>r$, ensuring different scaling behaviour of the norm on source and target.</li>
+  <li id="a0000000114">A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.</li>
 </ol>
 </footer>
 </div> <!-- content-wrapper -->
