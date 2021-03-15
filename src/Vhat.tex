@@ -1,0 +1,127 @@
+\section{Completions of locally constant functions}
+
+\begin{definition}
+  \label{Vhat}
+  \lean{NormedGroup.LCC}
+  \leanok
+  Let $V$ be a normed abelian group, and $X$ a compact topological space.
+  We denote by $V(X)$ the normed abelian group of locally constant functions $X \to V$
+  with respect to the sup norm.
+  With $\hat V(X)$ we denote the completion of $V(X)$.
+
+  These constructions are functorial in bounded group homomorphisms $V \to V'$
+  and contravariantly functorial in continuous maps $X \to X'$.
+\end{definition}
+
+We continue to use the notation of before:
+let $r' > 0, c \ge 0$ be real numbers,
+and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T^{-1}$.
+
+\begin{definition}
+  \label{basic_eval_CLCFP}
+  \lean{breen_deligne.basic_universal_map.eval_CLCFP}
+  \leanok
+  \uses{basic_eval_FP, Vhat}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$,
+  and let $(c_1, c_2)$ be $f$-suitable.
+  We get an induced map
+  \[
+    \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n).
+  \]
+\end{definition}
+
+\begin{definition}
+  \label{eval_CLCFP}
+  \lean{breen_deligne.universal_map.eval_CLCFP}
+  \leanok
+  \uses{universal_suitable, Vhat_basic_eval_Mbar}
+  Let $f$ be a universal map from exponent~$m$ to~$n$,
+  and let $(c_1, c_2)$ be $f$-suitable.
+  We get an induced map
+  \[
+    \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n)
+  \]
+  that is the sum $\sum n_g V(g)$,
+  if $f$ is the formal sum $\sum n_g g$
+  of basic universal maps.
+\end{definition}
+
+\begin{definition}
+  \label{normed_with_aut}
+  \lean{normed_with_aut}
+  \leanok
+  Let $r > 0$ be a real number.
+  An \emph{$r$-normed $\mathbb Z[T^{\pm 1}]$-module}
+  is a normed abelian group $V$
+  endowed with an automorphism $T \colon V \to V$ such that
+  for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
+\end{definition}
+
+\begin{lemma}
+  \label{Vhat_normed_with_aut}
+  \lean{NormedGroup.normed_with_aut_LCC}
+  \leanok
+  \uses{Vhat, normed_with_aut}
+  Let $r \in \mathbb R_{\ge 0}$,
+  and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+  Let $X$ be a compact space.
+  Then $\hat V(X)$ is naturally an $r$-normed $\mathbb Z[T^{\pm 1}]$-module,
+  with the action of $T$ given by post-composition.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Formalised, but omitted from this text.
+\end{proof}
+
+Let $r > 0$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+Assume $r' \le 1$.
+
+\begin{definition}
+  \label{CLCFPTinv}
+  \lean{CLCFPTinv}
+  \leanok
+  \uses{Mbar_with_Tinv, Vhat_normed_with_aut}
+  There are two natural actions of $T^{-1}$ on $\hat V(M_{\le c})$.
+  The first comes from the $r'$-action of $T^{-1}$ on $M$
+  which gives a continuous map
+  \[
+    M_{\le cr'} \to M_{\le c}
+  \]
+  and thus a map
+  \[
+    (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
+  \]
+  The other comes from Lemma~\ref{Vhat_normed_with_aut},
+  using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
+  We get a map
+  \[
+    [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le c}),
+  \]
+  that we can compose with the map
+  $\hat V(M_{\le c}) \to \hat V(M_{\le cr'})$,
+  obtained from the natural inclusion $M_{\le cr'} \to M_{\le c}$.
+  We thus end up with two maps
+  \[
+    (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
+  \]
+  and we define $\hat V(M_{\le c})^{T^{-1}}$
+  to be the equalizer of $(T^{-1})^*$ and $[T^{-1}]$.
+  In other words, the kernel of $(T^{-1})^* - [T^{-1}]$.
+\end{definition}
+
+\begin{definition}
+  \label{eval_CLCFPTinv}
+  \lean{breen_deligne.universal_map.eval_CLCFPTinv}
+  \leanok
+  \uses{CLCFPTinv, eval_CLCFP}
+  Let $f$ be a universal map from exponent~$m$ to~$n$,
+  and let $(c_1, c_2)$ be $f$-suitable.
+
+  The natural map from Definition~\ref{eval_CLCFP}
+  restricts to a map
+  \[
+    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_2}^n)^{T^{-1}} \to \hat V(M_{\le c_1}^m)^{T^{-1}}
+  \]
+\end{definition}
+
