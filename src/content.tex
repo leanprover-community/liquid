@@ -12,6 +12,7 @@
 \input{Vhat}
 \input{normed_homological}
 \input{homotopies}
+\input{polyhedral_lattice}
 
 \section{End of proof}
 
@@ -90,18 +91,6 @@ we assume that the sets $S$ are finite, rather than profinite.
 
 We will prove Theorem~\ref{first_target} by induction on $m$.
 Unfortunately, the induction requires us to prove a stronger statement.
-Before stating it, we need another definition.
-
-\begin{definition}
-  \label{polyhedral_lattice}
-  \lean{polyhedral_lattice}
-  A \emph{polyhedral lattice} is a finite free abelian group~$\Lambda$
-  equipped with a norm $‖\cdot‖_\Lambda \colon \Lambda\otimes \mathbb R\to \mathbb R$
-  (so $\Lambda\otimes \mathbb R$ is a Banach space)
-  that is given by the supremum of finitely many linear functions on $\Lambda$ with rational coefficients;
-  equivalently, the ``unit ball''
-  $\{\lambda\in \Lambda\otimes \mathbb R\mid ‖\lambda‖_\Lambda\leq 1\}$ is a rational polyhedron.
-\end{definition}
 
 Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
 \[
@@ -146,148 +135,6 @@ the maps
 \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})
 \]
 will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem~\ref{explicit}, and the rest of the proof.
-
-
-Finally, we can prove the key combinatorial lemma,
-ensuring that any element of $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$
-can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element.
-
-\begin{lemma}
-  \label{combi}
-  \lean{lem98}
-  \leanok
-  \uses{polyhedral_lattice}
-  Let $\Lambda$ be a polyhedral lattice.
-  Then for all positive integers $N$ there is a constant $d$
-  such that for all $c>0$ one can write any
-  $x\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as
-  \[
-    x=x_1+\ldots+x_N
-  \]
-  where all $x_i\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$.
-\end{lemma}
-
-As preparation for the proof, we have the following results.
-
-\begin{lemma}[Gordan's lemma]
-  \label{explicit_gordan}
-  \lean{explicit_gordan}
-  \leanok
-  Let $\Lambda$ be a finite free abelian group,
-  and let $\lambda_1, \ldots, \lambda_m \in \Lambda$ be elements.
-  Let $M \subset \Hom(\Lambda, \mathbb Z)$ be the submonoid
-  $\{x \mid x(\lambda_i) \ge 0 \text{ for all $i = 1, \dots, m$}\}$.
-  Then $M$ is finitely generated as monoid.
-\end{lemma}
-
-\begin{proof}
-  This is a standard result.
-  We have not formalised it yet, but it is work in progress.
-\end{proof}
-
-\begin{lemma}
-  \label{combi_aux}
-  \lean{lem97}
-  \leanok
-  Let $\Lambda$ be a finite free abelian group,
-  let $N$ be a positive integer,
-  and let $\lambda_1,\ldots,\lambda_m\in \Lambda$ be elements.
-  Then there is a finite subset $A\subset \Lambda^\vee$
-  such that for all $x\in \Lambda^\vee=\Hom(\Lambda,\mathbb Z)$
-  there is some $x'\in A$ such that $x-x'\in N\Lambda^\vee$
-  and for all $i=1,\ldots,m$,
-  the numbers $x'(\lambda_i)$ and $(x-x')(\lambda_i)$ have the same sign,
-  i.e.~are both nonnegative or both nonpositive.
-\end{lemma}
-
-\begin{proof}
-  \uses{explicit_gordan}
-  It suffices to prove the statement for all $x$ such that $\lambda_i(x)\geq 0$ for all $i$;
-  indeed, applying this variant to all $\pm \lambda_i$, one gets the full statement.
-
-  Thus, consider the submonoid $\Lambda^\vee_+\subset \Lambda^\vee$
-  of all $x$ that pair nonnegatively with all $\lambda_i$.
-  This is a finitely generated monoid by Lemma~\ref{explicit_gordan};
-  let $y_1,\ldots,y_M$ be a set of generators.
-  Then we can take for $A$ all sums $n_1y_1+\ldots+n_My_M$ where all $n_j\in \{0,\ldots,N-1\}$.
-\end{proof}
-
-\begin{lemma}
-  \label{exists_partition}
-  \lean{exists_partition}
-  \leanok
-  Let $x_0, x_1, \dots$ be a sequence of reals,
-  and assume that $\sum_{i=0}^\infty x_i$ converges absolutely.
-  For every natural number $N > 0$,
-  there exists a partition $\mathbb N = A_1 \sqcup A_2 \sqcup \dots \sqcup A_N$
-  such that for each $j = 1,\dots,N$ we have
-  $\sum_{i \in A_j} x_i \le (\sum_{i=0}^\infty x_i)/N + 1$
-\end{lemma}
-
-\begin{proof}
-  \leanok
-  Define the $A_j$ recursively:
-  assume that the natural numbers $0, \dots, n$
-  have been placed into the sets $A_1, \dots, A_N$.
-  Then add the number $n+1$ to the set $A_j$ for which
-  \[
-    \sum_{i=0, i\in A_j}^n x_i
-  \]
-  is minimal.
-\end{proof}
-
-\begin{lemma}
-  \label{lem98_int}
-  \lean{lem98_int}
-  \leanok
-  For all natural numbers $N > 0$,
-  and for all $x\in \overline{\mathcal M}_{r'}(S)_{\leq c}$
-  one can decompose $x$ as a sum
-  \[
-    x=x_1+\ldots+x_N
-  \]
-  with all $x_i\in \overline{\mathcal M}_{r'}(S)_{\leq c/N+1}$.
-\end{lemma}
-
-\begin{proof}
-  \leanok
-  \uses{exists_partition}
-  Choose a bijection $S \times \mathbb N \cong \mathbb N$,
-  and transport the result from Lemma~\ref{exists_partition}.
-\end{proof}
-
-\begin{proof}[{Proof of Lemma~\ref{combi}}]
-  \proves{combi}
-  \uses{combi_aux, lem98_int}
-  \leanok
-  Pick $\lambda_1,\ldots,\lambda_m\in \Lambda$ generating the norm. We fix a finite subset $A\subset \Lambda^\vee$ satisfying the conclusion of the previous lemma. Write
-  \[
-  x=\sum_{n\geq 1, s\in S} x_{n,s} T^n [s]
-  \]
-  with $x_{n,s}\in \Lambda^\vee$. Then we can decompose
-  \[
-  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1
-  \]
-  where $x_{n,s}^1\in A$ and we have the same-sign property of the last lemma. Letting $x^0 = \sum_{n\geq 1, s\in S} x_{n,s}^0 T^n [s]$, we get a decomposition
-  \[
-  x = Nx^0 + \sum_{a\in A} a x_a
-  \]
-  with $x_a\in \overline{\mathcal M}_{r'}(S)$ (with the property that in the
-  basis given by the $T^n [s]$, all coefficients are $0$ or $1$). Crucially,
-  we know that for all $i=1,\ldots,m$, we have
-  \[
-  ‖x(\lambda_i)‖ = N ‖x^0(\lambda_i)‖ + \sum_{a\in A} |a(\lambda_i)| ‖x_a‖
-  \]
-  by using the same sign property of the decomposition.
-
-  Using this decomposition of $x$, we decompose each term into $N$ summands.
-  This is trivial for the first term $Nx^0$,
-  and each summand of the second term decomposes with $d = 1$ by Lemma~\ref{lem98_int}.
-  (It follows that in general one can take for $d$
-  the supremum over all $i$ of $\sum_{a\in A} |a(\lambda_i)|$.)
-\end{proof}
-
-
 
 \begin{proof}[Proof of Theorem~\ref{explicit}]
   \proves{explicit}
