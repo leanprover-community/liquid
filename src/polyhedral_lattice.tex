@@ -151,5 +151,30 @@ As preparation for the proof, we have the following results.
   the supremum over all $i$ of $\sum_{a\in A} |a(\lambda_i)|$.)
 \end{proof}
 
+\begin{definition}
+  \label{rescaled-sum}
+  Let $\Lambda$ be a polyhedral lattice, and let $N > 0$ be a natural number.
+  (We think of $N$ as being fixed once and for all,
+  and thus it does not show up in the notation below.)
+
+  By $\Lambda'$ we denote $\Lambda^N$ endowed with the norm
+  \[
+	  ‖(\lambda_1,\ldots,\lambda_N)‖_{\Lambda'} = \tfrac 1N(‖\lambda_1‖_\Lambda+\ldots+‖\lambda_N‖_\Lambda).
+  \]
+  This is a polyhedral lattice.
+\end{definition}
+
+\begin{definition}
+  \label{cosimplicial-lattice}
+  \uses{rescaled-sum}
+  For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$;
+  for $m=0$, we set $\Lambda'^{(0)} = \Lambda$.
+  Then $\Lambda'^{(\bullet)}$ is a cosimplicial polyhedral lattice,
+  the \v{C}ech conerve of $\Lambda\to \Lambda'$.
+
+  In particular, $\Lambda'^{(0)} = \Lambda \to \Lambda' = \Lambda'^{(1)}$
+  is the diagonal embedding.
+\end{definition}
+
 % vim: ts=2 et sw=2 sts=2
 

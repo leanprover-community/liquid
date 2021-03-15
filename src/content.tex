@@ -138,7 +138,8 @@ will have bounded norm, independently of $V$ (as they are a certain universal fi
 
 \begin{proof}[Proof of Theorem~\ref{explicit}]
   \proves{explicit}
-  \uses{spectral,combi,basehomotopy,homotopyNelements,normedcompletion}
+  \uses{spectral,combi,basehomotopy,homotopyNelements,normedcompletion,
+	cosimplicial-lattice}
   We argue by induction on $m$, so assume the result for $m-1$
   (this is no assumption for $m=0$, so we do not need an induction start).
   This gives us some $k>1$ for which the statement of Theorem~\ref{explicit} holds true for $m-1$;
@@ -154,16 +155,7 @@ k'/N\leq (r')^b.
 \]
 Then in particular $r^bN\leq \frac 2{k'}(\tfrac{r}{r'})^b\leq \epsilon$.
 
-We consider the diagonal embedding
-\[
-\Lambda\hookrightarrow \Lambda' = \Lambda^N,
-\]
-where we endow $\Lambda'$ with the norm
-\[
-‖(\lambda_1,\ldots,\lambda_N)‖_{\Lambda'} = \tfrac 1N(‖\lambda_1‖_\Lambda+\ldots+‖\lambda_N‖_\Lambda).
-\]
-For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$; then $\Lambda'^{(\bullet)}$ is cosimplicial polyhedral lattice, the \v{C}ech conerve of $\Lambda\to \Lambda'$. For $m=0$, we set $\Lambda'^{(0)} = \Lambda$. It is clear that all of these are polyhedral lattices.
-
+Consider the cosimplicial polyhedral lattice from Definition~\ref{cosimplicial-lattice}.
 In particular, for any $c>0$, we have
 \[
 \Hom(\Lambda'^{(m)},\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}^{m/\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}},
