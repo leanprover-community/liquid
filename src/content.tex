@@ -179,7 +179,7 @@ and
 \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
 \]
 and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{prop:normedcompletion},
-	% Lemma~\ref{lem:Tinv},
+	Lemma~\ref{lem:Tinv},
 	and Proposition~\ref{snakelemma}
 	(plus probably some other results of which we need to work out the details).
 	At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
@@ -265,6 +265,26 @@ is exact, and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ wit
 For the final assertion, follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the hypercover splits, so a contracting homotopy gives the result with constant $1$. In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
 
 For the identification with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$, note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $||\cdot||$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:Tinv}
+  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv}
+  Let $M$ be a profinitely filtered pseudo-normed group with action of $T^{-1}$.
+  For any $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$, any $c>0$ and any $a$, the map
+\[
+\widehat{V}(M_{r'}(S)_{\leq c}^a)\xrightarrow{T^{-1}-[T^{-1}]^\ast} \widehat{V}(M_{r'}(S)_{\leq r'c}^a)
+\]
+is surjective, has norm bounded by $r^{-1}+1$, and for any $f\in \widehat{V}(M_{r'}(S)_{\leq r'c}^a)$ and $\epsilon>0$ there is some $g\in \widehat{V}(M_{r'}(S)_{\leq c}^a)$ with $f(x)=T^{-1}g(x)-g(T^{-1}x)$ and $||g||\leq \frac{r}{1-r}(1+\epsilon) ||f||$.
+\end{lemma}
+
+\begin{proof} Given $f: M_{r'}(S)_{\leq r'c}^a\to \widehat{V}$, choose an extension to a map $\tilde{f}: M_{r'}(S)^a\to \widehat{V}$ with $||\tilde{f}||\leq (1+\epsilon)||f||$. Such an extension exists: By induction (and using a sequence of $\epsilon_n$'s with $\prod_n (1+\epsilon_n)\leq 1+\epsilon$), it suffices to see that for any closed immersion $A\subset B$ of profinite sets and a map $f_A: A\to \widehat{V}$, there is an extension $f_B: B\to \widehat{V}$ of $f_A$ with $||f_B||\leq (1+\epsilon)||f_A||$. To see this, write $f_A$ as a (fast) convergent sum of maps that factor over a finite quotient of $A$; for maps factoring over a finite quotient of $A$, the extension is clear (and can be done in a norm-preserving way), as any map from $A$ to a finite set can be extended to a map from $B$ to the same finite set.
+
+Given $\tilde{f}$, we can now define $g: M_{r'}(S)_{\leq c}^a$ by
+\[
+g(x) = T\tilde{f}(x)+T^2\tilde{f}(T^{-1}x)+\ldots+T^{n+1}\tilde{f}(T^{-n}x)+\ldots\in \widehat{V};
+\]
+then $||g||\leq \frac r{1-r}||\tilde{f}||\leq \frac r{1-r}(1+\epsilon)||f||$.
 \end{proof}
 
 % vim: ts=2 et sw=2 sts=2
