@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blueprint for the Liquid Tensor Experiment: Spaces of convergent power series</title>
+<link rel="next" href="sect0002.html" title="Completions of locally constant functions" />
+<link rel="prev" href="BD_reso.html" title="Breen–Deligne data" />
+<link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Blueprint for the Liquid Tensor Experiment</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="BD_reso.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+ </li>
+<li class="">
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">4</span> <span class="toc_entry">Some normed homological algebra</span></a>
+ </li>
+<li class="">
+  <a href="sec-more_breen_deligne.html"><span class="toc_ref">5</span> <span class="toc_entry">More Breen–Deligne</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+  <li>	
+  <a href="https://github.com/leanprover-community/lean-liquid">Project home</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000002">2 Spaces of convergent power series</h1>
+<p><div class="definition_thmwrapper" id="pseudo_normed_group">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.1</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#pseudo_normed_group">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/pseudo_normed_group/basic.lean#L28">pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/pseudo_normed_group/profinitely_filtered.lean#L22">profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/pseudo_normed_group/profinitely_filtered.lean#L65">profinitely_filtered_pseudo_normed_group_hom</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A <em>pseudo-normed group</em> is an abelian group $M$, together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$, such that each $M_c$ contains $0$, is closed under negation, and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$. </p>
+<p>M pseudo-normed group is <em>profinitely filtered</em> if the the sets $M_c$ are profinite and the following maps are continuous: </p>
+<ul class="itemize">
+  <li><p>the inclusion $M_{c_1} \to M_{c_2}$ (for $c_1 \le c_2$); </p>
+</li>
+  <li><p>the negation $M_c \to M_c$; </p>
+</li>
+  <li><p>the addition $M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}$. </p>
+</li>
+</ul>
+<p>A morphism of profinitely filtered pseudo-normed groups $M \to N$. is a group homomorphism $f$ that is </p>
+<ul class="itemize">
+  <li><p><em>bounded</em>: there is a constant $C$ such that $x \in M_c$ implies $f(x) \in N_{Cc}$; </p>
+</li>
+  <li><p><em>continuous</em>: for a constant $C$ as above, the induced map $M_c \to N_{Cc}$ is a morphism of profinite sets, i.e. continuous. </p>
+</li>
+</ul>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="profinitely_filtered_pseudo_normed_group_with_Tinv">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#profinitely_filtered_pseudo_normed_group_with_Tinv">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/pseudo_normed_group/with_Tinv.lean#L14">profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/pseudo_normed_group/with_Tinv.lean#L40">profinitely_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let $r’$ be a positive real number. A profinitely filtered pseudo-normed group $M$ has an <em>$r’$-action of $T^{-1}$</em> if it comes endowed with a distinguished morphism of profinitely filtered pseudo-normed groups $T^{-1} \colon M \to M$ that is bound by $r’^{-1}$: if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$. </p>
+<p>A morphism $M \to N$ of profinitely filtered pseudo-normed groups with $r’$-action of $T^{-1}$ is a morphism of profinitely filtered pseudo-normed groups $f$ that commutes with the action of $T^{-1}$ and is <em>strict</em>: if $x \in M_c$ then $f(x) \in N_c$. </p>
+
+  </div>
+</div> </p>
+<p>We will now construct the central example of profinitely filtered pseudo-normed groups with $r’$-action of $T^{-1}$. </p>
+<p><div class="definition_thmwrapper" id="Mbar">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#Mbar">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#pseudo_normed_group">Definition 2.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/Mbar/basic.lean#L51">Mbar</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/Mbar/Mbar_le.lean#L28">Mbar_le</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/Mbar/basic.lean#L201">Mbar.pseudo_normed_group</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let $r’ > 0$ be a real number, and let $S$ be a finite set. Denote by $\overline{\mathcal M}_{r'}(S)$ the set </p>
+<div class="displaymath" id="a0000000016">
+  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n < \infty \right\} .  \]
+</div>
+<p>Note that $\overline{\mathcal M}_{r'}(S)$ is naturally a pseudo-normed group with filtration given by </p>
+<div class="displaymath" id="a0000000017">
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n \le c \right\} .  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="Mbar_profinite_filtered">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#Mbar_profinite_filtered">#</a>
+    <a class="icon proof" href="sect0001.html#a0000000018"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#Mbar">Definition 2.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/Mbar/Mbar_le.lean#L576">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let $r’ > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set. The space $\overline{\mathcal M}_{r'}(S)_{\le c}$ is the profinite limit of the finite sets </p>
+<div class="displaymath" id="a0000000019">
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c, \le N} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{1 \le n \le N, s \in S} |a_{n,s}| (r’)^n \le c \right\}   \]
+</div>
+<p> This endows $\overline{\mathcal M}_{r'}(S)_{\le c}$ with the profinite topology. In particular, it is a profinitely filtered pseudo-normed group. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000018">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Formalised, but omitted from this text. </p>
+
+  </div>
+</div>
+<p>For the remainder of this section, let $r’ > 0, c \ge 0$ be real numbers, and let $S$ be a finite set. </p>
+<p><div class="definition_thmwrapper" id="Mbar_Tinv">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.5</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#Mbar_Tinv">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#Mbar">Definition 2.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/Mbar/basic.lean#L282">Mbar.Tinv</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   There is a natural action of $T^{-1}$ on $\overline{\mathcal M}_{r'}(S)$, via </p>
+<div class="displaymath" id="a0000000020">
+  \[  T^{-1} \cdot \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} = \left( \sum _{n \ge 1} a_{n+1,s} T^n \right)_{s \in S}.  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="Mbar_with_Tinv">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.6</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#Mbar_with_Tinv">#</a>
+    <a class="icon proof" href="sect0001.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#Mbar_Tinv">Definition 2.5</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/Mbar/pseudo_normed_group.lean#L15">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   The natural action of $T^{-1}$ on $\overline{\mathcal M}_{r'}(S)$ restricts to continuous maps </p>
+<div class="displaymath" id="a0000000022">
+  \[  T^{-1} \cdot \_  \colon \overline{\mathcal M}_r(S)_{\le c} \to \overline{\mathcal M}_r(S)_{\le c/r'}.  \]
+</div>
+<p> In particular, $\overline{\mathcal M}_{r'}(S)$ has an $r’$-action of $T^{-1}$. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000021">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Formalised, but omitted from this text. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="basic_eval_FP">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#basic_eval_FP">#</a>
+    <a class="icon proof" href="sect0001.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#profinitely_filtered_pseudo_normed_group_with_Tinv">Definition 2.2</a></li>
+          <li><a href="BD_reso.html#basic_universal_map">Definition 1.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f24b4e5cf000aed741cdfbb781f8febb83295bad/src/pseudo_normed_group/FiltrationPow.lean#L112">breen_deligne.basic_universal_map.eval_FP</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let $f$ be a basic universal map from exponent&#160;$m$ to&#160;$n$. We get an induced homomorphism of profinitely filtered pseudo-normed groups </p>
+<div class="displaymath" id="a0000000024">
+  \[  \overline{\mathcal M}_{r'}(S)^m \to \overline{\mathcal M}_{r'}(S)^n  \]
+</div>
+<p> bounded by the maximum (over all $i$) of $\sum _j |f_{ij}|$, where the $f_{ij}$ are the coefficients of the $n \times m$-matrix representing&#160;$f$. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000023">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Omitted. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="BD_reso.html" title="Breen–Deligne data"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0002.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
