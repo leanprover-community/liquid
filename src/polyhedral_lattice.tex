@@ -152,6 +152,9 @@ As preparation for the proof, we have the following results.
 
 \begin{definition}
   \label{rescaled-sum}
+  \leanok
+  \lean{rescale.polyhedral_lattice}
+  \lean{finsupp.polyhedral_lattice}
   Let $\Lambda$ be a polyhedral lattice, and let $N > 0$ be a natural number.
   (We think of $N$ as being fixed once and for all,
   and thus it does not show up in the notation below.)
@@ -166,6 +169,7 @@ As preparation for the proof, we have the following results.
 \begin{definition}
   \label{cosimplicial-lattice}
   \uses{rescaled-sum}
+  \lean{PolyhedralLattice.cosimplicial}
   For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$;
   for $m=0$, we set $\Lambda'^{(0)} = \Lambda$.
   Then $\Lambda'^{(\bullet)}$ is a cosimplicial polyhedral lattice,
