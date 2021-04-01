@@ -247,7 +247,7 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
   that are norm-nonincreasing and which all commute with all restriction maps,
   and assume that there exists these maps satisfy
   \[
-    ‖x_{|c}‖ ≤ K' '‖f(x)‖
+    ‖x_{|c}‖ ≤ K''‖f(x)‖
   \]
   for all $i ≤ m+1$ and all $x\in M^i_{k''c}$.
   Let $N^\bullet_c=M'^\bullet_c/M^\bullet_c$
@@ -257,8 +257,8 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
   Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is weakly $\leq k$-exact
   (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
   (resp. $K'$).
-  Then $N^\bullet_c$ is weakly $\leq kk'k' '$-exact in degrees $\leq m-1$ for $c\geq c_0$
-  with bound $K'(KK' ' + 1)$.
+  Then $N^\bullet_c$ is weakly $\leq kk'k''$-exact in degrees $\leq m-1$ for $c\geq c_0$
+  with bound $K'(KK'' + 1)$.
 \end{proposition}
 
 \begin{proof}
@@ -267,27 +267,27 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
 Let $n \in N^i_{kk'k''c}$ for $i\leq m-1$.
 We fix $ε > 0$. We need to find an element $y \in N^{i-1}_c$ such that
 \[
-  ‖n_{|c} - dy‖ \leq K'(KK' ' + 1)‖dn‖ + \epsilon.
+  ‖n_{|c} - dy‖ \leq K'(KK'' + 1)‖dn‖ + \epsilon.
 \]
 
 Pick any preimage $m' \in M'^i_{kk'k''c}$ of $n$. In particular $dm'$ is
 a preimage of $dn$.
 By definition of the quotient norm,
-we can find $m_1 ∈ M^{i+1}_{kk'k''c}$ and $m_1' ' ∈ (M')^{i+1}_{kk'k''c}$ such that
+we can find $m_1 ∈ M^{i+1}_{kk'k''c}$ and $m_1'' ∈ (M')^{i+1}_{kk'k''c}$ such that
 \[
-dm' = f(m_1) + m_1' '
+dm' = f(m_1) + m_1''
 \]
-with $‖m_1' '‖ \leq ‖dn‖ + ε_1$, for some positive $ε_1$ to be chosen later.
+with $‖m_1''‖ \leq ‖dn‖ + ε_1$, for some positive $ε_1$ to be chosen later.
 
 Applying the differential to the last displayed equation, and using that this
 kills the image of $d$, and that $f$ is a map of complexes, we see that
 \[
-f(dm_1) = -dm_1' '.
+f(dm_1) = -dm_1''.
 \]
 Using the norm bound on $f$, we get
 \[\begin{aligned}
-  ‖dm_{1|kk'c}‖ &≤ K' '‖f(dm_1)‖ = K' '‖dm_1' '‖\\
-                &≤ K' '‖m_1' '‖ ≤ K' '‖dn‖ + K' 'ε_1.
+  ‖dm_{1|kk'c}‖ &≤ K''‖f(dm_1)‖ = K''‖dm_1''‖\\
+                &≤ K''‖m_1''‖ ≤ K''‖dn‖ + K''ε_1.
 \end{aligned}\]
 On the other hand, weak exactness of $M$ applied to $m_{1|kk'c}$
 gives $m_0 ∈ M^i_{k'c}$ such that
@@ -296,28 +296,28 @@ gives $m_0 ∈ M^i_{k'c}$ such that
 \]
 which combines with the previous estimate to give:
 \[
-  ‖m_{1|k'c} - dm_0‖ \leq K K' ' \left\|d n\right\| + (KK' ' + 1)ε_1.
+  ‖m_{1|k'c} - dm_0‖ \leq K K'' \left\|d n\right\| + (KK'' + 1)ε_1.
 \]
 Now let $m'_{\mathrm{new}} = m'_{|k'c} - f(m_0) \in M'^i_{k'c}$; this is a lift of $n_{|k'c}$.
 Then
 \[
-dm'_{\mathrm{new}} = dm'_{|k'c} - f(m_{1|k'c}) + f(m_{1|k'c} - dm_0) = m' '_{1|k'c} + f(m_{1|k'c} - dm_0).
+dm'_{\mathrm{new}} = dm'_{|k'c} - f(m_{1|k'c}) + f(m_{1|k'c} - dm_0) = m''_{1|k'c} + f(m_{1|k'c} - dm_0).
 \]
 In particular,
 \[
-‖dm'_{\mathrm{new}}‖ ≤ (KK' ' + 1)\ndn + (KK' ' + 2) ε_1.
+‖dm'_{\mathrm{new}}‖ ≤ (KK'' + 1)\ndn + (KK'' + 2) ε_1.
 \]
 Now weak exactness of $M'$ gives $x \in M'^{i-1}_c$ such that
 \[
   ‖m'_{\mathrm{new}|c} - dx‖ ≤ K'‖dm'_\mathrm{new}‖ + ε_1 \leq
-    K'((K K' ' + 1) \ndn + (KK' ' + 2) ε_1) + ε_1.
+    K'((K K'' + 1) \ndn + (KK'' + 2) ε_1) + ε_1.
 \]
 In particular, letting $y \in N^{i-1}_c$ be the image of $x$, we get
 \[
-  ‖n_{|c} - dy‖ ≤ K'(K K' ' + 1)\ndn + (K'(K  K' ' + 2) + 1) ε_1,
+  ‖n_{|c} - dy‖ ≤ K'(K K'' + 1)\ndn + (K'(K  K'' + 2) + 1) ε_1,
 \]
 which is exactly what we wanted if we choose
-$ε_1 = ε/(K'(K  K' ' + 2) + 1)$.
+$ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 \end{proof}
 
 
@@ -331,7 +331,7 @@ $ε_1 = ε/(K'(K  K' ' + 2) + 1)$.
   that is strictly compatible with the norm and commutes with restriction maps,
   and assume that it satisfies
   \[
-    ‖x_{|c}‖ ≤ K' '‖f(x)‖
+    ‖x_{|c}‖ ≤ K''‖f(x)‖
   \]
   for all $i ≤ m+1$ and all $x\in M^i_{k''c}$.
   Let $N^\bullet_c=M'^\bullet_c/\overline{M^\bullet_c}$
@@ -341,17 +341,17 @@ $ε_1 = ε/(K'(K  K' ' + 2) + 1)$.
   Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is $\leq k$-exact
   (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
   (resp. $K'$).
-  Then, for every $δ > 0$, $N^\bullet_c$ is $\leq (kk'k' ')^2$-exact in
+  Then, for every $δ > 0$, $N^\bullet_c$ is $\leq (kk'k'')^2$-exact in
   degrees $\leq m-1$ for $c\geq c_0$
-  with bound $K'(KK' ' + 1) + δ$.
+  with bound $K'(KK'' + 1) + δ$.
 \end{proposition}
 
 \begin{proof}
   \uses{weaksnakelemma, weakexact_implies_exact}
   The exactness assumptions on $M$ and $M'$ give the corresponding
   weak exactness condition. Hence Proposition~\ref{weaksnakelemma}
-  ensures that $N^\bullet_c$ is weakly $\leq kk'k' '$-exact in degrees
-  $\leq m-1$ for $c\geq c_0$ with bound $K'(KK' ' + 1)$.
+  ensures that $N^\bullet_c$ is weakly $\leq kk'k''$-exact in degrees
+  $\leq m-1$ for $c\geq c_0$ with bound $K'(KK'' + 1)$.
   Since $N^\bullet_c$ is a complex of complete groups,
   Lemma~\ref{weakexact_implies_exact} gives the required exactness.
 \end{proof}
