@@ -5,31 +5,34 @@
   \lean{pseudo_normed_group,profinitely_filtered_pseudo_normed_group,
   profinitely_filtered_pseudo_normed_group_hom}
   \leanok
-  A \emph{pseudo-normed group} is an abelian group $M$,
+  A \emph{pseudo-normed group} is an abelian group $(M,+)$,
   together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$,
   such that each $M_c$ contains $0$, is closed under negation,
-  and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$.
+  and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$. An example would be $M=\mathbb{R}$ or $M=\mathbb{Q}_p$ with $M_c :=\{x\,:\,|x|\leq c\}$.
 
-  M pseudo-normed group is \emph{profinitely filtered}
-  if the the sets $M_c$ are profinite
-  and the following maps are continuous:
+  A pseudo-normed group~$M$ is \emph{profinitely filtered}
+  if each of the sets $M_c$ is endowed with a topological space structure
+  making it a profinite set, such that following maps are all continuous:
   \begin{itemize}
     \item the inclusion $M_{c_1} \to M_{c_2}$ (for $c_1 \le c_2$);
     \item the negation $M_c \to M_c$;
     \item the addition $M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}$.
   \end{itemize}
 
-  A morphism of profinitely filtered pseudo-normed groups $M \to N$.
+  
+  A \emph{morphism} of profinitely filtered pseudo-normed groups $M \to N$
   is a group homomorphism $f$ that is
   \begin{itemize}
     \item \emph{bounded}:
       there is a constant $C$
       such that $x \in M_c$ implies $f(x) \in N_{Cc}$;
     \item \emph{continuous}:
-      for a constant $C$ as above,
+      for one (or equivalently all) constants $C$ as above,
       the induced map $M_c \to N_{Cc}$ is
       a morphism of profinite sets, i.e. continuous.
   \end{itemize}
+
+  The reason the two definitions are equivalent is that a continuous injection between profinite sets must be a topological embedding.
 \end{definition}
 
 \begin{definition}
@@ -44,7 +47,7 @@
   if it comes endowed with a distinguished morphism
   of profinitely filtered pseudo-normed groups
   $T^{-1} \colon M \to M$
-  that is bound by $r'^{-1}$:
+  that is bounded by $r'^{-1}$:
   if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$.
 
   A morphism $M \to N$
@@ -65,7 +68,7 @@ profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
   Let $r' > 0$ be a real number, and let $S$ be a finite set.
   Denote by $\overline{\mathcal M}_{r'}(S)$ the set
   \[
-    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \,\middle\vert\, \sum_{n \ge 1, s \in S} |a_{n,s}| (r')^n < \infty \right\}.
+    \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \in T\Z[[T]]\right)_{s \in S} \,\middle\vert\, \sum_{n \ge 1, s \in S} |a_{n,s}| (r')^n < \infty \right\}.
   \]
 
   Note that $\overline{\mathcal M}_{r'}(S)$ is naturally a pseudo-normed group
