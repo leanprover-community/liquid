@@ -87,9 +87,9 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/pseudo_normed_group/basic.lean#L28">pseudo_normed_group</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/pseudo_normed_group/profinitely_filtered.lean#L22">profinitely_filtered_pseudo_normed_group</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/pseudo_normed_group/profinitely_filtered.lean#L65">profinitely_filtered_pseudo_normed_group_hom</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/basic.lean#L28">pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/profinitely_filtered.lean#L22">profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/profinitely_filtered.lean#L65">profinitely_filtered_pseudo_normed_group_hom</a></li>
         </ul>
 
       </div>
@@ -98,8 +98,8 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  A <em>pseudo-normed group</em> is an abelian group $M$, together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$, such that each $M_c$ contains $0$, is closed under negation, and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$. </p>
-<p>M pseudo-normed group is <em>profinitely filtered</em> if the the sets $M_c$ are profinite and the following maps are continuous: </p>
+  <p>  A <em>pseudo-normed group</em> is an abelian group $(M,+)$, together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$, such that each $M_c$ contains $0$, is closed under negation, and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$. An example would be $M=\mathbb {R}$ or $M=\mathbb {Q}_p$ with $M_c :=\{ x\, :\, |x|\leq c\} $. </p>
+<p>A pseudo-normed group&#160;$M$ is <em>profinitely filtered</em> if each of the sets $M_c$ is endowed with a topological space structure making it a profinite set, such that following maps are all continuous: </p>
 <ul class="itemize">
   <li><p>the inclusion $M_{c_1} \to M_{c_2}$ (for $c_1 \le c_2$); </p>
 </li>
@@ -108,13 +108,14 @@
   <li><p>the addition $M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}$. </p>
 </li>
 </ul>
-<p>A morphism of profinitely filtered pseudo-normed groups $M \to N$. is a group homomorphism $f$ that is </p>
+<p>A <em>morphism</em> of profinitely filtered pseudo-normed groups $M \to N$ is a group homomorphism $f$ that is </p>
 <ul class="itemize">
   <li><p><em>bounded</em>: there is a constant $C$ such that $x \in M_c$ implies $f(x) \in N_{Cc}$; </p>
 </li>
-  <li><p><em>continuous</em>: for a constant $C$ as above, the induced map $M_c \to N_{Cc}$ is a morphism of profinite sets, i.e. continuous. </p>
+  <li><p><em>continuous</em>: for one (or equivalently all) constants $C$ as above, the induced map $M_c \to N_{Cc}$ is a morphism of profinite sets, i.e. continuous. </p>
 </li>
 </ul>
+<p>The reason the two definitions are equivalent is that a continuous injection between profinite sets must be a topological embedding. </p>
 
   </div>
 </div> </p>
@@ -136,8 +137,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/pseudo_normed_group/with_Tinv.lean#L14">profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/pseudo_normed_group/with_Tinv.lean#L49">profinitely_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/with_Tinv.lean#L14">profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/with_Tinv.lean#L49">profinitely_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
         </ul>
 
       </div>
@@ -146,7 +147,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let $r’$ be a positive real number. A profinitely filtered pseudo-normed group $M$ has an <em>$r’$-action of $T^{-1}$</em> if it comes endowed with a distinguished morphism of profinitely filtered pseudo-normed groups $T^{-1} \colon M \to M$ that is bound by $r’^{-1}$: if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$. </p>
+  <p>   Let $r’$ be a positive real number. A profinitely filtered pseudo-normed group $M$ has an <em>$r’$-action of $T^{-1}$</em> if it comes endowed with a distinguished morphism of profinitely filtered pseudo-normed groups $T^{-1} \colon M \to M$ that is bounded by $r’^{-1}$: if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$. </p>
 <p>A morphism $M \to N$ of profinitely filtered pseudo-normed groups with $r’$-action of $T^{-1}$ is a morphism of profinitely filtered pseudo-normed groups $f$ that commutes with the action of $T^{-1}$ and is <em>strict</em>: if $x \in M_c$ then $f(x) \in N_c$. </p>
 
   </div>
@@ -185,9 +186,9 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/Mbar/basic.lean#L51">Mbar</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/Mbar/Mbar_le.lean#L28">Mbar_le</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/Mbar/basic.lean#L201">Mbar.pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/Mbar/basic.lean#L51">Mbar</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/Mbar/Mbar_le.lean#L28">Mbar_le</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/Mbar/basic.lean#L201">Mbar.pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -198,7 +199,7 @@
   <div class="definition_thmcontent">
   <p>   Let $r’ > 0$ be a real number, and let $S$ be a finite set. Denote by $\overline{\mathcal M}_{r'}(S)$ the set </p>
 <div class="displaymath" id="a0000000016">
-  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n < \infty \right\} .  \]
+  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \in T\mathbf{Z}[[T]]\right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n < \infty \right\} .  \]
 </div>
 <p>Note that $\overline{\mathcal M}_{r'}(S)$ is naturally a pseudo-normed group with filtration given by </p>
 <div class="displaymath" id="a0000000017">
@@ -242,7 +243,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/Mbar/Mbar_le.lean#L576">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/Mbar/Mbar_le.lean#L576">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -306,7 +307,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/Mbar/basic.lean#L282">Mbar.Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/Mbar/basic.lean#L282">Mbar.Tinv</a></li>
         </ul>
 
       </div>
@@ -357,7 +358,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/Mbar/pseudo_normed_group.lean#L15">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/Mbar/pseudo_normed_group.lean#L15">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
         </ul>
 
       </div>
@@ -423,7 +424,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/pseudo_normed_group/FiltrationPow.lean#L143">breen_deligne.basic_universal_map.eval_FP</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/FiltrationPow.lean#L143">breen_deligne.basic_universal_map.eval_FP</a></li>
         </ul>
 
       </div>

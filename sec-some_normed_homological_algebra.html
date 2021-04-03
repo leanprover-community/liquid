@@ -88,7 +88,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/system_of_complexes/basic.lean#L42">system_of_complexes</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L42">system_of_complexes</a></li>
         </ul>
 
       </div>
@@ -101,12 +101,12 @@
 <div class="displaymath" id="a0000000033">
   \[  C_c^\bullet : C_c^0\to C_c^1\to \ldots  \]
 </div>
-<p> of normed abelian groups together with maps of complexes $\mathrm{res}_{c',c}^i: C_{c'}^\bullet \to C_c^\bullet $, for $c’ ≥ c$, satisfying the obvious associativity condition. </p>
+<p> of normed abelian groups together with maps of complexes $\mathrm{res}_{c',c}: C_{c'}^\bullet \to C_c^\bullet $, for $c’ ≥ c \geq c_0$, satisfying $\mathrm{res}_{c,c}=\mathrm{id}$ and the obvious associativity condition. We use notation $(C_c^\bullet )_{c\geq c_0}$ for a system of complexes, although we will frequently omit any mention of the lower bound $c_0$ and just write $C_\bullet ^\bullet $. </p>
 
   </div>
 </div> </p>
-<p>By convention, for every system of complexes $C$, we will set $C^{-1}_c = 0$ for all $c$. This will come up each time we write $C^{i-1}_c$ and $i$ could be $0$. </p>
-<p>In this section, given $x ∈ C^•_{c'}$ and $c ≤ c’$ we will use the notation $x_{|c} := \mathrm{res}_{c', c}(x)$. </p>
+<p>By convention, for every system of complexes $(C_c^\bullet )_{c\geq c_0}$, we will set $C^{-1}_c = 0$ for all $c\geq c_0$. This will come up each time we write $C^{i-1}_c$ and $i$ could be $0$. </p>
+<p>In this section, given $x ∈ C^•_{c'}$ and $c_0\leq c ≤ c’$ we will use the notation $x_{|c} := \mathrm{res}_{c', c}(x)$. </p>
 <p><div class="definition_thmwrapper" id="admissible">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -140,7 +140,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/system_of_complexes/basic.lean#L181">system_of_complexes.admissible</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L181">system_of_complexes.admissible</a></li>
         </ul>
 
       </div>
@@ -153,6 +153,7 @@
 
   </div>
 </div> </p>
+<p>Throughout the rest of this section, $k$ (and $k’$, $k”$) will denote reals at least 1, $m$ will be a non-negative integer, and $K$, $K’$, $K”$ will denote non-negative reals. </p>
 <p><div class="definition_thmwrapper" id="is_bounded_exact">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -186,7 +187,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/system_of_complexes/basic.lean#L212">system_of_complexes.is_bounded_exact</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L212">system_of_complexes.is_bounded_exact</a></li>
         </ul>
 
       </div>
@@ -195,7 +196,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let $(C_c^\bullet )_c$ be a system of complexes. For integers $m\geq 0$ and constants $k \ge 1$, $c_0’>0$, the datum $(C_c^\bullet )_c$ is <em>$\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$</em> if the following condition is satisfied. For all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ there is some $y\in C_c^{i-1}$ such that </p>
+  <p>   Let $(C_c^\bullet )_{c\geq c_0}$ be a system of complexes. For an integer $m\geq 0$ and reals $k \ge 1$, $c_0’\geq c_0$ and $K\geq 0$, we say the datum $(C_c^\bullet )_{c\geq c_0}$ is <em>$\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$</em> if the following condition is satisfied. For all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ there is some $y\in C_c^{i-1}$ such that </p>
 <div class="displaymath" id="a0000000034">
   \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖.  \]
 </div>
@@ -236,7 +237,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/system_of_complexes/basic.lean#L219">system_of_complexes.is_weak_bounded_exact</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L219">system_of_complexes.is_weak_bounded_exact</a></li>
         </ul>
 
       </div>
@@ -245,14 +246,14 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let $(C_c^\bullet )_c$ be a system of complexes. For integers $m\geq 0$ and constants $k \ge 1$, $c_0’>0$, the datum $(C_c^\bullet )_c$ is <em>weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$</em> if the following condition is satisfied. For all $c\geq c_0’$, all $x\in C_{kc}^i$ with $i\leq m$ and any $ε > 0$ there is some $y\in C_c^{i-1}$ such that </p>
+  <p>   Let $(C_c^\bullet )_{c\geq c_0}$ be a system of complexes. For an integer $m\geq 0$ and reals $k \ge 1$, $c_0’\geq c_0$ and $K\geq 0$, the datum $(C_c^\bullet )_c$ is <em>weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$</em> if the following condition is satisfied. For all $c\geq c_0’$, all $x\in C_{kc}^i$ with $i\leq m$ and any $ε > 0$ there is some $y\in C_c^{i-1}$ such that </p>
 <div class="displaymath" id="a0000000035">
   \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε.  \]
 </div>
 
   </div>
 </div> </p>
-<p>We first note that the difference between those two definitions is only about cocyles if we are ready to loose a tiny something on the norm bound $K$. </p>
+<p>We first note that the difference between those two definitions is only about cocyles if we are ready to lose a tiny something on the norm bound $K$. </p>
 <p><div class="lemma_thmwrapper" id="is_bounded_exact_of_weakly">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
@@ -288,7 +289,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/system_of_complexes/basic.lean#L330">system_of_complexes.is_weak_bounded_exact.to_exact</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L330">system_of_complexes.is_weak_bounded_exact.to_exact</a></li>
         </ul>
 
       </div>
@@ -297,7 +298,7 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let $(C_c^\bullet )_c$ be a system of complexes. If $(C_c^\bullet )_c$ is weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$ and if, for all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ such that $dx = 0$ there is some $y\in C_c^{i-1}$ such that $x_{|c} = dy$ then, for every positive $δ$, $(C_c^\bullet )_c$ is $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K + δ$. </p>
+  <p>   Let $C_\bullet ^\bullet $ be a system of complexes. If $C_\bullet ^\bullet $ is weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$ and if, for all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ such that $dx = 0$ there is some $y\in C_c^{i-1}$ such that $x_{|c} = dy$ then, for every positive $δ$, $C_\bullet ^\bullet $ is $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K + δ$. </p>
 
   </div>
 </div> </p>
@@ -310,7 +311,7 @@
 
   </div>
   <div class="proof_content">
-  <p>Let $δ$ be some positive real number. Let $x$ be an element of $C_{kc}^i$ for some $c ≥ c₀’$ and $i ≤ m$. If $dx = 0$ then the assumption we made about exact elements is exactly what we want. </p>
+  <p>Let $δ$ be some positive real number. Let $x$ be an element of $C_{kc}^i$ for some $c ≥ c_0’$ and $i ≤ m$. If $dx = 0$ then the assumption we made about exact elements is exactly what we want. </p>
 <p>Assume now that $dx ≠ 0$. The weak exactness assumption applied to $ε = δ‖dx‖$ gives some $y\in C_c^{i-1}$ such that </p>
 <span>\begin{align*}  ‖x_{|c} - dy‖ & ≤ K‖dx‖ + δ‖dx‖ \\ & = (K + δ)‖dx‖ \end{align*}</span>
 
@@ -346,7 +347,7 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let $(C_c^\bullet )_c$ be a system of complexes which is weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$. For all $c\geq c_0’$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$ there is some $y\in C_c^{i-1}$ such that </p>
+  <p>  Let $C_\bullet ^\bullet $ be a system of complexes which is weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$. For all $c\geq c_0’$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$ there is some $y\in C_c^{i-1}$ such that </p>
 <div class="displaymath" id="a0000000038">
   \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε \quad \text{and} \quad ‖y‖ ≤ K(K + 1)‖x‖ + δ.  \]
 </div>
@@ -372,7 +373,7 @@
 </div>
 <p> We set $y = w_{|c} - dz$. Since $dy = dw_{|c}$, we get the first required estimate as long as $η ≤ ε$. And we have: </p>
 <span>\begin{align*}  ‖y‖ & ≤ K ‖dw‖ + τ \\ & ≤ K (‖x_{|kc}‖ + K‖dx‖ + η) + τ \\ & ≤ K(K + 1) ‖x‖ + Kη + τ \end{align*}</span>
-<p> which is fine as long as $Kη + τ ≤ δ$. So we set $η = \min (ε, δ/(2K))$ and $τ = δ/2$. </p>
+<p> which is fine as long as $Kη + τ ≤ δ$. So we set $η = \min (ε, δ/(2K))$ (interpreted as $ε$ if $K=0$) and $τ = δ/2$. </p>
 
   </div>
 </div>
@@ -406,7 +407,7 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let $M^\bullet _c$ be an admissible collection of complexes of normed abelian groups, where $c\geq c_0$. </p>
+  <p>  Let $(M_c^\bullet )_{c\geq c_0}$ be an admissible collection of complexes of normed abelian groups. </p>
 <p>Assume that $M^\bullet _c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$. Then the completion $\overline{M^\bullet _c}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$. </p>
 
   </div>
@@ -477,7 +478,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/system_of_complexes/completion.lean#L43">system_of_complexes.is_weak_bounded_exact.strong_of_complete</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/completion.lean#L43">system_of_complexes.is_weak_bounded_exact.strong_of_complete</a></li>
         </ul>
 
       </div>
@@ -486,7 +487,7 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let $M^\bullet _c$ be an admissible collection of complexes of complete normed abelian groups, where $c\geq c_0$. </p>
+  <p>   Let $(M^\bullet _c)_{c\geq c_0}$ be an admissible collection of complexes of complete normed abelian groups. </p>
 <p>Assume that $M^\bullet _c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$. Then $M^\bullet _c$, for every $δ > 0$, it is $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K+δ$. </p>
 
   </div>
@@ -512,7 +513,7 @@
 <p> We set $y^j := w^j_{|c} - \sum _{l=0}^{j-1} dz^l ∈ M^{i-1}_c$. </p>
 <p>We have </p>
 <span>\begin{align*}  ‖y^{j + 1} - y^j‖ & = \left\| (w^{j + 1} - w^j)_{|c} - dz^j\right\|  \\ & ≤ K‖dw^{j+1} - dw^j‖ + δ_j \\ & ≤ 2Kε_j + δ_j. \end{align*}</span>
-<p> So $y_j$ is a Cauchy sequence as long as we make sure $2Kε_j + δ_j ≤ 2^{-j}$ for instance. Since $M^{i-1}_c$ is complete, this sequence converges to some $y$. Because $dy^j = dw^j_{|c}$, we get that $‖x_{|c} - dy^j‖ ≤ ε_j$ and in the limit $x_{|c} = dy$. </p>
+<p> So $y^j$ is a Cauchy sequence as long as we make sure $2Kε_j + δ_j ≤ 2^{-j}$ for instance. Since $M^{i-1}_c$ is complete, this sequence converges to some $y$. Because $dy^j = dw^j_{|c}$, we get that $‖x_{|c} - dy^j‖ ≤ ε_j$ and in the limit $x_{|c} = dy$. </p>
 
   </div>
 </div>
@@ -552,7 +553,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/normed_snake.lean#L13">weak_normed_snake</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/normed_snake.lean#L13">weak_normed_snake</a></li>
         </ul>
 
       </div>
@@ -561,7 +562,7 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>   Let $M^\bullet _c$ and $M’^\bullet _c$ be two admissible collections of complexes of complete normed abelian groups, where $c\geq c_0$. Let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that are norm-nonincreasing and commutes with restriction maps, and assume that it satisfies </p>
+  <p>   Let $(M^\bullet _c)_{c\geq c_0}$ and $(M’^\bullet _c)_{c\geq c_0}$ be two admissible collections of complexes of complete normed abelian groups. For each $c\geq c_0$ let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that are norm-nonincreasing and which all commute with all restriction maps, and assume that there exists these maps satisfy </p>
 <div class="displaymath" id="a0000000047">
   \[  ‖x_{|c}‖ ≤ K”‖f(x)‖  \]
 </div>
@@ -583,18 +584,18 @@
 <div class="displaymath" id="a0000000048">
   \[  ‖n_{|c} - dy‖ \leq K’(KK” + 1)‖dn‖ + \epsilon .  \]
 </div>
-<p>Pick any preimage $m’ \in M’^i_{kk'k''c}$ of $n$. In particular $dm’$ is a preimage of $dn$. By definition of the quotient norm, we can find $m₁ ∈ M^{i+1}_{kk'k''c}$ and $m₁” ∈ (M’)^{i+1}_{kk'k''c}$ such that </p>
+<p>Pick any preimage $m’ \in M’^i_{kk'k''c}$ of $n$. In particular $dm’$ is a preimage of $dn$. By definition of the quotient norm, we can find $m_1 ∈ M^{i+1}_{kk'k''c}$ and $m_1” ∈ (M’)^{i+1}_{kk'k''c}$ such that </p>
 <div class="displaymath" id="a0000000049">
-  \[  dm’ = f(m₁) + m₁”  \]
+  \[  dm’ = f(m_1) + m_1”  \]
 </div>
-<p> with $‖m₁”‖ \leq ‖dn‖ + ε_1$, for some positive $ε_1$ to be chosen later. </p>
+<p> with $‖m_1”‖ \leq ‖dn‖ + ε_1$, for some positive $ε_1$ to be chosen later. </p>
 <p>Applying the differential to the last displayed equation, and using that this kills the image of $d$, and that $f$ is a map of complexes, we see that </p>
 <div class="displaymath" id="a0000000050">
-  \[  f(dm₁) = -dm₁”.  \]
+  \[  f(dm_1) = -dm_1”.  \]
 </div>
 <p> Using the norm bound on $f$, we get </p>
 <div class="displaymath" id="a0000000051">
-  \[ \begin{aligned}  ‖dm_{1|kk'c}‖ & ≤ K”‖f(dm₁)‖ = K”‖dm₁”‖\\ & ≤ K”‖m₁”‖ ≤ K”‖dn‖ + K”ε_1. \end{aligned} \]
+  \[ \begin{aligned}  ‖dm_{1|kk'c}‖ & ≤ K”‖f(dm_1)‖ = K”‖dm_1”‖\\ & ≤ K”‖m_1”‖ ≤ K”‖dn‖ + K”ε_1. \end{aligned} \]
 </div>
 <p> On the other hand, weak exactness of $M$ applied to $m_{1|kk'c}$ gives $m_0 ∈ M^i_{k'c}$ such that </p>
 <div class="displaymath" id="a0000000052">
@@ -614,7 +615,7 @@
 </div>
 <p> Now weak exactness of $M’$ gives $x \in M’^{i-1}_c$ such that </p>
 <div class="displaymath" id="a0000000056">
-  \[  ‖m’_{\mathrm{new}|c} - dx‖ ≤ K’‖dm’_\mathrm {new}‖ + ε_1 \leq K’((K K” + 1) \left\| dn\right\| + (KK” + 2) ε₁) + ε₁.  \]
+  \[  ‖m’_{\mathrm{new}|c} - dx‖ ≤ K’‖dm’_\mathrm {new}‖ + ε_1 \leq K’((K K” + 1) \left\| dn\right\| + (KK” + 2) ε_1) + ε_1.  \]
 </div>
 <p> In particular, letting $y \in N^{i-1}_c$ be the image of $x$, we get </p>
 <div class="displaymath" id="a0000000057">
@@ -654,12 +655,12 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>  Let $M^\bullet _c$ and $M’^\bullet _c$ be two admissible collections of complexes of complete normed abelian groups, where $c\geq c_0$. Let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that is strictly compatible with the norm and commutes with restriction maps, and assume that it satisfies </p>
+  <p>  Let $(M^\bullet _c)_{c\geq c_0}$ and $(M’^\bullet _c)_{c\geq c_0}$ be two admissible collections of complexes of complete normed abelian groups. For $c\geq c_0$ let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that is strictly compatible with the norm and commutes with restriction maps, and assume that it satisfies </p>
 <div class="displaymath" id="a0000000059">
   \[  ‖x_{|c}‖ ≤ K”‖f(x)‖  \]
 </div>
 <p> for all $i ≤ m+1$ and all $x\in M^i_{k''c}$. Let $N^\bullet _c=M’^\bullet _c/\overline{M^\bullet _c}$ be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
-<p>Assume that $M^\bullet _c$ (resp. $M’^\bullet _c$) is $\leq k$-exact (resp. $≤ k’$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$ (resp. $K’$). Then, for every $δ > 0$, $N^\bullet _c$ is $\leq (kk’k”)²$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K’(KK” + 1) + δ$. </p>
+<p>Assume that $M^\bullet _c$ (resp. $M’^\bullet _c$) is $\leq k$-exact (resp. $≤ k’$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$ (resp. $K’$). Then, for every $δ > 0$, $N^\bullet _c$ is $\leq (kk’k”)^2$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K’(KK” + 1) + δ$. </p>
 
   </div>
 </div> </p>
@@ -710,7 +711,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/3310cfe250c8c190411d802ac04e76b88e0d5348/src/normed_spectral.lean#L292">system_of_double_complexes.normed_spectral</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/normed_spectral.lean#L292">system_of_double_complexes.normed_spectral</a></li>
         </ul>
 
       </div>
@@ -730,9 +731,9 @@
     \end{tikzcd}" />
 </div> </div>
 <ol class="enumerate">
-  <li><p>for $i=0,\ldots ,m+1$, the rows $M^{i,q}_c$ are weak $\leq (k,K)$-exact in degrees $\leq m-1$ for $c\geq c_0$; </p>
+  <li><p>for $i=0,\ldots ,m+1$, the rows $M^{i,q}_c$ are weakly $\leq k$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K$; </p>
 </li>
-  <li><p>for $j=0,\ldots ,m$, the columns $M^{p,j}_c$ are weak $\leq (k,K)$-exact in degrees $\leq m$ for $c\geq c_0$; </p>
+  <li><p>for $j=0,\ldots ,m$, the columns $M^{p,j}_c$ are weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$; </p>
 </li>
   <li><p>for $q=0,\ldots ,m$ and $c\geq c_0$, there is a map $h^q_{k'c}: M^{0,q+1}_{k'c}\to M^{1,q}_c$ with </p>
 <div class="displaymath" id="a0000000062">
@@ -749,7 +750,7 @@
 </div>
 </li>
 </ol>
-<p> Then the first row is weak $\leq (k’^2,2K_0H)$-exact in degrees $\leq m$ for $c\geq c_0$. </p>
+<p> Then the first row is weakly $\leq k’^2$ exact in degrees $\leq m$ for $c\geq c_0$ with bound $2K_0H$. </p>
 
   </div>
 </div> </p>
