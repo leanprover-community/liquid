@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blueprint for the Liquid Tensor Experiment: Some normed homological algebra</title>
 <link rel="next" href="sec-more_breen_deligne.html" title="More Breen–Deligne" />
-<link rel="prev" href="sect0002.html" title="Completions of locally constant functions" />
+<link rel="prev" href="sect0003.html" title="Completions of locally constant functions" />
 <link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -27,13 +27,13 @@
 <nav class="toc">
 <ul class="sub-toc-0">
 <li class="">
-  <a href="BD_reso.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
  </li>
 <li class="">
-  <a href="sect0002.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class=" active current">
   <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">4</span> <span class="toc_entry">Some normed homological algebra</span></a>
@@ -42,16 +42,16 @@
   <a href="sec-more_breen_deligne.html"><span class="toc_ref">5</span> <span class="toc_entry">More Breen–Deligne</span></a>
  </li>
 <li class="">
-  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+  <a href="sect0004.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
+  <a href="sect0005.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
  </li>
 <li class="">
-  <a href="sect0005.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
+  <a href="sect0006.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
  </li>
 <li class="">
-  <a href="sect0006.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0007.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -88,7 +88,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L42">system_of_complexes</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/system_of_complexes/basic.lean#L42">system_of_complexes</a></li>
         </ul>
 
       </div>
@@ -97,16 +97,16 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  A <em>system of complexes</em> of normed abelian groups is for each sufficiently large $c$ (i.e.&#160;all $c\geq c_0$ for some $c_0>0$), a complex </p>
-<div class="displaymath" id="a0000000033">
+  <p>  A <em>system of complexes</em> of normed abelian groups is for each sufficiently large \(c\) (i.e.&#160;all \(c\geq c_0\) for some \(c_0{\gt}0\)), a complex </p>
+<div class="displaymath" id="a0000000034">
   \[  C_c^\bullet : C_c^0\to C_c^1\to \ldots  \]
 </div>
-<p> of normed abelian groups together with maps of complexes $\mathrm{res}_{c',c}: C_{c'}^\bullet \to C_c^\bullet $, for $c’ ≥ c \geq c_0$, satisfying $\mathrm{res}_{c,c}=\mathrm{id}$ and the obvious associativity condition. We use notation $(C_c^\bullet )_{c\geq c_0}$ for a system of complexes, although we will frequently omit any mention of the lower bound $c_0$ and just write $C_\bullet ^\bullet $. </p>
+<p> of normed abelian groups together with maps of complexes \(\mathrm{res}_{c',c}: C_{c'}^\bullet \to C_c^\bullet \), for \(c’ ≥ c \geq c_0\), satisfying \(\mathrm{res}_{c,c}=\mathrm{id}\) and the obvious associativity condition. We use notation \((C_c^\bullet )_{c\geq c_0}\) for a system of complexes, although we will frequently omit any mention of the lower bound \(c_0\) and just write \(C_\bullet ^\bullet \). </p>
 
   </div>
 </div> </p>
-<p>By convention, for every system of complexes $(C_c^\bullet )_{c\geq c_0}$, we will set $C^{-1}_c = 0$ for all $c\geq c_0$. This will come up each time we write $C^{i-1}_c$ and $i$ could be $0$. </p>
-<p>In this section, given $x ∈ C^•_{c'}$ and $c_0\leq c ≤ c’$ we will use the notation $x_{|c} := \mathrm{res}_{c', c}(x)$. </p>
+<p>By convention, for every system of complexes \((C_c^\bullet )_{c\geq c_0}\), we will set \(C^{-1}_c = 0\) for all \(c\geq c_0\). This will come up each time we write \(C^{i-1}_c\) and \(i\) could be \(0\). </p>
+<p>In this section, given \(x ∈ C^•_{c'}\) and \(c_0\leq c ≤ c’\) we will use the notation \(x_{|c} := \mathrm{res}_{c', c}(x)\). </p>
 <p><div class="definition_thmwrapper" id="admissible">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -140,7 +140,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L181">system_of_complexes.admissible</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/system_of_complexes/basic.lean#L181">system_of_complexes.admissible</a></li>
         </ul>
 
       </div>
@@ -149,11 +149,11 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   A system of complexes is <em>admissible</em> if all differentials and maps $\mathrm{res}_{c',c}^i$ are norm-nonincreasing. </p>
+  <p>   A system of complexes is <em>admissible</em> if all differentials and maps \(\mathrm{res}_{c',c}^i\) are norm-nonincreasing. </p>
 
   </div>
 </div> </p>
-<p>Throughout the rest of this section, $k$ (and $k’$, $k”$) will denote reals at least 1, $m$ will be a non-negative integer, and $K$, $K’$, $K”$ will denote non-negative reals. </p>
+<p>Throughout the rest of this section, \(k\) (and \(k’\), \(k”\)) will denote reals at least 1, \(m\) will be a non-negative integer, and \(K\), \(K’\), \(K”\) will denote non-negative reals. </p>
 <p><div class="definition_thmwrapper" id="is_bounded_exact">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -187,7 +187,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L212">system_of_complexes.is_bounded_exact</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/system_of_complexes/basic.lean#L212">system_of_complexes.is_bounded_exact</a></li>
         </ul>
 
       </div>
@@ -196,8 +196,8 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let $(C_c^\bullet )_{c\geq c_0}$ be a system of complexes. For an integer $m\geq 0$ and reals $k \ge 1$, $c_0’\geq c_0$ and $K\geq 0$, we say the datum $(C_c^\bullet )_{c\geq c_0}$ is <em>$\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$</em> if the following condition is satisfied. For all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ there is some $y\in C_c^{i-1}$ such that </p>
-<div class="displaymath" id="a0000000034">
+  <p>   Let \((C_c^\bullet )_{c\geq c_0}\) be a system of complexes. For an integer \(m\geq 0\) and reals \(k \ge 1\), \(c_0’\geq c_0\) and \(K\geq 0\), we say the datum \((C_c^\bullet )_{c\geq c_0}\) is <em>\(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0’\) with bound \(K\)</em> if the following condition is satisfied. For all \(c\geq c_0’\) and all \(x\in C_{kc}^i\) with \(i\leq m\) there is some \(y\in C_c^{i-1}\) such that </p>
+<div class="displaymath" id="a0000000035">
   \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖.  \]
 </div>
 
@@ -237,7 +237,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L219">system_of_complexes.is_weak_bounded_exact</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/system_of_complexes/basic.lean#L219">system_of_complexes.is_weak_bounded_exact</a></li>
         </ul>
 
       </div>
@@ -246,14 +246,14 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let $(C_c^\bullet )_{c\geq c_0}$ be a system of complexes. For an integer $m\geq 0$ and reals $k \ge 1$, $c_0’\geq c_0$ and $K\geq 0$, the datum $(C_c^\bullet )_c$ is <em>weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$</em> if the following condition is satisfied. For all $c\geq c_0’$, all $x\in C_{kc}^i$ with $i\leq m$ and any $ε > 0$ there is some $y\in C_c^{i-1}$ such that </p>
-<div class="displaymath" id="a0000000035">
+  <p>   Let \((C_c^\bullet )_{c\geq c_0}\) be a system of complexes. For an integer \(m\geq 0\) and reals \(k \ge 1\), \(c_0’\geq c_0\) and \(K\geq 0\), the datum \((C_c^\bullet )_c\) is <em>weakly \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0’\) with bound \(K\)</em> if the following condition is satisfied. For all \(c\geq c_0’\), all \(x\in C_{kc}^i\) with \(i\leq m\) and any \(ε {\gt} 0\) there is some \(y\in C_c^{i-1}\) such that </p>
+<div class="displaymath" id="a0000000036">
   \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε.  \]
 </div>
 
   </div>
 </div> </p>
-<p>We first note that the difference between those two definitions is only about cocyles if we are ready to lose a tiny something on the norm bound $K$. </p>
+<p>We first note that the difference between those two definitions is only about cocyles if we are ready to lose a tiny something on the norm bound \(K\). </p>
 <p><div class="lemma_thmwrapper" id="is_bounded_exact_of_weakly">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
@@ -262,70 +262,6 @@
     <span class="lemma_thmlabel">4.5</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#is_bounded_exact_of_weakly">#</a>
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000036"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sec-some_normed_homological_algebra.html#is_bounded_exact">Definition 4.3</a></li>
-          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 4.4</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/basic.lean#L330">system_of_complexes.is_weak_bounded_exact.to_exact</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   Let $C_\bullet ^\bullet $ be a system of complexes. If $C_\bullet ^\bullet $ is weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$ and if, for all $c\geq c_0’$ and all $x\in C_{kc}^i$ with $i\leq m$ such that $dx = 0$ there is some $y\in C_c^{i-1}$ such that $x_{|c} = dy$ then, for every positive $δ$, $C_\bullet ^\bullet $ is $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K + δ$. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000036">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p>Let $δ$ be some positive real number. Let $x$ be an element of $C_{kc}^i$ for some $c ≥ c_0’$ and $i ≤ m$. If $dx = 0$ then the assumption we made about exact elements is exactly what we want. </p>
-<p>Assume now that $dx ≠ 0$. The weak exactness assumption applied to $ε = δ‖dx‖$ gives some $y\in C_c^{i-1}$ such that </p>
-<span>\begin{align*}  ‖x_{|c} - dy‖ & ≤ K‖dx‖ + δ‖dx‖ \\ & = (K + δ)‖dx‖ \end{align*}</span>
-
-  </div>
-</div>
-<p>A more important observation is that, in both definitions, we can also ask some control on the norm of $y$ if we are ready to square the restriction depth factor $k$. </p>
-<p><div class="lemma_thmwrapper" id="is_weak_bdd_exact_controlled_y">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">4.6</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#is_weak_bdd_exact_controlled_y">#</a>
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -338,7 +274,22 @@
 </button>
         </header>
                 <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_bounded_exact">Definition 4.3</a></li>
           <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 4.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/system_of_complexes/basic.lean#L330">system_of_complexes.is_weak_bounded_exact.to_exact</a></li>
         </ul>
 
       </div>
@@ -347,10 +298,7 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let $C_\bullet ^\bullet $ be a system of complexes which is weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0’$ with bound $K$. For all $c\geq c_0’$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$ there is some $y\in C_c^{i-1}$ such that </p>
-<div class="displaymath" id="a0000000038">
-  \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε \quad \text{and} \quad ‖y‖ ≤ K(K + 1)‖x‖ + δ.  \]
-</div>
+  <p>   Let \(C_\bullet ^\bullet \) be a system of complexes. If \(C_\bullet ^\bullet \) is weakly \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0’\) with bound \(K\) and if, for all \(c\geq c_0’\) and all \(x\in C_{kc}^i\) with \(i\leq m\) such that \(dx = 0\) there is some \(y\in C_c^{i-1}\) such that \(x_{|c} = dy\) then, for every positive \(δ\), \(C_\bullet ^\bullet \) is \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0’\) with bound \(K + δ\). </p>
 
   </div>
 </div> </p>
@@ -363,17 +311,69 @@
 
   </div>
   <div class="proof_content">
-  <p>Fix $x$, $ε$ and $δ$. The weak exactness assumption applied to $x$ and some $η$ to be chosen later gives us $w ∈ C_{kc}^{i-1}$ such that </p>
+  <p>Let \(δ\) be some positive real number. Let \(x\) be an element of \(C_{kc}^i\) for some \(c ≥ c_0’\) and \(i ≤ m\). If \(dx = 0\) then the assumption we made about exact elements is exactly what we want. </p>
+<p>Assume now that \(dx ≠ 0\). The weak exactness assumption applied to \(ε = δ‖dx‖\) gives some \(y\in C_c^{i-1}\) such that </p>
+<span>\begin{align*}  ‖x_{|c} - dy‖ & ≤ K‖dx‖ + δ‖dx‖ \\ & = (K + δ)‖dx‖ \end{align*}</span>
+
+  </div>
+</div>
+<p>A more important observation is that, in both definitions, we can also ask some control on the norm of \(y\) if we are ready to square the restriction depth factor \(k\). </p>
+<p><div class="lemma_thmwrapper" id="is_weak_bdd_exact_controlled_y">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#is_weak_bdd_exact_controlled_y">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 4.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(C_\bullet ^\bullet \) be a system of complexes which is weakly \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0’\) with bound \(K\). For all \(c\geq c_0’\), all \(x\in C_{k²c}^i\) with \(i\leq m\), all \(ε {\gt} 0\) and all \(δ {\gt} 0\) there is some \(y\in C_c^{i-1}\) such that </p>
 <div class="displaymath" id="a0000000039">
+  \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε \quad \text{and} \quad ‖y‖ ≤ K(K + 1)‖x‖ + δ.  \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Fix \(x\), \(ε\) and \(δ\). The weak exactness assumption applied to \(x\) and some \(η\) to be chosen later gives us \(w ∈ C_{kc}^{i-1}\) such that </p>
+<div class="displaymath" id="a0000000040">
   \[  ‖x_{|kc} - dw‖ ≤ K ‖dx‖ + η.  \]
 </div>
-<p> Then the weak exactness assumption applied to $w$ and some $τ$ to be chosen later gives us $z ∈ C_{c}^{i-2}$ such that </p>
-<div class="displaymath" id="a0000000040">
+<p> Then the weak exactness assumption applied to \(w\) and some \(τ\) to be chosen later gives us \(z ∈ C_{c}^{i-2}\) such that </p>
+<div class="displaymath" id="a0000000041">
   \[  ‖w_{|c} - dz‖ ≤ K ‖dw‖ + τ.  \]
 </div>
-<p> We set $y = w_{|c} - dz$. Since $dy = dw_{|c}$, we get the first required estimate as long as $η ≤ ε$. And we have: </p>
+<p> We set \(y = w_{|c} - dz\). Since \(dy = dw_{|c}\), we get the first required estimate as long as \(η ≤ ε\). And we have: </p>
 <span>\begin{align*}  ‖y‖ & ≤ K ‖dw‖ + τ \\ & ≤ K (‖x_{|kc}‖ + K‖dx‖ + η) + τ \\ & ≤ K(K + 1) ‖x‖ + Kη + τ \end{align*}</span>
-<p> which is fine as long as $Kη + τ ≤ δ$. So we set $η = \min (ε, δ/(2K))$ (interpreted as $ε$ if $K=0$) and $τ = δ/2$. </p>
+<p> which is fine as long as \(Kη + τ ≤ δ\). So we set \(η = \min (ε, δ/(2K))\) (interpreted as \(ε\) if \(K=0\)) and \(τ = δ/2\). </p>
 
   </div>
 </div>
@@ -385,7 +385,7 @@
     <span class="lemma_thmlabel">4.7</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#completion_is_weakexact">#</a>
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000041"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000042"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -407,12 +407,12 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let $(M_c^\bullet )_{c\geq c_0}$ be an admissible collection of complexes of normed abelian groups. </p>
-<p>Assume that $M^\bullet _c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$. Then the completion $\overline{M^\bullet _c}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$. </p>
+  <p>  Let \((M_c^\bullet )_{c\geq c_0}\) be an admissible collection of complexes of normed abelian groups. </p>
+<p>Assume that \(M^\bullet _c\) is weakly \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\). Then the completion \(\overline{M^\bullet _c}\) is weakly \(\leq k^2\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000041">
+<div class="proof_wrapper" id="a0000000042">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -421,24 +421,24 @@
 
   </div>
   <div class="proof_content">
-  <p> Let $x \in \overline{M^i_{k^2c}}$, where $c \geq c_0$ and $i \leq m$ and let $\epsilon > 0$. We can write $x = \sum _j x^j$ where </p>
+  <p> Let \(x \in \overline{M^i_{k^2c}}\), where \(c \geq c_0\) and \(i \leq m\) and let \(\epsilon {\gt} 0\). We can write \(x = \sum _j x^j\) where </p>
 <ul class="itemize">
-  <li><p>$x^j \in M^i_{k^2c}$ for all $j \geq 0$, </p>
+  <li><p>\(x^j \in M^i_{k^2c}\) for all \(j \geq 0\), </p>
 </li>
-  <li><p>$‖x - x^0‖ ≤ ε_0$ for some positive $ε_0$ to be chosen later. This implies that $‖dx - dx^0‖ ≤ ε_0$ and in particular $‖dx^0‖ ≤ ‖dx‖ + ε_0$, </p>
+  <li><p>\(‖x - x^0‖ ≤ ε_0\) for some positive \(ε_0\) to be chosen later. This implies that \(‖dx - dx^0‖ ≤ ε_0\) and in particular \(‖dx^0‖ ≤ ‖dx‖ + ε_0\), </p>
 </li>
-  <li><p>$‖x^j‖ ≤ ε_j$ if $j > 0$, for some positive $ε_j$ to be chosen later. This implies $‖dx^j‖ ≤ ε_j$ for all $j > 0$. </p>
+  <li><p>\(‖x^j‖ ≤ ε_j\) if \(j {\gt} 0\), for some positive \(ε_j\) to be chosen later. This implies \(‖dx^j‖ ≤ ε_j\) for all \(j {\gt} 0\). </p>
 </li>
 </ul>
-<p>Using Lemma&#160;<a href="sec-some_normed_homological_algebra.html#is_weak_bdd_exact_controlled_y">4.6</a>, we get a sequence $y^j$ in $M^{i-1}_c$ such that </p>
-<div class="displaymath" id="a0000000042">
+<p>Using Lemma&#160;<a href="sec-some_normed_homological_algebra.html#is_weak_bdd_exact_controlled_y">4.6</a>, we get a sequence \(y^j\) in \(M^{i-1}_c\) such that </p>
+<div class="displaymath" id="a0000000043">
   \[  ‖x^j_{|c} - dy^j‖ ≤ K ‖dx^j‖ + δ_j \quad \text{and} \quad ‖y^j‖ ≤ K(K + 1)‖x^j‖ + τ_j.  \]
 </div>
-<p> for positive sequences $δ$ and $τ$ to be chosen later. </p>
-<p>Since $M^{i-1}_c$ is complete, the series $\sum y^j$ converges as soon as we can guarantee that $\sum ‖y^j‖$ converges. Our estimates ensure this convergence as soon as the sum of the $K(K + 1)ε_j + τ_j$ converges so here we only need $ε$ and $τ$ to be summable. </p>
-<p>We then set $y = ∑ y^j$ and compute: </p>
+<p> for positive sequences \(δ\) and \(τ\) to be chosen later. </p>
+<p>Since \(M^{i-1}_c\) is complete, the series \(\sum y^j\) converges as soon as we can guarantee that \(\sum ‖y^j‖\) converges. Our estimates ensure this convergence as soon as the sum of the \(K(K + 1)ε_j + τ_j\) converges so here we only need \(ε\) and \(τ\) to be summable. </p>
+<p>We then set \(y = ∑ y^j\) and compute: </p>
 <span>\begin{align*}  ‖x_{|c} - dy‖ & = \left\| ∑_{j ≥ 0} x^j_{|c} - dy^j\right\|  \\ & ≤ ∑_{j ≥ 0} \left\| x^j_{|c} - dy^j\right\|  \\ & ≤ ∑_{j ≥ 0} K‖dx^j‖ + δ_j \\ & ≤ K‖dx‖ + Kε_0 + δ_0 + ∑_{j > 0} (Kε_j + δ_j) \end{align*}</span>
-<p>So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_j = ε2^{-j-2}/K$ and $δ_j = ε2^{-j-2}$. </p>
+<p>So everything is fine as long as \(∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε\), say \(ε_j = ε2^{-j-2}/K\) and \(δ_j = ε2^{-j-2}\). </p>
 
   </div>
 </div>
@@ -450,7 +450,7 @@
     <span class="lemma_thmlabel">4.8</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#weakexact_implies_exact">#</a>
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000043"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000044"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -478,7 +478,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/system_of_complexes/completion.lean#L43">system_of_complexes.is_weak_bounded_exact.strong_of_complete</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/system_of_complexes/completion.lean#L43">system_of_complexes.is_weak_bounded_exact.strong_of_complete</a></li>
         </ul>
 
       </div>
@@ -487,12 +487,12 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let $(M^\bullet _c)_{c\geq c_0}$ be an admissible collection of complexes of complete normed abelian groups. </p>
-<p>Assume that $M^\bullet _c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$. Then $M^\bullet _c$, for every $δ > 0$, it is $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K+δ$. </p>
+  <p>   Let \((M^\bullet _c)_{c\geq c_0}\) be an admissible collection of complexes of complete normed abelian groups. </p>
+<p>Assume that \(M^\bullet _c\) is weakly \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\). Then \(M^\bullet _c\), for every \(δ {\gt} 0\), it is \(\leq k^2\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K+δ\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000043">
+<div class="proof_wrapper" id="a0000000044">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -501,19 +501,19 @@
 
   </div>
   <div class="proof_content">
-  <p> Lemma&#160;<a href="sec-some_normed_homological_algebra.html#is_bounded_exact_of_weakly">4.5</a> ensures we only need to care about cocycles of $M$. More precisely, let $x$ be a cocycle in $M^i_{k^2c}$ for some $i ≤ m$ and $c ≥ c_0$. We need to find $y \in M^{i-1}_c$ such that $dy = x_{|c}$. </p>
-<p>By weak $\leq k$-exactness applied to $x$ and a sequence $ε_j$ to be chosen later, we can find a sequence $w^j \in M^{i-1}_{kc}$ such that </p>
-<div class="displaymath" id="a0000000044">
+  <p> Lemma&#160;<a href="sec-some_normed_homological_algebra.html#is_bounded_exact_of_weakly">4.5</a> ensures we only need to care about cocycles of \(M\). More precisely, let \(x\) be a cocycle in \(M^i_{k^2c}\) for some \(i ≤ m\) and \(c ≥ c_0\). We need to find \(y \in M^{i-1}_c\) such that \(dy = x_{|c}\). </p>
+<p>By weak \(\leq k\)-exactness applied to \(x\) and a sequence \(ε_j\) to be chosen later, we can find a sequence \(w^j \in M^{i-1}_{kc}\) such that </p>
+<div class="displaymath" id="a0000000045">
   \[  ‖x_{kc} - dw^j‖ ≤ ε_j.  \]
 </div>
-<p> Then, by weak $\leq k$-exactness applied to each $w^{j + 1} - w^j$ and a sequence $δ_j$ to be chosen later, we can find a sequence $z^j \in M^{i-2}_{c}$ such that </p>
-<div class="displaymath" id="a0000000045">
+<p> Then, by weak \(\leq k\)-exactness applied to each \(w^{j + 1} - w^j\) and a sequence \(δ_j\) to be chosen later, we can find a sequence \(z^j \in M^{i-2}_{c}\) such that </p>
+<div class="displaymath" id="a0000000046">
   \[  ‖(w^{j+1} - w^j)_{|c} - dz^j‖ ≤ K‖dw^{j+1} - dw^j‖ + δ_j.  \]
 </div>
-<p> We set $y^j := w^j_{|c} - \sum _{l=0}^{j-1} dz^l ∈ M^{i-1}_c$. </p>
+<p> We set \(y^j := w^j_{|c} - \sum _{l=0}^{j-1} dz^l ∈ M^{i-1}_c\). </p>
 <p>We have </p>
 <span>\begin{align*}  ‖y^{j + 1} - y^j‖ & = \left\| (w^{j + 1} - w^j)_{|c} - dz^j\right\|  \\ & ≤ K‖dw^{j+1} - dw^j‖ + δ_j \\ & ≤ 2Kε_j + δ_j. \end{align*}</span>
-<p> So $y^j$ is a Cauchy sequence as long as we make sure $2Kε_j + δ_j ≤ 2^{-j}$ for instance. Since $M^{i-1}_c$ is complete, this sequence converges to some $y$. Because $dy^j = dw^j_{|c}$, we get that $‖x_{|c} - dy^j‖ ≤ ε_j$ and in the limit $x_{|c} = dy$. </p>
+<p> So \(y^j\) is a Cauchy sequence as long as we make sure \(2Kε_j + δ_j ≤ 2^{-j}\) for instance. Since \(M^{i-1}_c\) is complete, this sequence converges to some \(y\). Because \(dy^j = dw^j_{|c}\), we get that \(‖x_{|c} - dy^j‖ ≤ ε_j\) and in the limit \(x_{|c} = dy\). </p>
 
   </div>
 </div>
@@ -526,7 +526,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#weaksnakelemma">#</a>
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000046"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000047"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -553,7 +553,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/normed_snake.lean#L13">weak_normed_snake</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/normed_snake.lean#L13">weak_normed_snake</a></li>
         </ul>
 
       </div>
@@ -562,16 +562,16 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>   Let $(M^\bullet _c)_{c\geq c_0}$ and $(M’^\bullet _c)_{c\geq c_0}$ be two admissible collections of complexes of complete normed abelian groups. For each $c\geq c_0$ let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that are norm-nonincreasing and which all commute with all restriction maps, and assume that there exists these maps satisfy </p>
-<div class="displaymath" id="a0000000047">
+  <p>   Let \((M^\bullet _c)_{c\geq c_0}\) and \((M’^\bullet _c)_{c\geq c_0}\) be two admissible collections of complexes of complete normed abelian groups. For each \(c\geq c_0\) let \(f^\bullet _c: M^\bullet _c\to M’^\bullet _c\) be a collection of maps between these collections of complexes that are norm-nonincreasing and which all commute with all restriction maps, and assume that there exists these maps satisfy </p>
+<div class="displaymath" id="a0000000048">
   \[  ‖x_{|c}‖ ≤ K”‖f(x)‖  \]
 </div>
-<p> for all $i ≤ m+1$ and all $x\in M^i_{k''c}$. Let $N^\bullet _c=M’^\bullet _c/M^\bullet _c$ be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
-<p>Assume that $M^\bullet _c$ (resp. $M’^\bullet _c$) is weakly $\leq k$-exact (resp. $≤ k’$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$ (resp. $K’$). Then $N^\bullet _c$ is weakly $\leq kk’k”$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K’(KK” + 1)$. </p>
+<p> for all \(i ≤ m+1\) and all \(x\in M^i_{k''c}\). Let \(N^\bullet _c=M’^\bullet _c/M^\bullet _c\) be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
+<p>Assume that \(M^\bullet _c\) (resp. \(M’^\bullet _c\)) is weakly \(\leq k\)-exact (resp. \(≤ k’\)-exact) in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\) (resp. \(K’\)). Then \(N^\bullet _c\) is weakly \(\leq kk’k”\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K’(KK” + 1)\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000046">
+<div class="proof_wrapper" id="a0000000047">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -580,48 +580,48 @@
 
   </div>
   <div class="proof_content">
-  <p> Let $n \in N^i_{kk'k''c}$ for $i\leq m-1$. We fix $ε > 0$. We need to find an element $y \in N^{i-1}_c$ such that </p>
-<div class="displaymath" id="a0000000048">
+  <p> Let \(n \in N^i_{kk'k''c}\) for \(i\leq m-1\). We fix \(ε {\gt} 0\). We need to find an element \(y \in N^{i-1}_c\) such that </p>
+<div class="displaymath" id="a0000000049">
   \[  ‖n_{|c} - dy‖ \leq K’(KK” + 1)‖dn‖ + \epsilon .  \]
 </div>
-<p>Pick any preimage $m’ \in M’^i_{kk'k''c}$ of $n$. In particular $dm’$ is a preimage of $dn$. By definition of the quotient norm, we can find $m_1 ∈ M^{i+1}_{kk'k''c}$ and $m_1” ∈ (M’)^{i+1}_{kk'k''c}$ such that </p>
-<div class="displaymath" id="a0000000049">
+<p>Pick any preimage \(m’ \in M’^i_{kk'k''c}\) of \(n\). In particular \(dm’\) is a preimage of \(dn\). By definition of the quotient norm, we can find \(m_1 ∈ M^{i+1}_{kk'k''c}\) and \(m_1” ∈ (M’)^{i+1}_{kk'k''c}\) such that </p>
+<div class="displaymath" id="a0000000050">
   \[  dm’ = f(m_1) + m_1”  \]
 </div>
-<p> with $‖m_1”‖ \leq ‖dn‖ + ε_1$, for some positive $ε_1$ to be chosen later. </p>
-<p>Applying the differential to the last displayed equation, and using that this kills the image of $d$, and that $f$ is a map of complexes, we see that </p>
-<div class="displaymath" id="a0000000050">
+<p> with \(‖m_1”‖ \leq ‖dn‖ + ε_1\), for some positive \(ε_1\) to be chosen later. </p>
+<p>Applying the differential to the last displayed equation, and using that this kills the image of \(d\), and that \(f\) is a map of complexes, we see that </p>
+<div class="displaymath" id="a0000000051">
   \[  f(dm_1) = -dm_1”.  \]
 </div>
-<p> Using the norm bound on $f$, we get </p>
-<div class="displaymath" id="a0000000051">
+<p> Using the norm bound on \(f\), we get </p>
+<div class="displaymath" id="a0000000052">
   \[ \begin{aligned}  ‖dm_{1|kk'c}‖ & ≤ K”‖f(dm_1)‖ = K”‖dm_1”‖\\ & ≤ K”‖m_1”‖ ≤ K”‖dn‖ + K”ε_1. \end{aligned} \]
 </div>
-<p> On the other hand, weak exactness of $M$ applied to $m_{1|kk'c}$ gives $m_0 ∈ M^i_{k'c}$ such that </p>
-<div class="displaymath" id="a0000000052">
+<p> On the other hand, weak exactness of \(M\) applied to \(m_{1|kk'c}\) gives \(m_0 ∈ M^i_{k'c}\) such that </p>
+<div class="displaymath" id="a0000000053">
   \[  ‖m_{1|kk'c|k'c} - dm_0‖ \leq K‖dm_{1|kk'c}‖ + ε_1  \]
 </div>
 <p> which combines with the previous estimate to give: </p>
-<div class="displaymath" id="a0000000053">
+<div class="displaymath" id="a0000000054">
   \[  ‖m_{1|k'c} - dm_0‖ \leq K K” \left\| d n\right\|  + (KK” + 1)ε_1.  \]
 </div>
-<p> Now let $m’_{\mathrm{new}} = m’_{|k'c} - f(m_0) \in M’^i_{k'c}$; this is a lift of $n_{|k'c}$. Then </p>
-<div class="displaymath" id="a0000000054">
+<p> Now let \(m’_{\mathrm{new}} = m’_{|k'c} - f(m_0) \in M’^i_{k'c}\); this is a lift of \(n_{|k'c}\). Then </p>
+<div class="displaymath" id="a0000000055">
   \[  dm’_{\mathrm{new}} = dm’_{|k'c} - f(m_{1|k'c}) + f(m_{1|k'c} - dm_0) = m”_{1|k'c} + f(m_{1|k'c} - dm_0).  \]
 </div>
 <p> In particular, </p>
-<div class="displaymath" id="a0000000055">
+<div class="displaymath" id="a0000000056">
   \[  ‖dm’_{\mathrm{new}}‖ ≤ (KK” + 1)\left\| dn\right\| + (KK” + 2) ε_1.  \]
 </div>
-<p> Now weak exactness of $M’$ gives $x \in M’^{i-1}_c$ such that </p>
-<div class="displaymath" id="a0000000056">
+<p> Now weak exactness of \(M’\) gives \(x \in M’^{i-1}_c\) such that </p>
+<div class="displaymath" id="a0000000057">
   \[  ‖m’_{\mathrm{new}|c} - dx‖ ≤ K’‖dm’_\mathrm {new}‖ + ε_1 \leq K’((K K” + 1) \left\| dn\right\| + (KK” + 2) ε_1) + ε_1.  \]
 </div>
-<p> In particular, letting $y \in N^{i-1}_c$ be the image of $x$, we get </p>
-<div class="displaymath" id="a0000000057">
+<p> In particular, letting \(y \in N^{i-1}_c\) be the image of \(x\), we get </p>
+<div class="displaymath" id="a0000000058">
   \[  ‖n_{|c} - dy‖ ≤ K’(K K” + 1)\left\| dn\right\| + (K’(K K” + 2) + 1) ε_1,  \]
 </div>
-<p> which is exactly what we wanted if we choose $ε_1 = ε/(K’(K K” + 2) + 1)$. </p>
+<p> which is exactly what we wanted if we choose \(ε_1 = ε/(K’(K K” + 2) + 1)\). </p>
 
   </div>
 </div>
@@ -633,7 +633,7 @@
     <span class="proposition_thmlabel">4.10</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#snakelemma">#</a>
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000058"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000059"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -655,16 +655,16 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>  Let $(M^\bullet _c)_{c\geq c_0}$ and $(M’^\bullet _c)_{c\geq c_0}$ be two admissible collections of complexes of complete normed abelian groups. For $c\geq c_0$ let $f^\bullet _c: M^\bullet _c\to M’^\bullet _c$ be a collection of maps between these collections of complexes that is strictly compatible with the norm and commutes with restriction maps, and assume that it satisfies </p>
-<div class="displaymath" id="a0000000059">
+  <p>  Let \((M^\bullet _c)_{c\geq c_0}\) and \((M’^\bullet _c)_{c\geq c_0}\) be two admissible collections of complexes of complete normed abelian groups. For \(c\geq c_0\) let \(f^\bullet _c: M^\bullet _c\to M’^\bullet _c\) be a collection of maps between these collections of complexes that is strictly compatible with the norm and commutes with restriction maps, and assume that it satisfies </p>
+<div class="displaymath" id="a0000000060">
   \[  ‖x_{|c}‖ ≤ K”‖f(x)‖  \]
 </div>
-<p> for all $i ≤ m+1$ and all $x\in M^i_{k''c}$. Let $N^\bullet _c=M’^\bullet _c/\overline{M^\bullet _c}$ be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
-<p>Assume that $M^\bullet _c$ (resp. $M’^\bullet _c$) is $\leq k$-exact (resp. $≤ k’$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$ (resp. $K’$). Then, for every $δ > 0$, $N^\bullet _c$ is $\leq (kk’k”)^2$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K’(KK” + 1) + δ$. </p>
+<p> for all \(i ≤ m+1\) and all \(x\in M^i_{k''c}\). Let \(N^\bullet _c=M’^\bullet _c/\overline{M^\bullet _c}\) be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
+<p>Assume that \(M^\bullet _c\) (resp. \(M’^\bullet _c\)) is \(\leq k\)-exact (resp. \(≤ k’\)-exact) in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\) (resp. \(K’\)). Then, for every \(δ {\gt} 0\), \(N^\bullet _c\) is \(\leq (kk’k”)^2\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K’(KK” + 1) + δ\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000058">
+<div class="proof_wrapper" id="a0000000059">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -673,7 +673,7 @@
 
   </div>
   <div class="proof_content">
-  <p> The exactness assumptions on $M$ and $M’$ give the corresponding weak exactness condition. Hence Proposition&#160;<a href="sec-some_normed_homological_algebra.html#weaksnakelemma">4.9</a> ensures that $N^\bullet _c$ is weakly $\leq kk’k”$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K’(KK” + 1)$. Since $N^\bullet _c$ is a complex of complete groups, Lemma&#160;<a href="sec-some_normed_homological_algebra.html#weakexact_implies_exact">4.8</a> gives the required exactness. </p>
+  <p> The exactness assumptions on \(M\) and \(M’\) give the corresponding weak exactness condition. Hence Proposition&#160;<a href="sec-some_normed_homological_algebra.html#weaksnakelemma">4.9</a> ensures that \(N^\bullet _c\) is weakly \(\leq kk’k”\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K’(KK” + 1)\). Since \(N^\bullet _c\) is a complex of complete groups, Lemma&#160;<a href="sec-some_normed_homological_algebra.html#weakexact_implies_exact">4.8</a> gives the required exactness. </p>
 
   </div>
 </div>
@@ -685,7 +685,7 @@
     <span class="proposition_thmlabel">4.11</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-some_normed_homological_algebra.html#spectral">#</a>
-    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000060"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000061"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -711,7 +711,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/normed_spectral.lean#L292">system_of_double_complexes.normed_spectral</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/normed_spectral.lean#L344">system_of_double_complexes.normed_spectral</a></li>
         </ul>
 
       </div>
@@ -720,9 +720,9 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>    Fix an integer $m\geq 0$ and constants $k$, $K$. Then there exists an $\epsilon >0$ and constants $k_0$, $K_0$, depending (only) on $k$, $K$ and $m$, with the following property. </p>
-<p>Consider an admissible system of double complexes $M^{p,q}_c$, $p,q\geq 0$, $c\geq c_0$, of complete normed abelian groups as well as some $k’\geq k_0$ and some $H>0$, such that </p>
-<div class="centered"> <div class="tikzcd" id="a0000000061">
+  <p>    Fix an integer \(m\geq 0\) and constants \(k\), \(K\). Then there exists an \(\epsilon {\gt}0\) and constants \(k_0\), \(K_0\), depending (only) on \(k\), \(K\) and \(m\), with the following property. </p>
+<p>Consider an admissible system of double complexes \(M^{p,q}_c\), \(p,q\geq 0\), \(c\geq c_0\), of complete normed abelian groups as well as some \(k’\geq k_0\) and some \(H{\gt}0\), such that </p>
+<div class="centered"> <div class="tikzcd" id="a0000000062">
     <img src="images/img-0001.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
       M^{0,0}_c \ar[r]{d&#39;^{0,0}_c}\ar[d]{d^{0,0}_c} &amp; M^{0,1}_c\ar[r]{d&#39;^{0,1}_c}\ar[d]{d^{0,1}_c} &amp; M^{0,2}_c\ar[r]{d&#39;^{0,2}_c}\ar[d]{d^{0,2}_c} &amp; \ldots\\
   M^{1,0}_c\ar[r]{d&#39;^{1,0}_c}\ar[d]{d^{1,0}_c} &amp; M^{1,1}_c\ar[r]{d&#39;^{1,1}_c}\ar[d]{d^{1,1}_c} &amp; M^{1,2}_c\ar[r]{d&#39;^{1,2}_c}\ar[d]{d^{1,2}_c} &amp; \ldots\\
@@ -731,15 +731,15 @@
     \end{tikzcd}" />
 </div> </div>
 <ol class="enumerate">
-  <li><p>for $i=0,\ldots ,m+1$, the rows $M^{i,q}_c$ are weakly $\leq k$-exact in degrees $\leq m-1$ for $c\geq c_0$ with bound $K$; </p>
+  <li><p>for \(i=0,\ldots ,m+1\), the rows \(M^{i,q}_c\) are weakly \(\leq k\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K\); </p>
 </li>
-  <li><p>for $j=0,\ldots ,m$, the columns $M^{p,j}_c$ are weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$; </p>
+  <li><p>for \(j=0,\ldots ,m\), the columns \(M^{p,j}_c\) are weakly \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\); </p>
 </li>
-  <li><p>for $q=0,\ldots ,m$ and $c\geq c_0$, there is a map $h^q_{k'c}: M^{0,q+1}_{k'c}\to M^{1,q}_c$ with </p>
-<div class="displaymath" id="a0000000062">
+  <li><p>for \(q=0,\ldots ,m\) and \(c\geq c_0\), there is a map \(h^q_{k'c}: M^{0,q+1}_{k'c}\to M^{1,q}_c\) with </p>
+<div class="displaymath" id="a0000000063">
   \[  ‖h^q_{k'c}(x)‖_{M^{1,q}_c}\leq H‖x‖_{M^{0,q+1}_{k'c}}  \]
 </div>
-<p> for all $x\in M^{0,q+1}_c$, and such that for all $c\geq c_0$ and $x\in M^{0,q}_{k'^2c}$, one has </p>
+<p> for all \(x\in M^{0,q+1}_c\), and such that for all \(c\geq c_0\) and \(x\in M^{0,q}_{k'^2c}\), one has </p>
 <div class="equation" id="eq:homotopicmapsmall">
 <p>
   <div class="equation_content">
@@ -750,12 +750,12 @@
 </div>
 </li>
 </ol>
-<p> Then the first row is weakly $\leq k’^2$ exact in degrees $\leq m$ for $c\geq c_0$ with bound $2K_0H$. </p>
+<p> Then the first row is weakly \(\leq k’^2\) exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(2K_0H\). </p>
 
   </div>
 </div> </p>
-<p>We note that the bound on the homotopy is of a peculiar nature, in that the bound only depends on a deep restriction of $x$. </p>
-<div class="proof_wrapper" id="a0000000060">
+<p>We note that the bound on the homotopy is of a peculiar nature, in that the bound only depends on a deep restriction of \(x\). </p>
+<div class="proof_wrapper" id="a0000000061">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -764,24 +764,24 @@
 
   </div>
   <div class="proof_content">
-  <p>  First, we treat the case $m=0$. If $m=0$, we claim that one can take $\epsilon =\tfrac 1{2k}$ and $k_0=k$. We have to prove exactness at the first step. Let $x_{k'^2c}\in M^{0,0}_{k'^2c}$ and denote $x_{k'c}=\mathrm{res}_{k'^2c,k'c}^{0,0}(x)$ and $x_c=\mathrm{res}_{k'^2c,c}^{0,0}(x)$. Then by assumption (2) (and $k’\geq k$), we have </p>
-<div class="displaymath" id="a0000000063">
+  <p>  First, we treat the case \(m=0\). If \(m=0\), we claim that one can take \(\epsilon =\tfrac 1{2k}\) and \(k_0=k\). We have to prove exactness at the first step. Let \(x_{k'^2c}\in M^{0,0}_{k'^2c}\) and denote \(x_{k'c}=\mathrm{res}_{k'^2c,k'c}^{0,0}(x)\) and \(x_c=\mathrm{res}_{k'^2c,c}^{0,0}(x)\). Then by assumption (2) (and \(k’\geq k\)), we have </p>
+<div class="displaymath" id="a0000000064">
   \[  ‖x_c‖_{M^{0,0}_c}\leq k‖d^{0,0}_{k'c}(x_{k'c})‖_{M^{1,0}_{k'c}}.  \]
 </div>
 <p> On the other hand, by (3), </p>
-<div class="displaymath" id="a0000000064">
+<div class="displaymath" id="a0000000065">
   \[  ‖\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x))\pm h^0_{k'^2c}(d’^{0,0}_{k'^2c}(x))‖_{M^{1,0}_{k'c}}\leq \epsilon ‖x_c‖_{M^{0,0}_c}.  \]
 </div>
-<p> In particular, noting that $\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x)) = d^{0,0}_{k'c}(x_{k'c})$, we get </p>
-<div class="displaymath" id="a0000000065">
+<p> In particular, noting that \(\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x)) = d^{0,0}_{k'c}(x_{k'c})\), we get </p>
+<div class="displaymath" id="a0000000066">
   \[  ‖x_c‖_{M^{0,0}_c}\leq k‖d^{0,0}_{k'c}(x_{k'c})‖_{M^{1,0}_{k'c}}\leq k\epsilon ‖x_c‖_{M^{0,0}_c} + kH ‖d’^{0,0}_{k'^2c}(x)‖_{M^{0,1}_{k'^2c}}.  \]
 </div>
-<p> Thus, taking $\epsilon =\tfrac 1{2k}$ as promised, this implies </p>
-<div class="displaymath" id="a0000000066">
+<p> Thus, taking \(\epsilon =\tfrac 1{2k}\) as promised, this implies </p>
+<div class="displaymath" id="a0000000067">
   \[  ‖x_c‖_{M^{0,0}_c}\leq 2kH ‖d’^{0,0}_{k'^2c}(x)‖_{M^{0,1}_{k'^2c}}.  \]
 </div>
-<p> This gives the desired $\leq \max (k’^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$. </p>
-<p>Now we argue by induction on $m$. Consider the complex $N^{p,q}$ given by $M^{p,q+1}$ for $q\geq 1$ and $N^{p,0} = M^{p,1}/\overline{M^{p,0}}$ (the quotient by the closure of the image, which is also the completion of $M^{p,1}/M^{p,0}$), equipped with the quotient norm. Using the normed version of the snake lemma, Proposition&#160;<a href="sec-some_normed_homological_algebra.html#snakelemma">4.10</a> in the appendix to this lecture, one checks that this satisfies the assumptions for $m-1$, with $k$ replaced by $\max (k^4,k^3+k+1)$. </p>
+<p> This gives the desired \(\leq \max (k’^2,2k_0H)\)-exactness in degrees \(\leq m\) for \(c\geq c_0\). </p>
+<p>Now we argue by induction on \(m\). Consider the complex \(N^{p,q}\) given by \(M^{p,q+1}\) for \(q\geq 1\) and \(N^{p,0} = M^{p,1}/\overline{M^{p,0}}\) (the quotient by the closure of the image, which is also the completion of \(M^{p,1}/M^{p,0}\)), equipped with the quotient norm. Using the normed version of the snake lemma, Proposition&#160;<a href="sec-some_normed_homological_algebra.html#snakelemma">4.10</a> in the appendix to this lecture, one checks that this satisfies the assumptions for \(m-1\), with \(k\) replaced by \(\max (k^4,k^3+k+1)\). </p>
 
   </div>
 </div>
@@ -792,7 +792,7 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sect0002.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0003.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>

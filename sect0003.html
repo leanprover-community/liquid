@@ -9,9 +9,9 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blueprint for the Liquid Tensor Experiment: Polyhedral lattices</title>
-<link rel="next" href="sect0004.html" title="End of proof" />
-<link rel="prev" href="sec-more_breen_deligne.html" title="More Breen–Deligne" />
+<title>Blueprint for the Liquid Tensor Experiment: Completions of locally constant functions</title>
+<link rel="next" href="sec-some_normed_homological_algebra.html" title="Some normed homological algebra" />
+<link rel="prev" href="sect0002.html" title="Spaces of convergent power series" />
 <link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -27,13 +27,13 @@
 <nav class="toc">
 <ul class="sub-toc-0">
 <li class="">
-  <a href="BD_reso.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
  </li>
-<li class="">
-  <a href="sect0002.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+<li class=" active current">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class="">
   <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">4</span> <span class="toc_entry">Some normed homological algebra</span></a>
@@ -41,17 +41,17 @@
 <li class="">
   <a href="sec-more_breen_deligne.html"><span class="toc_ref">5</span> <span class="toc_entry">More Breen–Deligne</span></a>
  </li>
-<li class=" active current">
-  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
+  <a href="sect0005.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
  </li>
 <li class="">
-  <a href="sect0005.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
+  <a href="sect0006.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
  </li>
 <li class="">
-  <a href="sect0006.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0007.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -68,15 +68,16 @@
 
 
 <div class="main-text">
-<h1 id="a0000000004">6 Polyhedral lattices</h1>
-<p><div class="definition_thmwrapper" id="polyhedral_lattice">
+<h1 id="a0000000004">3 Completions of locally constant functions</h1>
+<p><div class="definition_thmwrapper" id="Vhat">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">6.1</span>
+    <span class="definition_thmlabel">3.1</span>
+    ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#polyhedral_lattice">#</a>
+    <a class="icon proof" href="sect0003.html#Vhat">#</a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
       <div class="modal-content">
@@ -86,7 +87,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/polyhedral_lattice/basic.lean#L56">polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/locally_constant/Vhat.lean#L223">NormedGroup.LCC</a></li>
         </ul>
 
       </div>
@@ -95,21 +96,152 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  A <em>polyhedral lattice</em> is a finite free abelian group&#160;$\Lambda $ equipped with a norm $‖\cdot ‖_\Lambda \colon \Lambda \otimes \mathbb R\to \mathbb R$ (so $\Lambda \otimes \mathbb R$ is a Banach space) that is given by the supremum of finitely many linear functions on $\Lambda $; equivalently, the “unit ball” $\{ \lambda \in \Lambda \otimes \mathbb R\mid ‖\lambda ‖_\Lambda \leq 1\} $ is a polyhedron. </p>
+  <p>  Let \(V\) be a normed abelian group, and \(X\) a compact topological space. We denote by \(V(X)\) the normed abelian group of locally constant functions \(X \to V\) with respect to the sup norm. With \(\hat V(X)\) we denote the completion of \(V(X)\). </p>
+<p>These constructions are functorial in bounded group homomorphisms \(V \to V’\) and contravariantly functorial in continuous maps \(X \to X’\). </p>
 
   </div>
 </div> </p>
-<p>Finally, we can prove the key combinatorial lemma, ensuring that any element of $\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))$ can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element. </p>
-<p><div class="lemma_thmwrapper" id="combi">
+<p>We continue to use the notation of before: let \(r’ {\gt} 0, c \ge 0\) be real numbers, and let \(M\) be a profinitely filtered pseudo-normed group with \(r’\)-action by \(T^{-1}\). </p>
+<p><div class="definition_thmwrapper" id="basic_eval_CLCFP">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#basic_eval_CLCFP">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0002.html#basic_eval_FP">Lemma 2.7</a></li>
+          <li><a href="sect0003.html#Vhat">Definition 3.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(f\) be a basic universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_1, c_2)\) be \(f\)-suitable. We get an induced map </p>
+<div class="displaymath" id="a0000000026">
+  \[  \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n).  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="eval_CLCFP">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#eval_CLCFP">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#universal_suitable">Definition 1.14</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/CLC.lean#L160">breen_deligne.universal_map.eval_CLCFP</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(f\) be a universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_1, c_2)\) be \(f\)-suitable. We get an induced map </p>
+<div class="displaymath" id="a0000000027">
+  \[  \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n)  \]
+</div>
+<p> that is the sum \(\sum n_g V(g)\), if \(f\) is the formal sum \(\sum n_g g\) of basic universal maps. </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="normed_with_aut">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#normed_with_aut">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/normed_group/normed_with_aut.lean#L9">normed_with_aut</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(r {\gt} 0\) be a real number. An <em>\(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module</em> is a normed abelian group \(V\) endowed with an automorphism \(T \colon V \to V\) such that for all \(v \in V\) we have \(\| T(v)\|  = r\| v\| \). </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="Vhat_normed_with_aut">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmlabel">3.5</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#combi">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000082"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#Vhat_normed_with_aut">#</a>
+    <a class="icon proof" href="sect0003.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -121,7 +253,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0003.html#polyhedral_lattice">Definition 6.1</a></li>
+          <li><a href="sect0003.html#Vhat">Definition 3.1</a></li>
+          <li><a href="sect0003.html#normed_with_aut">Definition 3.4</a></li>
         </ul>
 
       </div>
@@ -135,7 +268,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/combinatorial_lemma.lean#L378">lem98</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/locally_constant/Vhat.lean#L258">NormedGroup.normed_with_aut_LCC</a></li>
         </ul>
 
       </div>
@@ -144,49 +277,11 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let $\Lambda $ be a polyhedral lattice. Then for all positive integers $N$ there is a constant $d$ such that for all $c>0$ one can write any $x\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}$ as </p>
-<div class="displaymath" id="a0000000083">
-  \[  x=x_1+\ldots +x_N  \]
-</div>
-<p> where all $x_i\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$. </p>
+  <p>   Let \(r \in \mathbb R_{{\gt} 0}\), and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Let \(X\) be a compact space. Then \(\hat V(X)\) is naturally an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module, with the action of \(T\) given by post-composition. </p>
 
   </div>
 </div> </p>
-<p>As preparation for the proof, we have the following results. </p>
-<p><div class="lemma_thmwrapper" id="explicit_gordan">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">6.3</span>
-    <span class="lemma_thmtitle">Gordan’s lemma</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#explicit_gordan">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000084"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/toric/lem97.lean#L44">explicit_gordan</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   Let $\Lambda $ be a finite free abelian group, and let $\lambda _1, \ldots , \lambda _m \in \Lambda $ be elements. Let $M \subset \operatorname{Hom}(\Lambda , \mathbb Z)$ be the submonoid $\{ x \mid x(\lambda _i) \ge 0 \text{ for all $i = 1, \dots , m$}\} $. Then $M$ is finitely generated as monoid. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000084">
+<div class="proof_wrapper" id="a0000000028">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -195,196 +290,20 @@
 
   </div>
   <div class="proof_content">
-  <p>This is a standard result. We have not formalised it yet, but it is work in progress. </p>
+  <p>Formalised, but omitted from this text. </p>
 
   </div>
 </div>
-<p><div class="lemma_thmwrapper" id="combi_aux">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">6.4</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#combi_aux">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000085"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/toric/lem97.lean#L232">lem97</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  Let $\Lambda $ be a finite free abelian group, let $N$ be a positive integer, and let $\lambda _1,\ldots ,\lambda _m\in \Lambda $ be elements. Then there is a finite subset $A\subset \Lambda ^\vee $ such that for all $x\in \Lambda ^\vee =\operatorname{Hom}(\Lambda ,\mathbb Z)$ there is some $x’\in A$ such that $x-x’\in N\Lambda ^\vee $ and for all $i=1,\ldots ,m$, the numbers $x’(\lambda _i)$ and $(x-x’)(\lambda _i)$ have the same sign, i.e.&#160;are both nonnegative or both nonpositive. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000085">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p> It suffices to prove the statement for all $x$ such that $\lambda _i(x)\geq 0$ for all $i$; indeed, applying this variant to all $\pm \lambda _i$, one gets the full statement. </p>
-<p>Thus, consider the submonoid $\Lambda ^\vee _+\subset \Lambda ^\vee $ of all $x$ that pair nonnegatively with all $\lambda _i$. This is a finitely generated monoid by Lemma&#160;<a href="sect0003.html#explicit_gordan">6.3</a>; let $y_1,\ldots ,y_M$ be a set of generators. Then we can take for $A$ all sums $n_1y_1+\ldots +n_My_M$ where all $n_j\in \{ 0,\ldots ,N-1\} $. </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="exists_partition">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">6.5</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#exists_partition">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000086"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/partition.lean#L102">exists_partition</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  Let $x_0, x_1, \dots $ be a sequence of reals, and assume that $\sum _{i=0}^\infty x_i$ converges absolutely. For every natural number $N > 0$, there exists a partition $\mathbb N = A_1 \sqcup A_2 \sqcup \dots \sqcup A_N$ such that for each $j = 1,\dots ,N$ we have $\sum _{i \in A_j} x_i \le (\sum _{i=0}^\infty x_i)/N + 1$ </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000086">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p>Define the $A_j$ recursively: assume that the natural numbers $0, \dots , n$ have been placed into the sets $A_1, \dots , A_N$. Then add the number $n+1$ to the set $A_j$ for which </p>
-<div class="displaymath" id="a0000000087">
-  \[  \sum _{i=0, i\in A_j}^n x_i  \]
-</div>
-<p> is minimal. </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="lem98_int">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">6.6</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#lem98_int">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/combinatorial_lemma.lean#L225">lem98_int</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  For all natural numbers $N > 0$, and for all $x\in \overline{\mathcal M}_{r'}(S)_{\leq c}$ one can decompose $x$ as a sum </p>
-<div class="displaymath" id="a0000000089">
-  \[  x=x_1+\ldots +x_N  \]
-</div>
-<p> with all $x_i\in \overline{\mathcal M}_{r'}(S)_{\leq c/N+1}$. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000088">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p> Choose a bijection $S \times \mathbb N \cong \mathbb N$, and transport the result from Lemma&#160;<a href="sect0003.html#exists_partition">6.5</a>. </p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000082">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof of Lemma&#160;<a href="sect0003.html#combi">6.2</a>
-    </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
-  </div>
-  <div class="proof_content">
-  <p>   Pick $\lambda _1,\ldots ,\lambda _m\in \Lambda $ generating the norm. We fix a finite subset $A\subset \Lambda ^\vee $ satisfying the conclusion of the previous lemma. Write </p>
-<div class="displaymath" id="a0000000090">
-  \[  x=\sum _{n\geq 1, s\in S} x_{n,s} T^n [s]  \]
-</div>
-<p> with $x_{n,s}\in \Lambda ^\vee $. Then we can decompose </p>
-<div class="displaymath" id="a0000000091">
-  \[  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1  \]
-</div>
-<p> where $x_{n,s}^1\in A$ and we have the same-sign property of the last lemma. Letting $x^0 = \sum _{n\geq 1, s\in S} x_{n,s}^0 T^n [s]$, we get a decomposition </p>
-<div class="displaymath" id="a0000000092">
-  \[  x = Nx^0 + \sum _{a\in A} a x_a  \]
-</div>
-<p> with $x_a\in \overline{\mathcal M}_{r'}(S)$ (with the property that in the basis given by the $T^n [s]$, all coefficients are $0$ or $1$). Crucially, we know that for all $i=1,\ldots ,m$, we have </p>
-<div class="displaymath" id="a0000000093">
-  \[  ‖x(\lambda _i)‖ = N ‖x^0(\lambda _i)‖ + \sum _{a\in A} |a(\lambda _i)| ‖x_a‖  \]
-</div>
-<p> by using the same sign property of the decomposition. </p>
-<p>Using this decomposition of $x$, we decompose each term into $N$ summands. This is trivial for the first term $Nx^0$, and each summand of the second term decomposes with $d = 1$ by Lemma&#160;<a href="sect0003.html#lem98_int">6.6</a>. (It follows that in general one can take for $d$ the supremum over all $i$ of $\sum _{a\in A} |a(\lambda _i)|$.) </p>
-
-  </div>
-</div>
-<p><div class="definition_thmwrapper" id="rescaled-sum">
+<p>Let \(r {\gt} 0\), and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Assume \(r’ \le 1\). </p>
+<p><div class="definition_thmwrapper" id="CLCFPTinv">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">6.7</span>
+    <span class="definition_thmlabel">3.6</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#rescaled-sum">#</a>
+    <a class="icon proof" href="sect0003.html#CLCFPTinv">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -395,7 +314,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0003.html#polyhedral_lattice">Definition 6.1</a></li>
+          <li><a href="sect0002.html#Mbar_with_Tinv">Lemma 2.6</a></li>
+          <li><a href="sect0003.html#Vhat_normed_with_aut">Lemma 3.5</a></li>
         </ul>
 
       </div>
@@ -409,7 +329,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/polyhedral_lattice/finsupp.lean#L55">finsupp.polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/Tinv.lean#L204">CLCFPTinv</a></li>
         </ul>
 
       </div>
@@ -418,23 +338,35 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>    Let $\Lambda $ be a polyhedral lattice, and let $N > 0$ be a natural number. (We think of $N$ as being fixed once and for all, and thus it does not show up in the notation below.) </p>
-<p>By $\Lambda ’$ we denote $\Lambda ^N$ endowed with the norm </p>
-<div class="displaymath" id="a0000000094">
-  \[  ‖(\lambda _1,\ldots ,\lambda _N)‖_{\Lambda '} = \tfrac 1N(‖\lambda _1‖_\Lambda +\ldots +‖\lambda _N‖_\Lambda ).  \]
+  <p>   There are two natural actions of \(T^{-1}\) on \(\hat V(M_{\le c})\). The first comes from the \(r’\)-action of \(T^{-1}\) on \(M\) which gives a continuous map </p>
+<div class="displaymath" id="a0000000029">
+  \[  M_{\le cr'} \to M_{\le c}  \]
 </div>
-<p> This is a polyhedral lattice. </p>
+<p> and thus a map </p>
+<div class="displaymath" id="a0000000030">
+  \[  (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).  \]
+</div>
+<p> The other comes from Lemma&#160;<a href="sect0003.html#Vhat_normed_with_aut">3.5</a>, using the \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module \(V\). We get a map </p>
+<div class="displaymath" id="a0000000031">
+  \[  [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le c}),  \]
+</div>
+<p> that we can compose with the map \(\hat V(M_{\le c}) \to \hat V(M_{\le cr'})\), obtained from the natural inclusion \(M_{\le cr'} \to M_{\le c}\). We thus end up with two maps </p>
+<div class="displaymath" id="a0000000032">
+  \[  (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).  \]
+</div>
+<p> and we define \(\hat V(M_{\le c})^{T^{-1}}\) to be the equalizer of \((T^{-1})^*\) and \([T^{-1}]\). In other words, the kernel of \((T^{-1})^* - [T^{-1}]\). </p>
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="cosimplicial-lattice">
+<p><div class="definition_thmwrapper" id="eval_CLCFPTinv">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">6.8</span>
+    <span class="definition_thmlabel">3.7</span>
+    ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#cosimplicial-lattice">#</a>
+    <a class="icon proof" href="sect0003.html#eval_CLCFPTinv">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -445,7 +377,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0003.html#rescaled-sum">Definition 6.7</a></li>
+          <li><a href="sect0003.html#CLCFPTinv">Definition 3.6</a></li>
+          <li><a href="sect0003.html#eval_CLCFP">Definition 3.3</a></li>
         </ul>
 
       </div>
@@ -459,7 +392,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/polyhedral_lattice/cosimplicial.lean#L60">PolyhedralLattice.cosimplicial</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/Tinv.lean#L320">breen_deligne.universal_map.eval_CLCFPTinv</a></li>
         </ul>
 
       </div>
@@ -468,8 +401,11 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   For any $m\geq 1$, let $\Lambda ’^{(m)}$ be given by $\Lambda ’^m / \Lambda \otimes (\mathbb Z^m)_{\sum =0}$; for $m=0$, we set $\Lambda ’^{(0)} = \Lambda $. Then $\Lambda ’^{(\bullet )}$ is a cosimplicial polyhedral lattice, the Čech conerve of $\Lambda \to \Lambda ’$. </p>
-<p>In particular, $\Lambda ’^{(0)} = \Lambda \to \Lambda ’ = \Lambda ’^{(1)}$ is the diagonal embedding. </p>
+  <p>   Let \(f\) be a universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_1, c_2)\) be \(f\)-suitable. </p>
+<p>The natural map from Definition&#160;<a href="sect0003.html#eval_CLCFP">3.3</a> restricts to a map </p>
+<div class="displaymath" id="a0000000033">
+  \[  \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_2}^n)^{T^{-1}} \to \hat V(M_{\le c_1}^m)^{T^{-1}}  \]
+</div>
 
   </div>
 </div> </p>
@@ -480,11 +416,11 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sec-more_breen_deligne.html" title="More Breen–Deligne"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0002.html" title="Spaces of convergent power series"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0004.html" title="End of proof"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sec-some_normed_homological_algebra.html" title="Some normed homological algebra"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

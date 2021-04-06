@@ -9,9 +9,9 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blueprint for the Liquid Tensor Experiment: Completions of locally constant functions</title>
-<link rel="next" href="sec-some_normed_homological_algebra.html" title="Some normed homological algebra" />
-<link rel="prev" href="sect0001.html" title="Spaces of convergent power series" />
+<title>Blueprint for the Liquid Tensor Experiment: Spaces of convergent power series</title>
+<link rel="next" href="sect0003.html" title="Completions of locally constant functions" />
+<link rel="prev" href="sect0001.html" title="Breen–Deligne data" />
 <link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -27,13 +27,13 @@
 <nav class="toc">
 <ul class="sub-toc-0">
 <li class="">
-  <a href="BD_reso.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
- </li>
-<li class="">
-  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
 <li class=" active current">
-  <a href="sect0002.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class="">
   <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">4</span> <span class="toc_entry">Some normed homological algebra</span></a>
@@ -42,16 +42,16 @@
   <a href="sec-more_breen_deligne.html"><span class="toc_ref">5</span> <span class="toc_entry">More Breen–Deligne</span></a>
  </li>
 <li class="">
-  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+  <a href="sect0004.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
+  <a href="sect0005.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
  </li>
 <li class="">
-  <a href="sect0005.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
+  <a href="sect0006.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
  </li>
 <li class="">
-  <a href="sect0006.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0007.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -68,16 +68,16 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">3 Completions of locally constant functions</h1>
-<p><div class="definition_thmwrapper" id="Vhat">
+<h1 id="a0000000003">2 Spaces of convergent power series</h1>
+<p><div class="definition_thmwrapper" id="pseudo_normed_group">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.1</span>
+    <span class="definition_thmlabel">2.1</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#Vhat">#</a>
+    <a class="icon proof" href="sect0002.html#pseudo_normed_group">#</a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
       <div class="modal-content">
@@ -87,7 +87,9 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/locally_constant/Vhat.lean#L223">NormedGroup.LCC</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/basic.lean#L28">pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/profinitely_filtered.lean#L22">profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/profinitely_filtered.lean#L65">profinitely_filtered_pseudo_normed_group_hom</a></li>
         </ul>
 
       </div>
@@ -96,21 +98,70 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  Let $V$ be a normed abelian group, and $X$ a compact topological space. We denote by $V(X)$ the normed abelian group of locally constant functions $X \to V$ with respect to the sup norm. With $\hat V(X)$ we denote the completion of $V(X)$. </p>
-<p>These constructions are functorial in bounded group homomorphisms $V \to V’$ and contravariantly functorial in continuous maps $X \to X’$. </p>
+  <p>  A <em>pseudo-normed group</em> is an abelian group \((M,+)\), together with an increasing filtration \(M_c \subseteq M\) of subsets \(M_c\) indexed by \(\mathbb R_{\ge 0}\), such that each \(M_c\) contains \(0\), is closed under negation, and \(M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}\). An example would be \(M=\mathbb {R}\) or \(M=\mathbb {Q}_p\) with \(M_c :=\{ x\, :\, |x|\leq c\} \). </p>
+<p>A pseudo-normed group&#160;\(M\) is <em>profinitely filtered</em> if each of the sets \(M_c\) is endowed with a topological space structure making it a profinite set, such that following maps are all continuous: </p>
+<ul class="itemize">
+  <li><p>the inclusion \(M_{c_1} \to M_{c_2}\) (for \(c_1 \le c_2\)); </p>
+</li>
+  <li><p>the negation \(M_c \to M_c\); </p>
+</li>
+  <li><p>the addition \(M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}\). </p>
+</li>
+</ul>
+<p>A <em>morphism</em> of profinitely filtered pseudo-normed groups \(M \to N\) is a group homomorphism \(f\) that is </p>
+<ul class="itemize">
+  <li><p><em>bounded</em>: there is a constant \(C\) such that \(x \in M_c\) implies \(f(x) \in N_{Cc}\); </p>
+</li>
+  <li><p><em>continuous</em>: for one (or equivalently all) constants \(C\) as above, the induced map \(M_c \to N_{Cc}\) is a morphism of profinite sets, i.e. continuous. </p>
+</li>
+</ul>
+<p>The reason the two definitions are equivalent is that a continuous injection between profinite sets must be a topological embedding. </p>
 
   </div>
 </div> </p>
-<p>We continue to use the notation of before: let $r’ > 0, c \ge 0$ be real numbers, and let $M$ be a profinitely filtered pseudo-normed group with $r’$-action by $T^{-1}$. </p>
-<p><div class="definition_thmwrapper" id="basic_eval_CLCFP">
+<p><div class="definition_thmwrapper" id="profinitely_filtered_pseudo_normed_group_with_Tinv">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.2</span>
+    <span class="definition_thmlabel">2.2</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#basic_eval_CLCFP">#</a>
+    <a class="icon proof" href="sect0002.html#profinitely_filtered_pseudo_normed_group_with_Tinv">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/with_Tinv.lean#L14">profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/with_Tinv.lean#L49">profinitely_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(r’\) be a positive real number. A profinitely filtered pseudo-normed group \(M\) has an <em>\(r’\)-action of \(T^{-1}\)</em> if it comes endowed with a distinguished morphism of profinitely filtered pseudo-normed groups \(T^{-1} \colon M \to M\) that is bounded by \(r’^{-1}\): if \(x \in M_c\) then \(T^{-1}x \in M_{c/r'}\). </p>
+<p>A morphism \(M \to N\) of profinitely filtered pseudo-normed groups with \(r’\)-action of \(T^{-1}\) is a morphism of profinitely filtered pseudo-normed groups \(f\) that commutes with the action of \(T^{-1}\) and is <em>strict</em>: if \(x \in M_c\) then \(f(x) \in N_c\). </p>
+
+  </div>
+</div> </p>
+<p>We will now construct the central example of profinitely filtered pseudo-normed groups with \(r’\)-action of \(T^{-1}\). </p>
+<p><div class="definition_thmwrapper" id="Mbar">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0002.html#Mbar">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -121,8 +172,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#basic_eval_FP">Lemma 2.7</a></li>
-          <li><a href="sect0002.html#Vhat">Definition 3.1</a></li>
+          <li><a href="sect0002.html#pseudo_normed_group">Definition 2.1</a></li>
         </ul>
 
       </div>
@@ -136,6 +186,9 @@
 </button>
         </header>
                 <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/Mbar/basic.lean#L51">Mbar</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/Mbar/Mbar_le.lean#L28">Mbar_le</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/Mbar/basic.lean#L201">Mbar.pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -144,104 +197,27 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let $f$ be a basic universal map from exponent&#160;$m$ to&#160;$n$, and let $(c_1, c_2)$ be $f$-suitable. We get an induced map </p>
-<div class="displaymath" id="a0000000025">
-  \[  \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n).  \]
+  <p>   Let \(r’ {\gt} 0\) be a real number, and let \(S\) be a finite set. Denote by \(\overline{\mathcal M}_{r'}(S)\) the set </p>
+<div class="displaymath" id="a0000000017">
+  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \in T\mathbf{Z}[[T]]\right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n {\lt} \infty \right\} .  \]
+</div>
+<p>Note that \(\overline{\mathcal M}_{r'}(S)\) is naturally a pseudo-normed group with filtration given by </p>
+<div class="displaymath" id="a0000000018">
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n \le c \right\} .  \]
 </div>
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="eval_CLCFP">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">3.3</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#eval_CLCFP">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="BD_reso.html#universal_suitable">Definition 1.12</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/CLC.lean#L160">breen_deligne.universal_map.eval_CLCFP</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>   Let $f$ be a universal map from exponent&#160;$m$ to&#160;$n$, and let $(c_1, c_2)$ be $f$-suitable. We get an induced map </p>
-<div class="displaymath" id="a0000000026">
-  \[  \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n)  \]
-</div>
-<p> that is the sum $\sum n_g V(g)$, if $f$ is the formal sum $\sum n_g g$ of basic universal maps. </p>
-
-  </div>
-</div> </p>
-<p><div class="definition_thmwrapper" id="normed_with_aut">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">3.4</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#normed_with_aut">#</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/normed_group/normed_with_aut.lean#L9">normed_with_aut</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>  Let $r > 0$ be a real number. An <em>$r$-normed $\mathbb Z[T^{\pm 1}]$-module</em> is a normed abelian group $V$ endowed with an automorphism $T \colon V \to V$ such that for all $v \in V$ we have $\| T(v)\|  = r\| v\| $. </p>
-
-  </div>
-</div> </p>
-<p><div class="lemma_thmwrapper" id="Vhat_normed_with_aut">
+<p><div class="lemma_thmwrapper" id="Mbar_profinite_filtered">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">3.5</span>
+    <span class="lemma_thmlabel">2.4</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#Vhat_normed_with_aut">#</a>
-    <a class="icon proof" href="sect0002.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0002.html#Mbar_profinite_filtered">#</a>
+    <a class="icon proof" href="sect0002.html#a0000000019"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -253,8 +229,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0002.html#Vhat">Definition 3.1</a></li>
-          <li><a href="sect0002.html#normed_with_aut">Definition 3.4</a></li>
+          <li><a href="sect0002.html#Mbar">Definition 2.3</a></li>
         </ul>
 
       </div>
@@ -268,7 +243,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/locally_constant/Vhat.lean#L258">NormedGroup.normed_with_aut_LCC</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/Mbar/Mbar_le.lean#L576">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -277,11 +252,15 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let $r \in \mathbb R_{> 0}$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module. Let $X$ be a compact space. Then $\hat V(X)$ is naturally an $r$-normed $\mathbb Z[T^{\pm 1}]$-module, with the action of $T$ given by post-composition. </p>
+  <p>   Let \(r’ {\gt} 0\) and \(c \ge 0\) be real numbers, and let \(S\) be a finite set. The space \(\overline{\mathcal M}_{r'}(S)_{\le c}\) is the profinite limit of the finite sets </p>
+<div class="displaymath" id="a0000000020">
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c, \le N} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{1 \le n \le N, s \in S} |a_{n,s}| (r’)^n \le c \right\}   \]
+</div>
+<p> This endows \(\overline{\mathcal M}_{r'}(S)_{\le c}\) with the profinite topology. In particular, it is a profinitely filtered pseudo-normed group. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000027">
+<div class="proof_wrapper" id="a0000000019">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -294,16 +273,16 @@
 
   </div>
 </div>
-<p>Let $r > 0$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module. Assume $r’ \le 1$. </p>
-<p><div class="definition_thmwrapper" id="CLCFPTinv">
+<p>For the remainder of this section, let \(r’ {\gt} 0, c \ge 0\) be real numbers, and let \(S\) be a finite set. </p>
+<p><div class="definition_thmwrapper" id="Mbar_Tinv">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.6</span>
+    <span class="definition_thmlabel">2.5</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#CLCFPTinv">#</a>
+    <a class="icon proof" href="sect0002.html#Mbar_Tinv">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -314,8 +293,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#Mbar_with_Tinv">Lemma 2.6</a></li>
-          <li><a href="sect0002.html#Vhat_normed_with_aut">Lemma 3.5</a></li>
+          <li><a href="sect0002.html#Mbar">Definition 2.3</a></li>
         </ul>
 
       </div>
@@ -329,7 +307,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/Tinv.lean#L192">CLCFPTinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/Mbar/basic.lean#L282">Mbar.Tinv</a></li>
         </ul>
 
       </div>
@@ -338,35 +316,24 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   There are two natural actions of $T^{-1}$ on $\hat V(M_{\le c})$. The first comes from the $r’$-action of $T^{-1}$ on $M$ which gives a continuous map </p>
-<div class="displaymath" id="a0000000028">
-  \[  M_{\le cr'} \to M_{\le c}  \]
+  <p>   There is a natural action of \(T^{-1}\) on \(\overline{\mathcal M}_{r'}(S)\), via </p>
+<div class="displaymath" id="a0000000021">
+  \[  T^{-1} \cdot \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} = \left( \sum _{n \ge 1} a_{n+1,s} T^n \right)_{s \in S}.  \]
 </div>
-<p> and thus a map </p>
-<div class="displaymath" id="a0000000029">
-  \[  (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).  \]
-</div>
-<p> The other comes from Lemma&#160;<a href="sect0002.html#Vhat_normed_with_aut">3.5</a>, using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$. We get a map </p>
-<div class="displaymath" id="a0000000030">
-  \[  [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le c}),  \]
-</div>
-<p> that we can compose with the map $\hat V(M_{\le c}) \to \hat V(M_{\le cr'})$, obtained from the natural inclusion $M_{\le cr'} \to M_{\le c}$. We thus end up with two maps </p>
-<div class="displaymath" id="a0000000031">
-  \[  (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).  \]
-</div>
-<p> and we define $\hat V(M_{\le c})^{T^{-1}}$ to be the equalizer of $(T^{-1})^*$ and $[T^{-1}]$. In other words, the kernel of $(T^{-1})^* - [T^{-1}]$. </p>
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="eval_CLCFPTinv">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
+<p><div class="lemma_thmwrapper" id="Mbar_with_Tinv">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
     </span>
-    <span class="definition_thmlabel">3.7</span>
+    <span class="lemma_thmlabel">2.6</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0002.html#eval_CLCFPTinv">#</a>
+    <a class="icon proof" href="sect0002.html#Mbar_with_Tinv">#</a>
+    <a class="icon proof" href="sect0002.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -377,8 +344,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0002.html#CLCFPTinv">Definition 3.6</a></li>
-          <li><a href="sect0002.html#eval_CLCFP">Definition 3.3</a></li>
+          <li><a href="sect0002.html#Mbar_Tinv">Definition 2.5</a></li>
         </ul>
 
       </div>
@@ -392,7 +358,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/86a914aebacddcf8aa37727631684787df058f32/src/pseudo_normed_group/Tinv.lean#L302">breen_deligne.universal_map.eval_CLCFPTinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/Mbar/pseudo_normed_group.lean#L15">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
         </ul>
 
       </div>
@@ -400,15 +366,94 @@
 
   </div>
   </div>
-  <div class="definition_thmcontent">
-  <p>   Let $f$ be a universal map from exponent&#160;$m$ to&#160;$n$, and let $(c_1, c_2)$ be $f$-suitable. </p>
-<p>The natural map from Definition&#160;<a href="sect0002.html#eval_CLCFP">3.3</a> restricts to a map </p>
-<div class="displaymath" id="a0000000032">
-  \[  \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_2}^n)^{T^{-1}} \to \hat V(M_{\le c_1}^m)^{T^{-1}}  \]
+  <div class="lemma_thmcontent">
+  <p>   The natural action of \(T^{-1}\) on \(\overline{\mathcal M}_{r'}(S)\) restricts to continuous maps </p>
+<div class="displaymath" id="a0000000023">
+  \[  T^{-1} \cdot \_  \colon \overline{\mathcal M}_r(S)_{\le c} \to \overline{\mathcal M}_r(S)_{\le c/r'}.  \]
 </div>
+<p> In particular, \(\overline{\mathcal M}_{r'}(S)\) has an \(r’\)-action of \(T^{-1}\). </p>
 
   </div>
 </div> </p>
+<div class="proof_wrapper" id="a0000000022">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Formalised, but omitted from this text. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="basic_eval_FP">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0002.html#basic_eval_FP">#</a>
+    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0002.html#profinitely_filtered_pseudo_normed_group_with_Tinv">Definition 2.2</a></li>
+          <li><a href="sect0001.html#basic_universal_map">Definition 1.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/c9f45252f9efd6787d93283cbbf6d3df14b2dee0/src/pseudo_normed_group/FiltrationPow.lean#L143">breen_deligne.basic_universal_map.eval_FP</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(f\) be a basic universal map from exponent&#160;\(m\) to&#160;\(n\). We get an induced homomorphism of profinitely filtered pseudo-normed groups </p>
+<div class="displaymath" id="a0000000025">
+  \[  \overline{\mathcal M}_{r'}(S)^m \to \overline{\mathcal M}_{r'}(S)^n  \]
+</div>
+<p> bounded by the maximum (over all \(i\)) of \(\sum _j |f_{ij}|\), where the \(f_{ij}\) are the coefficients of the \(n \times m\)-matrix representing&#160;\(f\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000024">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Omitted. </p>
+
+  </div>
+</div>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
@@ -416,11 +461,11 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sect0001.html" title="Spaces of convergent power series"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0001.html" title="Breen–Deligne data"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sec-some_normed_homological_algebra.html" title="Some normed homological algebra"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0003.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
