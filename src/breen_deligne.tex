@@ -63,7 +63,7 @@ and this formally induces a composition of universal maps. As mentioned above, o
 
 \begin{definition}
   \label{sigma_add}
-  \lean{breen_deligne.σ_add}
+  \lean{breen_deligne.data.σ}
   \leanok
   \uses{universal_map}
   The addition on $A^n$ induces a universal map
@@ -74,7 +74,7 @@ and this formally induces a composition of universal maps. As mentioned above, o
 
 \begin{definition}
   \label{sigma_proj}
-  \lean{breen_deligne.σ_proj}
+  \lean{breen_deligne.data.π}
   \leanok
   \uses{universal_map}
   The formal sum of the two projections $(A^n)^2 \to A^n$
@@ -105,7 +105,6 @@ and this formally induces a composition of universal maps. As mentioned above, o
 \begin{definition}
   \label{BD_data}
   \lean{breen_deligne.data}
-  \lean{breen_deligne.is_complex}
   \leanok
   \uses{sigma_add, sigma_proj}
   A tuple $(n, f)$ of \emph{Breen--Deligne data}
@@ -130,8 +129,9 @@ and this formally induces a composition of universal maps. As mentioned above, o
 The two universal map $\sigma_\alpha$ and~$\sigma_\pi$ explained in the examples above, can be checked to induce universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
 
 \begin{definition}
+  \label{BD_package}
   \label{BD_homotopy}
-  \lean{breen_deligne.homotopy}
+  \lean{breen_deligne.package}
   \leanok
   \uses{BD_data, BD_double}
   A \emph{homotopy} for a tuple $(n, f)$ of Breen--Deligne data
@@ -145,13 +145,7 @@ The two universal map $\sigma_\alpha$ and~$\sigma_\pi$ explained in the examples
     f_{i+1} \circ h_{i+1} + h_i \circ (f_i \oplus f_i) = \sigma_\alpha - \sigma_\pi
     \]
     as universal maps from exponent $2n_{i+1}$ to $n_{i+1}$. Note that the first condition is morally the $i=-1$ case of the displayed equation, if we set $h_{-1}=0$.
-\end{definition}
 
-\begin{definition}
-  \label{BD_package}
-  \lean{breen_deligne.package}
-  \leanok
-  \uses{BD_data, BD_homotopy}
   A \emph{Breen--Deligne package}
   is a triple $(n, f, h)$,
   such that $(n, f)$ is Breen--Deligne data that is a complex,
@@ -210,10 +204,10 @@ and this inequality will guarantee that if $\|m\|\leq c_1$ then $\|f(m)\|\leq c_
 
 \begin{definition}
   \label{BD_suitable}
-  \lean{breen_deligne.package.suitable}
+  \lean{breen_deligne.data.suitable}
   \leanok
   \uses{BD_package, universal_suitable}
-  Let $(n, f, h)$ be a Breen--Deligne package,
+  Let $(n, f)$ be Breen--Deligne data,
   and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
   We say that $c$ is \emph{$(n,f,h)$-suitable},
   if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
