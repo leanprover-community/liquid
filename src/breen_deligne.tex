@@ -3,26 +3,26 @@
 The goal of this section is to a give a precise statement of the Breen--Deligne resolution.
 We first give the statement, and provide details later.
 
-\begin{theorem}[Breen--Deligne]
+\begin{theoremx}[Breen--Deligne]
   \label{BD_orig}
   For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
   \[
     \ldots \to \bigoplus_{i=1}^{n_i} \mathbb Z[A^{r_{ij}}] \to \ldots
     \to \mathbb Z[A^3] \oplus \mathbb Z[A^2] \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
   \]
-\end{theorem}
+\end{theoremx}
 
 I (Johan Commelin) have not figured out the details.
 But it seems to be possible to avoid the $\bigoplus_{i=1}^{n_i}$,
 so we will aim for something like the following statement.
 
-\begin{theorem}
+\begin{theoremx}
   \label{BD_reso}
   For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
   \[
     \ldots \to \mathbb Z[A^{n_{i}}] \to \ldots \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
   \]
-\end{theorem}
+\end{theoremx}
 
 What does a homomorphism $f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]$
 that is functorial in~$A$ look like? We should perhaps say more precisely
@@ -114,7 +114,7 @@ and this formally induces a composition of universal maps. As mentioned above, o
 
   Such a tuples is a \emph{complex} if for all $i$ we have $f_i \circ f_{i+1} = 0$.
 
-  A \emph{universal morphism} of Breen--Deligne data (or complexes) $(m,f)\to (n,g)$ is a collection of universal maps $\phi_i$ from exponent $m_i$ to $n_i$ such that $g_i\circ \phi_{i+1}=\phi_i\circ f_i$ as universal maps from exponent $m_{i+1}$ to $n_i$ (i.e., the squares commute).
+  A \emph{universal morphism} of Breen--Deligne data (or complexes) $(m,f)\to (n,g)$ is a collection of universal maps $\phi_i$ from exponent $m_i$ to $n_i$ such that $g_i\circ \phi_{i+1}=\phi_i\circ f_i$ as universal maps from exponent $m_{i+1}$ to $n_i$ (i.e., the squares commute). 
 \end{definition}
 
 \begin{definition}
