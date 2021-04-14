@@ -24,7 +24,12 @@ of an abelian group $M$; purely for notational convenience, we can and do assume
 
 We also need some homotopies. More precisely, we start with the following homotopy.
 
-\begin{lemma}\label{basehomotopy} For an abelian group $M$, the maps $\sigma_1,\sigma_2$ from
+\begin{lemma}
+	\label{adept}
+	\uses{BD_homotopy}
+	\lean{breen_deligne.package.adept.htpy_suitable}
+	\leanok
+	For an abelian group $M$, the maps $\sigma_1,\sigma_2$ from
 \[
 C(M^2): \ldots \to \mathbb Z[M^{2a_i}]\to\ldots\to\mathbb Z[M^{2a_1}]\to\mathbb Z[M^{2a_0}]
 \]
@@ -55,12 +60,21 @@ c_i'c_{i+1}c}]
 for all $c>0$.
 \end{lemma}
 
-\begin{proof} This is a consequence of the proof of the existence of the Breen-Deligne resolution, proved in the same way as \cite[Proposition 4.17]{Condensed}. The existence of the constants $c_i'$ is again formal, as in the last lemma.
+\begin{proof}
+	\leanok
+	This is a consequence of the proof of the existence of the Breen-Deligne resolution,
+	proved in the same way as \cite[Proposition 4.17]{Condensed}.
+	The existence of the constants $c_i'$ is again formal, as in the last lemma.
 \end{proof}
 
 Now we need the following generalization to adding $N$ elements.
 
-\begin{lemma}\label{homotopyNelements} Let $N$ be a power of $2$. The maps of complexes $\sigma_1,\sigma_2$ from
+\begin{lemma}
+	\label{homotopyNelements}
+	\uses{adept}
+	\lean{breen_deligne.package.adept.homotopy_mul_suitable}
+	\leanok
+	Let $N$ be a power of $2$. The maps of complexes $\sigma_1,\sigma_2$ from
 \[
 C(M^N): \ldots \to \mathbb Z[M^{Na_i}]\to\ldots\to\mathbb Z[M^{Na_1}]\to\mathbb Z[M^{Na_0}]
 \]
@@ -89,7 +103,15 @@ for all $c>0$. In that case, $h_i^N$ defines well-defined maps
 for all $c>0$.
 \end{lemma}
 
-\begin{proof} Let $N=2^m$. For each $j=0,\ldots,m-1$, the two maps from $C(M^{2^{j+1}})$ to $C(M^{2^j})$ from the previous lemma are homotopic, and we use the homotopy from that lemma. Composing homotopies (which amounts concretely to a certain sum) we get the desired homotopy from $C(M^{2^m})$ to $C(M)$. It follows directly from this construction that the constants $c_i'$ are unchanged.
+\begin{proof}
+	\leanok
+	Let $N=2^m$.
+	For each $j=0,\ldots,m-1$,
+	the two maps from $C(M^{2^{j+1}})$ to $C(M^{2^j})$ from the previous lemma are homotopic,
+	and we use the homotopy from that lemma.
+	Composing homotopies (which amounts concretely to a certain sum)
+	we get the desired homotopy from $C(M^{2^m})$ to $C(M)$.
+	It follows directly from this construction that the constants $c_i'$ are unchanged.
 \end{proof}
 
 % vim: ts=2 et sw=2 sts=2
