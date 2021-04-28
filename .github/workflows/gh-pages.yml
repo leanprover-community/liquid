@@ -38,7 +38,7 @@ jobs:
         with:
           run: |
             apk update
-            apk add --update py3-pip git
+            apk add --update make py3-pip git
             python3 -m pip install --upgrade pip requests wheel
             apk add pkgconfig graphviz graphviz-dev gcc musl-dev && \
             python3 -m pip install pygraphviz --global-option=build_ext --global-option="-L/usr/lib/graphviz/" --global-option="-R/usr/lib/graphviz/"
