@@ -92,6 +92,7 @@ a tiny something on the norm bound $K$.
 \end{lemma}
 
 \begin{proof}
+  \leanok
   Let $δ$ be some positive real number.
   Let $x$ be an element of $C_{kc}^i$ for some $c ≥ c_0'$ and $i ≤ m$. If $dx = 0$
   then the assumption we made about exact elements is exactly what we want.
@@ -205,8 +206,10 @@ So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_
   Then $M^\bullet_c$, for every $δ > 0$, it is $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$
   with bound $K+δ$.
 \end{lemma}
+
 \begin{proof}
   \uses{is_bounded_exact_of_weakly}
+  \leanok
   Lemma~\ref{is_bounded_exact_of_weakly} ensures we only need to care about cocycles
   of $M$. More precisely, let $x$ be a cocycle in $M^i_{k^2c}$ for some $i ≤ m$ and $c ≥ c_0$.
   We need to find $y \in M^{i-1}_c$ such that $dy = x_{|c}$.
@@ -403,8 +406,7 @@ of complete normed abelian groups.
 
 \begin{proposition}
   \label{spectral}
-  \uses{admissible}
-  \uses{is_weak_bounded_exact, spectral-htpy}
+  \uses{admissible, is_weak_bounded_exact, spectral-htpy}
   \lean{system_of_double_complexes.normed_spectral}
   \leanok
   Fix an integer $m\geq 0$ and constants $k$, $K$.
