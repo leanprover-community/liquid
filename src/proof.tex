@@ -1,0 +1,289 @@
+\section{End of proof}
+
+Now we state the following result, which is our main goal.
+
+\textbf{N.b.:}
+It differs from Theorem~9.4 of \cite{Analytic} only in one aspect:
+we assume that the sets $S$ are finite, rather than profinite.
+
+\begin{theorem}
+  \label{first_target}
+  \lean{first_target}
+  \leanok
+  \uses{BD_system}
+  Let $\text{BD} = (n,f,h)$ be a Breen--Deligne package,
+  and let $c' = (c'_0, c'_1, c'_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+  that is $\text{BD}$-suitable.
+	Fix radii $1>r'>r>0$.
+  For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  the system of complexes
+  \[
+    C^{\text{BD}}_{c'}(\overline{\mathcal M}_{r'}(S))_c^\bullet \colon
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c'_1c}^2)^{T^{-1}}
+    \to \ldots
+  \]
+  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
+\end{theorem}
+
+\begin{remark}
+  \label{boundary-text}
+  \textbf{Note: the text below is copied almost verbatim from \cite{Analytic}.
+  Small parts have been formalized.
+  We expect that the text will be rewritten and expanded as the formalization project progresses.}
+\end{remark}
+
+% Let us first check that this implies Theorem~\ref{explicit1}.
+
+% \begin{proof}[Theorem~\ref{first_target} implies Theorem~\ref{explicit1}] By the preceding discussion, one can compute
+% \[
+% R\Hom_{\mathbb Z[T^{-1}]}(\overline{\mathcal M}_{r'}(S),\widehat{V})
+% \]
+% as the derived inverse limit of $C_c^\bullet$ over all $c>0$; equivalently, all $c\geq c_0$. Theorem~\ref{first_target} implies that for any $m\geq 0$ the pro-system of cohomology groups $H^m(C_c^\bullet)$ is pro-zero (as $H^m(C_{kc}^\bullet)\to H^m(C_c^\bullet)$ is zero). Thus, the derived inverse limit vanishes, as desired.
+% \end{proof}
+
+% We remark that Theorem~\ref{first_target} reduces formally to the case that $S$ is finite; we make this reduction.
+
+We will prove Theorem~\ref{first_target} by induction on $m$.
+Unfortunately, the induction requires us to prove a stronger statement.
+
+Endow $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$ with the subspaces
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c} = \{f: \Lambda\to \overline{\mathcal M}_{r'}(S)\mid \forall x\in \Lambda, f(x)\in \overline{\mathcal M}_{r'}(S)_{\leq c‖x‖}\}.
+\]
+As $\Lambda$ is polyhedral, it is enough to check the given condition for finitely many $x$.
+
+% We can then define double complexes like \eqref{eq:doublecomplex}.
+% Lemma~\ref{lem:Tinv} stays true with the same constants.
+Now we claim the following generalization of Theorem~\ref{first_target}.
+
+\begin{theorem}
+  \label{explicit}
+  \uses{polyhedral_lattice, BD_system}
+  \leanok
+  Fix radii $1>r'>r>0$. For any $m$ there is some $k$
+  such that for all polyhedral lattices $\Lambda$
+  there is a constant $c_0(\Lambda)>0$
+  such that for all finite sets $S$
+  and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  the system of complexes
+  \[
+  C_{\Lambda,c}^\bullet \colon
+  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}} \to
+  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}} \to \ldots
+  \]
+  is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
+\end{theorem}
+
+\begin{proof}
+  \proves{first_target}
+  \uses{explicit}
+  \leanok
+  Use $\Lambda = \mathbb Z$, and the isomorphism $\Hom(\mathbb Z, A) \cong A$.
+\end{proof}
+
+We note that the constants $c_1,c_2,\ldots$ implicit in the choice of the complex
+are chosen once and for all (after fixing $r$ and $r'$),
+and it can be ensured that the transition maps in the complex are norm-nonincreasing.
+Indeed, if the $c_i$ are suitable as in Definition~\ref{BD_suitable},
+the maps
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_{i+1}c}^{a_{i+1}})
+\]
+will have bounded norm, independently of $V$ (as they are a certain universal finite sum of maps induced by maps between the profinite sets in paranthesis, each of which induces a map of norm bounded by $1$), so on the subspace of $T^{-1}$-invariants, one can shrink the norm down to $1$ by shrinking $c_{i+1}$. We make and fix this choice of the $c_i$ for the statement of Theorem~\ref{explicit}, and the rest of the proof.
+
+\begin{proof}[Proof of Theorem~\ref{explicit}]
+  \proves{explicit}
+  \uses{spectral,combi,exists_adept,hypercover-exact,
+	cosimplicial-lattice,lem:Tinv, BD_h_mul_suitable}
+  We argue by induction on $m$, so assume the result for $m-1$
+  (this is no assumption for $m=0$, so we do not need an induction start).
+  This gives us some $k>1$ for which the statement of Theorem~\ref{explicit} holds true for $m-1$;
+  if $m=0$, simply take any $k>1$.
+  In the proof below, we will increase $k$ further in a way that depends only on $m$ and $r$.
+  After this modified choice of $k$, we fix $\epsilon$ and $k_0$ as provided by Proposition~\ref{spectral}.
+  Fix a sequence $(c'_i)_i$ of nonnegative reals that is adept to $(\BD, c)$.
+  (Such a sequence exists by Lemma~\ref{exists_adept}.)
+  Moreover, we let $k'$ be the supremum of $k_0$ and the $c_i'$ for $i=0,\ldots,m$.
+  Finally, choose a positive integer $b$ so that $2k'(\tfrac r{r'})^b\leq \epsilon$,
+  and let $N$ be the minimal power of $2$ that satisfies
+\[
+k'/N\leq (r')^b.
+\]
+Then in particular $r^bN\leq \frac 2{k'}(\tfrac{r}{r'})^b\leq \epsilon$.
+
+Consider the cosimplicial polyhedral lattice from Definition~\ref{cosimplicial-lattice}.
+In particular, for any $c>0$, we have
+\[
+\Hom(\Lambda'^{(m)},\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}^{m/\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}},
+\]
+the $m$-fold fibre product of $\Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c}$ over $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$; and
+\[
+\Hom(\Lambda',\overline{\mathcal M}_{r'}(S))_{\leq c} = \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N,
+\]
+with the map to $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ given by the sum map.
+
+Consider the collection of double complexes $C_{\Lambda'^{(\bullet)},c}^\bullet$ associated to this cosimplicial polyhedral lattice by Dold-Kan. Up to rescaling the norms in the complex for $\Lambda'^{(m)}$ by a universal constant (something like $(m+2)!$), the differentials are strictly compatible with norms (as they are an alternating sum of $m+1$ face maps, all of which are of norm $\leq 1$), so this collection of normed double complexes is admissible. By induction, the first condition of Proposition~\ref{spectral} is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda$ but not $V$ or $S$). By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
+\]
+also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
+\]
+and
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
+\]
+and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{hypercover-exact},
+	Lemma~\ref{lem:Tinv},
+	and Proposition~\ref{snakelemma}
+	(plus probably some other results of which we need to work out the details).
+	At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
+
+Finally, to check the third condition,
+we use Definition~\ref{BD_h_mul} and Lemma~\ref{BD_h_mul_suitable} to find,
+in degrees $\leq m$, a homotopy between the two maps from the first row
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c}^2)^{T^{-1}}\to \ldots
+\]
+to the second row
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_1c/N}^{2N})^{T^{-1}}\to \ldots
+\]
+respectively induced by the addition $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}$ (which is the map that forms part of the double complex), and the map that is the sum of the $N$ maps induced by the $N$ projection maps
+\[
+\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}\subset \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c}.
+\]
+By Lemma~\ref{homotopyNelements}, we can find this homotopy between the complex for $k'c$ and the complex for $c$, by our choice of $k'\geq c_i'$ for $i=0,\ldots,m$.
+As $N$ is fixed, the homotopy is the universal homotopy from Lemma~\ref{homotopyNelements},
+and in particular its norm is bounded by some universal constant $H$.
+
+Finally, it remains to establish the estimate (\ref{eq:homotopicmapsmall}) on the homotopic map. We note that this takes $x\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i})^{T^{-1}}$ (with $i=q$ in the notation of (\ref{eq:homotopicmapsmall})) to the element
+\[
+y\in \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}
+\]
+that is the sum of the $N$ pullbacks along the $N$ projection maps $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'^2c_ic}^{a_i}$. We note that these actually take image in $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i}$ as $N\geq k'$, so this actually gives a well-defined map
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.
+\]
+We need to see that this map is of norm $\leq \epsilon$. Now note that by our choice of $N$, we actually have $k'c_ic/N\leq (r')^b c_ic$, so this can be written as the composite of the restriction map
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}
+\]
+and
+\[
+\widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq (r')^b c_ic}^{a_i})^{T^{-1}}\to \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq k'c_ic/N}^{Na_i})^{T^{-1}}.
+\]
+The first map has norm exactly $r^b$, by $T^{-1}$-invariance, and as multiplication by $T$ scales the norm with a factor of $r$ on $\widehat{V}$.\footnote{Here is where we use $r'>r$, ensuring different scaling behaviour of the norm on source and target.} The second map has norm at most $N$ (as it is a sum of $N$ maps of norm $\leq 1$). Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon$, giving the result.
+
+Thus, we can apply Proposition~\ref{spectral}, and get the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$, where $k'$, $k_0$ and $H$ were defined only in terms of $k$, $m$, $r'$ and $r$, while $c_0$ depends on $\Lambda$ (but not on $V$ or $S$). This proves the inductive step.
+\end{proof}
+
+\begin{question} Can one make the constants explicit, and how large are they?\footnote{A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.} Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the $c_i$ and $c_i'$.
+\end{question}
+
+This completes the proof of all results announced so far.
+
+
+
+\section{Relevant material that should move to a better place}
+
+We often use the following exactness property:
+
+\begin{proposition}\label{prop:completeexact}
+Let $M_0\xrightarrow{d_0} M_1\xrightarrow{d_1} M_2\xrightarrow{d_2} M_3$ be a
+four-term complex of bounded maps of normed abelian groups. Assume that, for
+some positive constants $C$ and $D$, for all $y\in \ker(d_1: M_1\to M_2)$ there
+is some $x\in M_0$ with $d_0(x)=y$ and $‖x‖\leq C‖y‖$, and similarly for all
+$z\in \ker(d_2: M_2\to M_3)$, there is some $y\in M_1$ with $d_1(y)=z$ and
+$‖y‖\leq D‖z‖$.
+
+Then
+$\widehat{M}_0\xrightarrow{\widehat{d}_0} \widehat{M}_1\xrightarrow{\widehat{d}_1} \widehat{M}_2\xrightarrow{\widehat{d}_2} \widehat{M}_3$
+is a complex, and for all $\widehat{y}\in \widehat{M}_1$ and all $\epsilon>0$
+there is some $\widehat{x}\in \widehat{M}_0$ with
+$\widehat{d}_1(\widehat{x})=\widehat{y}$ and
+$‖\widehat{x}‖\leq (C+\epsilon)‖\widehat{y}‖$.
+\end{proposition}
+
+\begin{proof}
+First, we claim that $\ker(d_1: M_1\to M_2)$ is dense in
+$\ker(\widehat{d}_1: \widehat{M}_1\to \widehat{M}_2)$. Pick any $\delta>0$ and
+take $y\in M_1$ such that $‖\widehat{y}-y‖\leq \delta$. Let $z=d_1(y)\in M_2$,
+which has norm $‖z‖=‖d_1(y)‖=‖d_1(y-\widehat{y})‖$ bounded by
+$C_{d_1}\delta$, where $C_{d_1}$ is the norm of $d_1$. We can thus find some
+$y'\in M_1$ with $‖y'‖\leq DC_{d_1}\delta$ and $d_1(y')=z$. Replacing $y$ by
+$y-y'$, we can thus find $y\in \ker(d_1: M_1\to M_2)$ such that still
+$‖\widehat{y}-y‖\leq (1+DC_{d_1})\delta$; as $\delta$ was arbitrary, this
+gives the desired density.
+
+This implies that one can write $\widehat{y}$ as a sum $y_0+y_1+\ldots$ with
+$y_i\in \ker(d_1)$ and $‖y_i‖\leq \epsilon_i$ for $i>0$ for any given sequence
+of positive numbers $\epsilon_1\geq \epsilon_2\geq \ldots$. Indeed, we can
+inductively choose the $y_i$ so that
+$‖\widehat{y}-y_0-\ldots-y_i‖\leq \tfrac 12 \epsilon_{i+1}$, in which case
+$‖y_i‖\leq \tfrac 12(\epsilon_i+\epsilon_{i+1})\leq \epsilon_i$. Taking the
+sequence of $\epsilon_i$'s sufficiently small so that
+$\sum_{i>0} \epsilon_i\leq \tfrac {‖\widehat{y}‖}{2C} \epsilon$, we can lift
+all $y_i$ to $x_i$ with $‖x_i‖\leq C‖y_i‖$, and then
+$\widehat{x}=x_0+x_1+\ldots$ maps to $\widehat{y}$ and satisfies
+\[
+  ‖\widehat{x}‖\leq ‖x_0‖+C\sum_{i>0} \epsilon_i
+  \leq C‖y_0‖+C\sum_{i>0} \epsilon_i
+  \leq C‖\widehat{y}‖+2C\sum_{i>0} \epsilon_i
+  \leq (C+\epsilon)‖\widehat{y}‖.\qedhere
+\]
+\end{proof}
+
+See Definition~\ref{CLC} for the definition of $\widehat{M}$.
+
+\begin{proposition}
+  \label{prop:normedcompletion}
+  \uses{CLC}
+The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets
+\[
+‖\cdot‖: \widehat{M}\to \mathbb R_{\geq 0}.
+\]
+\end{proposition}
+
+\begin{proof}
+Note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $‖\cdot‖$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$.
+\end{proof}
+
+\begin{proposition}
+  \label{hypercover-exact}
+  \uses{CLC}
+For any hypercover $S_\bullet\to S$ of a profinite set $S$ by profinite sets $S_i$, the complex
+\[
+0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
+\]
+is exact, and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $‖f‖\leq c$, then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
+\end{proposition}
+
+\begin{proof}
+  \uses{prop:completeexact}
+Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the hypercover splits, so a contracting homotopy gives the result with constant $1$. In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:Tinv}
+  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv,CLC,normed_with_aut}
+  Let $M$ be a profinitely filtered pseudo-normed group with action of $T^{-1}$.
+  For any $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$, any $c>0$ and any $a$, the map
+\[
+\widehat{V}(M_{\leq c}^a)\xrightarrow{T^{-1}-[T^{-1}]^\ast} \widehat{V}(M_{\leq r'c}^a)
+\]
+is surjective, has norm bounded by $r^{-1}+1$, and for any $f\in \widehat{V}(M_{\leq r'c}^a)$ and $\epsilon>0$ there is some $g\in \widehat{V}(M_{\leq c}^a)$ with $f(x)=T^{-1}g(x)-g(T^{-1}x)$ and $‖g‖\leq \frac{r}{1-r}(1+\epsilon) ‖f‖$.
+\end{lemma}
+
+\begin{proof} Given $f: M_{\leq r'c}^a\to \widehat{V}$, choose an extension to a map $\tilde{f}: M^a\to \widehat{V}$ with $‖\tilde{f}‖\leq (1+\epsilon)‖f‖$. Such an extension exists: By induction (and using a sequence of $\epsilon_n$'s with $\prod_n (1+\epsilon_n)\leq 1+\epsilon$), it suffices to see that for any closed immersion $A\subset B$ of profinite sets and a map $f_A: A\to \widehat{V}$, there is an extension $f_B: B\to \widehat{V}$ of $f_A$ with $‖f_B‖\leq (1+\epsilon)‖f_A‖$. To see this, write $f_A$ as a (fast) convergent sum of maps that factor over a finite quotient of $A$; for maps factoring over a finite quotient of $A$, the extension is clear (and can be done in a norm-preserving way), as any map from $A$ to a finite set can be extended to a map from $B$ to the same finite set.
+
+Given $\tilde{f}$, we can now define $g: M_{\leq c}^a$ by
+\[
+g(x) = T\tilde{f}(x)+T^2\tilde{f}(T^{-1}x)+\ldots+T^{n+1}\tilde{f}(T^{-n}x)+\ldots\in \widehat{V};
+\]
+then $‖g‖\leq \frac r{1-r}‖\tilde{f}‖\leq \frac r{1-r}(1+\epsilon)‖f‖$.
+\end{proof}
+
+% vim: ts=2 et sw=2 sts=2
