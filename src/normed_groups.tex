@@ -1,5 +1,40 @@
 \section{Variants of normed groups}
 
+\begin{remark}
+  Normed groups are well-studied objects.
+  In this text it will be helpful to work with
+  the more general notion of \emph{semi-normed group}.
+  This drops the separation axiom $\|x\| = 0 \iff x = 0$
+  but is otherwise the same as a normed group.
+
+  The main difference is that this includes ``uglier'' objects,
+  but creates a ``nicer'' category:
+  semi-normed groups need not be Hausdorff,
+  but quotients by arbitrary (possibly non-closed) subgroups
+  are naturally semi-normed groups.
+
+  Nevertheless, there is the occasional use for the more restrictive
+  notion of normed group, when we come to polyhedral lattices below
+  (see Section~\ref{sec:polyhedral_lattice}.
+
+  In this text, a morphism of (semi)-normed groups will always be bouned.
+  If the morphism is supposed to be norm-nonincreasing,
+  this will be mentioned explicitly.
+\end{remark}
+
+\begin{definition}
+  \label{normed_with_aut}
+  \lean{normed_with_aut}
+  \leanok
+  Let $r > 0$ be a real number.
+  An \emph{$r$-normed $\mathbb Z[T^{\pm 1}]$-module}
+  is a semi-normed group $V$
+  endowed with an automorphism $T \colon V \to V$ such that
+  for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
+\end{definition}
+
+The remainder of this text sets up some algebraic variants of semi-normed groups.
+
 \begin{definition}
   \label{pseudo_normed_group}
   \lean{pseudo_normed_group,profinitely_filtered_pseudo_normed_group,
@@ -55,17 +90,6 @@
   is a morphism of profinitely filtered pseudo-normed groups $f$
   that commutes with the action of $T^{-1}$
   and is \emph{strict}: if $x \in M_c$ then $f(x) \in N_c$.
-\end{definition}
-
-\begin{definition}
-  \label{normed_with_aut}
-  \lean{normed_with_aut}
-  \leanok
-  Let $r > 0$ be a real number.
-  An \emph{$r$-normed $\mathbb Z[T^{\pm 1}]$-module}
-  is a normed abelian group $V$
-  endowed with an automorphism $T \colon V \to V$ such that
-  for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
 \end{definition}
 
 % vim: ts=2 et sw=2 sts=2
