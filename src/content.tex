@@ -14,7 +14,7 @@
 \input{breen_deligne}
 \input{normed_groups}
 \input{Mbar}
-\input{Vhat}
+\input{CLC}
 \input{normed_homological}
 \input{polyhedral_lattice}
 
@@ -285,11 +285,11 @@ $\widehat{x}=x_0+x_1+\ldots$ maps to $\widehat{y}$ and satisfies
 \]
 \end{proof}
 
-See Definition~\ref{Vhat} for the definition of $\widehat{M}$.
+See Definition~\ref{CLC} for the definition of $\widehat{M}$.
 
 \begin{proposition}
   \label{prop:normedcompletion}
-  \uses{Vhat}
+  \uses{CLC}
 The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets
 \[
 ‖\cdot‖: \widehat{M}\to \mathbb R_{\geq 0}.
@@ -302,7 +302,7 @@ Note that in the supremum norm any continuous function from $S$ to $\widehat{M}_
 
 \begin{proposition}
   \label{hypercover-exact}
-  \uses{Vhat}
+  \uses{CLC}
 For any hypercover $S_\bullet\to S$ of a profinite set $S$ by profinite sets $S_i$, the complex
 \[
 0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
@@ -317,7 +317,7 @@ Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are fi
 
 \begin{lemma}
   \label{lem:Tinv}
-  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv,Vhat,normed_with_aut}
+  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv,CLC,normed_with_aut}
   Let $M$ be a profinitely filtered pseudo-normed group with action of $T^{-1}$.
   For any $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$, any $c>0$ and any $a$, the map
 \[

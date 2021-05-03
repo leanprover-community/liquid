@@ -1,7 +1,7 @@
 \section{Completions of locally constant functions}
 
 \begin{definition}
-  \label{Vhat}
+  \label{CLC}
   \lean{NormedGroup.LCC}
   \leanok
   Let $V$ be a normed abelian group, and $X$ a compact topological space.
@@ -21,7 +21,7 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
 %   \label{basic_eval_CLCFP}
 %   \lean{breen_deligne.basic_universal_map.eval_CLCFP}
 %   \leanok
-%   \uses{basic_eval_FP, Vhat}
+%   \uses{basic_eval_FP, CLC}
 %   Let $f$ be a basic universal map from exponent~$m$ to~$n$,
 %   and let $(c_1, c_2)$ be $f$-suitable.
 %   We get an induced map
@@ -34,7 +34,7 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
   \label{eval_CLCFP}
   \lean{breen_deligne.universal_map.eval_CLCFP}
   \leanok
-  \uses{universal_suitable, Vhat_basic_eval_Mbar}
+  \uses{universal_suitable, CLC_basic_eval_Mbar}
   Let $f$ be a universal map from exponent~$m$ to~$n$,
   and let $(c_1, c_2)$ be $f$-suitable.
   We get an induced map
@@ -58,10 +58,10 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
 \end{definition}
 
 \begin{lemma}
-  \label{Vhat_normed_with_aut}
+  \label{CLC_normed_with_aut}
   \lean{NormedGroup.normed_with_aut_LCC}
   \leanok
-  \uses{Vhat, normed_with_aut}
+  \uses{CLC, normed_with_aut}
   Let $r \in \mathbb R_{> 0}$,
   and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
   Let $X$ be a compact space.
@@ -81,7 +81,7 @@ Assume $r' \le 1$.
   \label{CLCFPTinv}
   \lean{CLCFPTinv}
   \leanok
-  \uses{Mbar_with_Tinv, Vhat_normed_with_aut}
+  \uses{Mbar_with_Tinv, CLC_normed_with_aut}
   There are two natural actions of $T^{-1}$ on $\hat V(M_{\le c})$.
   The first comes from the $r'$-action of $T^{-1}$ on $M$
   which gives a continuous map
@@ -92,7 +92,7 @@ Assume $r' \le 1$.
   \[
     (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
   \]
-  The other comes from Lemma~\ref{Vhat_normed_with_aut},
+  The other comes from Lemma~\ref{CLC_normed_with_aut},
   using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
   We get a map
   \[
