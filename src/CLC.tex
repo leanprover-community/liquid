@@ -4,57 +4,16 @@
   \label{CLC}
   \lean{NormedGroup.LCC}
   \leanok
-  Let $V$ be a normed abelian group, and $X$ a compact topological space.
+  Let $V$ be a semi-normed group, and $X$ a compact topological space.
   We denote by $V(X)$ the normed abelian group of locally constant functions $X \to V$
   with respect to the sup norm.
   With $\hat V(X)$ we denote the completion of $V(X)$.
 
   These constructions are functorial in bounded group homomorphisms $V \to V'$
-  and contravariantly functorial in continuous maps $X \to X'$.
-\end{definition}
+  and contravariantly functorial in continuous maps $f \colon X \to X'$.
 
-We continue to use the notation of before:
-let $r' > 0, c \ge 0$ be real numbers,
-and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T^{-1}$.
-
-% \begin{definition}
-%   \label{basic_eval_CLCFP}
-%   \lean{breen_deligne.basic_universal_map.eval_CLCFP}
-%   \leanok
-%   \uses{basic_eval_FP, CLC}
-%   Let $f$ be a basic universal map from exponent~$m$ to~$n$,
-%   and let $(c_1, c_2)$ be $f$-suitable.
-%   We get an induced map
-%   \[
-%     \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n).
-%   \]
-% \end{definition}
-
-\begin{definition}
-  \label{eval_CLCFP}
-  \lean{breen_deligne.universal_map.eval_CLCFP}
-  \leanok
-  \uses{universal_suitable, CLC_basic_eval_Mbar}
-  Let $f$ be a universal map from exponent~$m$ to~$n$,
-  and let $(c_1, c_2)$ be $f$-suitable.
-  We get an induced map
-  \[
-    \hat V(f) \colon \hat V(M_{\le c_1}^m) \to \hat V(M_{\le c_2}^n)
-  \]
-  that is the sum $\sum n_g V(g)$,
-  if $f$ is the formal sum $\sum n_g g$
-  of basic universal maps.
-\end{definition}
-
-\begin{definition}
-  \label{normed_with_aut}
-  \lean{normed_with_aut}
-  \leanok
-  Let $r > 0$ be a real number.
-  An \emph{$r$-normed $\mathbb Z[T^{\pm 1}]$-module}
-  is a normed abelian group $V$
-  endowed with an automorphism $T \colon V \to V$ such that
-  for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
+  Note in particular that $V(f)$ and $\hat V(f)$ are norm-nonincreasing
+  morphisms of semi-normed groups.
 \end{definition}
 
 \begin{lemma}
@@ -74,14 +33,89 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
   Formalised, but omitted from this text.
 \end{proof}
 
-Let $r > 0$, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
+We continue to use the notation of before:
+let $r' > 0, c \ge 0$ be real numbers,
+and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T^{-1}$.
+
+\begin{lemma}
+  \label{basic_eval_FP}
+  \lean{breen_deligne.basic_universal_map.eval_FP}
+  \lean{breen_deligne.basic_universal_map.eval_FP_comp}
+  \leanok
+  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv,
+    basic_universal_map}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$.
+  We get an induced homomorphism of
+  profinitely filtered pseudo-normed groups $M^m \to M^n$
+  bounded by the maximum (over all $i$) of $\sum_j |f_{ij}|$,
+  where the $f_{ij}$ are the coefficients of the $n \times m$-matrix representing~$f$.
+
+  This construction is functorial in~$f$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Omitted.
+\end{proof}
+
+\begin{definition}
+  \label{basic_eval_LCFP}
+  \lean{breen_deligne.basic_universal_map.eval_LCFP}
+  \lean{breen_deligne.basic_universal_map.eval_LCFP_comp}
+  \leanok
+  \uses{basic_universal_suitable, basic_eval_FP}
+  Let $f$ be a basic universal map from exponent~$m$ to~$n$,
+  and let $(c_2, c_1)$ be $f$-suitable.
+  We get an induced map
+  \[
+    V(f) \colon V(M_{\le c_1}^n) \to V(M_{\le c_2}^m)
+  \]
+  induced by the morphism of profinitely filtered pseudo-normed groups $M^m \to M^n$.
+
+  This construction is functorial in~$f$.
+\end{definition}
+
+\begin{definition}
+  \label{eval_LCFP}
+  \lean{breen_deligne.universal_map.eval_LCFP}
+  \lean{breen_deligne.universal_map.eval_LCFP_comp}
+  \leanok
+  \uses{universal_suitable, basic_eval_LCFP}
+  Let $f = \sum_g n_g g$ be a universal map from exponent~$m$ to~$n$,
+  and let $(c_2, c_1)$ be $f$-suitable.
+  We get an induced map
+  \[
+    V(f) \colon V(M_{\le c_1}^n) \to V(M_{\le c_2}^m)
+  \]
+  that is the sum $\sum n_g V(g)$.
+
+  This construction is functorial in~$f$.
+\end{definition}
+
+\begin{definition}
+  \label{eval_CLCFP}
+  \lean{breen_deligne.universal_map.eval_CLCFP}
+  \leanok
+  \uses{universal_suitable, eval_LCFP}
+  Let $f$ be a universal map from exponent~$m$ to~$n$,
+  and let $(c_2, c_1)$ be $f$-suitable.
+  We get an induced map
+  \[
+    \hat V(f) \colon \hat V(M_{\le c_1}^n) \to \hat V(M_{\le c_2}^m)
+  \]
+  that is the completion of $V(f)$.
+
+  This construction is functorial in~$f$.
+\end{definition}
+
+Let $r > 0$, and assume now that $V$ is an $r$-normed $\mathbb Z[T^{\pm 1}]$-module.
 Assume $r' \le 1$.
 
 \begin{definition}
   \label{CLCFPTinv}
   \lean{CLCFPTinv}
   \leanok
-  \uses{Mbar_with_Tinv, CLC_normed_with_aut}
+  \uses{CLC_normed_with_aut}
   There are two natural actions of $T^{-1}$ on $\hat V(M_{\le c})$.
   The first comes from the $r'$-action of $T^{-1}$ on $M$
   which gives a continuous map
@@ -116,12 +150,12 @@ Assume $r' \le 1$.
   \leanok
   \uses{CLCFPTinv, eval_CLCFP}
   Let $f$ be a universal map from exponent~$m$ to~$n$,
-  and let $(c_1, c_2)$ be $f$-suitable.
+  and let $(c_2, c_1)$ be $f$-suitable.
 
   The natural map from Definition~\ref{eval_CLCFP}
   restricts to a map
   \[
-    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_2}^n)^{T^{-1}} \to \hat V(M_{\le c_1}^m)^{T^{-1}}
+    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \to \hat V(M_{\le c_2}^m)^{T^{-1}}
   \]
 \end{definition}
 
