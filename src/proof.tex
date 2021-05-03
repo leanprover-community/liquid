@@ -212,7 +212,37 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   (Here we use $k'\geq c_i'$ for $i=0,\ldots,m$.)
   By assumption, the norm of these maps is bounded by~$H$.
 
-  TODO: To be continued.
+  Finally, it remains to establish the estimate \eqref{eq:homotopicmapsmall} on the homotopic map.
+  We note that this takes $x\in \widehat{V}(\Hom(\Lambda,M)_{\leq k'^2\kappa_ic}^{a_i})^{T^{-1}}$
+  (with $i=q$ in the notation of \eqref{eq:homotopicmapsmall}) to the element
+  \[
+    y\in \widehat{V}(\Hom(\Lambda,M)_{\leq k'\kappa_ic/N}^{Na_i})^{T^{-1}}
+  \]
+  that is the sum of the $N$ pullbacks along the $N$ projection maps
+  $\Hom(\Lambda,M)_{\leq k'\kappa_ic/N}^{Na_i}\to \Hom(\Lambda,M)_{\leq k'^2\kappa_ic}^{a_i}$.
+  We note that these actually take image in $\Hom(\Lambda,M)_{\leq \kappa_ic}^{a_i}$ as $N\geq k'$,
+  so this actually gives a well-defined map
+  \[
+    \widehat{V}(\Hom(\Lambda,M)_{\leq \kappa_ic}^{a_i})^{T^{-1}} \to
+    \widehat{V}(\Hom(\Lambda,M)_{\leq k'\kappa_ic/N}^{Na_i})^{T^{-1}}.
+  \]
+  We need to see that this map is of norm $\leq \epsilon$.
+  Now note that by our choice of $N$, we actually have $k'\kappa_ic/N\leq (r')^b \kappa_ic$,
+  so this can be written as the composite of the restriction map
+  \[
+    \widehat{V}(\Hom(\Lambda,M)_{\leq \kappa_ic}^{a_i})^{T^{-1}} \to
+    \widehat{V}(\Hom(\Lambda,M)_{\leq (r')^b \kappa_ic}^{a_i})^{T^{-1}}
+  \]
+  and
+  \[
+    \widehat{V}(\Hom(\Lambda,M)_{\leq (r')^b \kappa_ic}^{a_i})^{T^{-1}} \to
+    \widehat{V}(\Hom(\Lambda,M)_{\leq k'\kappa_ic/N}^{Na_i})^{T^{-1}}.
+  \]
+  The first map has norm exactly $r^b$, by $T^{-1}$-invariance,
+  and as multiplication by $T$ scales the norm with a factor of $r$ on $\widehat{V}$.
+  (Here is where we use $r'>r$, ensuring different scaling behaviour of the norm on source and target.)
+  The second map has norm at most $N$ (as it is a sum of $N$ maps of norm $\leq 1$).
+  Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon$, giving the result.
 \end{proof}
 
 \begin{remark}
