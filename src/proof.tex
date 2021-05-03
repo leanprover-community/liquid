@@ -100,7 +100,7 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 
   Hence $\Hom(\Lambda^{(\bullet)}, M)$ is a simplicial
   profinitely filtered pseudo-normed group with action of $T^{-1}$.
-  
+
   Now apply the construction of the system of complexes from
   Definition~\ref{BD_system} to obtain a cosimplicial system of complexes
   \[
@@ -289,6 +289,7 @@ This completes the proof of all results announced so far.
 
 \section{Relevant material that should move to a better place}
 
+
 We often use the following exactness property:
 
 \begin{proposition}\label{prop:completeexact}
@@ -301,42 +302,78 @@ $‖y‖\leq D‖z‖$.
 
 Then
 $\widehat{M}_0\xrightarrow{\widehat{d}_0} \widehat{M}_1\xrightarrow{\widehat{d}_1} \widehat{M}_2\xrightarrow{\widehat{d}_2} \widehat{M}_3$
-is a complex, and for all $\widehat{y}\in \widehat{M}_1$ and all $\epsilon>0$
+is a complex, and for all $\widehat{y}\in \ker \widehat{d}_1$ and all $\epsilon>0$
 there is some $\widehat{x}\in \widehat{M}_0$ with
 $\widehat{d}_1(\widehat{x})=\widehat{y}$ and
 $‖\widehat{x}‖\leq (C+\epsilon)‖\widehat{y}‖$.
 \end{proposition}
 
-\begin{proof}
-First, we claim that $\ker(d_1: M_1\to M_2)$ is dense in
-$\ker(\widehat{d}_1: \widehat{M}_1\to \widehat{M}_2)$. Pick any $\delta>0$ and
-take $y\in M_1$ such that $‖\widehat{y}-y‖\leq \delta$. Let $z=d_1(y)\in M_2$,
-which has norm $‖z‖=‖d_1(y)‖=‖d_1(y-\widehat{y})‖$ bounded by
-$C_{d_1}\delta$, where $C_{d_1}$ is the norm of $d_1$. We can thus find some
-$y'\in M_1$ with $‖y'‖\leq DC_{d_1}\delta$ and $d_1(y')=z$. Replacing $y$ by
-$y-y'$, we can thus find $y\in \ker(d_1: M_1\to M_2)$ such that still
-$‖\widehat{y}-y‖\leq (1+DC_{d_1})\delta$; as $\delta$ was arbitrary, this
-gives the desired density.
+While the above statement in terms of complexes is what we will use,
+the heart of the statement is the following lemma.
 
-This implies that one can write $\widehat{y}$ as a sum $y_0+y_1+\ldots$ with
-$y_i\in \ker(d_1)$ and $‖y_i‖\leq \epsilon_i$ for $i>0$ for any given sequence
-of positive numbers $\epsilon_1\geq \epsilon_2\geq \ldots$. Indeed, we can
-inductively choose the $y_i$ so that
-$‖\widehat{y}-y_0-\ldots-y_i‖\leq \tfrac 12 \epsilon_{i+1}$, in which case
-$‖y_i‖\leq \tfrac 12(\epsilon_i+\epsilon_{i+1})\leq \epsilon_i$. Taking the
-sequence of $\epsilon_i$'s sufficiently small so that
-$\sum_{i>0} \epsilon_i\leq \tfrac {‖\widehat{y}‖}{2C} \epsilon$, we can lift
-all $y_i$ to $x_i$ with $‖x_i‖\leq C‖y_i‖$, and then
-$\widehat{x}=x_0+x_1+\ldots$ maps to $\widehat{y}$ and satisfies
-\[
-  ‖\widehat{x}‖\leq ‖x_0‖+C\sum_{i>0} \epsilon_i
-  \leq C‖y_0‖+C\sum_{i>0} \epsilon_i
-  \leq C‖\widehat{y}‖+2C\sum_{i>0} \epsilon_i
-  \leq (C+\epsilon)‖\widehat{y}‖.\qedhere
-\]
+\begin{lemma}\label{lem:controlled_exactness}
+  \lean{controlled_exactness}\leanok
+  Let $f : M_0 → M_1$ and $g : M_1 → M_2$ be bounded maps between normed groups.
+  Assume there are positive constants $C$ and $D$ such that:
+  \begin{itemize}
+    \item
+      for every $m$ in $\ker g$, there exists $m' ∈ M_0$ such that
+      $f(m') = m$ and $\|m'\| ≤ C\|m\|$.
+    \item
+      for every $x$ in the image of $g$, there exists $y ∈ M_1$ such that
+      $g(y) = x$ and $\|y\| ≤ D\|x\|$.
+  \end{itemize}
+  Then for every $\hat m$ in $\ker \hat g$ and every positive $ε$,
+  there is some $\hat m'$ in $\hat M_1$ such that
+  $\hat f(\hat m') = \hat m$ and $\|\hat m'\| ≤ (C + ε)\|\hat m\|$.
+\end{lemma}
+
+\begin{proof}
+  First, we claim that $\ker(g : M_1\to M_2)$ is dense in
+  $\ker(\widehat{g} : \widehat{M}_1\to \widehat{M}_2)$.
+  Pick any $\delta > 0$ and take $y\in M_1$ such that
+  $‖\widehat{y}-y‖\leq \delta$. Let $z=g(y)\in M_2$, which has norm
+  $‖z‖=‖g(y)‖=‖g(y-\widehat{y})‖$ bounded by
+  $C_{g}\delta$, where $C_{g}$ is the norm of $g$. We can thus find some
+  $y'\in M_1$ with $‖y'‖\leq DC_{g}\delta$ and $g(y')=z$. Replacing $y$ by
+  $y-y'$, we can thus find $y\in \ker(g: M_1\to M_2)$ such that still
+  $‖\widehat{y}-y‖\leq (1+DC_{g})\delta$; as $\delta$ was arbitrary, this
+  gives the desired density.
+
+  We now build the announced preimage for any $\hat m$ in $\ker \hat g$.
+  First note the conclusion is trivial when $\hat m = 0$, so we can assume
+  $\hat m ≠ 0$.
+  Using the density result proven above, one can write $\widehat{m}$ as a sum
+  $\sum_{i \ge 0} m_i$ with all $m_i\in \ker(g)$, $\|\hat m - m_0\| ≤ ε_0$ and
+  $‖m_i‖\leq \epsilon_i$ for $i>0$ for any given sequence of positive numbers
+  $\epsilon_i$. We can then lift each $m_i$ to $m'_i$ such that
+  $f(m'_i) = m_i$ and $‖m'_i‖\leq C‖m_i‖$, and then set
+  $\widehat{m}'=\sum m'_i$. Because $\widehat{M}_0$ is complete,
+  this sum converges provided the $ε_i$ sequence converges fast enough to zero.
+  We then have $\hat f(\widehat{m}') = \widehat{m}$ and
+  \[
+    ‖\widehat{m}'‖ ≤ C\sum_{i \geq 0} ‖m'_i‖ ≤
+    C(\|\hat m\| + ε_0) + C\sum_{i>0} ε_i ≤
+    (C+\epsilon)‖\widehat{m}‖
+  \]
+  where the last inequality holds provided the $ε_i$ sequence converges fast
+  enough to zero (this is where we use that $\widehat{m} ≠ 0$).
 \end{proof}
 
-See Definition~\ref{CLC} for the definition of $\widehat{M}$.
+\begin{proof}[Proof of Proposition~\ref{prop:completeexact}]
+  \proves{prop:completeexact}
+  \uses{lem:controlled_exactness}
+  The complex equations $\widehat d_1 ∘ \widehat d_0 = 0$ and
+  $\widehat d_2 ∘ \widehat d_1 = 0$ follow from $d_1 ∘ d_0 = 0$ and
+  $d_2 ∘ d_1 = 0$ by extension of identities.
+
+  In order to get the quantitative estimates, we apply
+  Lemma~\ref{lem:controlled_exactness} to $f = d_0$ and $g = d_1$. By exactness
+  at $M_2$, the assumption we made on elements of $\ker d_2$ translates to the
+  assumption made by the lemma on the image of $d_1$.
+\end{proof}
+
+The next statement uses the definition of the completion of a condensed abelian group, see Definition~\ref{CLC}.
 
 \begin{proposition}
   \label{prop:normedcompletion}
