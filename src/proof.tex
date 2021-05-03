@@ -12,15 +12,15 @@ we assume that the sets $S$ are finite, rather than profinite.
   \leanok
   \uses{BD_system}
   Let $\BD = (n,f,h)$ be a Breen--Deligne package,
-  and let $kappa = (kappa_0, kappa_1, kappa_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
+  and let $\kappa = (\kappa_0, \kappa_1, \kappa_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
   that is $\BD$-suitable.
 	Fix radii $1>r'>r>0$.
   For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
   the system of complexes
   \[
-    C^{\BD}_{kappa}(\overline{\mathcal M}_{r'}(S))_c^\bullet \colon
+    C^{\BD}_{\kappa}(\overline{\mathcal M}_{r'}(S))_c^\bullet \colon
     \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
-    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq kappa_1c}^2)^{T^{-1}}
+    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq \kappa_1c}^2)^{T^{-1}}
     \to \ldots
   \]
   is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
@@ -31,7 +31,7 @@ Unfortunately, the induction requires us to prove a stronger statement.
 
 \begin{theorem}
   \label{explicit}
-  \uses{Hom, BD_system}
+  \uses{Hom, BD_system, Mbar_with_Tinv}
   \leanok
   Fix radii $1>r'>r>0$. For any $m$ there is some $k$
   such that for all polyhedral lattices $\Lambda$
@@ -172,7 +172,7 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 \begin{proposition}
   \label{double-complex-htpy}
   \lean{NSC_htpy}
-  \uses{double_complex, BD_h_mul_suitable, universal_map_bound_by}
+  \uses{double_complex, BD_h_mul_suitable}
   \leanok
   Let $h$ be the homotopy packaged with $\BD$,
   and let $h^N$ denote the $n$-th iterated composition of $h$
