@@ -190,6 +190,8 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 \end{proposition}
 
 \begin{proof}
+  \uses{exists_adept, BD_h_mul_suitable, row_one_iso}
+  \leanok
   By Lemma~\ref{row_one_iso} we may replace the first row by
   \[
     C^{N \otimes \BD}_{\kappa/N}(\Hom(\Lambda, M))^\bullet.
@@ -254,8 +256,8 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 
 \begin{proof}[Proof of Theorem~\ref{explicit}]
   \proves{explicit}
-  \uses{spectral,combi,exists_adept,hypercover-exact,
-	cosimplicial-lattice,lem:Tinv, BD_h_mul_suitable}
+  \uses{spectral,combi,hypercover-exact, double-complex-htpy, lem:Tinv,
+    canonical_iso_2}
 
 By induction, the first condition of Proposition~\ref{spectral} is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda$ but not $V$ or $S$). By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
 \[
