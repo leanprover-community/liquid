@@ -10,7 +10,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blueprint for the Liquid Tensor Experiment: Breen–Deligne data</title>
-<link rel="next" href="sect0002.html" title="Spaces of convergent power series" />
+<link rel="next" href="sec-normed_groups.html" title="Variants of normed groups" />
 <link rel="prev" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="stylesheet" href="styles/theme-white.css" />
@@ -30,28 +30,28 @@
   <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
 <li class="">
-  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sec-normed_groups.html"><span class="toc_ref">2</span> <span class="toc_entry">Variants of normed groups</span></a>
  </li>
 <li class="">
-  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+  <a href="sect0002.html"><span class="toc_ref">3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
  </li>
 <li class="">
   <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">4</span> <span class="toc_entry">Some normed homological algebra</span></a>
  </li>
 <li class="">
-  <a href="sec-more_breen_deligne.html"><span class="toc_ref">5</span> <span class="toc_entry">More Breen–Deligne</span></a>
+  <a href="sect0003.html"><span class="toc_ref">5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0005.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
+  <a href="sect0004.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
  </li>
 <li class="">
-  <a href="sect0006.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
+  <a href="sect0005.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
  </li>
 <li class="">
-  <a href="sect0007.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0006.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -69,8 +69,8 @@
 
 <div class="main-text">
 <h1 id="a0000000002">1 Breen–Deligne data</h1>
-<p>The goal of this section is to a give a precise statement of the Breen–Deligne resolution. We first give the statement, and provide details later. </p>
-<p><div class="theoremx_thmwrapper" id="BD_orig">
+<p>The goal of this section is to a give a precise statement of a variant of the Breen–Deligne resolution. This variant is not actually a resolution, but it is sufficient for our purposes, and is much easier to state and prove. </p>
+<p>We first recall the original statement of the Breen–Deligne resolution. <div class="theoremx_thmwrapper" id="BD_orig">
   <div class="theoremx_thmheading">
     <span class="theoremx_thmcaption">
     Theorem
@@ -90,34 +90,14 @@
 
   </div>
 </div> </p>
-<p>I (Johan Commelin) have not figured out the details. But it seems to be possible to avoid the \(\bigoplus _{i=1}^{n_i}\), so we will aim for something like the following statement. </p>
-<p><div class="theoremx_thmwrapper" id="BD_reso">
-  <div class="theoremx_thmheading">
-    <span class="theoremx_thmcaption">
-    Theorem
-    </span>
-    <span class="theoremx_thmlabel">1.2</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#BD_reso">#</a>
-
-  </div>
-  </div>
-  <div class="theoremx_thmcontent">
-  <p> For an abelian group \(A\), there is a resolution, functorial in&#160;\(A\), of the form </p>
-<div class="displaymath" id="a0000000011">
-  \[  \ldots \to \mathbb Z[A^{n_{i}}] \to \ldots \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.  \]
-</div>
-
-  </div>
-</div> </p>
-<p>What does a homomorphism \(f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) that is functorial in&#160;\(A\) look like? We should perhaps say more precisely what we mean by this. The idea is that \(m\) and \(n\) are fixed, and for each abelian group \(A\) we have a group homomorphism \(f_A\colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) such that if \(\phi :A\to B\) is a group homomorphism inducing \(\phi _i:\mathbf{Z}[A^i]\to \mathbf{Z}[B^i]\) for each natural number \(i\) then the obvious square commutes: \(\phi _n \circ f_A = f_B \circ \phi _m\). </p>
+<p>What does a homomorphism \(f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) that is functorial in&#160;\(A\) look like? We should perhaps say more precisely what we mean by this. The idea is that \(m\) and \(n\) are fixed, and for each abelian group \(A\) we have a group homomorphism \(f_A\colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) uch that if \(\phi \colon A\to B\) is a group homomorphism inducing \(\phi _i \colon \mathbf{Z}[A^i]\to \mathbf{Z}[B^i]\) for each natural number \(i\) then the obvious square commutes: \(\phi _n \circ f_A = f_B \circ \phi _m\). </p>
 <p>The map \(f_A\) is specified by what it does to the generators \((a_1, a_2, a_3, \dots , a_m)\in A^m\). It can send such an element to an arbitrary element of \(\mathbb Z[A^n]\), but one can check that universality implies that \(f_A\) will be a \(\mathbb Z\)-linear combination of “basic universal maps”, where a “basic universal map” is one that sends \((a_1, a_2, \dots , a_m)\) to \((t_1, \dots , t_n)\), where \(t_i\) is a \(\mathbb Z\)-linear combination \(c_{i,1} \cdot a_1 + \dots + c_{i,m} \cdot a_m\). So a “basic universal map” is specified by the \(n \times m\)-matrix \(c\). </p>
 <p><div class="definition_thmwrapper" id="basic_universal_map">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.3</span>
+    <span class="definition_thmlabel">1.2</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#basic_universal_map">#</a>
@@ -130,7 +110,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/universal_map.lean#L100">breen_deligne.basic_universal_map</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/universal_map.lean#L71">breen_deligne.basic_universal_map</a></li>
         </ul>
 
       </div>
@@ -148,7 +128,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.4</span>
+    <span class="definition_thmlabel">1.3</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#universal_map">#</a>
@@ -162,7 +142,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#basic_universal_map">Definition 1.3</a></li>
+          <li><a href="sect0001.html#basic_universal_map">Definition 1.2</a></li>
         </ul>
 
       </div>
@@ -176,7 +156,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/universal_map.lean#L184">breen_deligne.universal_map</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/universal_map.lean#L283">breen_deligne.universal_map</a></li>
         </ul>
 
       </div>
@@ -186,11 +166,58 @@
   </div>
   <div class="definition_thmcontent">
   <p>   A <em>universal map</em> from exponent \(m\) to \(n\), is a formal \(\mathbb Z\)-linear combination of basic universal maps from exponent \(m\) to \(n\). </p>
+<p>If \(f\) is a basic universal map, then we write \([f]\) for the corresponding universal map. </p>
 
   </div>
 </div> </p>
-<p>We point out that basic universal maps can be composed by matrix multiplication, and this formally induces a composition of universal maps. As mentioned above, one can also check (this has been formalised in Lean) that this construction gives a bijection between universal maps from exponent \(m\) to \(n\) and functorial collections \(f_A:\mathbf{Z}[A^m]\to \mathbf{Z}[A^n]\). </p>
-<p><div class="definition_thmwrapper" id="sigma_add">
+<p><div class="definition_thmwrapper" id="universal_map_bound_by">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#universal_map_bound_by">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#universal_map">Definition 1.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/universal_map.lean#L354">breen_deligne.universal_map.bound_by</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(f = \sum _g n_g[g]\) be a universal map. We say that \(f\) is <em>bound by</em> a natural number \(N\) if \(\sum _g |n_g| \le N\). </p>
+
+  </div>
+</div> </p>
+<p>We point out that basic universal maps can be composed by matrix multiplication, and this formally induces a composition of universal maps. As mentioned above, one can also check (this has been formalised in Lean) that this construction gives a bijection between universal maps from exponent \(m\) to \(n\) and functorial collections \(f_A \colon \mathbf{Z}[A^m]\to \mathbf{Z}[A^n]\). </p>
+<p><div class="definition_thmwrapper" id="FreeMat">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
@@ -198,7 +225,7 @@
     <span class="definition_thmlabel">1.5</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#sigma_add">#</a>
+    <a class="icon proof" href="sect0001.html#FreeMat">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -209,7 +236,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#universal_map">Definition 1.4</a></li>
+          <li><a href="sect0001.html#universal_map">Definition 1.3</a></li>
         </ul>
 
       </div>
@@ -223,7 +250,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/category.lean#L80">breen_deligne.data.σ</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/category.lean#L25">breen_deligne.FreeMat</a></li>
         </ul>
 
       </div>
@@ -232,100 +259,18 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   The addition on \(A^n\) induces a universal map \(\sigma _\alpha \colon \mathbb Z[(A^n)^2] \to \mathbb Z[A^n]\), namely the formal generator \((I_n I_n)\), where \(I_n\) denotes the \(n \times n\) identity matrix. (Here \(\alpha \) stands for “addition”.) </p>
+  <p>   In other words, we are considering the following two categories: </p>
+<ul class="itemize">
+  <li><p>the category whose objects are natural numbers, and whose morphisms are matrices; </p>
+</li>
+  <li><p>the category with the same objects, but with Hom-sets replaced by the free abelian groups generated by the sets of matrices. We denote this latter category \(\textnormal{FreeMat}\). </p>
+</li>
+</ul>
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="sigma_proj">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">1.6</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#sigma_proj">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0001.html#universal_map">Definition 1.4</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/category.lean#L92">breen_deligne.data.π</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>   The formal sum of the two projections \((A^n)^2 \to A^n\) induces a universal map \(\sigma _\pi \colon \mathbb Z[(A^n)^2] \to \mathbb Z[A^n]\), namely the formal sum \((I_n 0) + (0 I_n)\), where \(I_n\) denotes the \(n \times n\) identity matrix, and \(0\) the \(n \times n\) zero matrix. (Here \(\pi \) stands for “projections”.) </p>
-
-  </div>
-</div> </p>
-<p><div class="definition_thmwrapper" id="BD_double">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">1.7</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#BD_double">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0001.html#universal_map">Definition 1.4</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/universal_map.lean#L258">breen_deligne.universal_map.double</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>   Let \(f\) be a universal map from exponent&#160;\(m\) to&#160;\(n\). Then \(f \oplus f\) denotes the universal map from exponent&#160;\(2m\) to&#160;\(2n\), that applies \(f\) componentwise. If \(f\) is a generator (i.e. a basic universal map) then \(f \oplus f\) is </p>
-<div class="displaymath" id="a0000000012">
+<p>Both categories naturally come with a monoidal structure: for the first it is given by the Kronecker product of matrices (a.k.a. tensor product of linear maps) which induces a monoidal structure on \(\textnormal{FreeMat}\). As usual, we will denote this monoidal structure \(\_  \otimes \_ \). For example, if \(f\) is a basic universal map, then \(2 \otimes f\) denotes the block matrix </p>
+<div class="displaymath" id="a0000000011">
   \[  \begin{pmatrix}  f 
 
 &  0 
@@ -334,8 +279,161 @@
 
 &  f 
 
-\end{pmatrix}.  \]
+\end{pmatrix}  \]
 </div>
+<p><div class="definition_thmwrapper" id="proj_aux">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.6</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#proj_aux">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#basic_universal_map">Definition 1.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/universal_map.lean#L211">breen_deligne.basic_universal_map.proj_aux</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(N\) be a natural number, and \(i {\lt} N\). Then \(\pi ’_{N,i}\) denotes the basic universal map from exponent \(N\) to \(1\) </p>
+<div class="displaymath" id="a0000000012">
+  \[  \begin{pmatrix}  0 
+
+\\ 0 
+
+\\ \vdots 
+
+\\ 1 
+
+\\ \vdots 
+
+\\ 0 
+
+\end{pmatrix} = (a_0, a_1, \ldots , a_{N-1})^t  \]
+</div>
+<p> where \(a_j = \delta _{ij}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="proj">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#proj">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#proj_aux">Definition 1.6</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/universal_map.lean#L477">breen_deligne.universal_map.proj</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(N\) and&#160;\(n\) be natural numbers. Then \(\pi ^N_n\) denotes the universal map from exponent \(N \cdot n\) to \(n\) given by \(\sum _{i {\lt} N} [\pi ’_{N,i} \otimes n]\). </p>
+<p>(On \(\mathbf{Z}[A^{N \cdot n}] \to \mathbf{Z}[A^n]\) this map is the formal sum of the maps \(\mathbf{Z}[A^{N \cdot n}] \to \mathbf{Z}[A^n]\) induced by the projection maps \(A^{N \cdot n} = (A^n)^N \to A^n\).) </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="sum">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.8</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#sum">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#proj_aux">Definition 1.6</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/universal_map.lean#L474">breen_deligne.universal_map.sum</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(N\) and&#160;\(n\) be natural numbers. Then \(\sigma ^N_n\) denotes the universal map from exponent \(N \cdot n\) to \(n\) given by \([\sum _{i {\lt} N} \pi ’_{N,i} \otimes n]\). </p>
+<p>(On \(\mathbf{Z}[A^{N \cdot n}] \to \mathbf{Z}[A^n]\) this map is induced by the summation map \(A^{N \cdot n} = (A^n)^N \to A^n\).) </p>
 
   </div>
 </div> </p>
@@ -344,7 +442,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.8</span>
+    <span class="definition_thmlabel">1.9</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#BD_data">#</a>
@@ -358,8 +456,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#sigma_add">Definition 1.5</a></li>
-          <li><a href="sect0001.html#sigma_proj">Definition 1.6</a></li>
+          <li><a href="sect0001.html#FreeMat">Definition 1.5</a></li>
         </ul>
 
       </div>
@@ -373,7 +470,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/category.lean#L56">breen_deligne.data</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/category.lean#L127">breen_deligne.data</a></li>
         </ul>
 
       </div>
@@ -382,61 +479,13 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   A tuple \((n, f)\) of <em>Breen–Deligne data</em> consists of a sequence of exponents \(n_0, n_1, n_2, \dots \in \mathbb N\), and universal maps \(f_i\) from exponent \(n_{i+1}\) to \(n_i\). </p>
-<p>Such a tuples is a <em>complex</em> if for all \(i\) we have \(f_i \circ f_{i+1} = 0\). </p>
-<p>A <em>universal morphism</em> of Breen–Deligne data (or complexes) \((m,f)\to (n,g)\) is a collection of universal maps \(\phi _i\) from exponent \(m_i\) to \(n_i\) such that \(g_i\circ \phi _{i+1}=\phi _i\circ f_i\) as universal maps from exponent \(m_{i+1}\) to \(n_i\) (i.e., the squares commute). </p>
+  <p>   A <em>Breen–Deligne data</em> is a chain complex in \(\textnormal{FreeMat}\). </p>
+<p>Concretely, this means that it consists of a sequence of exponents \(n_0, n_1, n_2, \dots \in \mathbb N\), and universal maps \(f_i\) from exponent \(n_{i+1}\) to \(n_i\), such that for all \(i\) we have \(f_i \circ f_{i+1} = 0\). </p>
+<p>A morphism of Breen–Deligne data is a morphism of chain complexes. </p>
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="BD_data_double">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">1.9</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#BD_data_double">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0001.html#BD_data">Definition 1.8</a></li>
-          <li><a href="sect0001.html#BD_double">Definition 1.7</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/category.lean#L63">breen_deligne.data.double</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>   If \((n, f)\) is a tuple of Breen–Deligne data, then \((n, f) \oplus (n, f)\) is the tuple consisting of exponents \(2n_i\) and universal maps \(f_i \oplus f_i\). </p>
-
-  </div>
-</div> </p>
-<p>The two universal map \(\sigma _\alpha \) and&#160;\(\sigma _\pi \) explained in the examples above, can be checked to induce universal maps of complexes: \((n,f) \oplus (n,f) \to (n,f)\). </p>
-<p><div class="definition_thmwrapper" id="BD_homotopy">
+<p><div class="definition_thmwrapper" id="BD_mul">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
@@ -444,7 +493,7 @@
     <span class="definition_thmlabel">1.10</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#BD_homotopy">#</a>
+    <a class="icon proof" href="sect0001.html#BD_mul">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -455,8 +504,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#BD_data">Definition 1.8</a></li>
-          <li><a href="sect0001.html#BD_double">Definition 1.7</a></li>
+          <li><a href="sect0001.html#BD_data">Definition 1.9</a></li>
         </ul>
 
       </div>
@@ -470,7 +518,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/category.lean#L166">breen_deligne.package</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/category.lean#L138">breen_deligne.data.mul</a></li>
         </ul>
 
       </div>
@@ -479,16 +527,102 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>    A <em>homotopy</em> for a tuple \((n, f)\) of Breen–Deligne data is a homotopy between the maps of complexes </p>
-<div class="displaymath" id="a0000000013">
-  \[  \sigma _\alpha , \sigma _\pi \colon (n,f) \oplus (n,f) \to (n,f)  \]
-</div>
-<p> In other words, it consists of universal maps \(h_i\) from exponent \(2n_i\) to \(n_{i+1}\), such that \(f_0\circ h_0=\sigma _\alpha -\sigma _\pi \) as universal maps from exponent \(2n_0\) to \(n_0\), and for all \(i\geq 0\) we have </p>
-<div class="displaymath" id="a0000000014">
-  \[  f_{i+1} \circ h_{i+1} + h_i \circ (f_i \oplus f_i) = \sigma _\alpha - \sigma _\pi  \]
-</div>
-<p> as universal maps from exponent \(2n_{i+1}\) to \(n_{i+1}\). Note that the first condition is morally the \(i=-1\) case of the displayed equation, if we set \(h_{-1}=0\). </p>
-<p>A <em>Breen–Deligne package</em> is a triple \((n, f, h)\), such that \((n, f)\) is Breen–Deligne data that is a complex, and \(h\) is a homotopy for \((n,f)\). </p>
+  <p>   For every natural numbers \(N\), the endofunctor \(N \otimes \_ \) on \(\textnormal{FreeMat}\) induces an endofunctor of Breen–Deligne data. </p>
+<p>Concretely, it maps a pair \((n, f)\) of Breen–Deligne data, to the pair \(N \otimes (n,f)\) consisting of exponents \(N \cdot n_i\) and universal maps \(N \otimes f_i\). </p>
+
+  </div>
+</div> </p>
+<p>Let \(\mathsf{BD}\) be Breen–Deligne data. The universal maps \(\sigma ^N\) and&#160;\(\pi ^N\) defined above, induce morphisms \(\sigma ^N_\mathsf{BD},\pi ^N_\mathsf{BD}\colon N \otimes \mathsf{BD}\to \mathsf{BD}\). </p>
+<p><div class="definition_thmwrapper" id="BD_package">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.11</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#BD_package">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#BD_data">Definition 1.9</a></li>
+          <li><a href="sect0001.html#BD_mul">Definition 1.10</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/category.lean#L277">breen_deligne.package</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A <em>Breen–Deligne</em> package consists of Breen–Deligne data \(\mathsf{BD}\) together with a homotopy \(h\) between \(\pi ^2_\mathsf{BD}\) and \(\sigma ^2_\mathsf{BD}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="BD_h_mul">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.12</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#BD_h_mul">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#BD_package">Definition 1.11</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/category.lean#L257">breen_deligne.data.homotopy_mul</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(\mathsf{BD}\) be a Breen–Deligne package and \(N\) a power of \(2\). Then the homotopy \(h\) induces a homotopy between \(\pi ^N_\mathsf{BD}\) and \(\sigma ^N_\mathsf{BD}\) by iterative composition of the homotopy packaged in \(\mathsf{BD}\). </p>
 
   </div>
 </div> </p>
@@ -497,7 +631,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.11</span>
+    <span class="definition_thmlabel">1.13</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#BD_eg">#</a>
@@ -511,7 +645,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#BD_homotopy">Definition 1.10</a></li>
+          <li><a href="sect0001.html#BD_package">Definition 1.11</a></li>
         </ul>
 
       </div>
@@ -525,7 +659,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/eg.lean#L94">breen_deligne.eg</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/eg.lean#L84">breen_deligne.eg</a></li>
         </ul>
 
       </div>
@@ -535,20 +669,20 @@
   </div>
   <div class="definition_thmcontent">
   <p>   We will now construct an example of a Breen–Deligne package. In some sense, it is the “easiest” solution to the conditions posed above. The exponents will be \(n_i = 2^i\), and the homotopies \(h_i\) will be the identity. Under these constraints, we recursively construct the universal maps \(f_i\): </p>
-<div class="displaymath" id="a0000000015">
-  \[  f_0 = \sigma _\alpha - \sigma _\pi , \quad f_{i+1} = (\sigma _\alpha - \sigma _\pi ) - (f_i \oplus f_i).  \]
+<div class="displaymath" id="a0000000013">
+  \[  f_0 = \pi ^2_1 - \sigma ^2_1, \quad f_{i+1} = (\pi ^2_{2^{i+1}} - \sigma ^2_{2^{i+1}}) - (2 \otimes f_i).  \]
 </div>
 <p> We leave it as exercise for the reader, to verify that with these definitions \((n, f, h)\) forms a Breen–Deligne package. </p>
 
   </div>
 </div> </p>
-<p>We now make three definitions that will make precise some conditions between constants that will be needed when we construct Breen–Deligne complexes of normed abelian groups. </p>
+<p>We now make definitions that will make precise some conditions between constants that will be needed when we construct Breen–Deligne complexes of normed abelian groups. </p>
 <p><div class="definition_thmwrapper" id="basic_suitable">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.12</span>
+    <span class="definition_thmlabel">1.14</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#basic_suitable">#</a>
@@ -562,7 +696,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#basic_universal_map">Definition 1.3</a></li>
+          <li><a href="sect0001.html#basic_universal_map">Definition 1.2</a></li>
         </ul>
 
       </div>
@@ -576,7 +710,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/suitable.lean#L42">breen_deligne.basic_universal_map.suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/suitable.lean#L56">breen_deligne.basic_universal_map.suitable</a></li>
         </ul>
 
       </div>
@@ -586,7 +720,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a basic universal map from exponent&#160;\(m\) to&#160;\(n\). Let \(c_1, c_2 \in \mathbb R_{\ge 0}\). We say that \((c_1, c_2)\) is <em>\(f\)-suitable</em>, if for all \(i\) </p>
-<div class="displaymath" id="a0000000016">
+<div class="displaymath" id="a0000000014">
   \[  \sum _j c_1|f_{ij}| \le c_2.  \]
 </div>
 
@@ -598,7 +732,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.13</span>
+    <span class="definition_thmlabel">1.15</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#universal_suitable">#</a>
@@ -612,8 +746,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#universal_map">Definition 1.4</a></li>
-          <li><a href="sect0001.html#basic_suitable">Definition 1.12</a></li>
+          <li><a href="sect0001.html#universal_map">Definition 1.3</a></li>
+          <li><a href="sect0001.html#basic_suitable">Definition 1.14</a></li>
         </ul>
 
       </div>
@@ -627,7 +761,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/suitable.lean#L130">breen_deligne.universal_map.suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/suitable.lean#L266">breen_deligne.universal_map.suitable</a></li>
         </ul>
 
       </div>
@@ -640,15 +774,15 @@
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="BD_suitable">
+<p><div class="definition_thmwrapper" id="very_suitable">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.14</span>
+    <span class="definition_thmlabel">1.16</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0001.html#BD_suitable">#</a>
+    <a class="icon proof" href="sect0001.html#very_suitable">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -659,8 +793,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#BD_homotopy">Definition 1.10</a></li>
-          <li><a href="sect0001.html#universal_suitable">Definition 1.13</a></li>
+          <li><a href="sect0001.html#universal_suitable">Definition 1.15</a></li>
+          <li><a href="sect0001.html#universal_map_bound_by">Definition 1.4</a></li>
         </ul>
 
       </div>
@@ -674,7 +808,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f404898f89d9045dbe741a7a6a778ba441fddb71/src/breen_deligne/suitable.lean#L259">breen_deligne.data.suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/suitable.lean#L599">breen_deligne.universal_map.very_suitable</a></li>
         </ul>
 
       </div>
@@ -683,11 +817,289 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let \((n, f)\) be Breen–Deligne data, and let \(c = (c_0, c_1, \dots )\) be a sequence of nonnegative real numbers. We say that \(c\) is <em>\((n,f,h)\)-suitable</em>, if for all \(i\), the pair \((c_{i+1}, c_i)\) is \(f_i\)-suitable. </p>
-<p>(Note! The order \((c_{i+1}, c_i)\) is contravariant compared to Definition&#160;<a href="sect0001.html#universal_suitable">1.13</a>. This is because of the contravariance of \(\hat V(\_ )\); see Definition&#160;<a href="sect0003.html#eval_CLCFPTinv">3.6</a>.) </p>
+  <p>   Let \(f\) be a universal map and let \(r, r’, c_1, c_2 \in \mathbb R_{\ge 0}\). We say that \((c_1, c_2)\) is <em>very suitable</em> for \((f, r, r’)\) if there exist \(N, b \in \mathbf{N}\) and \(c’ \in \mathbf{R}_{\ge 0}\) such that: </p>
+<ul class="itemize">
+  <li><p>\(f\) is bound by \(N\) (see Definition&#160;<a href="sect0001.html#universal_map_bound_by">1.4</a>) </p>
+</li>
+  <li><p>\((c_1, c’)\) is \(f\)-suitable </p>
+</li>
+  <li><p>\(r ^b N ≤ 1\) </p>
+</li>
+  <li><p>\(c’ ≤ (r’) ^b c_2\) </p>
+</li>
+</ul>
 
   </div>
 </div> </p>
+<p><div class="definition_thmwrapper" id="BD_very_suitable">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.17</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#BD_very_suitable">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#BD_data">Definition 1.9</a></li>
+          <li><a href="sect0001.html#very_suitable">Definition 1.16</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/suitable.lean#L640">breen_deligne.data.very_suitable</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>     Let \(\mathsf{BD}= (n, f)\) be Breen–Deligne data, let \(r, r’ \in \mathbf{R}_{\ge 0}\), and let \(\kappa = (\kappa _0, \kappa _1, \dots )\) be a sequence of nonnegative real numbers. We say that \(\kappa \) is \(\mathsf{BD}\)-<em>suitable</em> (resp. <em>very suitable</em> for \((\mathsf{BD}, r, r’)\)), if for all \(i\), the pair \((\kappa _{i+1}, \kappa _i)\) is \(f_i\)-suitable (resp. <em>very suitable</em> for \((f_i, r, r’)\)). </p>
+<p>(Note! The order \((\kappa _{i+1}, \kappa _i)\) is contravariant compared to Definition&#160;<a href="sect0001.html#universal_suitable">1.15</a>. This is because of the contravariance of \(\widehat V(\_ )\); see Definition&#160;<a href="sect0003.html#eval_CLCFPTinv">5.8</a>.) </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="adept">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.18</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#adept">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#BD_package">Definition 1.11</a></li>
+          <li><a href="sect0001.html#universal_suitable">Definition 1.15</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/suitable.lean#L670">breen_deligne.package.adept</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(\mathsf{BD}\) be a Breen–Deligne package with data \((n,f)\) and homotopy \(h\). Let \(\kappa , \kappa ’\) be sequences of nonnegative real numbers. (In applications \(\kappa \) is a \((n,f)\)-suitable sequence.) </p>
+<p>Then \(\kappa ’\) is <em>adept</em> to \((\mathsf{BD}, \kappa )\) if for all \(i\) the pair \((\kappa _i / 2, \kappa ’_{i+1} \kappa _{i+1})\) is \(h_i\)-suitable. (Recall that \(h_i\) is the homotopy map \(n_i \to n_{i+1}\).) </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="BD_h_mul_suitable">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.19</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#BD_h_mul_suitable">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#adept">Definition 1.18</a></li>
+          <li><a href="sect0001.html#BD_h_mul">Definition 1.12</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/suitable.lean#L723">breen_deligne.package.adept.homotopy_mul_suitable</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(\mathsf{BD}\) be a Breen–Deligne package, \(N\) a power of \(2\), and let \(\kappa , \kappa ’\) be sequences of nonnegative real numbers. Assume that \(\kappa ’\) is adept to \((\mathsf{BD}, \kappa )\). Let \(h^N\) be the homotopy between \(\pi ^N_\mathsf{BD}\) and \(\sigma ^N_\mathsf{BD}\) defined in Def&#160;<a href="sect0001.html#BD_h_mul">1.12</a>. </p>
+<p>For all \(i\), the pair \((\kappa _i / N, \kappa ’_{i+1} \kappa _{i+1})\) is \(h^N_i\)-suitable. </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="exists_very_suitable">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.20</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#exists_very_suitable">#</a>
+    <a class="icon proof" href="sect0001.html#a0000000015"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#BD_very_suitable">Definition 1.17</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/constants.lean#L32">breen_deligne.data.c_very_suitable</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(\mathsf{BD}\) be a Breen–Deligne package, and let \(r, r’\) be nonnegative reals, such that \(r {\lt} 1\) and \(r’ {\gt} 0\). </p>
+<p>There exists a sequence \(\kappa \) of positive real numbers such that \(\kappa \) is very suitable for \((\mathsf{BD}, r, r’)\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000015">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>The sequence can be constructed recursively, which we leave as exercise for the reader. (It has been done in Lean.) </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="exists_adept">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.21</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0001.html#exists_adept">#</a>
+    <a class="icon proof" href="sect0001.html#a0000000016"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0001.html#BD_very_suitable">Definition 1.17</a></li>
+          <li><a href="sect0001.html#adept">Definition 1.18</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/05894e495d712fed578ea8f34f21636e1f87b180/src/breen_deligne/constants.lean#L76">breen_deligne.package.c'_adept</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(\mathsf{BD}\) be a Breen–Deligne package, and let \(r, r’\) be nonnegative reals, such that \(0 {\lt} r {\lt} 1\) and \(0 {\lt} r’ \le 1\). Let \(\kappa \) be any sequence of positive reals. </p>
+<p>There exists a sequence \(\kappa ’\) of nonnegative real numbers \(\kappa ’\) is adept to \((\mathsf{BD}, \kappa )\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000016">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>The sequence can be constructed recursively, which we leave as exercise for the reader. (It has been done in Lean.) </p>
+
+  </div>
+</div>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
@@ -699,7 +1111,7 @@
 </a>
   <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0002.html" title="Spaces of convergent power series"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sec-normed_groups.html" title="Variants of normed groups"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
