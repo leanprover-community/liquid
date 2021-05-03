@@ -169,10 +169,25 @@ As preparation for the proof, we have the following results.
   This is a polyhedral lattice.
 \end{definition}
 
+\begin{lemma}
+  \label{polyhedral-quotient}
+  \uses{rescaled-sum}
+  \lean{polyhedral_lattice.conerve.obj.polyhedral_lattice}
+  \leanok
+  For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$;
+  for $m=0$, we set $\Lambda'^{(0)} = \Lambda$.
+  Then $\Lambda'^{(m)}$ is a polyhedral lattice.
+\end{lemma}
+
+\begin{proof}
+  WIP
+\end{proof}
+
 \begin{definition}
   \label{cosimplicial-lattice}
-  \uses{rescaled-sum}
+  \uses{polyhedral-quotient}
   \lean{PolyhedralLattice.cosimplicial}
+  \leanok
   For any $m\geq 1$, let $\Lambda'^{(m)}$ be given by $\Lambda'^m / \Lambda\otimes (\mathbb Z^m)_{\sum=0}$;
   for $m=0$, we set $\Lambda'^{(0)} = \Lambda$.
   Then $\Lambda'^{(\bullet)}$ is a cosimplicial polyhedral lattice,
@@ -180,6 +195,29 @@ As preparation for the proof, we have the following results.
 
   In particular, $\Lambda'^{(0)} = \Lambda \to \Lambda' = \Lambda'^{(1)}$
   is the diagonal embedding.
+\end{definition}
+
+\begin{definition}
+  \label{Hom}
+  \uses{polyhedral_lattice, profinitely_filtered_pseudo_normed_group_with_Tinv}
+  \lean{polyhedral_lattice.add_monoid_hom.profinitely_filtered_pseudo_normed_group_with_Tinv}
+  \leanok
+  Let $\Lambda$ be a polyhedral lattice,
+  and $M$ a profinitely filtered pseudo-normed group.
+
+  Endow $\Hom(\Lambda, M)$ with the subspaces
+  \[
+    \Hom(\Lambda, M)_{\leq c} =
+    \{f \colon \Lambda \to M \mid
+      \forall x \in \Lambda, f(x) \in M_{\leq c‖x‖} \}.
+  \]
+  As $\Lambda$ is polyhedral, it is enough to check the given condition on~$f$
+  for a finite collection of $x$ that generate the norm.
+
+  These subspaces are profinite subspaces of $M^\Lambda$,
+  and thus they make $\Hom(\Lambda, M)$ ito a profinitely filtered pseudo-normed group.
+
+  If $M$ has an action of $T^{-1}$, then so does $\Hom(\Lambda, M)$.
 \end{definition}
 
 % vim: ts=2 et sw=2 sts=2
