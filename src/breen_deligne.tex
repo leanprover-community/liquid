@@ -1,8 +1,12 @@
 \section{Breen--Deligne data}
 
-The goal of this section is to a give a precise statement of the Breen--Deligne resolution.
-We first give the statement, and provide details later.
+The goal of this section is to a give a precise statement of
+a variant of the Breen--Deligne resolution.
+This variant is not actually a resolution,
+but it is sufficient for our purposes,
+and is much easier to state and prove.
 
+We first recall the original statement of the Breen--Deligne resolution.
 \begin{theoremx}[Breen--Deligne]
   \label{BD_orig}
   For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
@@ -12,32 +16,22 @@ We first give the statement, and provide details later.
   \]
 \end{theoremx}
 
-I (Johan Commelin) have not figured out the details.
-But it seems to be possible to avoid the $\bigoplus_{i=1}^{n_i}$,
-so we will aim for something like the following statement.
-
-\begin{theoremx}
-  \label{BD_reso}
-  For an abelian group $A$, there is a resolution, functorial in~$A$, of the form
-  \[
-    \ldots \to \mathbb Z[A^{n_{i}}] \to \ldots \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.
-  \]
-\end{theoremx}
-
 What does a homomorphism $f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]$
-that is functorial in~$A$ look like? We should perhaps say more precisely
-what we mean by this. The idea is that $m$ and $n$ are fixed, and
-for each abelian group $A$ we have a group homomorphism
-$f_A\colon \mathbb Z[A^m] \to \mathbb Z[A^n]$ such that if $\phi:A\to B$
-is a group homomorphism inducing $\phi_i:\Z[A^i]\to\Z[B^i]$ for each
-natural number $i$ then the obvious square commutes: $\phi_n \circ f_A = f_B \circ \phi_m$.
+that is functorial in~$A$ look like?
+We should perhaps say more precisely what we mean by this.
+The idea is that $m$ and $n$ are fixed,
+and for each abelian group $A$ we have a group homomorphism
+$f_A\colon \mathbb Z[A^m] \to \mathbb Z[A^n]$ 
+uch that if $\phi \colon A\to B$ is a group homomorphism
+inducing $\phi_i \colon\Z[A^i]\to\Z[B^i]$ for each natural number $i$
+then the obvious square commutes: $\phi_n \circ f_A = f_B \circ \phi_m$.
 
 The map $f_A$ is specified by what it does to the generators
-$(a_1, a_2, a_3, \dots, a_m)\in A^m$. It can send such an element
-to an arbitrary element of $\mathbb Z[A^n]$, but one can check
-that universality implies that $f_A$ will be a $\mathbb Z$-linear combination of
-``basic universal maps'', where a ``basic universal map'' is one that
-sends $(a_1, a_2, \dots, a_m)$ to $(t_1, \dots, t_n)$,
+$(a_1, a_2, a_3, \dots, a_m)\in A^m$.
+It can send such an element to an arbitrary element of $\mathbb Z[A^n]$,
+but one can check that universality implies that $f_A$
+will be a $\mathbb Z$-linear combination of ``basic universal maps'',
+where a ``basic universal map'' is one that sends $(a_1, a_2, \dots, a_m)$ to $(t_1, \dots, t_n)$,
 where $t_i$ is a $\mathbb Z$-linear combination $c_{i,1} \cdot a_1 + \dots + c_{i,m} \cdot a_m$.
 So a ``basic universal map'' is specified by the $n \times m$-matrix $c$.
 
@@ -55,101 +49,162 @@ So a ``basic universal map'' is specified by the $n \times m$-matrix $c$.
   \leanok
   \uses{basic_universal_map}
   A \emph{universal map} from exponent $m$ to $n$,
-  is a formal $\mathbb Z$-linear combination of basic universal maps from exponent $m$ to $n$.
+  is a formal $\mathbb Z$-linear combination
+  of basic universal maps from exponent $m$ to $n$.
+
+  If $f$ is a basic universal map,
+  then we write $[f]$ for the corresponding universal map.
+\end{definition}
+
+\begin{definition}
+  \label{universal_map_bound_by}
+  \lean{breen_deligne.universal_map.bound_by}
+  \leanok
+  \uses{universal_map}
+  Let $f = \sum_g n_g[g]$ be a universal map.
+  We say that $f$ is \emph{bound by} a natural number $N$
+  if $\sum_g |n_g| \le N$.
 \end{definition}
 
 We point out that basic universal maps can be composed by matrix multiplication,
-and this formally induces a composition of universal maps. As mentioned above, one can also check (this has been formalised in Lean) that this construction gives a bijection between universal maps from exponent $m$ to $n$ and functorial collections $f_A:\Z[A^m]\to\Z[A^n]$.
+and this formally induces a composition of universal maps.
+As mentioned above, one can also check (this has been formalised in Lean)
+that this construction gives a bijection
+between universal maps from exponent $m$ to $n$
+and functorial collections $f_A \colon \Z[A^m]\to\Z[A^n]$.
 
 \begin{definition}
-  \label{sigma_add}
-  \lean{breen_deligne.data.σ}
-  \leanok
+  \label{FreeMat}
   \uses{universal_map}
-  The addition on $A^n$ induces a universal map
-  $\sigma_\alpha \colon \mathbb Z[(A^n)^2] \to \mathbb Z[A^n]$,
-  namely the formal generator $(I_n I_n)$, where $I_n$ denotes the $n \times n$ identity matrix.
-  (Here $\alpha$ stands for ``addition''.)
+  \lean{breen_deligne.FreeMat}
+  \leanok
+  In other words, we are considering the following two categories:
+  \begin{itemize}
+    \item
+      the category whose objects are natural numbers,
+      and whose morphisms are matrices;
+    \item
+      the category with the same objects,
+      but with Hom-sets replaced by the free abelian groups
+      generated by the sets of matrices.
+      We denote this latter category $\FreeMat$.
+  \end{itemize}
 \end{definition}
 
-\begin{definition}
-  \label{sigma_proj}
-  \lean{breen_deligne.data.π}
-  \leanok
-  \uses{universal_map}
-  The formal sum of the two projections $(A^n)^2 \to A^n$
-  induces a universal map $\sigma_\pi \colon \mathbb Z[(A^n)^2] \to \mathbb Z[A^n]$,
-  namely the formal sum $(I_n 0) + (0 I_n)$,
-  where $I_n$ denotes the $n \times n$ identity matrix, and $0$ the $n \times n$ zero matrix.
-  (Here $\pi$ stands for ``projections''.)
-\end{definition}
-
-\begin{definition}
-  \label{BD_double}
-  \lean{breen_deligne.universal_map.double}
-  \leanok
-  \uses{universal_map}
-  Let $f$ be a universal map from exponent~$m$ to~$n$.
-  Then $f \oplus f$ denotes the universal map from exponent~$2m$ to~$2n$,
-  that applies $f$ componentwise.
-  If $f$ is a generator (i.e.\ a basic universal map)
-  then $f \oplus f$ is
-  \[
-    \begin{pmatrix}
+Both categories naturally come with a monoidal structure:
+for the first it is given by the Kronecker product of matrices
+(a.k.a. tensor product of linear maps)
+which induces a monoidal structure on $\FreeMat$.
+As usual, we will denote this monoidal structure $\_ \otimes \_$.
+For example, if $f$ is a basic universal map,
+then $2 \otimes f$ denotes the block matrix
+\[
+  \begin{pmatrix}
     f & 0 \\
     0 & f
-    \end{pmatrix}.
+  \end{pmatrix}
+\]
+
+\begin{definition}
+  \label{proj_aux}
+  \uses{basic_universal_map}
+  \lean{breen_deligne.basic_universal_map.proj_aux}
+  \leanok
+  Let $N$ be a natural number, and $i < N$.
+  Then $\pi'_{N,i}$ denotes the basic universal map
+  from exponent $N$ to $1$
+  \[
+   \begin{pmatrix} 
+    0 \\
+    0 \\
+    \vdots \\
+    1 \\
+    \vdots \\
+    0
+   \end{pmatrix} 
+   =
+   (a_0, a_1, \ldots, a_{N-1})^t
   \]
+  where $a_j = \delta_{ij}$.
+\end{definition}
+
+\begin{definition}
+  \label{proj}
+  \uses{proj_aux}
+  \lean{breen_deligne.universal_map.proj}
+  \leanok
+  Let $N$ and~$n$ be natural numbers.
+  Then $\pi^N_n$ denotes the universal map from exponent $N \cdot n$ to $n$
+  given by $\sum_{i < N} [\pi'_{N,i} \otimes n]$.
+
+  (On $\Z[A^{N \cdot n}] \to \Z[A^n]$ this map is
+  the formal sum of the maps $\Z[A^{N \cdot n}] \to \Z[A^n]$
+  induced by the projection maps $A^{N \cdot n} = (A^n)^N \to A^n$.)
+\end{definition}
+
+\begin{definition}
+  \label{sum}
+  \uses{proj_aux}
+  \lean{breen_deligne.universal_map.sum}
+  \leanok
+  Let $N$ and~$n$ be natural numbers.
+  Then $\sigma^N_n$ denotes the universal map from exponent $N \cdot n$ to $n$
+  given by $[\sum_{i < N} \pi'_{N,i} \otimes n]$.
+
+  (On $\Z[A^{N \cdot n}] \to \Z[A^n]$ this map is
+  induced by the summation map $A^{N \cdot n} = (A^n)^N \to A^n$.)
 \end{definition}
 
 \begin{definition}
   \label{BD_data}
   \lean{breen_deligne.data}
   \leanok
-  \uses{sigma_add, sigma_proj}
-  A tuple $(n, f)$ of \emph{Breen--Deligne data}
+  \uses{FreeMat}
+  A \emph{Breen--Deligne data} is a chain complex in $\FreeMat$.
+
+  Concretely, this means that it
   consists of a sequence of exponents $n_0, n_1, n_2, \dots \in \mathbb N$,
-  and universal maps $f_i$ from exponent $n_{i+1}$ to $n_i$.
+  and universal maps $f_i$ from exponent $n_{i+1}$ to $n_i$,
+  such that for all $i$ we have $f_i \circ f_{i+1} = 0$.
 
-  Such a tuples is a \emph{complex} if for all $i$ we have $f_i \circ f_{i+1} = 0$.
-
-  A \emph{universal morphism} of Breen--Deligne data (or complexes) $(m,f)\to (n,g)$ is a collection of universal maps $\phi_i$ from exponent $m_i$ to $n_i$ such that $g_i\circ \phi_{i+1}=\phi_i\circ f_i$ as universal maps from exponent $m_{i+1}$ to $n_i$ (i.e., the squares commute). 
+  A morphism of Breen--Deligne data is a morphism of chain complexes.
 \end{definition}
 
 \begin{definition}
-  \label{BD_data_double}
-  \lean{breen_deligne.data.double}
+  \label{BD_mul}
+  \lean{breen_deligne.data.mul}
   \leanok
-  \uses{BD_data, BD_double}
-  If $(n, f)$ is a tuple of Breen--Deligne data,
-  then $(n, f) \oplus (n, f)$ is the tuple
-  consisting of exponents $2n_i$ and universal maps $f_i \oplus f_i$.
+  \uses{BD_data}
+  For every natural numbers $N$, the endofunctor $N \otimes \_$ on $\FreeMat$
+  induces an endofunctor of Breen--Deligne data.
+
+  Concretely, it maps a pair $(n, f)$ of Breen--Deligne data,
+  to the pair $N \otimes (n,f)$ consisting of exponents $N \cdot n_i$
+  and universal maps $N \otimes f_i$.
 \end{definition}
 
-The two universal map $\sigma_\alpha$ and~$\sigma_\pi$ explained in the examples above, can be checked to induce universal maps of complexes: $(n,f) \oplus (n,f) \to (n,f)$.
+Let $\BD$ be Breen--Deligne data.
+The universal maps $\sigma^N$ and~$\pi^N$ defined above,
+induce morphisms $\sigma^N_\BD,\pi^N_\BD \colon N \otimes \BD \to \BD$.
 
 \begin{definition}
   \label{BD_package}
-  \label{BD_homotopy}
   \lean{breen_deligne.package}
   \leanok
-  \uses{BD_data, BD_double}
-  A \emph{homotopy} for a tuple $(n, f)$ of Breen--Deligne data
-  is a homotopy between the maps of complexes
-  \[
-    \sigma_\alpha, \sigma_\pi \colon (n,f) \oplus (n,f) \to (n,f)
-  \]
-  In other words, it consists of universal maps $h_i$ from exponent $2n_i$ to $n_{i+1}$,
-  such that $f_0\circ h_0=\sigma_\alpha-\sigma_\pi$ as universal maps from exponent $2n_0$ to $n_0$, and for all $i\geq0$ we have
-  \[
-    f_{i+1} \circ h_{i+1} + h_i \circ (f_i \oplus f_i) = \sigma_\alpha - \sigma_\pi
-    \]
-    as universal maps from exponent $2n_{i+1}$ to $n_{i+1}$. Note that the first condition is morally the $i=-1$ case of the displayed equation, if we set $h_{-1}=0$.
+  \uses{BD_data, BD_mul}
+  A \emph{Breen--Deligne} package consists of Breen--Deligne data $\BD$
+  together with a homotopy $h$ between $\pi^2_\BD$ and $\sigma^2_\BD$. 
+\end{definition}
 
-  A \emph{Breen--Deligne package}
-  is a triple $(n, f, h)$,
-  such that $(n, f)$ is Breen--Deligne data that is a complex,
-  and $h$ is a homotopy for $(n,f)$.
+\begin{definition}
+  \label{BD_h_mul}
+  \uses{BD_package}
+  \lean{breen_deligne.data.homotopy_mul}
+  \leanok
+  Let $\BD$ be a Breen--Deligne package and $N$ a power of $2$.
+  Then the homotopy $h$ induces a homotopy
+  between $\pi^N_\BD$ and $\sigma^N_\BD$ by iterative composition
+  of the homotopy packaged in $\BD$.
 \end{definition}
 
 \begin{definition}
@@ -162,15 +217,15 @@ The two universal map $\sigma_\alpha$ and~$\sigma_\pi$ explained in the examples
   The exponents will be $n_i = 2^i$, and the homotopies $h_i$ will be the identity.
   Under these constraints, we recursively construct the universal maps $f_i$:
   \[
-    f_0 = \sigma_\alpha - \sigma_\pi,
+    f_0 = \pi^2_1 - \sigma^2_1,
     \quad
-    f_{i+1} = (\sigma_\alpha - \sigma_\pi) - (f_i \oplus f_i).
+    f_{i+1} = (\pi^2_{2^{i+1}} - \sigma^2_{2^{i+1}}) - (2 \otimes f_i).
   \]
   We leave it as exercise for the reader, to verify that
   with these definitions $(n, f, h)$ forms a Breen--Deligne package.
 \end{definition}
 
-We now make three definitions that will make precise
+We now make definitions that will make precise
 some conditions between constants that will be needed
 when we construct Breen--Deligne complexes of normed abelian groups.
 
@@ -187,7 +242,8 @@ when we construct Breen--Deligne complexes of normed abelian groups.
   \]
 \end{definition}
 
-To orient the reader: later on we will be considering maps on normed abelian groups induced from universal maps,
+To orient the reader:
+later on we will be considering maps on normed abelian groups induced from universal maps,
 and this inequality will guarantee that if $\|m\|\leq c_1$ then $\|f(m)\|\leq c_2$.
 
 \begin{definition}
@@ -197,25 +253,118 @@ and this inequality will guarantee that if $\|m\|\leq c_1$ then $\|f(m)\|\leq c_
   \uses{universal_map, basic_suitable}
   Let $f$ be a universal map from exponent~$m$ to~$n$.
   Let $c_1, c_2 \in \mathbb R_{\ge 0}$.
-  We say that $(c_1, c_2)$ is \emph{$f$-suitable}, if for all basic universal maps $g$
+  We say that $(c_1, c_2)$ is \emph{$f$-suitable},
+  if for all basic universal maps $g$
   that occur in the formal sum $f$,
   the pair of nonnegative reals $(c_1, c_2)$ is $g$-suitable.
 \end{definition}
 
 \begin{definition}
-  \label{BD_suitable}
-  \lean{breen_deligne.data.suitable}
+  \label{very_suitable}
+  \lean{breen_deligne.universal_map.very_suitable}
   \leanok
-  \uses{BD_package, universal_suitable}
-  Let $(n, f)$ be Breen--Deligne data,
-  and let $c = (c_0, c_1, \dots)$ be a sequence of nonnegative real numbers.
-  We say that $c$ is \emph{$(n,f,h)$-suitable},
-  if for all $i$, the pair $(c_{i+1}, c_i)$ is $f_i$-suitable.
+  \uses{universal_suitable, universal_map_bound_by}
+  Let $f$ be a universal map and let $r, r', c_1, c_2 \in \mathbb R_{\ge 0}$.
+  We say that $(c_1, c_2)$ is \emph{very suitable}
+  for $(f, r, r')$
+  if there exist $N, b \in \N$ and $c' \in \R_{\ge 0}$ such that:
+  \begin{itemize}
+    \item $f$ is bound by $N$ (see Definition~\ref{universal_map_bound_by})
+    \item $(c_1, c')$ is $f$-suitable
+    \item $r ^ b N ≤ 1$
+    \item $c' ≤ (r') ^ b c_2$
+  \end{itemize}
+\end{definition}
 
-  (Note! The order $(c_{i+1}, c_i)$ is contravariant
+\begin{definition}
+  \label{BD_suitable}
+  \label{BD_very_suitable}
+  \lean{breen_deligne.data.suitable}
+  \lean{breen_deligne.data.very_suitable}
+  \leanok
+  \uses{BD_data, very_suitable}
+  Let $\BD = (n, f)$ be Breen--Deligne data,
+  let $r, r' \in \R_{\ge 0}$,
+  and let $\kappa = (\kappa_0, \kappa_1, \dots)$ be a sequence of nonnegative real numbers.
+  We say that $\kappa$ is $\BD$-\emph{suitable}
+  (resp.\ \emph{very suitable} for $(\BD, r, r')$),
+  if for all $i$, the pair $(\kappa_{i+1}, \kappa_i)$ is $f_i$-suitable
+  (resp.\ \emph{very suitable} for $(f_i, r, r')$).
+
+  (Note! The order $(\kappa_{i+1}, \kappa_i)$ is contravariant
   compared to Definition~\ref{universal_suitable}.
   This is because of the contravariance of $\hat V(\_)$;
   see Definition~\ref{eval_CLCFPTinv}.)
 \end{definition}
 
+\begin{definition}
+  \label{adept}
+  \lean{breen_deligne.package.adept}
+  \leanok
+  \uses{BD_package, universal_suitable}
+  Let $\BD$ be a Breen--Deligne package with data $(n,f)$ and homotopy $h$.
+  Let $\kappa, \kappa'$ be sequences of nonnegative real numbers.
+  (In applications $\kappa$ is a $(n,f)$-suitable sequence.)
+
+  Then $\kappa'$ is \emph{adept} to $(\BD, \kappa)$ if
+  for all $i$ the pair $(\kappa_i / 2, \kappa'_{i+1} \kappa_{i+1})$
+  is $h_i$-suitable.
+  (Recall that $h_i$ is the homotopy map $n_i \to n_{i+1}$.)
+\end{definition}
+
+\begin{lemma}
+  \label{BD_h_mul_suitable}
+  \lean{breen_deligne.package.adept.homotopy_mul_suitable}
+  \leanok
+  \uses{adept, BD_h_mul}
+  Let $\BD$ be a Breen--Deligne package, $N$ a power of $2$, and
+  let $\kappa, \kappa'$ be sequences of nonnegative real numbers.
+  Assume that $\kappa'$ is adept to $(\BD, \kappa)$.
+  Let $h^N$ be the homotopy between $\pi^N_\BD$ and $\sigma^N_\BD$
+  defined in Def~\ref{BD_h_mul}.
+
+  For all $i$, the pair $(\kappa_i / N, \kappa'_{i+1} \kappa_{i+1})$
+  is $h^N_i$-suitable.
+\end{lemma}
+
+\begin{lemma}
+  \label{exists_very_suitable}
+  \lean{breen_deligne.data.c_very_suitable}
+  \leanok
+  \uses{BD_very_suitable}
+  Let $\BD$ be a Breen--Deligne package, and
+  let $r, r'$ be nonnegative reals, such that $r < 1$ and $r' > 0$.
+
+  There exists a sequence $\kappa$ of positive real numbers
+  such that $\kappa$ is very suitable for $(\BD, r, r')$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  The sequence can be constructed recursively,
+  which we leave as exercise for the reader.
+  (It has been done in Lean.)
+\end{proof}
+
+\begin{lemma}
+  \label{exists_adept}
+  \lean{breen_deligne.package.c'_adept}
+  \leanok
+  \uses{BD_very_suitable, adept}
+  Let $\BD$ be a Breen--Deligne package, and
+  let $r, r'$ be nonnegative reals, such that $0 < r < 1$ and $0 < r' \le 1$.
+  Let $\kappa$ be any sequence of positive reals.
+
+  There exists a sequence $\kappa'$ of nonnegative real numbers
+  $\kappa'$ is adept to $(\BD, \kappa)$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  The sequence can be constructed recursively,
+  which we leave as exercise for the reader.
+  (It has been done in Lean.)
+\end{proof}
+
 % vim: ts=2 et sw=2 sts=2
+

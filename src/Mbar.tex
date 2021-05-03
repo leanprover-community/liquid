@@ -1,62 +1,5 @@
 \section{Spaces of convergent power series}
 
-\begin{definition}
-  \label{pseudo_normed_group}
-  \lean{pseudo_normed_group,profinitely_filtered_pseudo_normed_group,
-  profinitely_filtered_pseudo_normed_group_hom}
-  \leanok
-  A \emph{pseudo-normed group} is an abelian group $(M,+)$,
-  together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$,
-  such that each $M_c$ contains $0$, is closed under negation,
-  and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$. An example would be $M=\mathbb{R}$ or $M=\mathbb{Q}_p$ with $M_c :=\{x\,:\,|x|\leq c\}$.
-
-  A pseudo-normed group~$M$ is \emph{profinitely filtered}
-  if each of the sets $M_c$ is endowed with a topological space structure
-  making it a profinite set, such that following maps are all continuous:
-  \begin{itemize}
-    \item the inclusion $M_{c_1} \to M_{c_2}$ (for $c_1 \le c_2$);
-    \item the negation $M_c \to M_c$;
-    \item the addition $M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}$.
-  \end{itemize}
-
-  
-  A \emph{morphism} of profinitely filtered pseudo-normed groups $M \to N$
-  is a group homomorphism $f$ that is
-  \begin{itemize}
-    \item \emph{bounded}:
-      there is a constant $C$
-      such that $x \in M_c$ implies $f(x) \in N_{Cc}$;
-    \item \emph{continuous}:
-      for one (or equivalently all) constants $C$ as above,
-      the induced map $M_c \to N_{Cc}$ is
-      a morphism of profinite sets, i.e. continuous.
-  \end{itemize}
-
-  The reason the two definitions are equivalent is that a continuous injection between profinite sets must be a topological embedding.
-\end{definition}
-
-\begin{definition}
-  \label{profinitely_filtered_pseudo_normed_group_with_Tinv}
-  \lean{profinitely_filtered_pseudo_normed_group_with_Tinv,
-  profinitely_filtered_pseudo_normed_group_with_Tinv_hom}
-  \leanok
-  \uses{profinitely_filtered_pseudo_normed_group}
-  Let $r'$ be a positive real number.
-  A profinitely filtered pseudo-normed group $M$
-  has an \emph{$r'$-action of $T^{-1}$}
-  if it comes endowed with a distinguished morphism
-  of profinitely filtered pseudo-normed groups
-  $T^{-1} \colon M \to M$
-  that is bounded by $r'^{-1}$:
-  if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$.
-
-  A morphism $M \to N$
-  of profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$
-  is a morphism of profinitely filtered pseudo-normed groups $f$
-  that commutes with the action of $T^{-1}$
-  and is \emph{strict}: if $x \in M_c$ then $f(x) \in N_c$.
-\end{definition}
-
 We will now construct the central example of
 profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
 
@@ -136,27 +79,6 @@ and let $S$ be a finite set.
 \begin{proof}
   \leanok
   Formalised, but omitted from this text.
-\end{proof}
-
-\begin{lemma}
-  \label{basic_eval_FP}
-  \lean{breen_deligne.basic_universal_map.eval_FP}
-  \leanok
-  \uses{profinitely_filtered_pseudo_normed_group_with_Tinv,
-    basic_universal_map}
-  Let $f$ be a basic universal map from exponent~$m$ to~$n$.
-  We get an induced homomorphism of
-  profinitely filtered pseudo-normed groups
-  \[
-    \overline{\mathcal M}_{r'}(S)^m \to \overline{\mathcal M}_{r'}(S)^n
-  \]
-  bounded by the maximum (over all $i$) of $\sum_j |f_{ij}|$,
-  where the $f_{ij}$ are the coefficients of the $n \times m$-matrix representing~$f$.
-\end{lemma}
-
-\begin{proof}
-  \leanok
-  Omitted.
 \end{proof}
 
 % vim: ts=2 et sw=2 sts=2
