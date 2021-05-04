@@ -4,7 +4,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
@@ -96,6 +96,7 @@
     Lemma
     </span>
     <span class="lemma_thmlabel">8.2</span>
+    ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0005.html#lem:controlled_exactness">#</a>
     <a class="icon proof" href="sect0005.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
@@ -109,7 +110,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/423b9accf51e0721814b1b97789e1065e8389e07/src/normed_group/controlled_exactness.lean#L19">controlled_exactness</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/normed_group/controlled_exactness.lean#L19">controlled_exactness</a></li>
         </ul>
 
       </div>
@@ -134,8 +135,7 @@
     <span class="proof_caption">
     Proof
     </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
+    <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p>First, we claim that \(\ker (g : M_1\to M_2)\) is dense in \(\ker (\widehat{g} : \widehat{M}_1\to \widehat{M}_2)\). Pick any \(\delta {\gt} 0\) and take \(y\in M_1\) such that \(‖\widehat{y}-y‖\leq \delta \). Let \(z=g(y)\in M_2\), which has norm \(‖z‖=‖g(y)‖=‖g(y-\widehat{y})‖\) bounded by \(C_{g}\delta \), where \(C_{g}\) is the norm of \(g\). We can thus find some \(y’\in M_1\) with \(‖y’‖\leq DC_{g}\delta \) and \(g(y’)=z\). Replacing \(y\) by \(y-y’\), we can thus find \(y\in \ker (g: M_1\to M_2)\) such that still \(‖\widehat{y}-y‖\leq (1+DC_{g})\delta \); as \(\delta \) was arbitrary, this gives the desired density. </p>
@@ -152,8 +152,7 @@
     <span class="proof_caption">
     Proof of Proposition&#160;<a href="sect0005.html#prop:completeexact">8.1</a>
     </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
+    <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p>   The complex equations \(\widehat d_1 ∘ \widehat d_0 = 0\) and \(\widehat d_2 ∘ \widehat d_1 = 0\) follow from \(d_1 ∘ d_0 = 0\) and \(d_2 ∘ d_1 = 0\) by extension of identities. </p>
@@ -203,8 +202,7 @@
     <span class="proof_caption">
     Proof
     </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
+    <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p>Note that in the supremum norm any continuous function from \(S\) to \(\widehat{M}_{\mathrm{top}}\) can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from \(S\) to \(\widehat{M}_{\mathrm{top}}\) is complete with respect to the supremum norm. That \(‖\cdot ‖\) defines a map of condensed sets \(\widehat{M}\to \mathbb R_{\geq 0}\) follows for example from this identification with \(\underline{\widehat{M}_{\mathrm{top}}}\), as the norm is by definition a continuous map \(\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}\). </p>
@@ -253,8 +251,7 @@
     <span class="proof_caption">
     Proof
     </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
+    <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p> Follow the proof of <span class="cite">
@@ -311,8 +308,7 @@
     <span class="proof_caption">
     Proof
     </span>
-    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
-
+    <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p>Given \(f: M_{\leq r'c}^a\to \widehat{V}\), choose an extension to a map \(\widetilde{f}: M^a\to \widehat{V}\) with \(‖\widetilde{f}‖\leq (1+\epsilon )‖f‖\). Such an extension exists: By induction (and using a sequence of \(\epsilon _n\)’s with \(\prod _n (1+\epsilon _n)\leq 1+\epsilon \)), it suffices to see that for any closed immersion \(A\subset B\) of profinite sets and a map \(f_A: A\to \widehat{V}\), there is an extension \(f_B: B\to \widehat{V}\) of \(f_A\) with \(‖f_B‖\leq (1+\epsilon )‖f_A‖\). To see this, write \(f_A\) as a (fast) convergent sum of maps that factor over a finite quotient of \(A\); for maps factoring over a finite quotient of \(A\), the extension is clear (and can be done in a norm-preserving way), as any map from \(A\) to a finite set can be extended to a map from \(B\) to the same finite set. </p>
