@@ -69,7 +69,7 @@
 
 <div class="main-text">
 <h1 id="a0000000003">3 Spaces of convergent power series</h1>
-<p>We will now construct the central example of profinitely filtered pseudo-normed groups with \(r’\)-action of \(T^{-1}\). </p>
+<p>We will now construct the central example of profinitely filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\). </p>
 <p><div class="definition_thmwrapper" id="Mbar">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -103,9 +103,9 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/Mbar/basic.lean#L52">Mbar</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/Mbar/Mbar_le.lean#L28">Mbar_le</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/Mbar/basic.lean#L257">Mbar.pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f6f910dc442da59486b6adadcc81efd1942afbf7/src/Mbar/basic.lean#L52">Mbar</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f6f910dc442da59486b6adadcc81efd1942afbf7/src/Mbar/Mbar_le.lean#L28">Mbar_le</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f6f910dc442da59486b6adadcc81efd1942afbf7/src/Mbar/basic.lean#L257">Mbar.pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -114,13 +114,13 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let \(r’ {\gt} 0\) be a real number, and let \(S\) be a finite set. Denote by \(\overline{\mathcal M}_{r'}(S)\) the set </p>
+  <p>   Let \(r' {\gt} 0\) be a real number, and let \(S\) be a finite set. Denote by \(\overline{\mathcal M}_{r'}(S)\) the set </p>
 <div class="displaymath" id="a0000000019">
-  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \in T\mathbf{Z}[[T]]\right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n {\lt} \infty \right\} .  \]
+  \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \in T\mathbf{Z}[[T]]\right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r')^n {\lt} \infty \right\} .  \]
 </div>
 <p>Note that \(\overline{\mathcal M}_{r'}(S)\) is naturally a pseudo-normed group with filtration given by </p>
 <div class="displaymath" id="a0000000020">
-  \[  \overline{\mathcal M}_{r'}(S)_{\le c} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| (r’)^n \le c \right\} .  \]
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| (r')^n \le c \right\} .  \]
 </div>
 
   </div>
@@ -160,7 +160,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/Mbar/Mbar_le.lean#L576">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f6f910dc442da59486b6adadcc81efd1942afbf7/src/Mbar/Mbar_le.lean#L576">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -169,9 +169,9 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let \(r’ {\gt} 0\) and \(c \ge 0\) be real numbers, and let \(S\) be a finite set. The space \(\overline{\mathcal M}_{r'}(S)_{\le c}\) is the profinite limit of the finite sets </p>
+  <p>   Let \(r' {\gt} 0\) and \(c \ge 0\) be real numbers, and let \(S\) be a finite set. The space \(\overline{\mathcal M}_{r'}(S)_{\le c}\) is the profinite limit of the finite sets </p>
 <div class="displaymath" id="a0000000022">
-  \[  \overline{\mathcal M}_{r'}(S)_{\le c, \le N} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{1 \le n \le N, s \in S} |a_{n,s}| (r’)^n \le c \right\}   \]
+  \[  \overline{\mathcal M}_{r'}(S)_{\le c, \le N} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{1 \le n \le N, s \in S} |a_{n,s}| (r')^n \le c \right\}   \]
 </div>
 <p> This endows \(\overline{\mathcal M}_{r'}(S)_{\le c}\) with the profinite topology. In particular, it is a profinitely filtered pseudo-normed group. </p>
 
@@ -189,7 +189,7 @@
 
   </div>
 </div>
-<p>For the remainder of this section, let \(r’ {\gt} 0, c \ge 0\) be real numbers, and let \(S\) be a finite set. </p>
+<p>For the remainder of this section, let \(r' {\gt} 0, c \ge 0\) be real numbers, and let \(S\) be a finite set. </p>
 <p><div class="definition_thmwrapper" id="Mbar_Tinv">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -223,7 +223,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/Mbar/basic.lean#L335">Mbar.Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f6f910dc442da59486b6adadcc81efd1942afbf7/src/Mbar/basic.lean#L335">Mbar.Tinv</a></li>
         </ul>
 
       </div>
@@ -275,7 +275,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7b9292bb9a1816d135a3953be06acb6e31340827/src/Mbar/pseudo_normed_group.lean#L21">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f6f910dc442da59486b6adadcc81efd1942afbf7/src/Mbar/pseudo_normed_group.lean#L21">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
         </ul>
 
       </div>
@@ -288,7 +288,7 @@
 <div class="displaymath" id="a0000000025">
   \[  T^{-1} \cdot \_  \colon \overline{\mathcal M}_r(S)_{\le c} \to \overline{\mathcal M}_r(S)_{\le c/r'}.  \]
 </div>
-<p> In particular, \(\overline{\mathcal M}_{r'}(S)\) has an \(r’\)-action of \(T^{-1}\). </p>
+<p> In particular, \(\overline{\mathcal M}_{r'}(S)\) has an \(r'\)-action of \(T^{-1}\). </p>
 
   </div>
 </div> </p>
