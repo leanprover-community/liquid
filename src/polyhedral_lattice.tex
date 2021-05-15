@@ -4,10 +4,18 @@
 \begin{definition}
   \label{polyhedral_lattice}
   \lean{polyhedral_lattice}
+  \leanok
   A \emph{polyhedral lattice} is a finite free abelian group~$\Lambda$
   equipped with a norm $‖\cdot‖_\Lambda \colon \Lambda\otimes \mathbb R\to \mathbb R$
-  (so $\Lambda\otimes \mathbb R$ is a Banach space)
-  that is given by the supremum of finitely many linear functions on $\Lambda$;
+  such that there exists a finite set $\{\lambda_1, \dots, \lambda_n\} \subset \Lambda$
+  that generate the norm:
+  that is to say, for every $\lambda \in \Lambda$ there exist
+  $c_1, \dots, c_n \in \mathbb Q$ such that
+  $\lambda = \sum c_i \lambda_i$ and $\|\lambda\| = c_i\|\lambda_i\|$.
+
+  Equivalently (but not verified in Lean):
+  the norm is given by the supremum of finitely many linear functions on $\Lambda$;
+  or once more,
   equivalently, the ``unit ball''
   $\{\lambda\in \Lambda\otimes \mathbb R\mid ‖\lambda‖_\Lambda\leq 1\}$ is a polyhedron.
 \end{definition}
