@@ -76,6 +76,7 @@
     Definition
     </span>
     <span class="definition_thmlabel">6.1</span>
+    ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#polyhedral_lattice">#</a>
     <button class="modal lean">L∃∀N</button>
@@ -87,7 +88,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/polyhedral_lattice/basic.lean#L56">polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/polyhedral_lattice/basic.lean#L56">polyhedral_lattice</a></li>
         </ul>
 
       </div>
@@ -96,7 +97,8 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  A <em>polyhedral lattice</em> is a finite free abelian group&#160;\(\Lambda \) equipped with a norm \(‖\cdot ‖_\Lambda \colon \Lambda \otimes \mathbb R\to \mathbb R\) (so \(\Lambda \otimes \mathbb R\) is a Banach space) that is given by the supremum of finitely many linear functions on \(\Lambda \); equivalently, the “unit ball” \(\{ \lambda \in \Lambda \otimes \mathbb R\mid ‖\lambda ‖_\Lambda \leq 1\} \) is a polyhedron. </p>
+  <p>  A <em>polyhedral lattice</em> is a finite free abelian group&#160;\(\Lambda \) equipped with a norm \(‖\cdot ‖_\Lambda \colon \Lambda \otimes \mathbb R\to \mathbb R\) such that there exists a finite set \(\{ \lambda _1, \dots , \lambda _n\}  \subset \Lambda \) that generate the norm: that is to say, for every \(\lambda \in \Lambda \) there exist \(c_1, \dots , c_n \in \mathbb Q\) such that \(\lambda = \sum c_i \lambda _i\) and \(\| \lambda \|  = c_i\| \lambda _i\| \). </p>
+<p>Equivalently (but not verified in Lean): the norm is given by the supremum of finitely many linear functions on \(\Lambda \); or once more, equivalently, the “unit ball” \(\{ \lambda \in \Lambda \otimes \mathbb R\mid ‖\lambda ‖_\Lambda \leq 1\} \) is a polyhedron. </p>
 
   </div>
 </div> </p>
@@ -136,7 +138,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/combinatorial_lemma.lean#L354">lem98</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/combinatorial_lemma.lean#L354">lem98</a></li>
         </ul>
 
       </div>
@@ -175,7 +177,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/for_mathlib/Gordan.lean#L750">explicit_gordan</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/for_mathlib/Gordan.lean#L750">explicit_gordan</a></li>
         </ul>
 
       </div>
@@ -220,7 +222,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/lem97.lean#L208">lem97</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/lem97.lean#L208">lem97</a></li>
         </ul>
 
       </div>
@@ -314,7 +316,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/combinatorial_lemma.lean#L203">lem98_int</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/combinatorial_lemma.lean#L203">lem98_int</a></li>
         </ul>
 
       </div>
@@ -405,7 +407,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/polyhedral_lattice/finsupp.lean#L74">finsupp.polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/polyhedral_lattice/finsupp.lean#L74">finsupp.polyhedral_lattice</a></li>
         </ul>
 
       </div>
@@ -457,7 +459,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/polyhedral_lattice/cech.lean#L194">polyhedral_lattice.conerve.obj.polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/polyhedral_lattice/cech.lean#L197">polyhedral_lattice.conerve.obj.polyhedral_lattice</a></li>
         </ul>
 
       </div>
@@ -515,7 +517,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/polyhedral_lattice/cosimplicial.lean#L83">PolyhedralLattice.cosimplicial</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/polyhedral_lattice/cosimplicial.lean#L83">PolyhedralLattice.cosimplicial</a></li>
         </ul>
 
       </div>
@@ -563,7 +565,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/7dfa8f075ff7bc2fdfcbe89ea9a8da6f3eaa2219/src/polyhedral_lattice/pseudo_normed_group.lean#L197">polyhedral_lattice.add_monoid_hom.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/1e4f80ea76d3dd82e9f5deecde31f248b96b4300/src/polyhedral_lattice/pseudo_normed_group.lean#L197">polyhedral_lattice.add_monoid_hom.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
         </ul>
 
       </div>
