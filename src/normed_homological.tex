@@ -12,6 +12,7 @@ they are surjective).
   a positive real number.
   A morphism $f : G → H$ is $C$-surjective onto $K$ if, for all $x$ in $K$,
   there exists some $g$ in $G$ such that $f(g) = x$ and $\|g\| ≤ C\|x\|$.
+  If $K = H$ we simply say $f$ is $C$-surjective.
 \end{definition}
 
 The following controlled surjectivity lemma will be used to prove
@@ -82,8 +83,11 @@ the heart of the statement is the following lemma.
 \end{lemma}
 
 \begin{proof}\leanok
-  This follows directly from Lemma~\ref{lem:closure_surjective} once
-  we'll have proven that $\ker g$ is dense in $\ker \widehat{g}$.
+  Since $f$ is $C$-surjective onto $\ker g$, $\widehat{f}$ is $C$-surjective
+  onto $\ker g$ seen as a subset of $\widehat{M_1}$. Hence this lemma will
+  follow directly from Lemma~\ref{lem:closure_surjective}
+  once we'll have proven that $\ker g$ is dense in $\ker \widehat{g}$.
+  Let $\widehat y$ be an element of $\ker \widehat{g}$.
   Pick any $\delta > 0$ and take $y\in M_1$ such that
   $‖\widehat{y}-y‖\leq \delta$. Let $z=g(y)\in M_2$, which has norm
   $‖z‖=‖g(y)‖=‖g(y-\widehat{y})‖$ bounded by
