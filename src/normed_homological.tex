@@ -1,22 +1,67 @@
 \section{Some normed homological algebra}%
 \label{sec:some_normed_homological_algebra}
 
+It will be convenient to use the following definition genearalizing the notion
+of a bound on the norm of a right inverse of a normed group morphism (note that
+the morphisms we consider have no reason to have a right inverse, even when
+they are surjective).
+
+\begin{definition}
+  \label{def:surjective_with_bound}
+  Let $G$ and $H$ be semi-normed groups, let $K$ be a subgroup of $H$ and $C$ be
+  a positive real number.
+  A morphism $f : G → H$ is $C$-surjective onto $K$ if, for all $x$ in $K$,
+  there exists some $g$ in $G$ such that $f(g) = x$ and $\|g\| ≤ C\|x\|$.
+\end{definition}
+
+The following controlled surjectivity lemma will be used to prove
+Proposition~\ref{prop:completeexact} and Lemma~\ref{lem:Tinv}.
+
+\begin{lemma}
+  \label{lem:closure_surjective}
+  \uses{def:surjective_with_bound}
+  \lean{controlled_closure_of_complete}\leanok
+  Let $G$ and $H$ be normed groups. Let $K$ be a subgroup of
+  $H$ and $f$ a morphism from $G$ to $H$.  Assume that $G$ is complete and
+  $f$ is $C$-surjective onto $K$. Then $f$ is $(C + ε)$-surjective onto
+  the topological closure of $K$ for every positive $ε$.
+\end{lemma}
+
+\begin{proof}\leanok
+  Let $x$ be any element of the closure of $K$.
+  First note the conclusion is trivial when $x = 0$, so we can assume
+  $x ≠ 0$. Then write $x$ as a sum
+  $\sum_{i \ge 0} x_i$ with all $x_i \in K$, $\|x - x_0\| ≤ ε_0$ and
+  $‖x_i‖\leq \epsilon_i$ for $i>0$ for some sequence of positive numbers
+  $\epsilon_i$ to be chosen later.
+  By assumption, we can then lift each $x_i$ to $g_i$ such that
+  $f(g_i) = x_i$ and $‖g_i‖\leq C‖x_i‖$, and then set
+  $g = \sum g_i$. Because $G$ is complete,
+  this sum converges provided the $ε_i$ sequence converges fast enough to zero.
+  We then have $f(g) = x$ and
+  \[
+    ‖g‖ ≤ C\sum_{i \geq 0} ‖x_i‖ ≤
+    C(\|x\| + ε_0) + C\sum_{i>0} ε_i ≤
+    (C + ε)‖x‖
+  \]
+  where the last inequality holds provided the $ε_i$ sequence converges fast
+  enough to zero. For instance $ε_i = ε∥x∥/(2^{i+1}C)$ satisfies all
+  our constraints on the $ε_i$ sequence (in particular they are positive
+  because $x ≠ 0$).
+\end{proof}
+
 We often use the following quantitative exactness property:
 
 \begin{proposition}\label{prop:completeexact}
 Let $M_0\xrightarrow{d_0} M_1\xrightarrow{d_1} M_2\xrightarrow{d_2} M_3$ be a
 four-term complex of bounded maps of normed abelian groups. Assume that, for
-some positive constants $C$ and $D$, for all $y\in \ker(d_1: M_1\to M_2)$ there
-is some $x\in M_0$ with $d_0(x)=y$ and $‖x‖\leq C‖y‖$, and similarly for all
-$z\in \ker(d_2: M_2\to M_3)$, there is some $y\in M_1$ with $d_1(y)=z$ and
-$‖y‖\leq D‖z‖$.
+some positive constants $C$ and $D$, $d_0$ is $C$-surjective onto $\ker d_1$
+and $d_1$ is $D$-surjective onto $\ker d_2$.
 
 Then
 $\widehat{M}_0\xrightarrow{\widehat{d}_0} \widehat{M}_1\xrightarrow{\widehat{d}_1} \widehat{M}_2\xrightarrow{\widehat{d}_2} \widehat{M}_3$
-is a complex, and for all $\widehat{y}\in \ker \widehat{d}_1$ and all $\epsilon>0$
-there is some $\widehat{x}\in \widehat{M}_0$ with
-$\widehat{d}_1(\widehat{x})=\widehat{y}$ and
-$‖\widehat{x}‖\leq (C+\epsilon)‖\widehat{y}‖$.
+is a complex and, for every positive $ε$, $\widehat{d}_0$ is $(C + ε)$-surjective
+onto $\ker \widehat{d}_1$.
 \end{proposition}
 
 While the above statement in terms of complexes is what we will use,
@@ -28,20 +73,17 @@ the heart of the statement is the following lemma.
   Assume there are positive constants $C$ and $D$ such that:
   \begin{itemize}
     \item
-      for every $m$ in $\ker g$, there exists $m' ∈ M_0$ such that
-      $f(m') = m$ and $\|m'\| ≤ C\|m\|$.
+      $f$ is $C$-surjective onto $\ker g$.
     \item
-      for every $x$ in the image of $g$, there exists $y ∈ M_1$ such that
-      $g(y) = x$ and $\|y\| ≤ D\|x\|$.
+      $g$ is $D$-surjective onto its image.
   \end{itemize}
-  Then for every $\hat m$ in $\ker \hat g$ and every positive $ε$,
-  there is some $\hat m'$ in $\hat M_1$ such that
-  $\hat f(\hat m') = \hat m$ and $\|\hat m'\| ≤ (C + ε)\|\hat m\|$.
+  Then for every positive $ε$, $\widehat{f}$ is $(C + ε)$-surjective onto
+  $\ker \widehat{g}$.
 \end{lemma}
 
 \begin{proof}\leanok
-  First, we claim that $\ker(g : M_1\to M_2)$ is dense in
-  $\ker(\widehat{g} : \widehat{M}_1\to \widehat{M}_2)$.
+  This follows directly from Lemma~\ref{lem:closure_surjective} once
+  we'll have proven that $\ker g$ is dense in $\ker \widehat{g}$.
   Pick any $\delta > 0$ and take $y\in M_1$ such that
   $‖\widehat{y}-y‖\leq \delta$. Let $z=g(y)\in M_2$, which has norm
   $‖z‖=‖g(y)‖=‖g(y-\widehat{y})‖$ bounded by
@@ -50,25 +92,6 @@ the heart of the statement is the following lemma.
   $y-y'$, we can thus find $y\in \ker(g: M_1\to M_2)$ such that still
   $‖\widehat{y}-y‖\leq (1+DC_{g})\delta$; as $\delta$ was arbitrary, this
   gives the desired density.
-
-  We now build the announced preimage for any $\hat m$ in $\ker \hat g$.
-  First note the conclusion is trivial when $\hat m = 0$, so we can assume
-  $\hat m ≠ 0$.
-  Using the density result proven above, one can write $\widehat{m}$ as a sum
-  $\sum_{i \ge 0} m_i$ with all $m_i\in \ker(g)$, $\|\hat m - m_0\| ≤ ε_0$ and
-  $‖m_i‖\leq \epsilon_i$ for $i>0$ for any given sequence of positive numbers
-  $\epsilon_i$. We can then lift each $m_i$ to $m'_i$ such that
-  $f(m'_i) = m_i$ and $‖m'_i‖\leq C‖m_i‖$, and then set
-  $\widehat{m}'=\sum m'_i$. Because $\widehat{M}_0$ is complete,
-  this sum converges provided the $ε_i$ sequence converges fast enough to zero.
-  We then have $\hat f(\widehat{m}') = \widehat{m}$ and
-  \[
-    ‖\widehat{m}'‖ ≤ C\sum_{i \geq 0} ‖m'_i‖ ≤
-    C(\|\hat m\| + ε_0) + C\sum_{i>0} ε_i ≤
-    (C+\epsilon)‖\widehat{m}‖
-  \]
-  where the last inequality holds provided the $ε_i$ sequence converges fast
-  enough to zero (this is where we use that $\widehat{m} ≠ 0$).
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:completeexact}]
