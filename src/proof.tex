@@ -256,7 +256,7 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 
 \begin{proof}[Proof of Theorem~\ref{explicit}]
   \proves{explicit}
-  \uses{spectral,combi,hypercover-exact, double-complex-htpy, lem:Tinv,
+  \uses{spectral,combi,cechcover-exact, double-complex-htpy, lem:Tinv,
     canonical_iso_2}
 
 By induction, the first condition of Proposition~\ref{spectral} is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda$ but not $V$ or $S$). By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
@@ -271,7 +271,7 @@ and
 \[
 \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
 \]
-and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial hypercover of profinite sets, so the constants are bounded by Proposition~\ref{hypercover-exact},
+and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial cechcover of profinite sets, so the constants are bounded by Proposition~\ref{cechcover-exact},
 	Lemma~\ref{lem:Tinv},
 	and Proposition~\ref{snakelemma}
 	(plus probably some other results of which we need to work out the details).
@@ -307,18 +307,24 @@ Note that in the supremum norm any continuous function from $S$ to $\widehat{M}_
 \end{proof}
 
 \begin{proposition}
-  \label{hypercover-exact}
+  \label{cechcover-exact}
   \uses{CLC}
-For any hypercover $S_\bullet\to S$ of a profinite set $S$ by profinite sets $S_i$, the complex
-\[
-0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
-\]
-is exact, and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $‖f‖\leq c$, then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
+  \lean{prop819}
+  \leanok
+  Let $S' \to S$ be a surjective morphism of profinite sets,
+  and let $S_\bullet\to S$ be its Cech nerve.
+  Then the complex
+  \[
+    0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
+  \]
+  is exact,
+  and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $‖f‖\leq c$,
+  then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
 \end{proposition}
 
 \begin{proof}
   \uses{prop:completeexact}
-Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the hypercover splits, so a contracting homotopy gives the result with constant $1$. In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
+Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the cechcover splits, so a contracting homotopy gives the result with constant $1$. In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
 \end{proof}
 
 
