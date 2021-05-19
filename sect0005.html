@@ -78,7 +78,7 @@
     <span class="proposition_thmlabel">8.1</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0005.html#prop:normedcompletion">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000120"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000123"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -100,13 +100,13 @@
   </div>
   <div class="proposition_thmcontent">
   <p>  The condensed abelian group \(\widehat{M}\) is canonically identified with the condensed abelian group associated to the topological abelian group \(\widehat{M}_{\mathrm{top}}\) given by the completion of \(M\) equipped with the topology induced by the norm. The norm defines a natural map of condensed sets </p>
-<div class="displaymath" id="a0000000121">
+<div class="displaymath" id="a0000000124">
   \[  ‖\cdot ‖: \widehat{M}\to \mathbb R_{\geq 0}.  \]
 </div>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000120">
+<div class="proof_wrapper" id="a0000000123">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -118,15 +118,15 @@
 
   </div>
 </div>
-<p><div class="proposition_thmwrapper" id="hypercover-exact">
+<p><div class="proposition_thmwrapper" id="cechcover-exact">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
     <span class="proposition_thmlabel">8.2</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#hypercover-exact">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000122"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#cechcover-exact">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -143,19 +143,33 @@
 
       </div>
     </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/d11c221994182e2a60d538a01255b3914fb16674/src/prop819.lean#L24">prop819</a></li>
+        </ul>
+
+      </div>
+    </div>
 
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>  For any hypercover \(S_\bullet \to S\) of a profinite set \(S\) by profinite sets \(S_i\), the complex </p>
-<div class="displaymath" id="a0000000123">
+  <p>   Let \(S' \to S\) be a surjective morphism of profinite sets, and let \(S_\bullet \to S\) be its Cech nerve. Then the complex </p>
+<div class="displaymath" id="a0000000126">
   \[  0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots  \]
 </div>
 <p> is exact, and whenever \(f\in \ker (\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))\) with \(‖f‖\leq c\), then for any \(\epsilon {\gt}0\) there is some \(g\in \widehat{M}(S_{m-1})\) with \(‖g‖\leq (1+\epsilon )c\) such that \(d(g)=f\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000122">
+<div class="proof_wrapper" id="a0000000125">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -169,63 +183,7 @@
 	, 
 	Theorem 3.3
 	]
-</span>: When \(S\) and all \(S_i\) are finite, the hypercover splits, so a contracting homotopy gives the result with constant \(1\). In general, write the hypercover as a cofiltered limit of hypercovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition&#160;<a href="sec-some_normed_homological_algebra.html#prop:completeexact">4.1</a>. </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="lem:Tinv">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">8.3</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#lem:Tinv">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000124"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sec-normed_groups.html#profinitely_filtered_pseudo_normed_group_with_Tinv">Definition 2.4</a></li>
-          <li><a href="sect0003.html#CLC">Definition 5.1</a></li>
-          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 2.2</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  Let \(M\) be a profinitely filtered pseudo-normed group with action of \(T^{-1}\). For any \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module \(V\), any \(c{\gt}0\) and any \(a\), the map </p>
-<div class="displaymath" id="a0000000125">
-  \[  \widehat{V}(M_{\leq c}^a)\xrightarrow {T^{-1}-[T^{-1}]^\ast } \widehat{V}(M_{\leq r'c}^a)  \]
-</div>
-<p> is surjective, has norm bounded by \(r^{-1}+1\), and for any \(f\in \widehat{V}(M_{\leq r'c}^a)\) and \(\epsilon {\gt}0\) there is some \(g\in \widehat{V}(M_{\leq c}^a)\) with \(f(x)=T^{-1}g(x)-g(T^{-1}x)\) and \(‖g‖\leq \frac{r}{1-r}(1+\epsilon ) ‖f‖\). </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000124">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>Given \(f: M_{\leq r'c}^a\to \widehat{V}\), choose an extension to a map \(\widetilde{f}: M^a\to \widehat{V}\) with \(‖\widetilde{f}‖\leq (1+\epsilon )‖f‖\). Such an extension exists: By induction (and using a sequence of \(\epsilon _n\)’s with \(\prod _n (1+\epsilon _n)\leq 1+\epsilon \)), it suffices to see that for any closed immersion \(A\subset B\) of profinite sets and a map \(f_A: A\to \widehat{V}\), there is an extension \(f_B: B\to \widehat{V}\) of \(f_A\) with \(‖f_B‖\leq (1+\epsilon )‖f_A‖\). To see this, write \(f_A\) as a (fast) convergent sum of maps that factor over a finite quotient of \(A\); for maps factoring over a finite quotient of \(A\), the extension is clear (and can be done in a norm-preserving way), as any map from \(A\) to a finite set can be extended to a map from \(B\) to the same finite set. </p>
-<p>Given \(\widetilde{f}\), we can now define \(g: M_{\leq c}^a\) by </p>
-<div class="displaymath" id="a0000000126">
-  \[  g(x) = T\widetilde{f}(x)+T^2\widetilde{f}(T^{-1}x)+\ldots +T^{n+1}\widetilde{f}(T^{-n}x)+\ldots \in \widehat{V};  \]
-</div>
-<p> then \(‖g‖\leq \frac r{1-r}‖\widetilde{f}‖\leq \frac r{1-r}(1+\epsilon )‖f‖\). </p>
+</span>: When \(S\) and all \(S_i\) are finite, the cechcover splits, so a contracting homotopy gives the result with constant \(1\). In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition&#160;<a href="sec-some_normed_homological_algebra.html#prop:completeexact">4.3</a>. </p>
 
   </div>
 </div>
