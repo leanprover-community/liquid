@@ -1,7 +1,7 @@
 \section{Some normed homological algebra}%
 \label{sec:some_normed_homological_algebra}
 
-It will be convenient to use the following definition genearalizing the notion
+It will be convenient to use the following definition generalizing the notion
 of a bound on the norm of a right inverse of a normed group morphism (note that
 the morphisms we consider have no reason to have a right inverse, even when
 they are surjective).
@@ -467,6 +467,92 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
   $\leq m-1$ for $c\geq c_0$ with bound $K'(KK'' + 1)$.
   Since $N^\bullet_c$ is a complex of complete groups,
   Lemma~\ref{weakexact_implies_exact} gives the required exactness.
+\end{proof}
+
+We also need the `dual' version of \ref{weaksnakelemma}, for kernels instead of cokernels.
+
+\begin{proposition}
+  \label{weaksnakelemma}
+  \leanok
+  \lean{weak_normed_snake_dual}
+  \uses{is_weak_bounded_exact, admissible}
+  Let $(M^\bullet_c)_{c\geq c_0}$ and $(M'^\bullet_c)_{c\geq c_0}$ be two admissible collections
+  of complexes of complete normed abelian groups.
+  For each $c\geq c_0$ let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
+  between these collections of complexes which all commute with all restriction maps.
+  Assume moreover that we are given two constants $r_1, r_2 \geq 0$ such that:
+  \begin{itemize}
+   \item for all $i, c\geq c_0$ and all $x\in M^i_c$
+    \[
+    ‖f(x)‖ ≤ r_1‖x‖;
+    \]
+   \item for all $i ≤ m+1, c \geq c_0$ and all $y\in M'^i_c$, there exists $x\in M^i_c$ such that
+   \[
+    f(x) = y \mbox{ and } ‖x‖ ≤ r_2‖y‖.
+   \]
+
+  \end{itemize}
+
+  Let $N^\bullet_c$ be the collection of kernel complexes, with the induced norm;
+  this is again an admissible collection of complexes.
+
+  Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is weakly $\leq k$-exact
+  (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
+  (resp. $K'$).
+  Then $N^\bullet_c$ is weakly $\leq kk'$-exact in degrees $\leq m-1$ for $c\geq c_0$
+  with bound $K + r_1r_2KK'$.
+\end{proposition}
+
+\begin{proof}
+\leanok
+%\def\ndn{\left\|dn\right\|}
+Let $n \in N^i_{kk'c} \subseteq M^i_{kk'c}$ for $i\leq m-1$ and let $ε > 0$. We need to find an element $y \in N^{i-1}_c$ such that
+\[
+  ‖n_{|c} - dy‖ \leq K + r_1r_2KK'‖dn‖ + \epsilon.
+\]
+By weak exactness of $(M^\bullet_c)_{c\geq c_0}$, we can find $m \in M^{i-i}_{k'c}$ such that
+\[
+  ‖n_{|k'c} - dm‖ \leq K‖dn‖ + \epsilon_1,
+\]
+where $\epsilon_1 > 0$ to be chosen later. By weak exactness of $(M'^\bullet_c)_{c\geq c_0}$, we can find $m' \in M'^{i-2}_c$ such that
+\[
+  ‖f(m)_{|c} - dm'‖ \leq K'‖df(m)‖ + \epsilon_2,
+\]
+where $\epsilon_2 > 0$ to be chosen later. Let $m_1 \in M^{i-2}_c$ be a lift of $m'$ and let $m_2 \in M^{i-1}_c$ be such that
+\[
+f(m_2) = f(m_{|c} - dm_1) \mbox{ and } ‖m_2‖ \leq r_2 ‖f(m_{|c} - dm_1)‖.
+\]
+Set $y = m_{|c} - dm_1 - m_2 \in M^{i-1}_c$. By construction $f(y) = 0$, so $y \in N^{i-1}_c$. We compute
+\begin{gather*}
+‖n_{|c} - dy‖ = ‖n_{|c} - dm_{|c} + d^2m_1 - dm_2‖ = ‖n_{|c} - dm_{|c} - dm_2‖ \leq \\
+‖n_{|c} - dm_{|c} ‖ + ‖dm_2‖ = ‖(n_{|k'c} - dm)_{|c}‖ + ‖dm_2‖ \leq ‖(n_{|k'c} - dm)‖ + ‖dm_2‖ \leq \\
+K‖dn‖ + \epsilon_1 + ‖dm_2‖.
+\end{gather*}
+Where we have used the defining property of $m$ and admissibility of $(M^\bullet_c)_{c\geq c_0}$. By the same assumption and since $f(n_{|k'c}) = f(n)_{|k'c} = 0$, we have
+\begin{gather*}
+‖dm_2‖ \leq ‖m_2‖ \leq  r_2 ‖f(m_{|c} - dm_1)‖ = r_2 ‖f(m)_{|c} - df(m_1)‖ = r_2 ‖f(m)_{|c} - dm'‖ \leq \\
+r_2(K'‖df(m)‖ + \epsilon_2) = r_2(K'‖f(dm)‖ + \epsilon_2) = r_2(K'‖f(n_{|k'c}) - f(dm)‖ + \epsilon_2) = \\
+r_2(K'‖f(n_{|k'c} - dm)‖ + \epsilon_2) \leq r_2(K'r_1‖n_{|k'c} - dm‖ + \epsilon_2) \leq r_2(K'r_1(K‖dn‖ + \epsilon_1) + \epsilon_2)
+\end{gather*}
+In particular we get
+\begin{gather*}
+‖n_{|c} - dy‖ \leq K‖dn‖ + \epsilon_1 + r_2(K'r_1(K‖dn‖ + \epsilon_1) + \epsilon_2) =
+\\(K + r_1r_2KK')‖dn‖ + \epsilon_1(1+r_1r_2K') + r_2\epsilon_2.
+\end{gather*}
+Now let
+\[
+\epsilon_1 = \frac{\epsilon}{2(1+r_1r_2K')} \mbox{ and } \epsilon_2 = \begin{cases}
+                                                                    \frac{\epsilon}{2r_2} \mbox{ if } r_2 \neq 0 \\
+                                                                    1 \mbox{ if } r_2 = 0
+                                                                      \end{cases}
+\]
+In any case $r_2 \epsilon_2 \leq \frac{\epsilon}{2}$ and so
+\[
+‖n_{|c} - dy‖ \leq (K + r_1r_2KK')‖dn‖ + \epsilon
+\]
+as required.
+
+If $i=0$, then all $m$, $m'$, $m_1$ and $m_2$ are $0$, so $y=0$ as required.
 \end{proof}
 
 Consider a system of double complexes $M^{p,q}_c$, $p,q\geq 0$, $c\geq c_0$,
