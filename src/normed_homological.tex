@@ -215,94 +215,94 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
   \end{align*}
 \end{proof}
 
-A more important observation is that, in both definitions, we can also ask some
-control on the norm of $y$ if we are ready to square the restriction depth factor $k$.
+% A more important observation is that, in both definitions, we can also ask some
+% control on the norm of $y$ if we are ready to square the restriction depth factor $k$.
+% 
+% \begin{lemma}
+%   \label{is_weak_bdd_exact_controlled_y}
+%   \uses{is_weak_bounded_exact}
+%   % This statement exists in some comment somewhere
+%   % \lean{system_of_complexes.is_weak_bounded_exact.controlled_y}
+%   Let $C_\bullet^\bullet$ be a system of complexes which is
+%   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$.
+%   For all $c\geq c_0'$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$
+%   there is some $y\in C_c^{i-1}$ such that
+%   \[
+%     ‖x_{|c} - dy‖ ≤  K ‖dx‖ + ε
+%     \quad \text{and} \quad
+%     ‖y‖ ≤ K(K + 1)‖x‖ + δ.
+%   \]
+% \end{lemma}
+% 
+% \begin{proof}
+%   Fix $x$, $ε$ and $δ$. The weak exactness assumption applied to $x$ and some $η$ to be chosen later gives us
+%   $w ∈ C_{kc}^{i-1}$ such that
+%   \[
+%     ‖x_{|kc} - dw‖ ≤  K ‖dx‖ + η.
+%   \]
+%   Then the weak exactness assumption applied to $w$ and some $τ$ to be chosen later gives us
+%   $z ∈ C_{c}^{i-2}$ such that
+%   \[
+%     ‖w_{|c} - dz‖ ≤  K ‖dw‖ + τ.
+%   \]
+%   We set $y = w_{|c} - dz$. Since $dy = dw_{|c}$, we get the first required estimate as long
+%   as $η ≤ ε$. And we have:
+%   \begin{align*}
+%     ‖y‖ &≤ K ‖dw‖ + τ \\
+%         &≤ K (‖x_{|kc}‖ + K‖dx‖ + η) + τ \\
+%         &≤ K(K + 1) ‖x‖ + Kη + τ
+%   \end{align*}
+%   which is fine as long as $Kη + τ ≤ δ$.
+%   So we set $η = \min(ε, δ/(2K))$ (interpreted as $ε$ if $K=0$) and $τ = δ/2$.
+% \end{proof}
 
-\begin{lemma}
-  \label{is_weak_bdd_exact_controlled_y}
-  \uses{is_weak_bounded_exact}
-  % This statement exists in some comment somewhere
-  % \lean{system_of_complexes.is_weak_bounded_exact.controlled_y}
-  Let $C_\bullet^\bullet$ be a system of complexes which is
-  weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$.
-  For all $c\geq c_0'$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$
-  there is some $y\in C_c^{i-1}$ such that
-  \[
-    ‖x_{|c} - dy‖ ≤  K ‖dx‖ + ε
-    \quad \text{and} \quad
-    ‖y‖ ≤ K(K + 1)‖x‖ + δ.
-  \]
-\end{lemma}
-
-\begin{proof}
-  Fix $x$, $ε$ and $δ$. The weak exactness assumption applied to $x$ and some $η$ to be chosen later gives us
-  $w ∈ C_{kc}^{i-1}$ such that
-  \[
-    ‖x_{|kc} - dw‖ ≤  K ‖dx‖ + η.
-  \]
-  Then the weak exactness assumption applied to $w$ and some $τ$ to be chosen later gives us
-  $z ∈ C_{c}^{i-2}$ such that
-  \[
-    ‖w_{|c} - dz‖ ≤  K ‖dw‖ + τ.
-  \]
-  We set $y = w_{|c} - dz$. Since $dy = dw_{|c}$, we get the first required estimate as long
-  as $η ≤ ε$. And we have:
-  \begin{align*}
-    ‖y‖ &≤ K ‖dw‖ + τ \\
-        &≤ K (‖x_{|kc}‖ + K‖dx‖ + η) + τ \\
-        &≤ K(K + 1) ‖x‖ + Kη + τ
-  \end{align*}
-  which is fine as long as $Kη + τ ≤ δ$.
-  So we set $η = \min(ε, δ/(2K))$ (interpreted as $ε$ if $K=0$) and $τ = δ/2$.
-\end{proof}
-
-\begin{lemma}
-  \label{completion_is_weakexact}
-  \uses{is_weak_bounded_exact, admissible}
-  % This statement exists in some comment somewhere
-  % \lean{system_of_complexes.is_weak_bounded_exact.completion}
-  Let $(M_c^\bullet)_{c\geq c_0}$ be an admissible collection
-  of complexes of normed abelian groups.
-
-  Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
-  Then the completion $\overline{M^\bullet_c}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
-\end{lemma}
-
-\begin{proof}
-  \uses{is_weak_bdd_exact_controlled_y}
-Let $x \in \overline{M^i_{k^2c}}$, where $c \geq c_0$ and $i \leq m$ and let $\epsilon > 0$.
-We can write $x = \sum_j x^j$ where
-\begin{itemize}
- \item $x^j \in M^i_{k^2c}$ for all $j \geq 0$,
- \item $‖x - x^0‖ ≤ ε_0$ for some positive $ε_0$ to be chosen later. This implies that $‖dx - dx^0‖ ≤ ε_0$ and
-   in particular $‖dx^0‖ ≤ ‖dx‖ + ε_0$,
- \item $‖x^j‖ ≤ ε_j$ if $j > 0$, for some positive $ε_j$ to be chosen later. This implies $‖dx^j‖ ≤ ε_j$
-   for all $j > 0$.
-\end{itemize}
-
-Using Lemma~\ref{is_weak_bdd_exact_controlled_y}, we get a sequence $y^j$ in $M^{i-1}_c$ such that
-  \[
-    ‖x^j_{|c} - dy^j‖ ≤  K ‖dx^j‖ + δ_j
-    \quad \text{and} \quad
-    ‖y^j‖ ≤ K(K + 1)‖x^j‖ + τ_j.
-  \]
-for positive sequences $δ$ and $τ$ to be chosen later.
-
-Since $M^{i-1}_c$ is complete, the series $\sum y^j$ converges as soon as we can guarantee that
-$\sum ‖y^j‖$ converges. Our estimates ensure this convergence as soon as the
-sum of the $K(K + 1)ε_j + τ_j$ converges so here we only need $ε$ and $τ$ to be
-summable.
-
-We then set $y = ∑ y^j$ and compute:
-\begin{align*}
-  ‖x_{|c} - dy‖ &= \left\|∑_{j ≥ 0} x^j_{|c} - dy^j\right\| \\
-    &≤ ∑_{j ≥ 0} \left\|x^j_{|c} - dy^j\right\| \\
-    &≤ ∑_{j ≥ 0} K‖dx^j‖ + δ_j \\
-    &≤ K‖dx‖ + Kε_0 + δ_0 +  ∑_{j > 0} (Kε_j + δ_j)
-\end{align*}
-
-So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_j = ε2^{-j-2}/K$ and $δ_j = ε2^{-j-2}$.
-\end{proof}
+% \begin{lemma}
+%   \label{completion_is_weakexact}
+%   \uses{is_weak_bounded_exact, admissible}
+%   % This statement exists in some comment somewhere
+%   % \lean{system_of_complexes.is_weak_bounded_exact.completion}
+%   Let $(M_c^\bullet)_{c\geq c_0}$ be an admissible collection
+%   of complexes of normed abelian groups.
+% 
+%   Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
+%   Then the completion $\overline{M^\bullet_c}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
+% \end{lemma}
+% 
+% \begin{proof}
+%   \uses{is_weak_bdd_exact_controlled_y}
+% Let $x \in \overline{M^i_{k^2c}}$, where $c \geq c_0$ and $i \leq m$ and let $\epsilon > 0$.
+% We can write $x = \sum_j x^j$ where
+% \begin{itemize}
+%  \item $x^j \in M^i_{k^2c}$ for all $j \geq 0$,
+%  \item $‖x - x^0‖ ≤ ε_0$ for some positive $ε_0$ to be chosen later. This implies that $‖dx - dx^0‖ ≤ ε_0$ and
+%    in particular $‖dx^0‖ ≤ ‖dx‖ + ε_0$,
+%  \item $‖x^j‖ ≤ ε_j$ if $j > 0$, for some positive $ε_j$ to be chosen later. This implies $‖dx^j‖ ≤ ε_j$
+%    for all $j > 0$.
+% \end{itemize}
+% 
+% Using Lemma~\ref{is_weak_bdd_exact_controlled_y}, we get a sequence $y^j$ in $M^{i-1}_c$ such that
+%   \[
+%     ‖x^j_{|c} - dy^j‖ ≤  K ‖dx^j‖ + δ_j
+%     \quad \text{and} \quad
+%     ‖y^j‖ ≤ K(K + 1)‖x^j‖ + τ_j.
+%   \]
+% for positive sequences $δ$ and $τ$ to be chosen later.
+% 
+% Since $M^{i-1}_c$ is complete, the series $\sum y^j$ converges as soon as we can guarantee that
+% $\sum ‖y^j‖$ converges. Our estimates ensure this convergence as soon as the
+% sum of the $K(K + 1)ε_j + τ_j$ converges so here we only need $ε$ and $τ$ to be
+% summable.
+% 
+% We then set $y = ∑ y^j$ and compute:
+% \begin{align*}
+%   ‖x_{|c} - dy‖ &= \left\|∑_{j ≥ 0} x^j_{|c} - dy^j\right\| \\
+%     &≤ ∑_{j ≥ 0} \left\|x^j_{|c} - dy^j\right\| \\
+%     &≤ ∑_{j ≥ 0} K‖dx^j‖ + δ_j \\
+%     &≤ K‖dx‖ + Kε_0 + δ_0 +  ∑_{j > 0} (Kε_j + δ_j)
+% \end{align*}
+% 
+% So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_j = ε2^{-j-2}/K$ and $δ_j = ε2^{-j-2}$.
+% \end{proof}
 
 \begin{lemma}
   \label{weakexact_implies_exact}
@@ -433,43 +433,44 @@ which is exactly what we wanted if we choose
 $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 \end{proof}
 
-
-\begin{proposition}
-  \label{snakelemma}
-  \uses{is_bounded_exact, admissible}
-  Let $(M^\bullet_c)_{c\geq c_0}$ and $(M'^\bullet_c)_{c\geq c_0}$ be two admissible collections
-  of complexes of complete normed abelian groups.
-  For $c\geq c_0$ let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
-  between these collections of complexes
-  that is strictly compatible with the norm and commutes with restriction maps,
-  and assume that it satisfies
-  \[
-    ‖x_{|c}‖ ≤ K''‖f(x)‖
-  \]
-  for all $i ≤ m+1$ and all $x\in M^i_{k''c}$.
-  Let $N^\bullet_c=M'^\bullet_c/\overline{M^\bullet_c}$
-  be the collection of quotient complexes, with the quotient norm;
-  this is again an admissible collection of complexes.
-
-  Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is $\leq k$-exact
-  (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
-  (resp. $K'$).
-  Then, for every $δ > 0$, $N^\bullet_c$ is $\leq (kk'k'')^2$-exact in
-  degrees $\leq m-1$ for $c\geq c_0$
-  with bound $K'(KK'' + 1) + δ$.
-\end{proposition}
-
-\begin{proof}
-  \uses{weaksnakelemma, weakexact_implies_exact}
-  The exactness assumptions on $M$ and $M'$ give the corresponding
-  weak exactness condition. Hence Proposition~\ref{weaksnakelemma}
-  ensures that $N^\bullet_c$ is weakly $\leq kk'k''$-exact in degrees
-  $\leq m-1$ for $c\geq c_0$ with bound $K'(KK'' + 1)$.
-  Since $N^\bullet_c$ is a complex of complete groups,
-  Lemma~\ref{weakexact_implies_exact} gives the required exactness.
-\end{proof}
+% \begin{proposition}
+%   \label{snakelemma}
+%   \uses{is_bounded_exact, admissible}
+%   Let $(M^\bullet_c)_{c\geq c_0}$ and $(M'^\bullet_c)_{c\geq c_0}$ be two admissible collections
+%   of complexes of complete normed abelian groups.
+%   For $c\geq c_0$ let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
+%   between these collections of complexes
+%   that is strictly compatible with the norm and commutes with restriction maps,
+%   and assume that it satisfies
+%   \[
+%     ‖x_{|c}‖ ≤ K''‖f(x)‖
+%   \]
+%   for all $i ≤ m+1$ and all $x\in M^i_{k''c}$.
+%   Let $N^\bullet_c=M'^\bullet_c/\overline{M^\bullet_c}$
+%   be the collection of quotient complexes, with the quotient norm;
+%   this is again an admissible collection of complexes.
+% 
+%   Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is $\leq k$-exact
+%   (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
+%   (resp. $K'$).
+%   Then, for every $δ > 0$, $N^\bullet_c$ is $\leq (kk'k'')^2$-exact in
+%   degrees $\leq m-1$ for $c\geq c_0$
+%   with bound $K'(KK'' + 1) + δ$.
+% \end{proposition}
+% 
+% \begin{proof}
+%   \uses{weaksnakelemma, weakexact_implies_exact}
+%   The exactness assumptions on $M$ and $M'$ give the corresponding
+%   weak exactness condition. Hence Proposition~\ref{weaksnakelemma}
+%   ensures that $N^\bullet_c$ is weakly $\leq kk'k''$-exact in degrees
+%   $\leq m-1$ for $c\geq c_0$ with bound $K'(KK'' + 1)$.
+%   Since $N^\bullet_c$ is a complex of complete groups,
+%   Lemma~\ref{weakexact_implies_exact} gives the required exactness.
+% \end{proof}
 
 We also need the `dual' version of \ref{weaksnakelemma}, for kernels instead of cokernels.
+Note that this is actually a bit easier to prove.
+(Should we put it first in the presentation?)
 
 \begin{proposition}
   \label{weakdualsnakelemma}
