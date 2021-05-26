@@ -172,7 +172,7 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 \begin{proposition}
   \label{double-complex-htpy}
   \lean{NSC_htpy}
-  \uses{double_complex, BD_h_mul_suitable}
+  \uses{double_complex, BD_h_mul_suitable, spectral-htpy}
   \leanok
   Let $h$ be the homotopy packaged with $\BD$,
   and let $h^N$ denote the $n$-th iterated composition of $h$
@@ -247,49 +247,78 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon$, giving the result.
 \end{proof}
 
-\begin{remark}
-  \label{boundary-text}
-  \textbf{Note: the text below is copied almost verbatim from \cite{Analytic}.
-  Small parts have been formalized.
-  We expect that the text will be rewritten and expanded as the formalization project progresses.}
-\end{remark}
+\begin{proposition}
+  \label{col_exact}
+  \uses{combi,cechcover-exact,lem:Tinv,canonical_iso_2,weakdualsnakelemma}
+  \lean{thm95.col_exact}
+  \leanok
+  Let $d$ be the constant from Proposition~\ref{combi}.
+  Let $k > 1$ and $c_0 > 0$ be real numbers such that
+  \[
+    (k - 1) * c_0 / N \ge d.
+  \]
+  Let $m$ be any natural number, and put
+  \[
+    K = (m + 2) + \frac{r + 1}{r(1 - r)} (m + 2)^2
+  \]
+  Finally, let $c_0'$ be $\frac{c_0}{r' \cdot n_i}$,
+  where $n_i$ is the $i$-th index in our fixed Breen--Deligne data.
+
+  Then $i$-th column in the double complex
+  are $(k^2, K)$-weak bounded exact in degrees $\le m$ for $c \ge c_0'$.
+\end{proposition}
+
+\begin{proof}
+  This is almost completely done in Lean.
+  The proof given below has to be expanded and rewritten.
+
+  By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
+  \[
+  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
+  \]
+  also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
+  \[
+  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
+  \]
+  and
+  \[
+  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
+  \]
+  and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial cechcover of profinite sets, so the constants are bounded as claimed in the statement,
+  by Proposition~\ref{cechcover-exact}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{weakdualsnakelemma}.
+  \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{explicit}]
   \proves{explicit}
-  \uses{spectral,combi,cechcover-exact, double-complex-htpy, lem:Tinv,
-    canonical_iso_2}
+  \leanok
+  \uses{spectral,col_exact, double-complex-htpy}
+  By induction, the first condition of Proposition~\ref{spectral}
+  is satisfied for all $c\geq c_0$ with $c_0$ large enough
+  (depending on $\Lambda$ but not $V$ or $S$).
 
-By induction, the first condition of Proposition~\ref{spectral} is satisfied for all $c\geq c_0$ with $c_0$ large enough (depending on $\Lambda$ but not $V$ or $S$). By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
-\]
-also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
-\]
-and
-\[
-\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
-\]
-and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial cechcover of profinite sets, so the constants are bounded by Proposition~\ref{cechcover-exact},
-	Lemma~\ref{lem:Tinv},
-	and Proposition~\ref{snakelemma}
-	(plus probably some other results of which we need to work out the details).
-	At this point, we have finalized our choice of $k$ (and, as promised, this choice depended only on $m$ and $r$), and so we also finalized the constants $\epsilon$, $k'$ and $N$ from the first paragraph of the proof.
+  The second condition is Proposition~\ref{col_exact},
+  and the third condition has been checked in Proposition~\ref{double-complex-htpy}.
 
-Finally, to the third condition, has been checked in Proposition~\ref{double-complex-htpy}.
-
-Thus, we can apply Proposition~\ref{spectral}, and get the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$, where $k'$, $k_0$ and $H$ were defined only in terms of $k$, $m$, $r'$ and $r$, while $c_0$ depends on $\Lambda$ (but not on $V$ or $S$). This proves the inductive step.
+  Thus, we can apply Proposition~\ref{spectral},
+  and get the desired $\leq \max(k'^2,2k_0H)$-exactness in degrees $\leq m$ for $c\geq c_0$,
+  where $k'$, $k_0$ and $H$ were defined only in terms of $k$, $m$, $r'$ and $r$,
+  while $c_0$ depends on $\Lambda$ (but not on $V$ or $S$).
+  This proves the inductive step.
 \end{proof}
 
-\begin{question} Can one make the constants explicit, and how large are they?\footnote{A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.} Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the $c_i$ and $c_i'$.
+\begin{question}
+  Can one make the constants explicit, and how large are they?
+  \footnote{A back of the envelope calculation seems to suggest that $k$ is roughly doubly exponential in $m$, and that $N$ has to be taken of roughly the same magnitude.}
+  Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants;
+  and actually the proof of the existence of the Breen-Deligne resolution
+  should be explicit enough to ensure the existence of bounds on the $c_i$ and $c_i'$.
+
+  Answer: yes, we can do this.
+  And we should write up a clean account asap,
+  when we have cleaned up the proof in Lean.
 \end{question}
 
-This completes the proof of all results announced so far.
-
 \section{Relevant material that should move to a better place}
-
-
 
 The next statement uses the definition of the completion of a condensed abelian group, see Definition~\ref{CLC}.
 
