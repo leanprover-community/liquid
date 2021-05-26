@@ -170,6 +170,68 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 \end{proof}
 
 \begin{proposition}
+  \label{cechcover-exact}
+  \uses{CLC}
+  \lean{prop819}
+  \leanok
+  Let $S' \to S$ be a surjective morphism of profinite sets,
+  and let $S_\bullet\to S$ be its Cech nerve.
+  Then the complex
+  \[
+    0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
+  \]
+  is exact,
+  and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $‖f‖\leq c$,
+  then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
+\end{proposition}
+
+\begin{proof}
+  \uses{prop:completeexact}
+Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the cechcover splits, so a contracting homotopy gives the result with constant $1$. In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
+\end{proof}
+
+\begin{proposition}
+  \label{col_exact}
+  \uses{combi,cechcover-exact,lem:Tinv,canonical_iso_2,weakdualsnakelemma}
+  \lean{thm95.col_exact}
+  \leanok
+  Let $d$ be the constant from Proposition~\ref{combi}.
+  Let $k > 1$ and $c_0 > 0$ be real numbers such that
+  \[
+    (k - 1) * c_0 / N \ge d.
+  \]
+  Let $m$ be any natural number, and put
+  \[
+    K = (m + 2) + \frac{r + 1}{r(1 - r)} (m + 2)^2
+  \]
+  Finally, let $c_0'$ be $\frac{c_0}{r' \cdot n_i}$,
+  where $n_i$ is the $i$-th index in our fixed Breen--Deligne data.
+
+  Then $i$-th column in the double complex
+  are $(k^2, K)$-weak bounded exact in degrees $\le m$ for $c \ge c_0'$.
+\end{proposition}
+
+\begin{proof}
+  This is almost completely done in Lean.
+  The proof given below has to be expanded and rewritten.
+
+  By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
+  \[
+  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
+  \]
+  also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
+  \[
+  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
+  \]
+  and
+  \[
+  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
+  \]
+  and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial cechcover of profinite sets, so the constants are bounded as claimed in the statement,
+  by Proposition~\ref{cechcover-exact}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{weakdualsnakelemma}.
+  \end{proof}
+
+\begin{proposition}
   \label{double-complex-htpy}
   \lean{NSC_htpy}
   \uses{double_complex, BD_h_mul_suitable, spectral-htpy}
@@ -247,47 +309,6 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   Thus, the total map has norm $\leq r^bN$. But by our choice of $N$, we have $r^bN\leq \epsilon$, giving the result.
 \end{proof}
 
-\begin{proposition}
-  \label{col_exact}
-  \uses{combi,cechcover-exact,lem:Tinv,canonical_iso_2,weakdualsnakelemma}
-  \lean{thm95.col_exact}
-  \leanok
-  Let $d$ be the constant from Proposition~\ref{combi}.
-  Let $k > 1$ and $c_0 > 0$ be real numbers such that
-  \[
-    (k - 1) * c_0 / N \ge d.
-  \]
-  Let $m$ be any natural number, and put
-  \[
-    K = (m + 2) + \frac{r + 1}{r(1 - r)} (m + 2)^2
-  \]
-  Finally, let $c_0'$ be $\frac{c_0}{r' \cdot n_i}$,
-  where $n_i$ is the $i$-th index in our fixed Breen--Deligne data.
-
-  Then $i$-th column in the double complex
-  are $(k^2, K)$-weak bounded exact in degrees $\le m$ for $c \ge c_0'$.
-\end{proposition}
-
-\begin{proof}
-  This is almost completely done in Lean.
-  The proof given below has to be expanded and rewritten.
-
-  By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
-  \[
-  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
-  \]
-  also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
-  \[
-  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
-  \]
-  and
-  \[
-  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
-  \]
-  and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial cechcover of profinite sets, so the constants are bounded as claimed in the statement,
-  by Proposition~\ref{cechcover-exact}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{weakdualsnakelemma}.
-  \end{proof}
-
 \begin{proof}[Proof of Theorem~\ref{explicit}]
   \proves{explicit}
   \leanok
@@ -318,43 +339,22 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   when we have cleaned up the proof in Lean.
 \end{question}
 
-\section{Relevant material that should move to a better place}
+% \section{Relevant material that should move to a better place}
 
-The next statement uses the definition of the completion of a condensed abelian group, see Definition~\ref{CLC}.
-
-\begin{proposition}
-  \label{prop:normedcompletion}
-  \uses{CLC}
-The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets
-\[
-‖\cdot‖: \widehat{M}\to \mathbb R_{\geq 0}.
-\]
-\end{proposition}
-
-\begin{proof}
-Note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $‖\cdot‖$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$.
-\end{proof}
-
-\begin{proposition}
-  \label{cechcover-exact}
-  \uses{CLC}
-  \lean{prop819}
-  \leanok
-  Let $S' \to S$ be a surjective morphism of profinite sets,
-  and let $S_\bullet\to S$ be its Cech nerve.
-  Then the complex
-  \[
-    0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
-  \]
-  is exact,
-  and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $‖f‖\leq c$,
-  then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
-\end{proposition}
-
-\begin{proof}
-  \uses{prop:completeexact}
-Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the cechcover splits, so a contracting homotopy gives the result with constant $1$. In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
-\end{proof}
+% The next statement uses the definition of the completion of a condensed abelian group, see Definition~\ref{CLC}.
+% 
+% \begin{proposition}
+%   \label{prop:normedcompletion}
+%   \uses{CLC}
+% The condensed abelian group $\widehat{M}$ is canonically identified with the condensed abelian group associated to the topological abelian group $\widehat{M}_{\mathrm{top}}$ given by the completion of $M$ equipped with the topology induced by the norm. The norm defines a natural map of condensed sets
+% \[
+% ‖\cdot‖: \widehat{M}\to \mathbb R_{\geq 0}.
+% \]
+% \end{proposition}
+% 
+% \begin{proof}
+% Note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $‖\cdot‖$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$.
+% \end{proof}
 
 
 % vim: ts=2 et sw=2 sts=2
