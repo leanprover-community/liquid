@@ -186,8 +186,8 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 \end{proposition}
 
 \begin{proof}
-  \uses{prop:completeexact}
-Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the cechcover splits, so a contracting homotopy gives the result with constant $1$. In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Proposition~\ref{prop:completeexact}.
+  \uses{lem:controlled_exactness}
+Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the cechcover splits, so a contracting homotopy gives the result with constant $1$. In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Lemma~\ref{lem:controlled_exactness}.
 \end{proof}
 
 \begin{proposition}
@@ -342,7 +342,7 @@ Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are fi
 % \section{Relevant material that should move to a better place}
 
 % The next statement uses the definition of the completion of a condensed abelian group, see Definition~\ref{CLC}.
-% 
+%
 % \begin{proposition}
 %   \label{prop:normedcompletion}
 %   \uses{CLC}
@@ -351,7 +351,7 @@ Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are fi
 % ‖\cdot‖: \widehat{M}\to \mathbb R_{\geq 0}.
 % \]
 % \end{proposition}
-% 
+%
 % \begin{proof}
 % Note that in the supremum norm any continuous function from $S$ to $\widehat{M}_{\mathrm{top}}$ can be approximated by locally constant functions arbitrarily well, and that the space of continuous functions from $S$ to $\widehat{M}_{\mathrm{top}}$ is complete with respect to the supremum norm. That $‖\cdot‖$ defines a map of condensed sets $\widehat{M}\to \mathbb R_{\geq 0}$ follows for example from this identification with $\underline{\widehat{M}_{\mathrm{top}}}$, as the norm is by definition a continuous map $\widehat{M}_{\mathrm{top}}\to \mathbb R_{\geq 0}$.
 % \end{proof}

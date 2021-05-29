@@ -16,7 +16,7 @@ they are surjective).
 \end{definition}
 
 The following controlled surjectivity lemma will be used to prove
-Proposition~\ref{prop:completeexact} and Lemma~\ref{lem:Tinv}.
+Lemma~\ref{lem:controlled_exactness} and Lemma~\ref{lem:Tinv}.
 
 \begin{lemma}
   \label{lem:closure_surjective}
@@ -51,24 +51,11 @@ Proposition~\ref{prop:completeexact} and Lemma~\ref{lem:Tinv}.
   because $x ≠ 0$).
 \end{proof}
 
-We often use the following quantitative exactness property:
-
-\begin{proposition}\label{prop:completeexact}
-Let $M_0\xrightarrow{d_0} M_1\xrightarrow{d_1} M_2\xrightarrow{d_2} M_3$ be a
-four-term complex of bounded maps of normed abelian groups. Assume that, for
-some positive constants $C$ and $D$, $d_0$ is $C$-surjective onto $\ker d_1$
-and $d_1$ is $D$-surjective onto $\ker d_2$.
-
-Then
-$\widehat{M}_0\xrightarrow{\widehat{d}_0} \widehat{M}_1\xrightarrow{\widehat{d}_1} \widehat{M}_2\xrightarrow{\widehat{d}_2} \widehat{M}_3$
-is a complex and, for every positive $ε$, $\widehat{d}_0$ is $(C + ε)$-surjective
-onto $\ker \widehat{d}_1$.
-\end{proposition}
-
-While the above statement in terms of complexes is what we will use,
-the heart of the statement is the following lemma.
+The first application of the above lemma is a completion result for
+a quantitative version of being a complex.
 
 \begin{lemma}\label{lem:controlled_exactness}
+  \uses{def:surjective_with_bound}
   \lean{controlled_exactness}\leanok
   Let $f : M_0 → M_1$ and $g : M_1 → M_2$ be bounded maps between normed groups.
   Assume there are positive constants $C$ and $D$ such that:
@@ -83,6 +70,7 @@ the heart of the statement is the following lemma.
 \end{lemma}
 
 \begin{proof}\leanok
+  \uses{lem:closure_surjective}
   Since $f$ is $C$-surjective onto $\ker g$, $\widehat{f}$ is $C$-surjective
   onto $\ker g$ seen as a subset of $\widehat{M_1}$. Hence this lemma will
   follow directly from Lemma~\ref{lem:closure_surjective}
@@ -96,19 +84,6 @@ the heart of the statement is the following lemma.
   $y-y'$, we can thus find $y\in \ker(g: M_1\to M_2)$ such that still
   $‖\widehat{y}-y‖\leq (1+DC_{g})\delta$; as $\delta$ was arbitrary, this
   gives the desired density.
-\end{proof}
-
-\begin{proof}[Proof of Proposition~\ref{prop:completeexact}]
-  \proves{prop:completeexact}
-  \uses{lem:controlled_exactness}
-  The complex equations $\widehat d_1 ∘ \widehat d_0 = 0$ and
-  $\widehat d_2 ∘ \widehat d_1 = 0$ follow from $d_1 ∘ d_0 = 0$ and
-  $d_2 ∘ d_1 = 0$ by extension of identities.
-
-  In order to get the quantitative estimates, we apply
-  Lemma~\ref{lem:controlled_exactness} to $f = d_0$ and $g = d_1$. By exactness
-  at $M_2$, the assumption we made on elements of $\ker d_2$ translates to the
-  assumption made by the lemma on the image of $d_1$.
 \end{proof}
 
 \begin{definition}
@@ -217,7 +192,7 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 
 % A more important observation is that, in both definitions, we can also ask some
 % control on the norm of $y$ if we are ready to square the restriction depth factor $k$.
-% 
+%
 % \begin{lemma}
 %   \label{is_weak_bdd_exact_controlled_y}
 %   \uses{is_weak_bounded_exact}
@@ -233,7 +208,7 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %     ‖y‖ ≤ K(K + 1)‖x‖ + δ.
 %   \]
 % \end{lemma}
-% 
+%
 % \begin{proof}
 %   Fix $x$, $ε$ and $δ$. The weak exactness assumption applied to $x$ and some $η$ to be chosen later gives us
 %   $w ∈ C_{kc}^{i-1}$ such that
@@ -263,11 +238,11 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %   % \lean{system_of_complexes.is_weak_bounded_exact.completion}
 %   Let $(M_c^\bullet)_{c\geq c_0}$ be an admissible collection
 %   of complexes of normed abelian groups.
-% 
+%
 %   Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
 %   Then the completion $\overline{M^\bullet_c}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
 % \end{lemma}
-% 
+%
 % \begin{proof}
 %   \uses{is_weak_bdd_exact_controlled_y}
 % Let $x \in \overline{M^i_{k^2c}}$, where $c \geq c_0$ and $i \leq m$ and let $\epsilon > 0$.
@@ -279,7 +254,7 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %  \item $‖x^j‖ ≤ ε_j$ if $j > 0$, for some positive $ε_j$ to be chosen later. This implies $‖dx^j‖ ≤ ε_j$
 %    for all $j > 0$.
 % \end{itemize}
-% 
+%
 % Using Lemma~\ref{is_weak_bdd_exact_controlled_y}, we get a sequence $y^j$ in $M^{i-1}_c$ such that
 %   \[
 %     ‖x^j_{|c} - dy^j‖ ≤  K ‖dx^j‖ + δ_j
@@ -287,12 +262,12 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %     ‖y^j‖ ≤ K(K + 1)‖x^j‖ + τ_j.
 %   \]
 % for positive sequences $δ$ and $τ$ to be chosen later.
-% 
+%
 % Since $M^{i-1}_c$ is complete, the series $\sum y^j$ converges as soon as we can guarantee that
 % $\sum ‖y^j‖$ converges. Our estimates ensure this convergence as soon as the
 % sum of the $K(K + 1)ε_j + τ_j$ converges so here we only need $ε$ and $τ$ to be
 % summable.
-% 
+%
 % We then set $y = ∑ y^j$ and compute:
 % \begin{align*}
 %   ‖x_{|c} - dy‖ &= \left\|∑_{j ≥ 0} x^j_{|c} - dy^j\right\| \\
@@ -300,7 +275,7 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %     &≤ ∑_{j ≥ 0} K‖dx^j‖ + δ_j \\
 %     &≤ K‖dx‖ + Kε_0 + δ_0 +  ∑_{j > 0} (Kε_j + δ_j)
 % \end{align*}
-% 
+%
 % So everything is fine as long as $∑_{j ≥ 0} (Kε_j + δ_j) ≤ ε$, say $ε_j = ε2^{-j-2}/K$ and $δ_j = ε2^{-j-2}$.
 % \end{proof}
 
@@ -449,7 +424,7 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 %   Let $N^\bullet_c=M'^\bullet_c/\overline{M^\bullet_c}$
 %   be the collection of quotient complexes, with the quotient norm;
 %   this is again an admissible collection of complexes.
-% 
+%
 %   Assume that $M^\bullet_c$ (resp. $M'^\bullet_c$) is $\leq k$-exact
 %   (resp. $≤ k'$-exact) in degrees $\leq m$ for $c\geq c_0$ with bound $K$
 %   (resp. $K'$).
@@ -457,7 +432,7 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 %   degrees $\leq m-1$ for $c\geq c_0$
 %   with bound $K'(KK'' + 1) + δ$.
 % \end{proposition}
-% 
+%
 % \begin{proof}
 %   \uses{weaksnakelemma, weakexact_implies_exact}
 %   The exactness assumptions on $M$ and $M'$ give the corresponding
