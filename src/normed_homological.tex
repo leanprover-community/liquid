@@ -24,9 +24,10 @@ Lemma~\ref{lem:controlled_exactness} and Lemma~\ref{lem:Tinv}.
   \label{lem:closure_surjective}
   \uses{def:surjective_with_bound}
   \lean{controlled_closure_of_complete}\leanok
-  Let $G$ and $H$ be normed groups. Let $K$ be a subgroup of
-  $H$ and $f$ a morphism from $G$ to $H$.  Assume that $G$ is complete and
-  $f$ is $C$-surjective onto $K$. Then $f$ is $(C + ε)$-surjective onto
+  Let $G$ and $H$ be normed groups.
+  Let $K$ be a subgroup of $H$ and $f$ a morphism from $G$ to~$H$.
+  Assume that $G$ is complete and $f$ is $C$-surjective onto $K$.
+  Then $f$ is $(C + ε)$-surjective onto
   the topological closure of $K$ for every positive $ε$.
 \end{lemma}
 
@@ -93,22 +94,21 @@ a quantitative version of being a complex.
   \lean{system_of_complexes}
   \leanok
   A \emph{system of complexes} of normed abelian groups
-  is for each sufficiently large $c$ (i.e.~all $c\geq c_0$ for some $c_0>0$),
+  is for each $c \in \mathbb R_{\ge 0}$
   a complex
   \[
   C_c^\bullet: C_c^0\to C_c^1\to\ldots
   \]
   of normed abelian groups together with maps of complexes
   $\mathrm{res}_{c',c}: C_{c'}^\bullet\to C_c^\bullet$,
-  for $c' ≥ c \geq c_0$,
+  for $c' ≥ c$,
   satisfying $\mathrm{res}_{c,c}=\mathrm{id}$ and the obvious associativity condition.
-  We use notation $(C_c^\bullet)_{c\geq c_0}$ for a system of complexes,
-  although we will frequently omit any mention of the lower bound $c_0$
-  and just write $C_\bullet^\bullet$.
+  In other words, a functor from $(\mathbb R_{\ge 0})^{\mathrm{op}}$ to
+  cochain complexes of semi-normed groups.
 \end{definition}
 
-By convention, for every system of complexes $(C_c^\bullet)_{c\geq c_0}$,
-we will set $C^{-1}_c = 0$ for all $c\geq c_0$.
+By convention, for every system of complexes $C_\bullet^\bullet$,
+we will set $C^{-1}_c = 0$ for all $c$.
 This will come up each time we write $C^{i-1}_c$ and $i$ could be $0$.
 
 In this section, given $x ∈ C^•_{c'}$ and $c_0\leq c ≤ c'$ we will use the notation
@@ -127,15 +127,24 @@ Throughout the rest of this section, $k$ (and $k'$, $k''$) will denote reals at 
 $m$ will be a non-negative integer, and $K$, $K'$, $K''$ will denote non-negative reals.
 
 \begin{definition}
+  \label{norm_exact_complex}
+  \lean{system_of_complexes.norm_exact_complex}
+  \leanok
+  A cochain complex~$C$ of semi-normed groups is \emph{normed exact} if
+  for all $i \ge 0$, all $\varepsilon > 0$, and all $x \in C^i$ with $d(x) = 0$
+  there exists a $y \in C^{i-1}$ such that $d(y) = x$ and $\|y\| \le (1 + \varepsilon)\|x\|$.
+\end{definition}
+
+\begin{definition}
   \label{is_bounded_exact}
   \lean{system_of_complexes.is_bounded_exact}
   \leanok
   \uses{system_of_complexes}
-  Let $(C_c^\bullet)_{c\geq c_0}$ be a system of complexes.
-  For an integer $m\geq 0$ and reals $k \ge 1$, $c_0'\geq c_0$ and $K\geq0$,
-  we say the datum $(C_c^\bullet)_{c\geq c_0}$ is
-  \emph{$\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$} if the following condition is satisfied.
-  For all $c\geq c_0'$ and all $x\in C_{kc}^i$ with $i\leq m$
+  Let $C_\bullet^\bullet$ be a system of complexes.
+  For an integer $m\geq 0$ and reals $k \ge 1$, $K \ge 0$ and $c_0 \ge 0$,
+  we say the datum $C_\bullet^\bullet$ is
+  \emph{$\leq k$-exact in degrees $\leq m$ and for $c\geq c_0$ with bound $K$} if the following condition is satisfied.
+  For all $c\geq c_0$ and all $x\in C_{kc}^i$ with $i\leq m$
   there is some $y\in C_c^{i-1}$ such that
   \[
     ‖x_{|c} - dy‖ ≤ K ‖dx‖.
@@ -149,11 +158,11 @@ We will also need a version where the inequality is relaxed by some arbitrary sm
   \lean{system_of_complexes.is_weak_bounded_exact}
   \leanok
   \uses{system_of_complexes}
-  Let $(C_c^\bullet)_{c\geq c_0}$ be a system of complexes.
-  For an integer $m\geq 0$ and reals $k \ge 1$, $c_0'\geq c_0$ and $K\geq0$,
+  Let $C_\bullet^\bullet$ be a system of complexes.
+  For an integer $m\geq 0$ and reals $k \ge 1$, $K \ge 0$ and $c_0 \ge 0$,
   the datum $(C_c^\bullet)_c$ is
-  \emph{weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$} if the following condition is satisfied.
-  For all $c\geq c_0'$, all $x\in C_{kc}^i$ with $i\leq m$ and any $ε > 0$
+  \emph{weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0$ with bound $K$} if the following condition is satisfied.
+  For all $c\geq c_0$, all $x\in C_{kc}^i$ with $i\leq m$ and any $ε > 0$
   there is some $y\in C_c^{i-1}$ such that
   \[
     ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε.
@@ -163,25 +172,23 @@ We will also need a version where the inequality is relaxed by some arbitrary sm
 We first note that the difference between those two definitions is only about
 cocyles if we are ready to lose a tiny something on the norm bound $K$.
 
-
-
 \begin{lemma}
   \label{is_bounded_exact_of_weakly}
   \lean{system_of_complexes.is_weak_bounded_exact.to_exact}
   \uses{is_bounded_exact, is_weak_bounded_exact}
   Let $C_\bullet^\bullet$ be a system of complexes. If $C_\bullet^\bullet$ is
-  weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$ and if,
-  for all $c\geq c_0'$ and all $x\in C_{kc}^i$ with $i\leq m$ such that $dx = 0$
+  weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0$ with bound $K$ and if,
+  for all $c\geq c_0$ and all $x\in C_{kc}^i$ with $i\leq m$ such that $dx = 0$
   there is some $y\in C_c^{i-1}$  such that
   $x_{|c} = dy$ then, for every positive $δ$,
-  $C_\bullet^\bullet$ is $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with
+  $C_\bullet^\bullet$ is $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0$ with
   bound $K + δ$.
 \end{lemma}
 
 \begin{proof}
   \leanok
   Let $δ$ be some positive real number.
-  Let $x$ be an element of $C_{kc}^i$ for some $c ≥ c_0'$ and $i ≤ m$. If $dx = 0$
+  Let $x$ be an element of $C_{kc}^i$ for some $c ≥ c_0$ and $i ≤ m$. If $dx = 0$
   then the assumption we made about exact elements is exactly what we want.
 
   Assume now that $dx ≠ 0$. The weak exactness assumption applied to $ε = δ‖dx‖$
@@ -190,6 +197,48 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
     ‖x_{|c} - dy‖ &≤ K‖dx‖ + δ‖dx‖ \\
                   &= (K + δ)‖dx‖
   \end{align*}
+\end{proof}
+
+\begin{lemma}
+  \label{weak_exact_of_factor_exact}
+  \lean{system_of_complexes.weak_exact_of_factor_exact}
+  \leanok
+  \uses{is_weak_bounded_exact, norm_exact_complex}
+  Let $k \ge 1$, $c_0 \ge 0$ be real numbers, and $m \in \mathbb N$.
+  Let $C_\bullet^\bullet$ be a system of complexes,
+  and for each $c \ge 0$ let $D_c$ be a cochain complex of semi-normed groups.
+  Let $f_c \colon C^\bullet_{kc} \to D^\bullet_c$
+  and $g_c \colon D^\bullet_c \to C^\bullet_c$ be
+  norm-nonincreasing morphisms of cochain complexes of semi-normed groups
+  such that $g_c \circ f_c$ is the restriction map $C^\bullet_{kc} \to C^\bullet_c$.
+  Assume that for all $c \ge c_0$ the cochain complex $D_c$ is normed exact.
+  Then $C_\bullet^\bullet$ is weakly $\le k$-exact in degrees $\le m$ and for $c \ge c_0$ with bound~$1$.
+\end{lemma}
+
+\begin{proof}
+  \leanok
+  Fix $c \ge c_0$, $i \le m$, $x \in C_{kc}^i$, and $\varepsilon > 0$.
+  Denote by $\delta$ the positive real number
+  $\frac{\varepsilon}{\|x\| + 1}$.
+
+  Clearly $f(d(x))$ is killed by $d$,
+  so by normed exactness of $D_c$ we find $x' \in D_c^i$
+  such that $d(x') = f(d(x))$ and $\|x'\| \le (1 + \delta)\|f(d(x))\|$.
+  Similarly $d(f(x) - x') = 0$,
+  so by exactness of $D_c$ we find $y \in D_c^{i-1}$
+  such that $d(y) = f(x) - x'$.
+
+  We are done if we show that
+  $\|x_{|c} - d(g(y))\| \le \|d(x)\| + \varepsilon$.
+  Observe that $x_{|c} - d(g(y)) = g(f(x)) - g(d(y)) = g(x')$,
+  and therefore we shall show $\|g(x')\| \le \|d(x)\| + \varepsilon$.
+
+  Now we use that $f$ and $g$ are norm-nonincreasing to calculate
+  \[
+    \|g(x')\| \le \|x'\| \le (1 + \delta) \|f(d(x))\| \le (1 + \delta) \|d(x)\|.
+  \]
+  Finally, we have $(1 + \delta) \|d(x)\| \le \|d(x)\| + \varepsilon$
+  by our choice of $\delta$.
 \end{proof}
 
 % A more important observation is that, in both definitions, we can also ask some
@@ -201,8 +250,8 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %   % This statement exists in some comment somewhere
 %   % \lean{system_of_complexes.is_weak_bounded_exact.controlled_y}
 %   Let $C_\bullet^\bullet$ be a system of complexes which is
-%   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0'$ with bound $K$.
-%   For all $c\geq c_0'$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$
+%   weakly $\leq k$-exact in degrees $\leq m$ and for $c\geq c_0$ with bound $K$.
+%   For all $c\geq c_0$, all $x\in C_{k²c}^i$ with $i\leq m$, all $ε > 0$ and all $δ > 0$
 %   there is some $y\in C_c^{i-1}$ such that
 %   \[
 %     ‖x_{|c} - dy‖ ≤  K ‖dx‖ + ε
@@ -238,11 +287,11 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
 %   \uses{is_weak_bounded_exact, admissible}
 %   % This statement exists in some comment somewhere
 %   % \lean{system_of_complexes.is_weak_bounded_exact.completion}
-%   Let $(M_c^\bullet)_{c\geq c_0}$ be an admissible collection
+%   Let $M_\bullet^\bullet$ be an admissible collection
 %   of complexes of normed abelian groups.
 %
-%   Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
-%   Then the completion $\overline{M^\bullet_c}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
+%   Assume that $M^\bullet_\bullet$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
+%   Then the completion $\overline{M^\bullet_\bullet}$ is weakly $\leq k^2$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
 % \end{lemma}
 %
 % \begin{proof}
@@ -286,7 +335,7 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
   \lean{system_of_complexes.is_weak_bounded_exact.strong_of_complete}
   \leanok
   \uses{is_weak_bounded_exact, is_bounded_exact, admissible}
-  Let $(M^\bullet_c)_{c\geq c_0}$ be an admissible collection
+  Let $M^\bullet_\bullet$ be an admissible collection
   of complexes of complete normed abelian groups.
 
   Assume that $M^\bullet_c$ is weakly $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$ with bound $K$.
@@ -330,7 +379,7 @@ cocyles if we are ready to lose a tiny something on the norm bound $K$.
   \leanok
   \lean{weak_normed_snake}
   \uses{is_weak_bounded_exact, admissible}
-  Let $(M^\bullet_c)_{c\geq c_0}$ and $(M'^\bullet_c)_{c\geq c_0}$ be two admissible collections
+  Let $M^\bullet_\bullet$ and $M'^\bullet_\bullet$ be two admissible collections
   of complexes of complete normed abelian groups.
   For each $c\geq c_0$ let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
   between these collections of complexes
@@ -413,7 +462,7 @@ $ε_1 = ε/(K'(K  K'' + 2) + 1)$.
 % \begin{proposition}
 %   \label{snakelemma}
 %   \uses{is_bounded_exact, admissible}
-%   Let $(M^\bullet_c)_{c\geq c_0}$ and $(M'^\bullet_c)_{c\geq c_0}$ be two admissible collections
+%   Let $M^\bullet_\bullet$ and $M'^\bullet_\bullet$ be two admissible collections
 %   of complexes of complete normed abelian groups.
 %   For $c\geq c_0$ let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
 %   between these collections of complexes
@@ -454,7 +503,7 @@ Note that this is actually a bit easier to prove.
   \leanok
   \lean{weak_normed_snake_dual}
   \uses{is_weak_bounded_exact, admissible}
-  Let $(M^\bullet_c)_{c\geq c_0}$ and $(M'^\bullet_c)_{c\geq c_0}$ be two admissible collections
+  Let $M^\bullet_\bullet$ and $M'^\bullet_\bullet$ be two admissible collections
   of complexes of complete normed abelian groups.
   For each $c\geq c_0$ let $f^\bullet_c: M^\bullet_c\to M'^\bullet_c$ be a collection of maps
   between these collections of complexes which all commute with all restriction maps.
@@ -488,11 +537,11 @@ Let $n \in N^i_{kk'c} \subseteq M^i_{kk'c}$ for $i\leq m-1$ and let $ε > 0$. We
 \[
   ‖n_{|c} - dy‖ \leq K + r_1r_2KK'‖dn‖ + \epsilon.
 \]
-By weak exactness of $(M^\bullet_c)_{c\geq c_0}$, we can find $m \in M^{i-i}_{k'c}$ such that
+By weak exactness of $M^\bullet_\bullet$, we can find $m \in M^{i-i}_{k'c}$ such that
 \[
   ‖n_{|k'c} - dm‖ \leq K‖dn‖ + \epsilon_1,
 \]
-where $\epsilon_1 > 0$ to be chosen later. By weak exactness of $(M'^\bullet_c)_{c\geq c_0}$, we can find $m' \in M'^{i-2}_c$ such that
+where $\epsilon_1 > 0$ to be chosen later. By weak exactness of $M'^\bullet_\bullet$, we can find $m' \in M'^{i-2}_c$ such that
 \[
   ‖f(m)_{|c} - dm'‖ \leq K'‖df(m)‖ + \epsilon_2,
 \]
@@ -506,7 +555,7 @@ Set $y = m_{|c} - dm_1 - m_2 \in M^{i-1}_c$. By construction $f(y) = 0$, so $y \
 ‖n_{|c} - dm_{|c} ‖ + ‖dm_2‖ = ‖(n_{|k'c} - dm)_{|c}‖ + ‖dm_2‖ \leq ‖(n_{|k'c} - dm)‖ + ‖dm_2‖ \leq \\
 K‖dn‖ + \epsilon_1 + ‖dm_2‖.
 \end{gather*}
-Where we have used the defining property of $m$ and admissibility of $(M^\bullet_c)_{c\geq c_0}$. By the same assumption and since $f(n_{|k'c}) = f(n)_{|k'c} = 0$, we have
+Where we have used the defining property of $m$ and admissibility of $M^\bullet_\bullet$. By the same assumption and since $f(n_{|k'c}) = f(n)_{|k'c} = 0$, we have
 \begin{gather*}
 ‖dm_2‖ \leq ‖m_2‖ \leq  r_2 ‖f(m_{|c} - dm_1)‖ = r_2 ‖f(m)_{|c} - df(m_1)‖ = r_2 ‖f(m)_{|c} - dm'‖ \leq \\
 r_2(K'‖df(m)‖ + \epsilon_2) = r_2(K'‖f(dm)‖ + \epsilon_2) = r_2(K'‖f(n_{|k'c}) - f(dm)‖ + \epsilon_2) = \\
