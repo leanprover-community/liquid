@@ -100,16 +100,66 @@
   </div>
 </div> </p>
 <p>Finally, we can prove the key combinatorial lemma, ensuring that any element of \(\operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))\) can be decomposed into \(N\) elements whose norm is roughly \(\tfrac 1N\) of the original element. </p>
+<p><div class="definition_thmwrapper" id="a0000000083">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">6.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000083">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#pseudo_normed_group">Definition 2.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/35e377eb360777910896bcd3ba64b576ce566401/src/pseudo_normed_group/basic.lean#L336">pseudo_normed_group.splittable</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(M\) be a pseudo-normed group, \(N \in \mathbb N\), and \(d \in \mathbb R_{\ge 0}\). We say that \(M\) is <em>\(N\)-splittable</em> with error term&#160;\(d\), if for all \(c\) and \(x \in M_c\), there exists a decomposition </p>
+<div class="displaymath" id="a0000000084">
+  \[  x = x_1 + x_2 + \dots + x_N,  \]
+</div>
+<p> with \(x_i \in M_{c/N + d}\). </p>
+
+  </div>
+</div> </p>
 <p><div class="lemma_thmwrapper" id="combi">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmlabel">6.3</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#combi">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000083"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000085"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -145,10 +195,11 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let \(\Lambda \) be a polyhedral lattice. Then for all positive integers \(N\) there is a constant \(d\) such that for all \(c{\gt}0\) one can write any \(x\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c}\) as </p>
-<div class="displaymath" id="a0000000084">
+<div class="displaymath" id="a0000000086">
   \[  x=x_1+\ldots +x_N  \]
 </div>
 <p> where all \(x_i\in \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}\). </p>
+<p>In other words, for all \(N\), there exists a \(d\) such that \(\operatorname{Hom}(\Lambda , \overline{\mathcal M}_{r'}(S))\) is \(N\)-splittable with error term&#160;\(d\). </p>
 
   </div>
 </div> </p>
@@ -158,12 +209,12 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.3</span>
+    <span class="lemma_thmlabel">6.4</span>
     <span class="lemma_thmtitle">Gordan’s lemma</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#explicit_gordan">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000085"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000087"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -187,7 +238,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000085">
+<div class="proof_wrapper" id="a0000000087">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -204,11 +255,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.4</span>
+    <span class="lemma_thmlabel">6.5</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#combi_aux">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000086"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -232,7 +283,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000086">
+<div class="proof_wrapper" id="a0000000088">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -241,7 +292,7 @@
   </div>
   <div class="proof_content">
   <p> It suffices to prove the statement for all \(x\) such that \(\lambda _i(x)\geq 0\) for all \(i\); indeed, applying this variant to all \(\pm \lambda _i\), one gets the full statement. </p>
-<p>Thus, consider the submonoid \(\Lambda ^\vee _+\subset \Lambda ^\vee \) of all \(x\) that pair nonnegatively with all \(\lambda _i\). This is a finitely generated monoid by Lemma&#160;<a href="sec-polyhedral_lattice.html#explicit_gordan">6.3</a>; let \(y_1,\ldots ,y_M\) be a set of generators. Then we can take for \(A\) all sums \(n_1y_1+\ldots +n_My_M\) where all \(n_j\in \{ 0,\ldots ,N-1\} \). </p>
+<p>Thus, consider the submonoid \(\Lambda ^\vee _+\subset \Lambda ^\vee \) of all \(x\) that pair nonnegatively with all \(\lambda _i\). This is a finitely generated monoid by Lemma&#160;<a href="sec-polyhedral_lattice.html#explicit_gordan">6.4</a>; let \(y_1,\ldots ,y_M\) be a set of generators. Then we can take for \(A\) all sums \(n_1y_1+\ldots +n_My_M\) where all \(n_j\in \{ 0,\ldots ,N-1\} \). </p>
 
   </div>
 </div>
@@ -250,11 +301,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.5</span>
+    <span class="lemma_thmlabel">6.6</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#exists_partition">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000087"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000089"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -278,7 +329,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000087">
+<div class="proof_wrapper" id="a0000000089">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -287,7 +338,7 @@
   </div>
   <div class="proof_content">
   <p>Define the \(A_j\) recursively: assume that the natural numbers \(0, \dots , n\) have been placed into the sets \(A_1, \dots , A_N\). Then add the number \(n+1\) to the set \(A_j\) for which </p>
-<div class="displaymath" id="a0000000088">
+<div class="displaymath" id="a0000000090">
   \[  \sum _{i=0, i\in A_j}^n x_i  \]
 </div>
 <p> is minimal. </p>
@@ -299,11 +350,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.6</span>
+    <span class="lemma_thmlabel">6.7</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#lem98_int">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000089"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000091"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -324,14 +375,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>  For all natural numbers \(N {\gt} 0\), and for all \(x\in \overline{\mathcal M}_{r'}(S)_{\leq c}\) one can decompose \(x\) as a sum </p>
-<div class="displaymath" id="a0000000090">
+<div class="displaymath" id="a0000000092">
   \[  x=x_1+\ldots +x_N  \]
 </div>
 <p> with all \(x_i\in \overline{\mathcal M}_{r'}(S)_{\leq c/N+1}\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000089">
+<div class="proof_wrapper" id="a0000000091">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -339,36 +390,36 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> Choose a bijection \(S \times \mathbb N \cong \mathbb N\), and transport the result from Lemma&#160;<a href="sec-polyhedral_lattice.html#exists_partition">6.5</a>. </p>
+  <p> Choose a bijection \(S \times \mathbb N \cong \mathbb N\), and transport the result from Lemma&#160;<a href="sec-polyhedral_lattice.html#exists_partition">6.6</a>. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000083">
+<div class="proof_wrapper" id="a0000000085">
   <div class="proof_heading">
     <span class="proof_caption">
-    Proof of Lemma&#160;<a href="sec-polyhedral_lattice.html#combi">6.2</a>
+    Proof of Lemma&#160;<a href="sec-polyhedral_lattice.html#combi">6.3</a>
     </span>
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p>   Pick \(\lambda _1,\ldots ,\lambda _m\in \Lambda \) generating the norm. We fix a finite subset \(A\subset \Lambda ^\vee \) satisfying the conclusion of the previous lemma. Write </p>
-<div class="displaymath" id="a0000000091">
+<div class="displaymath" id="a0000000093">
   \[  x=\sum _{n\geq 1, s\in S} x_{n,s} T^n [s]  \]
 </div>
 <p> with \(x_{n,s}\in \Lambda ^\vee \). Then we can decompose </p>
-<div class="displaymath" id="a0000000092">
+<div class="displaymath" id="a0000000094">
   \[  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1  \]
 </div>
 <p> where \(x_{n,s}^1\in A\) and we have the same-sign property of the last lemma. Letting \(x^0 = \sum _{n\geq 1, s\in S} x_{n,s}^0 T^n [s]\), we get a decomposition </p>
-<div class="displaymath" id="a0000000093">
+<div class="displaymath" id="a0000000095">
   \[  x = Nx^0 + \sum _{a\in A} a x_a  \]
 </div>
 <p> with \(x_a\in \overline{\mathcal M}_{r'}(S)\) (with the property that in the basis given by the \(T^n [s]\), all coefficients are \(0\) or \(1\)). Crucially, we know that for all \(i=1,\ldots ,m\), we have </p>
-<div class="displaymath" id="a0000000094">
+<div class="displaymath" id="a0000000096">
   \[  ‖x(\lambda _i)‖ = N ‖x^0(\lambda _i)‖ + \sum _{a\in A} |a(\lambda _i)| ‖x_a‖  \]
 </div>
 <p> by using the same sign property of the decomposition. </p>
-<p>Using this decomposition of \(x\), we decompose each term into \(N\) summands. This is trivial for the first term \(Nx^0\), and each summand of the second term decomposes with \(d = 1\) by Lemma&#160;<a href="sec-polyhedral_lattice.html#lem98_int">6.6</a>. (It follows that in general one can take for \(d\) the supremum over all \(i\) of \(\sum _{a\in A} |a(\lambda _i)|\).) </p>
+<p>Using this decomposition of \(x\), we decompose each term into \(N\) summands. This is trivial for the first term \(Nx^0\), and each summand of the second term decomposes with \(d = 1\) by Lemma&#160;<a href="sec-polyhedral_lattice.html#lem98_int">6.7</a>. (It follows that in general one can take for \(d\) the supremum over all \(i\) of \(\sum _{a\in A} |a(\lambda _i)|\).) </p>
 
   </div>
 </div>
@@ -377,7 +428,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">6.7</span>
+    <span class="definition_thmlabel">6.8</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#rescaled-sum">#</a>
@@ -416,7 +467,7 @@
   <div class="definition_thmcontent">
   <p>    Let \(\Lambda \) be a polyhedral lattice, and let \(N {\gt} 0\) be a natural number. (We think of \(N\) as being fixed once and for all, and thus it does not show up in the notation below.) </p>
 <p>By \(\Lambda '\) we denote \(\Lambda ^N\) endowed with the norm </p>
-<div class="displaymath" id="a0000000095">
+<div class="displaymath" id="a0000000097">
   \[  ‖(\lambda _1,\ldots ,\lambda _N)‖_{\Lambda '} = \tfrac 1N(‖\lambda _1‖_\Lambda +\ldots +‖\lambda _N‖_\Lambda ).  \]
 </div>
 <p> This is a polyhedral lattice. </p>
@@ -428,11 +479,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.8</span>
+    <span class="lemma_thmlabel">6.9</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#polyhedral-quotient">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000096"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000098"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -444,7 +495,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#rescaled-sum">Definition 6.7</a></li>
+          <li><a href="sec-polyhedral_lattice.html#rescaled-sum">Definition 6.8</a></li>
         </ul>
 
       </div>
@@ -471,7 +522,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000096">
+<div class="proof_wrapper" id="a0000000098">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -488,7 +539,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">6.9</span>
+    <span class="definition_thmlabel">6.10</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#cosimplicial-lattice">#</a>
@@ -502,7 +553,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#polyhedral-quotient">Lemma 6.8</a></li>
+          <li><a href="sec-polyhedral_lattice.html#polyhedral-quotient">Lemma 6.9</a></li>
         </ul>
 
       </div>
@@ -535,7 +586,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">6.10</span>
+    <span class="definition_thmlabel">6.11</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#Hom">#</a>
@@ -575,7 +626,7 @@
   <div class="definition_thmcontent">
   <p>   Let \(\Lambda \) be a polyhedral lattice, and \(M\) a profinitely filtered pseudo-normed group. </p>
 <p>Endow \(\operatorname{Hom}(\Lambda , M)\) with the subspaces </p>
-<div class="displaymath" id="a0000000097">
+<div class="displaymath" id="a0000000099">
   \[  \operatorname{Hom}(\Lambda , M)_{\leq c} = \{ f \colon \Lambda \to M \mid \forall x \in \Lambda , f(x) \in M_{\leq c‖x‖} \} .  \]
 </div>
 <p> As \(\Lambda \) is polyhedral, it is enough to check the given condition on&#160;\(f\) for a finite collection of \(x\) that generate the norm. </p>
