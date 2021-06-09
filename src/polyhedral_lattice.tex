@@ -24,6 +24,20 @@ Finally, we can prove the key combinatorial lemma,
 ensuring that any element of $\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))$
 can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the original element.
 
+\begin{definition}
+  \uses{pseudo_normed_group}
+  \lean{pseudo_normed_group.splittable}
+  \leanok
+  Let $M$ be a pseudo-normed group, $N \in \mathbb N$, and $d \in \mathbb R_{\ge 0}$.
+  We say that $M$ is \emph{$N$-splittable} with error term~$d$,
+  if for all $c$ and $x \in M_c$,
+  there exists a decomposition
+  \[
+    x = x_1 + x_2 + \dots + x_N,
+  \]
+  with $x_i \in M_{c/N + d}$.
+\end{definition}
+
 \begin{lemma}
   \label{combi}
   \lean{lem98}
@@ -37,6 +51,9 @@ can be decomposed into $N$ elements whose norm is roughly $\tfrac 1N$ of the ori
     x=x_1+\ldots+x_N
   \]
   where all $x_i\in \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N+d}$.
+
+  In other words, for all $N$, there exists a $d$ such that
+  $\Hom(\Lambda, \overline{\mathcal M}_{r'}(S))$ is $N$-splittable with error term~$d$.
 \end{lemma}
 
 As preparation for the proof, we have the following results.

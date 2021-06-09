@@ -182,23 +182,78 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   \leanok
   Let $S' \to S$ be a surjective morphism of profinite sets,
   and let $S_\bullet\to S$ be its Cech nerve.
+  Let $V$ be a semi-normed group.
   Then the complex
   \[
-    0\to \widehat{M}(S)\to \widehat{M}(S_0)\to \widehat{M}(S_1)\to \ldots
+    0\to \widehat{V}(S)\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \ldots
   \]
   is exact,
-  and whenever $f\in \ker(\widehat{M}(S_m)\to \widehat{M}(S_{m+1}))$ with $‖f‖\leq c$,
-  then for any $\epsilon>0$ there is some $g\in \widehat{M}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
+  and whenever $f\in \ker(\widehat{V}(S_m)\to \widehat{V}(S_{m+1}))$ with $‖f‖\leq c$,
+  then for any $\epsilon>0$ there is some $g\in \widehat{V}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
+  In other words, the complex is normed exact in the sense of Definition~\ref{norm_exact_complex}.
 \end{proposition}
 
 \begin{proof}
   \uses{lem:controlled_exactness}\leanok
-Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the cechcover splits, so a contracting homotopy gives the result with constant $1$. In general, write the cechcover as a cofiltered limit of cechcovers of finite sets by finite sets, pass to the filtered colimit, and complete, using Lemma~\ref{lem:controlled_exactness}.
+Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the Cech cover splits, so a contracting homotopy gives the result with constant $1$. In general, write the Cech cover as a cofiltered limit of Cech covers of finite sets by finite sets, pass to the filtered colimit, and complete, using Lemma~\ref{lem:controlled_exactness}.
+\end{proof}
+
+\begin{lemma}
+  \label{pre_col_exact}
+  \lean{thm95.FLC_complex.weak_bounded_exact}
+  \leanok
+  Let $M$ be a profinitely filtered pseudo-normed group with $T^{-1}$-action
+  that is $N$-splittable with error term~$d \ge 0$.
+  Let $k \ge 1$ be a real number,
+  and let $c_0 > 0$ satisfy $d \le \frac{(k - 1) c_0}{N}$.
+  For every $c$, consider the Cech nerve of the summation map $M^N_{c/N} \to M_c$.
+  By applying the functor $\hat V(\_)$ and taking the alternating face map complex,
+  we obtain a system of complexes
+  \[
+    \hat V(M_{\le c}) \to \hat V(M^N_{\le c/N}) \to \dots
+  \]
+  This system of complexes
+  is weakly $\le k$-exact in degrees $\le m$ and for $c \ge c_0$ with bound~$1$.
+\end{lemma}
+
+\begin{proof}
+  \uses{cechcover-exact, weak_exact_of_factor_exact, norm_exact_complex}
+  \leanok
+  For every constant $c$,
+  consider the pullback
+  \[
+    \begin{tikzcd}
+      & M_c \rar & M_{kc} \\
+      & X_c \uar \rar & M^N_{kc/N} \uar \\
+      M^N_{c/N} \ar{uur} \ar{rru} \ar[dotted]{ur}
+    \end{tikzcd}
+  \]
+  We therefore get morphisms of cochain complexes
+  \[
+    \begin{tikzcd}
+      \hat V(M_{kc}) \rar\dar & \hat V(M_c) \rar\dar & \hat V(M_c) \dar \\
+      \hat V(M^N_{kc/N}) \rar\dar & \hat V(X_c) \rar\dar & \hat V(M^N_{c/N}) \dar \\
+      \vdots \rar & \vdots \rar & \vdots
+    \end{tikzcd}
+  \]
+  where all the columns are of the form
+  ``alternating face map complex of $\hat V(\_)$ applied to a Cech nerve''.
+  Note that the horizontal maps are norm-nonincreasing
+  and their compositions are restriction maps.
+
+  Claim: for $c \ge c_0$, the map $X_c \to M_c$ is surjective.
+
+  Indeed, by assumption every $x \in M_c$ can be decomposed into a sum
+  $x = x_1 + \dots + x_N$ with $x_i \in M_{c/N+d} \subset M_{kc/N}$,
+  since $c \ge c_0$ and $d \le \frac{(k-1)c_0}{N}$.
+
+  By Proposition~\ref{cechcover-exact},
+  the middle column is normed exact (in the sence of Definition~\ref{norm_exact_complex}).
+  The result follows from Lemma~\ref{weak_exact_of_factor_exact}.
 \end{proof}
 
 \begin{proposition}
   \label{col_exact}
-  \uses{combi,cechcover-exact,lem:Tinv,canonical_iso_2,weakdualsnakelemma}
   \lean{thm95.col_exact}
   \leanok
   Let $d$ be the constant from Proposition~\ref{combi}.
@@ -218,23 +273,28 @@ Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are fi
 \end{proposition}
 
 \begin{proof}\leanok
-  The proof given below has to be expanded and rewritten.
+  \uses{combi,lem:Tinv,canonical_iso_2,weakdualsnakelemma, pre_col_exact}
+  Let $M^{(m)}$ denote $\Hom(\Lambda^{(m)},\overline{\mathcal M}_{r'}(S))^{n_i}$.
+  We also write $M$ for $M^{(0)} = \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))^{n_i}$
+  and $M'$ for $M^{(1)}$.
+  By Proposition~\ref{combi}, $M$ is $N$-splittable with error term~$d$.
 
-  By Lemma~\ref{combi}, and noting that $\Hom(\Lambda'^{(\bullet)},\overline{\mathcal M}_{r'}(S))_{\leq c}$ is the \v{C}ech nerve of
+  Consider the diagram of morphisms of systems of complexes
   \[
-  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c/N}^N\xrightarrow{\sum} \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c},
+    \begin{tikzcd}
+      \hat V(M_c)^{T^{-1}} \rar\dar & \hat V(M_c) \rar["{T^{-1} - [T^{-1}]^*}"]\dar & \hat V(M_c) \dar \\
+      \hat V(M'_c)^{T^{-1}} \rar\dar & \hat V(M'_c) \rar["{T^{-1} - [T^{-1}]^*}"]\dar & \hat V(M'_c) \dar \\
+      \vdots \dar & \vdots \dar & \vdots \dar \\
+      \hat V(M^{(m)}_c)^{T^{-1}} \rar & \hat V(M^{(m)}_c) \rar["{T^{-1} - [T^{-1}]^*}"] & \hat V(M^{(m)}_c)
+    \end{tikzcd}
   \]
-  also the second condition is satisfied, with $k$ the maximum of the previous $k$ and some constant depending only on $m$ and $r$, provided we take $c_0$ large enough so that $(k-1)r'c_ic_0/N$ is at least the $d$ of Lemma~\ref{combi} for all $i=0,\ldots,m$ (so this choice of $c_0$ again depends on $\Lambda$). Indeed, then one can splice a surjection of profinite sets between the maps
-  \[
-  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic/N}^{Na}\to\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c_ic}^a
-  \]
-  and
-  \[
-  \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic/N}^{Na}\to \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq kc_ic}^a,
-  \]
-  and so the transition map between the columns of that double complex factors over a similar complex arising from a simplicial cechcover of profinite sets, so the constants are bounded as claimed in the statement,
-  by Proposition~\ref{cechcover-exact}, Lemma~\ref{lem:Tinv}, and Proposition~\ref{weakdualsnakelemma}.
-  \end{proof}
+
+  By Lemmas~\ref{pre_col_exact} and~\ref{canonical_iso_2},
+  we know that the two columns on the right are
+  weakly $\le k$-exact in degrees $\le m$ and for $c \ge c_0$ with bound~$1$.
+
+  The result now follows from Lemma~\ref{lem:Tinv}, and Proposition~\ref{weakdualsnakelemma}.
+\end{proof}
 
 \begin{proposition}
   \label{double-complex-htpy}
