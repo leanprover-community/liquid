@@ -9,8 +9,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blueprint for the Liquid Tensor Experiment</title>
-<link rel="next" href="intro.html" title="Introduction" />
+<title>Blueprint for the Liquid Tensor Experiment: Introduction</title>
+<link rel="next" href="on-the-statement.html" title="On the statement of the main goal" />
+<link rel="prev" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
+<link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 </head>
@@ -18,15 +20,16 @@
 <body>
 <header>
 <svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Blueprint for the Liquid Tensor Experiment</a></h1>
 </header>
 
 <div class="wrapper">
 <nav class="toc">
 <ul class="sub-toc-0">
-<li class="">
+<li class=" active current">
   <a href="intro.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="on-the-statement.html"><span class="toc_ref">1.1</span> <span class="toc_entry">On the statement of the main goal</span></a>
  </li>
@@ -75,97 +78,61 @@
 
 
 <div class="main-text">
-<div class="titlepage">
-<h1>Blueprint for the Liquid Tensor Experiment</h1>
-<p class="authors">
-<span class="author">Peter Scholze (all results joint with Dustin Clausen),<br />edited by Johan Commelin and Patrick Massot</span>
-</p>
-<p class="date">June 10, 2021</p>
-</div>
-<p><div class="remark_thmwrapper" id="a0000000007">
-  <div class="remark_thmheading">
-    <span class="remark_thmcaption">
-    Remark
+<h1 id="intro">1 Introduction</h1>
+
+<p>The goal of this document is to provide a detailed account of the proof of the following theorem, along side a computer verification in the Lean theorem prover (see Section&#160;<a href="on-lean.html">1.2</a>). </p>
+<p><div class="theorem_thmwrapper" id="main-goal">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
     </span>
-    <span class="remark_thmlabel">0.1</span>
+    <span class="theorem_thmlabel">1.1</span>
+    <span class="theorem_thmtitle">Clausen–Scholze</span>
     <div class="thm_icons">
-    <a class="icon proof" href="index.html#a0000000007">#</a>
+    <a class="icon proof" href="intro.html#main-goal">#</a>
 
   </div>
   </div>
-  <div class="remark_thmcontent">
-  <p>This text is based on the lecture notes on Analytic Geometry&#160;<span class="cite">
-	[
-	<a href="sect0005.html#Analytic" >Sch20</a>
-	]
-</span>, by Peter Scholze. The final section is copy-pasted from those lecture notes almost verbatim. This text is meant as a blueprint for the Liquid Tensor Experiment. </p>
+  <div class="theorem_thmcontent">
+  <p>  Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of \(p'\)-measures on \(S\). Then </p>
+<div class="displaymath" id="a0000000009">
+  \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S), V)=0  \]
+</div>
+<p> for \(i \ge 1\). </p>
 
   </div>
 </div> </p>
-<p><div class="remark_thmwrapper" id="a0000000008">
+<p>We will explain this statement in more detail in Section&#160;<a href="on-the-statement.html">1.1</a> below. </p>
+<p><div class="remark_thmwrapper" id="a0000000010">
   <div class="remark_thmheading">
     <span class="remark_thmcaption">
     Remark
     </span>
-    <span class="remark_thmlabel">0.2</span>
+    <span class="remark_thmlabel">1.2</span>
     <div class="thm_icons">
-    <a class="icon proof" href="index.html#a0000000008">#</a>
+    <a class="icon proof" href="intro.html#a0000000010">#</a>
 
   </div>
   </div>
   <div class="remark_thmcontent">
-  <p>In this text \(\mathbf{N}\) denotes the natural numbers <em>including</em> \(0\). </p>
+  <p>Status report of the project as of 10-06-2021. The main ingredient in the proof of Theorem&#160;<a href="intro.html#main-goal">1.1</a> is the highly technical Theorem&#160;<a href="sect0004.html#first_target">8.1</a>. </p>
+<p>We have completed a computer verification of this first target in Lean, and this document contains an account of the proof. We are in the process of cleaning up and documenting this first step. </p>
+<p>Once that is done, we will work on the second step: deducing Theorem&#160;<a href="intro.html#main-goal">1.1</a> from Theorem&#160;<a href="sect0004.html#first_target">8.1</a>. </p>
 
   </div>
 </div> </p>
 
 </div> <!--main-text -->
-<nav class=local_toc>
-<ul>
-  <li>	
-  <a href="intro.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
-	<ul>
-		   <li>	
-  <a href="on-the-statement.html"><span class="toc_ref">1.1</span> <span class="toc_entry">On the statement of the main goal</span></a>
-  </li>
-  <li>	
-  <a href="on-lean.html"><span class="toc_ref">1.2</span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
-  </li>
-
-	</ul>
-  </li>
-  <li>	
-  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Breen–Deligne data</span></a>
-  </li>
-  <li>	
-  <a href="sec-normed_groups.html"><span class="toc_ref">3</span> <span class="toc_entry">Variants of normed groups</span></a>
-  </li>
-  <li>	
-  <a href="sect0002.html"><span class="toc_ref">4</span> <span class="toc_entry">Spaces of convergent power series</span></a>
-  </li>
-  <li>	
-  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">5</span> <span class="toc_entry">Some normed homological algebra</span></a>
-  </li>
-  <li>	
-  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Completions of locally constant functions</span></a>
-  </li>
-  <li>	
-  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">7</span> <span class="toc_entry">Polyhedral lattices</span></a>
-  </li>
-  <li>	
-  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">End of proof</span></a>
-  </li>
-  <li>	
-  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
-  </li>
-</ul>
-</nav>
 </div> <!-- content-wrapper -->
 </div> <!-- content -->
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="intro.html" title="Introduction"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="on-the-statement.html" title="On the statement of the main goal"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
