@@ -1,0 +1,50 @@
+\section{Introduction}
+\label{intro}
+
+The goal of this document is to provide a detailed account
+of the proof of the following theorem,
+along side a computer verification in the Lean theorem prover
+(see \cref{on-lean}).
+
+\begin{theorem}[Clausen--Scholze]
+  \label{main-goal}
+  Let $0 < p' < p \le 1$ be real numbers,
+  let $S$ be a profinite set,
+  and let $V$ be a $p$-Banach space.
+  Let $\mathcal M_{p'}(S)$ be the space of $p'$-measures on $S$.
+  Then
+  \[
+    \Ext^i_{\Cond(\Ab)}(\mathcal M_{p'}(S), V)=0
+  \]
+  for $i \ge 1$.
+\end{theorem}
+
+We will this statement in more detail in \cref{on-the-statement}.
+
+\begin{remark}
+  Status report of the project as of 10-06-2021.
+  The main ingredient in the proof of \cref{main-goal}
+  is the highly technical \cref{first_target}.
+
+  We have completed a computer verification of this first target in Lean,
+  and this document contains an account of the proof.
+  We are in the process of cleaning up and documenting this first step.
+
+  Once that is done, we will work on the second step:
+  deducing \cref{main-goal} from \cref{first_target}.
+\end{remark}
+
+\subsection{On the statement of the main goal}
+\label{on-the-statement}
+
+TODO
+
+\subsection{On the Lean theorem prover and computer verification of proofs}
+\label{on-lean}
+
+The Lean theorem prover is developed by Leonardo de Moura
+at Microsoft Research.
+
+TODO: write a short paragraph about what computer verification means,
+add pointers to further tutorials/material
+
