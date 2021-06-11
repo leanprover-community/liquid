@@ -495,11 +495,11 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>   Let \(S' \to S\) be a surjective morphism of profinite sets, and let \(S_\bullet \to S\) be its Cech nerve. Let \(V\) be a semi-normed group. Then the complex </p>
+  <p>   Let \(\pi : X \to B\) be a surjective morphism of profinite sets, and let \(S_\bullet \to S_{-1}\), \(S_{-1} := B\), be its augmented Čech nerve. Let \(V\) be a semi-normed group. Then the complex </p>
 <div class="displaymath" id="a0000000116">
-  \[  0\to \widehat{V}(S)\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \ldots  \]
+  \[  0\to \widehat{V}(S_{-1})\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \cdots  \]
 </div>
-<p> is exact, and whenever \(f\in \ker (\widehat{V}(S_m)\to \widehat{V}(S_{m+1}))\) with \(‖f‖\leq c\), then for any \(\epsilon {\gt}0\) there is some \(g\in \widehat{V}(S_{m-1})\) with \(‖g‖\leq (1+\epsilon )c\) such that \(d(g)=f\). In other words, the complex is normed exact in the sense of Definition&#160;<a href="sec-some_normed_homological_algebra.html#norm_exact_complex">5.6</a>. </p>
+<p> is exact. Furthermore, for all \(\epsilon {\gt} 0\) and \(f \in \ker (\widehat{V}(S_{m}) \to \widehat{V}(S_{m+1}))\), there exists some \(g\in \widehat{V}(S_{m-1})\) such that \(d(g) = f\) and \(‖g‖\leq (1+\epsilon ) \cdot ‖f‖\). In other words, the complex is normed exact in the sense of Definition&#160;<a href="sec-some_normed_homological_algebra.html#norm_exact_complex">5.6</a>. </p>
 
   </div>
 </div> </p>
@@ -511,13 +511,40 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Follow the proof of <span class="cite">
+  <p>We argue similarly to&#160;<span class="cite">
 	[
 	<a href="sect0005.html#Condensed" >Sch19</a>
 	, 
 	Theorem 3.3
 	]
-</span>: When \(S\) and all \(S_i\) are finite, the Cech cover splits, so a contracting homotopy gives the result with constant \(1\). In general, write the Cech cover as a cofiltered limit of Cech covers of finite sets by finite sets, pass to the filtered colimit, and complete, using Lemma&#160;<a href="sec-some_normed_homological_algebra.html#lem:controlled_exactness">5.3</a>. </p>
+</span>, as follows. By applying Lemma&#160;<a href="sec-some_normed_homological_algebra.html#lem:controlled_exactness">5.3</a>, we first reduce to a statement which does not involve \(\epsilon \) or completions. Explicitly, we must show that </p>
+<div class="displaymath" id="a0000000117">
+  \[  0 \to V(S_{1}) \to V(S_{0}) \to V(S_{1}) \to \cdots  \]
+</div>
+<p> is exact, and that whenever \(f \in \ker (V(S_{m}) \to V(S_{m+1}))\), there exists \(g \in V(S_{m-1})\) such that \(‖g‖\leq ‖f‖\) and \(d(g) = f\). The map \(V(S_{-1}) \to V(S_{0})\) is the one induced by \(S_0 \to S_{-1}\) which agrees with \(X \to B\). Since \(X \to B\) is surjective, we easily see that \(V(S_{-1}) \to V(S_{0})\) is injective. </p>
+<p>If \(X\) and \(B\) are finite, then the remaining assertions follow from the existence of a splitting \(\sigma : B \to X\) of \(\pi : X \to B\), as follows. The map \(\sigma \) provides maps \(S_{m} \to S_{m+1}\) for all \(m \geq -1\), defined explicitly as </p>
+<div class="displaymath" id="a0000000118">
+  \[  (a_{0},\ldots ,a_{m}) \mapsto (\sigma (\pi (a_{0})), a_{0},\ldots ,a_{m})  \]
+</div>
+<p> if \(m \geq 0\) and simply as \(\sigma \) if \(m = -1\). Here, for \(m \geq 0\), we have identified \(S_{m}\) with the \(m+1\)-fold fibered product \(X \times _{B} \cdots \times _{B} X\). Applying \(V(-)\), these maps induce \(h_{m} : V(S_{m+1}) \to V(S_{m})\), which form a contracting homotopy for the complex in question, and which are norm nonincreasing by the definition of \(V(-)\). If \(f \in \ker (V_{m} \to V_{m+1})\) is as above, then \(g := h_{m}(f)\) satisfies \(d(g) = f\) and \(‖g‖\leq ‖f‖\), as required. </p>
+<p>In the general case, write \(X = \varprojlim _{i} X_{i}\) where \(X_{i}\) vary over the discrete (hence finite) quotients of \(X\). Since \(X \to B\) is surjective, for each \(i\) there exists a unique maximal discrete quotient \(B_{i}\) of \(B\) such that \(X \to B\) descends to \(X_{i} \to B_{i}\). The maps \(X_{i} \to B_{i}\) are again surjective, and one has </p>
+<div class="displaymath" id="a0000000119">
+  \[  (X \to B) = \varprojlim _{i} (X_{i} \to B_{i}).  \]
+</div>
+<p> Let \(S_{i,\bullet } \to S_{i,-1}\), \(S_{i,-1} := B_{i}\), denote the augmented Čech nerve of \(X_{i} \to B_{i}\). </p>
+<p>The terms in the Čech nerve are themselves limits, hence we have \(S_{m} = \varprojlim _{i} S_{i,m}\), with each \(S_{i,m}\) finite. The functor \(V(-)\), when considered as taking values in abelian groups, sends cofiltered limits to filtered colimits. Also, if \(f \in V(S_{m})\) is the pullback of \(f_{i} \in V(S_{i,m})\), then for a sufficiently small index \(j \leq i\), the image of \(f : S_{m} \to V\) agrees with the image of \(f_{j} : S_{j,m} \to V\), where \(f_{j}\) is the image of \(f_{i}\) under the map \(V(S_{i,m}) \to V(S_{j,m})\) induced by the transition map \(S_{j,m} \to S_{i,m}\). </p>
+<p>Now suppose that \(f \in \ker (V(S_{m}) \to V(S_{m+1}))\) is given. By the discussion above, there exists some \(i\) and some \(f_{i} \in V(S_{i,m})\) such that \(f\) is the pullback of \(f_{i}\) with respect to the morphism \(S_{m} \to S_{i,m}\) and such that the following additional conditions hold: </p>
+<ol class="enumerate">
+  <li><p>One has \(‖f_{i}‖ = ‖f‖\). </p>
+</li>
+  <li><p>One has \(f_{i} \in \ker (V(S_{i,m}) \to V(S_{i,m+1}))\). </p>
+</li>
+</ol>
+<p> Let \(h_{m} : V(S_{i,m}) \to V(S_{i,m-1})\) be the map constructed in the argument for the finite case \(X_{i} \to B_{i}\). Put \(g_{i} := h_{m} (f_{i})\) and \(g\) the image of \(g_{i}\) in \(V(S_{m-1})\). Since the maps \(V(S_{i,\bullet }) \to V(S_{\bullet })\) commute with the differentials, we have \(d(g) = f\). Finally, the map \(V(S_{i,m-1}) \to V(S_{m-1})\) is norm nonincreasing as it is induced from \(S_{m-1} \to S_{i,m-1}\), so that </p>
+<div class="displaymath" id="a0000000120">
+  \[  ‖g‖\leq ‖g_{i}‖ \le ‖f_{i}‖ = ‖f‖,  \]
+</div>
+<p> as contended. </p>
 
   </div>
 </div>
@@ -530,7 +557,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0004.html#pre_col_exact">#</a>
-    <a class="icon proof" href="sect0004.html#a0000000117"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -566,14 +593,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let \(M\) be a profinitely filtered pseudo-normed group with \(T^{-1}\)-action that is \(N\)-splittable with error term&#160;\(d \ge 0\). Let \(k \ge 1\) be a real number, and let \(c_0 {\gt} 0\) satisfy \(d \le \frac{(k - 1) c_0}{N}\). For every \(c\), consider the Cech nerve of the summation map \(M^N_{c/N} \to M_c\). By applying the functor \(\widehat V(\_ )\) and taking the alternating face map complex, we obtain a system of complexes </p>
-<div class="displaymath" id="a0000000118">
+<div class="displaymath" id="a0000000122">
   \[  \widehat V(M_{\le c}) \to \widehat V(M^N_{\le c/N}) \to \dots  \]
 </div>
 <p> This system of complexes is weakly \(\le k\)-exact in degrees \(\le m\) and for \(c \ge c_0\) with bound&#160;\(1\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000117">
+<div class="proof_wrapper" id="a0000000121">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -582,7 +609,7 @@
   </div>
   <div class="proof_content">
   <p> For every constant \(c\), consider the pullback </p>
-<div class="displaymath" id="a0000000119">
+<div class="displaymath" id="a0000000123">
   \[  \begin{tikzcd} 
       & M_c \rar & M_{kc} \\
       & X_c \uar \rar & M^N_{kc/N} \uar \\
@@ -590,7 +617,7 @@
     \end{tikzcd}  \]
 </div>
 <p> We therefore get morphisms of cochain complexes </p>
-<div class="displaymath" id="a0000000120">
+<div class="displaymath" id="a0000000124">
   \[  \begin{tikzcd} 
       \hat V(M_{kc}) \rar\dar & \hat V(M_c) \rar\dar & \hat V(M_c) \dar \\
       \hat V(M^N_{kc/N}) \rar\dar & \hat V(X_c) \rar\dar & \hat V(M^N_{c/N}) \dar \\
@@ -613,7 +640,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0004.html#col_exact">#</a>
-    <a class="icon proof" href="sect0004.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -634,11 +661,11 @@
   </div>
   <div class="proposition_thmcontent">
   <p>  Let \(d\) be the constant from Proposition&#160;<a href="sec-polyhedral_lattice.html#combi">7.3</a>. Let \(k {\gt} 1\) and \(c_0 {\gt} 0\) be real numbers such that </p>
-<div class="displaymath" id="a0000000122">
+<div class="displaymath" id="a0000000126">
   \[  (k - 1) * c_0 / N \ge d.  \]
 </div>
 <p> Let \(m\) be any natural number, and put </p>
-<div class="displaymath" id="a0000000123">
+<div class="displaymath" id="a0000000127">
   \[  K = (m + 2) + \frac{r + 1}{r(1 - r)} (m + 2)^2  \]
 </div>
 <p> Finally, let \(c_0'\) be \(\frac{c_0}{r' \cdot n_i}\), where \(n_i\) is the \(i\)-th index in our fixed Breen–Deligne data. </p>
@@ -646,7 +673,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000121">
+<div class="proof_wrapper" id="a0000000125">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -656,7 +683,7 @@
   <div class="proof_content">
   <p> Let \(M^{(m)}\) denote \(\operatorname{Hom}(\Lambda ^{(m)},\overline{\mathcal M}_{r'}(S))^{n_i}\). We also write \(M\) for \(M^{(0)} = \operatorname{Hom}(\Lambda ,\overline{\mathcal M}_{r'}(S))^{n_i}\) and \(M'\) for \(M^{(1)}\). By Proposition&#160;<a href="sec-polyhedral_lattice.html#combi">7.3</a>, \(M\) is \(N\)-splittable with error term&#160;\(d\). </p>
 <p>Consider the diagram of morphisms of systems of complexes </p>
-<div class="displaymath" id="a0000000124">
+<div class="displaymath" id="a0000000128">
   \[  \begin{tikzcd} 
       \hat V(M_c)^{T^{-1}} \rar\dar & \hat V(M_c) \rar["{T^{-1} - [T^{-1}]^*}"]\dar & \hat V(M_c) \dar \\
       \hat V(M'_c)^{T^{-1}} \rar\dar & \hat V(M'_c) \rar["{T^{-1} - [T^{-1}]^*}"]\dar & \hat V(M'_c) \dar \\
@@ -678,7 +705,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0004.html#double-complex-htpy">#</a>
-    <a class="icon proof" href="sect0004.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000129"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -721,7 +748,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000125">
+<div class="proof_wrapper" id="a0000000129">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -730,34 +757,34 @@
   </div>
   <div class="proof_content">
   <p> By Lemma&#160;<a href="sect0004.html#row_one_iso">8.6</a> we may replace the first row by </p>
-<div class="displaymath" id="a0000000126">
+<div class="displaymath" id="a0000000130">
   \[  C^{N \otimes \mathsf{BD}}_{\kappa /N}(\operatorname{Hom}(\Lambda , M))^\bullet .  \]
 </div>
 <p> Now it is important to recall that we have chosen \(k' \ge \kappa '_i\) for all \(i = 0, \dots , m+1\). </p>
 <p>Our goal is to find, in degrees \(\leq m\), a homotopy between the two maps from the first row </p>
-<div class="displaymath" id="a0000000127">
+<div class="displaymath" id="a0000000131">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c}^2)^{T^{-1}}\to \ldots  \]
 </div>
 <p> to the second row </p>
-<div class="displaymath" id="a0000000128">
+<div class="displaymath" id="a0000000132">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c/N}^{2N})^{T^{-1}}\to \ldots  \]
 </div>
 <p> respectively induced by \(\sigma ^N\) and \(\pi ^N\) (which are maps \(N \otimes \mathsf{BD}\) </p>
 <p>By Definition&#160;<a href="sect0001.html#BD_h_mul">2.12</a> and Lemma&#160;<a href="sect0001.html#BD_h_mul_suitable">2.19</a> we can find this homotopy between the complex for \(k'c\) and the complex for&#160;\(c\). (Here we use \(k'\geq c_i'\) for \(i=0,\ldots ,m\).) By assumption, the norm of these maps is bounded by&#160;\(H\). </p>
 <p>Finally, it remains to establish the estimate <a href="sec-some_normed_homological_algebra.html#eq:homotopicmapsmall" class="eqref">5.5</a> on the homotopic map. We note that this takes \(x\in \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'^2\kappa _ic}^{a_i})^{T^{-1}}\) (with \(i=q\) in the notation of <a href="sec-some_normed_homological_algebra.html#eq:homotopicmapsmall" class="eqref">5.5</a>) to the element </p>
-<div class="displaymath" id="a0000000129">
+<div class="displaymath" id="a0000000133">
   \[  y\in \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}  \]
 </div>
 <p> that is the sum of the \(N\) pullbacks along the \(N\) projection maps \(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i}\to \operatorname{Hom}(\Lambda ,M)_{\leq k'^2\kappa _ic}^{a_i}\). We note that these actually take image in \(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i}\) as \(N\geq k'\), so this actually gives a well-defined map </p>
-<div class="displaymath" id="a0000000130">
+<div class="displaymath" id="a0000000134">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
 </div>
 <p> We need to see that this map is of norm \(\leq \epsilon \). Now note that by our choice of \(N\), we actually have \(k'\kappa _ic/N\leq (r')^b \kappa _ic\), so this can be written as the composite of the restriction map </p>
-<div class="displaymath" id="a0000000131">
+<div class="displaymath" id="a0000000135">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}}  \]
 </div>
 <p> and </p>
-<div class="displaymath" id="a0000000132">
+<div class="displaymath" id="a0000000136">
   \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
 </div>
 <p> The first map has norm exactly \(r^b\), by \(T^{-1}\)-invariance, and as multiplication by \(T\) scales the norm with a factor of \(r\) on \(\widehat{V}\). (Here is where we use \(r'{\gt}r\), ensuring different scaling behaviour of the norm on source and target.) The second map has norm at most \(N\) (as it is a sum of \(N\) maps of norm \(\leq 1\)). Thus, the total map has norm \(\leq r^bN\). But by our choice of \(N\), we have \(r^bN\leq \epsilon \), giving the result. </p>
@@ -778,19 +805,19 @@
 
   </div>
 </div>
-<p><div class="question_thmwrapper" id="a0000000133">
+<p><div class="question_thmwrapper" id="a0000000137">
   <div class="question_thmheading">
     <span class="question_thmcaption">
     Question
     </span>
     <span class="question_thmlabel">8.11</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0004.html#a0000000133">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000137">#</a>
 
   </div>
   </div>
   <div class="question_thmcontent">
-  <p>Can one make the constants explicit, and how large are they? <a class="footnote" href="#a0000000134">
+  <p>Can one make the constants explicit, and how large are they? <a class="footnote" href="#a0000000138">
   <sup class="footnotemark">1</sup>
 </a> Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the \(c_i\) and \(c_i'\). </p>
 <p>Answer: yes, we can do this. And we should write up a clean account asap, when we have cleaned up the proof in Lean. </p>
@@ -802,7 +829,7 @@
 </div> <!--main-text -->
 <footer id="footnotes">
 <ol>
-  <li id="a0000000134">A back of the envelope calculation seems to suggest that \(k\) is roughly doubly exponential in \(m\), and that \(N\) has to be taken of roughly the same magnitude.</li>
+  <li id="a0000000138">A back of the envelope calculation seems to suggest that \(k\) is roughly doubly exponential in \(m\), and that \(N\) has to be taken of roughly the same magnitude.</li>
 </ol>
 </footer>
 </div> <!-- content-wrapper -->
