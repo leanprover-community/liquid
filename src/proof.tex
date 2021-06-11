@@ -180,22 +180,59 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   \uses{CLC}
   \lean{prop819}
   \leanok
-  Let $S' \to S$ be a surjective morphism of profinite sets,
-  and let $S_\bullet\to S$ be its Cech nerve.
+  Let $\pi : X \to B$ be a surjective morphism of profinite sets,
+  and let $S_\bullet \to S_{-1}$, $S_{-1} := B$, be its augmented \v{C}ech nerve.
   Let $V$ be a semi-normed group.
   Then the complex
   \[
-    0\to \widehat{V}(S)\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \ldots
+    0\to \widehat{V}(S_{-1})\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \cdots
   \]
-  is exact,
-  and whenever $f\in \ker(\widehat{V}(S_m)\to \widehat{V}(S_{m+1}))$ with $‖f‖\leq c$,
-  then for any $\epsilon>0$ there is some $g\in \widehat{V}(S_{m-1})$ with $‖g‖\leq (1+\epsilon)c$ such that $d(g)=f$.
+  is exact.
+  Furthermore, for all $\epsilon > 0$ and $f \in \ker(\widehat{V}(S_{m}) \to \widehat{V}(S_{m+1}))$,
+  there exists some $g\in \widehat{V}(S_{m-1})$ such that $d(g) = f$ and $‖g‖\leq (1+\epsilon) \cdot ‖f‖$.
   In other words, the complex is normed exact in the sense of Definition~\ref{norm_exact_complex}.
 \end{proposition}
 
 \begin{proof}
   \uses{lem:controlled_exactness}\leanok
-Follow the proof of \cite[Theorem 3.3]{Condensed}: When $S$ and all $S_i$ are finite, the Cech cover splits, so a contracting homotopy gives the result with constant $1$. In general, write the Cech cover as a cofiltered limit of Cech covers of finite sets by finite sets, pass to the filtered colimit, and complete, using Lemma~\ref{lem:controlled_exactness}.
+  We argue similarly to~\cite[Theorem 3.3]{Condensed}, as follows.
+  By applying Lemma~\ref{lem:controlled_exactness}, we first reduce to a statement which does not involve $\epsilon$ or completions.
+  Explicitly, we must show that
+  \[ 0 \to V(S_{1}) \to V(S_{0}) \to V(S_{1}) \to \cdots \]
+  is exact, and that whenever $f \in \ker(V(S_{m}) \to V(S_{m+1}))$, there exists $g \in V(S_{m-1})$ such that $‖g‖\leq ‖f‖$ and $d(g) = f$.
+  The map $V(S_{-1}) \to V(S_{0})$ is the one induced by $S_0 \to S_{-1}$ which agrees with $X \to B$.
+  Since $X \to B$ is surjective, we easily see that $V(S_{-1}) \to V(S_{0})$ is injective.
+
+  If $X$ and $B$ are finite, then the remaining assertions follow from the existence of a splitting $\sigma : B \to X$ of $\pi : X \to B$, as follows.
+  The map $\sigma$ provides maps $S_{m} \to S_{m+1}$ for all $m \geq -1$, defined explicitly as
+  \[ (a_{0},\ldots,a_{m}) \mapsto (\sigma (\pi (a_{0})), a_{0},\ldots,a_{m}) \]
+  if $m \geq 0$ and simply as $\sigma$ if $m = -1$.
+  Here, for $m \geq 0$, we have identified $S_{m}$ with the $m+1$-fold fibered product $X \times_{B} \cdots \times_{B} X$.
+  Applying $V(-)$, these maps induce $h_{m} : V(S_{m+1}) \to V(S_{m})$, which form a contracting homotopy for the complex in question, and which are norm nonincreasing by the definition of $V(-)$.
+  If $f \in \ker(V_{m} \to V_{m+1})$ is as above, then $g := h_{m}(f)$ satisfies $d(g) = f$ and $‖g‖\leq ‖f‖$, as required.
+
+  In the general case, write $X = \varprojlim_{i} X_{i}$ where $X_{i}$ vary over the discrete (hence finite) quotients of $X$.
+  Since $X \to B$ is surjective, for each $i$ there exists a unique maximal discrete quotient $B_{i}$ of $B$ such that $X \to B$ descends to $X_{i} \to B_{i}$.
+  The maps $X_{i} \to B_{i}$ are again surjective, and one has
+  \[ (X \to B) = \varprojlim_{i} (X_{i} \to B_{i}). \]
+  Let $S_{i,\bullet} \to S_{i,-1}$, $S_{i,-1} := B_{i}$, denote the augmented \v{C}ech nerve of $X_{i} \to B_{i}$.
+
+  The terms in the \v{C}ech nerve are themselves limits, hence we have $S_{m} = \varprojlim_{i} S_{i,m}$, with each $S_{i,m}$ finite.
+  The functor $V(-)$, when considered as taking values in abelian groups, sends cofiltered limits to filtered colimits.
+  Also, if $f \in V(S_{m})$ is the pullback of $f_{i} \in V(S_{i,m})$, then for a sufficiently small index $j \leq i$, the image of $f : S_{m} \to V$ agrees with the image of $f_{j} : S_{j,m} \to V$, where $f_{j}$ is the image of $f_{i}$ under the map $V(S_{i,m}) \to V(S_{j,m})$ induced by the transition map $S_{j,m} \to S_{i,m}$.
+
+  Now suppose that $f \in \ker(V(S_{m}) \to V(S_{m+1}))$ is given.
+  By the discussion above, there exists some $i$ and some $f_{i} \in V(S_{i,m})$ such that $f$ is the pullback of $f_{i}$ with respect to the morphism $S_{m} \to S_{i,m}$ and such that the following additional conditions hold:
+  \begin{enumerate}
+    \item One has $‖f_{i}‖ = ‖f‖$.
+    \item One has $f_{i} \in \ker (V(S_{i,m}) \to V(S_{i,m+1}))$.
+  \end{enumerate}
+  Let $h_{m} : V(S_{i,m}) \to V(S_{i,m-1})$ be the map constructed in the argument for the finite case $X_{i} \to B_{i}$.
+  Put $g_{i} := h_{m} (f_{i})$ and $g$ the image of $g_{i}$ in $V(S_{m-1})$.
+  Since the maps $V(S_{i,\bullet}) \to V(S_{\bullet})$ commute with the differentials, we have $d(g) = f$.
+  Finally, the map $V(S_{i,m-1}) \to V(S_{m-1})$ is norm nonincreasing as it is induced from $S_{m-1} \to S_{i,m-1}$, so that
+  \[ ‖g‖\leq ‖g_{i}‖ \le ‖f_{i}‖ = ‖f‖, \]
+  as contended.
 \end{proof}
 
 \begin{lemma}
