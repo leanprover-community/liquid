@@ -1,17 +1,19 @@
 \section{Laurent Measures}
-For every $\alpha\in\RR$ let $\lfloor \alpha\rfloor\in\ZZ$ be the largest integers that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
+\subsection{Theorem 6.9}
+For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integers that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
 \[
 \alpha-1< \lfloor \alpha\rfloor\le \alpha\qquad\text{ and }\qquad \alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
 \]
 
-Fix now $0< \xi<1$ and let $x\in\RR_{\geq 0}$. 
-\begin{definition}
-For all $n\in\NN$, set
-\[y_n=\begin{cases} x&\text{ if }n=0\\
+Fix now $0< \xi<1$ and let $x\in\R_{\geq 0}$. 
+\begin{definition}\label{def:sequence_y}
+For all $n\in\N$, set
+\[
+y_n(x)=y_n=\begin{cases} x&\text{ if }n=0\\
     y_{n-1}-\left\lfloor \frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\xi^{n-1}&\text{ if }n\ge 1
 \end{cases}\]
 \end{definition}
-\begin{lemma}\label{lemma:finite_sum} For all $n\in\NN$, we have
+\begin{lemma}\label{lemma:finite_sum} For all $n\in\N$, we have
 \[
 y_{n+1}=x-\sum_{i=0}^n\Big\lfloor\frac{y_i}{\xi^i}\Big\rfloor\xi^i.
 \]
@@ -26,7 +28,8 @@ which is the definition of $y_1$ since $x=y_0$.
 The step $n\to (n+1)$ goes as follows:
 \[
 y_{n+1}\overset{\text{def}}{=}y_{n}-\left\lfloor\frac{y_{n}}{\xi^{n}}\right\rfloor\xi^{n}\overset{\text{Ind.}}{=}\left(x-\sum_{i=0}^{n-1}\Big\lfloor\frac{y_i}{\xi^i}\Big\rfloor\xi^i\right)-\left\lfloor\frac{y_{n}}{\xi^{n}}\right\rfloor\xi^{n}=x-\sum_{i=0}^n\Big\lfloor\frac{y_i}{\xi^i}\Big\rfloor\xi^i.
-\]\qedhere
+\qedhere
+\]
 \end{proof}
 \begin{lemma}\label{lemma:bounded} The sequence
 \[
@@ -38,15 +41,8 @@ is bounded.
 \[
 \frac{y_n}{\xi^n}=\frac{1}{\xi^n}\left(y_{n-1}-\left\lfloor\frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\xi^{n-1}\right)=\frac{1}{\xi}\left(\frac{y_{n-1}}{\xi^{n-1}}-\left\lfloor\frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\right)\le \frac{1}{\xi}\cdot 1= \frac{1}{\xi}
 \]
-Thus, the sequence $n\mapsto \frac{y_n}{\xi^n}$ is bounded by $\max\{y=y_0,\xi^{-1}\}$ and the same holds, \emph{a fortiori} for the sequence $n\mapsto \lfloor\frac{y_n}{\xi^n}\rfloor$. 
+Thus, the sequence $n\mapsto \frac{y_n}{\xi^n}$ is bounded by $\max\{x=y_0,\xi^{-1}\}$ and the same holds, \emph{a fortiori}, for the sequence $n\mapsto \lfloor\frac{y_n}{\xi^n}\rfloor$. 
 \end{proof}
-% \begin{corollary}\label{corollary:lim_an} We have
-% \[
-% \lim_{n\to+\infty}\left\lfloor\frac{y_n}{\xi^n}\right\rfloor\xi^n =0.
-% \]
-% \end{corollary}
-% \begin{proof} Immediate from Lemma~\ref{lemma:bounded}, since $\lim_{n}\xi^n=0$ because $0<\xi<1$.
-% \end{proof}
 \begin{lemma}\label{lemma:limit}
 We have
 \[
@@ -54,7 +50,7 @@ We have
 \]
 \end{lemma}
 \begin{proof}
-Indeed, for every $n\in \NN$,
+Indeed, for every $n\in \N$,
 \[
 \frac{y_n}{\xi^n} - 1 <\left\lfloor{\frac{y_n}{\xi^n}}\right\rfloor \le \frac{y_n}{\xi^n}
 \]
@@ -64,24 +60,24 @@ y_n - \xi^n <\left\lfloor{\frac{y_n}{\xi^n}}\right\rfloor\xi^n \le y_n.
 \]
 Taking limits,
 \[
-\lim_{n\to+\infty}y_n-\cancel{\lim_{n\to+\infty}\xi^n}=\lim_{n\to+\infty}y_n\le \lim_{n\to+\infty}\left\lfloor\frac{y_n}{\xi^n}\right\rfloor\xi^n=0\le\lim_{n\to+\infty}y_n.
+\lim_{n\to+\infty}y_n-\lim_{n\to+\infty}\xi^n=\lim_{n\to+\infty}y_n\le \lim_{n\to+\infty}\left\lfloor\frac{y_n}{\xi^n}\right\rfloor\xi^n=0\le\lim_{n\to+\infty}y_n.
 \]
 By Lemma~\ref{lemma:limit}, the term $\left\lfloor\frac{y_n}{\xi^n}\right\rfloor\xi^n$  tends to $0$ as $n\to +\infty$ because $0<\lvert \xi\rvert< 1$. The lemma follows.
 \end{proof}
-\begin{proposition}
-For all $i\in\NN$, let
-\[
-a_i=\left\lfloor\frac{y_i}{\xi^i}\right\rfloor \in \NN.
-\]
-The sequence $i\mapsto a_i\in \NN$, satisfies
+\begin{proposition}\label{prop:convergence_theta}
+%For all $i\in\N$, let
+%\[
+%a_i=\left\lfloor\frac{y_i}{\xi^i}\right\rfloor \in \N.
+%\]
+%The sequence $i\mapsto a_i\in \N$, satisfies
 \begin{enumerate}
 \item For all $0<r <1$,
 \[
-\sum_{i=0}^{+\infty} a_i r^i \qquad\text{converges}.
+\sum_{i=0}^{+\infty} \left\lfloor\frac{y_i}{\xi^i}\right\rfloor r^i \qquad\text{converges}.
 \]
 \item
 \[
-\sum_{i=0}^{+\infty} a_i\xi^i = y;
+\sum_{i=0}^{+\infty} \left\lfloor\frac{y_i}{\xi^i}\right\rfloor\xi^i = x;
 \]
 \end{enumerate}
 \end{proposition}
@@ -90,7 +86,22 @@ The first point follows from Lemma~\ref{lemma:bounded}, using that $0<r<1$.
 
 For the second point, taking limits in Lemma~\ref{lemma:finite_sum}, we obtain
 \[
-\lim_{n\to +\infty}y_{n+1}=y-\sum_{i=0}^{+\infty}a_i\xi^i.
+\lim_{n\to +\infty}y_{n+1}=x-\sum_{i=0}^{+\infty}a_i\xi^i.
 \]
 The result follows from Lemma~\ref{lemma:limit}.
+\end{proof}
+The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
+\begin{theorem}
+Fix $0<\xi <1$, and let $\theta_{\xi}\colon \Z((T))_r\rightarrow \R$ be the evaluation map
+\[
+\sum a_nT^n\longmapsto \sum a_n(\xi)T^n.
+\]
+The map $\theta_{\xi}$ is surjective.
+\end{theorem}
+\begin{proof}
+Pick $x\in \R$, and consider the power series
+\[
+F(T)=\sum_{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi^m}\right\rfloor T^n\in\Z[\![T]\!]
+\]
+where $\{y_n(x)\}$ is the sequence defined in Definition~\ref{def:sequence_y}. By Proposition~\ref{prop:convergence_theta}, the series converges on the open unit disks, so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
