@@ -4,7 +4,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
@@ -61,7 +61,17 @@
   <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">End of proof</span></a>
  </li>
 <li class="">
-  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html"><span class="toc_ref">9.1</span> <span class="toc_entry">Theorem 6.9</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">10</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -97,7 +107,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/locally_constant/Vhat.lean#L71">SemiNormedGroup.LCC</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/locally_constant/Vhat.lean#L71">SemiNormedGroup.LCC</a></li>
         </ul>
 
       </div>
@@ -106,9 +116,9 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  Let \(V\) be a semi-normed group, and \(X\) a compact topological space. We denote by \(V(X)\) the normed abelian group of locally constant functions \(X \to V\) with respect to the sup norm. With \(\widehat V(X)\) we denote the completion of \(V(X)\). </p>
+  <p>  Let \(V\) be a semi-normed group, and \(X\) a compact topological space. We denote by \(V(X)\) the normed abelian group of locally constant functions \(X \to V\) with respect to the sup norm. With \(\hat V(X)\) we denote the completion of \(V(X)\). </p>
 <p>These constructions are functorial in bounded group homomorphisms \(V \to V'\) and contravariantly functorial in continuous maps \(f \colon X \to X'\). </p>
-<p>Note in particular that \(V(f)\) and \(\widehat V(f)\) are norm-nonincreasing morphisms of semi-normed groups. </p>
+<p>Note in particular that \(V(f)\) and \(\hat V(f)\) are norm-nonincreasing morphisms of semi-normed groups. </p>
 
   </div>
 </div> </p>
@@ -121,7 +131,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0003.html#CLC_normed_with_aut">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000069"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#a0000000071"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -148,7 +158,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/locally_constant/Vhat.lean#L113">SemiNormedGroup.normed_with_aut_LCC</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/locally_constant/Vhat.lean#L113">SemiNormedGroup.normed_with_aut_LCC</a></li>
         </ul>
 
       </div>
@@ -157,11 +167,11 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let \(r \in \mathbb R_{{\gt} 0}\), and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Let \(X\) be a compact space. Then \(\widehat V(X)\) is naturally an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module, with the action of \(T\) given by post-composition. </p>
+  <p>   Let \(r \in \mathbb R_{{\gt} 0}\), and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Let \(X\) be a compact space. Then \(\hat V(X)\) is naturally an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module, with the action of \(T\) given by post-composition. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000069">
+<div class="proof_wrapper" id="a0000000071">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -183,7 +193,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0003.html#basic_eval_FP">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000070"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#a0000000072"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -210,7 +220,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/FP.lean#L200">breen_deligne.basic_universal_map.eval_FP_comp</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/FP.lean#L201">breen_deligne.basic_universal_map.eval_FP_comp</a></li>
         </ul>
 
       </div>
@@ -224,7 +234,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000070">
+<div class="proof_wrapper" id="a0000000072">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -269,7 +279,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/LC.lean#L206">breen_deligne.basic_universal_map.eval_LCFP_comp</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/LC.lean#L205">breen_deligne.basic_universal_map.eval_LCFP_comp</a></li>
         </ul>
 
       </div>
@@ -279,7 +289,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>    Let \(f\) be a basic universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_2, c_1)\) be \(f\)-suitable. We get an induced map </p>
-<div class="displaymath" id="a0000000071">
+<div class="displaymath" id="a0000000073">
   \[  V(f) \colon V(M_{\le c_1}^n) \to V(M_{\le c_2}^m)  \]
 </div>
 <p> induced by the morphism of profinitely filtered pseudo-normed groups \(M^m \to M^n\). </p>
@@ -321,7 +331,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/LC.lean#L349">breen_deligne.universal_map.eval_LCFP_comp</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/LC.lean#L348">breen_deligne.universal_map.eval_LCFP_comp</a></li>
         </ul>
 
       </div>
@@ -331,7 +341,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>    Let \(f = \sum _g n_g g\) be a universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_2, c_1)\) be \(f\)-suitable. We get an induced map </p>
-<div class="displaymath" id="a0000000072">
+<div class="displaymath" id="a0000000074">
   \[  V(f) \colon V(M_{\le c_1}^n) \to V(M_{\le c_2}^m)  \]
 </div>
 <p> that is the sum \(\sum n_g V(g)\). </p>
@@ -373,7 +383,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/CLC.lean#L166">breen_deligne.universal_map.eval_CLCFP</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/CLC.lean#L167">breen_deligne.universal_map.eval_CLCFP</a></li>
         </ul>
 
       </div>
@@ -383,8 +393,8 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_2, c_1)\) be \(f\)-suitable. We get an induced map </p>
-<div class="displaymath" id="a0000000073">
-  \[  \widehat V(f) \colon \widehat V(M_{\le c_1}^n) \to \widehat V(M_{\le c_2}^m)  \]
+<div class="displaymath" id="a0000000075">
+  \[  \hat V(f) \colon \hat V(M_{\le c_1}^n) \to \hat V(M_{\le c_2}^m)  \]
 </div>
 <p> that is the completion of \(V(f)\). </p>
 <p>This construction is functorial in&#160;\(f\). </p>
@@ -425,7 +435,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/Tinv.lean#L354">CLCFPTinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/Tinv.lean#L354">CLCFPTinv</a></li>
         </ul>
 
       </div>
@@ -434,23 +444,23 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   There are two natural actions of \(T^{-1}\) on \(\widehat V(M_{\le c})\). The first comes from the \(r'\)-action of \(T^{-1}\) on \(M\) which gives a continuous map </p>
-<div class="displaymath" id="a0000000074">
+  <p>   There are two natural actions of \(T^{-1}\) on \(\hat V(M_{\le c})\). The first comes from the \(r'\)-action of \(T^{-1}\) on \(M\) which gives a continuous map </p>
+<div class="displaymath" id="a0000000076">
   \[  M_{\le cr'} \to M_{\le c}  \]
 </div>
 <p> and thus a normed group morphism \(V(M_{\le c}) \to V(M_{\le cr'})\) which can be extended by completion to </p>
-<div class="displaymath" id="a0000000075">
-  \[  (T^{-1})^* \colon \widehat V(M_{\le c}) \to \widehat V(M_{\le cr'}).  \]
+<div class="displaymath" id="a0000000077">
+  \[  (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).  \]
 </div>
 <p> The other comes from Lemma&#160;<a href="sect0003.html#CLC_normed_with_aut">6.2</a>, using the \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module \(V\). Again by extension to completion, we get a map </p>
-<div class="displaymath" id="a0000000076">
-  \[  [T^{-1}] \colon \widehat V(M_{\le c}) \to \widehat V(M_{\le c}),  \]
+<div class="displaymath" id="a0000000078">
+  \[  [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le c}),  \]
 </div>
-<p> that we can compose with the map \(\widehat V(M_{\le c}) \to \widehat V(M_{\le cr'})\), obtained from the natural inclusion \(M_{\le cr'} \to M_{\le c}\). We thus end up with two maps </p>
-<div class="displaymath" id="a0000000077">
-  \[  (T^{-1})^*, [T^{-1}] \colon \widehat V(M_{\le c}) \to \widehat V(M_{\le cr'}).  \]
+<p> that we can compose with the map \(\hat V(M_{\le c}) \to \hat V(M_{\le cr'})\), obtained from the natural inclusion \(M_{\le cr'} \to M_{\le c}\). We thus end up with two maps </p>
+<div class="displaymath" id="a0000000079">
+  \[  (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).  \]
 </div>
-<p> and we define \(\widehat V(M_{\le c})^{T^{-1}}\) to be the equalizer of \((T^{-1})^*\) and \([T^{-1}]\). In other words, the kernel of \((T^{-1})^* - [T^{-1}]\). </p>
+<p> and we define \(\hat V(M_{\le c})^{T^{-1}}\) to be the equalizer of \((T^{-1})^*\) and \([T^{-1}]\). In other words, the kernel of \((T^{-1})^* - [T^{-1}]\). </p>
 
   </div>
 </div> </p>
@@ -464,7 +474,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0003.html#lem:Tinv">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000078"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#a0000000080"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -493,7 +503,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/prop_92/prop_92.lean#L39">CLCFP.T_inv_sub_Tinv_exists_preimage</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/prop_92/prop_92.lean#L40">CLCFP.T_inv_sub_Tinv_exists_preimage</a></li>
         </ul>
 
       </div>
@@ -503,14 +513,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>  Let \(M\) be a profinitely filtered pseudo-normed group with action of \(T^{-1}\). For any \(r ∈ (0, 1)\), any \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module \(V\), any \(c{\gt}0\) and any \(a\), the map </p>
-<div class="displaymath" id="a0000000079">
+<div class="displaymath" id="a0000000081">
   \[  \widehat{V}(M_{\leq c}^a)\xrightarrow {T^{-1}-[T^{-1}]^\ast } \widehat{V}(M_{\leq r'c}^a)  \]
 </div>
 <p> has norm bounded by \(r^{-1}+1\) and is \(\frac{r}{1-r}(1+\epsilon )\)-surjective. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000078">
+<div class="proof_wrapper" id="a0000000080">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -561,7 +571,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/Tinv.lean#L545">breen_deligne.universal_map.eval_CLCFPTinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/Tinv.lean#L545">breen_deligne.universal_map.eval_CLCFPTinv</a></li>
         </ul>
 
       </div>
@@ -572,8 +582,8 @@
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_2, c_1)\) be \(f\)-suitable. </p>
 <p>The natural map from Definition&#160;<a href="sect0003.html#eval_CLCFP">6.6</a> restricts to a map </p>
-<div class="displaymath" id="a0000000080">
-  \[  \widehat V(f)^{T^{-1}} \colon \widehat V(M_{\le c_1}^n)^{T^{-1}} \to \widehat V(M_{\le c_2}^m)^{T^{-1}}  \]
+<div class="displaymath" id="a0000000082">
+  \[  \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \to \hat V(M_{\le c_2}^m)^{T^{-1}}  \]
 </div>
 
   </div>
@@ -587,7 +597,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0003.html#eval_CLCFPTinv_norm_noninc">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000081"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#a0000000083"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -614,7 +624,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/Tinv.lean#L599">breen_deligne.universal_map.eval_CLCFPTinv_norm_noninc</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/Tinv.lean#L599">breen_deligne.universal_map.eval_CLCFPTinv_norm_noninc</a></li>
         </ul>
 
       </div>
@@ -624,14 +634,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let \(0 {\lt} r\) and \(0 {\lt} r' \le 1\) be real numbers. Let \(f\) be a universal map from exponent&#160;\(m\) to&#160;\(n\), and let \((c_2, c_1)\) be very suitable for \((f, r, r')\). Then </p>
-<div class="displaymath" id="a0000000082">
-  \[  \widehat V(f)^{T^{-1}} \colon \widehat V(M_{\le c_1}^n)^{T^{-1}} \to \widehat V(M_{\le c_2}^m)^{T^{-1}}  \]
+<div class="displaymath" id="a0000000084">
+  \[  \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \to \hat V(M_{\le c_2}^m)^{T^{-1}}  \]
 </div>
 <p> is norm-nonincreasing. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000081">
+<div class="proof_wrapper" id="a0000000083">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -650,8 +660,8 @@
   <li><p>\(c' ≤ (r') ^b c_1\) </p>
 </li>
 </ul>
-<p> Now, notice that the norm of \(\widehat V(f)\) is at most \(N\), and \(\widehat V(f)\) can be factored as </p>
-<div class="centered"> <div class="tikzcd" id="a0000000083">
+<p> Now, notice that the norm of \(\hat V(f)\) is at most \(N\), and \(\hat V(f)\) can be factored as </p>
+<div class="centered"> <div class="tikzcd" id="a0000000085">
     <img src="images/img-0002.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
       \hat V(M_{\le c_1}^n)^{T^{-1}}
       \rar{\mathrm{res}} &amp;
@@ -700,7 +710,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/pseudo_normed_group/system_of_complexes.lean#L222">breen_deligne.data.system_admissible</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/system_of_complexes.lean#L222">breen_deligne.data.system_admissible</a></li>
         </ul>
 
       </div>
@@ -711,8 +721,8 @@
   <div class="definition_thmcontent">
   <p>    Let \(0 {\lt} r\) and \(0 {\lt} r' \le 1\) be real numbers, and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Let \(\mathsf{BD}= (n,f)\) be Breen–Deligne data, and let \(\kappa = (\kappa _0, \kappa _1, \kappa _2, \dots )\) be a sequence of constants in \(\mathbb R_{\ge 0}\) that is very suitable for \((\mathsf{BD}, r, r')\). Let \(M\) be a profinitely filtered pseudo-normed group with \(r'\)-action of \(T^{-1}\). </p>
 <p>For every \(c \in \mathbb R_{\ge 0}\), the maps from Definition&#160;<a href="sect0003.html#eval_CLCFPTinv">6.9</a> induced by the universal maps \(f_i\) from the Breen–Deligne \(\mathsf{BD}= (n,f)\) assemble into a complex of normed abelian groups </p>
-<div class="displaymath" id="a0000000084">
-  \[  C^{\text{BD}}_{\kappa }(M)_c^\bullet \colon 0 \to \dots \to \widehat V(M_{\le \kappa _i}^{n_i})^{T^{-1}} \to \widehat V(M_{\le \kappa _{i+1}}^{n_{i+1}})^{T^{-1}} \to \dots .  \]
+<div class="displaymath" id="a0000000086">
+  \[  C^{\text{BD}}_{\kappa }(M)_c^\bullet \colon 0 \to \dots \to \hat V(M_{\le \kappa _i}^{n_i})^{T^{-1}} \to \hat V(M_{\le \kappa _{i+1}}^{n_{i+1}})^{T^{-1}} \to \dots .  \]
 </div>
 <p> Together, these complexes fit into a system of complexes with the natural restriction maps. </p>
 <p>By Lemma&#160;<a href="sect0003.html#eval_CLCFPTinv_norm_noninc">6.10</a> the differentials are norm-nonincreasing. It is clear that the restriction maps are also norm-nonincreasing, and therefore the system is admissible. </p>

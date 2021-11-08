@@ -4,7 +4,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
@@ -61,7 +61,17 @@
   <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">End of proof</span></a>
  </li>
 <li class="">
-  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html"><span class="toc_ref">9.1</span> <span class="toc_entry">Theorem 6.9</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">10</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -113,9 +123,9 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/Mbar/basic.lean#L39">Mbar</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/Mbar/Mbar_le.lean#L31">Mbar_le</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/Mbar/basic.lean#L244">Mbar.pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/Mbar/basic.lean#L39">Mbar</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/Mbar/Mbar_le.lean#L34">Mbar_le</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/Mbar/basic.lean#L244">Mbar.pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -125,11 +135,11 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(r' {\gt} 0\) be a real number, and let \(S\) be a finite set. Denote by \(\overline{\mathcal M}_{r'}(S)\) the set </p>
-<div class="displaymath" id="a0000000020">
+<div class="displaymath" id="a0000000022">
   \[  \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \in T\mathbf{Z}[[T]]\right)_{s \in S} \, \middle \vert \,  \sum _{n \ge 1, s \in S} |a_{n,s}| (r')^n {\lt} \infty \right\} .  \]
 </div>
 <p>Note that \(\overline{\mathcal M}_{r'}(S)\) is naturally a pseudo-normed group with filtration given by </p>
-<div class="displaymath" id="a0000000021">
+<div class="displaymath" id="a0000000023">
   \[  \overline{\mathcal M}_{r'}(S)_{\le c} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{n \ge 1, s \in S} |a_{n,s}| (r')^n \le c \right\} .  \]
 </div>
 
@@ -144,7 +154,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0002.html#Mbar_profinitely_filtered">#</a>
-    <a class="icon proof" href="sect0002.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -170,7 +180,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/Mbar/Mbar_le.lean#L558">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/Mbar/Mbar_le.lean#L678">Mbar.profinitely_filtered_pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -180,14 +190,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let \(r' {\gt} 0\) and \(c \ge 0\) be real numbers, and let \(S\) be a finite set. The space \(\overline{\mathcal M}_{r'}(S)_{\le c}\) is the profinite limit of the finite sets </p>
-<div class="displaymath" id="a0000000023">
+<div class="displaymath" id="a0000000025">
   \[  \overline{\mathcal M}_{r'}(S)_{\le c, \le N} = \left\{  \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle \vert \sum _{1 \le n \le N, s \in S} |a_{n,s}| (r')^n \le c \right\}   \]
 </div>
 <p> This endows \(\overline{\mathcal M}_{r'}(S)_{\le c}\) with the profinite topology. In particular, it is a profinitely filtered pseudo-normed group. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000022">
+<div class="proof_wrapper" id="a0000000024">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -233,7 +243,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/Mbar/basic.lean#L320">Mbar.Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/Mbar/basic.lean#L320">Mbar.Tinv</a></li>
         </ul>
 
       </div>
@@ -243,7 +253,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   There is a natural action of \(T^{-1}\) on \(\overline{\mathcal M}_{r'}(S)\), via </p>
-<div class="displaymath" id="a0000000024">
+<div class="displaymath" id="a0000000026">
   \[  T^{-1} \cdot \left( \sum _{n \ge 1} a_{n,s} T^n \right)_{s \in S} = \left( \sum _{n \ge 1} a_{n+1,s} T^n \right)_{s \in S}.  \]
 </div>
 
@@ -258,7 +268,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0002.html#Mbar_with_Tinv">#</a>
-    <a class="icon proof" href="sect0002.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0002.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -285,7 +295,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/2798f3ff8c5c3bf234154d1d9b3615488064f57f/src/Mbar/pseudo_normed_group.lean#L21">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/Mbar/pseudo_normed_group.lean#L21">Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
         </ul>
 
       </div>
@@ -295,14 +305,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   The natural action of \(T^{-1}\) on \(\overline{\mathcal M}_{r'}(S)\) restricts to continuous maps </p>
-<div class="displaymath" id="a0000000026">
+<div class="displaymath" id="a0000000028">
   \[  T^{-1} \cdot \_  \colon \overline{\mathcal M}_r(S)_{\le c} \to \overline{\mathcal M}_r(S)_{\le c/r'}.  \]
 </div>
 <p> In particular, \(\overline{\mathcal M}_{r'}(S)\) has an \(r'\)-action of \(T^{-1}\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000025">
+<div class="proof_wrapper" id="a0000000027">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
