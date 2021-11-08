@@ -1,45 +1,65 @@
 \section{Laurent Measures}
 \subsection{Theorem 6.9}
-For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integers that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
+
+For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integer that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
 \[
-\alpha-1< \lfloor \alpha\rfloor\le \alpha\qquad\text{ and }\qquad \alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
+	\alpha-1 < \lfloor \alpha\rfloor\le \alpha
+	\qquad\text{and}\qquad
+	\alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
 \]
 
-Fix now $0< \xi<1$ and let $x\in\R_{\geq 0}$. 
-\begin{definition}\label{def:sequence_y}
-For all $n\in\N$, set
-\[
-y_n(x)=y_n=\begin{cases} x&\text{ if }n=0\\
-    y_{n-1}-\left\lfloor \frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\xi^{n-1}&\text{ if }n\ge 1
-\end{cases}\]
+Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. 
+
+\begin{definition}
+\label{def:sequence_y}
+	For all $n\in\N$, set
+	\[
+		y_n(x)=y_n=
+		\begin{cases}
+			x&\text{ if } n = 0 \\
+			y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
+		\end{cases}
+	\]
 \end{definition}
-\begin{lemma}\label{lemma:finite_sum} For all $n\in\N$, we have
-\[
-y_{n+1}=x-\sum_{i=0}^n\Big\lfloor\frac{y_i}{\xi^i}\Big\rfloor\xi^i.
-\]
-\end{lemma}
-\begin{proof}
-By induction: when $n=0$ this boils down to
-\[
-y_1=x-\left\lfloor \frac{y_0}{\xi^0}\right\rfloor \xi^0
-\]
-which is the definition of $y_1$ since $x=y_0$.
 
-The step $n\to (n+1)$ goes as follows:
-\[
-y_{n+1}\overset{\text{def}}{=}y_{n}-\left\lfloor\frac{y_{n}}{\xi^{n}}\right\rfloor\xi^{n}\overset{\text{Ind.}}{=}\left(x-\sum_{i=0}^{n-1}\Big\lfloor\frac{y_i}{\xi^i}\Big\rfloor\xi^i\right)-\left\lfloor\frac{y_{n}}{\xi^{n}}\right\rfloor\xi^{n}=x-\sum_{i=0}^n\Big\lfloor\frac{y_i}{\xi^i}\Big\rfloor\xi^i.
-\qedhere
-\]
-\end{proof}
-\begin{lemma}\label{lemma:bounded} The sequence
-\[
-n\mapsto \left\lfloor\frac{y_n}{\xi^n}\right\rfloor
-\]
-is bounded.
+\begin{lemma}
+\label{lemma:finite_sum}
+For all $n\in\N$, we have
+       \[
+	       y_{n+1} = x - \sum_{i=0}^n \Big\lfloor \frac{y_i}{\xi^i} \Big\rfloor \xi^i.
+       \]
 \end{lemma}
-\begin{proof} By definition, for all $n\geq 1$,
-\[
-\frac{y_n}{\xi^n}=\frac{1}{\xi^n}\left(y_{n-1}-\left\lfloor\frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\xi^{n-1}\right)=\frac{1}{\xi}\left(\frac{y_{n-1}}{\xi^{n-1}}-\left\lfloor\frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\right)\le \frac{1}{\xi}\cdot 1= \frac{1}{\xi}
+
+\begin{proof}
+       By induction: when $n=0$ this boils down to
+       \[
+	       y_1=x-\left\lfloor \frac{y_0}{\xi^0}\right\rfloor \xi^0
+       \]
+       which is the definition of $y_1$ since $x=y_0$.
+
+	The step $n\to (n+1)$ goes as follows:
+	\[
+		y_{n+1} \overset{\text{def}}{=} y_{n} - \left\lfloor \frac{y_{n}}{\xi^{n}} \right\rfloor \xi^{n}
+		\overset{\text{Ind.}}{=} \left(x - \sum_{i=0}^{n-1} \Big\lfloor \frac{y_i}{\xi^i} \Big\rfloor\xi^i\right) -
+		\left\lfloor \frac{y_{n}}{\xi^{n}} \right\rfloor\xi^{n}
+		= x - \sum_{i=0}^n \Big\lfloor \frac{y_i}{\xi^i} \Big\rfloor \xi^i.
+		\qedhere
+	\]
+\end{proof}
+
+\begin{lemma}
+\label{lemma:bounded}
+	The sequence
+	\[
+		n \mapsto \left\lfloor \frac{y_n}{\xi^n} \right\rfloor
+	\]
+	is bounded.
+\end{lemma}
+
+\begin{proof}
+	By definition, for all $n\geq 1$,
+	\[
+		\frac{y_n}{\xi^n}=\frac{1}{\xi^n}\left(y_{n-1}-\left\lfloor\frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\xi^{n-1}\right)=\frac{1}{\xi}\left(\frac{y_{n-1}}{\xi^{n-1}}-\left\lfloor\frac{y_{n-1}}{\xi^{n-1}}\right\rfloor\right)\le \frac{1}{\xi}\cdot 1= \frac{1}{\xi}
 \]
 Thus, the sequence $n\mapsto \frac{y_n}{\xi^n}$ is bounded by $\max\{x=y_0,\xi^{-1}\}$ and the same holds, \emph{a fortiori}, for the sequence $n\mapsto \lfloor\frac{y_n}{\xi^n}\rfloor$. 
 \end{proof}
@@ -105,3 +125,5 @@ F(T)=\sum_{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi^m}\right\rfloor T^n\in\Z[\![T]
 \]
 where $\{y_n(x)\}$ is the sequence defined in Definition~\ref{def:sequence_y}. By Proposition~\ref{prop:convergence_theta}, the series converges on the open unit disks, so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
+
+% vim: ts=2 et sw=2 sts=2
