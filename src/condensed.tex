@@ -58,7 +58,107 @@
   \uses{p-banach}
   Let $0 < p < 1$ be a real number.
   Let $S$ be a profinite set, and let $V$ be a $p$-Banach space.
-  Then $\Ext_{\Cond(\Ab)}^i(\Z[S], V) = 0$ for all $i > 0$.
+  Then $\Ext_{\Cond(\Ab)}^i(\mathbb Z[S], V) = 0$ for all $i > 0$.
 \end{lemma}
+
+\begin{proof}
+  TODO
+\end{proof}
+
+\begin{lemma}
+  \label{Ext-free}
+  \uses{p-banach}
+  Let $0 < p < 1$ be a real number.
+  Let $S$ be a profinite set, and let $V$ be a $p$-Banach space.
+  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\mathbb Z[T^{-1}][S], V) = 0$ for all $i > 0$.
+\end{lemma}
+
+\begin{proof}
+  TODO
+\end{proof}
+
+\begin{lemma}
+  \label{Ext-Lbar}
+  \uses{Mbar, normed_with_aut}
+  Let $0 < r < r' < 1$ be real numbers.
+  Let $S$ be a profinite set, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm1}]$-module.
+  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V) = 0$ for all $i \ge 0$.
+\end{lemma}
+
+\begin{proof}
+  \uses{first_target}
+  TODO
+\end{proof}
+
+\begin{lemma}
+  \label{Lbar-ses}
+  Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set.
+  There is a natural short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
+  \[
+    0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0.
+  \]
+\end{lemma}
+
+\begin{proof}
+  TODO
+\end{proof}
+
+\begin{lemma}
+  \label{Ext-L}
+  \uses{laureant-measures, normed_with_aut}
+  Let $0 < r < r' < 1$ be real numbers.
+  Let $S$ be a profinite set, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm1}]$-module.
+  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V) = 0$ for all $i > 0$.
+\end{lemma}
+
+\begin{proof}
+  \uses{Ext-free, Ext-Lbar}
+  Consider the long exact sequence of Ext-groups
+  arising form the short exact sequence (Lemma~\ref{Lbar-ses})
+  \[
+    0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0
+  \]
+  by applying $\Ext^*(\_, V)$.
+
+  By Lemma~\ref{Ext-free} all groups $\Ext_{\Cond(\Ab)}^i(\Z[S], V)$ vanish for $i > 0$.
+  And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V)$ vanish for $i \ge 0$.
+  The result follows.
+\end{proof}
+
+\begin{lemma}
+  \label{M-ses}
+  \uses{laurent-measures, real-measures}
+  Let $0 < p' < 1$ be a real number,
+  let $S$ be a profinite set,
+  and let $r'$ denote $(\tfrac12)^{p'}$.
+  There is a short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
+  \[
+    0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0
+  \]
+  where the first map is multiplication by $2T - 1$, and the second is evaluation at $T = \tfrac12$.
+\end{lemma}
+
+\begin{proof}
+  \uses{theta.surjective}
+  TODO
+\end{proof}
+
+\begin{theorem}[Clausen--Scholze]
+  \label{main-thm}
+  \uses{p-banach, real-measures}
+  Let $0 < p' < p \le 1$ be real numbers,
+  let $S$ be a profinite set,
+  and let $V$ be a $p$-Banach space.
+  Let $\mathcal M_{p'}(S)$ be the space of $p'$-measures on $S$. Then
+  \[ \Ext^i_{\Cond(\Ab)}(\mathcal M_{p'}(S),V) = 0 \]
+  for $i \ge 1$.
+\end{theorem}
+
+\begin{proof}
+  \uses{M-ses, Ext-L}
+  By Lemma~\ref{Ext-L}, it suffices to prove
+  \[ \Ext^i_{\Cond(\Ab)}(\mathcal M_{p'}(S),V) \cong \Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V). \]
+  TODO
+\end{proof}
 
 % vim: ts=2 et sw=2 sts=2
