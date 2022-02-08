@@ -30,7 +30,7 @@ jobs:
         run: |
           leanproject get leanprover-community/lean-liquid
           ln -s lean-liquid project
-          cd project && leanproject get-m && cd ..
+          cd project && leanproject get-m && scripts/fetch_olean_cache.sh && cd ..
           inv decls
 
       - name: Install Leanblueprint and generate web in tex env
