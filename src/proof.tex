@@ -2,10 +2,6 @@
 
 Now we state the following result, which is the key technical result on our to the main goal.
 
-\textbf{N.b.:}
-It differs from Theorem~9.4 of \cite{Analytic} only in one aspect:
-we assume that the sets $S$ are finite, rather than profinite.
-
 \begin{theorem}
   \label{first_target}
   \lean{first_target}
@@ -15,7 +11,7 @@ we assume that the sets $S$ are finite, rather than profinite.
   and let $\kappa = (\kappa_0, \kappa_1, \kappa_2, \dots)$ be a sequence of constants in $\mathbb R_{\ge 0}$
   that is $\BD$-suitable.
 	Fix radii $1>r'>r>0$.
-  For any $m$ there is some $k$ and $c_0$ such that for all finite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
+  For any $m$ there is some $k$ and $c_0$ such that for all profinite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
   the system of complexes
   \[
     C^{\BD}_{\kappa}(\overline{\mathcal M}_{r'}(S))_c^\bullet \colon
@@ -36,7 +32,7 @@ Unfortunately, the induction requires us to prove a stronger statement.
   Fix radii $1>r'>r>0$. For any $m$ there is some $k$
   such that for all polyhedral lattices $\Lambda$
   there is a constant $c_0(\Lambda)>0$
-  such that for all finite sets $S$
+  such that for all profinite sets $S$
   and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
   the system of complexes
   \[
@@ -294,7 +290,7 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   \label{col_exact}
   \lean{thm95.col_exact}
   \leanok
-  Let $d$ be the constant from Proposition~\ref{combi}.
+  Let $d$ be the constant from Proposition~\ref{Mbar-splittable}.
   Let $k > 1$ and $c_0 > 0$ be real numbers such that
   \[
     (k - 1) * c_0 / N \ge d.
@@ -307,7 +303,7 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
   where $n_i$ is the $i$-th index in our fixed Breen--Deligne data.
 
   Then $i$-th column in the double complex
-  are $(k^2, K)$-weak bounded exact in degrees $\le m$ for $c \ge c_0'$.
+  is $(k^2, K)$-weak bounded exact in degrees $\le m$ for $c \ge c_0'$.
 \end{proposition}
 
 \begin{proof}\leanok
