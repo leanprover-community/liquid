@@ -58,7 +58,7 @@
   <a href="sec-polyhedral_lattice.html"><span class="toc_ref">7</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">End of proof</span></a>
+  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">Key technical result</span></a>
  </li>
 <li class="">
   <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
@@ -71,7 +71,13 @@
   </ul>
  </li>
 <li class="">
-  <a href="sect0007.html"><span class="toc_ref">10</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0007.html"><span class="toc_ref">10</span> <span class="toc_entry">Bounded limits</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">11</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">12</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -90,21 +96,21 @@
 <div class="main-text">
 <h1 id="sec:normed_groups">3 Variants of normed groups</h1>
 
-<p><div class="remark_thmwrapper" id="a0000000021">
+<p><div class="remark_thmwrapper" id="a0000000023">
   <div class="remark_thmheading">
     <span class="remark_thmcaption">
     Remark
     </span>
     <span class="remark_thmlabel">3.1</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sec-normed_groups.html#a0000000021">#</a>
+    <a class="icon proof" href="sec-normed_groups.html#a0000000023">#</a>
 
   </div>
   </div>
   <div class="remark_thmcontent">
   <p>Normed groups are well-studied objects. In this text it will be helpful to work with the more general notion of <em>semi-normed group</em>. This drops the separation axiom \(\| x\|  = 0 \iff x = 0\) but is otherwise the same as a normed group. </p>
 <p>The main difference is that this includes “uglier” objects, but creates a “nicer” category: semi-normed groups need not be Hausdorff, but quotients by arbitrary (possibly non-closed) subgroups are naturally semi-normed groups. </p>
-<p>Nevertheless, there is the occasional use for the more restrictive notion of normed group, when we come to polyhedral lattices below (see Section&#160;<a href="sec-polyhedral_lattice.html">7</a>. </p>
+<p>Nevertheless, there is the occasional use for the more restrictive notion of normed group, when we come to polyhedral lattices below (see Section&#160;<a href="sec-polyhedral_lattice.html">7</a>). </p>
 <p>In this text, a morphism of (semi)-normed groups will always be bouned. If the morphism is supposed to be norm-nonincreasing, this will be mentioned explicitly. </p>
 
   </div>
@@ -127,7 +133,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/normed_group/normed_with_aut.lean#L20">normed_with_aut</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/normed_group/normed_with_aut.lean#L20">normed_with_aut</a></li>
         </ul>
 
       </div>
@@ -140,7 +146,7 @@
 
   </div>
 </div> </p>
-<p>The remainder of this text sets up some algebraic variants of semi-normed groups. </p>
+<p>The remainder of this section sets up some algebraic variants of semi-normed groups. </p>
 <p><div class="definition_thmwrapper" id="pseudo_normed_group">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -159,9 +165,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/basic.lean#L47">pseudo_normed_group</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/profinitely_filtered.lean#L46">profinitely_filtered_pseudo_normed_group</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/profinitely_filtered.lean#L89">comphaus_filtered_pseudo_normed_group_hom</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/pseudo_normed_group/basic.lean#L47">pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -171,27 +175,12 @@
   </div>
   <div class="definition_thmcontent">
   <p>  A <em>pseudo-normed group</em> is an abelian group \((M,+)\), together with an increasing filtration \(M_c \subseteq M\) of subsets \(M_c\) indexed by \(\mathbb R_{\ge 0}\), such that each \(M_c\) contains \(0\), is closed under negation, and \(M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}\). An example would be \(M=\mathbb {R}\) or \(M=\mathbb {Q}_p\) with \(M_c :=\{ x\, :\, |x|\leq c\} \). </p>
-<p>A pseudo-normed group&#160;\(M\) is <em>profinitely filtered</em> if each of the sets \(M_c\) is endowed with a topological space structure making it a profinite set, such that following maps are all continuous: </p>
-<ul class="itemize">
-  <li><p>the inclusion \(M_{c_1} \to M_{c_2}\) (for \(c_1 \le c_2\)); </p>
-</li>
-  <li><p>the negation \(M_c \to M_c\); </p>
-</li>
-  <li><p>the addition \(M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}\). </p>
-</li>
-</ul>
-<p>A <em>morphism</em> of profinitely filtered pseudo-normed groups \(M \to N\) is a group homomorphism \(f\) that is </p>
-<ul class="itemize">
-  <li><p><em>bounded</em>: there is a constant \(C\) such that \(x \in M_c\) implies \(f(x) \in N_{Cc}\); </p>
-</li>
-  <li><p><em>continuous</em>: for one (or equivalently all) constants \(C\) as above, the induced map \(M_c \to N_{Cc}\) is a morphism of profinite sets, i.e. continuous. </p>
-</li>
-</ul>
-<p>The reason the two definitions are equivalent is that a continuous injection between profinite sets must be a topological embedding. </p>
+<p>A pseudo-normed group \(M\) is <em>exhaustive</em> if \(\bigcup _c M_c = M\). </p>
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="profinitely_filtered_pseudo_normed_group_with_Tinv">
+<p>All pseudo-normed groups that we consider will have a topology on the filtration sets \(M_c\). The most general variant is the following notion. </p>
+<p><div class="definition_thmwrapper" id="chpng">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
@@ -199,22 +188,7 @@
     <span class="definition_thmlabel">3.4</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sec-normed_groups.html#profinitely_filtered_pseudo_normed_group_with_Tinv">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sec-normed_groups.html#pseudo_normed_group">Definition 3.3</a></li>
-        </ul>
-
-      </div>
-    </div>
+    <a class="icon proof" href="sec-normed_groups.html#chpng">#</a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
       <div class="modal-content">
@@ -224,8 +198,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/with_Tinv.lean#L22">profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/pseudo_normed_group/with_Tinv.lean#L59">profinitely_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/pseudo_normed_group/profinitely_filtered.lean#L39">comphaus_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/pseudo_normed_group/profinitely_filtered.lean#L56">profinitely_filtered_pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -234,8 +208,135 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let \(r'\) be a positive real number. A profinitely filtered pseudo-normed group \(M\) has an <em>\(r'\)-action of \(T^{-1}\)</em> if it comes endowed with a distinguished morphism of profinitely filtered pseudo-normed groups \(T^{-1} \colon M \to M\) that is bounded by \(r'^{-1}\): if \(x \in M_c\) then \(T^{-1}x \in M_{c/r'}\). </p>
-<p>A morphism \(M \to N\) of profinitely filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) is a morphism of profinitely filtered pseudo-normed groups \(f\) that commutes with the action of \(T^{-1}\) and is <em>strict</em>: if \(x \in M_c\) then \(f(x) \in N_c\). </p>
+  <p>  A pseudo-normed group&#160;\(M\) is <em>CH-filtered</em> if each of the sets \(M_c\) is endowed with a topological space structure making it a compact Hausdorff space, such that following maps are all continuous: </p>
+<ul class="itemize">
+  <li><p>the inclusion \(M_{c_1} \to M_{c_2}\) (for \(c_1 \le c_2\)); </p>
+</li>
+  <li><p>the negation \(M_c \to M_c\); </p>
+</li>
+  <li><p>the addition \(M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}\). </p>
+</li>
+</ul>
+<p>The pseudo-normed group&#160;\(M\) is <em>profinitely filtered</em> if moreover the filtration sets&#160;\(M_c\) are totally disconnected, making them profinite sets. </p>
+
+  </div>
+</div> </p>
+<p><div class="remark_thmwrapper" id="a0000000024">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">3.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-normed_groups.html#a0000000024">#</a>
+
+  </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p>The topologies on the filtration sets \(M_c\) will induce a topology on \(M\): the colimit topology. If \(M\) is some sort of normed group, then this topology is typically genuinely different from the norm topology. </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="chpng-hom">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.6</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-normed_groups.html#chpng-hom">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/pseudo_normed_group/profinitely_filtered.lean#L143">comphaus_filtered_pseudo_normed_group_hom</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A <em>morphism</em> of CH-filtered pseudo-normed groups \(M \to N\) is a group homomorphism \(f \colon M \to N\) that is </p>
+<ul class="itemize">
+  <li><p><em>bounded</em>: there is a constant \(C\) such that \(x \in M_c\) implies \(f(x) \in N_{Cc}\); </p>
+</li>
+  <li><p><em>continuous</em>: for one (or equivalently all) constants \(C\) as above, the induced map \(M_c \to N_{Cc}\) is a morphism of profinite sets, i.e. continuous. </p>
+</li>
+</ul>
+<p> The reason the two definitions of continuity are equivalent is that a continuous injection from a compact space to a Hausdorff space must be a topological embedding. </p>
+<p>A morphism \(f \colon M \to N\) is <em>strict</em> if \(x \in M_c\) implies \(f(x) \in N_c\) (in other words, if we can take \(C = 1\) in the boundedness condition above). </p>
+
+  </div>
+</div> </p>
+<p>We will also consider the analogue of an \(r\)-normed \(\mathbb Z[T^{-1}]\)-module in the pseudo-normed setting. </p>
+<p><div class="definition_thmwrapper" id="chpng-Tinv">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-normed_groups.html#chpng-Tinv">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/pseudo_normed_group/with_Tinv.lean#L16">comphaus_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/pseudo_normed_group/with_Tinv.lean#L68">comphaus_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(r'\) be a positive real number. A CH-filtered pseudo-normed group \(M\) has an <em>\(r'\)-action of \(T^{-1}\)</em> if it comes endowed with a distinguished morphism of CH-filtered pseudo-normed groups \(T^{-1} \colon M \to M\) that is bounded by \(r'^{-1}\): if \(x \in M_c\) then \(T^{-1}x \in M_{c/r'}\). </p>
+<p>A morphism of CH-filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) is a morphism \(f \colon M \to N\) of CH-filtered pseudo-normed groups that commutes with the action of&#160;\(T^{-1}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="png-cats">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-normed_groups.html#png-cats">#</a>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> We will consider the following categories: </p>
+<ul class="itemize">
+  <li><p>\(\text{CHPNG}\) the category of CH-filtered pseudo-normed groups with bounded morphisms. </p>
+</li>
+  <li><p>\(\text{CHPNG}_1\) the category of CH-filtered pseudo-normed groups with strict morphisms. </p>
+</li>
+  <li><p>\(\text{ProfinPNG}\) the category of profinitely filtered pseudo-normed groups with bounded morphisms. </p>
+</li>
+  <li><p>\(\text{ProfinPNG}_1\) the category of profinitely filtered pseudo-normed groups with strict morphisms. </p>
+</li>
+  <li><p>\(\text{CHPNGTinv}_1^{r'}\) the category of CH-filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) and strict morphisms. </p>
+</li>
+  <li><p>\(\text{ProfinPNGTinv}_1^{r'}\) the category of profinitely filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) and strict morphisms. </p>
+</li>
+</ul>
 
   </div>
 </div> </p>

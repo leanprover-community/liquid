@@ -58,7 +58,7 @@
   <a href="sec-polyhedral_lattice.html"><span class="toc_ref">7</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">End of proof</span></a>
+  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">Key technical result</span></a>
  </li>
 <li class="">
   <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
@@ -71,7 +71,13 @@
   </ul>
  </li>
 <li class="">
-  <a href="sect0007.html"><span class="toc_ref">10</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0007.html"><span class="toc_ref">10</span> <span class="toc_entry">Bounded limits</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">11</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">12</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -104,7 +110,7 @@
   </div>
   <div class="theoremx_thmcontent">
   <p>  For an abelian group \(A\), there is a resolution, functorial in&#160;\(A\), of the form </p>
-<div class="displaymath" id="a0000000013">
+<div class="displaymath" id="a0000000015">
   \[  \ldots \to \bigoplus _{i=1}^{n_i} \mathbb Z[A^{r_{ij}}] \to \ldots \to \mathbb Z[A^3] \oplus \mathbb Z[A^2] \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.  \]
 </div>
 
@@ -130,7 +136,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/universal_map.lean#L63">breen_deligne.basic_universal_map</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/universal_map.lean#L64">breen_deligne.basic_universal_map</a></li>
         </ul>
 
       </div>
@@ -176,7 +182,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/universal_map.lean#L302">breen_deligne.universal_map</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/universal_map.lean#L289">breen_deligne.universal_map</a></li>
         </ul>
 
       </div>
@@ -223,7 +229,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/universal_map.lean#L373">breen_deligne.universal_map.bound_by</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/universal_map.lean#L360">breen_deligne.universal_map.bound_by</a></li>
         </ul>
 
       </div>
@@ -270,7 +276,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/category.lean#L26">breen_deligne.FreeMat</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/category.lean#L26">breen_deligne.FreeMat</a></li>
         </ul>
 
       </div>
@@ -290,7 +296,7 @@
   </div>
 </div> </p>
 <p>Both categories naturally come with a monoidal structure: for the first it is given by the Kronecker product of matrices (a.k.a. tensor product of linear maps) which induces a monoidal structure on \(\textnormal{FreeMat}\). As usual, we will denote this monoidal structure \(\_  \otimes \_ \). For example, if \(f\) is a basic universal map, then \(2 \otimes f\) denotes the block matrix </p>
-<div class="displaymath" id="a0000000014">
+<div class="displaymath" id="a0000000016">
   \[  \begin{pmatrix}  f 
 
 &  0 
@@ -334,7 +340,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/universal_map.lean#L204">breen_deligne.basic_universal_map.proj_aux</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/universal_map.lean#L206">breen_deligne.basic_universal_map.proj_aux</a></li>
         </ul>
 
       </div>
@@ -344,7 +350,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(N\) be a natural number, and \(i {\lt} N\). Then \(\pi '_{N,i}\) denotes the basic universal map from exponent \(N\) to \(1\) </p>
-<div class="displaymath" id="a0000000015">
+<div class="displaymath" id="a0000000017">
   \[  \begin{pmatrix}  0 
 
 \\ 0 
@@ -396,7 +402,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/universal_map.lean#L496">breen_deligne.universal_map.proj</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/universal_map.lean#L482">breen_deligne.universal_map.proj</a></li>
         </ul>
 
       </div>
@@ -443,7 +449,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/universal_map.lean#L493">breen_deligne.universal_map.sum</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/universal_map.lean#L479">breen_deligne.universal_map.sum</a></li>
         </ul>
 
       </div>
@@ -490,7 +496,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/category.lean#L162">breen_deligne.data</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/category.lean#L163">breen_deligne.data</a></li>
         </ul>
 
       </div>
@@ -538,7 +544,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/category.lean#L173">breen_deligne.data.mul</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/category.lean#L174">breen_deligne.data.mul</a></li>
         </ul>
 
       </div>
@@ -589,7 +595,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/homotopy.lean#L52">breen_deligne.package</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/homotopy.lean#L52">breen_deligne.package</a></li>
         </ul>
 
       </div>
@@ -635,7 +641,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/homotopy.lean#L41">breen_deligne.data.homotopy_mul</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/homotopy.lean#L41">breen_deligne.data.homotopy_mul</a></li>
         </ul>
 
       </div>
@@ -681,7 +687,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/eg.lean#L95">breen_deligne.eg</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/eg.lean#L95">breen_deligne.eg</a></li>
         </ul>
 
       </div>
@@ -691,7 +697,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   We will now construct an example of a Breen–Deligne package. In some sense, it is the “easiest” solution to the conditions posed above. The exponents will be \(n_i = 2^i\), and the homotopies \(h_i\) will be the identity. Under these constraints, we recursively construct the universal maps \(f_i\): </p>
-<div class="displaymath" id="a0000000016">
+<div class="displaymath" id="a0000000018">
   \[  f_0 = \pi ^2_1 - \sigma ^2_1, \quad f_{i+1} = (\pi ^2_{2^{i+1}} - \sigma ^2_{2^{i+1}}) - (2 \otimes f_i).  \]
 </div>
 <p> We leave it as exercise for the reader, to verify that with these definitions \((n, f, h)\) forms a Breen–Deligne package. </p>
@@ -732,7 +738,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/suitable.lean#L57">breen_deligne.basic_universal_map.suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/suitable.lean#L57">breen_deligne.basic_universal_map.suitable</a></li>
         </ul>
 
       </div>
@@ -742,7 +748,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a basic universal map from exponent&#160;\(m\) to&#160;\(n\). Let \(c_1, c_2 \in \mathbb R_{\ge 0}\). We say that \((c_1, c_2)\) is <em>\(f\)-suitable</em>, if for all \(i\) </p>
-<div class="displaymath" id="a0000000017">
+<div class="displaymath" id="a0000000019">
   \[  \sum _j c_1|f_{ij}| \le c_2.  \]
 </div>
 
@@ -783,7 +789,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/suitable.lean#L267">breen_deligne.universal_map.suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/suitable.lean#L267">breen_deligne.universal_map.suitable</a></li>
         </ul>
 
       </div>
@@ -830,7 +836,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/suitable.lean#L604">breen_deligne.universal_map.very_suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/suitable.lean#L604">breen_deligne.universal_map.very_suitable</a></li>
         </ul>
 
       </div>
@@ -887,7 +893,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/suitable.lean#L648">breen_deligne.data.very_suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/suitable.lean#L648">breen_deligne.data.very_suitable</a></li>
         </ul>
 
       </div>
@@ -935,7 +941,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/homotopy.lean#L58">breen_deligne.package.adept</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/homotopy.lean#L58">breen_deligne.package.adept</a></li>
         </ul>
 
       </div>
@@ -958,7 +964,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#BD_h_mul_suitable">#</a>
-    <a class="icon proof" href="sect0001.html#a0000000018"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000020"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -985,7 +991,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/homotopy.lean#L112">breen_deligne.package.adept.homotopy_mul_suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/homotopy.lean#L112">breen_deligne.package.adept.homotopy_mul_suitable</a></li>
         </ul>
 
       </div>
@@ -999,7 +1005,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000018">
+<div class="proof_wrapper" id="a0000000020">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1020,7 +1026,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#exists_very_suitable">#</a>
-    <a class="icon proof" href="sect0001.html#a0000000019"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -1046,7 +1052,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/constants.lean#L43">breen_deligne.data.c_very_suitable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/constants.lean#L43">breen_deligne.data.c_very_suitable</a></li>
         </ul>
 
       </div>
@@ -1060,7 +1066,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000019">
+<div class="proof_wrapper" id="a0000000021">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1081,7 +1087,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#exists_adept">#</a>
-    <a class="icon proof" href="sect0001.html#a0000000020"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -1108,7 +1114,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/e35fd61f970301e7f5e852ce7563ca6b8878ece1/src/breen_deligne/constants.lean#L78">breen_deligne.package.κ'_adept</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fe3aca494452f115471a66e00756f52975db89c/src/breen_deligne/constants.lean#L78">breen_deligne.package.κ'_adept</a></li>
         </ul>
 
       </div>
@@ -1122,7 +1128,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000020">
+<div class="proof_wrapper" id="a0000000022">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
