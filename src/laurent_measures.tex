@@ -145,14 +145,22 @@ Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$.
 \end{proof}
 
 The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
-\begin{theorem}
-  \label{theta.surjective}
-  \lean{theta.ϑ_surjective}
+
+\begin{definition}
+  \label{theta}
+  \lean{theta.ϑ}
   \leanok
   Fix $0<\xi <1$, and let $\theta_{\xi}\colon \Z((T))_r\rightarrow \R$ be the evaluation map
   \[
     \sum a_nT^n\longmapsto \sum a_n(\xi)T^n.
   \]
+\end{definition}
+
+\begin{theorem}
+  \label{theta.surjective}
+  \uses{theta}
+  \lean{theta.ϑ_surjective}
+  \leanok
   The map $\theta_{\xi}$ is surjective.
 \end{theorem}
 
