@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blueprint for the Liquid Tensor Experiment: Condensed abelian groups</title>
+<link rel="next" href="sect0011.html" title="Bibliography" />
+<link rel="prev" href="sect0009.html" title="Bounded limits" />
+<link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Blueprint for the Liquid Tensor Experiment</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="intro.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="on-the-statement.html"><span class="toc_ref">1.1</span> <span class="toc_entry">On the statement of the main goal</span></a>
+ </li>
+<li class="">
+  <a href="on-lean.html"><span class="toc_ref">1.2</span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Breen–Deligne data</span></a>
+ </li>
+<li class="">
+  <a href="sec-normed_groups.html"><span class="toc_ref">3</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">4</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class="">
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">5</span> <span class="toc_entry">Some normed homological algebra</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+ </li>
+<li class="">
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">7</span> <span class="toc_entry">Polyhedral lattices</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">Key technical result</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html"><span class="toc_ref">9.1</span> <span class="toc_entry">Definition</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">9.2</span> <span class="toc_entry">Theorem 6.9</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">10</span> <span class="toc_entry">Real Measures</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">Bounded limits</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">13</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+  <li>	
+  <a href="https://github.com/leanprover-community/lean-liquid">Project home</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000011">12 Condensed abelian groups</h1>
+<p><div class="remark_thmwrapper" id="a0000000170">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">12.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#a0000000170">#</a>
+
+  </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p>For the time being, the following facts will be used without proof in this text. (They have or will be formalized in Lean though.) </p>
+<ul class="itemize">
+  <li><p>There is a natural functor \(\operatorname{Top}\to \operatorname{Cond}(\operatorname{Sets})\). </p>
+</li>
+  <li><p>The category of condensed abelian groups (resp.&#160;condensed \(R\)-modules) is an abelian category with enough projectives. For \(S\) an extremally disconnected set, the objects \(\mathbb Z[S]\) (resp.&#160;\(R[S]\)) is projective. </p>
+</li>
+</ul>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="CHPNG-to-Cond">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">12.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#CHPNG-to-Cond">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#png-cats">Definition 3.9</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/f328e0d5cad8a48962beaf63dfc13c7db25128a5/src/condensed/ab.lean#L83">CompHausFiltPseuNormGrp₁.presheaf</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   There is a natural functor </p>
+<span>\begin{align*}  \text{CHPNG} & \to \operatorname{Cond}(\operatorname{Ab}) \\ M & \mapsto (S \mapsto M(S)) \end{align*}</span>
+<p> where \(M(S)\) is defined to be collection of functions \(f \colon S \to M\) that factor as continuous through \(M_c\), for some \(c\). In symbols: </p>
+<div class="displaymath" id="a0000000171">
+  \[  M(S) = \{ f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\} .  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="CHPNGTinv-to-Cond">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">12.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#CHPNGTinv-to-Cond">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#png-cats">Definition 3.9</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  There is a natural functor </p>
+<span>\begin{align*}  \text{CHPNGTinv}_1 & \to \mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]} \\ M & \mapsto (S \mapsto M(S)). \end{align*}</span>
+<p> Indeed, there is clearly a functorial action of \(T^{-1}\) on \(M(S)\). </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="free-png">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#free-png">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000172"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 12.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(S = \varprojlim S_i\) be a profinite set. Then \(\mathbb Z[S]\) is naturally a profinitely filtered pseudo-normed group, via \(\mathbb Z[S]_{\le c} = \varprojlim \mathbb Z[S_i]_{\le c}\), where \(\mathbb Z[S_i]_{\le c}\) is the set \(\{ \sum _{s \in S_i} n_s[s] \mid \sum _s |n_s| \le c\} \). </p>
+<p>There is a natural isomorphism between the free condensed abelian group \(\mathbb Z[S]\) and the colimit \(\bigcup _c \mathbb Z[S]_{\le c}\) of condensed sets. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000172">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>For now, see Lemma&#160;2.1 of <span class="cite">
+	[
+	<a href="sect0011.html#Analytic" >Sch20</a>
+	]
+</span>. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Ext-free">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#Ext-free">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000173"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#p-banach">Definition 3.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} p {\lt} 1\) be a real number. Let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Then \(\operatorname{Ext}_{\operatorname{Cond}(\operatorname{Ab})}^i(\mathbb Z[S], V) = 0\) for all \(i {\gt} 0\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000173">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>TODO </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Ext-free">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#Ext-free">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000174"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#p-banach">Definition 3.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} p {\lt} 1\) be a real number. Let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\mathbb Z[T^{-1}][S], V) = 0\) for all \(i {\gt} 0\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000174">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>TODO </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Ext-Lbar">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#Ext-Lbar">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000175"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0002.html#Mbar">Definition 4.1</a></li>
+          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 3.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V) = 0\) for all \(i \ge 0\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000175">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> TODO </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Lbar-ses">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#Lbar-ses">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000176"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set. There is a natural short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<div class="displaymath" id="a0000000177">
+  \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0.  \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000176">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>TODO </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Ext-L">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#Ext-L">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000178"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 3.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V) = 0\) for all \(i {\gt} 0\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000178">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Consider the long exact sequence of Ext-groups arising form the short exact sequence (Lemma&#160;<a href="sect0010.html#Lbar-ses">12.8</a>) </p>
+<div class="displaymath" id="a0000000179">
+  \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0  \]
+</div>
+<p> by applying \(\operatorname{Ext}^*(\_ , V)\). </p>
+<p>By Lemma&#160;<a href="sect0010.html#Ext-free">12.6</a> all groups \(\operatorname{Ext}_{\operatorname{Cond}(\operatorname{Ab})}^i(\mathbf{Z}[S], V)\) vanish for \(i {\gt} 0\). And by Lemma&#160;<a href="sect0010.html#Ext-Lbar">12.7</a> all groups \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V)\) vanish for \(i \ge 0\). The result follows. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="M-ses">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#M-ses">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000180"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0006.html#laurent-measures">Definition 9.1</a></li>
+          <li><a href="sect0008.html#real-measures">Definition 10.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \((\tfrac 12)^{p'}\). There is a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<div class="displaymath" id="a0000000181">
+  \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0  \]
+</div>
+<p> where the first map is multiplication by \(2T - 1\), and the second is evaluation at \(T = \tfrac 12\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000180">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> TODO </p>
+
+  </div>
+</div>
+<p><div class="theorem_thmwrapper" id="main-thm">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">12.11</span>
+    <span class="theorem_thmtitle">Clausen–Scholze</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#main-thm">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000182"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#p-banach">Definition 3.2</a></li>
+          <li><a href="sect0008.html#real-measures">Definition 10.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of \(p'\)-measures on \(S\). Then </p>
+<div class="displaymath" id="a0000000183">
+  \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) = 0  \]
+</div>
+<p> for \(i \ge 1\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000182">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> By Lemma&#160;<a href="sect0010.html#Ext-L">12.9</a>, it suffices to prove </p>
+<div class="displaymath" id="a0000000184">
+  \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) \cong \operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V).  \]
+</div>
+<p> TODO </p>
+
+  </div>
+</div>
+
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0009.html" title="Bounded limits"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0011.html" title="Bibliography"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
