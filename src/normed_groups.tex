@@ -34,30 +34,52 @@
   for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
 \end{definition}
 
-The remainder of this text sets up some algebraic variants of semi-normed groups.
+The remainder of this section sets up some algebraic variants of semi-normed groups.
 
 \begin{definition}
   \label{pseudo_normed_group}
-  \lean{pseudo_normed_group,profinitely_filtered_pseudo_normed_group,
-  comphaus_filtered_pseudo_normed_group_hom}
+  \lean{pseudo_normed_group}
   \leanok
   A \emph{pseudo-normed group} is an abelian group $(M,+)$,
   together with an increasing filtration $M_c \subseteq M$ of subsets $M_c$ indexed by $\mathbb R_{\ge 0}$,
   such that each $M_c$ contains $0$, is closed under negation,
   and $M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}$. An example would be $M=\mathbb{R}$ or $M=\mathbb{Q}_p$ with $M_c :=\{x\,:\,|x|\leq c\}$.
 
-  A pseudo-normed group~$M$ is \emph{profinitely filtered}
+  A pseudo-normed group $M$ is \emph{exhaustive} if $\bigcup_c M_c = M$.
+\end{definition}
+
+All pseudo-normed groups that we consider will have a topology on the filtration sets $M_c$.
+The most general variant is the following notion.
+
+\begin{definition}
+  \label{chpng}
+  \lean{comphaus_filtered_pseudo_normed_group, profinitely_filtered_pseudo_normed_group}
+  \leanok
+  A pseudo-normed group~$M$ is \emph{CH-filtered}
   if each of the sets $M_c$ is endowed with a topological space structure
-  making it a profinite set, such that following maps are all continuous:
+  making it a compact Hausdorff space,
+  such that following maps are all continuous:
   \begin{itemize}
     \item the inclusion $M_{c_1} \to M_{c_2}$ (for $c_1 \le c_2$);
     \item the negation $M_c \to M_c$;
     \item the addition $M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}$.
   \end{itemize}
 
-  
-  A \emph{morphism} of profinitely filtered pseudo-normed groups $M \to N$
-  is a group homomorphism $f$ that is
+  The pseudo-normed group~$M$ is \emph{profinitely filtered} if moreover
+  the filtration sets~$M_c$ are totally disconnected, making them profinite sets.
+\end{definition}
+
+\begin{remark}
+  The topologies on the filtration sets $M_c$ will induce a topology on $M$: the colimit topology.
+  If $M$ is some sort of normed group, then this topology is typically genuinely different from the norm topology.
+\end{remark}
+
+\begin{definition}
+  \label{chpng-hom}
+  \lean{comphaus_filtered_pseudo_normed_group_hom}
+  \leanok
+  A \emph{morphism} of CH-filtered pseudo-normed groups $M \to N$
+  is a group homomorphism $f \colon M \to N$ that is
   \begin{itemize}
     \item \emph{bounded}:
       there is a constant $C$
@@ -67,29 +89,40 @@ The remainder of this text sets up some algebraic variants of semi-normed groups
       the induced map $M_c \to N_{Cc}$ is
       a morphism of profinite sets, i.e. continuous.
   \end{itemize}
+  The reason the two definitions of continuity are equivalent is that a continuous injection from a compact space to a Hausdorff space must be a topological embedding.
 
-  The reason the two definitions are equivalent is that a continuous injection between profinite sets must be a topological embedding.
+  A morphism $f \colon M \to N$ is \emph{strict} if $x \in M_c$ implies $f(x) \in N_c$
+  (in other words, if we can take $C = 1$ in the boundedness condition above).
+\end{definition}
+
+We will also consider the analogue of an $r$-normed $\mathbb Z[T^{-1}]$-module in the pseudo-normed setting.
+
+\begin{definition}
+  \label{chpng-Tinv}
+  \lean{comphaus_filtered_pseudo_normed_group_with_Tinv, comphaus_filtered_pseudo_normed_group_with_Tinv_hom}
+  \leanok
+  Let $r'$ be a positive real number.
+  A CH-filtered pseudo-normed group $M$
+  has an \emph{$r'$-action of $T^{-1}$}
+  if it comes endowed with a distinguished morphism of CH-filtered pseudo-normed groups
+  $T^{-1} \colon M \to M$ that is bounded by $r'^{-1}$:
+  if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$.
+
+  A morphism of CH-filtered pseudo-normed groups with $r'$-action of $T^{-1}$
+  is a morphism $f \colon M \to N$ of CH-filtered pseudo-normed groups that commutes with the action of~$T^{-1}$.
 \end{definition}
 
 \begin{definition}
-  \label{profinitely_filtered_pseudo_normed_group_with_Tinv}
-  \lean{profinitely_filtered_pseudo_normed_group_with_Tinv, comphaus_filtered_pseudo_normed_group_with_Tinv_hom}
-  \leanok
-  \uses{pseudo_normed_group}
-  Let $r'$ be a positive real number.
-  A profinitely filtered pseudo-normed group $M$
-  has an \emph{$r'$-action of $T^{-1}$}
-  if it comes endowed with a distinguished morphism
-  of profinitely filtered pseudo-normed groups
-  $T^{-1} \colon M \to M$
-  that is bounded by $r'^{-1}$:
-  if $x \in M_c$ then $T^{-1}x \in M_{c/r'}$.
-
-  A morphism $M \to N$
-  of profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$
-  is a morphism of profinitely filtered pseudo-normed groups $f$
-  that commutes with the action of $T^{-1}$
-  and is \emph{strict}: if $x \in M_c$ then $f(x) \in N_c$.
+  \label{png-cats}
+  We will consider the following categories:
+  \begin{itemize}
+    \item $\text{CHPNG}$ the category of CH-filtered pseudo-normed groups with bounded morphisms.
+    \item $\text{CHPNG}_1$ the category of CH-filtered pseudo-normed groups with strict morphisms.
+    \item $\text{ProfinPNG}$ the category of profinitely filtered pseudo-normed groups with bounded morphisms.
+    \item $\text{ProfinPNG}_1$ the category of profinitely filtered pseudo-normed groups with strict morphisms.
+    \item $\text{CHPNGTinv}_1^{r'}$ the category of CH-filtered pseudo-normed groups with $r'$-action of $T^{-1}$ and strict morphisms.
+    \item $\text{ProfinPNGTinv}_1^{r'}$ the category of profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$ and strict morphisms.
+  \end{itemize}
 \end{definition}
 
 % vim: ts=2 et sw=2 sts=2
