@@ -1,0 +1,38 @@
+\section{Condensed abelian groups}
+
+\begin{remark}
+  For the time being, the following facts will be used without proof in this text.
+  (They have or will be formalized in Lean though.)
+
+  \begin{itemize}
+    \item There is a natural functor $\Top \to \Cond(\Sets)$.
+    \item The category of condensed abelian groups (resp.~condensed $R$-modules)
+      is an abelian category with enough projectives.
+      For $S$ an extremally disconnected set, the objects $\mathbb Z[S]$ (resp.~$R[S]$) is projective.
+  \end{itemize}
+\end{remark}
+
+\begin{definition}
+  \label{CHPNG-to-Cond}
+  \lean{CompHausFiltPseuNormGrp₁.presheaf}
+  There is a natural functor
+  \begin{align*}
+    \text{CHPNG} &\to \Cond(\Ab) \\
+    M &\mapsto (S \mapsto M(S))
+  \end{align*}
+  where $M(S)$ is defined to be collection of functions $f \colon S \to M$ that factor as continuous through $M_c$, for some $c$.
+  In symbols:
+  \[ M(S) = \{f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\}. \]
+\end{definition}
+
+\begin{definition}
+  \label{CHPNGTinv-to-Cond}
+  There is a natural functor
+  \begin{align*}
+    \text{CHPNGTinv}_1 &\to \CondMod_{\mathbb Z[T^{-1}]} \\
+    M &\mapsto (S \mapsto M(S)).
+  \end{align*}
+  Indeed, there is clearly a functorial action of $T^{-1}$ on $M(S)$.
+\end{definition}
+
+% vim: ts=2 et sw=2 sts=2
