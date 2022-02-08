@@ -37,4 +37,28 @@
   Indeed, there is clearly a functorial action of $T^{-1}$ on $M(S)$.
 \end{definition}
 
+\begin{lemma}
+  \label{free-png}
+  \uses{CHPNG-to-Cond}
+  Let $S = \varprojlim S_i$ be a profinite set.
+  Then $\mathbb Z[S]$ is naturally a profinitely filtered pseudo-normed group,
+  via $\mathbb Z[S]_{\le c} = \varprojlim \mathbb Z[S_i]_{\le c}$,
+  where $\mathbb Z[S_i]_{\le c}$ is the set $\{\sum_{s \in S_i} n_s[s] \mid \sum_s |n_s| \le c\}$.
+
+  There is a natural isomorphism between the free condensed abelian group $\mathbb Z[S]$
+  and the colimit $\bigcup_c \mathbb Z[S]_{\le c}$ of condensed sets.
+\end{lemma}
+
+\begin{proof}
+  For now, see Lemma~2.1 of \cite{Analytic}.
+\end{proof}
+
+\begin{lemma}
+  \label{Ext-free}
+  \uses{p-banach}
+  Let $0 < p < 1$ be a real number.
+  Let $S$ be a profinite set, and let $V$ be a $p$-Banach space.
+  Then $\Ext_{\Cond(\Ab)}^i(\Z[S], V) = 0$ for all $i > 0$.
+\end{lemma}
+
 % vim: ts=2 et sw=2 sts=2
