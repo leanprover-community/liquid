@@ -26,17 +26,6 @@
   \[ M(S) = \{f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\}. \]
 \end{definition}
 
-\begin{definition}
-  \label{CHPNGTinv-to-Cond}
-  \uses{png-cats}
-  There is a natural functor
-  \begin{align*}
-    \text{CHPNGTinv}_1 &\to \CondMod_{\mathbb Z[T^{-1}]} \\
-    M &\mapsto (S \mapsto M(S)).
-  \end{align*}
-  Indeed, there is clearly a functorial action of $T^{-1}$ on $M(S)$.
-\end{definition}
-
 \begin{lemma}
   \label{free-png}
   \uses{CHPNG-to-Cond}
@@ -51,6 +40,50 @@
 
 \begin{proof}
   For now, see Lemma~2.1 of \cite{Analytic}.
+\end{proof}
+
+\begin{proposition}
+  \label{acyclic-sheaf}
+  Let
+  \[ M \colon \mathrm{ProFin}^{\mathrm{op}}\to \mathrm{Ab} \]
+  be a functor, i.e.~a presheaf of abelian groups on $\mathrm{ProFin}$. Assume that $M$ preserves finite products, and that for any surjective map $f: T\to S$, the complex
+  \[ 0\to M(S)\to M(T)\to M(T\times_S T)\to M(T\times_S T\times_S T)\to \ldots \]
+  is exact.
+
+  Then $M$ is a condensed abelian group, and for all profinite sets $S$ and $i>0$, one has $H^i(S,M)=0$ for $i>0$.
+\end{proposition}
+
+\begin{proof}
+  % Proposition~\ref{prop:CondAbexplicitsheafcond} shows that $M$ is a condensed abelian group.
+  We prove by induction on $i>0$ that $H^i(S,M)=0$ for all profinite sets $S$, so assume the vanishing of $\mathrm{Ext}^1,\ldots,\mathrm{Ext}^i$ for some $i\geq 0$.
+  (This is vacuous for $i=0$.)
+  We aim to prove that $H^{i+1}(S,M)=0$ for all profinite sets $S$.
+  Pick any profinite set $S$ and a cover $T\to S$ with $T\in \mathrm{ExtrDisc}$.
+  We get a long exact sequence of condensed abelian groups
+  \[ \ldots\to \mathbb Z[T\times_S T\times_S T]\to \mathbb Z[T\times_S T]\to \mathbb Z[T]\to \mathbb Z[S]\to 0: \]
+  Indeed, taken as presheaves on $\mathrm{ExtrDisc}$, this is already true on the level of presheaves,
+  where it reduces to the case of surjections of sets in which case one can write down a contracting homotopy.
+  (Actually, the similar result is true in any topos, where one has to maybe argue a bit more carefully.)
+  
+  The following argument is making explicit something usually seen through a spectral sequence. Define inductively
+  \[ K_1=\mathrm{ker}(\mathbb Z[T]\to \mathbb Z[S]), \]
+  \[ K_2=\mathrm{ker}(\mathbb Z[T\times_S T]\to \mathbb Z[T]) \]
+  etc. One gets exact sequences
+  \[ 0\to K_n\to \mathbb Z[T^{n/S}]\to K_{n-1}\to 0 \]
+  for $n\geq 2$. From the long exact sequence
+  \[ \ldots\to H^i(T,M)\to \mathrm{Ext}^i(K_1,M)\to H^{i+1}(S,M)\to H^{i+1}(T,M)=0 \]
+  we see that we have to prove that $\mathrm{Ext}^i(K_1,M)=0$ (if $i>0$, otherwise that $M(T)$ surjects onto $\mathrm{Hom}(K_1,M)$).
+  Assuming $i>0$, we can go on, and using the inductive hypothesis applied to the fibre products $T^{\ast/S}$, we inductively see that
+  \[ H^{i+1}(S,M)=\mathrm{Ext}^i(K_1,M)=\mathrm{Ext}^{i-1}(K_2,M)=\ldots=\mathrm{Ext}^1(K_i,M) \]
+  and eventually that this is the same as the cokernel of
+  \[ M(T^{i/S})\to \mathrm{Hom}(K_{i+1},M).  \]
+  But there is an exact sequence
+  \[ 0\to \mathrm{Hom}(K_{i+1},M)\to M(T^{(i+1)/S})\to \mathrm{Hom}(K_{i+2},M) \]
+  and $\mathrm{Hom}(K_{i+2},M)$ injects into $M(T^{(i+2)/S})$. We see that
+  \[ \mathrm{Hom}(K_{i+1},M)=\mathrm{ker}(M(T^{(i+1)/S})\to M(T^{(i+2)/S})) \]
+  and we need to see that
+  \[ M(T^{i/S})\to \mathrm{Hom}(K_{i+1},M)=\mathrm{ker}(M(T^{(i+1)/S})\to M(T^{(i+2)/S})) \]
+  is surjective, which is precisely the exactness of the \v{C}ech complex.
 \end{proof}
 
 \begin{lemma}
