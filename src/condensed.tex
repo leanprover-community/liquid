@@ -146,7 +146,7 @@
   \label{Lbar-ses}
   Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set.
   There is a natural short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
-  \[ 0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \Lbar_{r'}(S) \to 0.  \]
+  \[ 0 \to \mathbb Z[T^{-1}][S] \to \Lm_{r'}(S) \to \Lbar_{r'}(S) \to 0.  \]
 \end{lemma}
 
 \begin{proof}
@@ -158,7 +158,7 @@
   \uses{laureant-measures, normed_with_aut}
   Let $0 < r < r' < 1$ be real numbers.
   Let $S$ be a profinite set, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm1}]$-module.
-  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V) = 0$ for all $i > 0$.
+  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lm_{r'}(S), V) = 0$ for all $i > 0$.
 \end{lemma}
 
 \begin{proof}
@@ -166,7 +166,7 @@
   Consider the long exact sequence of Ext-groups
   arising form the short exact sequence (Lemma~\ref{Lbar-ses})
   \[
-    0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \Lbar_{r'}(S) \to 0
+    0 \to \mathbb Z[T^{-1}][S] \to \Lm_{r'}(S) \to \Lbar_{r'}(S) \to 0
   \]
   by applying $\Ext^*(\_, V)$.
 
@@ -183,7 +183,7 @@
   and let $r'$ denote $(\tfrac12)^{p'}$.
   There is a short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
   \[
-    0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \Mm_{p'}(S) \to 0
+    0 \to \Lm_{r'}(S) \to \Lm_{r'}(S) \to \Mm_{p'}(S) \to 0
   \]
   where the first map is multiplication by $2T - 1$, and the second is evaluation at $T = \tfrac12$.
 \end{lemma}
@@ -207,7 +207,7 @@
 \begin{proof}
   \uses{M-ses, Ext-L}
   By Lemma~\ref{Ext-L}, it suffices to prove
-  \[ \Ext^i_{\Cond(\Ab)}(\Mm_{p'}(S),V) \cong \Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V). \]
+  \[ \Ext^i_{\Cond(\Ab)}(\Mm_{p'}(S),V) \cong \Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lm_{r'}(S), V). \]
   TODO
 \end{proof}
 
