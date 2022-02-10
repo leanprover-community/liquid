@@ -278,7 +278,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Pass to cofiltered limits of compact Hausdorff spaces in statements such as \(X''_{i,\leq c}\subset g(X_{i,\leq c_g c})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
+  <p> Pass to cofiltered limits of compact Hausdorff spaces in statements such as \(X''_{i,\leq c}\subset g(X_{i,\leq c_g c})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
 
   </div>
 </div>
@@ -411,15 +411,66 @@
 
   </div>
 </div>
+<p><div class="proposition_thmwrapper" id="normed-to-cond">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">12.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#normed-to-cond">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000213"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 12.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Let \((M,\| \cdot \| )\) be a complete normed group, regarded as a topological group. Then the corresponding condensed abelian group \(\underline{M}\) sends any profinite set \(S\) to the completion of normed group of locally constant maps \(S\to M\) (with the supremum norm), and for any profinite set \(S\), one has \(H^i(S,\underline{M})=0\) for \(i{\gt}0\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000213">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>This follows Proposition&#160;<a href="sect0010.html#acyclic-sheaf">12.6</a> and the part of <span class="cite">
+	[
+	<a href="sect0011.html#Analytic" >Sch20</a>
+	, 
+	Proposition 8.19
+	]
+</span> that is already formalized. </p>
+
+  </div>
+</div>
 <p><div class="lemma_thmwrapper" id="Ext-Lbar">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">12.7</span>
+    <span class="lemma_thmlabel">12.8</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0010.html#Ext-Lbar">#</a>
-    <a class="icon proof" href="sect0010.html#a0000000213"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0010.html#a0000000214"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -442,14 +493,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be a \(r\)-normed (Banach?) \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V) = 0\) for all \(i \ge 0\). In other words, </p>
-<div class="displaymath" id="a0000000214">
+<div class="displaymath" id="a0000000215">
   \[  \operatorname{Ext}_{\mathbb Z}^i(\overline{\mathcal L}_{r'}(S), V) \xrightarrow {[T⁻¹]_L - [T⁻¹]_V} \operatorname{Ext}_{\mathbb Z}^i(\overline{\mathcal L}_{r'}(S), V)  \]
 </div>
 <p> is a bijection for all \(i\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000213">
+<div class="proof_wrapper" id="a0000000214">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -457,7 +508,103 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> TODO </p>
+  <p> With Proposition&#160;<a href="sect0009.html#Qprime-prop">11.3</a>, it suffices to prove the following assertion. Pick \(1{\gt}r'{\gt}r{\gt}0\), a profinite \(S\), and some \(r\)-Banach \(\mathbb Z[T^{\pm 1}]\)-module \(V\) as before. Then we want to prove that </p>
+<div class="displaymath" id="a0000000216">
+  \[  \mathrm{Ext}^i_{\mathbb Z[T^{-1}]}(Q'(\overline{\mathcal M}_{r'}(S)),V)=0  \]
+</div>
+<p> for all \(i\geq 0\). </p>
+<p>At this point, it is profitable to rewrite this again as the bijectivity of </p>
+<div class="displaymath" id="a0000000217">
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V).  \]
+</div>
+<p> Now these Ext-groups can be computed! More precisely, recall that \(Q'(\overline{\mathcal M}_{r'}(S))\) is a complex of the form </p>
+<div class="displaymath" id="a0000000218">
+  \[  \ldots \to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)]\to 0.  \]
+</div>
+<p> Termwise, the Ext-groups turn into cohomology groups </p>
+<div class="displaymath" id="a0000000219">
+  \[  H^i(\overline{\mathcal M}_{r'}(S)^{2^j},V).  \]
+</div>
+<p> Unfortunately, \(\overline{\mathcal M}_{r'}(S)\) itself is not profinite, so we cannot directly apply Proposition&#160;<a href="sect0010.html#normed-to-cond">12.7</a>. To get around this last cliff, we write \(Q'(\overline{\mathcal M}_{r'}(S))\) as a filtered colimit of complexes </p>
+<div class="displaymath" id="a0000000220">
+  \[  Q'(\overline{\mathcal M}_{r'}(S))_{\leq c}: \ldots \to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2_{\leq \kappa _1 c}]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)_{\leq \kappa _0 c}]\to 0  \]
+</div>
+<p> where the constants \(\kappa _0=1,\kappa _1,\ldots \) are positive and chosen so that all differentials are well-defined. (The possibility of choosing such constants has already been formalized; TODO include pointer.) It suffices to prove that </p>
+<div class="displaymath" id="a0000000221">
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V)  \]
+</div>
+<p> is a pro-isomorphism in \(c\), as then the final result follows by passing to a derived limit over \(c\), see Lemma&#160;<a href="sect0010.html#Ext-Lbar-aux">12.9</a> below. This final pro-isomorphism assertion can finally be written out, and it unravels to the statement of Theorem&#160;<a href="sect0004.html#first_target">8.1</a>. </p>
+<p>In passing to the derived limit over \(c\), we use the following lemma. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Ext-Lbar-aux">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">12.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#Ext-Lbar-aux">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000222"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0002.html#Lbar">Definition 4.1</a></li>
+          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 3.3</a></li>
+          <li><a href="sect0001.html#BD_eg">Definition 2.13</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Assume that in each degree \(i\), the map </p>
+<div class="displaymath" id="a0000000223">
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V)  \]
+</div>
+<p> is a pro-isomorphism in \(c\) (i.e., pro-systems of kernels, and of cokernels, are pro-zero). Then </p>
+<div class="displaymath" id="a0000000224">
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V).  \]
+</div>
+<p> is an isomorphism. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000222">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> We have </p>
+<div class="displaymath" id="a0000000225">
+  \[  Q'(\overline{\mathcal M}_{r'}(S)) = \bigcup _n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},  \]
+</div>
+<p> inducing a resolution </p>
+<div class="displaymath" id="a0000000226">
+  \[  0\to \bigoplus _n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to \bigoplus _n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to Q'(\overline{\mathcal M}_{r'}(S))\to 0.  \]
+</div>
+<p> Passing to a corresponding long exact sequence reduces one to checking that the squares </p>
+<div class="displaymath" id="a0000000227">
+  \[  \begin{tikzcd} 
+  \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[d]\ar[r] & \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[d]\\
+  \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[r] & \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)
+  \end{tikzcd}  \]
+</div>
+<p> are bicartesian (here, horizontal maps are shift minus identity, and vertical maps are \((T^{-1})_V - (T^{-1})_{\mathcal M}\)). Equivalently, the horizontal maps become isomorphisms on vertical kernels, and vertical cokernels. But the vertical kernels and vertical cokernels induce pro-zero systems of abelian groups, and then the horizontal kernels and cokernels compute \(\varprojlim _n\) and \(\varprojlim _n^1\) of their systems, which vanish. </p>
 
   </div>
 </div>
@@ -466,10 +613,10 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">12.8</span>
+    <span class="proposition_thmlabel">12.10</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0010.html#Lbar-ses">#</a>
-    <a class="icon proof" href="sect0010.html#a0000000215"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0010.html#a0000000228"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -491,21 +638,21 @@
   </div>
   <div class="proposition_thmcontent">
   <p>  Let \(0 {\lt} r {\lt} 1\) be a real number, and let \(S\) be a profinite set. Decomposing \(\mathbb Z((T))_r\) into positive and nonpositive coefficients yields a direct sum decomposition </p>
-<div class="displaymath" id="a0000000216">
+<div class="displaymath" id="a0000000229">
   \[  \mathbb Z((T))_r = T\mathbb Z[[T]]_r \oplus \mathbb Z[T^{-1}].  \]
 </div>
 <p> This extends to a decomposition of spaces of measures </p>
-<div class="displaymath" id="a0000000217">
+<div class="displaymath" id="a0000000230">
   \[  \mathcal L_r(S) = \mathcal L(S,T\mathbb Z((T))_r) = \mathcal L(S,T\mathbb Z[[T]]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}])  \]
 </div>
 <p> where \(\mathcal M(S,\mathbb Z[T^{-1}]) = \mathbb Z[T^{-1}][S]\) is the free condensed \(\mathbb Z[T^{-1}]\)-module on \(S\). Letting \(\overline{\mathcal L}_r(S)= \mathcal L(S,T\mathbb Z[[T]]_r)\), we get a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
-<div class="displaymath" id="a0000000218">
+<div class="displaymath" id="a0000000231">
   \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_r(S) \to \overline{\mathcal L}_r(S) \to 0.  \]
 </div>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000215">
+<div class="proof_wrapper" id="a0000000228">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -513,7 +660,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>On \(\mathbb Z((T))_{r,\leq c}\), only finitely many nonpositive coefficients can possibly be nonzero, and each of them is bounded. This shows that the nonpositive summand of \(\mathbb Z((T))_r\) is given by \(\mathbb Z[T^{-1}]\). To pass to profinite \(S\), use Proposition&#160;<a href="sect0010.html#free-png">12.5</a>. </p>
+  <p> On \(\mathbb Z((T))_{r,\leq c}\), only finitely many nonpositive coefficients can possibly be nonzero, and each of them is bounded. This shows that the nonpositive summand of \(\mathbb Z((T))_r\) is given by \(\mathbb Z[T^{-1}]\). To pass to profinite \(S\), use Proposition&#160;<a href="sect0010.html#free-png">12.5</a>. </p>
 
   </div>
 </div>
@@ -522,10 +669,10 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">12.9</span>
+    <span class="lemma_thmlabel">12.11</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0010.html#Ext-L">#</a>
-    <a class="icon proof" href="sect0010.html#a0000000219"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0010.html#a0000000232"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -547,14 +694,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V) = 0\) for all \(i {\gt} 0\). In other words, </p>
-<div class="displaymath" id="a0000000220">
+<div class="displaymath" id="a0000000233">
   \[  \operatorname{Ext}_{\mathbb Z}^i(\mathcal L_{r'}(S), V) \xrightarrow {[T⁻¹]_L - [T⁻¹]_V} \operatorname{Ext}_{\mathbb Z}^i(\mathcal L_{r'}(S), V)  \]
 </div>
 <p> is a bijection for all \(i {\gt} 0\) and a surjection for \(i = 0\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000219">
+<div class="proof_wrapper" id="a0000000232">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -562,12 +709,12 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> Consider the long exact sequence of Ext-groups arising form the short exact sequence (Lemma&#160;<a href="sect0010.html#Lbar-ses">12.8</a>) </p>
-<div class="displaymath" id="a0000000221">
+  <p> Consider the long exact sequence of Ext-groups arising form the short exact sequence (Lemma&#160;<a href="sect0010.html#Lbar-ses">12.10</a>) </p>
+<div class="displaymath" id="a0000000234">
   \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal L}_{r'}(S) \to 0  \]
 </div>
 <p> by applying \(\operatorname{Ext}^*(\_ , V)\). </p>
-<p>By Lemma&#160;<a href="sect0010.html#acyclic-sheaf">12.6</a> all groups \(\operatorname{Ext}_{\operatorname{Cond}(\operatorname{Ab})}^i(\mathbf{Z}[S], V)\) vanish for \(i {\gt} 0\). And by Lemma&#160;<a href="sect0010.html#Ext-Lbar">12.7</a> all groups \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V)\) vanish for \(i \ge 0\). The result follows. </p>
+<p>By Lemma&#160;<a href="sect0010.html#acyclic-sheaf">12.6</a> all groups \(\operatorname{Ext}_{\operatorname{Cond}(\operatorname{Ab})}^i(\mathbf{Z}[S], V)\) vanish for \(i {\gt} 0\). And by Lemma&#160;<a href="sect0010.html#Ext-Lbar">12.8</a> all groups \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V)\) vanish for \(i \ge 0\). The result follows. </p>
 <p>The "In other words" version can be proved without mentioning \(\mathbb Z[T^{-1}]\)-linear Ext groups, by using the same ingredients and the five lemma. </p>
 
   </div>
@@ -577,10 +724,10 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">12.10</span>
+    <span class="lemma_thmlabel">12.12</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0010.html#M-ses">#</a>
-    <a class="icon proof" href="sect0010.html#a0000000222"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0010.html#a0000000235"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -603,14 +750,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \((\tfrac 12)^{p'}\). There is a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
-<div class="displaymath" id="a0000000223">
+<div class="displaymath" id="a0000000236">
   \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0  \]
 </div>
 <p> where the first map is multiplication by \(2T - 1\), and the second is evaluation at \(T = \tfrac 12\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000222">
+<div class="proof_wrapper" id="a0000000235">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -627,11 +774,11 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">12.11</span>
+    <span class="theorem_thmlabel">12.13</span>
     <span class="theorem_thmtitle">Clausen–Scholze</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0010.html#main-thm">#</a>
-    <a class="icon proof" href="sect0010.html#a0000000224"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0010.html#a0000000237"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -654,14 +801,14 @@
   </div>
   <div class="theorem_thmcontent">
   <p>   Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of \(p'\)-measures on \(S\). Then </p>
-<div class="displaymath" id="a0000000225">
+<div class="displaymath" id="a0000000238">
   \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) = 0  \]
 </div>
 <p> for \(i \ge 1\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000224">
+<div class="proof_wrapper" id="a0000000237">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -669,8 +816,8 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> Recall from Lemma <a href="sect0010.html#M-ses">12.10</a> the short exact sequence </p>
-<div class="displaymath" id="a0000000226">
+  <p> Recall from Lemma <a href="sect0010.html#M-ses">12.12</a> the short exact sequence </p>
+<div class="displaymath" id="a0000000239">
   \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0.  \]
 </div>
 <p> Apply to this \(\text{Ext}^*(\_ , V)\) to obtain a long exact sequence. Now use LemmaExt-L to obtain isomorphisms between the Ext-groups involving \(\mathcal L_{r'}(S)\), for \(i {\gt} 0\), and a surjection for \(i = 0\). The result follows. </p>
