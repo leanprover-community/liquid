@@ -48,6 +48,7 @@ We note that by functoriality of the $Q'$-construction, it can also be applied t
 
 \begin{corollary}
   \label{Qprime-Cond}
+  \uses{BD_eg}
   For torsion-free condensed abelian groups $A$, there is a natural isomorphism
   \[ H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A \]
   of condensed abelian groups.
@@ -68,7 +69,8 @@ and by functoriality all previous assertions upgrade to $\mathbb Z[f]$-modules.
 % We will need the following proposition in the proof of Theorem~\ref{thm:91prime}.
 
 \begin{proposition}
-  \label{Q'-prop}
+  \label{Qprime-prop}
+  \uses{BD_eg}
   Let $M$ and $N$ be condensed abelian groups with endomorphisms $f_M$, $f_N$.
   Assume that $M$ is torsion-free (over $\mathbb Z$). Then
   \[ \mathrm{Ext}^i_{\mathbb Z[f]}(M,N)=0 \]
@@ -82,6 +84,7 @@ At this point, we need to be able to talk about $\mathrm{Ext}$-groups of (bounde
 The statement is also true without the torsion-freeness assumption on $M$, but slightly more nasty to prove then (and not required for the application).
 
 \begin{proof}
+  \uses{homology-Qprime, Qprime-Cond}
   We induct on $j$.
   Consider first the case $j=0$; then any map $Q'(M)\to N$ factors uniquely over $H_0 Q'(M)[0]=M[0]$, yielding the result.
   Now assume that both sides vanish for $0\leq i<j$; we need to see that the vanishing of the $\mathrm{Ext}^i$'s is equivalent.

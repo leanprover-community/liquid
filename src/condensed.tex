@@ -65,6 +65,7 @@
 \end{proposition}
 
 \begin{proof}
+  \uses{CHPNG-Cond-exact}
   Pass to cofiltered limits of compact Hausdorff spaces in statements such as $X''_{i,\leq c}\subset g(X_{i,\leq c_g c})$,
   noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff).
 \end{proof}
@@ -129,6 +130,19 @@
   is surjective, which is precisely the exactness of the \v{C}ech complex.
 \end{proof}
 
+\begin{proposition}
+  \label{normed-to-cond}
+  \uses{CHPNG-to-Cond}
+  Let $(M,\|\cdot\|)$ be a complete normed group, regarded as a topological group.
+  Then the corresponding condensed abelian group $\underline{M}$ sends any profinite set $S$
+  to the completion of normed group of locally constant maps $S\to M$ (with the supremum norm),
+  and for any profinite set $S$, one has $H^i(S,\underline{M})=0$ for $i>0$.
+\end{proposition}
+
+\begin{proof}
+  This follows Proposition~\ref{acyclic-sheaf} and the part of \cite[Proposition 8.19]{Analytic} that is already formalized.
+\end{proof}
+
 \begin{lemma}
   \label{Ext-Lbar}
   \uses{Lbar, normed_with_aut}
@@ -141,8 +155,57 @@
 \end{lemma}
 
 \begin{proof}
+  \uses{Ext-Lbar-aux, Qprime-prop, normed-to-cond}
+  With Proposition~\ref{Qprime-prop}, it suffices to prove the following assertion.
+  Pick $1>r'>r>0$, a profinite $S$, and some $r$-Banach $\mathbb Z[T^{\pm 1}]$-module $V$ as before.
+  Then we want to prove that
+  \[ \mathrm{Ext}^i_{\mathbb Z[T^{-1}]}(Q'(\overline{\mathcal M}_{r'}(S)),V)=0 \]
+  for all $i\geq 0$.
+
+  At this point, it is profitable to rewrite this again as the bijectivity of
+  \[ (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V). \]
+  Now these Ext-groups can be computed! More precisely, recall that $Q'(\overline{\mathcal M}_{r'}(S))$ is a complex of the form
+  \[ \ldots\to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)]\to 0.  \]
+  Termwise, the Ext-groups turn into cohomology groups
+  \[ H^i(\overline{\mathcal M}_{r'}(S)^{2^j},V).  \]
+  Unfortunately, $\overline{\mathcal M}_{r'}(S)$ itself is not profinite, so we cannot directly apply Proposition~\ref{normed-to-cond}.
+  To get around this last cliff, we write $Q'(\overline{\mathcal M}_{r'}(S))$ as a filtered colimit of complexes
+  \[ Q'(\overline{\mathcal M}_{r'}(S))_{\leq c}: \ldots \to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2_{\leq \kappa_1 c}]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)_{\leq \kappa_0 c}]\to 0 \]
+  where the constants $\kappa_0=1,\kappa_1,\ldots$ are positive and chosen so that all differentials are well-defined.
+  (The possibility of choosing such constants has already been formalized; TODO include pointer.)
+  It suffices to prove that
+  \[ (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V) \]
+  is a pro-isomorphism in $c$, as then the final result follows by passing to a derived limit over $c$, see Lemma~\ref{Ext-Lbar-aux} below.
+  This final pro-isomorphism assertion can finally be written out, and it unravels to the statement of Theorem~\ref{first_target}.
+
+  In passing to the derived limit over $c$, we use the following lemma.
+\end{proof}
+
+\begin{lemma}
+  \label{Ext-Lbar-aux}
+  \uses{Lbar, normed_with_aut, BD_eg}
+  Assume that in each degree $i$, the map
+  \[ (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V) \]
+  is a pro-isomorphism in $c$ (i.e., pro-systems of kernels, and of cokernels, are pro-zero). Then
+  \[ (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V).  \]
+  is an isomorphism.
+\end{lemma}
+
+\begin{proof}
   \uses{first_target}
-  TODO
+  We have
+  \[ Q'(\overline{\mathcal M}_{r'}(S)) = \bigcup_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}, \]
+  inducing a resolution
+  \[ 0\to \bigoplus_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to \bigoplus_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to Q'(\overline{\mathcal M}_{r'}(S))\to 0.  \]
+  Passing to a corresponding long exact sequence reduces one to checking that the squares
+  \[ \begin{tikzcd}
+  \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[d]\ar[r] & \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[d]\\
+  \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[r] & \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)
+  \end{tikzcd} \]
+  are bicartesian (here, horizontal maps are shift minus identity, and vertical maps are $(T^{-1})_V - (T^{-1})_{\mathcal M}$).
+  Equivalently, the horizontal maps become isomorphisms on vertical kernels, and vertical cokernels.
+  But the vertical kernels and vertical cokernels induce pro-zero systems of abelian groups,
+  and then the horizontal kernels and cokernels compute $\varprojlim_n$ and $\varprojlim_n^1$ of their systems, which vanish.
 \end{proof}
 
 \begin{proposition}
@@ -159,6 +222,7 @@
 \end{proposition}
 
 \begin{proof}
+  \uses{free-png}
   On $\mathbb Z((T))_{r,\leq c}$, only finitely many nonpositive coefficients can possibly be nonzero, and each of them is bounded.
   This shows that the nonpositive summand of $\mathbb Z((T))_r$ is given by $\mathbb Z[T^{-1}]$.
   To pass to profinite $S$, use Proposition~\ref{free-png}.
@@ -176,7 +240,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{acyclic-sheaf, Ext-Lbar}
+  \uses{acyclic-sheaf, Ext-Lbar, Lbar-ses}
   Consider the long exact sequence of Ext-groups
   arising form the short exact sequence (Lemma~\ref{Lbar-ses})
   \[
@@ -204,7 +268,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{theta.surjective}
+  \uses{theta.surjective, CHPNG-Cond-exact-lim}
   TODO
 \end{proof}
 
