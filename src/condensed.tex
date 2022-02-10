@@ -9,6 +9,7 @@
     \item The category of condensed abelian groups (resp.~condensed $R$-modules)
       is an abelian category with enough projectives.
       For $S$ an extremally disconnected set, the objects $\mathbb Z[S]$ (resp.~$R[S]$) is projective.
+    \item We write $H^i(S, M)$ for $\text{Ext}^i(\mathbb Z[S], M)$.
   \end{itemize}
 \end{remark}
 
@@ -19,12 +20,54 @@
   There is a natural functor
   \begin{align*}
     \text{CHPNG} &\to \Cond(\Ab) \\
-    M &\mapsto (S \mapsto M(S))
+    M &\mapsto \underline{M}
   \end{align*}
-  where $M(S)$ is defined to be collection of functions $f \colon S \to M$ that factor as continuous through $M_c$, for some $c$.
+  where $\underline{M}(S)$ is defined to be collection of functions $f \colon S \to M$ that factor as continuous through $M_c$, for some $c$.
   In symbols:
   \[ M(S) = \{f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\}. \]
 \end{definition}
+
+\begin{proposition}
+  \label{CHPNG-Cond-exact}
+  \uses{CHPNG-to-Cond}
+  Consider a short exact sequence of abelian groups
+  \[ 0\to X'\xrightarrow{f} X\xrightarrow{g} X''\to 0 \]
+  such that all of $X'$, $X$ and $X''$ carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups.
+  Assume that $f(X'_{\leq c})\subset X_{\leq c}$ and $g(X_{\leq c})\subset X''_{\leq c}$.
+  Moreover, assume that there are some $c_f$ and $c_g$
+  so that $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})$ and $X''_{\leq c}\subset g(X_{\leq c_gc})$.
+  Then the sequence
+  \[ 0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0 \]
+  of condensed abelian groups is exact.
+\end{proposition}
+
+\begin{proof}
+  We evaluate at $S\in \mathrm{ExtrDisc}$.
+  Any map $S\to X''$ factors over some $X''_{\leq c}$,
+  and then $g: X_{\leq c_gc}\times_{X''} X''_{\leq c}\to X''_{\leq c}$ is a surjection of compact Hausdorff spaces;
+  as $S$ is extremally disconnected, the map $S\to X''_{\leq c}$ can be lifted,
+  showing that $g: X(S)\to X''(S)$ is surjective.
+  A similar argument shows that the kernel of $g: X(S)\to X''(S)$ is in the image of $f: X'(S)\to X(S)$,
+  the latter clearly being injective.
+\end{proof}
+
+\begin{proposition}
+  \label{CHPNG-Cond-exact-lim}
+  \uses{CHPNG-to-Cond, bounded-limits}
+  Consider an inverse system
+  \[ (0\to X'_i\xrightarrow{f_i} X_i\xrightarrow{g_i} X_i''\to 0)_i \]
+  of short exact sequences as in Proposition~\ref{prop:comphausfilttocond},
+  satisfying the hypothesis for fixed constants $c_f$ and $c_g$.
+  Moreover, assume that the transition maps $X'_i\to X'_j$, $X_i\to X_j$ and $X''_i\to X''_j$ are strict, and let $X'$, $X$ and $X''$ be their limits.
+  Then
+  \[ 0\to X'\xrightarrow{f} X\xrightarrow{g} X''\to 0 \]
+  satisfies the hypotheses of Proposition~\ref{CHPNG-to-Cond-exact} with the same $c_f$ and $c_g$.
+\end{proposition}
+
+\begin{proof}
+  Pass to cofiltered limits of compact Hausdorff spaces in statements such as $X''_{i,\leq c}\subset g(X_{i,\leq c_g c})$,
+  noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff).
+\end{proof}
 
 \begin{lemma}
   \label{free-png}
@@ -87,30 +130,6 @@
 \end{proof}
 
 \begin{lemma}
-  \label{Ext-free}
-  \uses{p-banach}
-  Let $0 < p < 1$ be a real number.
-  Let $S$ be a profinite set, and let $V$ be a $p$-Banach space.
-  Then $\Ext_{\Cond(\Ab)}^i(\mathbb Z[S], V) = 0$ for all $i > 0$.
-\end{lemma}
-
-\begin{proof}
-  TODO
-\end{proof}
-
-\begin{lemma}
-  \label{Ext-free}
-  \uses{p-banach}
-  Let $0 < p < 1$ be a real number.
-  Let $S$ be a profinite set, and let $V$ be a $p$-Banach space.
-  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\mathbb Z[T^{-1}][S], V) = 0$ for all $i > 0$.
-\end{lemma}
-
-\begin{proof}
-  TODO
-\end{proof}
-
-\begin{lemma}
   \label{Ext-Lbar}
   \uses{Mbar, normed_with_aut}
   Let $0 < r < r' < 1$ be real numbers.
@@ -127,9 +146,7 @@
   \label{Lbar-ses}
   Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set.
   There is a natural short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
-  \[
-    0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0.
-  \]
+  \[ 0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0.  \]
 \end{lemma}
 
 \begin{proof}
@@ -145,7 +162,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{Ext-free, Ext-Lbar}
+  \uses{acyclic-sheaf, Ext-Lbar}
   Consider the long exact sequence of Ext-groups
   arising form the short exact sequence (Lemma~\ref{Lbar-ses})
   \[
@@ -153,7 +170,7 @@
   \]
   by applying $\Ext^*(\_, V)$.
 
-  By Lemma~\ref{Ext-free} all groups $\Ext_{\Cond(\Ab)}^i(\Z[S], V)$ vanish for $i > 0$.
+  By Lemma~\ref{acyclic-sheaf} all groups $\Ext_{\Cond(\Ab)}^i(\Z[S], V)$ vanish for $i > 0$.
   And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V)$ vanish for $i \ge 0$.
   The result follows.
 \end{proof}
