@@ -9,8 +9,8 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blueprint for the Liquid Tensor Experiment: The MacLane \(Q'\)-construction</title>
-<link rel="next" href="sect0010.html" title="Condensed abelian groups" />
+<title>Blueprint for the Liquid Tensor Experiment: Condensed abelian groups</title>
+<link rel="next" href="sect0010.html" title="Bibliography" />
 <link rel="prev" href="sect0008.html" title="Real Measures" />
 <link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
 <link rel="stylesheet" href="styles/theme-white.css" />
@@ -77,13 +77,10 @@
   <a href="sect0008.html"><span class="toc_ref">10</span> <span class="toc_entry">Real Measures</span></a>
  </li>
 <li class=" active current">
-  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
+  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">Condensed abelian groups</span></a>
  </li>
 <li class="">
-  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Condensed abelian groups</span></a>
- </li>
-<li class="">
-  <a href="sect0011.html"><span class="toc_ref">13</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -100,17 +97,90 @@
 
 
 <div class="main-text">
-<h1 id="a0000000010">11 The MacLane \(Q'\)-construction</h1>
-<p>In this section we will focus on the functorial complex induced by the Breen–Deligne package described in Definition&#160;??. This complex is also known as MacLane’s \(Q'\)-construction. (TODO: Rewrite the section on Breen–Deligne packages to reflect this.) </p>
-<p><div class="proposition_thmwrapper" id="homology-Qprime">
+<h1 id="a0000000010">11 Condensed abelian groups</h1>
+<p><div class="remark_thmwrapper" id="a0000000172">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">11.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#a0000000172">#</a>
+
+  </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p>For the time being, the following facts will be used without proof in this text. (They have or will be formalized in Lean though.) </p>
+<ul class="itemize">
+  <li><p>There is a natural functor \(\operatorname{Top}\to \operatorname{Cond}(\operatorname{Sets})\). </p>
+</li>
+  <li><p>The category of condensed abelian groups (resp.&#160;condensed \(R\)-modules) is an abelian category with enough projectives. For \(S\) an extremally disconnected set, the objects \(\mathbb Z[S]\) (resp.&#160;\(R[S]\)) is projective. </p>
+</li>
+  <li><p>We write \(H^i(S, M)\) for \(\text{Ext}^i(\mathbb Z[S], M)\). </p>
+</li>
+</ul>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="CHPNG-to-Cond">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">11.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#CHPNG-to-Cond">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#png-cats">Definition 3.9</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4f31b8097031e80744aaeebd49e4bb63c3088fa5/src/condensed/ab.lean#L90">CompHausFiltPseuNormGrp₁.presheaf</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   There is a natural functor </p>
+<span>\begin{align*}  \text{CHPNG} & \to \operatorname{Cond}(\operatorname{Ab}) \\ M & \mapsto \underline{M} \end{align*}</span>
+<p> where \(\underline{M}(S)\) is defined to be collection of functions \(f \colon S \to M\) that factor as continuous through \(M_c\), for some \(c\). In symbols: </p>
+<div class="displaymath" id="a0000000173">
+  \[  M(S) = \{ f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\} .  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="proposition_thmwrapper" id="CHPNG-Cond-exact">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">11.1</span>
+    <span class="proposition_thmlabel">11.3</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#homology-Qprime">#</a>
-    <a class="icon proof" href="sect0009.html#a0000000173"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0009.html#CHPNG-Cond-exact">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000174"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -122,7 +192,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0001.html#BD_eg">Definition 2.13</a></li>
+          <li><a href="sect0009.html#CHPNG-to-Cond">Definition 11.2</a></li>
         </ul>
 
       </div>
@@ -131,28 +201,19 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>  For any \(i\geq 0\), the functor \(A\mapsto H_i(Q'(A))\) has the following properties: </p>
-<ol class="enumerate">
-  <li><p>It is additive, i.e. </p>
-<div class="displaymath" id="a0000000174">
-  \[  H_i(Q'(A\oplus B))\cong H_i(Q'(A))\oplus H_i(Q'(B)).  \]
-</div>
-</li>
-  <li><p>It commutes with filtered colimits, i.e.&#160;for a filtered inductive system \(A_i\), </p>
+  <p>  Consider a short exact sequence of abelian groups </p>
 <div class="displaymath" id="a0000000175">
-  \[  \varinjlim _i H_i(Q'(A))\cong H_i(Q'(\varinjlim _i A_i)).  \]
+  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
 </div>
-</li>
-</ol>
-<p>In particular, for torsion-free abelian groups \(A\), there is a functorial isomorphism </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). Moreover, assume that there are some \(c_f\) and \(c_g\) so that \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\) and \(X''_{\leq c}\subset g(X_{\leq c_gc})\). Then the sequence </p>
 <div class="displaymath" id="a0000000176">
-  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A.  \]
+  \[  0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0  \]
 </div>
+<p> of condensed abelian groups is exact. </p>
 
   </div>
 </div> </p>
-<p>As the proof shows, we do not really need the \(Q'\)-construction here: Any Breen–Deligne package will do. </p>
-<div class="proof_wrapper" id="a0000000173">
+<div class="proof_wrapper" id="a0000000174">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -160,84 +221,141 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>(Note: part (1) has already been formalized. TODO include pointer to the Lean code.) Let us do the easy things first. Part (2) is clear as everything in sight commutes with filtered colimits. Assuming (1), we note that there is a natural map </p>
-<div class="displaymath" id="a0000000177">
-  \[  H_i(Q'(\mathbb Z))\times A\to H_i(Q'(A))  \]
-</div>
-<p> induced by functoriality of \(H_i(Q'(-))\). To check that this is bilinear and induces an isomorphism </p>
-<div class="displaymath" id="a0000000178">
-  \[  H_i(Q'(\mathbb Z))\otimes A\cong H_i(Q'(A)),  \]
-</div>
-<p> we can reduce to the case that \(A\) is finitely generated by (2). In that case \(A\) is finite free, and the result follows from (1). </p>
-<p>Thus, it remains to prove part (1), which has already been formalized. We recall that the direct sum of two abelian groups \(M\) and \(N\) is characterized as the abelian group \(P\) with maps \(i_M: M\to P\), \(i_N: N\to P\), \(p_M: P\to M\), \(p_N: P\to N\), satisfying \(p_M i_M=\mathrm{id}_M\), \(p_N i_N = \mathrm{id}_N\), \(p_M i_N=0\), \(p_N i_M = 0\), \(\mathrm{id}_P = i_M p_M + i_N p_N\). Apply this to \(M=H_i(Q'(A))\), \(N=H_i(Q'(B))\) and \(P=H_i(Q'(A\oplus B))\), with all maps induced by applying \(H_i(Q'(-))\) to the similar maps for \(A\), \(B\) and \(A\oplus B\). The fact that \(H_i(Q'(-))\) is a functor already gives all identities except \(\mathrm{id}_P = i_M p_M + i_N p_N\), and the only issue is the question whether \(H_i(Q'(-))\) induces additive maps on morphism spaces. But if \(f,g: C\to D\) are any two maps of abelian groups, then \(H_i(Q'(f+g)) = H_i(Q'(f))+H_i(Q'(g))\), by reducing to the universal case of the two projections \(D^2\to D\) and using the homotopy baked into Definition&#160;<a href="sect0001.html#BD_eg">2.13</a>. </p>
+  <p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Any map \(S\to X''\) factors over some \(X''_{\leq c}\), and then \(g: X_{\leq c_gc}\times _{X''} X''_{\leq c}\to X''_{\leq c}\) is a surjection of compact Hausdorff spaces; as \(S\) is extremally disconnected, the map \(S\to X''_{\leq c}\) can be lifted, showing that \(g: X(S)\to X''(S)\) is surjective. A similar argument shows that the kernel of \(g: X(S)\to X''(S)\) is in the image of \(f: X'(S)\to X(S)\), the latter clearly being injective. </p>
 
   </div>
 </div>
-<p>We note that by functoriality of the \(Q'\)-construction, it can also be applied to condensed abelian groups. </p>
-<p><div class="corollary_thmwrapper" id="Qprime-Cond">
-  <div class="corollary_thmheading">
-    <span class="corollary_thmcaption">
-    Corollary
-    </span>
-    <span class="corollary_thmlabel">11.2</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#Qprime-Cond">#</a>
-    <a class="icon proof" href="sect0009.html#a0000000179"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-
-  </div>
-  </div>
-  <div class="corollary_thmcontent">
-  <p> For torsion-free condensed abelian groups \(A\), there is a natural isomorphism </p>
-<div class="displaymath" id="a0000000180">
-  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A  \]
-</div>
-<p> of condensed abelian groups. </p>
-
-  </div>
-</div> </p>
-<p>Here, we only need to be able to tensor condensed abelian groups with (abstract) abelian groups. (With more effort, one could prove that \(H_i(Q'(\mathbb Z))\) is even finitely generated.) In that case, the tensor product functor can be defined very naively by tensoring the values at any \(S\) with the given abstract abelian group. </p>
-<div class="proof_wrapper" id="a0000000179">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>Evaluating at \(S\in \mathrm{ExtrDisc}\), we note that \(S\mapsto H_i(Q'(A(S)))\) is already a condensed abelian group, and agrees with \(H_i(Q'(\mathbb Z))\otimes A(S)\). Thus, the same is true after sheafification. </p>
-
-  </div>
-</div>
-<p>If \(A\) is a torsion-free condensed abelian group equipped with an endomorphism \(f\), then \(Q'(A)\) is also equipped with the endomorphism \(f\) induced by functoriality, and by functoriality all previous assertions upgrade to \(\mathbb Z[f]\)-modules. </p>
-<p><div class="proposition_thmwrapper" id="Q'-prop">
+<p><div class="proposition_thmwrapper" id="CHPNG-Cond-exact-lim">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">11.3</span>
+    <span class="proposition_thmlabel">11.4</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#Q'-prop">#</a>
+    <a class="icon proof" href="sect0009.html#CHPNG-Cond-exact-lim">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000177"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0009.html#CHPNG-to-Cond">Definition 11.2</a></li>
+          <li><a href="sec-normed_groups.html#bounded-limits">Proposition 3.10</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Consider an inverse system </p>
+<div class="displaymath" id="a0000000178">
+  \[  (0\to X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i''\to 0)_i  \]
+</div>
+<p> of short exact sequences as in Proposition&#160;<a href="sect0009.html#CHPNG-Cond-exact">11.3</a>, satisfying the hypothesis for fixed constants \(c_f\) and \(c_g\). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
+<div class="displaymath" id="a0000000179">
+  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
+</div>
+<p> satisfies the hypotheses of Proposition&#160;<a href="sect0009.html#CHPNG-Cond-exact">11.3</a> with the same \(c_f\) and \(c_g\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000177">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Pass to cofiltered limits of compact Hausdorff spaces in statements such as \(X''_{i,\leq c}\subset g(X_{i,\leq c_g c})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="free-png">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#free-png">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000180"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0009.html#CHPNG-to-Cond">Definition 11.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(S = \varprojlim S_i\) be a profinite set. Then \(\mathbb Z[S]\) is naturally a profinitely filtered pseudo-normed group, via \(\mathbb Z[S]_{\le c} = \varprojlim \mathbb Z[S_i]_{\le c}\), where \(\mathbb Z[S_i]_{\le c}\) is the set \(\{ \sum _{s \in S_i} n_s[s] \mid \sum _s |n_s| \le c\} \). </p>
+<p>There is a natural isomorphism between the free condensed abelian group \(\mathbb Z[S]\) and the colimit \(\bigcup _c \mathbb Z[S]_{\le c}\) of condensed sets. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000180">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>For now, see Lemma&#160;2.1 of <span class="cite">
+	[
+	<a href="sect0010.html#Analytic" >Sch20</a>
+	]
+</span>. </p>
+
+  </div>
+</div>
+<p><div class="proposition_thmwrapper" id="acyclic-sheaf">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">11.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#acyclic-sheaf">#</a>
     <a class="icon proof" href="sect0009.html#a0000000181"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
 
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p> Let \(M\) and \(N\) be condensed abelian groups with endomorphisms \(f_M\), \(f_N\). Assume that \(M\) is torsion-free (over \(\mathbb Z\)). Then </p>
+  <p> Let </p>
 <div class="displaymath" id="a0000000182">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(M,N)=0  \]
+  \[  M \colon \mathrm{ProFin}^{\mathrm{op}}\to \mathrm{Ab}  \]
 </div>
-<p> for all \(i\geq 0\) if and only if </p>
+<p> be a functor, i.e.&#160;a presheaf of abelian groups on \(\mathrm{ProFin}\). Assume that \(M\) preserves finite products, and that for any surjective map \(f: T\to S\), the complex </p>
 <div class="displaymath" id="a0000000183">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(Q'(M),N)=0  \]
+  \[  0\to M(S)\to M(T)\to M(T\times _S T)\to M(T\times _S T\times _S T)\to \ldots  \]
 </div>
-<p> for all \(i\geq 0\). More precisely, the first vanishes for \(0\leq i\leq j\) if and only if the second vanishes for \(0\leq i\leq j\). </p>
+<p> is exact. </p>
+<p>Then \(M\) is a condensed abelian group, and for all profinite sets \(S\) and \(i{\gt}0\), one has \(H^i(S,M)=0\) for \(i{\gt}0\). </p>
 
   </div>
 </div> </p>
-<p>At this point, we need to be able to talk about \(\mathrm{Ext}\)-groups of (bounded to the right) complexes of condensed abelian groups (against condensed abelian groups). </p>
-<p>The statement is also true without the torsion-freeness assumption on \(M\), but slightly more nasty to prove then (and not required for the application). </p>
 <div class="proof_wrapper" id="a0000000181">
   <div class="proof_heading">
     <span class="proof_caption">
@@ -246,38 +364,317 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>We induct on \(j\). Consider first the case \(j=0\); then any map \(Q'(M)\to N\) factors uniquely over \(H_0 Q'(M)[0]=M[0]\), yielding the result. Now assume that both sides vanish for \(0\leq i{\lt}j\); we need to see that the vanishing of the \(\mathrm{Ext}^i\)’s is equivalent. Consider the triangle </p>
+  <p>We prove by induction on \(i{\gt}0\) that \(H^i(S,M)=0\) for all profinite sets \(S\), so assume the vanishing of \(\mathrm{Ext}^1,\ldots ,\mathrm{Ext}^i\) for some \(i\geq 0\). (This is vacuous for \(i=0\).) We aim to prove that \(H^{i+1}(S,M)=0\) for all profinite sets \(S\). Pick any profinite set \(S\) and a cover \(T\to S\) with \(T\in \mathrm{ExtrDisc}\). We get a long exact sequence of condensed abelian groups </p>
 <div class="displaymath" id="a0000000184">
-  \[  \tau _{\geq 1} Q'(M)\to Q'(M)\to M[0]\to .  \]
+  \[  \ldots \to \mathbb Z[T\times _S T\times _S T]\to \mathbb Z[T\times _S T]\to \mathbb Z[T]\to \mathbb Z[S]\to 0:  \]
 </div>
-<p> Taking the corresponding long exact sequence of \(\mathrm{Ext}\)-groups against \(N\), we see that it suffices to see that </p>
+<p> Indeed, taken as presheaves on \(\mathrm{ExtrDisc}\), this is already true on the level of presheaves, where it reduces to the case of surjections of sets in which case one can write down a contracting homotopy. (Actually, the similar result is true in any topos, where one has to maybe argue a bit more carefully.) </p>
+<p>The following argument is making explicit something usually seen through a spectral sequence. Define inductively </p>
 <div class="displaymath" id="a0000000185">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(\tau _{\geq 1} Q'(M),N)=0  \]
+  \[  K_1=\mathrm{ker}(\mathbb Z[T]\to \mathbb Z[S]),  \]
 </div>
-<p> for \(0\leq i\leq j\). But we can prove by descending induction on \(t\) that </p>
 <div class="displaymath" id="a0000000186">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(\tau _{\geq t} Q'(M),N)=0.  \]
+  \[  K_2=\mathrm{ker}(\mathbb Z[T\times _S T]\to \mathbb Z[T])  \]
 </div>
-<p> This is trivially true for \(t{\gt}i\). Now look at the triangle </p>
+<p> etc. One gets exact sequences </p>
 <div class="displaymath" id="a0000000187">
-  \[  \tau _{\geq t+1} Q'(M)\to \tau _{\geq t} Q'(M)\to H_t(Q'(M))[t]\to  \]
+  \[  0\to K_n\to \mathbb Z[T^{n/S}]\to K_{n-1}\to 0  \]
 </div>
-<p> and the corresponding long exact sequence. It becomes sufficient to prove that </p>
+<p> for \(n\geq 2\). From the long exact sequence </p>
 <div class="displaymath" id="a0000000188">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(H_t(Q'(M))[t],N)=0  \]
+  \[  \ldots \to H^i(T,M)\to \mathrm{Ext}^i(K_1,M)\to H^{i+1}(S,M)\to H^{i+1}(T,M)=0  \]
 </div>
-<p> for \(0\leq i\leq j\). Trivially, </p>
+<p> we see that we have to prove that \(\mathrm{Ext}^i(K_1,M)=0\) (if \(i{\gt}0\), otherwise that \(M(T)\) surjects onto \(\mathrm{Hom}(K_1,M)\)). Assuming \(i{\gt}0\), we can go on, and using the inductive hypothesis applied to the fibre products \(T^{\ast /S}\), we inductively see that </p>
 <div class="displaymath" id="a0000000189">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(H_t(Q'(M))[t],N)=\mathrm{Ext}^{i-t}_{\mathbb Z[f]}(H_t(Q'(M)),N).  \]
+  \[  H^{i+1}(S,M)=\mathrm{Ext}^i(K_1,M)=\mathrm{Ext}^{i-1}(K_2,M)=\ldots =\mathrm{Ext}^1(K_i,M)  \]
 </div>
-<p> Note that \(t\geq 1\) here, so \(i-t{\lt}j\) (and can be assumed \(\geq 0\)). Also \(H_t(Q'(M))\cong H_t(Q'(\mathbb Z))\otimes M\). Thus, it suffices to show that for every abelian group \(A\) and every \(0\leq i{\lt}j\), </p>
+<p> and eventually that this is the same as the cokernel of </p>
 <div class="displaymath" id="a0000000190">
-  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(A\otimes M,N)=0.  \]
+  \[  M(T^{i/S})\to \mathrm{Hom}(K_{i+1},M).  \]
 </div>
-<p> If \(A\) is free, then \(A\otimes M\) is a direct sum of copies of \(M\), and the result follows as \(\mathrm{Ext}\) turns direct sums into products (and we assumed the vanishing of \(\mathrm{Ext}^i_{\mathbb Z[f]}(M,N)\) for \(0\leq i{\lt}j\)). In general, one can pick a two-term free resolution of \(A\) and use the long exact sequence. </p>
+<p> But there is an exact sequence </p>
+<div class="displaymath" id="a0000000191">
+  \[  0\to \mathrm{Hom}(K_{i+1},M)\to M(T^{(i+1)/S})\to \mathrm{Hom}(K_{i+2},M)  \]
+</div>
+<p> and \(\mathrm{Hom}(K_{i+2},M)\) injects into \(M(T^{(i+2)/S})\). We see that </p>
+<div class="displaymath" id="a0000000192">
+  \[  \mathrm{Hom}(K_{i+1},M)=\mathrm{ker}(M(T^{(i+1)/S})\to M(T^{(i+2)/S}))  \]
+</div>
+<p> and we need to see that </p>
+<div class="displaymath" id="a0000000193">
+  \[  M(T^{i/S})\to \mathrm{Hom}(K_{i+1},M)=\mathrm{ker}(M(T^{(i+1)/S})\to M(T^{(i+2)/S}))  \]
+</div>
+<p> is surjective, which is precisely the exactness of the Čech complex. </p>
 
   </div>
 </div>
+<p><div class="lemma_thmwrapper" id="Ext-Lbar">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#Ext-Lbar">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000194"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0002.html#Lbar">Definition 4.1</a></li>
+          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 3.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be a \(r\)-normed (Banach?) \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V) = 0\) for all \(i \ge 0\). In other words, </p>
+<div class="displaymath" id="a0000000195">
+  \[  \operatorname{Ext}_{\mathbb Z}^i(\overline{\mathcal L}_{r'}(S), V) \xrightarrow {[T⁻¹]_L - [T⁻¹]_V} \operatorname{Ext}_{\mathbb Z}^i(\overline{\mathcal L}_{r'}(S), V)  \]
+</div>
+<p> is a bijection for all \(i\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000194">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> TODO </p>
+
+  </div>
+</div>
+<p><div class="proposition_thmwrapper" id="Lbar-ses">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">11.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#Lbar-ses">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000196"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0002.html#Lbar">Definition 4.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Let \(0 {\lt} r {\lt} 1\) be a real number, and let \(S\) be a profinite set. Decomposing \(\mathbb Z((T))_r\) into positive and nonpositive coefficients yields a direct sum decomposition </p>
+<div class="displaymath" id="a0000000197">
+  \[  \mathbb Z((T))_r = T\mathbb Z[[T]]_r \oplus \mathbb Z[T^{-1}].  \]
+</div>
+<p> This extends to a decomposition of spaces of measures </p>
+<div class="displaymath" id="a0000000198">
+  \[  \mathcal L_r(S) = \mathcal L(S,T\mathbb Z((T))_r) = \mathcal L(S,T\mathbb Z[[T]]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}])  \]
+</div>
+<p> where \(\mathcal M(S,\mathbb Z[T^{-1}]) = \mathbb Z[T^{-1}][S]\) is the free condensed \(\mathbb Z[T^{-1}]\)-module on \(S\). Letting \(\overline{\mathcal L}_r(S)= \mathcal L(S,T\mathbb Z[[T]]_r)\), we get a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<div class="displaymath" id="a0000000199">
+  \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_r(S) \to \overline{\mathcal L}_r(S) \to 0.  \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000196">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>On \(\mathbb Z((T))_{r,\leq c}\), only finitely many nonpositive coefficients can possibly be nonzero, and each of them is bounded. This shows that the nonpositive summand of \(\mathbb Z((T))_r\) is given by \(\mathbb Z[T^{-1}]\). To pass to profinite \(S\), use Proposition&#160;<a href="sect0009.html#free-png">11.5</a>. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="Ext-L">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#Ext-L">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000200"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 3.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V) = 0\) for all \(i {\gt} 0\). In other words, </p>
+<div class="displaymath" id="a0000000201">
+  \[  \operatorname{Ext}_{\mathbb Z}^i(\mathcal L_{r'}(S), V) \xrightarrow {[T⁻¹]_L - [T⁻¹]_V} \operatorname{Ext}_{\mathbb Z}^i(\mathcal L_{r'}(S), V)  \]
+</div>
+<p> is a bijection for all \(i {\gt} 0\) and a surjection for \(i = 0\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000200">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Consider the long exact sequence of Ext-groups arising form the short exact sequence (Lemma&#160;<a href="sect0009.html#Lbar-ses">11.8</a>) </p>
+<div class="displaymath" id="a0000000202">
+  \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal L}_{r'}(S) \to 0  \]
+</div>
+<p> by applying \(\operatorname{Ext}^*(\_ , V)\). </p>
+<p>By Lemma&#160;<a href="sect0009.html#acyclic-sheaf">11.6</a> all groups \(\operatorname{Ext}_{\operatorname{Cond}(\operatorname{Ab})}^i(\mathbf{Z}[S], V)\) vanish for \(i {\gt} 0\). And by Lemma&#160;<a href="sect0009.html#Ext-Lbar">11.7</a> all groups \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V)\) vanish for \(i \ge 0\). The result follows. </p>
+<p>The "In other words" version can be proved without mentioning \(\mathbb Z[T^{-1}]\)-linear Ext groups, by using the same ingredients and the five lemma. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="M-ses">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#M-ses">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000203"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0006.html#laurent-measures">Definition 9.1</a></li>
+          <li><a href="sect0008.html#real-measures">Definition 10.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \((\tfrac 12)^{p'}\). There is a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<div class="displaymath" id="a0000000204">
+  \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0  \]
+</div>
+<p> where the first map is multiplication by \(2T - 1\), and the second is evaluation at \(T = \tfrac 12\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000203">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> TODO </p>
+
+  </div>
+</div>
+<p><div class="theorem_thmwrapper" id="main-thm">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">11.11</span>
+    <span class="theorem_thmtitle">Clausen–Scholze</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#main-thm">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000205"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-normed_groups.html#p-banach">Definition 3.2</a></li>
+          <li><a href="sect0008.html#real-measures">Definition 10.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of \(p'\)-measures on \(S\). Then </p>
+<div class="displaymath" id="a0000000206">
+  \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) = 0  \]
+</div>
+<p> for \(i \ge 1\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000205">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Recall from Lemma <a href="sect0009.html#M-ses">11.10</a> the short exact sequence </p>
+<div class="displaymath" id="a0000000207">
+  \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0.  \]
+</div>
+<p> Apply to this \(\text{Ext}^*(\_ , V)\) to obtain a long exact sequence. Now use LemmaExt-L to obtain isomorphisms between the Ext-groups involving \(\mathcal L_{r'}(S)\), for \(i {\gt} 0\), and a surjection for \(i = 0\). The result follows. </p>
+
+  </div>
+</div>
+
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
@@ -289,7 +686,7 @@
 </a>
   <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0010.html" title="Condensed abelian groups"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0010.html" title="Bibliography"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
