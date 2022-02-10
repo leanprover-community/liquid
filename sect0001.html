@@ -77,10 +77,13 @@
   <a href="sect0008.html"><span class="toc_ref">10</span> <span class="toc_entry">Real Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">Condensed abelian groups</span></a>
+  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
  </li>
 <li class="">
-  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref">13</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
@@ -113,7 +116,7 @@
   </div>
   <div class="theoremx_thmcontent">
   <p>  For an abelian group \(A\), there is a resolution, functorial in&#160;\(A\), of the form </p>
-<div class="displaymath" id="a0000000016">
+<div class="displaymath" id="a0000000017">
   \[  \ldots \to \bigoplus _{i=1}^{n_i} \mathbb Z[A^{r_{ij}}] \to \ldots \to \mathbb Z[A^3] \oplus \mathbb Z[A^2] \to \mathbb Z[A^2] \to \mathbb Z[A] \to A \to 0.  \]
 </div>
 
@@ -299,7 +302,7 @@
   </div>
 </div> </p>
 <p>Both categories naturally come with a monoidal structure: for the first it is given by the Kronecker product of matrices (a.k.a. tensor product of linear maps) which induces a monoidal structure on \(\textnormal{FreeMat}\). As usual, we will denote this monoidal structure \(\_  \otimes \_ \). For example, if \(f\) is a basic universal map, then \(2 \otimes f\) denotes the block matrix </p>
-<div class="displaymath" id="a0000000017">
+<div class="displaymath" id="a0000000018">
   \[  \begin{pmatrix}  f 
 
 &  0 
@@ -353,7 +356,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(N\) be a natural number, and \(i {\lt} N\). Then \(\pi '_{N,i}\) denotes the basic universal map from exponent \(N\) to \(1\) </p>
-<div class="displaymath" id="a0000000018">
+<div class="displaymath" id="a0000000019">
   \[  \begin{pmatrix}  0 
 
 \\ 0 
@@ -700,7 +703,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   We will now construct an example of a Breen–Deligne package. In some sense, it is the “easiest” solution to the conditions posed above. The exponents will be \(n_i = 2^i\), and the homotopies \(h_i\) will be the identity. Under these constraints, we recursively construct the universal maps \(f_i\): </p>
-<div class="displaymath" id="a0000000019">
+<div class="displaymath" id="a0000000020">
   \[  f_0 = \pi ^2_1 - \sigma ^2_1, \quad f_{i+1} = (\pi ^2_{2^{i+1}} - \sigma ^2_{2^{i+1}}) - (2 \otimes f_i).  \]
 </div>
 <p> We leave it as exercise for the reader, to verify that with these definitions \((n, f, h)\) forms a Breen–Deligne package. </p>
@@ -751,7 +754,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a basic universal map from exponent&#160;\(m\) to&#160;\(n\). Let \(c_1, c_2 \in \mathbb R_{\ge 0}\). We say that \((c_1, c_2)\) is <em>\(f\)-suitable</em>, if for all \(i\) </p>
-<div class="displaymath" id="a0000000020">
+<div class="displaymath" id="a0000000021">
   \[  \sum _j c_1|f_{ij}| \le c_2.  \]
 </div>
 
@@ -967,7 +970,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#BD_h_mul_suitable">#</a>
-    <a class="icon proof" href="sect0001.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -1008,7 +1011,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000021">
+<div class="proof_wrapper" id="a0000000022">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1029,7 +1032,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#exists_very_suitable">#</a>
-    <a class="icon proof" href="sect0001.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -1069,7 +1072,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000022">
+<div class="proof_wrapper" id="a0000000023">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1090,7 +1093,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0001.html#exists_adept">#</a>
-    <a class="icon proof" href="sect0001.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -1130,7 +1133,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000023">
+<div class="proof_wrapper" id="a0000000024">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
