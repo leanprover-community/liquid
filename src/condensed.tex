@@ -61,7 +61,7 @@
   Moreover, assume that the transition maps $X'_i\to X'_j$, $X_i\to X_j$ and $X''_i\to X''_j$ are strict, and let $X'$, $X$ and $X''$ be their limits.
   Then
   \[ 0\to X'\xrightarrow{f} X\xrightarrow{g} X''\to 0 \]
-  satisfies the hypotheses of Proposition~\ref{CHPNG-to-Cond-exact} with the same $c_f$ and $c_g$.
+  satisfies the hypotheses of Proposition~\ref{CHPNG-Cond-exact} with the same $c_f$ and $c_g$.
 \end{proposition}
 
 \begin{proof}
@@ -136,7 +136,7 @@
   Let $S$ be a profinite set, and let $V$ be a $r$-normed (Banach?) $\mathbb Z[T^{\pm1}]$-module.
   Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar_{r'}(S), V) = 0$ for all $i \ge 0$.
   In other words,
-  \[ \Ext^i_{\mathbb Z}^i(\Lbar_{r'}(S), V) \xrightarrow{[T⁻¹]_L - [T⁻¹]_V} \Ext^i_{\mathbb Z}^i(\Lbar_{r'}(S), V) \]
+  \[ \Ext_{\mathbb Z}^i(\Lbar_{r'}(S), V) \xrightarrow{[T⁻¹]_L - [T⁻¹]_V} \Ext_{\mathbb Z}^i(\Lbar_{r'}(S), V) \]
   is a bijection for all $i$.
 \end{lemma}
 
@@ -171,7 +171,7 @@
   Let $S$ be a profinite set, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm1}]$-module.
   Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lm_{r'}(S), V) = 0$ for all $i > 0$.
   In other words,
-  \[ \Ext^i_{\mathbb Z}^i(\Lm_{r'}(S), V) \xrightarrow{[T⁻¹]_L - [T⁻¹]_V} \Ext^i_{\mathbb Z}^i(\Lm_{r'}(S), V) \]
+  \[ \Ext_{\mathbb Z}^i(\Lm_{r'}(S), V) \xrightarrow{[T⁻¹]_L - [T⁻¹]_V} \Ext_{\mathbb Z}^i(\Lm_{r'}(S), V) \]
   is a bijection for all $i > 0$ and a surjection for $i = 0$.
 \end{lemma}
 
@@ -185,7 +185,7 @@
   by applying $\Ext^*(\_, V)$.
 
   By Lemma~\ref{acyclic-sheaf} all groups $\Ext_{\Cond(\Ab)}^i(\Z[S], V)$ vanish for $i > 0$.
-  And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar{r'}}(S), V)$ vanish for $i \ge 0$.
+  And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar_{r'}(S), V)$ vanish for $i \ge 0$.
   The result follows.
 
   The "In other words" version can be proved without mentioning $\mathbb Z[T^{-1}]$-linear Ext groups,
