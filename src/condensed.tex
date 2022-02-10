@@ -134,7 +134,7 @@
   \uses{Mbar, normed_with_aut}
   Let $0 < r < r' < 1$ be real numbers.
   Let $S$ be a profinite set, and let $V$ be an $r$-normed $\mathbb Z[T^{\pm1}]$-module.
-  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V) = 0$ for all $i \ge 0$.
+  Then $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar{r'}}(S), V) = 0$ for all $i \ge 0$.
 \end{lemma}
 
 \begin{proof}
@@ -146,7 +146,7 @@
   \label{Lbar-ses}
   Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set.
   There is a natural short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
-  \[ 0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0.  \]
+  \[ 0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \Lbar_{r'}(S) \to 0.  \]
 \end{lemma}
 
 \begin{proof}
@@ -166,12 +166,12 @@
   Consider the long exact sequence of Ext-groups
   arising form the short exact sequence (Lemma~\ref{Lbar-ses})
   \[
-    0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \overline{\mathcal{M}_{r'}}(S) \to 0
+    0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_{r'}(S) \to \Lbar_{r'}(S) \to 0
   \]
   by applying $\Ext^*(\_, V)$.
 
   By Lemma~\ref{acyclic-sheaf} all groups $\Ext_{\Cond(\Ab)}^i(\Z[S], V)$ vanish for $i > 0$.
-  And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal M_{r'}}(S), V)$ vanish for $i \ge 0$.
+  And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar{r'}}(S), V)$ vanish for $i \ge 0$.
   The result follows.
 \end{proof}
 

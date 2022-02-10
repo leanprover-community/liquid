@@ -9,15 +9,15 @@ profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
   \uses{pseudo_normed_group}
   \leanok
   Let $r' > 0$ be a real number, and let $S$ be a finite set.
-  Denote by $\overline{\mathcal M}_{r'}(S)$ the set
+  Denote by $\Lbar_{r'}(S)$ the set
   \[
     \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \in T\Z[[T]]\right)_{s \in S} \,\middle\vert\, \sum_{n \ge 1, s \in S} |a_{n,s}| (r')^n < \infty \right\}.
   \]
 
-  Note that $\overline{\mathcal M}_{r'}(S)$ is naturally a pseudo-normed group
+  Note that $\Lbar_{r'}(S)$ is naturally a pseudo-normed group
   with filtration given by
   \[
-    \overline{\mathcal M}_{r'}(S)_{\le c} =
+    \Lbar_{r'}(S)_{\le c} =
     \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert \sum_{n \ge 1, s \in S} |a_{n,s}| (r')^n \le c \right\}.
   \]
 \end{definition}
@@ -28,13 +28,13 @@ profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
   \leanok
   \uses{Mbar}
   Let $r' > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
-  The space $\overline{\mathcal M}_{r'}(S)_{\le c}$ is the profinite limit of the finite sets
+  The space $\Lbar_{r'}(S)_{\le c}$ is the profinite limit of the finite sets
   \[
-    \overline{\mathcal M}_{r'}(S)_{\le c, \le N} =
+    \Lbar_{r'}(S)_{\le c, \le N} =
     \left\{ \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} \middle\vert
     \sum_{1 \le n \le N, s \in S} |a_{n,s}| (r')^n \le c \right\}
   \]
-  This endows $\overline{\mathcal M}_{r'}(S)_{\le c}$ with the profinite topology.
+  This endows $\Lbar_{r'}(S)_{\le c}$ with the profinite topology.
   In particular, it is a profinitely filtered pseudo-normed group.
 \end{lemma}
 
@@ -52,7 +52,7 @@ and let $S$ be a finite set.
   \lean{Mbar.Tinv}
   \leanok
   \uses{Mbar}
-  There is a natural action of $T^{-1}$ on $\overline{\mathcal M}_{r'}(S)$, via
+  There is a natural action of $T^{-1}$ on $\Lbar_{r'}(S)$, via
   \[
     T^{-1} \cdot
     \left( \sum_{n \ge 1} a_{n,s} T^n \right)_{s \in S} =
@@ -65,14 +65,14 @@ and let $S$ be a finite set.
   \lean{Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv}
   \leanok
   \uses{Mbar_profinitely_filtered, Mbar_Tinv}
-  The natural action of $T^{-1}$ on $\overline{\mathcal M}_{r'}(S)$
+  The natural action of $T^{-1}$ on $\Lbar_{r'}(S)$
   restricts to continuous maps
   \[
     T^{-1} \cdot \_ \colon
-    \overline{\mathcal M}_r(S)_{\le c} \to
-    \overline{\mathcal M}_r(S)_{\le c/r'}.
+    \Lbar_r(S)_{\le c} \to
+    \Lbar_r(S)_{\le c/r'}.
   \]
-  In particular, $\overline{\mathcal M}_{r'}(S)$
+  In particular, $\Lbar_{r'}(S)$
   has an $r'$-action of $T^{-1}$.
 \end{lemma}
 

@@ -14,9 +14,9 @@ Now we state the following result, which is the key technical result on our to t
   For any $m$ there is some $k$ and $c_0$ such that for all profinite sets $S$ and all $r$-normed $\mathbb Z[T^{\pm 1}]$-modules $V$,
   the system of complexes
   \[
-    C^{\BD}_{\kappa}(\overline{\mathcal M}_{r'}(S))_c^\bullet \colon
-    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq c})^{T^{-1}} \to
-    \widehat{V}(\overline{\mathcal M}_{r'}(S)_{\leq \kappa_1c}^2)^{T^{-1}}
+    C^{\BD}_{\kappa}(\Lbar_{r'}(S))_c^\bullet \colon
+    \widehat{V}(\Lbar_{r'}(S)_{\leq c})^{T^{-1}} \to
+    \widehat{V}(\Lbar_{r'}(S)_{\leq \kappa_1c}^2)^{T^{-1}}
     \to \ldots
   \]
   is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0$.
@@ -38,8 +38,8 @@ Unfortunately, the induction requires us to prove a stronger statement.
   the system of complexes
   \[
   C_{\Lambda,c}^\bullet \colon
-  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq c})^{T^{-1}} \to
-  \widehat{V}(\Hom(\Lambda,\overline{\mathcal M}_{r'}(S))_{\leq \kappa_1c}^2)^{T^{-1}} \to \ldots
+  \widehat{V}(\Hom(\Lambda,\Lbar_{r'}(S))_{\leq c})^{T^{-1}} \to
+  \widehat{V}(\Hom(\Lambda,\Lbar_{r'}(S))_{\leq \kappa_1c}^2)^{T^{-1}} \to \ldots
   \]
   is $\leq k$-exact in degrees $\leq m$ for $c\geq c_0(\Lambda)$.
 \end{theorem}
@@ -66,7 +66,7 @@ We can then verify the conditions to Proposition~\ref{spectral}
 and conclude from there.
 For the time being, we will let $M$ denote
 an arbitrary profinitely filtered pseudo-normed group with action of $T^{-1}$,
-and whenever needed we can specialize to $M = \overline{\mathcal M}_{r'}(S)$.
+and whenever needed we can specialize to $M = \Lbar_{r'}(S)$.
 
 \textbf{Further choices of constants}:
 We will argue by induction on $m$, so assume the result for $m-1$
@@ -309,8 +309,8 @@ Then in particular $r^bN\leq 2k'(\tfrac{r}{r'})^b\leq \epsilon$.
 
 \begin{proof}\leanok
   \uses{combi,lem:Tinv,canonical_iso_2,weakdualsnakelemma, pre_col_exact}
-  Let $M^{(m)}$ denote $\Hom(\Lambda^{(m)},\overline{\mathcal M}_{r'}(S))^{n_i}$.
-  We also write $M$ for $M^{(0)} = \Hom(\Lambda,\overline{\mathcal M}_{r'}(S))^{n_i}$
+  Let $M^{(m)}$ denote $\Hom(\Lambda^{(m)},\Lbar_{r'}(S))^{n_i}$.
+  We also write $M$ for $M^{(0)} = \Hom(\Lambda,\Lbar_{r'}(S))^{n_i}$
   and $M'$ for $M^{(1)}$.
   By Proposition~\ref{combi}, $M$ is $N$-splittable with error term~$d$.
 
