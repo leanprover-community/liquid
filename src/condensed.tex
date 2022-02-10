@@ -284,11 +284,12 @@
 \end{theorem}
 
 \begin{proof}
-  \uses{M-ses, Ext-L}
+  \uses{M-ses, Ext-L, p-banach-r-normed}
   Recall from Lemma \ref{M-ses} the short exact sequence
   \[ 0 \to \Lm_{r'}(S) \to \Lm_{r'}(S) \to \Mm_{p'}(S) \to 0. \]
   Apply to this $\text{Ext}^*(\_, V)$ to obtain a long exact sequence.
-  Now use Lemma{Ext-L} to obtain isomorphisms between the Ext-groups involving $\Lm_{r'}(S)$, for $i > 0$,
+  Note that $T$ acts on $V$ via multiplication by $\tfrac12$ (by Lemma~\ref{p-banach-r-normed}.
+  Hence we can use Lemma{Ext-L} to obtain isomorphisms between the Ext-groups involving $\Lm_{r'}(S)$, for $i > 0$,
   and a surjection for $i = 0$.
   The result follows.
 \end{proof}
