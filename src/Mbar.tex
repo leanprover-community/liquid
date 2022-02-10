@@ -4,8 +4,8 @@ We will now construct the central example of
 profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
 
 \begin{definition}
-  \label{Mbar}
-  \lean{Mbar,Mbar_le,Mbar.pseudo_normed_group}
+  \label{Lbar}
+  \lean{Lbar,Lbar_le,Lbar.pseudo_normed_group}
   \uses{pseudo_normed_group}
   \leanok
   Let $r' > 0$ be a real number, and let $S$ be a finite set.
@@ -23,10 +23,10 @@ profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$.
 \end{definition}
 
 \begin{lemma}
-  \label{Mbar_profinitely_filtered}
-  \lean{Mbar.profinitely_filtered_pseudo_normed_group}
+  \label{Lbar_profinitely_filtered}
+  \lean{Lbar.profinitely_filtered_pseudo_normed_group}
   \leanok
-  \uses{Mbar}
+  \uses{Lbar}
   Let $r' > 0$ and $c \ge 0$ be real numbers, and let $S$ be a finite set.
   The space $\Lbar_{r'}(S)_{\le c}$ is the profinite limit of the finite sets
   \[
@@ -48,10 +48,10 @@ let $r' > 0, c \ge 0$ be real numbers,
 and let $S$ be a finite set.
 
 \begin{definition}
-  \label{Mbar_Tinv}
-  \lean{Mbar.Tinv}
+  \label{Lbar_Tinv}
+  \lean{Lbar.Tinv}
   \leanok
-  \uses{Mbar}
+  \uses{Lbar}
   There is a natural action of $T^{-1}$ on $\Lbar_{r'}(S)$, via
   \[
     T^{-1} \cdot
@@ -61,10 +61,10 @@ and let $S$ be a finite set.
 \end{definition}
 
 \begin{lemma}
-  \label{Mbar_with_Tinv}
-  \lean{Mbar.profinitely_filtered_pseudo_normed_group_with_Tinv}
+  \label{Lbar_with_Tinv}
+  \lean{Lbar.profinitely_filtered_pseudo_normed_group_with_Tinv}
   \leanok
-  \uses{Mbar_profinitely_filtered, Mbar_Tinv}
+  \uses{Lbar_profinitely_filtered, Lbar_Tinv}
   The natural action of $T^{-1}$ on $\Lbar_{r'}(S)$
   restricts to continuous maps
   \[
