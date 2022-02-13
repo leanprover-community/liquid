@@ -24,7 +24,7 @@
 \end{remark}
 
 \begin{definition}
-  \label{p-banach}
+  \label{p-banach}\alsoIn{cha:two}
   \lean{pBanach}
   \leanok
   A $p$-Banach space $V$ is a complete normed abelian group
@@ -33,7 +33,7 @@
 \end{definition}
 
 \begin{definition}
-  \label{normed_with_aut}
+  \label{normed_with_aut}\alsoIn{cha:two}
   \lean{normed_with_aut}
   \leanok
   Let $r > 0$ be a real number.
@@ -44,7 +44,7 @@
 \end{definition}
 
 \begin{lemma}
-  \label{p-banach-r-normed}
+  \label{p-banach-r-normed}\alsoIn{cha:two}
   \uses{p-banach, normed_with_aut}
    A $p$-Banach $V$ is an $r$-Banach $\mathbb Z[T^{\pm 1}]$-module, where $r=2^{-p}$.
 \end{lemma}
@@ -56,7 +56,7 @@
 The remainder of this section sets up some algebraic variants of semi-normed groups.
 
 \begin{definition}
-  \label{pseudo_normed_group}
+  \label{pseudo_normed_group}\alsoIn{cha:two}
   \lean{pseudo_normed_group}
   \leanok
   A \emph{pseudo-normed group} is an abelian group $(M,+)$,
@@ -71,7 +71,7 @@ All pseudo-normed groups that we consider will have a topology on the filtration
 The most general variant is the following notion.
 
 \begin{definition}
-  \label{chpng}
+  \label{chpng}\alsoIn{cha:two}
   \uses{pseudo_normed_group}
   \lean{comphaus_filtered_pseudo_normed_group, profinitely_filtered_pseudo_normed_group}
   \leanok
@@ -95,7 +95,7 @@ The most general variant is the following notion.
 \end{remark}
 
 \begin{definition}
-  \label{chpng-hom}
+  \label{chpng-hom}\alsoIn{cha:two}
   \uses{chpng}
   \lean{comphaus_filtered_pseudo_normed_group_hom}
   \leanok
@@ -119,7 +119,7 @@ The most general variant is the following notion.
 We will also consider the analogue of an $r$-normed $\mathbb Z[T^{-1}]$-module in the pseudo-normed setting.
 
 \begin{definition}
-  \label{chpng-Tinv}
+  \label{chpng-Tinv}\alsoIn{cha:two}
   \uses{chpng-hom}
   \lean{comphaus_filtered_pseudo_normed_group_with_Tinv, comphaus_filtered_pseudo_normed_group_with_Tinv_hom}
   \leanok
@@ -135,7 +135,7 @@ We will also consider the analogue of an $r$-normed $\mathbb Z[T^{-1}]$-module i
 \end{definition}
 
 \begin{definition}
-  \label{png-cats}
+  \label{png-cats}\alsoIn{cha:two}
   \uses{chpng-Tinv}
   We will consider the following categories:
   \begin{itemize}
@@ -149,7 +149,7 @@ We will also consider the analogue of an $r$-normed $\mathbb Z[T^{-1}]$-module i
 \end{definition}
 
 \begin{proposition}
-  \label{bounded-limits}
+  \label{bounded-limits}\alsoIn{cha:two}
   \uses{png-cats}
   \lean{CompHausFiltPseuNormGrp₁.limit_cone_is_limit}
   \leanok
