@@ -1,4 +1,4 @@
-\documentclass[11pt]{amsbook}
+\documentclass[11pt]{amsart}
 \usepackage{amsfonts, amsthm, amssymb, amsmath}
 \usepackage{tikz-cd}
 \usetikzlibrary{decorations}
@@ -15,10 +15,11 @@
 \setlength{\oddsidemargin}{-0.1in}
 \setlength{\evensidemargin}{-0.1in}
 
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 \newtheorem{theorem}{Theorem}
-\numberwithin{theorem}{section}
-\newtheorem{theoremx}[theorem]{Theorem} % theorem not in dep graph
+\numberwithin{theorem}{subsection}
+\newtheorem*{theoremx}{Theorem} % theorem not in dep graph
+\newtheorem*{remarkx}{Remark} % unnumbered remark
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{lemmax}[theorem]{Lemma} % lemma not in dep graph
 \newtheorem{corollary}[theorem]{Corollary}
