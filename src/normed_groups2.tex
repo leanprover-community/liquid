@@ -1,0 +1,62 @@
+\subsection{Variants of normed groups}
+\label{sec:normed_groups2}
+
+This subsection continues some of the theory of (pseudo)-normed groups,
+started in Subsection~\label{sec:normed_groups}.
+
+\begin{definition}
+  \label{p-banach}
+  \lean{pBanach}
+  \leanok
+  A $p$-Banach space $V$ is a complete normed abelian group
+  that is also a real vector space,
+  satisfying $\|rv\| = |r|^p\|v\|$ for all $r \in \mathbb R$.
+\end{definition}
+
+\begin{lemma}
+  \label{p-banach-r-normed}
+  \uses{p-banach, normed_with_aut}
+   A $p$-Banach $V$ is an $r$-Banach $\mathbb Z[T^{\pm 1}]$-module, where $r=2^{-p}$.
+   (See Definition~\ref{normed_with_aut} for the definition of $r$-normed $\mathbb Z[T^{\pm 1}]$-modules.)
+\end{lemma}
+
+\begin{proof}
+  Obvious.
+\end{proof}
+
+\begin{definition}
+  \label{png-cats}
+  \uses{chpng-Tinv}
+  We will consider the following categories:
+  \begin{itemize}
+    \item $\text{CHPNG}$ the category of CH-filtered pseudo-normed groups with bounded morphisms.
+    \item $\text{CHPNG}_1$ the category of exhaustive CH-filtered pseudo-normed groups with strict morphisms.
+    \item $\text{ProfinPNG}$ the category of profinitely filtered pseudo-normed groups with bounded morphisms.
+    \item $\text{ProfinPNG}_1$ the category of exhaustive profinitely filtered pseudo-normed groups with strict morphisms.
+    \item $\text{CHPNGTinv}_1^{r'}$ the category of exhaustive CH-filtered pseudo-normed groups with $r'$-action of $T^{-1}$ and strict morphisms.
+    \item $\text{ProfinPNGTinv}_1^{r'}$ the category of exhaustive profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$ and strict morphisms.
+  \end{itemize}
+\end{definition}
+
+\begin{proposition}
+  \label{bounded-limits}
+  \uses{png-cats}
+  \lean{CompHausFiltPseuNormGrp₁.limit_cone_is_limit}
+  \leanok
+  Consider an inverse system $(X_i)_i$ of compact-Hausdorffly-filtered-pseudonormed abelian groups
+  where all transition maps $X_i\to X_j$ send $X_{i,\leq c}$ to $X_{j,\leq c}$.
+  Then
+  \[ X_{\leq c} := \varprojlim_i X_{i,\leq c} \]
+  is compact Hausdorff, and
+  \[ X=\bigcup_c X_{\leq c} \]
+  is naturally a compact-Hausdorffly-filtered pseudonormed abelian group
+  which is the limit of $(X_i)_i$ in the strict category structure.
+\end{proposition}
+
+\begin{proof}
+  One can define negation and addition on $X$ as continuous maps
+  $-: X_{\leq c}\to X_{\leq c}$ and $+: X_{\leq c}\times X_{\leq c'}\to X_{\leq c+c'}$, and these pass to the unions.
+  It should then be straightforward to check the axioms.
+\end{proof}
+
+% vim: ts=2 et sw=2 sts=2

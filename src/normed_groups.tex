@@ -1,36 +1,25 @@
 \subsection{Variants of normed groups}
 \label{sec:normed_groups}
 
-\begin{remark}
-  Normed groups are well-studied objects.
-  In this text it will be helpful to work with
-  the more general notion of \emph{semi-normed group}.
-  This drops the separation axiom $\|x\| = 0 \iff x = 0$
-  but is otherwise the same as a normed group.
+Normed groups are well-studied objects.
+In this text it will be helpful to work with
+the more general notion of \emph{semi-normed group}.
+This drops the separation axiom $\|x\| = 0 \iff x = 0$
+but is otherwise the same as a normed group.
 
-  The main difference is that this includes ``uglier'' objects,
-  but creates a ``nicer'' category:
-  semi-normed groups need not be Hausdorff,
-  but quotients by arbitrary (possibly non-closed) subgroups
-  are naturally semi-normed groups.
+The main difference is that this includes ``uglier'' objects,
+but creates a ``nicer'' category:
+semi-normed groups need not be Hausdorff,
+but quotients by arbitrary (possibly non-closed) subgroups
+are naturally semi-normed groups.
 
-  Nevertheless, there is the occasional use for the more restrictive
-  notion of normed group, when we come to polyhedral lattices below
-  (see Section~\ref{sec:polyhedral_lattice}).
+Nevertheless, there is the occasional use for the more restrictive
+notion of normed group, when we come to polyhedral lattices below
+(see Section~\ref{sec:polyhedral_lattice}).
 
-  In this text, a morphism of (semi)-normed groups will always be bouned.
-  If the morphism is supposed to be norm-nonincreasing,
-  this will be mentioned explicitly.
-\end{remark}
-
-\begin{definition}
-  \label{p-banach}\alsoIn{cha:two}
-  \lean{pBanach}
-  \leanok
-  A $p$-Banach space $V$ is a complete normed abelian group
-  that is also a real vector space,
-  satisfying $\|rv\| = |r|^p\|v\|$ for all $r \in \mathbb R$.
-\end{definition}
+In this text, a morphism of (semi)-normed groups will always be bouned.
+If the morphism is supposed to be norm-nonincreasing,
+this will be mentioned explicitly.
 
 \begin{definition}
   \label{normed_with_aut}\alsoIn{cha:two}
@@ -42,16 +31,6 @@
   endowed with an automorphism $T \colon V \to V$ such that
   for all $v \in V$ we have $\|T(v)\| = r\|v\|$.
 \end{definition}
-
-\begin{lemma}
-  \label{p-banach-r-normed}\alsoIn{cha:two}
-  \uses{p-banach, normed_with_aut}
-   A $p$-Banach $V$ is an $r$-Banach $\mathbb Z[T^{\pm 1}]$-module, where $r=2^{-p}$.
-\end{lemma}
-
-\begin{proof}
-  Obvious.
-\end{proof}
 
 The remainder of this subsection sets up some algebraic variants of semi-normed groups.
 
@@ -133,40 +112,5 @@ We will also consider the analogue of an $r$-normed $\mathbb Z[T^{-1}]$-module i
   A morphism of CH-filtered pseudo-normed groups with $r'$-action of $T^{-1}$
   is a morphism $f \colon M \to N$ of CH-filtered pseudo-normed groups that commutes with the action of~$T^{-1}$.
 \end{definition}
-
-\begin{definition}
-  \label{png-cats}\alsoIn{cha:two}
-  \uses{chpng-Tinv}
-  We will consider the following categories:
-  \begin{itemize}
-    \item $\text{CHPNG}$ the category of CH-filtered pseudo-normed groups with bounded morphisms.
-    \item $\text{CHPNG}_1$ the category of exhaustive CH-filtered pseudo-normed groups with strict morphisms.
-    \item $\text{ProfinPNG}$ the category of profinitely filtered pseudo-normed groups with bounded morphisms.
-    \item $\text{ProfinPNG}_1$ the category of exhaustive profinitely filtered pseudo-normed groups with strict morphisms.
-    \item $\text{CHPNGTinv}_1^{r'}$ the category of exhaustive CH-filtered pseudo-normed groups with $r'$-action of $T^{-1}$ and strict morphisms.
-    \item $\text{ProfinPNGTinv}_1^{r'}$ the category of exhaustive profinitely filtered pseudo-normed groups with $r'$-action of $T^{-1}$ and strict morphisms.
-  \end{itemize}
-\end{definition}
-
-\begin{proposition}
-  \label{bounded-limits}\alsoIn{cha:two}
-  \uses{png-cats}
-  \lean{CompHausFiltPseuNormGrp₁.limit_cone_is_limit}
-  \leanok
-  Consider an inverse system $(X_i)_i$ of compact-Hausdorffly-filtered-pseudonormed abelian groups
-  where all transition maps $X_i\to X_j$ send $X_{i,\leq c}$ to $X_{j,\leq c}$.
-  Then
-  \[ X_{\leq c} := \varprojlim_i X_{i,\leq c} \]
-  is compact Hausdorff, and
-  \[ X=\bigcup_c X_{\leq c} \]
-  is naturally a compact-Hausdorffly-filtered pseudonormed abelian group
-  which is the limit of $(X_i)_i$ in the strict category structure.
-\end{proposition}
-
-\begin{proof}
-  One can define negation and addition on $X$ as continuous maps
-  $-: X_{\leq c}\to X_{\leq c}$ and $+: X_{\leq c}\times X_{\leq c'}\to X_{\leq c+c'}$, and these pass to the unions.
-  It should then be straightforward to check the axioms.
-\end{proof}
 
 % vim: ts=2 et sw=2 sts=2
