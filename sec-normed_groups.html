@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
 </script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blueprint for the Liquid Tensor Experiment: Variants of normed groups</title>
-<link rel="next" href="sect0002.html" title="Spaces of convergent power series" />
-<link rel="prev" href="sect0001.html" title="Breen–Deligne data" />
-<link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
+<link rel="next" href="sect0003.html" title="Spaces of convergent power series" />
+<link rel="prev" href="BD_orig.html" title="Breen–Deligne data" />
+<link rel="up" href="cha-one.html" title="First part" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 </head>
@@ -27,71 +30,70 @@
 <nav class="toc">
 <ul class="sub-toc-0">
 <li class="">
-  <a href="intro.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Introduction</span></a>
   <span class="expand-toc">▶</span>
   <ul class="sub-toc-1">
      <li class="">
-  <a href="on-the-statement.html"><span class="toc_ref">1.1</span> <span class="toc_entry">On the statement of the main goal</span></a>
+  <a href="on-lean.html"><span class="toc_ref"></span> <span class="toc_entry">On the statement of the main goal</span></a>
  </li>
 <li class="">
-  <a href="on-lean.html"><span class="toc_ref">1.2</span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
+  <a href="sect0002.html"><span class="toc_ref"></span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
  </li>
 
   </ul>
  </li>
-<li class="">
-  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Breen–Deligne data</span></a>
+<li class=" active">
+  <a href="cha-one.html"><span class="toc_ref">1</span> <span class="toc_entry">First part</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="BD_orig.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
 <li class=" active current">
-  <a href="sec-normed_groups.html"><span class="toc_ref">3</span> <span class="toc_entry">Variants of normed groups</span></a>
+  <a href="sec-normed_groups.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Variants of normed groups</span></a>
  </li>
 <li class="">
-  <a href="sect0002.html"><span class="toc_ref">4</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sect0003.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
  </li>
 <li class="">
-  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">5</span> <span class="toc_entry">Some normed homological algebra</span></a>
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Some normed homological algebra</span></a>
  </li>
 <li class="">
-  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+  <a href="sect0004.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class="">
-  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">7</span> <span class="toc_entry">Polyhedral lattices</span></a>
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">Key technical result</span></a>
- </li>
-<li class="">
-  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
-     <li class="">
-  <a href="sect0006.html"><span class="toc_ref">9.1</span> <span class="toc_entry">Definition</span></a>
- </li>
-<li class="">
-  <a href="sect0007.html"><span class="toc_ref">9.2</span> <span class="toc_entry">Theorem 6.9</span></a>
+  <a href="sect0005.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
  </li>
 
   </ul>
  </li>
 <li class="">
-  <a href="sect0008.html"><span class="toc_ref">10</span> <span class="toc_entry">Real Measures</span></a>
+  <a href="cha-two.html"><span class="toc_ref">2</span> <span class="toc_entry">Second part</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Laurent Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
+  <a href="sect0009.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Real Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Condensed abelian groups</span></a>
+  <a href="sect0010.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
  </li>
 <li class="">
-  <a href="sect0011.html"><span class="toc_ref">13</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0011.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Condensed abelian groups</span></a>
  </li>
-  <li></li>	
-  <li>	
-  <a href="dep_graph.html">Dependency graph</a>
-  </li>
-  <li>	
-  <a href="https://github.com/leanprover-community/lean-liquid">Project home</a>
-  </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
+<li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
 </ul>
 </nav>
 
@@ -100,23 +102,23 @@
 
 
 <div class="main-text">
-<h1 id="sec:normed_groups">3 Variants of normed groups</h1>
+<h2 id="sec:normed_groups">1.2 Variants of normed groups</h2>
 
-<p><div class="remark_thmwrapper" id="a0000000025">
+<p><div class="remark_thmwrapper" id="a0000000027">
   <div class="remark_thmheading">
     <span class="remark_thmcaption">
     Remark
     </span>
-    <span class="remark_thmlabel">3.1</span>
+    <span class="remark_thmlabel">1.2.1</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sec-normed_groups.html#a0000000025">#</a>
+    <a class="icon proof" href="sec-normed_groups.html#a0000000027">#</a>
 
   </div>
   </div>
   <div class="remark_thmcontent">
   <p>Normed groups are well-studied objects. In this text it will be helpful to work with the more general notion of <em>semi-normed group</em>. This drops the separation axiom \(\| x\|  = 0 \iff x = 0\) but is otherwise the same as a normed group. </p>
 <p>The main difference is that this includes “uglier” objects, but creates a “nicer” category: semi-normed groups need not be Hausdorff, but quotients by arbitrary (possibly non-closed) subgroups are naturally semi-normed groups. </p>
-<p>Nevertheless, there is the occasional use for the more restrictive notion of normed group, when we come to polyhedral lattices below (see Section&#160;<a href="sec-polyhedral_lattice.html">7</a>). </p>
+<p>Nevertheless, there is the occasional use for the more restrictive notion of normed group, when we come to polyhedral lattices below (see Section&#160;<a href="sec-polyhedral_lattice.html">1.6</a>). </p>
 <p>In this text, a morphism of (semi)-normed groups will always be bouned. If the morphism is supposed to be norm-nonincreasing, this will be mentioned explicitly. </p>
 
   </div>
@@ -126,7 +128,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.2</span>
+    <span class="definition_thmlabel">1.2.2</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#p-banach">#</a>
@@ -139,7 +141,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/banach.lean#L129">pBanach</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/banach.lean#L129">pBanach</a></li>
         </ul>
 
       </div>
@@ -157,7 +159,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.3</span>
+    <span class="definition_thmlabel">1.2.3</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#normed_with_aut">#</a>
@@ -170,7 +172,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/normed_group/normed_with_aut.lean#L20">normed_with_aut</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/normed_group/normed_with_aut.lean#L20">normed_with_aut</a></li>
         </ul>
 
       </div>
@@ -188,10 +190,10 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">3.4</span>
+    <span class="lemma_thmlabel">1.2.4</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#p-banach-r-normed">#</a>
-    <a class="icon proof" href="sec-normed_groups.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-normed_groups.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -203,8 +205,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#p-banach">Definition 3.2</a></li>
-          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 3.3</a></li>
+          <li><a href="sec-normed_groups.html#p-banach">Definition 1.2.2</a></li>
+          <li><a href="sec-normed_groups.html#normed_with_aut">Definition 1.2.3</a></li>
         </ul>
 
       </div>
@@ -217,7 +219,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000026">
+<div class="proof_wrapper" id="a0000000028">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -229,13 +231,13 @@
 
   </div>
 </div>
-<p>The remainder of this section sets up some algebraic variants of semi-normed groups. </p>
+<p>The remainder of this subsection sets up some algebraic variants of semi-normed groups. </p>
 <p><div class="definition_thmwrapper" id="pseudo_normed_group">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.5</span>
+    <span class="definition_thmlabel">1.2.5</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#pseudo_normed_group">#</a>
@@ -248,7 +250,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/basic.lean#L47">pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/basic.lean#L47">pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -268,7 +270,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.6</span>
+    <span class="definition_thmlabel">1.2.6</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#chpng">#</a>
@@ -282,7 +284,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#pseudo_normed_group">Definition 3.5</a></li>
+          <li><a href="sec-normed_groups.html#pseudo_normed_group">Definition 1.2.5</a></li>
         </ul>
 
       </div>
@@ -296,8 +298,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/profinitely_filtered.lean#L39">comphaus_filtered_pseudo_normed_group</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/profinitely_filtered.lean#L56">profinitely_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/profinitely_filtered.lean#L39">comphaus_filtered_pseudo_normed_group</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/profinitely_filtered.lean#L56">profinitely_filtered_pseudo_normed_group</a></li>
         </ul>
 
       </div>
@@ -319,14 +321,14 @@
 
   </div>
 </div> </p>
-<p><div class="remark_thmwrapper" id="a0000000027">
+<p><div class="remark_thmwrapper" id="a0000000029">
   <div class="remark_thmheading">
     <span class="remark_thmcaption">
     Remark
     </span>
-    <span class="remark_thmlabel">3.7</span>
+    <span class="remark_thmlabel">1.2.7</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sec-normed_groups.html#a0000000027">#</a>
+    <a class="icon proof" href="sec-normed_groups.html#a0000000029">#</a>
 
   </div>
   </div>
@@ -340,7 +342,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.8</span>
+    <span class="definition_thmlabel">1.2.8</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#chpng-hom">#</a>
@@ -354,7 +356,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#chpng">Definition 3.6</a></li>
+          <li><a href="sec-normed_groups.html#chpng">Definition 1.2.6</a></li>
         </ul>
 
       </div>
@@ -368,7 +370,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/profinitely_filtered.lean#L143">comphaus_filtered_pseudo_normed_group_hom</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/profinitely_filtered.lean#L143">comphaus_filtered_pseudo_normed_group_hom</a></li>
         </ul>
 
       </div>
@@ -395,7 +397,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.9</span>
+    <span class="definition_thmlabel">1.2.9</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#chpng-Tinv">#</a>
@@ -409,7 +411,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#chpng-hom">Definition 3.8</a></li>
+          <li><a href="sec-normed_groups.html#chpng-hom">Definition 1.2.8</a></li>
         </ul>
 
       </div>
@@ -423,8 +425,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/with_Tinv.lean#L16">comphaus_filtered_pseudo_normed_group_with_Tinv</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/with_Tinv.lean#L69">comphaus_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/with_Tinv.lean#L16">comphaus_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/with_Tinv.lean#L69">comphaus_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
         </ul>
 
       </div>
@@ -443,7 +445,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">3.10</span>
+    <span class="definition_thmlabel">1.2.10</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#png-cats">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -456,7 +458,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#chpng-Tinv">Definition 3.9</a></li>
+          <li><a href="sec-normed_groups.html#chpng-Tinv">Definition 1.2.9</a></li>
         </ul>
 
       </div>
@@ -488,10 +490,10 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">3.11</span>
+    <span class="proposition_thmlabel">1.2.11</span>
     <div class="thm_icons">
     <a class="icon proof" href="sec-normed_groups.html#bounded-limits">#</a>
-    <a class="icon proof" href="sec-normed_groups.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-normed_groups.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -503,7 +505,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#png-cats">Definition 3.10</a></li>
+          <li><a href="sec-normed_groups.html#png-cats">Definition 1.2.10</a></li>
         </ul>
 
       </div>
@@ -517,7 +519,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/category/strictCompHausFiltPseuNormGrp.lean#L659">CompHausFiltPseuNormGrp₁.limit_cone_is_limit</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/category/strictCompHausFiltPseuNormGrp.lean#L659">CompHausFiltPseuNormGrp₁.limit_cone_is_limit</a></li>
         </ul>
 
       </div>
@@ -527,18 +529,18 @@
   </div>
   <div class="proposition_thmcontent">
   <p>   Consider an inverse system \((X_i)_i\) of compact-Hausdorffly-filtered-pseudonormed abelian groups where all transition maps \(X_i\to X_j\) send \(X_{i,\leq c}\) to \(X_{j,\leq c}\). Then </p>
-<div class="displaymath" id="a0000000029">
+<div class="displaymath" id="a0000000031">
   \[  X_{\leq c} := \varprojlim _i X_{i,\leq c}  \]
 </div>
 <p> is compact Hausdorff, and </p>
-<div class="displaymath" id="a0000000030">
+<div class="displaymath" id="a0000000032">
   \[  X=\bigcup _c X_{\leq c}  \]
 </div>
 <p> is naturally a compact-Hausdorffly-filtered pseudonormed abelian group which is the limit of \((X_i)_i\) in the strict category structure. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000028">
+<div class="proof_wrapper" id="a0000000030">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -557,11 +559,11 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sect0001.html" title="Breen–Deligne data"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="BD_orig.html" title="Breen–Deligne data"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="cha-one.html" title="First part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0002.html" title="Spaces of convergent power series"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0003.html" title="Spaces of convergent power series"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

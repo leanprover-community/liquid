@@ -1,0 +1,1069 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+	<div id="Legend">
+		<span class="title">Legend:</span>
+		<dl>
+			<dt>Boxes</dt><dd>definitions</dd>
+			<dt>Ellipses</dt><dd>theorems </dd>
+			<dt>Blue border</dt><dd>ready</dd>
+			<dt>Blue bg</dt><dd>proof ready</dd>
+			<dt>Green border</dt><dd>statement done</dd>
+			<dt>Green bg</dt><dd>proof done</dd>
+		</dl>
+	</div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="acyclic-sheaf_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="acyclic-sheaf" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.4.6</span></div>
+    <div class="thm_thmcontent"><p> Let </p>
+<div class="displaymath" id="a0000000204">
+  \[  M \colon \mathrm{ProFin}^{\mathrm{op}}\to \mathrm{Ab}  \]
+</div>
+<p> be a functor, i.e.&#160;a presheaf of abelian groups on \(\mathrm{ProFin}\). Assume that \(M\) preserves finite products, and that for any surjective map \(f: T\to S\), the complex </p>
+<div class="displaymath" id="a0000000205">
+  \[  0\to M(S)\to M(T)\to M(T\times _S T)\to M(T\times _S T\times _S T)\to \ldots  \]
+</div>
+<p> is exact. </p>
+<p>Then \(M\) is a condensed abelian group, and for all profinite sets \(S\) and \(i{\gt}0\), one has \(H^i(S,M)=0\) for \(i{\gt}0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#acyclic-sheaf">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="bounded-limits_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="bounded-limits" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.11</span></div>
+    <div class="thm_thmcontent"><p>   Consider an inverse system \((X_i)_i\) of compact-Hausdorffly-filtered-pseudonormed abelian groups where all transition maps \(X_i\to X_j\) send \(X_{i,\leq c}\) to \(X_{j,\leq c}\). Then </p>
+<div class="displaymath" id="a0000000031">
+  \[  X_{\leq c} := \varprojlim _i X_{i,\leq c}  \]
+</div>
+<p> is compact Hausdorff, and </p>
+<div class="displaymath" id="a0000000032">
+  \[  X=\bigcup _c X_{\leq c}  \]
+</div>
+<p> is naturally a compact-Hausdorffly-filtered pseudonormed abelian group which is the limit of \((X_i)_i\) in the strict category structure. </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#bounded-limits">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/category/strictCompHausFiltPseuNormGrp.lean#L659">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="chpng_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="chpng" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.6</span></div>
+    <div class="thm_thmcontent"><p>   A pseudo-normed group&#160;\(M\) is <em>CH-filtered</em> if each of the sets \(M_c\) is endowed with a topological space structure making it a compact Hausdorff space, such that following maps are all continuous: </p>
+<ul class="itemize">
+  <li><p>the inclusion \(M_{c_1} \to M_{c_2}\) (for \(c_1 \le c_2\)); </p>
+</li>
+  <li><p>the negation \(M_c \to M_c\); </p>
+</li>
+  <li><p>the addition \(M_{c_1} \times M_{c_2} \to M_{c_1 + c_2}\). </p>
+</li>
+</ul>
+<p>The pseudo-normed group&#160;\(M\) is <em>profinitely filtered</em> if moreover the filtration sets&#160;\(M_c\) are totally disconnected, making them profinite sets. </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#chpng">LaTeX</a>
+	<div class="tooltip">
+	    <span class="lean_link">Lean</span>
+	    <ul class="tooltip_list">
+	  	  
+	    		 <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/profinitely_filtered.lean#L39">comphaus_filtered_pseudo_normed_group</a></li>
+	  	  
+	    		 <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/profinitely_filtered.lean#L56">profinitely_filtered_pseudo_normed_group</a></li>
+	  	  
+	    </ul>
+	</div></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="CHPNG-Cond-exact_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="CHPNG-Cond-exact" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.4.3</span></div>
+    <div class="thm_thmcontent"><p>  Consider a short exact sequence of abelian groups </p>
+<div class="displaymath" id="a0000000197">
+  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
+</div>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). Moreover, assume that there are some \(c_f\) and \(c_g\) so that \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\) and \(X''_{\leq c}\subset g(X_{\leq c_gc})\). Then the sequence </p>
+<div class="displaymath" id="a0000000198">
+  \[  0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0  \]
+</div>
+<p> of condensed abelian groups is exact. </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#CHPNG-Cond-exact">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="CHPNG-Cond-exact-lim_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="CHPNG-Cond-exact-lim" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.4.4</span></div>
+    <div class="thm_thmcontent"><p>  Consider an inverse system </p>
+<div class="displaymath" id="a0000000200">
+  \[  (0\to X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i''\to 0)_i  \]
+</div>
+<p> of short exact sequences as in Proposition&#160;<a href="sect0011.html#CHPNG-Cond-exact">2.4.3</a>, satisfying the hypothesis for fixed constants \(c_f\) and \(c_g\). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
+<div class="displaymath" id="a0000000201">
+  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
+</div>
+<p> satisfies the hypotheses of Proposition&#160;<a href="sect0011.html#CHPNG-Cond-exact">2.4.3</a> with the same \(c_f\) and \(c_g\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#CHPNG-Cond-exact-lim">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="chpng-hom_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="chpng-hom" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.8</span></div>
+    <div class="thm_thmcontent"><p>   A <em>morphism</em> of CH-filtered pseudo-normed groups \(M \to N\) is a group homomorphism \(f \colon M \to N\) that is </p>
+<ul class="itemize">
+  <li><p><em>bounded</em>: there is a constant \(C\) such that \(x \in M_c\) implies \(f(x) \in N_{Cc}\); </p>
+</li>
+  <li><p><em>continuous</em>: for one (or equivalently all) constants \(C\) as above, the induced map \(M_c \to N_{Cc}\) is a morphism of profinite sets, i.e. continuous. </p>
+</li>
+</ul>
+<p> The reason the two definitions of continuity are equivalent is that a continuous injection from a compact space to a Hausdorff space must be a topological embedding. </p>
+<p>A morphism \(f \colon M \to N\) is <em>strict</em> if \(x \in M_c\) implies \(f(x) \in N_c\) (in other words, if we can take \(C = 1\) in the boundedness condition above). </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#chpng-hom">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/profinitely_filtered.lean#L143">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="chpng-Tinv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="chpng-Tinv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.9</span></div>
+    <div class="thm_thmcontent"><p>   Let \(r'\) be a positive real number. A CH-filtered pseudo-normed group \(M\) has an <em>\(r'\)-action of \(T^{-1}\)</em> if it comes endowed with a distinguished morphism of CH-filtered pseudo-normed groups \(T^{-1} \colon M \to M\) that is bounded by \(r'^{-1}\): if \(x \in M_c\) then \(T^{-1}x \in M_{c/r'}\). </p>
+<p>A morphism of CH-filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) is a morphism \(f \colon M \to N\) of CH-filtered pseudo-normed groups that commutes with the action of&#160;\(T^{-1}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#chpng-Tinv">LaTeX</a>
+	<div class="tooltip">
+	    <span class="lean_link">Lean</span>
+	    <ul class="tooltip_list">
+	  	  
+	    		 <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/with_Tinv.lean#L16">comphaus_filtered_pseudo_normed_group_with_Tinv</a></li>
+	  	  
+	    		 <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/with_Tinv.lean#L69">comphaus_filtered_pseudo_normed_group_with_Tinv_hom</a></li>
+	  	  
+	    </ul>
+	</div></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="CHPNG-to-Cond_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="CHPNG-to-Cond" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.4.2</span></div>
+    <div class="thm_thmcontent"><p>   There is a natural functor </p>
+<span>\begin{align*}  \text{CHPNG} & \to \operatorname{Cond}(\operatorname{Ab}) \\ M & \mapsto \underline{M} \end{align*}</span>
+<p> where \(\underline{M}(S)\) is defined to be collection of functions \(f \colon S \to M\) that factor as continuous through \(M_c\), for some \(c\). In symbols: </p>
+<div class="displaymath" id="a0000000195">
+  \[  M(S) = \{ f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\} .  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0011.html#CHPNG-to-Cond">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/condensed/ab.lean#L306">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Ext-L_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Ext-L" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.4.11</span></div>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be an \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\mathcal L_{r'}(S), V) = 0\) for all \(i {\gt} 0\). In other words, </p>
+<div class="displaymath" id="a0000000236">
+  \[  \operatorname{Ext}_{\mathbb Z}^i(\mathcal L_{r'}(S), V) \xrightarrow {[T⁻¹]_L - [T⁻¹]_V} \operatorname{Ext}_{\mathbb Z}^i(\mathcal L_{r'}(S), V)  \]
+</div>
+<p> is a bijection for all \(i {\gt} 0\) and a surjection for \(i = 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#Ext-L">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Ext-Lbar_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Ext-Lbar" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.4.8</span></div>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} r {\lt} r' {\lt} 1\) be real numbers. Let \(S\) be a profinite set, and let \(V\) be a \(r\)-normed (Banach?) \(\mathbb Z[T^{\pm 1}]\)-module. Then \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V) = 0\) for all \(i \ge 0\). In other words, </p>
+<div class="displaymath" id="a0000000218">
+  \[  \operatorname{Ext}_{\mathbb Z}^i(\overline{\mathcal L}_{r'}(S), V) \xrightarrow {[T⁻¹]_L - [T⁻¹]_V} \operatorname{Ext}_{\mathbb Z}^i(\overline{\mathcal L}_{r'}(S), V)  \]
+</div>
+<p> is a bijection for all \(i\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#Ext-Lbar">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Ext-Lbar-aux_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Ext-Lbar-aux" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.4.9</span></div>
+    <div class="thm_thmcontent"><p>  Assume that in each degree \(i\), the map </p>
+<div class="displaymath" id="a0000000226">
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V)  \]
+</div>
+<p> is a pro-isomorphism in \(c\) (i.e., pro-systems of kernels, and of cokernels, are pro-zero). Then </p>
+<div class="displaymath" id="a0000000227">
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V).  \]
+</div>
+<p> is an isomorphism. </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#Ext-Lbar-aux">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="first_target_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="first_target" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.7.1</span></div>
+    <div class="thm_thmcontent"><p>   Let \(\mathsf{BD}= (n,f,h)\) be a Breen–Deligne package, and let \(\kappa = (\kappa _0, \kappa _1, \kappa _2, \dots )\) be a sequence of constants in \(\mathbb R_{\ge 0}\) that is \(\mathsf{BD}\)-suitable. Fix radii \(1{\gt}r'{\gt}r{\gt}0\). For any \(m\) there is some \(k\) and \(c_0\) such that for all profinite sets \(S\) and all \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-modules \(V\), the system of complexes </p>
+<div class="displaymath" id="a0000000118">
+  \[  C^{\mathsf{BD}}_{\kappa }(\overline{\mathcal L}_{r'}(S))_c^\bullet \colon \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq c})^{T^{-1}} \to \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq \kappa _1c}^2)^{T^{-1}} \to \ldots  \]
+</div>
+<p> is \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0005.html#first_target">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/liquid.lean#L82">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="free-png_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="free-png" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.4.5</span></div>
+    <div class="thm_thmcontent"><p>  Let \(S = \varprojlim S_i\) be a profinite set. Then \(\mathbb Z[S]\) is naturally a profinitely filtered pseudo-normed group, via \(\mathbb Z[S]_{\le c} = \varprojlim \mathbb Z[S_i]_{\le c}\), where \(\mathbb Z[S_i]_{\le c}\) is the set \(\{ \sum _{s \in S_i} n_s[s] \mid \sum _s |n_s| \le c\} \). </p>
+<p>There is a natural isomorphism between the free condensed abelian group \(\mathbb Z[S]\) and the colimit \(\bigcup _c \mathbb Z[S]_{\le c}\) of condensed sets. </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#free-png">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="homology-Qprime_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="homology-Qprime" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.3.1</span></div>
+    <div class="thm_thmcontent"><p>  For any \(i\geq 0\), the functor \(A\mapsto H_i(Q'(A))\) has the following properties: </p>
+<ol class="enumerate">
+  <li><p>It is additive, i.e. </p>
+<div class="displaymath" id="a0000000177">
+  \[  H_i(Q'(A\oplus B))\cong H_i(Q'(A))\oplus H_i(Q'(B)).  \]
+</div>
+</li>
+  <li><p>It commutes with filtered colimits, i.e.&#160;for a filtered inductive system \(A_i\), </p>
+<div class="displaymath" id="a0000000178">
+  \[  \varinjlim _i H_i(Q'(A))\cong H_i(Q'(\varinjlim _i A_i)).  \]
+</div>
+</li>
+</ol>
+<p>In particular, for torsion-free abelian groups \(A\), there is a functorial isomorphism </p>
+<div class="displaymath" id="a0000000179">
+  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0010.html#homology-Qprime">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="laurent-measures_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="laurent-measures" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1.1</span></div>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set. Then \(\mathcal L_{r'}(S)\) denotes TODO </p>
+</div>
+
+    <a class="latex_link" href="sect0007.html#laurent-measures">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/basic.lean#L23">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Lbar-ses_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Lbar-ses" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.4.10</span></div>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} r {\lt} 1\) be a real number, and let \(S\) be a profinite set. Decomposing \(\mathbb Z((T))_r\) into positive and nonpositive coefficients yields a direct sum decomposition </p>
+<div class="displaymath" id="a0000000232">
+  \[  \mathbb Z((T))_r = T\mathbb Z[[T]]_r \oplus \mathbb Z[T^{-1}].  \]
+</div>
+<p> This extends to a decomposition of spaces of measures </p>
+<div class="displaymath" id="a0000000233">
+  \[  \mathcal L_r(S) = \mathcal L(S,T\mathbb Z((T))_r) = \mathcal L(S,T\mathbb Z[[T]]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}])  \]
+</div>
+<p> where \(\mathcal M(S,\mathbb Z[T^{-1}]) = \mathbb Z[T^{-1}][S]\) is the free condensed \(\mathbb Z[T^{-1}]\)-module on \(S\). Letting \(\overline{\mathcal L}_r(S)= \mathcal L(S,T\mathbb Z[[T]]_r)\), we get a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<div class="displaymath" id="a0000000234">
+  \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_r(S) \to \overline{\mathcal L}_r(S) \to 0.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0011.html#Lbar-ses">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="M-ses_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="M-ses" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.4.12</span></div>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \((\tfrac 12)^{p'}\). There is a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<div class="displaymath" id="a0000000239">
+  \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0  \]
+</div>
+<p> where the first map is multiplication by \(2T - 1\), and the second is evaluation at \(T = \tfrac 12\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#M-ses">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="main-thm_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="main-thm" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.4.13</span><span class="theorem_thmtitle">Clausen–Scholze</span></div>
+    <div class="thm_thmcontent"><p>   Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of \(p'\)-measures on \(S\). Then </p>
+<div class="displaymath" id="a0000000241">
+  \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) = 0  \]
+</div>
+<p> for \(i \ge 1\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#main-thm">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="normed-to-cond_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="normed-to-cond" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.4.7</span></div>
+    <div class="thm_thmcontent"><p>  Let \((M,\| \cdot \| )\) be a complete normed group, regarded as a topological group. Then the corresponding condensed abelian group \(\underline{M}\) sends any profinite set \(S\) to the completion of normed group of locally constant maps \(S\to M\) (with the supremum norm), and for any profinite set \(S\), one has \(H^i(S,\underline{M})=0\) for \(i{\gt}0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0011.html#normed-to-cond">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="normed_with_aut_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="normed_with_aut" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.3</span></div>
+    <div class="thm_thmcontent"><p>  Let \(r {\gt} 0\) be a real number. An <em>\(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-module</em> is a semi-normed group \(V\) endowed with an automorphism \(T \colon V \to V\) such that for all \(v \in V\) we have \(\| T(v)\|  = r\| v\| \). </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#normed_with_aut">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/normed_group/normed_with_aut.lean#L20">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="p-banach_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="p-banach" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.2</span></div>
+    <div class="thm_thmcontent"><p>  A \(p\)-Banach space \(V\) is a complete normed abelian group that is also a real vector space, satisfying \(\| rv\|  = |r|^p\| v\| \) for all \(r \in \mathbb R\). </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#p-banach">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/banach.lean#L129">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="p-banach-r-normed_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="p-banach-r-normed" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.2.4</span></div>
+    <div class="thm_thmcontent"><p>  A \(p\)-Banach \(V\) is an \(r\)-Banach \(\mathbb Z[T^{\pm 1}]\)-module, where \(r=2^{-p}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#p-banach-r-normed">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="png-cats_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="png-cats" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.10</span></div>
+    <div class="thm_thmcontent"><p>  We will consider the following categories: </p>
+<ul class="itemize">
+  <li><p>\(\text{CHPNG}\) the category of CH-filtered pseudo-normed groups with bounded morphisms. </p>
+</li>
+  <li><p>\(\text{CHPNG}_1\) the category of exhaustive CH-filtered pseudo-normed groups with strict morphisms. </p>
+</li>
+  <li><p>\(\text{ProfinPNG}\) the category of profinitely filtered pseudo-normed groups with bounded morphisms. </p>
+</li>
+  <li><p>\(\text{ProfinPNG}_1\) the category of exhaustive profinitely filtered pseudo-normed groups with strict morphisms. </p>
+</li>
+  <li><p>\(\text{CHPNGTinv}_1^{r'}\) the category of exhaustive CH-filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) and strict morphisms. </p>
+</li>
+  <li><p>\(\text{ProfinPNGTinv}_1^{r'}\) the category of exhaustive profinitely filtered pseudo-normed groups with \(r'\)-action of \(T^{-1}\) and strict morphisms. </p>
+</li>
+</ul>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#png-cats">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="pseudo_normed_group_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="pseudo_normed_group" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.5</span></div>
+    <div class="thm_thmcontent"><p>  A <em>pseudo-normed group</em> is an abelian group \((M,+)\), together with an increasing filtration \(M_c \subseteq M\) of subsets \(M_c\) indexed by \(\mathbb R_{\ge 0}\), such that each \(M_c\) contains \(0\), is closed under negation, and \(M_{c_1} + M_{c_2} \subseteq M_{c_1 + c_2}\). An example would be \(M=\mathbb {R}\) or \(M=\mathbb {Q}_p\) with \(M_c :=\{ x\, :\, |x|\leq c\} \). </p>
+<p>A pseudo-normed group \(M\) is <em>exhaustive</em> if \(\bigcup _c M_c = M\). </p>
+</div>
+
+    <a class="latex_link" href="sec-normed_groups.html#pseudo_normed_group">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/basic.lean#L47">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Qprime-Cond_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Qprime-Cond" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">2.3.2</span></div>
+    <div class="thm_thmcontent"><p>  For torsion-free condensed abelian groups \(A\), there is a natural isomorphism </p>
+<div class="displaymath" id="a0000000183">
+  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A  \]
+</div>
+<p> of condensed abelian groups. </p>
+</div>
+
+    <a class="latex_link" href="sect0010.html#Qprime-Cond">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Qprime-prop_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Qprime-prop" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.3.3</span></div>
+    <div class="thm_thmcontent"><p>  Let \(M\) and \(N\) be condensed abelian groups with endomorphisms \(f_M\), \(f_N\). Assume that \(M\) is torsion-free (over \(\mathbb Z\)). Then </p>
+<div class="displaymath" id="a0000000185">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(M,N)=0  \]
+</div>
+<p> for all \(i\geq 0\) if and only if </p>
+<div class="displaymath" id="a0000000186">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(Q'(M),N)=0  \]
+</div>
+<p> for all \(i\geq 0\). More precisely, the first vanishes for \(0\leq i\leq j\) if and only if the second vanishes for \(0\leq i\leq j\). </p>
+</div>
+
+    <a class="latex_link" href="sect0010.html#Qprime-prop">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="real-measures_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="real-measures" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.2.1</span></div>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a profinite set. Then \(\mathcal M_{p'}(S)\) denotes TODO </p>
+</div>
+
+    <a class="latex_link" href="sect0009.html#real-measures">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/real_measures.lean#L19">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1.7</span></div>
+    <div class="thm_thmcontent"><p>  Fix \(0{\lt}\xi {\lt}1\), and let \(\theta _{\xi }\colon \mathbf{Z}((T))_r\rightarrow \mathbf{R}\) be the evaluation map </p>
+<div class="displaymath" id="a0000000173">
+  \[  \sum a_nT^n\longmapsto \sum a_n(\xi )T^n.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L325">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta.bounded_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta.bounded" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.1.4</span></div>
+    <div class="thm_thmcontent"><p>  The sequence </p>
+<div class="displaymath" id="a0000000162">
+  \[  n \mapsto \left\lfloor \frac{y_n}{\xi ^n} \right\rfloor  \]
+</div>
+<p> is bounded. </p>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta.bounded">LaTeX</a>
+	</div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta.finite_sum_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta.finite_sum" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.1.3</span></div>
+    <div class="thm_thmcontent"><p>   For all \(n\in \mathbf{N}\), we have </p>
+<div class="displaymath" id="a0000000158">
+  \[  y_{n+1} = x - \sum _{i=0}^n \Big\lfloor \frac{y_i}{\xi ^i} \Big\rfloor \xi ^i.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta.finite_sum">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L150">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta.has_sum_x_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta.has_sum_x" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.1.6</span></div>
+    <div class="thm_thmcontent">
+<ol class="enumerate">
+  <li><p>For all \(0{\lt}r {\lt}1\), </p>
+<div class="displaymath" id="a0000000170">
+  \[  \sum _{i=0}^{+\infty } \left\lfloor \frac{y_i}{\xi ^i}\right\rfloor r^i \qquad \text{converges}.  \]
+</div>
+</li>
+  <li><div class="displaymath" id="a0000000171">
+  \[  \sum _{i=0}^{+\infty } \left\lfloor \frac{y_i}{\xi ^i}\right\rfloor \xi ^i = x;  \]
+</div>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta.has_sum_x">LaTeX</a>
+	<div class="tooltip">
+	    <span class="lean_link">Lean</span>
+	    <ul class="tooltip_list">
+	  	  
+	    		 <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L306">theta.has_sum_x</a></li>
+	  	  
+	    		 <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L255">theta.summable_floor</a></li>
+	  	  
+	    </ul>
+	</div></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta.limit_y_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta.limit_y" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2.1.5</span></div>
+    <div class="thm_thmcontent"><p>   We have </p>
+<div class="displaymath" id="a0000000165">
+  \[  \lim _{n\to +\infty } y_n =0.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta.limit_y">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L270">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta.surjective_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta.surjective" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.1.8</span></div>
+    <div class="thm_thmcontent"><p>   The map \(\theta _{\xi }\) is surjective. </p>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta.surjective">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L328">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta.y_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta.y" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1.2</span></div>
+    <div class="thm_thmcontent"><p>  For all \(n\in \mathbf{N}\), set </p>
+<div class="displaymath" id="a0000000156">
+  \[  y_n(x)=y_n= \begin{cases}  x& \text{ if } n = 0 \\ y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#theta.y">LaTeX</a>
+	<a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/laurent_measures/theta.lean#L43">Lean</a></div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"Qprime-Cond"	[color=blue,		fillcolor="#a3d6ff",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"Qprime-prop"	[color=blue,		label="Qprime-prop",		shape=ellipse];	"Qprime-Cond" -> "Qprime-prop";	"png-cats"	[color=blue,		label="png-cats",		shape=box];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"bounded-limits"	[color=green,		fillcolor="#a3d6ff",		label="bounded-limits",		shape=ellipse,		style=filled];	"png-cats" -> "bounded-limits"	[style=dashed];	"CHPNG-Cond-exact"	[color=blue,		fillcolor="#a3d6ff",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"CHPNG-Cond-exact-lim"	[color=blue,		label="CHPNG-Cond-exact-lim",		shape=ellipse];	"CHPNG-Cond-exact" -> "CHPNG-Cond-exact-lim";	"theta.bounded"	[color=blue,		fillcolor="#a3d6ff",		label="theta.bounded",		shape=ellipse,		style=filled];	"theta.limit_y"	[color=green,		fillcolor="#9cec8b",		label="theta.limit_y",		shape=ellipse,		style=filled];	"theta.bounded" -> "theta.limit_y";	"theta.has_sum_x"	[color=green,		fillcolor="#9cec8b",		label="theta.has_sum_x",		shape=ellipse,		style=filled];	"theta.bounded" -> "theta.has_sum_x";	"theta.limit_y" -> "theta.has_sum_x";	"M-ses"	[label="M-ses",		shape=ellipse];	"CHPNG-Cond-exact-lim" -> "M-ses";	"theta.surjective"	[color=green,		fillcolor="#9cec8b",		label="theta.surjective",		shape=ellipse,		style=filled];	"theta.surjective" -> "M-ses";	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact-lim"	[style=dashed];	"free-png"	[color=blue,		fillcolor="#a3d6ff",		label="free-png",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"normed-to-cond"	[color=blue,		fillcolor="#a3d6ff",		label="normed-to-cond",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"Lbar-ses"	[color=blue,		label="Lbar-ses",		shape=ellipse];	"free-png" -> "Lbar-ses";	"bounded-limits" -> "CHPNG-Cond-exact-lim"	[style=dashed];	"Ext-Lbar-aux"	[color=blue,		fillcolor="#a3d6ff",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	"Ext-Lbar"	[color=blue,		label="Ext-Lbar",		shape=ellipse];	"Ext-Lbar-aux" -> "Ext-Lbar";	"theta.has_sum_x" -> "theta.surjective";	"homology-Qprime"	[color=blue,		fillcolor="#a3d6ff",		label="homology-Qprime",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-prop";	"normed-to-cond" -> "Ext-Lbar";	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	"chpng-Tinv" -> "png-cats"	[style=dashed];	"laurent-measures"	[color=blue,		label="laurent-measures",		shape=box];	"laurent-measures" -> "M-ses"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	theta -> "theta.surjective"	[style=dashed];	"Ext-L"	[color=blue,		label="Ext-L",		shape=ellipse];	"main-thm"	[label="main-thm",		shape=ellipse];	"Ext-L" -> "main-thm";	"Lbar-ses" -> "Ext-L";	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach-r-normed"	[color=blue,		fillcolor="#a3d6ff",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"p-banach" -> "main-thm"	[style=dashed];	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];	normed_with_aut -> "Ext-L"	[style=dashed];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	"p-banach-r-normed" -> "main-thm";	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";	"acyclic-sheaf"	[color=blue,		fillcolor="#a3d6ff",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "Ext-L";	"real-measures"	[color=blue,		label="real-measures",		shape=box];	"real-measures" -> "M-ses"	[style=dashed];	"real-measures" -> "main-thm"	[style=dashed];	"theta.y"	[color=green,		fillcolor="#b0eca3",		label="theta.y",		shape=box,		style=filled];	"theta.y" -> "theta.bounded"	[style=dashed];	"theta.y" -> "theta.limit_y"	[style=dashed];	"theta.y" -> "theta.has_sum_x"	[style=dashed];	"theta.finite_sum"	[color=green,		fillcolor="#9cec8b",		label="theta.finite_sum",		shape=ellipse,		style=filled];	"theta.y" -> "theta.finite_sum"	[style=dashed];	"Qprime-prop" -> "Ext-Lbar";	chpng -> "chpng-hom"	[style=dashed];	"Ext-Lbar" -> "Ext-L";	"theta.finite_sum" -> "theta.has_sum_x";	"M-ses" -> "main-thm";}')
+    .on("end", interactive);
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+    console.log(node_id);
+  console.log('#'+node_id.replace(':', '\\:'));
+  $('.thm').hide();
+  $('#'+node_id.replace(':', '\\:')).show().children().show();
+}
+function interactive() {
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+title.replace(':', '\\:')+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
 </script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blueprint for the Liquid Tensor Experiment: Polyhedral lattices</title>
-<link rel="next" href="sect0004.html" title="Key technical result" />
-<link rel="prev" href="sect0003.html" title="Completions of locally constant functions" />
-<link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
+<link rel="next" href="sect0005.html" title="Key technical result" />
+<link rel="prev" href="sect0004.html" title="Completions of locally constant functions" />
+<link rel="up" href="cha-one.html" title="First part" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 </head>
@@ -27,71 +30,70 @@
 <nav class="toc">
 <ul class="sub-toc-0">
 <li class="">
-  <a href="intro.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Introduction</span></a>
   <span class="expand-toc">▶</span>
   <ul class="sub-toc-1">
      <li class="">
-  <a href="on-the-statement.html"><span class="toc_ref">1.1</span> <span class="toc_entry">On the statement of the main goal</span></a>
+  <a href="on-lean.html"><span class="toc_ref"></span> <span class="toc_entry">On the statement of the main goal</span></a>
  </li>
 <li class="">
-  <a href="on-lean.html"><span class="toc_ref">1.2</span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
+  <a href="sect0002.html"><span class="toc_ref"></span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
  </li>
 
   </ul>
  </li>
-<li class="">
-  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Breen–Deligne data</span></a>
+<li class=" active">
+  <a href="cha-one.html"><span class="toc_ref">1</span> <span class="toc_entry">First part</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="BD_orig.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
 <li class="">
-  <a href="sec-normed_groups.html"><span class="toc_ref">3</span> <span class="toc_entry">Variants of normed groups</span></a>
+  <a href="sec-normed_groups.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Variants of normed groups</span></a>
  </li>
 <li class="">
-  <a href="sect0002.html"><span class="toc_ref">4</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sect0003.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
  </li>
 <li class="">
-  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">5</span> <span class="toc_entry">Some normed homological algebra</span></a>
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Some normed homological algebra</span></a>
  </li>
 <li class="">
-  <a href="sect0003.html"><span class="toc_ref">6</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+  <a href="sect0004.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class=" active current">
-  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">7</span> <span class="toc_entry">Polyhedral lattices</span></a>
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">8</span> <span class="toc_entry">Key technical result</span></a>
- </li>
-<li class="">
-  <a href="sect0005.html"><span class="toc_ref">9</span> <span class="toc_entry">Laurent Measures</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
-     <li class="">
-  <a href="sect0006.html"><span class="toc_ref">9.1</span> <span class="toc_entry">Definition</span></a>
- </li>
-<li class="">
-  <a href="sect0007.html"><span class="toc_ref">9.2</span> <span class="toc_entry">Theorem 6.9</span></a>
+  <a href="sect0005.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
  </li>
 
   </ul>
  </li>
 <li class="">
-  <a href="sect0008.html"><span class="toc_ref">10</span> <span class="toc_entry">Real Measures</span></a>
+  <a href="cha-two.html"><span class="toc_ref">2</span> <span class="toc_entry">Second part</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Laurent Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0009.html"><span class="toc_ref">11</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
+  <a href="sect0009.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Real Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0010.html"><span class="toc_ref">12</span> <span class="toc_entry">Condensed abelian groups</span></a>
+  <a href="sect0010.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
  </li>
 <li class="">
-  <a href="sect0011.html"><span class="toc_ref">13</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0011.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Condensed abelian groups</span></a>
  </li>
-  <li></li>	
-  <li>	
-  <a href="dep_graph.html">Dependency graph</a>
-  </li>
-  <li>	
-  <a href="https://github.com/leanprover-community/lean-liquid">Project home</a>
-  </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
+<li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
 </ul>
 </nav>
 
@@ -100,14 +102,14 @@
 
 
 <div class="main-text">
-<h1 id="sec:polyhedral_lattice">7 Polyhedral lattices</h1>
+<h2 id="sec:polyhedral_lattice">1.6 Polyhedral lattices</h2>
 
 <p><div class="definition_thmwrapper" id="polyhedral_lattice">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">7.1</span>
+    <span class="definition_thmlabel">1.6.1</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#polyhedral_lattice">#</a>
@@ -120,7 +122,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/polyhedral_lattice/basic.lean#L53">polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/polyhedral_lattice/basic.lean#L53">polyhedral_lattice</a></li>
         </ul>
 
       </div>
@@ -140,7 +142,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">7.2</span>
+    <span class="definition_thmlabel">1.6.2</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#splittable">#</a>
@@ -154,7 +156,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-normed_groups.html#pseudo_normed_group">Definition 3.5</a></li>
+          <li><a href="sec-normed_groups.html#pseudo_normed_group">Definition 1.2.5</a></li>
         </ul>
 
       </div>
@@ -168,7 +170,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/pseudo_normed_group/splittable.lean#L11">pseudo_normed_group.splittable</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/pseudo_normed_group/splittable.lean#L11">pseudo_normed_group.splittable</a></li>
         </ul>
 
       </div>
@@ -178,7 +180,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(M\) be a pseudo-normed group, \(N \in \mathbb N\), and \(d \in \mathbb R_{\ge 0}\). We say that \(M\) is <em>\(N\)-splittable</em> with error term&#160;\(d\), if for all \(c\) and \(x \in M_c\), there exists a decomposition </p>
-<div class="displaymath" id="a0000000096">
+<div class="displaymath" id="a0000000098">
   \[  x = x_1 + x_2 + \dots + x_N,  \]
 </div>
 <p> with \(x_i \in M_{c/N + d}\). </p>
@@ -190,11 +192,11 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">7.3</span>
+    <span class="proposition_thmlabel">1.6.3</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#Lbar-splittable">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000097"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000099"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -206,7 +208,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 7.1</a></li>
+          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 1.6.1</a></li>
         </ul>
 
       </div>
@@ -220,7 +222,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/combinatorial_lemma/profinite.lean#L475">lem98.main</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/combinatorial_lemma/profinite.lean#L475">lem98.main</a></li>
         </ul>
 
       </div>
@@ -230,7 +232,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p>   Let \(\Lambda \) be a polyhedral lattice, and \(S\) a profinite set. Then for all positive integers \(N\) there is a constant \(d\) such that for all \(c{\gt}0\) one can write any \(x\in \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c}\) as </p>
-<div class="displaymath" id="a0000000098">
+<div class="displaymath" id="a0000000100">
   \[  x=x_1+\ldots +x_N  \]
 </div>
 <p> where all \(x_i\in \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c/N+d}\). </p>
@@ -238,7 +240,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000097">
+<div class="proof_wrapper" id="a0000000099">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -247,10 +249,10 @@
   </div>
   <div class="proof_content">
   <p> The desired statement is equivalent to the surjectivity of the map of profinite sets </p>
-<div class="displaymath" id="a0000000099">
+<div class="displaymath" id="a0000000101">
   \[  \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c/N+d}^N\times _{\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c+Nd}} \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c} \to \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c}.  \]
 </div>
-<p> Note that, as a functor of \(S\), both sides commute with cofiltered limits, so it is enough to handle finite \(S\), by Tychonoff. But that is exactly the following Lemma&#160;<a href="sec-polyhedral_lattice.html#combi">7.4</a>. </p>
+<p> Note that, as a functor of \(S\), both sides commute with cofiltered limits, so it is enough to handle finite \(S\), by Tychonoff. But that is exactly the following Lemma&#160;<a href="sec-polyhedral_lattice.html#combi">1.6.4</a>. </p>
 
   </div>
 </div>
@@ -259,11 +261,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7.4</span>
+    <span class="lemma_thmlabel">1.6.4</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#combi">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000100"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000102"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -275,7 +277,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 7.1</a></li>
+          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 1.6.1</a></li>
         </ul>
 
       </div>
@@ -289,7 +291,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/combinatorial_lemma/finite.lean#L372">lem98_finite</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/combinatorial_lemma/finite.lean#L372">lem98_finite</a></li>
         </ul>
 
       </div>
@@ -299,7 +301,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let \(\Lambda \) be a polyhedral lattice, and \(S\) a finite set. Then for all positive integers \(N\) there is a constant \(d\) such that for all \(c{\gt}0\) one can write any \(x\in \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c}\) as </p>
-<div class="displaymath" id="a0000000101">
+<div class="displaymath" id="a0000000103">
   \[  x=x_1+\ldots +x_N  \]
 </div>
 <p> where all \(x_i\in \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c/N+d}\). </p>
@@ -313,12 +315,12 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7.5</span>
+    <span class="lemma_thmlabel">1.6.5</span>
     <span class="lemma_thmtitle">Gordan’s lemma</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#explicit_gordan">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000102"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000104"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -329,7 +331,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/for_mathlib/Gordan.lean#L612">explicit_gordan</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/for_mathlib/Gordan.lean#L612">explicit_gordan</a></li>
         </ul>
 
       </div>
@@ -342,7 +344,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000102">
+<div class="proof_wrapper" id="a0000000104">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -359,11 +361,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7.6</span>
+    <span class="lemma_thmlabel">1.6.6</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#combi_aux">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000103"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000105"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -374,7 +376,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/combinatorial_lemma/lem97.lean#L211">lem97</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/combinatorial_lemma/lem97.lean#L211">lem97</a></li>
         </ul>
 
       </div>
@@ -387,7 +389,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000103">
+<div class="proof_wrapper" id="a0000000105">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -396,7 +398,7 @@
   </div>
   <div class="proof_content">
   <p> It suffices to prove the statement for all \(x\) such that \(\lambda _i(x)\geq 0\) for all \(i\); indeed, applying this variant to all \(\pm \lambda _i\), one gets the full statement. </p>
-<p>Thus, consider the submonoid \(\Lambda ^\vee _+\subset \Lambda ^\vee \) of all \(x\) that pair nonnegatively with all \(\lambda _i\). This is a finitely generated monoid by Lemma&#160;<a href="sec-polyhedral_lattice.html#explicit_gordan">7.5</a>; let \(y_1,\ldots ,y_M\) be a set of generators. Then we can take for \(A\) all sums \(n_1y_1+\ldots +n_My_M\) where all \(n_j\in \{ 0,\ldots ,N-1\} \). </p>
+<p>Thus, consider the submonoid \(\Lambda ^\vee _+\subset \Lambda ^\vee \) of all \(x\) that pair nonnegatively with all \(\lambda _i\). This is a finitely generated monoid by Lemma&#160;<a href="sec-polyhedral_lattice.html#explicit_gordan">1.6.5</a>; let \(y_1,\ldots ,y_M\) be a set of generators. Then we can take for \(A\) all sums \(n_1y_1+\ldots +n_My_M\) where all \(n_j\in \{ 0,\ldots ,N-1\} \). </p>
 
   </div>
 </div>
@@ -405,11 +407,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7.7</span>
+    <span class="lemma_thmlabel">1.6.7</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#exists_partition">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000104"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -420,7 +422,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/combinatorial_lemma/partition.lean#L152">combinatorial_lemma.exists_partition</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/combinatorial_lemma/partition.lean#L152">combinatorial_lemma.exists_partition</a></li>
         </ul>
 
       </div>
@@ -433,7 +435,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000104">
+<div class="proof_wrapper" id="a0000000106">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -442,7 +444,7 @@
   </div>
   <div class="proof_content">
   <p>Define the \(A_j\) recursively: assume that the natural numbers \(0, \dots , n\) have been placed into the sets \(A_1, \dots , A_N\). Then add the number \(n+1\) to the set \(A_j\) for which </p>
-<div class="displaymath" id="a0000000105">
+<div class="displaymath" id="a0000000107">
   \[  \sum _{i=0, i\in A_j}^n x_i  \]
 </div>
 <p> is minimal. </p>
@@ -454,11 +456,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7.8</span>
+    <span class="lemma_thmlabel">1.6.8</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#lem98_int">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000108"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
@@ -469,7 +471,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/combinatorial_lemma/finite.lean#L187">lem98_int</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/combinatorial_lemma/finite.lean#L187">lem98_int</a></li>
         </ul>
 
       </div>
@@ -479,14 +481,14 @@
   </div>
   <div class="lemma_thmcontent">
   <p>  For all natural numbers \(N {\gt} 0\), and for all \(x\in \overline{\mathcal L}_{r'}(S)_{\leq c}\) one can decompose \(x\) as a sum </p>
-<div class="displaymath" id="a0000000107">
+<div class="displaymath" id="a0000000109">
   \[  x=x_1+\ldots +x_N  \]
 </div>
 <p> with all \(x_i\in \overline{\mathcal L}_{r'}(S)_{\leq c/N+1}\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000106">
+<div class="proof_wrapper" id="a0000000108">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -494,36 +496,36 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> Choose a bijection \(S \times \mathbb N \cong \mathbb N\), and transport the result from Lemma&#160;<a href="sec-polyhedral_lattice.html#exists_partition">7.7</a>. </p>
+  <p> Choose a bijection \(S \times \mathbb N \cong \mathbb N\), and transport the result from Lemma&#160;<a href="sec-polyhedral_lattice.html#exists_partition">1.6.7</a>. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000100">
+<div class="proof_wrapper" id="a0000000102">
   <div class="proof_heading">
     <span class="proof_caption">
-    Proof of Lemma&#160;<a href="sec-polyhedral_lattice.html#combi">7.4</a>
+    Proof of Lemma&#160;<a href="sec-polyhedral_lattice.html#combi">1.6.4</a>
     </span>
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
   <p>   Pick \(\lambda _1,\ldots ,\lambda _m\in \Lambda \) generating the norm. We fix a finite subset \(A\subset \Lambda ^\vee \) satisfying the conclusion of the previous lemma. Write </p>
-<div class="displaymath" id="a0000000108">
+<div class="displaymath" id="a0000000110">
   \[  x=\sum _{n\geq 1, s\in S} x_{n,s} T^n [s]  \]
 </div>
 <p> with \(x_{n,s}\in \Lambda ^\vee \). Then we can decompose </p>
-<div class="displaymath" id="a0000000109">
+<div class="displaymath" id="a0000000111">
   \[  x_{n,s} = N x_{n,s}^0 + x_{n,s}^1  \]
 </div>
 <p> where \(x_{n,s}^1\in A\) and we have the same-sign property of the last lemma. Letting \(x^0 = \sum _{n\geq 1, s\in S} x_{n,s}^0 T^n [s]\), we get a decomposition </p>
-<div class="displaymath" id="a0000000110">
+<div class="displaymath" id="a0000000112">
   \[  x = Nx^0 + \sum _{a\in A} a x_a  \]
 </div>
 <p> with \(x_a\in \overline{\mathcal L}_{r'}(S)\) (with the property that in the basis given by the \(T^n [s]\), all coefficients are \(0\) or \(1\)). Crucially, we know that for all \(i=1,\ldots ,m\), we have </p>
-<div class="displaymath" id="a0000000111">
+<div class="displaymath" id="a0000000113">
   \[  ‖x(\lambda _i)‖ = N ‖x^0(\lambda _i)‖ + \sum _{a\in A} |a(\lambda _i)| ‖x_a‖  \]
 </div>
 <p> by using the same sign property of the decomposition. </p>
-<p>Using this decomposition of \(x\), we decompose each term into \(N\) summands. This is trivial for the first term \(Nx^0\), and each summand of the second term decomposes with \(d = 1\) by Lemma&#160;<a href="sec-polyhedral_lattice.html#lem98_int">7.8</a>. (It follows that in general one can take for \(d\) the supremum over all \(i\) of \(\sum _{a\in A} |a(\lambda _i)|\).) </p>
+<p>Using this decomposition of \(x\), we decompose each term into \(N\) summands. This is trivial for the first term \(Nx^0\), and each summand of the second term decomposes with \(d = 1\) by Lemma&#160;<a href="sec-polyhedral_lattice.html#lem98_int">1.6.8</a>. (It follows that in general one can take for \(d\) the supremum over all \(i\) of \(\sum _{a\in A} |a(\lambda _i)|\).) </p>
 
   </div>
 </div>
@@ -532,7 +534,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">7.9</span>
+    <span class="definition_thmlabel">1.6.9</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#rescaled-sum">#</a>
@@ -546,7 +548,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 7.1</a></li>
+          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 1.6.1</a></li>
         </ul>
 
       </div>
@@ -560,7 +562,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/polyhedral_lattice/finsupp.lean#L114">finsupp.polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/polyhedral_lattice/finsupp.lean#L114">finsupp.polyhedral_lattice</a></li>
         </ul>
 
       </div>
@@ -571,7 +573,7 @@
   <div class="definition_thmcontent">
   <p>    Let \(\Lambda \) be a polyhedral lattice, and let \(N {\gt} 0\) be a natural number. (We think of \(N\) as being fixed once and for all, and thus it does not show up in the notation below.) </p>
 <p>By \(\Lambda '\) we denote \(\Lambda ^N\) endowed with the norm </p>
-<div class="displaymath" id="a0000000112">
+<div class="displaymath" id="a0000000114">
   \[  ‖(\lambda _1,\ldots ,\lambda _N)‖_{\Lambda '} = \tfrac 1N(‖\lambda _1‖_\Lambda +\ldots +‖\lambda _N‖_\Lambda ).  \]
 </div>
 <p> This is a polyhedral lattice. </p>
@@ -583,11 +585,11 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7.10</span>
+    <span class="lemma_thmlabel">1.6.10</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#polyhedral-quotient">#</a>
-    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000113"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sec-polyhedral_lattice.html#a0000000115"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -599,7 +601,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#rescaled-sum">Definition 7.9</a></li>
+          <li><a href="sec-polyhedral_lattice.html#rescaled-sum">Definition 1.6.9</a></li>
         </ul>
 
       </div>
@@ -613,7 +615,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/polyhedral_lattice/cech.lean#L146">polyhedral_lattice.conerve.obj.polyhedral_lattice</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/polyhedral_lattice/cech.lean#L146">polyhedral_lattice.conerve.obj.polyhedral_lattice</a></li>
         </ul>
 
       </div>
@@ -626,7 +628,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000113">
+<div class="proof_wrapper" id="a0000000115">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -643,7 +645,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">7.11</span>
+    <span class="definition_thmlabel">1.6.11</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#cosimplicial-lattice">#</a>
@@ -657,7 +659,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#polyhedral-quotient">Lemma 7.10</a></li>
+          <li><a href="sec-polyhedral_lattice.html#polyhedral-quotient">Lemma 1.6.10</a></li>
         </ul>
 
       </div>
@@ -671,7 +673,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/polyhedral_lattice/cosimplicial.lean#L97">PolyhedralLattice.cosimplicial</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/polyhedral_lattice/cosimplicial.lean#L97">PolyhedralLattice.cosimplicial</a></li>
         </ul>
 
       </div>
@@ -690,7 +692,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">7.12</span>
+    <span class="definition_thmlabel">1.6.12</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sec-polyhedral_lattice.html#Hom">#</a>
@@ -704,8 +706,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 7.1</a></li>
-          <li><a href="sec-normed_groups.html#chpng-Tinv">Definition 3.9</a></li>
+          <li><a href="sec-polyhedral_lattice.html#polyhedral_lattice">Definition 1.6.1</a></li>
+          <li><a href="sec-normed_groups.html#chpng-Tinv">Definition 1.2.9</a></li>
         </ul>
 
       </div>
@@ -719,7 +721,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/a7aabf4a5f551e62ed4f49083ab5f0e89a721e70/src/polyhedral_lattice/pseudo_normed_group.lean#L224">polyhedral_lattice.add_monoid_hom.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/ee33bd830a93b1f5a699a9b165cc8a71020c89a6/src/polyhedral_lattice/pseudo_normed_group.lean#L224">polyhedral_lattice.add_monoid_hom.profinitely_filtered_pseudo_normed_group_with_Tinv</a></li>
         </ul>
 
       </div>
@@ -730,7 +732,7 @@
   <div class="definition_thmcontent">
   <p>   Let \(\Lambda \) be a polyhedral lattice, and \(M\) a profinitely filtered pseudo-normed group. </p>
 <p>Endow \(\operatorname{Hom}(\Lambda , M)\) with the subspaces </p>
-<div class="displaymath" id="a0000000114">
+<div class="displaymath" id="a0000000116">
   \[  \operatorname{Hom}(\Lambda , M)_{\leq c} = \{ f \colon \Lambda \to M \mid \forall x \in \Lambda , f(x) \in M_{\leq c‖x‖} \} .  \]
 </div>
 <p> As \(\Lambda \) is polyhedral, it is enough to check the given condition on&#160;\(f\) for a finite collection of \(x\) that generate the norm. </p>
@@ -746,11 +748,11 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sect0003.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0004.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="cha-one.html" title="First part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0004.html" title="Key technical result"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0005.html" title="Key technical result"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
