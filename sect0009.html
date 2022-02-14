@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blueprint for the Liquid Tensor Experiment: Theorem 6.9</title>
-<link rel="next" href="sect0010.html" title="Real Measures" />
-<link rel="prev" href="sect0008.html" title="Definition" />
-<link rel="up" href="sect0007.html" title="Laurent Measures" />
+<title>Blueprint for the Liquid Tensor Experiment: The MacLane \(Q'\)-construction</title>
+<link rel="next" href="sect0010.html" title="Condensed abelian groups" />
+<link rel="prev" href="sect0008.html" title="Real Measures" />
+<link rel="up" href="cha-two.html" title="Second part" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 </head>
@@ -77,23 +77,23 @@
      <li class="">
   <a href="sect0006.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Variants of normed groups</span></a>
  </li>
-<li class=" active">
+<li class="">
   <a href="sect0007.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Laurent Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0010.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Real Measures</span></a>
+  <a href="sect0008.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Real Measures</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0009.html"><span class="toc_ref">2.4</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
  </li>
 <li class="">
-  <a href="sect0011.html"><span class="toc_ref">2.4</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
- </li>
-<li class="">
-  <a href="sect0012.html"><span class="toc_ref">2.5</span> <span class="toc_entry">Condensed abelian groups</span></a>
+  <a href="sect0010.html"><span class="toc_ref">2.5</span> <span class="toc_entry">Condensed abelian groups</span></a>
  </li>
 
   </ul>
  </li>
 <li class="">
-  <a href="sect0013.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0011.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
  </li>
 <li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
 <li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
@@ -105,370 +105,16 @@
 
 
 <div class="main-text">
-<h3 id="a0000000009">Theorem 6.9</h3>
-<p>For every \(\alpha \in \mathbf{R}\) let \(\lfloor \alpha \rfloor \in \mathbf{Z}\) be the largest integer that satisfies \(\lfloor \alpha \rfloor \le \alpha \): in particular, </p>
-<div class="displaymath" id="a0000000154">
-  \[  \alpha -1 {\lt} \lfloor \alpha \rfloor \le \alpha \qquad \text{and}\qquad \alpha \geq 0 \Longrightarrow \lfloor \alpha \rfloor \geq 0.  \]
-</div>
-<p>Now fix \(0{\lt} \xi {\lt}1\) and let \(x\in \mathbf{R}_{\geq 0}\). </p>
-<p><div class="definition_thmwrapper" id="theta.y">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">2.2.2</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta.y">#</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L43">theta.y</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>  For all \(n\in \mathbf{N}\), set </p>
-<div class="displaymath" id="a0000000155">
-  \[  y_n(x)=y_n= \begin{cases}  x& \text{ if } n = 0 \\ y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
-</div>
-
-  </div>
-</div> </p>
-<p><div class="lemma_thmwrapper" id="theta.finite_sum">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">2.2.3</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta.finite_sum">#</a>
-    <a class="icon proof" href="sect0009.html#a0000000156"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0009.html#theta.y">Definition 2.2.2</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L150">theta.finite_sum</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   For all \(n\in \mathbf{N}\), we have </p>
-<div class="displaymath" id="a0000000157">
-  \[  y_{n+1} = x - \sum _{i=0}^n \Big\lfloor \frac{y_i}{\xi ^i} \Big\rfloor \xi ^i.  \]
-</div>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000156">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>By induction: when \(n=0\) this boils down to </p>
-<div class="displaymath" id="a0000000158">
-  \[  y_1=x-\left\lfloor \frac{y_0}{\xi ^0}\right\rfloor \xi ^0  \]
-</div>
-<p> which is the definition of \(y_1\) since \(x=y_0\). </p>
-<p>The step \(n\to (n+1)\) goes as follows: </p>
-<div class="displaymath" id="a0000000159">
-  \[  y_{n+1} \overset {\text{def}}{=} y_{n} - \left\lfloor \frac{y_{n}}{\xi ^{n}} \right\rfloor \xi ^{n} \overset {\text{Ind.}}{=} \left(x - \sum _{i=0}^{n-1} \Big\lfloor \frac{y_i}{\xi ^i} \Big\rfloor \xi ^i\right) - \left\lfloor \frac{y_{n}}{\xi ^{n}} \right\rfloor \xi ^{n} = x - \sum _{i=0}^n \Big\lfloor \frac{y_i}{\xi ^i} \Big\rfloor \xi ^i. \qedhere  \]
-</div>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="theta.bounded">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">2.2.4</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta.bounded">#</a>
-    <a class="icon proof" href="sect0009.html#a0000000160"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0009.html#theta.y">Definition 2.2.2</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  The sequence </p>
-<div class="displaymath" id="a0000000161">
-  \[  n \mapsto \left\lfloor \frac{y_n}{\xi ^n} \right\rfloor  \]
-</div>
-<p> is bounded. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000160">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>By definition, for all \(n\geq 1\), </p>
-<div class="displaymath" id="a0000000162">
-  \[  \frac{y_n}{\xi ^n} = \frac{1}{\xi ^n} \left(y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi ^{n-1}} \right\rfloor \xi ^{n-1}\right) = \frac{1}{\xi } \left(\frac{y_{n-1}}{\xi ^{n-1}} - \left\lfloor \frac{y_{n-1}}{\xi ^{n-1}} \right\rfloor \right) \le \frac{1}{\xi }\cdot 1 = \frac{1}{\xi }  \]
-</div>
-<p> Thus, the sequence \(n\mapsto \frac{y_n}{\xi ^n}\) is bounded by \(\max \{ x=y_0,\xi ^{-1}\} \) and the same holds, <em>a fortiori</em>, for the sequence \(n\mapsto \lfloor \frac{y_n}{\xi ^n}\rfloor \). </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="theta.limit_y">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">2.2.5</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta.limit_y">#</a>
-    <a class="icon proof" href="sect0009.html#a0000000163"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0009.html#theta.y">Definition 2.2.2</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L270">theta.limit_y</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   We have </p>
-<div class="displaymath" id="a0000000164">
-  \[  \lim _{n\to +\infty } y_n =0.  \]
-</div>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000163">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p> Indeed, for every \(n\in \mathbf{N}\), </p>
-<div class="displaymath" id="a0000000165">
-  \[  \frac{y_n}{\xi ^n} - 1 {\lt}\left\lfloor {\frac{y_n}{\xi ^n}}\right\rfloor \le \frac{y_n}{\xi ^n}  \]
-</div>
-<p> so, multiplying everything by \(\xi ^n {\gt} 0\), </p>
-<div class="displaymath" id="a0000000166">
-  \[  y_n - \xi ^n {\lt}\left\lfloor {\frac{y_n}{\xi ^n}}\right\rfloor \xi ^n \le y_n.  \]
-</div>
-<p> Taking limits, </p>
-<div class="displaymath" id="a0000000167">
-  \[  \lim _{n\to +\infty } y_n - \lim _{n\to +\infty } \xi ^n = \lim _{n\to +\infty } y_n \le \lim _{n\to +\infty } \left\lfloor \frac{y_n}{\xi ^n} \right\rfloor \xi ^n = 0\le \lim _{n\to +\infty } y_n.  \]
-</div>
-<p> By Lemma&#160;<a href="sect0009.html#theta.bounded">2.2.4</a>, the term \(\left\lfloor \frac{y_n}{\xi ^n}\right\rfloor \xi ^n\) tends to \(0\) as \(n\to +\infty \) because \(0{\lt}\lvert \xi \rvert {\lt} 1\). The lemma follows. </p>
-
-  </div>
-</div>
-<p><div class="proposition_thmwrapper" id="theta.has_sum_x">
+<h2 id="a0000000009">2.4 The MacLane \(Q'\)-construction</h2>
+<p>In this subsection we will focus on the functorial complex induced by the Breen–Deligne package described in Definition&#160;<a href="BD_orig.html#BD_eg">1.1.12</a>. This complex is also known as MacLane’s \(Q'\)-construction. (TODO: Rewrite the subsection on Breen–Deligne packages to reflect this.) </p>
+<p><div class="proposition_thmwrapper" id="homology-Qprime">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">2.2.6</span>
-    ✓
+    <span class="proposition_thmlabel">2.4.1</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta.has_sum_x">#</a>
-    <a class="icon proof" href="sect0009.html#a0000000168"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0009.html#theta.y">Definition 2.2.2</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L306">theta.has_sum_x</a></li>
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L255">theta.summable_floor</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="proposition_thmcontent">
-  
-<ol class="enumerate">
-  <li><p>For all \(0{\lt}r {\lt}1\), </p>
-<div class="displaymath" id="a0000000169">
-  \[  \sum _{i=0}^{+\infty } \left\lfloor \frac{y_i}{\xi ^i}\right\rfloor r^i \qquad \text{converges}.  \]
-</div>
-</li>
-  <li><div class="displaymath" id="a0000000170">
-  \[  \sum _{i=0}^{+\infty } \left\lfloor \frac{y_i}{\xi ^i}\right\rfloor \xi ^i = x;  \]
-</div>
-</li>
-</ol>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000168">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p> The first point follows from Lemma&#160;<a href="sect0009.html#theta.bounded">2.2.4</a>, using that \(0{\lt}r{\lt}1\). </p>
-<p>For the second point, taking limits in Lemma&#160;<a href="sect0009.html#theta.finite_sum">2.2.3</a>, we obtain </p>
-<div class="displaymath" id="a0000000171">
-  \[  \lim _{n\to +\infty }y_{n+1}=x-\sum _{i=0}^{+\infty }a_i\xi ^i.  \]
-</div>
-<p> The result follows from Lemma&#160;<a href="sect0009.html#theta.limit_y">2.2.5</a>. </p>
-
-  </div>
-</div>
-<p>The next theorem is the first statement of Theorem&#160;6.9 in&#160;<span class="cite">
-	[
-	<a href="sect0013.html#Analytic" >Sch20</a>
-	]
-</span>. </p>
-<p><div class="definition_thmwrapper" id="theta">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">2.2.7</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta">#</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L325">theta.ϑ</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>  Fix \(0{\lt}\xi {\lt}1\), and let \(\theta _{\xi }\colon \mathbf{Z}((T))_r\rightarrow \mathbf{R}\) be the evaluation map </p>
-<div class="displaymath" id="a0000000172">
-  \[  \sum a_nT^n\longmapsto \sum a_n(\xi )T^n.  \]
-</div>
-
-  </div>
-</div> </p>
-<p><div class="theorem_thmwrapper" id="theta.surjective">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
-    </span>
-    <span class="theorem_thmlabel">2.2.8</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0009.html#theta.surjective">#</a>
+    <a class="icon proof" href="sect0009.html#homology-Qprime">#</a>
     <a class="icon proof" href="sect0009.html#a0000000173"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -481,21 +127,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0009.html#theta">Definition 2.2.7</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4fb75a9679412df4f8599c7fe35f50658ac44f21/src/laurent_measures/theta.lean#L328">theta.ϑ_surjective</a></li>
+          <li><a href="BD_orig.html#BD_eg">Definition 1.1.12</a></li>
         </ul>
 
       </div>
@@ -503,11 +135,28 @@
 
   </div>
   </div>
-  <div class="theorem_thmcontent">
-  <p>   The map \(\theta _{\xi }\) is surjective. </p>
+  <div class="proposition_thmcontent">
+  <p>  For any \(i\geq 0\), the functor \(A\mapsto H_i(Q'(A))\) has the following properties: </p>
+<ol class="enumerate">
+  <li><p>It is additive, i.e. </p>
+<div class="displaymath" id="a0000000174">
+  \[  H_i(Q'(A\oplus B))\cong H_i(Q'(A))\oplus H_i(Q'(B)).  \]
+</div>
+</li>
+  <li><p>It commutes with filtered colimits, i.e.&#160;for a filtered inductive system \(A_i\), </p>
+<div class="displaymath" id="a0000000175">
+  \[  \varinjlim _i H_i(Q'(A))\cong H_i(Q'(\varinjlim _i A_i)).  \]
+</div>
+</li>
+</ol>
+<p>In particular, for torsion-free abelian groups \(A\), there is a functorial isomorphism </p>
+<div class="displaymath" id="a0000000176">
+  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A.  \]
+</div>
 
   </div>
 </div> </p>
+<p>As the proof shows, we do not really need the \(Q'\)-construction here: Any Breen–Deligne package will do. </p>
 <div class="proof_wrapper" id="a0000000173">
   <div class="proof_heading">
     <span class="proof_caption">
@@ -516,11 +165,151 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> Pick \(x\in \mathbf{R}\), and consider the power series </p>
-<div class="displaymath" id="a0000000174">
-  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi ^m}\right\rfloor T^n\in \mathbf{Z}[\! [T]\! ]  \]
+  <p>(Note: part (1) has already been formalized. TODO include pointer to the Lean code.) Let us do the easy things first. Part (2) is clear as everything in sight commutes with filtered colimits. Assuming (1), we note that there is a natural map </p>
+<div class="displaymath" id="a0000000177">
+  \[  H_i(Q'(\mathbb Z))\times A\to H_i(Q'(A))  \]
 </div>
-<p> where \(\{ y_n(x)\} \) is the sequence defined in Definition&#160;<a href="sect0009.html#theta.y">2.2.2</a>. By Proposition&#160;<a href="sect0009.html#theta.has_sum_x">2.2.6</a>, the series converges on the open unit disks, so it belongs to \(\mathbf{Z}((T))_r\) and it specializes to \(x\) when evaluated at \(T=\xi \). </p>
+<p> induced by functoriality of \(H_i(Q'(-))\). To check that this is bilinear and induces an isomorphism </p>
+<div class="displaymath" id="a0000000178">
+  \[  H_i(Q'(\mathbb Z))\otimes A\cong H_i(Q'(A)),  \]
+</div>
+<p> we can reduce to the case that \(A\) is finitely generated by (2). In that case \(A\) is finite free, and the result follows from (1). </p>
+<p>Thus, it remains to prove part (1), which has already been formalized. We recall that the direct sum of two abelian groups \(M\) and \(N\) is characterized as the abelian group \(P\) with maps \(i_M: M\to P\), \(i_N: N\to P\), \(p_M: P\to M\), \(p_N: P\to N\), satisfying \(p_M i_M=\mathrm{id}_M\), \(p_N i_N = \mathrm{id}_N\), \(p_M i_N=0\), \(p_N i_M = 0\), \(\mathrm{id}_P = i_M p_M + i_N p_N\). Apply this to \(M=H_i(Q'(A))\), \(N=H_i(Q'(B))\) and \(P=H_i(Q'(A\oplus B))\), with all maps induced by applying \(H_i(Q'(-))\) to the similar maps for \(A\), \(B\) and \(A\oplus B\). The fact that \(H_i(Q'(-))\) is a functor already gives all identities except \(\mathrm{id}_P = i_M p_M + i_N p_N\), and the only issue is the question whether \(H_i(Q'(-))\) induces additive maps on morphism spaces. But if \(f,g: C\to D\) are any two maps of abelian groups, then \(H_i(Q'(f+g)) = H_i(Q'(f))+H_i(Q'(g))\), by reducing to the universal case of the two projections \(D^2\to D\) and using the homotopy baked into Definition&#160;<a href="BD_orig.html#BD_eg">1.1.12</a>. </p>
+
+  </div>
+</div>
+<p>We note that by functoriality of the \(Q'\)-construction, it can also be applied to condensed abelian groups. </p>
+<p><div class="corollary_thmwrapper" id="Qprime-Cond">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">2.4.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#Qprime-Cond">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000179"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="BD_orig.html#BD_eg">Definition 1.1.12</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>  For torsion-free condensed abelian groups \(A\), there is a natural isomorphism </p>
+<div class="displaymath" id="a0000000180">
+  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A  \]
+</div>
+<p> of condensed abelian groups. </p>
+
+  </div>
+</div> </p>
+<p>Here, we only need to be able to tensor condensed abelian groups with (abstract) abelian groups. (With more effort, one could prove that \(H_i(Q'(\mathbb Z))\) is even finitely generated.) In that case, the tensor product functor can be defined very naively by tensoring the values at any \(S\) with the given abstract abelian group. </p>
+<div class="proof_wrapper" id="a0000000179">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Evaluating at \(S\in \mathrm{ExtrDisc}\), we note that \(S\mapsto H_i(Q'(A(S)))\) is already a condensed abelian group, and agrees with \(H_i(Q'(\mathbb Z))\otimes A(S)\). Thus, the same is true after sheafification. </p>
+
+  </div>
+</div>
+<p>If \(A\) is a torsion-free condensed abelian group equipped with an endomorphism \(f\), then \(Q'(A)\) is also equipped with the endomorphism \(f\) induced by functoriality, and by functoriality all previous assertions upgrade to \(\mathbb Z[f]\)-modules. </p>
+<p><div class="proposition_thmwrapper" id="Qprime-prop">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">2.4.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0009.html#Qprime-prop">#</a>
+    <a class="icon proof" href="sect0009.html#a0000000181"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="BD_orig.html#BD_eg">Definition 1.1.12</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Let \(M\) and \(N\) be condensed abelian groups with endomorphisms \(f_M\), \(f_N\). Assume that \(M\) is torsion-free (over \(\mathbb Z\)). Then </p>
+<div class="displaymath" id="a0000000182">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(M,N)=0  \]
+</div>
+<p> for all \(i\geq 0\) if and only if </p>
+<div class="displaymath" id="a0000000183">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(Q'(M),N)=0  \]
+</div>
+<p> for all \(i\geq 0\). More precisely, the first vanishes for \(0\leq i\leq j\) if and only if the second vanishes for \(0\leq i\leq j\). </p>
+
+  </div>
+</div> </p>
+<p>At this point, we need to be able to talk about \(\mathrm{Ext}\)-groups of (bounded to the right) complexes of condensed abelian groups (against condensed abelian groups). </p>
+<p>The statement is also true without the torsion-freeness assumption on \(M\), but slightly more nasty to prove then (and not required for the application). </p>
+<div class="proof_wrapper" id="a0000000181">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> We induct on \(j\). Consider first the case \(j=0\); then any map \(Q'(M)\to N\) factors uniquely over \(H_0 Q'(M)[0]=M[0]\), yielding the result. Now assume that both sides vanish for \(0\leq i{\lt}j\); we need to see that the vanishing of the \(\mathrm{Ext}^i\)’s is equivalent. Consider the triangle </p>
+<div class="displaymath" id="a0000000184">
+  \[  \tau _{\geq 1} Q'(M)\to Q'(M)\to M[0]\to .  \]
+</div>
+<p> Taking the corresponding long exact sequence of \(\mathrm{Ext}\)-groups against \(N\), we see that it suffices to see that </p>
+<div class="displaymath" id="a0000000185">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(\tau _{\geq 1} Q'(M),N)=0  \]
+</div>
+<p> for \(0\leq i\leq j\). But we can prove by descending induction on \(t\) that </p>
+<div class="displaymath" id="a0000000186">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(\tau _{\geq t} Q'(M),N)=0.  \]
+</div>
+<p> This is trivially true for \(t{\gt}i\). Now look at the triangle </p>
+<div class="displaymath" id="a0000000187">
+  \[  \tau _{\geq t+1} Q'(M)\to \tau _{\geq t} Q'(M)\to H_t(Q'(M))[t]\to  \]
+</div>
+<p> and the corresponding long exact sequence. It becomes sufficient to prove that </p>
+<div class="displaymath" id="a0000000188">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(H_t(Q'(M))[t],N)=0  \]
+</div>
+<p> for \(0\leq i\leq j\). Trivially, </p>
+<div class="displaymath" id="a0000000189">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(H_t(Q'(M))[t],N)=\mathrm{Ext}^{i-t}_{\mathbb Z[f]}(H_t(Q'(M)),N).  \]
+</div>
+<p> Note that \(t\geq 1\) here, so \(i-t{\lt}j\) (and can be assumed \(\geq 0\)). Also \(H_t(Q'(M))\cong H_t(Q'(\mathbb Z))\otimes M\). Thus, it suffices to show that for every abelian group \(A\) and every \(0\leq i{\lt}j\), </p>
+<div class="displaymath" id="a0000000190">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(A\otimes M,N)=0.  \]
+</div>
+<p> If \(A\) is free, then \(A\otimes M\) is a direct sum of copies of \(M\), and the result follows as \(\mathrm{Ext}\) turns direct sums into products (and we assumed the vanishing of \(\mathrm{Ext}^i_{\mathbb Z[f]}(M,N)\) for \(0\leq i{\lt}j\)). In general, one can pick a two-term free resolution of \(A\) and use the long exact sequence. </p>
 
   </div>
 </div>
@@ -531,11 +320,11 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sect0008.html" title="Definition"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0008.html" title="Real Measures"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="sect0007.html" title="Laurent Measures"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="cha-two.html" title="Second part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0010.html" title="Real Measures"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0010.html" title="Condensed abelian groups"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
