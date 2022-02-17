@@ -15,33 +15,33 @@
 
 \begin{definition}
   \label{exact-with-constants}
-  \lean{condensed.exact_with_constants}
+  \lean{condensed.exact_with_constant}
   \leanok
   \uses{png-cats}
-  Consider a short exact sequence of abelian groups
-  \[ 0\to X'\xrightarrow{f} X\xrightarrow{g} X''\to 0 \]
+  Consider a exact sequence of abelian groups
+  \[ X'\xrightarrow{f} X\xrightarrow{g} X'' \]
   such that all of $X'$, $X$ and $X''$ carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups.
   Assume that the maps are strict, i.e., $f(X'_{\leq c})\subset X_{\leq c}$ and $g(X_{\leq c})\subset X''_{\leq c}$.
-  We say that the sequence is \emph{exact with constants $c_f$ and $c_g$} if
-  $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})$ and $X''_{\leq c}\subset g(X_{\leq c_gc})$.
+  We say that the sequence is \emph{exact with constant $c_f$} if
+  $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})$.
 \end{definition}
 
 \begin{proposition}
   \label{exact-with-constants-lim}
-  \lean{CompHausFiltPseuNormGrp₁.exact_with_constants_extend}
+  \lean{CompHausFiltPseuNormGrp₁.exact_with_constant_extend}
   \leanok
-  \uses{bounded-limits, exact-with-constants}
+  \uses{bounded-limits, exact-with-constant}
   Consider an inverse system
-  \[ (0\to X'_i\xrightarrow{f_i} X_i\xrightarrow{g_i} X_i''\to 0)_i \]
-  of short exact sequences that are exact with constants $c_f$ and $c_g$ (independent of $i$).
+  \[ (X'_i\xrightarrow{f_i} X_i\xrightarrow{g_i} X_i'')_i \]
+  of exact sequences that are exact with constant $c_f$ (independent of $i$).
   Moreover, assume that the transition maps $X'_i\to X'_j$, $X_i\to X_j$ and $X''_i\to X''_j$ are strict, and let $X'$, $X$ and $X''$ be their limits.
   Then
-  \[ 0\to X'\xrightarrow{f} X\xrightarrow{g} X''\to 0 \]
-  is exact with the same constants $c_f$ and $c_g$.
+  \[ X'\xrightarrow{f} X\xrightarrow{g} X'' \]
+  is exact with the same constant $c_f$.
 \end{proposition}
 
 \begin{proof}
-  Pass to cofiltered limits of compact Hausdorff spaces in statements such as $X''_{i,\leq c}\subset g(X_{i,\leq c_g c})$,
+  Pass to cofiltered limits of compact Hausdorff spaces in the statements $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})$,
   noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff).
 \end{proof}
 
@@ -62,20 +62,22 @@
 
 \begin{proposition}
   \label{CHPNG-Cond-exact}
-  \lean{condensed.exact_of_exact_with_constants}
+  \lean{condensed.exact_of_exact_with_constant}
   \leanok
-  \uses{CHPNG-to-Cond, exact-with-constants}
-  Consider a short exact sequence of abelian groups
-  \[ 0\to X'\xrightarrow{f} X\xrightarrow{g} X''\to 0 \]
+  \uses{CHPNG-to-Cond, exact-with-constant}
+  Consider a exact sequence of abelian groups
+  \[ X'\xrightarrow{f} X\xrightarrow{g} X'' \]
   such that all of $X'$, $X$ and $X''$ carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups.
   Assume that $f(X'_{\leq c})\subset X_{\leq c}$ and $g(X_{\leq c})\subset X''_{\leq c}$.
-  If the sequence is exact with constants $c_f$ and $c_g$,
+  If the sequence is exact with constant $c_f$,
   then the sequence
-  \[ 0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0 \]
+  \[ \underline{X'}\to \underline{X}\to \underline{X''} \]
   of condensed abelian groups is exact.
 \end{proposition}
 
 \begin{proof}
+  TODO: Rewrite this proof. It is written for the case $\bullet \stackrel{g}{\to} \bullet \stackrel{0}{\to} \bullet$.
+
   We evaluate at $S\in \mathrm{ExtrDisc}$.
   Any map $S\to X''$ factors over some $X''_{\leq c}$,
   and then $g: X_{\leq c_gc}\times_{X''} X''_{\leq c}\to X''_{\leq c}$ is a surjection of compact Hausdorff spaces;
