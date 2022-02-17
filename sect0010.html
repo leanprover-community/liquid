@@ -130,63 +130,12 @@
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="CHPNG-to-Cond">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">2.5.2</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0010.html#CHPNG-to-Cond">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0006.html#png-cats">Definition 2.1.3</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/02112ff1b2d492dbb3a9b8e77995fc59a01a1a95/src/condensed/ab.lean#L306">CompHausFiltPseuNormGrp.to_Condensed</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>   There is a natural functor </p>
-<span>\begin{align*}  \text{CHPNG} & \to \operatorname{Cond}(\operatorname{Ab}) \\ M & \mapsto \underline{M} \end{align*}</span>
-<p> where \(\underline{M}(S)\) is defined to be collection of functions \(f \colon S \to M\) that factor as continuous through \(M_c\), for some \(c\). In symbols: </p>
-<div class="displaymath" id="a0000000192">
-  \[  M(S) = \{ f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\} .  \]
-</div>
-
-  </div>
-</div> </p>
 <p><div class="definition_thmwrapper" id="exact-with-constants">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.5.3</span>
+    <span class="definition_thmlabel">2.5.2</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0010.html#exact-with-constants">#</a>
@@ -223,22 +172,22 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Consider a short exact sequence of abelian groups </p>
-<div class="displaymath" id="a0000000193">
+<div class="displaymath" id="a0000000192">
   \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
 </div>
 <p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). We say that the sequence is <em>exact with constants \(c_f\) and \(c_g\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\) and \(X''_{\leq c}\subset g(X_{\leq c_gc})\). </p>
 
   </div>
 </div> </p>
-<p><div class="proposition_thmwrapper" id="CHPNG-Cond-exact">
+<p><div class="proposition_thmwrapper" id="exact-with-constants-lim">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">2.5.4</span>
+    <span class="proposition_thmlabel">2.5.3</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0010.html#CHPNG-Cond-exact">#</a>
-    <a class="icon proof" href="sect0010.html#a0000000194"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0010.html#exact-with-constants-lim">#</a>
+    <a class="icon proof" href="sect0010.html#a0000000193"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -250,8 +199,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.2</a></li>
-          <li><a href="sect0010.html#exact-with-constants">Definition 2.5.3</a></li>
+          <li><a href="sect0006.html#bounded-limits">Proposition 2.1.4</a></li>
+          <li><a href="sect0010.html#exact-with-constants">Definition 2.5.2</a></li>
         </ul>
 
       </div>
@@ -265,7 +214,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/02112ff1b2d492dbb3a9b8e77995fc59a01a1a95/src/condensed/exact.lean#L36">condensed.exact_of_exact_with_constants</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/598424e74a66ba2b71eb2212195887946bf892d8/src/condensed/exact.lean#L21">CompHausFiltPseuNormGrp₁.exact_with_constants_extend</a></li>
         </ul>
 
       </div>
@@ -274,19 +223,19 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>   Consider a short exact sequence of abelian groups </p>
+  <p>   Consider an inverse system </p>
+<div class="displaymath" id="a0000000194">
+  \[  (0\to X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i''\to 0)_i  \]
+</div>
+<p> of short exact sequences that are exact with constants \(c_f\) and \(c_g\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
 <div class="displaymath" id="a0000000195">
   \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
 </div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). Moreover, assume that there are some \(c_f\) and \(c_g\) so that \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\) and \(X''_{\leq c}\subset g(X_{\leq c_gc})\). Then the sequence </p>
-<div class="displaymath" id="a0000000196">
-  \[  0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0  \]
-</div>
-<p> of condensed abelian groups is exact. </p>
+<p> is exact with the same constants \(c_f\) and \(c_g\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000194">
+<div class="proof_wrapper" id="a0000000193">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -294,18 +243,69 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Any map \(S\to X''\) factors over some \(X''_{\leq c}\), and then \(g: X_{\leq c_gc}\times _{X''} X''_{\leq c}\to X''_{\leq c}\) is a surjection of compact Hausdorff spaces; as \(S\) is extremally disconnected, the map \(S\to X''_{\leq c}\) can be lifted, showing that \(g: X(S)\to X''(S)\) is surjective. A similar argument shows that the kernel of \(g: X(S)\to X''(S)\) is in the image of \(f: X'(S)\to X(S)\), the latter clearly being injective. </p>
+  <p>Pass to cofiltered limits of compact Hausdorff spaces in statements such as \(X''_{i,\leq c}\subset g(X_{i,\leq c_g c})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
 
   </div>
 </div>
-<p><div class="proposition_thmwrapper" id="CHPNG-Cond-exact-lim">
+<p><div class="definition_thmwrapper" id="CHPNG-to-Cond">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.5.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0010.html#CHPNG-to-Cond">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0006.html#png-cats">Definition 2.1.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/598424e74a66ba2b71eb2212195887946bf892d8/src/condensed/ab.lean#L306">CompHausFiltPseuNormGrp.to_Condensed</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   There is a natural functor </p>
+<span>\begin{align*}  \text{CHPNG} & \to \operatorname{Cond}(\operatorname{Ab}) \\ M & \mapsto \underline{M} \end{align*}</span>
+<p> where \(\underline{M}(S)\) is defined to be collection of functions \(f \colon S \to M\) that factor as continuous through \(M_c\), for some \(c\). In symbols: </p>
+<div class="displaymath" id="a0000000196">
+  \[  M(S) = \{ f \colon S \to M \mid \exists c, f(S) \subset M_c \text{ and $f \colon S \to M_c$ is continuous}\} .  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="proposition_thmwrapper" id="CHPNG-Cond-exact">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
     <span class="proposition_thmlabel">2.5.5</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0010.html#CHPNG-Cond-exact-lim">#</a>
+    <a class="icon proof" href="sect0010.html#CHPNG-Cond-exact">#</a>
     <a class="icon proof" href="sect0010.html#a0000000197"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -318,9 +318,8 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.2</a></li>
-          <li><a href="sect0006.html#bounded-limits">Proposition 2.1.4</a></li>
-          <li><a href="sect0010.html#exact-with-constants">Definition 2.5.3</a></li>
+          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.4</a></li>
+          <li><a href="sect0010.html#exact-with-constants">Definition 2.5.2</a></li>
         </ul>
 
       </div>
@@ -334,7 +333,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/02112ff1b2d492dbb3a9b8e77995fc59a01a1a95/src/condensed/exact.lean#L21">CompHausFiltPseuNormGrp₁.exact_with_constants_extend</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/598424e74a66ba2b71eb2212195887946bf892d8/src/condensed/exact.lean#L36">condensed.exact_of_exact_with_constants</a></li>
         </ul>
 
       </div>
@@ -343,15 +342,15 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>   Consider an inverse system </p>
+  <p>   Consider a short exact sequence of abelian groups </p>
 <div class="displaymath" id="a0000000198">
-  \[  (0\to X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i''\to 0)_i  \]
-</div>
-<p> of short exact sequences as in Proposition&#160;<a href="sect0010.html#CHPNG-Cond-exact">2.5.4</a>, satisfying the hypothesis for fixed constants \(c_f\) and \(c_g\). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
-<div class="displaymath" id="a0000000199">
   \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
 </div>
-<p> satisfies the hypotheses of Proposition&#160;<a href="sect0010.html#CHPNG-Cond-exact">2.5.4</a> with the same \(c_f\) and \(c_g\). </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is exact with constants \(c_f\) and \(c_g\), then the sequence </p>
+<div class="displaymath" id="a0000000199">
+  \[  0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0  \]
+</div>
+<p> of condensed abelian groups is exact. </p>
 
   </div>
 </div> </p>
@@ -363,7 +362,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Pass to cofiltered limits of compact Hausdorff spaces in statements such as \(X''_{i,\leq c}\subset g(X_{i,\leq c_g c})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
+  <p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Any map \(S\to X''\) factors over some \(X''_{\leq c}\), and then \(g: X_{\leq c_gc}\times _{X''} X''_{\leq c}\to X''_{\leq c}\) is a surjection of compact Hausdorff spaces; as \(S\) is extremally disconnected, the map \(S\to X''_{\leq c}\) can be lifted, showing that \(g: X(S)\to X''(S)\) is surjective. A similar argument shows that the kernel of \(g: X(S)\to X''(S)\) is in the image of \(f: X'(S)\to X(S)\), the latter clearly being injective. </p>
 
   </div>
 </div>
@@ -387,7 +386,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.2</a></li>
+          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.4</a></li>
         </ul>
 
       </div>
@@ -516,7 +515,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.2</a></li>
+          <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.4</a></li>
         </ul>
 
       </div>
