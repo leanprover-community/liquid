@@ -130,7 +130,7 @@
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="exact-with-constants">
+<p><div class="definition_thmwrapper" id="exact-with-constant">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
@@ -138,7 +138,7 @@
     <span class="definition_thmlabel">2.5.2</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0010.html#exact-with-constants">#</a>
+    <a class="icon proof" href="sect0010.html#exact-with-constant">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -171,11 +171,11 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Consider a short exact sequence of abelian groups </p>
+  <p>   Consider an exact sequence of abelian groups </p>
 <div class="displaymath" id="a0000000192">
-  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
+  \[  X'\xrightarrow {f} X\xrightarrow {g} X''  \]
 </div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). We say that the sequence is <em>exact with constants \(c_f\) and \(c_g\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\) and \(X''_{\leq c}\subset g(X_{\leq c_gc})\). </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). We say that the sequence is <em>exact with constant \(c_f\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\). </p>
 
   </div>
 </div> </p>
@@ -200,7 +200,7 @@
         </header>
                 <ul class="uses">
           <li><a href="sect0006.html#bounded-limits">Proposition 2.1.4</a></li>
-          <li><a href="sect0010.html#exact-with-constants">Definition 2.5.2</a></li>
+          <li><a href="sect0010.html#exact-with-constant">Definition 2.5.2</a></li>
         </ul>
 
       </div>
@@ -214,7 +214,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/598424e74a66ba2b71eb2212195887946bf892d8/src/condensed/exact.lean#L21">CompHausFiltPseuNormGrp₁.exact_with_constants_extend</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/297dfebb397f89417b21cf760951e3935ec0a104/src/condensed/exact.lean#L26">CompHausFiltPseuNormGrp₁.exact_with_constant_extend</a></li>
         </ul>
 
       </div>
@@ -225,13 +225,13 @@
   <div class="proposition_thmcontent">
   <p>   Consider an inverse system </p>
 <div class="displaymath" id="a0000000194">
-  \[  (0\to X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i''\to 0)_i  \]
+  \[  (X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i'')_i  \]
 </div>
-<p> of short exact sequences that are exact with constants \(c_f\) and \(c_g\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
+<p> of exact sequences that are exact with constant \(c_f\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
 <div class="displaymath" id="a0000000195">
-  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
+  \[  X'\xrightarrow {f} X\xrightarrow {g} X''  \]
 </div>
-<p> is exact with the same constants \(c_f\) and \(c_g\). </p>
+<p> is exact with the same constant \(c_f\). </p>
 
   </div>
 </div> </p>
@@ -243,7 +243,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Pass to cofiltered limits of compact Hausdorff spaces in statements such as \(X''_{i,\leq c}\subset g(X_{i,\leq c_g c})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
+  <p>Pass to cofiltered limits of compact Hausdorff spaces in the statements \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
 
   </div>
 </div>
@@ -280,7 +280,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/598424e74a66ba2b71eb2212195887946bf892d8/src/condensed/ab.lean#L306">CompHausFiltPseuNormGrp.to_Condensed</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/297dfebb397f89417b21cf760951e3935ec0a104/src/condensed/ab.lean#L317">CompHausFiltPseuNormGrp.to_Condensed</a></li>
         </ul>
 
       </div>
@@ -319,7 +319,7 @@
         </header>
                 <ul class="uses">
           <li><a href="sect0010.html#CHPNG-to-Cond">Definition 2.5.4</a></li>
-          <li><a href="sect0010.html#exact-with-constants">Definition 2.5.2</a></li>
+          <li><a href="sect0010.html#exact-with-constant">Definition 2.5.2</a></li>
         </ul>
 
       </div>
@@ -333,7 +333,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/598424e74a66ba2b71eb2212195887946bf892d8/src/condensed/exact.lean#L36">condensed.exact_of_exact_with_constants</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/297dfebb397f89417b21cf760951e3935ec0a104/src/condensed/exact.lean#L114">condensed.exact_of_exact_with_constant</a></li>
         </ul>
 
       </div>
@@ -342,13 +342,13 @@
   </div>
   </div>
   <div class="proposition_thmcontent">
-  <p>   Consider a short exact sequence of abelian groups </p>
+  <p>   Consider an exact sequence of abelian groups </p>
 <div class="displaymath" id="a0000000198">
-  \[  0\to X'\xrightarrow {f} X\xrightarrow {g} X''\to 0  \]
+  \[  X'\xrightarrow {f} X\xrightarrow {g} X''  \]
 </div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is exact with constants \(c_f\) and \(c_g\), then the sequence </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is exact with constant \(c_f\), then the sequence </p>
 <div class="displaymath" id="a0000000199">
-  \[  0\to \underline{X'}\to \underline{X}\to \underline{X''}\to 0  \]
+  \[  \underline{X'}\to \underline{X}\to \underline{X''}  \]
 </div>
 <p> of condensed abelian groups is exact. </p>
 
@@ -362,7 +362,8 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Any map \(S\to X''\) factors over some \(X''_{\leq c}\), and then \(g: X_{\leq c_gc}\times _{X''} X''_{\leq c}\to X''_{\leq c}\) is a surjection of compact Hausdorff spaces; as \(S\) is extremally disconnected, the map \(S\to X''_{\leq c}\) can be lifted, showing that \(g: X(S)\to X''(S)\) is surjective. A similar argument shows that the kernel of \(g: X(S)\to X''(S)\) is in the image of \(f: X'(S)\to X(S)\), the latter clearly being injective. </p>
+  <p>TODO: Rewrite this proof. It is written for the case \(\bullet \stackrel{g}{\to } \bullet \stackrel{0}{\to } \bullet \). </p>
+<p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Any map \(S\to X''\) factors over some \(X''_{\leq c}\), and then \(g: X_{\leq c_gc}\times _{X''} X''_{\leq c}\to X''_{\leq c}\) is a surjection of compact Hausdorff spaces; as \(S\) is extremally disconnected, the map \(S\to X''_{\leq c}\) can be lifted, showing that \(g: X(S)\to X''(S)\) is surjective. A similar argument shows that the kernel of \(g: X(S)\to X''(S)\) is in the image of \(f: X'(S)\to X(S)\), the latter clearly being injective. </p>
 
   </div>
 </div>
