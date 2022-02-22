@@ -125,7 +125,7 @@
   Indeed, taken as presheaves on $\mathrm{ExtrDisc}$, this is already true on the level of presheaves,
   where it reduces to the case of surjections of sets in which case one can write down a contracting homotopy.
   (Actually, the similar result is true in any topos, where one has to maybe argue a bit more carefully.)
-  
+
   The following argument is making explicit something usually seen through a spectral sequence. Define inductively
   \[ K_1=\mathrm{ker}(\mathbb Z[T]\to \mathbb Z[S]), \]
   \[ K_2=\mathrm{ker}(\mathbb Z[T\times_S T]\to \mathbb Z[T]) \]
@@ -215,10 +215,12 @@
   inducing a resolution
   \[ 0\to \bigoplus_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to \bigoplus_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to Q'(\overline{\mathcal M}_{r'}(S))\to 0.  \]
   Passing to a corresponding long exact sequence reduces one to checking that the squares
-  \[ \begin{tikzcd}
+  \begin{center}
+  \begin{tikzcd}
   \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[d]\ar[r] & \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[d]\\
   \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)\ar[r] & \prod_n \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq n},V)
-  \end{tikzcd} \]
+  \end{tikzcd}
+  \end{center}
   are bicartesian (here, horizontal maps are shift minus identity, and vertical maps are $(T^{-1})_V - (T^{-1})_{\mathcal M}$).
   Equivalently, the horizontal maps become isomorphisms on vertical kernels, and vertical cokernels.
   But the vertical kernels and vertical cokernels induce pro-zero systems of abelian groups,
