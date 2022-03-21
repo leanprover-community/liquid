@@ -155,11 +155,18 @@
   \uses{CHPNG-to-Cond}
   Let $(M,\|\cdot\|)$ be a complete normed group, regarded as a topological group.
   Then the corresponding condensed abelian group $\underline{M}$ sends any profinite set $S$
-  to the completion of normed group of locally constant maps $S\to M$ (with the supremum norm),
-  and for any profinite set $S$, one has $H^i(S,\underline{M})=0$ for $i>0$.
+  to the completion of normed group of locally constant maps $S\to M$ (with the supremum norm).
+\end{proposition}
+
+\begin{proposition}
+  \label{normed-to-cond-acyclic}
+  \uses{CHPNG-to-Cond}
+  Let $(M,\|\cdot\|)$ be a complete normed group, regarded as a topological group.
+  Then for any profinite set $S$, one has $H^i(S,\underline{M})=0$ for $i>0$.
 \end{proposition}
 
 \begin{proof}
+  \uses{acyclic-sheaf}
   This follows Proposition~\ref{acyclic-sheaf} and the part of \cite[Proposition 8.19]{Analytic} that is already formalized.
 \end{proof}
 
@@ -175,7 +182,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{Ext-Lbar-aux, Qprime-prop, normed-to-cond}
+  \uses{Ext-Lbar-aux, Qprime-prop, normed-to-cond-acyclic, normed-to-cond}
   With Proposition~\ref{Qprime-prop}, it suffices to prove the following assertion.
   Pick $1>r'>r>0$, a profinite $S$, and some $r$-Banach $\mathbb Z[T^{\pm 1}]$-module $V$ as before.
   Then we want to prove that
@@ -188,7 +195,7 @@
   \[ \ldots\to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)]\to 0.  \]
   Termwise, the Ext-groups turn into cohomology groups
   \[ H^i(\overline{\mathcal M}_{r'}(S)^{2^j},V).  \]
-  Unfortunately, $\overline{\mathcal M}_{r'}(S)$ itself is not profinite, so we cannot directly apply Proposition~\ref{normed-to-cond}.
+  Unfortunately, $\overline{\mathcal M}_{r'}(S)$ itself is not profinite, so we cannot directly apply Proposition~\ref{normed-to-cond-acyclic}.
   To get around this last cliff, we write $Q'(\overline{\mathcal M}_{r'}(S))$ as a filtered colimit of complexes
   \[ Q'(\overline{\mathcal M}_{r'}(S))_{\leq c}: \ldots \to \mathbb Z[\overline{\mathcal M}_{r'}(S)^2_{\leq \kappa_1 c}]\to \mathbb Z[\overline{\mathcal M}_{r'}(S)_{\leq \kappa_0 c}]\to 0 \]
   where the constants $\kappa_0=1,\kappa_1,\ldots$ are positive and chosen so that all differentials are well-defined.
