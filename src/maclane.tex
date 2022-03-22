@@ -8,6 +8,7 @@ This complex is also known as MacLane's $Q'$-construction.
 \begin{proposition}
   \label{homology-Qprime}
   \uses{BD_eg}
+  \lean{breen_deligne.package.eval_additive}
   For any $i\geq 0$, the functor $A\mapsto H_i(Q'(A))$ has the following properties:
   \begin{enumerate}
     \item It is additive, i.e.
@@ -23,7 +24,6 @@ This complex is also known as MacLane's $Q'$-construction.
 As the proof shows, we do not really need the $Q'$-construction here: Any Breen--Deligne package will do.
 
 \begin{proof}
-  (Note: part (1) has already been formalized. TODO include pointer to the Lean code.)
   Let us do the easy things first. Part (2) is clear as everything in sight commutes with filtered colimits.
   Assuming (1), we note that there is a natural map
   \[ H_i(Q'(\mathbb Z))\times A\to H_i(Q'(A)) \]
@@ -71,6 +71,7 @@ and by functoriality all previous assertions upgrade to $\mathbb Z[f]$-modules.
 \begin{proposition}
   \label{Qprime-prop}
   \uses{BD_eg}
+  \lean{breen_deligne.package.main_lemma}
   Let $M$ and $N$ be condensed abelian groups with endomorphisms $f_M$, $f_N$.
   Assume that $M$ is torsion-free (over $\mathbb Z$). Then
   \[ \mathrm{Ext}^i_{\mathbb Z[f]}(M,N)=0 \]
