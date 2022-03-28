@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blueprint for the Liquid Tensor Experiment: More Breen–Deligne</title>
+<link rel="next" href="sect0004.html" title="Polyhedral lattices" />
+<link rel="prev" href="sec-some_normed_homological_algebra.html" title="Some normed homological algebra" />
+<link rel="up" href="index.html" title="Blueprint for the Liquid Tensor Experiment" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<nav class="toc">
+<svg  class="icon icon-cross close-toc"><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+ </li>
+<li class="">
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">4</span> <span class="toc_entry">Some normed homological algebra</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-more_breen_deligne.html"><span class="toc_ref">5</span> <span class="toc_entry">More Breen–Deligne</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">7</span> <span class="toc_entry">End of proof</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">8</span> <span class="toc_entry">Relevant material that should move to a better place</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">9</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+  <li>	
+  <a href="coverage.html">Progess report</a>
+  </li>
+  <li>	
+  <a href="https://github.com/leanprover-community/lean-liquid">Project home</a>
+  </li>
+</ul>
+</nav>
+
+<div class="wrapper with-toc">
+<header>
+<h1 id="doc_title">Blueprint for the Liquid Tensor Experiment</h1>
+</header>
+
+
+<div class="content">
+
+<h1 id="sec:more_breen_deligne">5 More Breen–Deligne</h1>
+
+<p>We need the following results about the Breen-Deligne resolution for normed abelian groups. Let us consider here abelian groups $M$ (in any topos) equipped with an increasing filtration $M_{\leq c}\subset M$ by subobjects indexed by the positive real numbers, such that $0\in M_{\leq c}$, $-M_{\leq c} = M_{\leq c}$ and $M_{\leq c}+M_{\leq c'}\subset M_{\leq c+c'}$; we need no further conditions. Let us call these pseudo-normed abelian groups. </p>
+<p>Fix a choice of a functorial Breen-Deligne resolution </p>
+<div class="displaymath" id="a0000000067">
+  \[  C(M):\ldots \to \mathbb Z[M^{a_i}]\to \ldots \to \mathbb Z[M^{a_1}]\to \mathbb Z[M^{a_0}]\to M\to 0  \]
+</div>
+<p> of an abelian group $M$; purely for notational convenience, we can and do assume that each term is of the form $\mathbb Z[M^{a_i}]$ (as opposed to a finite direct sum of such). The possibility of doing this follows from the proof of <span class="cite">
+	[
+	<a href="sect0007.html#Condensed" >Sch19</a>
+	, 
+	Theorem 4.10
+	]
+</span>, noting that a functor of the form $A\mapsto \mathbb Z[A^n]\oplus \mathbb Z[A^m]$ admits a surjection from the functor $A\mapsto \mathbb Z[A^{n+m}]\oplus \mathbb Z$; this gives a resolution where all terms are of the form $\mathbb Z[A^{a_i}]\oplus \mathbb Z^m$. Now pass to the quotient of these complexes corresponding to the map $0\to A$; this gives a complex all of whose terms are of the form $\mathbb Z[A^{a_i}]/\mathbb Z$. Noting that $\mathbb Z[A^{a_i}]$ is functorially isomorphic to $\mathbb Z[A^{a_i}]/\mathbb Z\oplus \mathbb Z$ (via splitting $0\to A^{a_i}\to 0$), we can then add an acyclic complex of $\mathbb Z$’s in each degree to get a resolution all of whose terms are of the form $\mathbb Z[A^{a_i}]$. </p>
+<p>We also need some homotopies. More precisely, we start with the following homotopy. </p>
+<p><div class="lemma_thmwrapper" id="basehomotopy">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-more_breen_deligne.html#basehomotopy">#</a>
+    <a class="icon proof" href="sec-more_breen_deligne.html#a0000000068"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> For an abelian group $M$, the maps $\sigma _1,\sigma _2$ from </p>
+<div class="displaymath" id="a0000000069">
+  \[  C(M^2): \ldots \to \mathbb Z[M^{2a_i}]\to \ldots \to \mathbb Z[M^{2a_1}]\to \mathbb Z[M^{2a_0}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000070">
+  \[  C(M): \ldots \to \mathbb Z[M^{a_i}]\to \ldots \to \mathbb Z[M^{a_1}]\to \mathbb Z[M^{a_0}],  \]
+</div>
+<p> induced by addition $M^2\to M$, respectively the sum of the two maps induced by two projections $M^2\to M$, are homotopic, via some functorial homotopy </p>
+<div class="displaymath" id="a0000000071">
+  \[  h_i: \mathbb Z[M^{2a_i}]\to \mathbb Z[M^{a_{i+1}}].  \]
+</div>
+<p>If $M$ is a pseudo-normed abelian group object in any topos, then $\sigma _1$ and $\sigma _2$ are well-defined as maps of complexes from </p>
+<div class="displaymath" id="a0000000072">
+  \[  C(M^2)_{\leq c/2}: \ldots \to \mathbb Z[M^{2a_i}_{\leq c_ic/2}]\to \ldots \to \mathbb Z[M^{2a_1}_{\leq c_1c/2}]\to \mathbb Z[M^{2a_0}_{\leq c/2}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000073">
+  \[  C(M)_{\leq c}: \ldots \to \mathbb Z[M^{a_i}_{\leq c_ic}]\to \ldots \to \mathbb Z[M^{a_1}_{\leq c_1c}]\to \mathbb Z[M^{a_0}_{\leq c}]  \]
+</div>
+<p> for all $c>0$. In that case, for all $i\geq 0$ there are universal constants $c_i’$ such that $h_i$ defines well-defined maps </p>
+<div class="displaymath" id="a0000000074">
+  \[  \mathbb Z[M^{2a_i}_{\leq c_ic/2}]\to \mathbb Z[M^{a_{i+1}}_{\leq c_i'c_{i+1}c}]  \]
+</div>
+<p> for all $c>0$. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000068">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>This is a consequence of the proof of the existence of the Breen-Deligne resolution, proved in the same way as <span class="cite">
+	[
+	<a href="sect0007.html#Condensed" >Sch19</a>
+	, 
+	Proposition 4.17
+	]
+</span>. The existence of the constants $c_i’$ is again formal, as in the last lemma. </p>
+
+  </div>
+</div>
+<p>Now we need the following generalization to adding $N$ elements. </p>
+<p><div class="lemma_thmwrapper" id="homotopyNelements">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-more_breen_deligne.html#homotopyNelements">#</a>
+    <a class="icon proof" href="sec-more_breen_deligne.html#a0000000075"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> Let $N$ be a power of $2$. The maps of complexes $\sigma _1,\sigma _2$ from </p>
+<div class="displaymath" id="a0000000076">
+  \[  C(M^N): \ldots \to \mathbb Z[M^{Na_i}]\to \ldots \to \mathbb Z[M^{Na_1}]\to \mathbb Z[M^{Na_0}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000077">
+  \[  C(M): \ldots \to \mathbb Z[M^{a_i}]\to \ldots \to \mathbb Z[M^{a_1}]\to \mathbb Z[M^{a_0}],  \]
+</div>
+<p> induced by addition $M^N\to M$, respectively the sum of the $N$ maps induced by the $N$ projections $M^N\to M$, are homotopic, via some functorial homotopy </p>
+<div class="displaymath" id="a0000000078">
+  \[  h_i^N: \mathbb Z[M^{Na_i}]\to \mathbb Z[M^{a_{i+1}}]  \]
+</div>
+<p> which moreover satisfies the following bound, with the same constants $c_0’,c_1’,\ldots $ as in the previous lemma: </p>
+<p>If $M$ is a pseudo-normed abelian group object in any topos, then $\sigma _1$ and $\sigma _2$ are well-defined as maps of complexes from </p>
+<div class="displaymath" id="a0000000079">
+  \[  C(M^N)_{\leq c/N}: \ldots \to \mathbb Z[M^{Na_i}_{\leq c_ic/N}]\to \ldots \to \mathbb Z[M^{Na_1}_{\leq c_1c/N}]\to \mathbb Z[M^{Na_0}_{\leq c/N}]  \]
+</div>
+<p> to </p>
+<div class="displaymath" id="a0000000080">
+  \[  C(M)_{\leq c}: \ldots \to \mathbb Z[M^{a_i}_{\leq c_ic}]\to \ldots \to \mathbb Z[M^{a_1}_{\leq c_1c}]\to \mathbb Z[M^{a_0}_{\leq c}]  \]
+</div>
+<p> for all $c>0$. In that case, $h_i^N$ defines well-defined maps </p>
+<div class="displaymath" id="a0000000081">
+  \[  \mathbb Z[M^{Na_i}_{\leq c_ic/N}]\to \mathbb Z[M^{a_{i+1}}_{\leq c_i'c_{i+1}c}]  \]
+</div>
+<p> for all $c>0$. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000075">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>Let $N=2^m$. For each $j=0,\ldots ,m-1$, the two maps from $C(M^{2^{j+1}})$ to $C(M^{2^j})$ from the previous lemma are homotopic, and we use the homotopy from that lemma. Composing homotopies (which amounts concretely to a certain sum) we get the desired homotopy from $C(M^{2^m})$ to $C(M)$. It follows directly from this construction that the constants $c_i’$ are unchanged. </p>
+
+  </div>
+</div>
+
+</div>
+
+<nav class="prev_up_next">
+  <a href="sec-some_normed_homological_algebra.html" title="Some normed homological algebra"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Blueprint for the Liquid Tensor Experiment"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0004.html" title="Polyhedral lattices"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</div>
+</body>
+</html>
