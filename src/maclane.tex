@@ -8,7 +8,8 @@ This complex is also known as MacLane's $Q'$-construction.
 \begin{proposition}
   \label{homology-Qprime}
   \uses{BD_eg}
-  \lean{breen_deligne.package.eval_additive}
+  \lean{breen_deligne.package.eval_additive, breen_deligne.data.eval_functor_preserves_filtered_colimits}
+  \leanok
   For any $i\geq 0$, the functor $A\mapsto H_i(Q'(A))$ has the following properties:
   \begin{enumerate}
     \item It is additive, i.e.
@@ -24,6 +25,7 @@ This complex is also known as MacLane's $Q'$-construction.
 As the proof shows, we do not really need the $Q'$-construction here: Any Breen--Deligne package will do.
 
 \begin{proof}
+  \leanok
   Let us do the easy things first. Part (2) is clear as everything in sight commutes with filtered colimits.
   Assuming (1), we note that there is a natural map
   \[ H_i(Q'(\mathbb Z))\times A\to H_i(Q'(A)) \]
