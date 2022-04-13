@@ -155,6 +155,7 @@
 
 \begin{proposition}
   \label{normed-to-cond}
+  \lean{LCC_iso_Cond_of_top_ab}
   \uses{CHPNG-to-Cond}
   Let $(M,\|\cdot\|)$ be a complete normed group, regarded as a topological group.
   Then the corresponding condensed abelian group $\underline{M}$ sends any profinite set $S$
@@ -171,7 +172,7 @@
 \end{proposition}
 
 \begin{proof}
-  \uses{acyclic-sheaf}
+  \uses{acyclic-sheaf, normed-to-cond}
   This follows Proposition~\ref{acyclic-sheaf} and the part of \cite[Proposition 8.19]{Analytic} that is already formalized.
 \end{proof}
 
@@ -189,7 +190,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{Ext-Lbar-aux, Qprime-prop, normed-to-cond-acyclic, normed-to-cond}
+  \uses{Ext-Lbar-aux, Qprime-prop, normed-to-cond-acyclic}
   With Proposition~\ref{Qprime-prop}, it suffices to prove the following assertion.
   Pick $1>r'>r>0$, a profinite $S$, and some $r$-Banach $\mathbb Z[T^{\pm 1}]$-module $V$ as before.
   Then we want to prove that
