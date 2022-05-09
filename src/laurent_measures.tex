@@ -171,6 +171,18 @@ The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
   The map $\theta_{\xi}$ is surjective.
 \end{theorem}
 
+\begin{proof}
+  \uses{theta}
+  \leanok
+  Pick $x\in \R$, and consider the power series
+  \[
+    F(T)=\sum_{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi^m}\right\rfloor T^n\in\Z[\![T]\!]
+  \]
+  where $\{y_n(x)\}$ is the sequence defined in Definition~\ref{theta.y}.
+  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
+  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
+\end{proof}
+
 \begin{theorem}
   \label{theta.continuous}
   \uses{theta}
@@ -191,5 +203,4 @@ The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
 %  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
 %  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
-
 % vim: ts=2 et sw=2 sts=2
