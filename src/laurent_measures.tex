@@ -1,23 +1,52 @@
 \subsection{Laurent Measures}
 
 \begin{definition}
-  \label{laurent-measures}
+	\label{laurent-measures-fin}
   \lean{laurent_measures}
   \leanok
-  Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set.
-  Then $\Lm_{r'}(S)$ denotes TODO
+  Let $0 < r' < 1$ be a real number, and let $S$ be a finite set. Then $\Lm_{r'}(S)$ denotes the group
+\[
+\Lm_{r'}(S)=\{\sum_{s\in S,n\in \Z}a_{n,s}T^n \vert a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
+< + \infty\}.
+\]
+\end{definition}
+The group $\Lm_{r'}(S)$ is filtered by the subsets
+\[
+\Lm_{r'}(S)_{\leq c}=\bigl\{\sum_{s\in S,n\in \Z}a_{n,s}T^n \vert a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
+\leq c\bigr\}
+\]
+for $c> 0$. Each subset $\Lm_{r'}(S)_{\leq c}$ can be written as
+\[
+\Lm_{r'}(S)_{\leq c}=\varprojlim_{A}\Lm_{r'}(S)_{A,\leq c}
+\]
+where $A$ runs through the finite subsets of $\Z$ and $\Lm_{r'}(S)_{A,\leq c}$ is the finite set
+\[
+\Lm_{r'}(S)_{A,\leq c}=\bigl\{\sum_{s\in S,n\in A}a_{n,s}T^n \vert a_{n,s}\in \Z, \sum_{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr\}.
+\]
+This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
+\begin{definition}
+%  \label{laurent-measures}
+%  \lean{laurent_measures}
+%  \leanok
+  Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set with a presentation $S=\varprojlim S_i$, where all $S_i$ are finite. For all $c>0$, let $\Lm_{r'}(S)_{\leq c}$ denote the projective limit
+\[
+\Lm_{r'}(S)_{\leq c}=\varprojlim\Lm_{r'}(S_i)_{\leq c},
+\]
+endowed with the projective limit topology, and set
+\[
+\Lm_{r'}(S)=\bigcup_{c > 0}\Lm_{r'}(S)_{\leq c}
+\]
 \end{definition}
 
-For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integer that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
-\[
-  \alpha-1 < \lfloor \alpha\rfloor\le \alpha
-  \qquad\text{and}\qquad
-  \alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
-\]
+%For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integer that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
+%\[
+%  \alpha-1 < \lfloor \alpha\rfloor\le \alpha
+%  \qquad\text{and}\qquad
+%  \alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
+%\]
 
-Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. 
-
-%\begin{definition}
+Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$. The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
+ %\begin{definition}
 %  \label{theta.y}
 %  \lean{theta.y}
 %  \leanok
@@ -70,17 +99,17 @@ Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$.
 %	is bounded.
 %\end{lemma}
 
-\begin{proof}
-	By definition, for all $n\geq 1$,
-	\[
-		\frac{y_n}{\xi^n} = \frac{1}{\xi^n} \left(y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi^{n-1}} \right\rfloor \xi^{n-1}\right)
-    = \frac{1}{\xi} \left(\frac{y_{n-1}}{\xi^{n-1}} - \left\lfloor \frac{y_{n-1}}{\xi^{n-1}} \right\rfloor\right)
-    \le \frac{1}{\xi}\cdot 1
-    = \frac{1}{\xi}
-  \]
-  Thus, the sequence $n\mapsto \frac{y_n}{\xi^n}$ is bounded by $\max\{x=y_0,\xi^{-1}\}$
-  and the same holds, \emph{a fortiori}, for the sequence $n\mapsto \lfloor\frac{y_n}{\xi^n}\rfloor$. 
-\end{proof}
+%\begin{proof}
+%	By definition, for all $n\geq 1$,
+%	\[
+%		\frac{y_n}{\xi^n} = \frac{1}{\xi^n} \left(y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi^{n-1}} \right\rfloor \xi^{n-1}\right)
+%    = \frac{1}{\xi} \left(\frac{y_{n-1}}{\xi^{n-1}} - \left\lfloor \frac{y_{n-1}}{\xi^{n-1}} \right\rfloor\right)
+%    \le \frac{1}{\xi}\cdot 1
+%    = \frac{1}{\xi}
+%  \]
+%  Thus, the sequence $n\mapsto \frac{y_n}{\xi^n}$ is bounded by $\max\{x=y_0,\xi^{-1}\}$
+%  and the same holds, \emph{a fortiori}, for the sequence $n\mapsto \lfloor\frac{y_n}{\xi^n}\rfloor$. 
+%\end{proof}
 
 %\begin{lemma}
 %  \label{theta.limit_y}
@@ -151,8 +180,6 @@ Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$.
 %  The result follows from Lemma~\ref{theta.limit_y}.
 %\end{proof}
 
-The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
-
 \begin{definition}
   \label{theta}
   \lean{theta.ϑ}
@@ -183,13 +210,24 @@ The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
   so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
 
+Given any $\emph{finite}$ set $S$, the above map $\theta_{\xi}$ defines a map $\theta_{\xi,S}\colon \Lm_{r'}(S)\longrightarrow \R[S]$ by extending $\theta_{\xi}$ componentwise; by taking projective limits, this defines a map $\theta_{\xi,S}$ for every profinite $S$, and we have the
+
 \begin{theorem}
   \label{theta.continuous}
   \uses{theta}
   \lean{ses.continuous_θ_c}
   \leanok
-  The map $\theta_{\xi}$ is continuous.
+Let $0<p'<1$ be a real number, let $S$ be a profinite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
+\[
+\theta_{1/2,S}\colon \Lm_{r'}(S)\longrightarrow \Mm_{r'}(S)
+\]
+is continuous and surjective.
 \end{theorem}
+
+%\begin{theorem}
+%
+%  The map $\theta_{\xi}$ is continuous.
+%\end{theorem}
 
 \begin{proof}
   \uses{theta}
