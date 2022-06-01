@@ -124,7 +124,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4109291f19eca6a676cf4ab67e5a794af059770c/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
         </ul>
 
       </div>
@@ -197,7 +197,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4109291f19eca6a676cf4ab67e5a794af059770c/src/laurent_measures/theta.lean#L327">theta.ϑ</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/theta.lean#L327">theta.ϑ</a></li>
         </ul>
 
       </div>
@@ -206,23 +206,65 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  Fix \(0{\lt}\xi {\lt}1\), and let \(\theta _{\xi }\colon \mathbf{Z}((T))_r\rightarrow \mathbf{R}\) be the evaluation map </p>
+  <p>  Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbf{Z}(!(T)!)_r\rightarrow \mathbf{R}\) be the evaluation map </p>
 <div class="displaymath" id="a0000000168">
-  \[  \sum a_nT^n\longmapsto \sum a_n(\xi )T^n.  \]
+  \[  \sum a_nT^n\longmapsto \sum a_n\xi ^n.  \]
 </div>
 
   </div>
 </div> </p>
-<p><div class="theorem_thmwrapper" id="theta.surjective">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
+<p>One of the key results proven in <span class="cite">
+	[
+	<a href="sect0010.html#Analytic" >Sch20</a>
+	, 
+	§
+	6
+	]
+</span> is the surjectivity and continuity of the map \(\vartheta _\xi \). In order to prove the surjectivity, we need the following <div class="definition_thmwrapper" id="theta.y">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
     </span>
-    <span class="theorem_thmlabel">2.3.4</span>
+    <span class="definition_thmlabel">2.3.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0007.html#theta.y">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/theta.lean#L43">theta.y</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  For all \(n\in \mathbf{N}\), set </p>
+<div class="displaymath" id="a0000000169">
+  \[  Y_\xi (x, n)= \begin{cases}  x& \text{ if } n = 0 \\ Y_\xi (x,n-1) - \left\lfloor \frac{Y_\xi (x,n-1)}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
+</div>
+<p> where \(\lfloor \ast \rfloor \) denotes the floor of \(\ast \), namely the greatest integer that is less or equal than \(\ast \). </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="theta.surjective">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.3.5</span>
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0007.html#theta.surjective">#</a>
-    <a class="icon proof" href="sect0007.html#a0000000169"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000170"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -248,7 +290,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4109291f19eca6a676cf4ab67e5a794af059770c/src/laurent_measures/theta.lean#L363">theta.ϑ_surjective</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/theta.lean#L363">theta.ϑ_surjective</a></li>
         </ul>
 
       </div>
@@ -256,12 +298,12 @@
 
   </div>
   </div>
-  <div class="theorem_thmcontent">
-  <p>   The map \(\theta _{\xi }\) is surjective. </p>
+  <div class="lemma_thmcontent">
+  <p>   The map \(\vartheta _{\xi }\) is surjective. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000169">
+<div class="proof_wrapper" id="a0000000170">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -270,25 +312,22 @@
   </div>
   <div class="proof_content">
   <p> Pick \(x\in \mathbf{R}\), and consider the power series </p>
-<div class="displaymath" id="a0000000170">
-  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi ^m}\right\rfloor T^n\in \mathbf{Z}[\! [T]\! ]  \]
+<div class="displaymath" id="a0000000171">
+  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{Y_\xi (x,n)}{\xi ^n}\right\rfloor T^n\in \mathbf{Z}[\! [T]\! ]  \]
 </div>
-<p> where \(\{ y_n(x)\} \) is the sequence defined in Definition&#160;??. By Proposition&#160;??, the series converges on the open unit disks, so it belongs to \(\mathbf{Z}((T))_r\) and it specializes to \(x\) when evaluated at \(T=\xi \). </p>
+<p> where \(\{ Y_\xi (x,n)\} _{n}\) is the sequence defined in Definition&#160;<a href="sect0007.html#theta.y">2.3.4</a>. The fact that \(0{\lt}\xi {\lt}1\) ensures that the series converges on the open unit disk, and it can be proven that \(F(\xi )=x\). </p>
 
   </div>
 </div>
-<p>Given any <em>finite</em> set \(S\), the above map \(\theta _{\xi }\) defines a map \(\theta _{\xi ,S}\colon \mathcal L_{r'}(S)\longrightarrow \mathbf{R}[S]\) by extending \(\theta _{\xi }\) componentwise; by taking projective limits, this defines a map \(\theta _{\xi ,S}\) for every profinite \(S\), and we have the </p>
-<p><div class="theorem_thmwrapper" id="theta.continuous">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
+<p>Given any <em>finite</em> set \(S\), the above map \(\vartheta _{\xi }\) defines a map \(\vartheta _{\xi ,S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)\) by extending \(\vartheta _{\xi }\) componentwise. For the purpose of this project, the special case where \(\xi =1/2\) is enough, and we write \(\theta _S\) to denote \(\vartheta _{\xi ,S}\). </p>
+<p><div class="lemma_thmwrapper" id="theta.continuous">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
     </span>
-    <span class="theorem_thmlabel">2.3.5</span>
-    ✓
+    <span class="lemma_thmlabel">2.3.6</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0007.html#theta.continuous">#</a>
-    <a class="icon proof" href="sect0007.html#a0000000171"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -320,16 +359,54 @@
 
   </div>
   </div>
-  <div class="theorem_thmcontent">
-  <p>   Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The map </p>
+  <div class="lemma_thmcontent">
+  <p>   Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a finite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The map </p>
 <div class="displaymath" id="a0000000172">
-  \[  \theta _{1/2,S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)  \]
+  \[  \theta _{S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)  \]
+</div>
+<p> induced by evaluating \(T\) at \(1/2\) is continuous </p>
+
+  </div>
+</div> </p>
+<p>By taking projective limits, we obtain a map \(\vartheta _{S}\) for every profinite \(S\). </p>
+<p><div class="theorem_thmwrapper" id="theta.prof_surj_and_cont">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">2.3.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0007.html#theta.prof_surj_and_cont">#</a>
+    <a class="icon proof" href="sect0007.html#a0000000173"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0007.html#theta">Definition 2.3.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>  Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The map </p>
+<div class="displaymath" id="a0000000174">
+  \[  \theta _{S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)  \]
 </div>
 <p> induced by evaluating \(T\) at \(1/2\) is continuous and surjective. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000171">
+<div class="proof_wrapper" id="a0000000173">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -337,10 +414,11 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> TO DO </p>
+  <p>The proof of surjectivity for finite \(S\) follows immediately from Lemma&#160;<a href="sect0007.html#theta.surjective">2.3.5</a>, and a general argument shows that the surjectivity is preserved by taking inverse limits. Similarly, the proof of continuity is a direct consequence of Lemma&#160;<a href="sect0007.html#theta.continuous">2.3.6</a>. </p>
 
   </div>
 </div>
+<p> With Theorem&#160;<a href="sect0007.html#theta.prof_surj_and_cont">2.3.7</a> at our disposal, we can move on and analyse the kernel of the map \(\theta _{S}\).  </p>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
