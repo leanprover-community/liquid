@@ -46,19 +46,6 @@ endowed with the projective limit topology, and set
 %\]
 
 Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$. The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
- %\begin{definition}
-%  \label{theta.y}
-%  \lean{theta.y}
-%  \leanok
-%	For all $n\in\N$, set
-%	\[
-%		y_n(x)=y_n=
-%		\begin{cases}
-%			x&\text{ if } n = 0 \\
-%			y_{n-1} - \left\lfloor \frac{y_{n-1}}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
-%		\end{cases}
-%	\]
-%\end{definition}
 
 %\begin{lemma}
 %  \label{theta.finite_sum}
@@ -184,61 +171,77 @@ Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T
   \label{theta}
   \lean{theta.ϑ}
   \leanok
-  Fix $0<\xi <1$, and let $\theta_{\xi}\colon \Z((T))_r\rightarrow \R$ be the evaluation map
+  Fix $0<\xi <1$, and let $\vartheta_{\xi}\colon \Z(!(T)!)_r\rightarrow \R$ be the evaluation map
   \[
-    \sum a_nT^n\longmapsto \sum a_n(\xi)T^n.
+    \sum a_nT^n\longmapsto \sum a_n\xi^n.
   \]
 \end{definition}
 
-\begin{theorem}
+One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the map $\vartheta_\xi$. In order to prove the surjectivity, we need the following
+ \begin{definition}
+  \label{theta.y}
+  \lean{theta.y}
+  \leanok
+	For all $n\in\N$, set
+	\[
+		Y_\xi(x, n)=
+		\begin{cases}
+			x&\text{ if } n = 0 \\
+			Y_\xi(x,n-1) - \left\lfloor \frac{Y_\xi(x,n-1)}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
+		\end{cases}
+	\]
+where $\lfloor \ast \rfloor$ denotes the floor of $\ast$, namely the greatest integer that is less or equal than $\ast$.
+\end{definition}
+
+\begin{lemma}
   \label{theta.surjective}
   \uses{theta}
   \lean{theta.ϑ_surjective}
   \leanok
-  The map $\theta_{\xi}$ is surjective.
-\end{theorem}
+  The map $\vartheta_{\xi}$ is surjective.
+\end{lemma}
 
 \begin{proof}
   \uses{theta}
   \leanok
   Pick $x\in \R$, and consider the power series
   \[
-    F(T)=\sum_{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi^m}\right\rfloor T^n\in\Z[\![T]\!]
+    F(T)=\sum_{n\geq 0}\left\lfloor \frac{Y_\xi(x,n)}{\xi^n}\right\rfloor T^n\in\Z[\![T]\!]
   \]
-  where $\{y_n(x)\}$ is the sequence defined in Definition~\ref{theta.y}.
-  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
-  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
-\end{proof}
-
-Given any \emph{finite} set $S$, the above map $\theta_{\xi}$ defines a map $\theta_{\xi,S}\colon \Lm_{r'}(S)\longrightarrow \R[S]$ by extending $\theta_{\xi}$ componentwise; by taking projective limits, this defines a map $\theta_{\xi,S}$ for every profinite $S$, and we have the
-
-\begin{theorem}
-  \label{theta.continuous}
-  \uses{theta}
-  \lean{ses.continuous_θ_c}
-  \leanok
-Let $0<p'<1$ be a real number, let $S$ be a profinite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
-\[
-\theta_{1/2,S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)
-\]
-induced by evaluating $T$ at $1/2$ is continuous and surjective.
-\end{theorem}
-
-%\begin{theorem}
-%
-%  The map $\theta_{\xi}$ is continuous.
-%\end{theorem}
-
-\begin{proof}
-  \uses{theta}
-  \leanok
-	TO DO
-%  Pick $x\in \R$, and consider the power series
-%  \[
-%    F(T)=\sum_{n\geq 0}\left\lfloor \frac{y_n(x)}{\xi^m}\right\rfloor T^n\in\Z[\![T]\!]
-%  \]
-%  where $\{y_n(x)\}$ is the sequence defined in Definition~\ref{theta.y}.
+  where $\{Y_\xi(x,n)\}_{n}$ is the sequence defined in Definition~\ref{theta.y}. The fact that $0<\xi<1$ ensures that the series converges on the open unit disk, and it can be proven that $F(\xi)=x$.
 %  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
 %  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
-% vim: ts=2 et sw=2 sts=2
+
+Given any \emph{finite} set $S$, the above map $\vartheta_{\xi}$ defines a map $\vartheta_{\xi,S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)$ by extending $\vartheta_{\xi}$ componentwise. For the purpose of this project, the special case where $\xi=1/2$ is enough, and we write $\theta_S$ to denote $\vartheta_{\xi,S}$. 
+
+\begin{lemma}
+	\label{theta.continuous}
+	\uses{theta}
+	\lean{ses.continuous_θ_c}
+Let $0<p'<1$ be a real number, let $S$ be a finite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
+\[
+\theta_{S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)
+\]
+induced by evaluating $T$ at $1/2$ is continuous
+\end{lemma}
+
+By taking projective limits, we obtain a map $\vartheta_{S}$ for every profinite $S$.
+
+\begin{theorem}
+  \label{theta.prof_surj_and_cont}
+  \uses{theta}
+%  \lean{ses.continuous_θ_c}
+%  \leanok
+Let $0<p'<1$ be a real number, let $S$ be a profinite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
+\[
+\theta_{S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)
+\]
+induced by evaluating $T$ at $1/2$ is continuous and surjective.
+\end{theorem}
+\begin{proof}
+%  \uses{theta}
+%  \leanok
+The proof of surjectivity for finite $S$ follows immediately from Lemma~\ref{theta.surjective}, and a general argument shows that the surjectivity is preserved by taking inverse limits. Similarly, the proof of continuity is a direct consequence of Lemma~\ref{theta.continuous}.
+\end{proof}
+With Theorem~\ref{theta.prof_surj_and_cont} at our disposal, we can move on and analyse the kernel of the map $\theta_{S}$.
