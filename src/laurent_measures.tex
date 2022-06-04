@@ -232,8 +232,8 @@ By taking projective limits, we obtain a map $\vartheta_{S}$ for every profinite
 \begin{theorem}
   \label{theta.prof_surj_and_cont}
   \uses{theta}
+  \leanok
 %  \lean{ses.continuous_θ_c}
-%  \leanok
 Let $0<p'<1$ be a real number, let $S$ be a profinite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
 \[
 \theta_{S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)
@@ -242,7 +242,7 @@ induced by evaluating $T$ at $1/2$ is continuous and surjective.
 \end{theorem}
 \begin{proof}
 %  \uses{theta}
-%  \leanok
+  \leanok
 The proof of surjectivity for finite $S$ follows immediately from Lemma~\ref{theta.surjective}, and a general argument shows that the surjectivity is preserved by taking inverse limits. Similarly, the proof of continuity is a direct consequence of Lemma~\ref{theta.continuous}.
 \end{proof}
 With Theorem~\ref{theta.prof_surj_and_cont} at our disposal, we can move on and analyse the kernel of the map $\theta_{S}$.
