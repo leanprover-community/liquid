@@ -124,7 +124,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/769a22eb144f6816353eef24b10ef8c517bcd5dd/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
         </ul>
 
       </div>
@@ -151,24 +151,39 @@
 <div class="displaymath" id="a0000000164">
   \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
 </div>
-<p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). <div class="definition_thmwrapper" id="a0000000165">
+<p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). <div class="definition_thmwrapper" id="laurent-measures">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
     <span class="definition_thmlabel">2.3.2</span>
+    ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0007.html#a0000000165">#</a>
+    <a class="icon proof" href="sect0007.html#laurent-measures">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/769a22eb144f6816353eef24b10ef8c517bcd5dd/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
+        </ul>
+
+      </div>
+    </div>
 
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set with a presentation \(S=\varprojlim S_i\), where all \(S_i\) are finite. For all \(c{\gt}0\), let \(\mathcal L_{r'}(S)_{\leq c}\) denote the projective limit </p>
-<div class="displaymath" id="a0000000166">
+  <p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set with a presentation \(S=\varprojlim S_i\), where all \(S_i\) are finite. For all \(c{\gt}0\), let \(\mathcal L_{r'}(S)_{\leq c}\) denote the projective limit </p>
+<div class="displaymath" id="a0000000165">
   \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim \mathcal L_{r'}(S_i)_{\leq c},  \]
 </div>
 <p> endowed with the projective limit topology, and set </p>
-<div class="displaymath" id="a0000000167">
+<div class="displaymath" id="a0000000166">
   \[  \mathcal L_{r'}(S)=\varinjlim _{c {\gt} 0}\mathcal L_{r'}(S)_{\leq c}  \]
 </div>
 
@@ -197,7 +212,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/theta.lean#L327">theta.ϑ</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/769a22eb144f6816353eef24b10ef8c517bcd5dd/src/laurent_measures/theta.lean#L327">theta.ϑ</a></li>
         </ul>
 
       </div>
@@ -207,7 +222,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>  Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbf{Z}(!(T)!)_r\rightarrow \mathbf{R}\) be the evaluation map </p>
-<div class="displaymath" id="a0000000168">
+<div class="displaymath" id="a0000000167">
   \[  \sum a_nT^n\longmapsto \sum a_n\xi ^n.  \]
 </div>
 
@@ -238,7 +253,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/theta.lean#L43">theta.y</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/769a22eb144f6816353eef24b10ef8c517bcd5dd/src/laurent_measures/theta.lean#L43">theta.y</a></li>
         </ul>
 
       </div>
@@ -248,7 +263,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>  For all \(n\in \mathbf{N}\), set </p>
-<div class="displaymath" id="a0000000169">
+<div class="displaymath" id="a0000000168">
   \[  Y_\xi (x, n)= \begin{cases}  x& \text{ if } n = 0 \\ Y_\xi (x,n-1) - \left\lfloor \frac{Y_\xi (x,n-1)}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
 </div>
 <p> where \(\lfloor \ast \rfloor \) denotes the floor of \(\ast \), namely the greatest integer that is less or equal than \(\ast \). </p>
@@ -264,7 +279,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0007.html#theta.surjective">#</a>
-    <a class="icon proof" href="sect0007.html#a0000000170"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000169"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -290,7 +305,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/4ad27fbb90e10cf79c4f3d6ba031a96e930403e9/src/laurent_measures/theta.lean#L363">theta.ϑ_surjective</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/769a22eb144f6816353eef24b10ef8c517bcd5dd/src/laurent_measures/theta.lean#L363">theta.ϑ_surjective</a></li>
         </ul>
 
       </div>
@@ -303,7 +318,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000170">
+<div class="proof_wrapper" id="a0000000169">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -312,7 +327,7 @@
   </div>
   <div class="proof_content">
   <p> Pick \(x\in \mathbf{R}\), and consider the power series </p>
-<div class="displaymath" id="a0000000171">
+<div class="displaymath" id="a0000000170">
   \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{Y_\xi (x,n)}{\xi ^n}\right\rfloor T^n\in \mathbf{Z}[\! [T]\! ]  \]
 </div>
 <p> where \(\{ Y_\xi (x,n)\} _{n}\) is the sequence defined in Definition&#160;<a href="sect0007.html#theta.y">2.3.4</a>. The fact that \(0{\lt}\xi {\lt}1\) ensures that the series converges on the open unit disk, and it can be proven that \(F(\xi )=x\). </p>
@@ -326,6 +341,7 @@
     Lemma
     </span>
     <span class="lemma_thmlabel">2.3.6</span>
+    ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0007.html#theta.continuous">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -361,7 +377,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a finite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The map </p>
-<div class="displaymath" id="a0000000172">
+<div class="displaymath" id="a0000000171">
   \[  \theta _{S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)  \]
 </div>
 <p> induced by evaluating \(T\) at \(1/2\) is continuous </p>
@@ -375,9 +391,10 @@
     Theorem
     </span>
     <span class="theorem_thmlabel">2.3.7</span>
+    ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0007.html#theta.prof_surj_and_cont">#</a>
-    <a class="icon proof" href="sect0007.html#a0000000173"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000172"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -399,14 +416,14 @@
   </div>
   <div class="theorem_thmcontent">
   <p>  Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The map </p>
-<div class="displaymath" id="a0000000174">
+<div class="displaymath" id="a0000000173">
   \[  \theta _{S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)  \]
 </div>
 <p> induced by evaluating \(T\) at \(1/2\) is continuous and surjective. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000173">
+<div class="proof_wrapper" id="a0000000172">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
