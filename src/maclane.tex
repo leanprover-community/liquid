@@ -50,6 +50,8 @@ We note that by functoriality of the $Q'$-construction, it can also be applied t
 
 \begin{corollary}
   \label{Qprime-Cond}
+  \lean{Condensed.exists_tensor_iso}
+  \leanok
   \uses{BD_eg, homology-Qprime}
   For torsion-free condensed abelian groups $A$, there is a natural isomorphism
   \[ H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A \]
@@ -61,6 +63,7 @@ Here, we only need to be able to tensor condensed abelian groups with (abstract)
 In that case, the tensor product functor can be defined very naively by tensoring the values at any $S$ with the given abstract abelian group.
 
 \begin{proof}
+  \leanok
   Evaluating at $S\in \mathrm{ExtrDisc}$, we note that $S\mapsto H_i(Q'(A(S)))$ is already a condensed abelian group,
   and agrees with $H_i(Q'(\mathbb Z))\otimes A(S)$. Thus, the same is true after sheafification.
 \end{proof}
@@ -88,6 +91,7 @@ At this point, we need to be able to talk about $\mathrm{Ext}$-groups of (bounde
 The statement is also true without the torsion-freeness assumption on $M$, but slightly more nasty to prove then (and not required for the application).
 
 \begin{proof}
+  \leanok
   \uses{homology-Qprime, Qprime-Cond}
   We induct on $j$.
   Consider first the case $j=0$; then any map $Q'(M)\to N$ factors uniquely over $H_0 Q'(M)[0]=M[0]$, yielding the result.
