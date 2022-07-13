@@ -227,6 +227,8 @@
 
 \begin{lemma}
   \label{Ext-Lbar-aux}
+  \lean{QprimeFP.short_exact, Lbar.useful_commsq_bicartesian}
+  \leanok
   \uses{Lbar, normed_with_aut, BD_eg}
   Assume that in each degree $i$, the map
   \[ (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V) \]
@@ -237,6 +239,7 @@
 
 \begin{proof}
   \uses{first_target}
+  \leanok
   We have
   \[ Q'(\overline{\mathcal M}_{r'}(S)) = \bigcup_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}, \]
   inducing a resolution
