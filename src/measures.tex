@@ -207,18 +207,18 @@ One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and c
 \end{definition}
 
 In order to prove the surjectivity, we use the following construction.
- \begin{definition}
+\begin{definition}
   \label{theta.y}
   \lean{theta.y}
   \leanok
-	For all $x \in \R$ and $n\in\N$, set
-	\[
-		Y_\xi(x, n)=
-		\begin{cases}
-			x&\text{ if } n = 0 \\
-			Y_\xi(x,n-1) - \left\lfloor \frac{Y_\xi(x,n-1)}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
-		\end{cases}
-	\]
+  For all $x \in \R$ and $n\in\N$, set
+  \[
+    Y_\xi(x, n)=
+    \begin{cases}
+      x&\text{ if } n = 0 \\
+      Y_\xi(x,n-1) - \left\lfloor \frac{Y_\xi(x,n-1)}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
+    \end{cases}
+  \]
 where $\lfloor \ast \rfloor$ denotes the floor of $\ast$, namely the greatest integer that is less or equal than $\ast$.
 \end{definition}
 
@@ -246,10 +246,10 @@ Given any \emph{finite} set $S$, the above map $\vartheta_{\xi}$ defines a map $
 For the purpose of this project, the special case where $\xi=1/2$ is enough, and we write $\theta_S$ to denote $\vartheta_{\xi,S}$. 
 
 \begin{lemma}
-	\label{theta.continuous}
-	\uses{theta}
-	\lean{ses.continuous_θ_c}
-	\leanok
+  \label{theta.continuous}
+  \uses{theta}
+  \lean{ses.continuous_θ_c}
+  \leanok
 Let $0<p'<1$ be a real number, let $S$ be a finite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
 \[
 \theta_{S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)
