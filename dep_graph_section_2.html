@@ -981,13 +981,13 @@
 
 
     
-    <div class="dep-modal-container" id="theta.continuous_modal">
+    <div class="dep-modal-container" id="theta-continuous_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
 <svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
 </button>
         
-  <div class="thm" id="theta.continuous" style="display: none">
+  <div class="thm" id="theta-continuous" style="display: none">
     <div class="thm_thmheading">
       <span class="lemma_thmcaption">
       Lemma
@@ -1000,7 +1000,7 @@
 <p> induced by evaluating \(T\) at \(1/2\) is continuous </p>
 </div>
 
-    <a class="latex_link" href="sect0005.html#theta.continuous">LaTeX</a>
+    <a class="latex_link" href="sect0005.html#theta-continuous">LaTeX</a>
   </div>
     
       </div>
@@ -1008,13 +1008,13 @@
 
 
     
-    <div class="dep-modal-container" id="theta.surjective_modal">
+    <div class="dep-modal-container" id="theta-surjective_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
 <svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
 </button>
         
-  <div class="thm" id="theta.surjective" style="display: none">
+  <div class="thm" id="theta-surjective" style="display: none">
     <div class="thm_thmheading">
       <span class="lemma_thmcaption">
       Lemma
@@ -1023,7 +1023,7 @@
     <div class="thm_thmcontent"><p>   The map \(\vartheta _{\xi }\) is surjective. </p>
 </div>
 
-    <a class="latex_link" href="sect0005.html#theta.surjective">LaTeX</a>
+    <a class="latex_link" href="sect0005.html#theta-surjective">LaTeX</a>
   <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/theta.lean#L363">Lean</a></div>
     
       </div>
@@ -1031,13 +1031,13 @@
 
 
     
-    <div class="dep-modal-container" id="theta.y_modal">
+    <div class="dep-modal-container" id="theta-y_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
 <svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
 </button>
         
-  <div class="thm" id="theta.y" style="display: none">
+  <div class="thm" id="theta-y" style="display: none">
     <div class="thm_thmheading">
       <span class="definition_thmcaption">
       Definition
@@ -1050,8 +1050,8 @@
 <p> where \(\lfloor \ast \rfloor \) denotes the floor of \(\ast \), namely the greatest integer that is less or equal than \(\ast \). </p>
 </div>
 
-    <a class="latex_link" href="sect0005.html#theta.y">LaTeX</a>
-  <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/theta.lean#L43">Lean</a></div>
+    <a class="latex_link" href="sect0005.html#theta-y">LaTeX</a>
+  </div>
     
       </div>
     </div>
@@ -1074,7 +1074,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"exact-with-constant"	[color=green,		fillcolor="#b0eca3",		label="exact-with-constant",		shape=box,		style=filled];	"exact-with-constants-lim"	[color=green,		fillcolor="#9cec8b",		label="exact-with-constants-lim",		shape=ellipse,		style=filled];	"exact-with-constant" -> "exact-with-constants-lim"	[style=dashed];	"CHPNG-Cond-exact"	[color=green,		fillcolor="#9cec8b",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"exact-with-constant" -> "CHPNG-Cond-exact"	[style=dashed];	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	"theta.y"	[color=green,		fillcolor="#b0eca3",		label="theta.y",		shape=box,		style=filled];	"theta.surjective"	[color=green,		fillcolor="#9cec8b",		label="theta.surjective",		shape=ellipse,		style=filled];	"theta.y" -> "theta.surjective";	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	theta -> "theta.surjective"	[style=dashed];	"theta.continuous"	[color=green,		fillcolor="#9cec8b",		label="theta.continuous",		shape=ellipse,		style=filled];	theta -> "theta.continuous"	[style=dashed];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"normed-to-cond"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"free-png"	[color=green,		fillcolor="#9cec8b",		label="free-png",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"normed-to-cond-acyclic"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond-acyclic",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "normed-to-cond-acyclic"	[style=dashed];	"p-banach-r-normed"	[color=green,		fillcolor="#9cec8b",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	"main-thm"	[color=green,		fillcolor="#9cec8b",		label="main-thm",		shape=ellipse,		style=filled];	"p-banach-r-normed" -> "main-thm";	"M-ses"	[color=green,		fillcolor="#9cec8b",		label="M-ses",		shape=ellipse,		style=filled];	"M-ses" -> "main-thm";	"png-cats"	[color=green,		fillcolor="#b0eca3",		label="png-cats",		shape=box,		style=filled];	"png-cats" -> "exact-with-constant"	[style=dashed];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"bounded-limits"	[color=green,		fillcolor="#9cec8b",		label="bounded-limits",		shape=ellipse,		style=filled];	"png-cats" -> "bounded-limits"	[style=dashed];	"laurent-measures-fin"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures-fin",		shape=box,		style=filled];	"laurent-measures"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures",		shape=box,		style=filled];	"laurent-measures-fin" -> "laurent-measures"	[style=dashed];	"homology-Qprime"	[color=green,		fillcolor="#9cec8b",		label="homology-Qprime",		shape=ellipse,		style=filled];	"Qprime-prop"	[color=green,		fillcolor="#9cec8b",		label="Qprime-prop",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-prop";	"Qprime-Cond"	[color=green,		fillcolor="#9cec8b",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-Cond"	[style=dashed];	"exact-with-constants-lim" -> "M-ses";	"normed-to-cond" -> "normed-to-cond-acyclic";	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"p-banach" -> "main-thm"	[style=dashed];	"laurent-measures" -> theta	[style=dashed];	"laurent-measures" -> "M-ses"	[style=dashed];	"Ext-L"	[color=green,		fillcolor="#9cec8b",		label="Ext-L",		shape=ellipse,		style=filled];	"laurent-measures" -> "Ext-L"	[style=dashed];	"Lbar-ses"	[color=green,		fillcolor="#9cec8b",		label="Lbar-ses",		shape=ellipse,		style=filled];	"laurent-measures" -> "Lbar-ses"	[style=dashed];	"Ext-L" -> "main-thm";	"Ext-Lbar"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar",		shape=ellipse,		style=filled];	"Qprime-prop" -> "Ext-Lbar";	chpng -> "chpng-hom"	[style=dashed];	"real-measures"	[color=green,		fillcolor="#b0eca3",		label="real-measures",		shape=box,		style=filled];	"real-measures" -> "M-ses"	[style=dashed];	"real-measures" -> "main-thm"	[style=dashed];	"theta.surjective" -> "M-ses";	"free-png" -> "Lbar-ses";	"bounded-limits" -> "exact-with-constants-lim"	[style=dashed];	"Lbar-ses" -> "Ext-L";	"chpng-Tinv" -> "png-cats"	[style=dashed];	"theta.continuous" -> "M-ses";	"CHPNG-Cond-exact" -> "M-ses";	"acyclic-sheaf"	[color=green,		fillcolor="#9cec8b",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "normed-to-cond-acyclic";	"normed-to-cond-acyclic" -> "Ext-L";	"normed-to-cond-acyclic" -> "Ext-Lbar";	"Ext-Lbar" -> "Ext-L";	"Ext-Lbar-aux"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	"Ext-Lbar-aux" -> "Ext-Lbar";	"Qprime-Cond" -> "Qprime-prop";	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	normed_with_aut -> "Ext-L"	[style=dashed];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";}')
+    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"real-measures"	[color=green,		fillcolor="#b0eca3",		label="real-measures",		shape=box,		style=filled];	"main-thm"	[color=green,		fillcolor="#9cec8b",		label="main-thm",		shape=ellipse,		style=filled];	"real-measures" -> "main-thm"	[style=dashed];	"M-ses"	[color=green,		fillcolor="#9cec8b",		label="M-ses",		shape=ellipse,		style=filled];	"real-measures" -> "M-ses"	[style=dashed];	"theta-surjective"	[color=green,		fillcolor="#9cec8b",		label="theta-surjective",		shape=ellipse,		style=filled];	"theta-surjective" -> "M-ses";	"free-png"	[color=green,		fillcolor="#9cec8b",		label="free-png",		shape=ellipse,		style=filled];	"Lbar-ses"	[color=green,		fillcolor="#9cec8b",		label="Lbar-ses",		shape=ellipse,		style=filled];	"free-png" -> "Lbar-ses";	"bounded-limits"	[color=green,		fillcolor="#9cec8b",		label="bounded-limits",		shape=ellipse,		style=filled];	"exact-with-constants-lim"	[color=green,		fillcolor="#9cec8b",		label="exact-with-constants-lim",		shape=ellipse,		style=filled];	"bounded-limits" -> "exact-with-constants-lim"	[style=dashed];	"Ext-L"	[color=green,		fillcolor="#9cec8b",		label="Ext-L",		shape=ellipse,		style=filled];	"Lbar-ses" -> "Ext-L";	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"png-cats"	[color=green,		fillcolor="#b0eca3",		label="png-cats",		shape=box,		style=filled];	"chpng-Tinv" -> "png-cats"	[style=dashed];	"theta-continuous"	[color=green,		fillcolor="#9cec8b",		label="theta-continuous",		shape=ellipse,		style=filled];	"theta-continuous" -> "M-ses";	"CHPNG-Cond-exact"	[color=green,		fillcolor="#9cec8b",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"CHPNG-Cond-exact" -> "M-ses";	"acyclic-sheaf"	[color=green,		fillcolor="#9cec8b",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"normed-to-cond-acyclic"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond-acyclic",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "normed-to-cond-acyclic";	"Ext-Lbar"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar",		shape=ellipse,		style=filled];	"normed-to-cond-acyclic" -> "Ext-Lbar";	"normed-to-cond-acyclic" -> "Ext-L";	"Ext-Lbar" -> "Ext-L";	"Ext-Lbar-aux"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	"Ext-Lbar-aux" -> "Ext-Lbar";	"Qprime-Cond"	[color=green,		fillcolor="#9cec8b",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"Qprime-prop"	[color=green,		fillcolor="#9cec8b",		label="Qprime-prop",		shape=ellipse,		style=filled];	"Qprime-Cond" -> "Qprime-prop";	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];	"p-banach-r-normed"	[color=green,		fillcolor="#9cec8b",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	normed_with_aut -> "Ext-L"	[style=dashed];	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";	"exact-with-constant"	[color=green,		fillcolor="#b0eca3",		label="exact-with-constant",		shape=box,		style=filled];	"exact-with-constant" -> "CHPNG-Cond-exact"	[style=dashed];	"exact-with-constant" -> "exact-with-constants-lim"	[style=dashed];	"theta-y"	[color=green,		fillcolor="#b0eca3",		label="theta-y",		shape=box,		style=filled];	"theta-y" -> "theta-surjective";	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	theta -> "theta-surjective"	[style=dashed];	theta -> "theta-continuous"	[style=dashed];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond-acyclic"	[style=dashed];	"normed-to-cond"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"p-banach-r-normed" -> "main-thm";	"M-ses" -> "main-thm";	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	"png-cats" -> "bounded-limits"	[style=dashed];	"png-cats" -> "exact-with-constant"	[style=dashed];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"laurent-measures-fin"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures-fin",		shape=box,		style=filled];	"laurent-measures"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures",		shape=box,		style=filled];	"laurent-measures-fin" -> "laurent-measures"	[style=dashed];	"homology-Qprime"	[color=green,		fillcolor="#9cec8b",		label="homology-Qprime",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-Cond"	[style=dashed];	"homology-Qprime" -> "Qprime-prop";	"exact-with-constants-lim" -> "M-ses";	"normed-to-cond" -> "normed-to-cond-acyclic";	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach" -> "main-thm"	[style=dashed];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"laurent-measures" -> "Lbar-ses"	[style=dashed];	"laurent-measures" -> theta	[style=dashed];	"laurent-measures" -> "M-ses"	[style=dashed];	"laurent-measures" -> "Ext-L"	[style=dashed];	"Ext-L" -> "main-thm";	"Qprime-prop" -> "Ext-Lbar";	chpng -> "chpng-hom"	[style=dashed];}')
     .on("end", interactive);
 
 clickNode = function() {
