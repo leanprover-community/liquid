@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blueprint for the Liquid Tensor Experiment: Key technical result</title>
-<link rel="next" href="cha-two.html" title="Second part" />
-<link rel="prev" href="sec-polyhedral_lattice.html" title="Polyhedral lattices" />
-<link rel="up" href="cha-one.html" title="First part" />
+<title>Blueprint for the Liquid Tensor Experiment: Spaces of Measures</title>
+<link rel="next" href="sect0006.html" title="The MacLane Q'-construction" />
+<link rel="prev" href="sec-normed_groups2.html" title="Variants of normed groups" />
+<link rel="up" href="cha-two.html" title="Second part" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 </head>
@@ -31,21 +31,11 @@
 <ul class="sub-toc-0">
 <li class="">
   <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Introduction</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
-     <li class="">
-  <a href="on-lean.html"><span class="toc_ref"></span> <span class="toc_entry">On the statement of the main goal</span></a>
  </li>
 <li class="">
-  <a href="sect0002.html"><span class="toc_ref"></span> <span class="toc_entry">On the Lean theorem prover and computer verification of proofs</span></a>
- </li>
-
-  </ul>
- </li>
-<li class=" active">
   <a href="cha-one.html"><span class="toc_ref">1</span> <span class="toc_entry">First part</span></a>
-  <span class="expand-toc">▼</span>
-  <ul class="sub-toc-1 active">
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
      <li class="">
   <a href="BD_orig.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Breen–Deligne data</span></a>
  </li>
@@ -53,47 +43,44 @@
   <a href="sec-normed_groups.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Variants of normed groups</span></a>
  </li>
 <li class="">
-  <a href="sect0003.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+  <a href="sect0002.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
  </li>
 <li class="">
   <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Some normed homological algebra</span></a>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+  <a href="sect0003.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
  </li>
 <li class="">
   <a href="sec-polyhedral_lattice.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Polyhedral lattices</span></a>
  </li>
-<li class=" active current">
-  <a href="sect0005.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
  </li>
 
   </ul>
  </li>
-<li class="">
+<li class=" active">
   <a href="cha-two.html"><span class="toc_ref">2</span> <span class="toc_entry">Second part</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="sec-normed_groups2.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Variants of normed groups</span></a>
  </li>
-<li class="">
-  <a href="sect0006.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Real Measures</span></a>
+<li class=" active current">
+  <a href="sect0005.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Spaces of Measures</span></a>
  </li>
 <li class="">
-  <a href="sect0007.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Laurent Measures</span></a>
+  <a href="sect0006.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
  </li>
 <li class="">
-  <a href="sect0008.html"><span class="toc_ref">2.4</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
- </li>
-<li class="">
-  <a href="sect0009.html"><span class="toc_ref">2.5</span> <span class="toc_entry">Condensed abelian groups</span></a>
+  <a href="sect0007.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Condensed abelian groups</span></a>
  </li>
 
   </ul>
  </li>
 <li class="">
-  <a href="sect0010.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0008.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
  </li>
 <li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
 <li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
@@ -105,160 +92,16 @@
 
 
 <div class="main-text">
-<h2 id="a0000000006">1.7 Key technical result</h2>
-<p>Now we state the following result, which is the key technical result on our to the main goal. </p>
-<p><div class="theorem_thmwrapper" id="first_target">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
-    </span>
-    <span class="theorem_thmlabel">1.7.1</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#first_target">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000116"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0004.html#BD_system">Definition 1.5.11</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/liquid.lean#L101">thm94</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="theorem_thmcontent">
-  <p>   Let \(\mathsf{BD}= (n,f,h)\) be a Breen–Deligne package, and let \(\kappa = (\kappa _0, \kappa _1, \kappa _2, \dots )\) be a sequence of constants in \(\mathbb R_{\ge 0}\) that is \(\mathsf{BD}\)-suitable. Fix radii \(1{\gt}r'{\gt}r{\gt}0\). For any \(m\) there is some \(k\) and \(c_0\) such that for all profinite sets \(S\) and all \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-modules \(V\), the system of complexes </p>
-<div class="displaymath" id="a0000000117">
-  \[  C^{\mathsf{BD}}_{\kappa }(\overline{\mathcal L}_{r'}(S))_c^\bullet \colon \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq c})^{T^{-1}} \to \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq \kappa _1c}^2)^{T^{-1}} \to \ldots  \]
-</div>
-<p> is \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\). </p>
-
-  </div>
-</div> </p>
-<p>We will prove Theorem&#160;<a href="sect0005.html#first_target">1.7.1</a> by induction on \(m\). Unfortunately, the induction requires us to prove a stronger statement. </p>
-<p><div class="theorem_thmwrapper" id="explicit">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
-    </span>
-    <span class="theorem_thmlabel">1.7.2</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#explicit">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#Hom">Definition 1.6.12</a></li>
-          <li><a href="sect0004.html#BD_system">Definition 1.5.11</a></li>
-          <li><a href="sect0003.html#Lbar_with_Tinv">Lemma 1.3.4</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/default.lean#L204">thm95''.profinite</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="theorem_thmcontent">
-  <p>   Fix radii \(1{\gt}r'{\gt}r{\gt}0\). For any \(m\) there is some \(k\) such that for all polyhedral lattices \(\Lambda \) there is a constant \(c_0(\Lambda ){\gt}0\) such that for all profinite sets \(S\) and all \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-modules \(V\), the system of complexes </p>
-<div class="displaymath" id="a0000000119">
-  \[  C_{\Lambda ,c}^\bullet \colon \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq \kappa _1c}^2)^{T^{-1}} \to \ldots  \]
-</div>
-<p> is \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0(\Lambda )\). </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000116">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof of Theorem&#160;<a href="sect0005.html#first_target">1.7.1</a>
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>   Use \(\Lambda = \mathbb Z\), and the isomorphism \(\operatorname{Hom}(\mathbb Z, A) \cong A\). </p>
-
-  </div>
-</div>
-<p><b class="bfseries">A word on universal constants</b>: We fix once and for all, the constants \(0 {\lt} r {\lt} r' \le 1\) a Breen–Deligne package \(\mathsf{BD}\), and a sequence of positive constants \(\kappa \) that is very suitable for \((\mathsf{BD}, r, r')\). Once the full proof is formalized, we can come back to this place and write a bit more about the other constants. </p>
-<p><b class="bfseries">The global strategy</b> of the proof is to construct a system of double complexes such that its first row is the system \(C_{\Lambda , \bullet }^\bullet \) occuring in Theorem&#160;<a href="sect0005.html#explicit">1.7.2</a>. We can then verify the conditions to Proposition&#160;<a href="sec-some_normed_homological_algebra.html#spectral">1.4.15</a> and conclude from there. For the time being, we will let \(M\) denote an arbitrary profinitely filtered pseudo-normed group with action of \(T^{-1}\), and whenever needed we can specialize to \(M = \overline{\mathcal L}_{r'}(S)\). </p>
-<p><b class="bfseries">Further choices of constants</b>: We will argue by induction on \(m\), so assume the result for \(m-1\) (this is no assumption for \(m=0\), so we do not need an induction start). This gives us some \(k{\gt}1\) for which the statement of Theorem&#160;<a href="sect0005.html#explicit">1.7.2</a> holds true for \(m-1\); if \(m=0\), simply take any \(k{\gt}1\). In the proof below, we will increase \(k\) further in a way that depends only on \(m\) and \(r\). After this modified choice of \(k\), we fix \(\epsilon \) and \(k_0\) as provided by Proposition&#160;<a href="sec-some_normed_homological_algebra.html#spectral">1.4.15</a>. Fix a sequence \((\kappa '_i)_i\) of nonnegative reals that is adept to \((\mathsf{BD}, \kappa )\). (Such a sequence exists by Lemma&#160;<a href="BD_orig.html#exists_adept">1.1.20</a>.) Moreover, we let \(k'\) be the supremum of \(k_0\) and the \(c_i'\) for \(i=0,\ldots ,m+1\). Finally, choose a positive integer \(b\) so that \(2k'(\tfrac r{r’})^b\leq \epsilon \), and let \(N\) be the minimal power of \(2\) that satisfies </p>
-<div class="displaymath" id="a0000000120">
-  \[  k'/N\leq (r')^b.  \]
-</div>
-<p> Then in particular \(r^bN\leq 2k'(\tfrac {r}{r’})^b\leq \epsilon \). </p>
-<p><div class="definition_thmwrapper" id="double_complex">
+<h2 id="a0000000006">2.2 Spaces of Measures</h2>
+<p><div class="definition_thmwrapper" id="real-measures">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.7.3</span>
+    <span class="definition_thmlabel">2.2.1</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#double_complex">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#Hom">Definition 1.6.12</a></li>
-          <li><a href="sec-polyhedral_lattice.html#cosimplicial-lattice">Definition 1.6.11</a></li>
-          <li><a href="sect0004.html#BD_system">Definition 1.5.11</a></li>
-        </ul>
-
-      </div>
-    </div>
+    <a class="icon proof" href="sect0005.html#real-measures">#</a>
     <button class="modal lean">L∃∀N</button>
     <div class="modal-container">
       <div class="modal-content">
@@ -268,7 +111,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/double_complex.lean#L116">thm95.double_complex</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/real_measures/basic.lean#L28">real_measures</a></li>
         </ul>
 
       </div>
@@ -277,31 +120,79 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let \(\Lambda ^{(\bullet )}\) be the cosimplicial polyhedral lattice of Definition&#160;<a href="sec-polyhedral_lattice.html#cosimplicial-lattice">1.6.11</a>, and recall from <a href="sec-polyhedral_lattice.html#Hom">1.6.12</a> that \(\operatorname{Hom}(\Lambda ^{(m)}, M)\) is a profinitely filtered pseudo-normed group with action of \(T^{-1}\). </p>
-<p>Hence \(\operatorname{Hom}(\Lambda ^{(\bullet )}, M)\) is a simplicial profinitely filtered pseudo-normed group with action of \(T^{-1}\). </p>
-<p>Now apply the construction of the system of complexes from Definition&#160;<a href="sect0004.html#BD_system">1.5.11</a> to obtain a cosimplicial system of complexes </p>
-<div class="displaymath" id="a0000000121">
-  \[  C^{\mathsf{BD}}_{\kappa }(\operatorname{Hom}(\Lambda ^{(\bullet )}, M))_\bullet ^\bullet .  \]
+  <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal M_{p'}(S)\) denotes the real vector space </p>
+<div class="displaymath" id="a0000000155">
+  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s} \text{ such that } a_{s}\in \mathbf{R}\right\}   \]
 </div>
-<p> Now take the alternating face map cochain complex to obtain a system of double complexes, whose objects are </p>
-<div class="displaymath" id="a0000000122">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ^{(m)},M)_{\leq \kappa _ic}^{n_i})^{T^{-1}}.  \]
+<p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). </p>
+<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the filtered colimit </p>
+<div class="displaymath" id="a0000000156">
+  \[  \mathcal M_{p'}(S) = \varinjlim _{c{\gt}0}\mathcal M_{p'}(S)_{\leq c}  \]
 </div>
-<p> As final step, rescale the norm on the object in row \(m\) by \(m!\), so that all columns become admissible: the vertical differential from row \(m\) to row \(m+1\) is an alternating sum of \(m+1\) maps that are all norm-nonincreasing. </p>
+<p> where \(\mathcal M_{p'}(S)_{\leq c} = \left\{ F \in \mathcal M_{p'}(S) \text{ such that } \Vert F \Vert _{\ell ^{p'}}\leq c\right\} \). Now, given a profinite set \(S=\varprojlim S_i\), where all \(S_i\)’s are finite groups, and a positive real number \(c{\gt}0\), define \(\mathcal M_{p'}(S)_{\leq c}\) as </p>
+<div class="displaymath" id="a0000000157">
+  \[  \mathcal M_{p'}(S)_{\leq c}=\varprojlim \mathcal M_{p'}(S_i)_{\leq c}  \]
+</div>
+<p> endowed with the projective limit topology. Finally, set \(\mathcal M_{p'}(S)=\varinjlim _{c}\mathcal M_{p'}(S)_{\leq c}\). </p>
 
   </div>
 </div> </p>
-<p><div class="lemma_thmwrapper" id="canonical_iso_1">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<p><div class="definition_thmwrapper" id="laurent-measures-fin">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
     </span>
-    <span class="lemma_thmlabel">1.7.4</span>
+    <span class="definition_thmlabel">2.2.2</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#canonical_iso_1">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000123"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
+    <a class="icon proof" href="sect0005.html#laurent-measures-fin">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal L_{r'}(S)\) denotes the group </p>
+<div class="displaymath" id="a0000000158">
+  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
+</div>
+
+  </div>
+</div> </p>
+<p>The group \(\mathcal L_{r'}(S)\) is filtered by the subsets </p>
+<div class="displaymath" id="a0000000159">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
+</div>
+<p> for \(c{\gt} 0\). Each subset \(\mathcal L_{r'}(S)_{\leq c}\) can be written as </p>
+<div class="displaymath" id="a0000000160">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim _{A}\mathcal L_{r'}(S)_{A,\leq c}  \]
+</div>
+<p> where \(A\) runs through the finite subsets of \(\mathbf{Z}\) and \(\mathcal L_{r'}(S)_{A,\leq c}\) is the finite set </p>
+<div class="displaymath" id="a0000000161">
+  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
+</div>
+<p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). </p>
+<p><div class="definition_thmwrapper" id="laurent-measures">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#laurent-measures">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -312,7 +203,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0005.html#double_complex">Definition 1.7.3</a></li>
+          <li><a href="sect0005.html#laurent-measures-fin">Definition 2.2.2</a></li>
         </ul>
 
       </div>
@@ -326,7 +217,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/polyhedral_iso.lean#L211">PolyhedralLattice.Hom_cosimplicial_zero_iso</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
         </ul>
 
       </div>
@@ -334,267 +225,35 @@
 
   </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p>   In particular, for any \(c{\gt}0\), we have </p>
-<div class="displaymath" id="a0000000124">
-  \[  \operatorname{Hom}(\Lambda ',M)_{\leq c} = \operatorname{Hom}(\Lambda ,M)_{\leq c/N}^N,  \]
+  <div class="definition_thmcontent">
+  <p>   Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set with a presentation \(S=\varprojlim S_i\), where all \(S_i\) are finite. For all \(c{\gt}0\), let \(\mathcal L_{r'}(S)_{\leq c}\) denote the projective limit </p>
+<div class="displaymath" id="a0000000162">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim \mathcal L_{r'}(S_i)_{\leq c},  \]
 </div>
-<p> with the map to \(\operatorname{Hom}(\Lambda ,M)_{\leq c}\) given by the sum map. </p>
+<p> endowed with the projective limit topology, and set </p>
+<div class="displaymath" id="a0000000163">
+  \[  \mathcal L_{r'}(S)=\varinjlim _{c {\gt} 0}\mathcal L_{r'}(S)_{\leq c}.  \]
+</div>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000123">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>Omitted (but done in Lean). </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="canonical_iso_2">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">1.7.5</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#canonical_iso_2">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0005.html#double_complex">Definition 1.7.3</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/col_exact.lean#L481">thm95.Cech_nerve_level_iso</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  Similarly, for any \(c{\gt}0\), we have </p>
-<div class="displaymath" id="a0000000126">
-  \[  \operatorname{Hom}(\Lambda '^{(m)},M)_{\leq c} = \operatorname{Hom}(\Lambda ',M)_{\leq c}^{m/\operatorname{Hom}(\Lambda ,M)_{\leq c}},  \]
-</div>
-<p> the \(m\)-fold fibre product of \(\operatorname{Hom}(\Lambda ',M)_{\leq c}\) over \(\operatorname{Hom}(\Lambda ,M)_{\leq c}\). </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000125">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>Omitted (but done in Lean). </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="row_one_iso">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">1.7.6</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#row_one_iso">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000127"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0005.html#canonical_iso_1">Lemma 1.7.4</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/row_iso.lean#L248">thm95.mul_rescale_iso_row_one</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   There is a canonical isomorphism between the first row of the double complex </p>
-<div class="displaymath" id="a0000000128">
-  \[  C^{\mathsf{BD}}_{\kappa }(\operatorname{Hom}(\Lambda ^{(1)}, M))^\bullet  \]
-</div>
-<p> and </p>
-<div class="displaymath" id="a0000000129">
-  \[  C^{N \otimes \mathsf{BD}}_{\kappa /N}(\operatorname{Hom}(\Lambda , M))^\bullet  \]
-</div>
-<p> which identifies the map induced by the diagonal embedding \(\Lambda \to \Lambda ' = \Lambda ^{(1)}\) with the map induced by \(\sigma ^N \colon N \otimes \mathsf{BD}\to \mathsf{BD}\). </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000127">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>Omitted (but done in Lean). </p>
-
-  </div>
-</div>
-<p><div class="proposition_thmwrapper" id="cechcover-exact">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
-    </span>
-    <span class="proposition_thmlabel">1.7.7</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#cechcover-exact">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000130"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0004.html#CLC">Definition 1.5.1</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/prop819.lean#L491">prop819</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="proposition_thmcontent">
-  <p>   Let \(\pi : X \to B\) be a surjective morphism of profinite sets, and let \(S_\bullet \to S_{-1}\), \(S_{-1} := B\), be its augmented Čech nerve. Let \(V\) be a semi-normed group. Then the complex </p>
-<div class="displaymath" id="a0000000131">
-  \[  0\to \widehat{V}(S_{-1})\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \cdots  \]
-</div>
-<p> is exact. Furthermore, for all \(\epsilon {\gt} 0\) and \(f \in \ker (\widehat{V}(S_{m}) \to \widehat{V}(S_{m+1}))\), there exists some \(g\in \widehat{V}(S_{m-1})\) such that \(d(g) = f\) and \(‖g‖\leq (1+\epsilon ) \cdot ‖f‖\). In other words, the complex is normed exact in the sense of Definition&#160;<a href="sec-some_normed_homological_algebra.html#norm_exact_complex">1.4.6</a>. </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000130">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>We argue similarly to&#160;<span class="cite">
+<p>Now fix \(0{\lt} \xi {\lt}1\) and let \(x\in \mathbf{R}_{\geq 0}\). For simplicity, denote by \(\mathbf{Z}(\! (T)\! )_{r'}\) the group \(\mathcal L_{r'}(\ast )\). One of the key results proven in <span class="cite">
 	[
-	<a href="sect0010.html#Condensed" >Sch19</a>
+	<a href="sect0008.html#Analytic" >Sch20</a>
 	, 
-	Theorem 3.3
+	§
+	6
 	]
-</span>, as follows. By applying Lemma&#160;<a href="sec-some_normed_homological_algebra.html#lem:controlled_exactness">1.4.3</a>, we first reduce to a statement which does not involve \(\epsilon \) or completions. Explicitly, we must show that </p>
-<div class="displaymath" id="a0000000132">
-  \[  0 \to V(S_{1}) \to V(S_{0}) \to V(S_{1}) \to \cdots  \]
-</div>
-<p> is exact, and that whenever \(f \in \ker (V(S_{m}) \to V(S_{m+1}))\), there exists \(g \in V(S_{m-1})\) such that \(‖g‖\leq ‖f‖\) and \(d(g) = f\). The map \(V(S_{-1}) \to V(S_{0})\) is the one induced by \(S_0 \to S_{-1}\) which agrees with \(X \to B\). Since \(X \to B\) is surjective, we easily see that \(V(S_{-1}) \to V(S_{0})\) is injective. </p>
-<p>If \(X\) and \(B\) are finite, then the remaining assertions follow from the existence of a splitting \(\sigma : B \to X\) of \(\pi : X \to B\), as follows. The map \(\sigma \) provides maps \(S_{m} \to S_{m+1}\) for all \(m \geq -1\), defined explicitly as </p>
-<div class="displaymath" id="a0000000133">
-  \[  (a_{0},\ldots ,a_{m}) \mapsto (\sigma (\pi (a_{0})), a_{0},\ldots ,a_{m})  \]
-</div>
-<p> if \(m \geq 0\) and simply as \(\sigma \) if \(m = -1\). Here, for \(m \geq 0\), we have identified \(S_{m}\) with the \(m+1\)-fold fibered product \(X \times _{B} \cdots \times _{B} X\). Applying \(V(-)\), these maps induce \(h_{m} : V(S_{m+1}) \to V(S_{m})\), which form a contracting homotopy for the complex in question, and which are norm nonincreasing by the definition of \(V(-)\). If \(f \in \ker (V_{m} \to V_{m+1})\) is as above, then \(g := h_{m}(f)\) satisfies \(d(g) = f\) and \(‖g‖\leq ‖f‖\), as required. </p>
-<p>In the general case, write \(X = \varprojlim _{i} X_{i}\) where \(X_{i}\) vary over the discrete (hence finite) quotients of \(X\). Since \(X \to B\) is surjective, for each \(i\) there exists a unique maximal discrete quotient \(B_{i}\) of \(B\) such that \(X \to B\) descends to \(X_{i} \to B_{i}\). The maps \(X_{i} \to B_{i}\) are again surjective, and one has </p>
-<div class="displaymath" id="a0000000134">
-  \[  (X \to B) = \varprojlim _{i} (X_{i} \to B_{i}).  \]
-</div>
-<p> Let \(S_{i,\bullet } \to S_{i,-1}\), \(S_{i,-1} := B_{i}\), denote the augmented Čech nerve of \(X_{i} \to B_{i}\). </p>
-<p>The terms in the Čech nerve are themselves limits, hence we have \(S_{m} = \varprojlim _{i} S_{i,m}\), with each \(S_{i,m}\) finite. The functor \(V(-)\), when considered as taking values in abelian groups, sends cofiltered limits to filtered colimits. Also, if \(f \in V(S_{m})\) is the pullback of \(f_{i} \in V(S_{i,m})\), then for a sufficiently small index \(j \leq i\), the image of \(f : S_{m} \to V\) agrees with the image of \(f_{j} : S_{j,m} \to V\), where \(f_{j}\) is the image of \(f_{i}\) under the map \(V(S_{i,m}) \to V(S_{j,m})\) induced by the transition map \(S_{j,m} \to S_{i,m}\). </p>
-<p>Now suppose that \(f \in \ker (V(S_{m}) \to V(S_{m+1}))\) is given. By the discussion above, there exists some \(i\) and some \(f_{i} \in V(S_{i,m})\) such that \(f\) is the pullback of \(f_{i}\) with respect to the morphism \(S_{m} \to S_{i,m}\) and such that the following additional conditions hold: </p>
-<ol class="enumerate">
-  <li><p>One has \(‖f_{i}‖ = ‖f‖\). </p>
-</li>
-  <li><p>One has \(f_{i} \in \ker (V(S_{i,m}) \to V(S_{i,m+1}))\). </p>
-</li>
-</ol>
-<p> Let \(h_{m} : V(S_{i,m}) \to V(S_{i,m-1})\) be the map constructed in the argument for the finite case \(X_{i} \to B_{i}\). Put \(g_{i} := h_{m} (f_{i})\) and \(g\) the image of \(g_{i}\) in \(V(S_{m-1})\). Since the maps \(V(S_{i,\bullet }) \to V(S_{\bullet })\) commute with the differentials, we have \(d(g) = f\). Finally, the map \(V(S_{i,m-1}) \to V(S_{m-1})\) is norm nonincreasing as it is induced from \(S_{m-1} \to S_{i,m-1}\), so that </p>
-<div class="displaymath" id="a0000000135">
-  \[  ‖g‖\leq ‖g_{i}‖ \le ‖f_{i}‖ = ‖f‖,  \]
-</div>
-<p> as contended. </p>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="pre_col_exact">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+</span> is the surjectivity and continuity of the following map. </p>
+<p><div class="definition_thmwrapper" id="theta">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
     </span>
-    <span class="lemma_thmlabel">1.7.8</span>
+    <span class="definition_thmlabel">2.2.4</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#pre_col_exact">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000136"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
+    <a class="icon proof" href="sect0005.html#theta">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -605,7 +264,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sec-polyhedral_lattice.html#splittable">Definition 1.6.2</a></li>
+          <li><a href="sect0005.html#laurent-measures">Definition 2.2.3</a></li>
         </ul>
 
       </div>
@@ -619,7 +278,93 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/col_exact_prep.lean#L232">thm95.FLC_complex.weak_bounded_exact</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/theta.lean#L327">theta.ϑ</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbf{Z}(\! (T)\! )_r\rightarrow \mathbf{R}\) be the evaluation map </p>
+<div class="displaymath" id="a0000000164">
+  \[  \sum a_nT^n\longmapsto \sum a_n\xi ^n.  \]
+</div>
+
+  </div>
+</div> </p>
+<p>In order to prove the surjectivity, we use the following construction. <div class="definition_thmwrapper" id="theta.y">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.5</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta.y">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/theta.lean#L43">theta.y</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  For all \(x \in \mathbf{R}\) and \(n\in \mathbf{N}\), set </p>
+<div class="displaymath" id="a0000000165">
+  \[  Y_\xi (x, n)= \begin{cases}  x& \text{ if } n = 0 \\ Y_\xi (x,n-1) - \left\lfloor \frac{Y_\xi (x,n-1)}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
+</div>
+<p> where \(\lfloor \ast \rfloor \) denotes the floor of \(\ast \), namely the greatest integer that is less or equal than \(\ast \). </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="theta.surjective">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.2.6</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta.surjective">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000166"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#theta">Definition 2.2.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/laurent_measures/theta.lean#L363">theta.ϑ_surjective</a></li>
         </ul>
 
       </div>
@@ -628,15 +373,11 @@
   </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   Let \(M\) be a profinitely filtered pseudo-normed group with \(T^{-1}\)-action that is \(N\)-splittable with error term&#160;\(d \ge 0\). Let \(k \ge 1\) be a real number, and let \(c_0 {\gt} 0\) satisfy \(d \le \frac{(k - 1) c_0}{N}\). For every \(c\), consider the Cech nerve of the summation map \(M^N_{c/N} \to M_c\). By applying the functor \(\hat V(\_ )\) and taking the alternating face map complex, we obtain a system of complexes </p>
-<div class="displaymath" id="a0000000137">
-  \[  \hat V(M_{\le c}) \to \hat V(M^N_{\le c/N}) \to \dots  \]
-</div>
-<p> This system of complexes is weakly \(\le k\)-exact in degrees \(\le m\) and for \(c \ge c_0\) with bound&#160;\(1\). </p>
+  <p>   The map \(\vartheta _{\xi }\) is surjective. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000136">
+<div class="proof_wrapper" id="a0000000166">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -644,104 +385,25 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> For every constant \(c\), consider the pullback </p>
-<div class="centered"> <div class="tikzcd" id="a0000000138">
-    <img src="images/img-0003.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
-      &amp; M_c \rar &amp; M_{kc} \\
-      &amp; X_c \uar \rar &amp; M^N_{kc/N} \uar \\
-      M^N_{c/N} \ar{uur} \ar{rru} \ar[dotted]{ur}
-    \end{tikzcd}" />
-</div> </div>
-<p> We therefore get morphisms of cochain complexes </p>
-<div class="centered"> <div class="tikzcd" id="a0000000139">
-    <img src="images/img-0004.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
-      \hat V(M_{kc}) \rar\dar &amp; \hat V(M_c) \rar\dar &amp; \hat V(M_c) \dar \\
-      \hat V(M^N_{kc/N}) \rar\dar &amp; \hat V(X_c) \rar\dar &amp; \hat V(M^N_{c/N}) \dar \\
-      \vdots \rar &amp; \vdots \rar &amp; \vdots
-    \end{tikzcd}" />
-</div> </div>
-<p> where all the columns are of the form “alternating face map complex of \(\hat V(\_ )\) applied to a Cech nerve”. Note that the horizontal maps are norm-nonincreasing and their compositions are restriction maps. </p>
-<p>Claim: for \(c \ge c_0\), the map \(X_c \to M_c\) is surjective. </p>
-<p>Indeed, by assumption every \(x \in M_c\) can be decomposed into a sum \(x = x_1 + \dots + x_N\) with \(x_i \in M_{c/N+d} \subset M_{kc/N}\), since \(c \ge c_0\) and \(d \le \frac{(k-1)c_0}{N}\). </p>
-<p>By Proposition&#160;<a href="sect0005.html#cechcover-exact">1.7.7</a>, the middle column is normed exact (in the sence of Definition&#160;<a href="sec-some_normed_homological_algebra.html#norm_exact_complex">1.4.6</a>). The result follows from Lemma&#160;<a href="sec-some_normed_homological_algebra.html#weak_exact_of_factor_exact">1.4.10</a>. </p>
+  <p> Pick \(x\in \mathbf{R}\), and consider the power series </p>
+<div class="displaymath" id="a0000000167">
+  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{Y_\xi (x,n)}{\xi ^n}\right\rfloor T^n\in \mathbf{Z}[\! [T]\! ]  \]
+</div>
+<p> where \(\{ Y_\xi (x,n)\} _{n}\) is the sequence defined in Definition&#160;<a href="sect0005.html#theta.y">2.2.5</a>. The fact that \(0{\lt}\xi {\lt}1\) ensures that the series converges on the open unit disk, and it can be proven that \(F(\xi )=x\). </p>
 
   </div>
 </div>
-<p><div class="proposition_thmwrapper" id="col_exact">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
+<p>Given any <em>finite</em> set \(S\), the above map \(\vartheta _{\xi }\) defines a map \(\vartheta _{\xi ,S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)\) by extending \(\vartheta _{\xi }\) componentwise. For the purpose of this project, the special case where \(\xi =1/2\) is enough, and we write \(\theta _S\) to denote \(\vartheta _{\xi ,S}\). </p>
+<p><div class="lemma_thmwrapper" id="theta.continuous">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
     </span>
-    <span class="proposition_thmlabel">1.7.9</span>
+    <span class="lemma_thmlabel">2.2.7</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#col_exact">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000140"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/col_exact.lean#L1298">thm95.col_exact</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="proposition_thmcontent">
-  <p>  Let \(d\) be the constant from Proposition&#160;<a href="sec-polyhedral_lattice.html#Lbar-splittable">1.6.3</a>. Let \(k {\gt} 1\) and \(c_0 {\gt} 0\) be real numbers such that </p>
-<div class="displaymath" id="a0000000141">
-  \[  (k - 1) * c_0 / N \ge d.  \]
-</div>
-<p> Let \(m\) be any natural number, and put </p>
-<div class="displaymath" id="a0000000142">
-  \[  K = (m + 2) + \frac{r + 1}{r(1 - r)} (m + 2)^2  \]
-</div>
-<p> Finally, let \(c_0'\) be \(\frac{c_0}{r' \cdot n_i}\), where \(n_i\) is the \(i\)-th index in our fixed Breen–Deligne data. </p>
-<p>Then \(i\)-th column in the double complex is \((k^2, K)\)-weak bounded exact in degrees \(\le m\) for \(c \ge c_0'\). </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000140">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p> Let \(M^{(m)}\) denote \(\operatorname{Hom}(\Lambda ^{(m)},\overline{\mathcal L}_{r'}(S))^{n_i}\). We also write \(M\) for \(M^{(0)} = \operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))^{n_i}\) and \(M'\) for \(M^{(1)}\). By Proposition&#160;<a href="sec-polyhedral_lattice.html#combi">1.6.4</a>, \(M\) is \(N\)-splittable with error term&#160;\(d\). </p>
-<p>Consider the diagram of morphisms of systems of complexes </p>
-<div class="centered"> <div class="tikzcd" id="a0000000143">
-    <img src="images/img-0005.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
-      \hat V(M_c)^{T^{-1}} \rar\dar &amp; \hat V(M_c) \rar[&#34;{T^{-1} - [T^{-1}]^*}&#34;]\dar &amp; \hat V(M_c) \dar \\
-      \hat V(M&#39;_c)^{T^{-1}} \rar\dar &amp; \hat V(M&#39;_c) \rar[&#34;{T^{-1} - [T^{-1}]^*}&#34;]\dar &amp; \hat V(M&#39;_c) \dar \\
-      \vdots \dar &amp; \vdots \dar &amp; \vdots \dar \\
-      \hat V(M^{(m)}_c)^{T^{-1}} \rar &amp; \hat V(M^{(m)}_c) \rar[&#34;{T^{-1} - [T^{-1}]^*}&#34;] &amp; \hat V(M^{(m)}_c)
-    \end{tikzcd}" />
-</div> </div>
-<p>By Lemmas&#160;<a href="sect0005.html#pre_col_exact">1.7.8</a> and&#160;<a href="sect0005.html#canonical_iso_2">1.7.5</a>, we know that the two columns on the right are weakly \(\le k\)-exact in degrees \(\le m\) and for \(c \ge c_0\) with bound&#160;\(1\). </p>
-<p>The result now follows from Lemma&#160;<a href="sect0004.html#lem:Tinv">1.5.8</a>, and Proposition&#160;<a href="sec-some_normed_homological_algebra.html#weakdualsnakelemma">1.4.13</a>. </p>
-
-  </div>
-</div>
-<p><div class="proposition_thmwrapper" id="double-complex-htpy">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
-    </span>
-    <span class="proposition_thmlabel">1.7.10</span>
-    ✓
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#double-complex-htpy">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000144"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#theta.continuous">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000168"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -753,9 +415,7 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="sect0005.html#double_complex">Definition 1.7.3</a></li>
-          <li><a href="BD_orig.html#BD_h_mul_suitable">Lemma 1.1.18</a></li>
-          <li><a href="sec-some_normed_homological_algebra.html#spectral-htpy">Definition 1.4.14</a></li>
+          <li><a href="sect0005.html#theta">Definition 2.2.4</a></li>
         </ul>
 
       </div>
@@ -769,7 +429,6 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/b646a1f131d272c7d994abeff318e626561a666e/src/thm95/default.lean#L67">NSC_htpy</a></li>
         </ul>
 
       </div>
@@ -777,14 +436,16 @@
 
   </div>
   </div>
-  <div class="proposition_thmcontent">
-  <p>   Let \(h\) be the homotopy packaged with \(\mathsf{BD}\), and let \(h^N\) denote the \(n\)-th iterated composition of \(h\) (see Def&#160;<a href="BD_orig.html#BD_h_mul">1.1.11</a>) which is a homotopy between \(\pi ^N\) and \(\sigma ^N \colon N \otimes \mathsf{BD}\to \mathsf{BD}\). </p>
-<p>Let \(H \in \mathbf{R}_{\ge 0}\) be such that for \(i = 0, \dots , m\) the universal map \(h^N_i\) is bound by \(H\) (see Def&#160;<a href="BD_orig.html#universal_map_bound_by">1.1.3</a>). </p>
-<p>Then the double complex satisfies the normed homotopy homotopy condition (Def&#160;<a href="sec-some_normed_homological_algebra.html#spectral-htpy">1.4.14</a>) for \(m\), \(H\), and \(c_0\). </p>
+  <div class="lemma_thmcontent">
+  <p>   Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a finite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The map </p>
+<div class="displaymath" id="a0000000169">
+  \[  \theta _{S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)  \]
+</div>
+<p> induced by evaluating \(T\) at \(1/2\) is continuous </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000144">
+<div class="proof_wrapper" id="a0000000168">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -792,91 +453,22 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> By Lemma&#160;<a href="sect0005.html#row_one_iso">1.7.6</a> we may replace the first row by </p>
-<div class="displaymath" id="a0000000145">
-  \[  C^{N \otimes \mathsf{BD}}_{\kappa /N}(\operatorname{Hom}(\Lambda , M))^\bullet .  \]
-</div>
-<p> Now it is important to recall that we have chosen \(k' \ge \kappa '_i\) for all \(i = 0, \dots , m+1\). </p>
-<p>Our goal is to find, in degrees \(\leq m\), a homotopy between the two maps from the first row </p>
-<div class="displaymath" id="a0000000146">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c}^2)^{T^{-1}}\to \ldots  \]
-</div>
-<p> to the second row </p>
-<div class="displaymath" id="a0000000147">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c/N}^{2N})^{T^{-1}}\to \ldots  \]
-</div>
-<p> respectively induced by \(\sigma ^N\) and \(\pi ^N\) (which are maps \(N \otimes \mathsf{BD}\) </p>
-<p>By Definition&#160;<a href="BD_orig.html#BD_h_mul">1.1.11</a> and Lemma&#160;<a href="BD_orig.html#BD_h_mul_suitable">1.1.18</a> we can find this homotopy between the complex for \(k'c\) and the complex for&#160;\(c\). (Here we use \(k'\geq c_i'\) for \(i=0,\ldots ,m\).) By assumption, the norm of these maps is bounded by&#160;\(H\). </p>
-<p>Finally, it remains to establish the estimate (eq.&#160;<a href="sec-some_normed_homological_algebra.html#eq:homotopicmapsmall">1.4.3</a>) on the homotopic map. We note that this takes \(x\in \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'^2\kappa _ic}^{a_i})^{T^{-1}}\) (with \(i=q\) in the notation of (eq.&#160;<a href="sec-some_normed_homological_algebra.html#eq:homotopicmapsmall">1.4.3</a>)) to the element </p>
-<div class="displaymath" id="a0000000148">
-  \[  y\in \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}  \]
-</div>
-<p> that is the sum of the \(N\) pullbacks along the \(N\) projection maps \(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i}\to \operatorname{Hom}(\Lambda ,M)_{\leq k'^2\kappa _ic}^{a_i}\). We note that these actually take image in \(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i}\) as \(N\geq k'\), so this actually gives a well-defined map </p>
-<div class="displaymath" id="a0000000149">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
-</div>
-<p> We need to see that this map is of norm \(\leq \epsilon \). Now note that by our choice of \(N\), we actually have \(k'\kappa _ic/N\leq (r')^b \kappa _ic\), so this can be written as the composite of the restriction map </p>
-<div class="displaymath" id="a0000000150">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}}  \]
-</div>
-<p> and </p>
-<div class="displaymath" id="a0000000151">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
-</div>
-<p> The first map has norm exactly \(r^b\), by \(T^{-1}\)-invariance, and as multiplication by \(T\) scales the norm with a factor of \(r\) on \(\widehat{V}\). (Here is where we use \(r'{\gt}r\), ensuring different scaling behaviour of the norm on source and target.) The second map has norm at most \(N\) (as it is a sum of \(N\) maps of norm \(\leq 1\)). Thus, the total map has norm \(\leq r^bN\). But by our choice of \(N\), we have \(r^bN\leq \epsilon \), giving the result. </p>
+  <p>Omitted for now, but done in Lean. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000118">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof of Theorem&#160;<a href="sect0005.html#explicit">1.7.2</a>
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p>   By induction, the first condition of Proposition&#160;<a href="sec-some_normed_homological_algebra.html#spectral">1.4.15</a> is satisfied for all \(c\geq c_0\) with \(c_0\) large enough (depending on \(\Lambda \) but not \(V\) or \(S\)). </p>
-<p>The second condition is Proposition&#160;<a href="sect0005.html#col_exact">1.7.9</a>, and the third condition has been checked in Proposition&#160;<a href="sect0005.html#double-complex-htpy">1.7.10</a>. </p>
-<p>Thus, we can apply Proposition&#160;<a href="sec-some_normed_homological_algebra.html#spectral">1.4.15</a>, and get the desired \(\leq \max (k'^2,2k_0H)\)-exactness in degrees \(\leq m\) for \(c\geq c_0\), where \(k'\), \(k_0\) and \(H\) were defined only in terms of \(k\), \(m\), \(r'\) and \(r\), while \(c_0\) depends on \(\Lambda \) (but not on \(V\) or \(S\)). This proves the inductive step. </p>
-
-  </div>
-</div>
-<p><div class="question_thmwrapper" id="a0000000152">
-  <div class="question_thmheading">
-    <span class="question_thmcaption">
-    Question
-    </span>
-    <span class="question_thmlabel">1.7.11</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#a0000000152">#</a>
-
-  </div>
-  </div>
-  <div class="question_thmcontent">
-  <p>Can one make the constants explicit, and how large are they? <a class="footnote" href="#a0000000153">
-  <sup class="footnotemark">1</sup>
-</a> Modulo the Breen-Deligne resolution, all the arguments give in principle explicit constants; and actually the proof of the existence of the Breen-Deligne resolution should be explicit enough to ensure the existence of bounds on the \(c_i\) and \(c_i'\). </p>
-<p>Answer: yes, we can do this. And we should write up a clean account asap, when we have cleaned up the proof in Lean. </p>
-
-  </div>
-</div> </p>
 
 </div> <!--main-text -->
-<footer id="footnotes">
-<ol>
-  <li id="a0000000153">A back of the envelope calculation seems to suggest that \(k\) is roughly doubly exponential in \(m\), and that \(N\) has to be taken of roughly the same magnitude.</li>
-</ol>
-</footer>
 </div> <!-- content-wrapper -->
 </div> <!-- content -->
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sec-polyhedral_lattice.html" title="Polyhedral lattices"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sec-normed_groups2.html" title="Variants of normed groups"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="cha-one.html" title="First part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="cha-two.html" title="Second part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="cha-two.html" title="Second part"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0006.html" title="The MacLane \(Q'\)-construction"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 
