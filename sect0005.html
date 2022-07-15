@@ -122,14 +122,14 @@
   <div class="definition_thmcontent">
   <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal M_{p'}(S)\) denotes the real vector space </p>
 <div class="displaymath" id="a0000000155">
-  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s} \text{ such that } a_{s}\in \mathbf{R}\right\}   \]
+  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s}[s] \text{ such that } a_{s}\in \mathbf{R}\right\}   \]
 </div>
-<p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). </p>
-<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the filtered colimit </p>
+<p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s[s]\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). </p>
+<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the union </p>
 <div class="displaymath" id="a0000000156">
   \[  \mathcal M_{p'}(S) = \varinjlim _{c{\gt}0}\mathcal M_{p'}(S)_{\leq c}  \]
 </div>
-<p> where \(\mathcal M_{p'}(S)_{\leq c} = \left\{ F \in \mathcal M_{p'}(S) \text{ such that } \Vert F \Vert _{\ell ^{p'}}\leq c\right\} \). Now, given a profinite set \(S=\varprojlim S_i\), where all \(S_i\)’s are finite groups, and a positive real number \(c{\gt}0\), define \(\mathcal M_{p'}(S)_{\leq c}\) as </p>
+<p> where \(\mathcal M_{p'}(S)_{\leq c} = \left\{ F \in \mathcal M_{p'}(S) \text{ such that } \Vert F \Vert _{\ell ^{p'}}\leq c\right\} \). Now, given a profinite set \(S=\varprojlim S_i\), where all \(S_i\)’s are finite sets, and a positive real number \(c{\gt}0\), define \(\mathcal M_{p'}(S)_{\leq c}\) as </p>
 <div class="displaymath" id="a0000000157">
   \[  \mathcal M_{p'}(S)_{\leq c}=\varprojlim \mathcal M_{p'}(S_i)_{\leq c}  \]
 </div>
@@ -166,14 +166,14 @@
   <div class="definition_thmcontent">
   <p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal L_{r'}(S)\) denotes the group </p>
 <div class="displaymath" id="a0000000158">
-  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
+  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
 </div>
 
   </div>
 </div> </p>
 <p>The group \(\mathcal L_{r'}(S)\) is filtered by the subsets </p>
 <div class="displaymath" id="a0000000159">
-  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
+  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
 </div>
 <p> for \(c{\gt} 0\). Each subset \(\mathcal L_{r'}(S)_{\leq c}\) can be written as </p>
 <div class="displaymath" id="a0000000160">
@@ -181,7 +181,7 @@
 </div>
 <p> where \(A\) runs through the finite subsets of \(\mathbf{Z}\) and \(\mathcal L_{r'}(S)_{A,\leq c}\) is the finite set </p>
 <div class="displaymath" id="a0000000161">
-  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n \vert a_{n,s}\in \mathbf{Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
+  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
 </div>
 <p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). </p>
 <p><div class="definition_thmwrapper" id="laurent-measures">
