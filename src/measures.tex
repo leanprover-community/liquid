@@ -9,14 +9,14 @@
   \[
 	  \Rm(S) = \left\{\sum_{s\in S}a_{s}[s] \text{ such that } a_{s}\in \R\right\}
   \]
-  endowed with the $\ell^{p'}$-norm $\Vert \sum_{s\in S}a_s\Vert_{\ell^{p'}}=\sum_{s\in S}\lvert a_s\rvert ^{p'}$.
+	endowed with the $\ell^{p'}$-norm $\Vert \sum_{s\in S}a_s[s]\Vert_{\ell^{p'}}=\sum_{s\in S}\lvert a_s\rvert ^{p'}$.
 
-  For every finite set $S$, the space $\Rm(S)$ can be written as the filtered colimit
+  For every finite set $S$, the space $\Rm(S)$ can be written as the union
   \[
     \Rm(S) = \varinjlim_{c>0}\Rm(S)_{\leq c}
   \]
   where $\Rm(S)_{\leq c} = \left\{F \in \Rm(S) \text{ such that } \Vert F \Vert_{\ell^{p'}}\leq c\right\}$.
-  Now, given a profinite set $S=\varprojlim S_i$, where all $S_i$'s are finite groups, and a positive real number $c>0$, define $\Rm(S)_{\leq c}$ as
+  Now, given a profinite set $S=\varprojlim S_i$, where all $S_i$'s are finite sets, and a positive real number $c>0$, define $\Rm(S)_{\leq c}$ as
   \[
     \Rm(S)_{\leq c}=\varprojlim \Rm(S_i)_{\leq c}
   \]
@@ -30,14 +30,14 @@
   \leanok
   Let $0 < r' < 1$ be a real number, and let $S$ be a finite set. Then $\Lm_{r'}(S)$ denotes the group
 \[
-\Lm_{r'}(S)=\{\sum_{s\in S,n\in \Z}a_{n,s}T^n \vert a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
+	\Lm_{r'}(S)=\{\sum_{s\in S,n\in \Z}a_{n,s}T^n[s] \mid a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
 < + \infty\}.
 \]
 \end{definition}
 
 The group $\Lm_{r'}(S)$ is filtered by the subsets
 \[
-\Lm_{r'}(S)_{\leq c}=\bigl\{\sum_{s\in S,n\in \Z}a_{n,s}T^n \vert a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
+	\Lm_{r'}(S)_{\leq c}=\bigl\{\sum_{s\in S,n\in \Z}a_{n,s}T^n[s] \mid a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
 \leq c\bigr\}
 \]
 for $c> 0$. Each subset $\Lm_{r'}(S)_{\leq c}$ can be written as
@@ -46,7 +46,7 @@ for $c> 0$. Each subset $\Lm_{r'}(S)_{\leq c}$ can be written as
 \]
 where $A$ runs through the finite subsets of $\Z$ and $\Lm_{r'}(S)_{A,\leq c}$ is the finite set
 \[
-\Lm_{r'}(S)_{A,\leq c}=\bigl\{\sum_{s\in S,n\in A}a_{n,s}T^n \vert a_{n,s}\in \Z, \sum_{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr\}.
+	\Lm_{r'}(S)_{A,\leq c}=\bigl\{\sum_{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \Z, \sum_{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr\}.
 \]
 This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
 
