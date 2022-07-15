@@ -74,7 +74,7 @@ This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
 
 %\begin{lemma}
 %  \label{theta.finite_sum}
-%  \uses{theta.y}
+%  \uses{theta-y}
 %  \lean{theta.finite_sum}
 %  \leanok
 %  For all $n\in\N$, we have
@@ -103,7 +103,7 @@ This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
 
 %\begin{lemma}
 %  \label{theta.bounded}
-%  \uses{theta.y}
+%  \uses{theta-y}
 %	The sequence
 %	\[
 %		n \mapsto \left\lfloor \frac{y_n}{\xi^n} \right\rfloor
@@ -125,7 +125,7 @@ This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
 
 %\begin{lemma}
 %  \label{theta.limit_y}
-%  \uses{theta.y}
+%  \uses{theta-y}
 %  \lean{theta.limit_y}
 %  \leanok
 %  We have
@@ -160,7 +160,7 @@ This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
 
 %\begin{proposition}
 %  \label{theta.has_sum_x}
-%  \uses{theta.y}
+%  \uses{theta-y}
 %  \lean{theta.has_sum_x,theta.summable_floor}
 %  \leanok
 %  %For all $i\in\N$, let
@@ -208,8 +208,8 @@ One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and c
 
 In order to prove the surjectivity, we use the following construction.
 \begin{definition}
-  \label{theta.y}
-  \lean{theta.y}
+  \label{theta-y}
+  \lean{theta-y}
   \leanok
   For all $x \in \R$ and $n\in\N$, set
   \[
@@ -223,7 +223,7 @@ where $\lfloor \ast \rfloor$ denotes the floor of $\ast$, namely the greatest in
 \end{definition}
 
 \begin{lemma}
-  \label{theta.surjective}
+  \label{theta-surjective}
   \uses{theta}
   \lean{theta.ϑ_surjective}
   \leanok
@@ -231,13 +231,13 @@ where $\lfloor \ast \rfloor$ denotes the floor of $\ast$, namely the greatest in
 \end{lemma}
 
 \begin{proof}
-  \uses{theta.y}
+  \uses{theta-y}
   \leanok
   Pick $x\in \R$, and consider the power series
   \[
     F(T)=\sum_{n\geq 0}\left\lfloor \frac{Y_\xi(x,n)}{\xi^n}\right\rfloor T^n\in\Z[\![T]\!]
   \]
-  where $\{Y_\xi(x,n)\}_{n}$ is the sequence defined in Definition~\ref{theta.y}. The fact that $0<\xi<1$ ensures that the series converges on the open unit disk, and it can be proven that $F(\xi)=x$.
+  where $\{Y_\xi(x,n)\}_{n}$ is the sequence defined in Definition~\ref{theta-y}. The fact that $0<\xi<1$ ensures that the series converges on the open unit disk, and it can be proven that $F(\xi)=x$.
 %  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
 %  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
@@ -246,7 +246,7 @@ Given any \emph{finite} set $S$, the above map $\vartheta_{\xi}$ defines a map $
 For the purpose of this project, the special case where $\xi=1/2$ is enough, and we write $\theta_S$ to denote $\vartheta_{\xi,S}$. 
 
 \begin{lemma}
-  \label{theta.continuous}
+  \label{theta-continuous}
   \uses{theta}
   \lean{ses.continuous_θ_c}
   \leanok

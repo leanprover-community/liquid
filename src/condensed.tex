@@ -326,7 +326,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{theta.surjective, CHPNG-Cond-exact, exact-with-constants-lim, theta.continuous}
+  \uses{theta-surjective, CHPNG-Cond-exact, exact-with-constants-lim, theta-continuous}
   \leanok
   By Proposition~\ref{CHPNG-Cond-exact} it suffices to show
   that the corresponding sequence of pseudonormed groups is short exact,
@@ -337,7 +337,7 @@
   Hence it suffices to show that the sequence
   \[ 0 \to \Z(\!(T)\!)_{r'} \to \Z(\!(T)\!)_{r'} \to \R \to 0 \]
   is short exact.
-  The Lemmas~\ref{theta.surjective} and~\ref{theta.continuous} show that the evaluation map is indeed
+  The Lemmas~\ref{theta-surjective} and~\ref{theta-continuous} show that the evaluation map is indeed
   continuous and surjective.
   A computation (omitted here for now, but done in Lean) shows that the kernel of the evaluation map
   is exactly $(2T-1) \Z(\!(T)\!)_{r'}$.
