@@ -3,8 +3,7 @@
 
 The goal of this document is to provide a detailed account
 of the proof of the following theorem,
-along side a computer verification in the Lean theorem prover
-(see Section~\ref{on-lean}).
+along side a computer verification in the Lean theorem prover.
 
 \begin{theoremx}[Clausen--Scholze]
   \label{main-goal}
@@ -19,41 +18,18 @@ along side a computer verification in the Lean theorem prover
   for $i \ge 1$.
 \end{theoremx}
 
-We will explain this statement in more detail in Section~\ref{on-the-statement} below.
+This document consists of two parts, and there is some duplication between the two parts.
+The first half gives a detailed and self-contained proof of the highly technical Theorem~\ref{first_target}.
+The second half is meant to be readable in a stand-alone fashion, and therefore repeats some material of the first half.
+It is concerned with deducing Theorem~\ref{main-goal} from Theorem~\ref{first_target}.
 
-\begin{remarkx}
-  Status report of the project as of 10-06-2021.
-  The main ingredient in the proof of the above Theorem
-  is the highly technical Theorem~\ref{first_target}.
+This document can be consumed in PDF format,
+but it is designed first and foremost for interactive reading.
+An online copy is available at
+\texttt{https://leanprover-community.github.io/liquid/}.
+This online version includes hyperlinks to the Lean code that formally verifies the proofs,
+as well as two dependency graphs (one for each part of the document) that visualize the global structure of the proof.
 
-  We have completed a computer verification of this first target in Lean,
-  and this document contains an account of the proof.
-  We are in the process of cleaning up and documenting this first step.
-
-  Once that is done, we will work on the second step:
-  deducing Theorem~\ref{main-goal} from Theorem~\ref{first_target}.
-\end{remarkx}
-
-\subsubsection{On the statement of the main goal}
-\label{on-the-statement}
-
-For the definition of condensed sets and condensed abelian groups,
-we refer to~\cite{Condensed}.
-
-A $p$-Banach space $V$ is a complete topological $\mathbb R$-vector space
-whose topology is induced by a $p$-norm;
-that is, a norm satisfying $\|rv\| = |r|^p\|v\|$.
-
-We will now explain the space $\Rm(S)$.
-TODO
-(For now, see Definition~6.3 of~\cite{Analytic}.)
-
-\subsubsection*{On the Lean theorem prover and computer verification of proofs}
-\label{on-lean}
-
-The Lean theorem prover is developed by Leonardo de Moura
-at Microsoft Research.
-
-TODO: write a short paragraph about what computer verification means,
-add pointers to further tutorials/material
+For more information about the Lean interactive proof assistant, and formal verification of mathematics,
+we refer to \texttt{https://leanprover-community.github.io}.
 

@@ -326,9 +326,21 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{theta.surjective, CHPNG-Cond-exact, exact-with-constants-lim, theta.continuous}
+  \uses{theta-surjective, CHPNG-Cond-exact, exact-with-constants-lim, theta-continuous}
   \leanok
-  TODO
+  By Proposition~\ref{CHPNG-Cond-exact} it suffices to show
+  that the corresponding sequence of pseudonormed groups is short exact,
+  and by Proposition~\ref{exact-with-constants-lim} we may also assume that $S$ is finite.
+  
+  For finite $S$, the sequence is a termwise direct sum (indexed by $s \in S$) of the sequences
+  \[ 0 \to \Lm_{r'}(\{s\}) \to \Lm_{r'}(\{*\}) \to \Rm(\{*\}) \to 0. \]
+  Hence it suffices to show that the sequence
+  \[ 0 \to \Z(\!(T)\!)_{r'} \to \Z(\!(T)\!)_{r'} \to \R \to 0 \]
+  is short exact.
+  The Lemmas~\ref{theta-surjective} and~\ref{theta-continuous} show that the evaluation map is indeed
+  continuous and surjective.
+  A computation (omitted here for now, but done in Lean) shows that the kernel of the evaluation map
+  is exactly $(2T-1) \Z(\!(T)\!)_{r'}$.
 \end{proof}
 
 \begin{theorem}[Clausen--Scholze]
@@ -353,7 +365,7 @@
   \[ 0 \to \Lm_{r'}(S) \to \Lm_{r'}(S) \to \Rm(S) \to 0. \]
   Apply to this $\text{Ext}^*(\_, V)$ to obtain a long exact sequence.
   Note that $T$ acts on $V$ via multiplication by $\tfrac12$ (by Lemma~\ref{p-banach-r-normed}.
-  Hence we can use Lemma{Ext-L} to obtain isomorphisms between the Ext-groups involving $\Lm_{r'}(S)$, for $i > 0$,
+  Hence we can use Lemma~\ref{Ext-L} to obtain isomorphisms between the Ext-groups involving $\Lm_{r'}(S)$, for $i > 0$,
   and a surjection for $i = 0$.
   The result follows.
 \end{proof}
