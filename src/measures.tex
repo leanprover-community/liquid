@@ -11,7 +11,7 @@
 \]
 endowed with the $\ell^{p'}$-norm $\Vert \sum_{s\in S}a_s\Vert_{\ell^{p'}}=\sum_{s\in S}\lvert a_s\rvert ^{p'}$. We refer to its elements as (real) $\ell^{p'}$-measures on $S$.
 \end{definition}
-For every finite set $S$, the space $\Rm(S)$ can be written as the filter colimit
+For every finite set $S$, the space $\Rm(S)$ can be written as the filtered colimit
 \[
 \Rm(S)=\varinjlim_{c>0}\Rm(S)_{\leq c}
 \]
@@ -72,7 +72,7 @@ endowed with the inductive limit topology. Then set
 %\]
 
 %Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$.
-For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$. 
+For simplicity, we denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$. 
 %The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
 
 %\begin{lemma}
@@ -195,22 +195,22 @@ For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$.
 %  The result follows from Lemma~\ref{theta.limit_y}.
 %\end{proof}
 
-Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$.
-One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the following map.
+%Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$.
+%One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the following map.
 
 \begin{definition}
   \label{theta}
   \lean{theta.ϑ}
   \uses{laurent-measures}
   \leanok
-  Let $0<\xi <1$ be a real number. We denote by $\vartheta_{\xi}\colon \Z(\!(T)\!)_{r'}\rightarrow \R$ the evaluation map
+  Let $0<\xi <1$ be a real number. Denote by $\vartheta_{\xi}\colon \Z(\!(T)\!)_{r'}\rightarrow \R$ the evaluation map
   \[
     \sum a_nT^n\longmapsto \sum a_n\xi^n.
   \]
 induced by $T\mapsto \xi$.
 \end{definition}
 
-One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the map $\vartheta_\xi$, together with the proof that its kernel is principal for every $0<\xi<1$. To state this result, we begin with the following lemma.
+One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the map $\vartheta_\xi$, together with a proof that its kernel is principal for every $0<\xi<1$. To state this result, we begin with the following lemma.
 
 % \begin{definition}
 %  \label{theta.y}
@@ -220,7 +220,7 @@ One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and c
 %\end{definition}
 
 \begin{lemma}
-  \label{theta-surjective}
+  \label{theta.surjective}
   \uses{theta}
   \lean{theta.ϑ_surjective}
   \leanok
