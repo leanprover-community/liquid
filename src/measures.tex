@@ -54,7 +54,7 @@ Passing to the limit, we obtain the Laurent measures on an arbitrary profinite s
 % \lean{laurent_measures}
 % \leanok
 %  Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set with 
-Starting with a presentation $S=\varprojlim S_i$, where all the $S_i$ are finite, define for all $c>0$ the space $\Lm_{r'}(S)_{\leq c}$ denote the limit
+Choose a presentation $S=\varprojlim S_i$, where all the $S_i$ are finite; given any $c>0$, define the space $\Lm_{r'}(S)_{\leq c}$ as the limit
 \[
 \Lm_{r'}(S)_{\leq c}=\varprojlim\Lm_{r'}(S_i)_{\leq c},
 \]
@@ -220,7 +220,7 @@ One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and c
 %\end{definition}
 
 \begin{lemma}
-  \label{theta.surjective}
+  \label{theta-surjective}
   \uses{theta}
   \lean{theta.ϑ_surjective}
   \leanok
@@ -271,7 +271,7 @@ Given any finite set $S$, the map $\vartheta_{\xi}$ defines a map $\vartheta_{\x
 %By taking projective limits, we obtain a map $\vartheta_{S}$ for every profinite $S$.
 
 \begin{theorem}
-  \label{theta.exact_finite}
+  \label{theta-exact_finite}
   \uses{theta}
   \leanok
   \lean{thm69.θ_ϕ_exact}
@@ -286,7 +286,7 @@ where the first map is multiplication by $2T-1$, is exact. In particular, the ke
   \uses{theta.surjective}
   \uses{theta.continuous}
   \leanok
-The proof of surjectivity for finite $S$ follows immediately from Lemma~\ref{theta.surjective}, and the description of the kernel is straightforward. Similarly, the proof of continuity is a direct consequence of Lemma~\ref{theta.continuous}.
+The proof of surjectivity for finite $S$ follows immediately from Lemma~\ref{theta-surjective}, and the description of the kernel is straightforward. Similarly, the proof of continuity is a direct consequence of Lemma~\ref{theta-continuous}.
 \end{proof}
 %With Theorem~\ref{theta.prof_surj_and_cont} at our disposal, we can move on and analyse the kernel of the map $\theta_{S}$.
 
