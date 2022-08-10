@@ -31,6 +31,8 @@ jobs:
           leanproject get leanprover-community/lean-liquid
           ln -s lean-liquid project
           cd project && leanproject get-m && scripts/fetch_olean_cache.sh && cd ..
+          # https://leanprover.zulipchat.com/#narrow/stream/267928-condensed-mathematics/topic/blueprint/near/292717229
+          ulimit -s 1048576
           inv decls
 
       - name: Install Leanblueprint and generate web in tex env
