@@ -6,20 +6,20 @@
   \leanok
   Let $0 < p' < 1$ be a real number, and let $S$ be a finite set.
   Then $\Rm(S)$ denotes the real vector space
-\[
+  \[
 	  \Rm(S) = \left\{\sum_{s\in S}a_{s}[s] \text{ such that } a_{s}\in \R\right\}
-\]
+  \]
 	endowed with the $\ell^{p'}$-norm $\Vert \sum_{s\in S}a_s[s]\Vert_{\ell^{p'}}=\sum_{s\in S}\lvert a_s\rvert ^{p'}$.
 
   For every finite set $S$, the space $\Rm(S)$ can be written as the union
-\[
+  \[
     \Rm(S) = \varinjlim_{c>0}\Rm(S)_{\leq c}
-\]
+  \]
   where $\Rm(S)_{\leq c} = \left\{F \in \Rm(S) \text{ such that } \Vert F \Vert_{\ell^{p'}}\leq c\right\}$.
   Now, given a profinite set $S=\varprojlim S_i$, where all $S_i$'s are finite sets, and a positive real number $c>0$, define $\Rm(S)_{\leq c}$ as
-\[
-\Rm(S)_{\leq c}=\varprojlim \Rm(S_i)_{\leq c}
-\]
+  \[
+    \Rm(S)_{\leq c}=\varprojlim \Rm(S_i)_{\leq c}
+  \]
   endowed with the projective limit topology.
   Finally, set $\Rm(S)=\varinjlim_{c}\Rm(S)_{\leq c}$.
 \end{definition}
@@ -56,13 +56,13 @@ This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
   \lean{laurent_measures}
   \leanok
   Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set with a presentation $S=\varprojlim S_i$, where all $S_i$ are finite. For all $c>0$, let $\Lm_{r'}(S)_{\leq c}$ denote the projective limit
-\[
-\Lm_{r'}(S)_{\leq c}=\varprojlim\Lm_{r'}(S_i)_{\leq c},
-\]
+  \[
+  \Lm_{r'}(S)_{\leq c}=\varprojlim\Lm_{r'}(S_i)_{\leq c},
+  \]
   endowed with the projective limit topology, and set
-\[
+  \[
   \Lm_{r'}(S)=\varinjlim_{c > 0}\Lm_{r'}(S)_{\leq c}.
-\]
+  \]
 \end{definition}
 
 %For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integer that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
@@ -71,10 +71,6 @@ This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
 %  \qquad\text{and}\qquad
 %  \alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
 %\]
-
-%Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$.
-For simplicity, we denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$. 
-%The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
 
 %\begin{lemma}
 %  \label{theta.finite_sum}
@@ -208,7 +204,6 @@ One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and c
   \[
     \sum a_nT^n\longmapsto \sum a_n\xi^n.
   \]
-induced by $T\mapsto \xi$.
 \end{definition}
 
 In order to prove the surjectivity, we use the following construction.
@@ -239,9 +234,9 @@ where $\lfloor \ast \rfloor$ denotes the floor of $\ast$, namely the greatest in
   \uses{theta-y}
   \leanok
   Pick $x\in \R$, and consider the power series
-	\[
+  \[
     F(T)=\sum_{n\geq 0}\left\lfloor \frac{Y_\xi(x,n)}{\xi^n}\right\rfloor T^n\in\Z[\![T]\!]
-	\]
+  \]
   where $\{Y_\xi(x,n)\}_{n}$ is the sequence defined in Definition~\ref{theta-y}. The fact that $0<\xi<1$ ensures that the series converges on the open unit disk, and it can be proven that $F(\xi)=x$.
 %  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
 %  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
@@ -251,12 +246,10 @@ Given any \emph{finite} set $S$, the above map $\vartheta_{\xi}$ defines a map $
 For the purpose of this project, the special case where $\xi=1/2$ is enough, and we write $\theta_S$ to denote $\vartheta_{\xi,S}$. 
 
 \begin{lemma}
-	\label{theta-continuous}
-	\uses{theta}
-	\uses{laurent-measures-fin}
-	\uses{real-measures}
-	\lean{ses.continuous_θ_c}
-	\leanok
+  \label{theta-continuous}
+  \uses{theta}
+  \lean{ses.continuous_θ_c}
+  \leanok
 Let $0<p'<1$ be a real number, let $S$ be a finite set, and let $r'$ denote $\left(\frac{1}{2}\right)^{p'}$. The map
 \[
 \theta_{S}\colon \Lm_{r'}(S)\longrightarrow \Rm(S)
@@ -265,17 +258,7 @@ induced by evaluating $T$ at $1/2$ is continuous
 \end{lemma}
 
 \begin{proof}
-  \uses{theta}
-  \uses{theta.surjective}
-  \uses{theta.continuous}
   \leanok
   Omitted for now, but done in Lean.
 \end{proof}
-%With Theorem~\ref{theta.prof_surj_and_cont} at our disposal, we can move on and analyse the kernel of the map $\theta_{S}$.
 
-
-%For any choice of a real number $0<p'<1$ Theorem~\ref{theta.exact_finite} induces, by taking limits, an exact sequence
-%\[
-%0\longrightarrow\Lm_{r'}(S)\longrightarrow \Lm_{r'}(S)\longrightarrow \Rm(S)\longrightarrow 0
-%\]
-%for every profinite set $S$, where again $r'$ denotes $\bigl(\frac{1}{2}\bigr)^{p'}$.
