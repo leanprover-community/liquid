@@ -66,7 +66,7 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
   and let $(c_2, c_1)$ be $f$-suitable.
   We get an induced map
   \[
-    V(f) \colon V(M_{\le c_1}^n) \to V(M_{\le c_2}^m)
+    V(f) \colon V(M_{\le c_1}^n) \longrightarrow V(M_{\le c_2}^m)
   \]
   induced by the morphism of profinitely filtered pseudo-normed groups $M^m \to M^n$.
 
@@ -82,7 +82,7 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
   and let $(c_2, c_1)$ be $f$-suitable.
   We get an induced map
   \[
-    V(f) \colon V(M_{\le c_1}^n) \to V(M_{\le c_2}^m)
+    V(f) \colon V(M_{\le c_1}^n) \longrightarrow V(M_{\le c_2}^m)
   \]
   that is the sum $\sum n_g V(g)$.
 
@@ -98,7 +98,7 @@ and let $M$ be a profinitely filtered pseudo-normed group with $r'$-action by $T
   and let $(c_2, c_1)$ be $f$-suitable.
   We get an induced map
   \[
-    \hat V(f) \colon \hat V(M_{\le c_1}^n) \to \hat V(M_{\le c_2}^m)
+    \hat V(f) \colon \hat V(M_{\le c_1}^n) \longrightarrow \hat V(M_{\le c_2}^m)
   \]
   that is the completion of $V(f)$.
 
@@ -117,25 +117,25 @@ Assume $r' \le 1$.
   The first comes from the $r'$-action of $T^{-1}$ on $M$
   which gives a continuous map
   \[
-    M_{\le cr'} \to M_{\le c}
+    M_{\le cr'} \longrightarrow M_{\le c}
   \]
   and thus a normed group morphism $V(M_{\le c}) \to V(M_{\le cr'})$ which
   can be extended by completion to
   \[
-    (T^{-1})^* \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
+    (T^{-1})^* \colon \hat V(M_{\le c}) \longrightarrow \hat V(M_{\le cr'}).
   \]
   The other comes from Lemma~\ref{CLC_normed_with_aut},
   using the $r$-normed $\mathbb Z[T^{\pm 1}]$-module $V$.
   Again by extension to completion, we get a map
   \[
-    [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le c}),
+    [T^{-1}] \colon \hat V(M_{\le c}) \longrightarrow \hat V(M_{\le c}),
   \]
   that we can compose with the map
   $\hat V(M_{\le c}) \to \hat V(M_{\le cr'})$,
   obtained from the natural inclusion $M_{\le cr'} \to M_{\le c}$.
   We thus end up with two maps
   \[
-    (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \to \hat V(M_{\le cr'}).
+    (T^{-1})^*, [T^{-1}] \colon \hat V(M_{\le c}) \longrightarrow \hat V(M_{\le cr'}).
   \]
   and we define $\hat V(M_{\le c})^{T^{-1}}$
   to be the equalizer of $(T^{-1})^*$ and $[T^{-1}]$.
@@ -207,7 +207,7 @@ ensures it is surjective with controlled preimages, see Definition~\ref{def:surj
   The natural map from Definition~\ref{eval_CLCFP}
   restricts to a map
   \[
-    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \to \hat V(M_{\le c_2}^m)^{T^{-1}}
+    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \longrightarrow \hat V(M_{\le c_2}^m)^{T^{-1}}
   \]
 \end{definition}
 
@@ -221,7 +221,7 @@ ensures it is surjective with controlled preimages, see Definition~\ref{def:surj
   and let $(c_2, c_1)$ be very suitable for $(f, r, r')$.
   Then
   \[
-    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \to \hat V(M_{\le c_2}^m)^{T^{-1}}
+    \hat V(f)^{T^{-1}} \colon \hat V(M_{\le c_1}^n)^{T^{-1}} \longrightarrow \hat V(M_{\le c_2}^m)^{T^{-1}}
   \]
   is norm-nonincreasing.
 \end{lemma}
@@ -273,12 +273,12 @@ ensures it is surjective with controlled preimages, see Definition~\ref{def:surj
   assemble into a complex of normed abelian groups
   \[
     C^{\text{BD}}_{\kappa}(M)_c^\bullet \colon
-    0 \to
-    \dots \to
+    0 \longrightarrow
+    \dots \longrightarrow
     \hat V(M_{\le \kappa_i}^{n_i})^{T^{-1}}
-    \to
+    \longrightarrow
     \hat V(M_{\le \kappa_{i+1}}^{n_{i+1}})^{T^{-1}}
-    \to \dots.
+    \longrightarrow \dots.
   \]
   Together, these complexes fit into a system of complexes
   with the natural restriction maps.

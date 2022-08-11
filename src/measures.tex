@@ -5,34 +5,36 @@
   \lean{real_measures}
   \leanok
   Let $0 < p' < 1$ be a real number, and let $S$ be a finite set.
-  Denote by $\Rm(S)$ the real vector space
-\[
-\Rm(S)=\left\{\sum_{s\in S}a_{s}[s] \text{ such that } a_{s}\in \R\right\}
-\]
-endowed with the $\ell^{p'}$-norm $\Vert \sum_{s\in S}a_s[s]\Vert_{\ell^{p'}}=\sum_{s\in S}\lvert a_s\rvert ^{p'}$. We refer to its elements as (real) $\ell^{p'}$-measures on $S$.
-\end{definition}
-For every finite set $S$, the space $\Rm(S)$ can be written as the filtered colimit (in this case, a union)
-\[
-\Rm(S)=\varinjlim_{c>0}\Rm(S)_{\leq c}
-\]
-where $\Rm(S)_{\leq c}=\left\{F \in \Rm(S) \text{ such that } \Vert F \Vert_{\ell^{p'}}\leq c\right\}$. Now, given a profinite set $S=\varprojlim S_i$, where all the $S_i$ are finite groups, and a positive real number $c>0$, define $\Rm(S)_{\leq c}$ as
-\[
-\Rm(S)_{\leq c}=\varprojlim \Rm(S_i)_{\leq c}
-\]
-and endow the limit with the inductive limit topology. Finally, set $\Rm(S)=\varinjlim_{c}\Rm(S)_{\leq c}$.
+  Then $\Rm(S)$ denotes the real vector space
+  \[
+	  \Rm(S) = \left\{\sum_{s\in S}a_{s}[s] \text{ such that } a_{s}\in \R\right\}
+  \]
+	endowed with the $\ell^{p'}$-norm $\Vert \sum_{s\in S}a_s[s]\Vert_{\ell^{p'}}=\sum_{s\in S}\lvert a_s\rvert ^{p'}$.
 
-We now switch to Laurent measures, an ``arithmetic'' version of the above-defined real $\ell^{p'}$-measures.
+  For every finite set $S$, the space $\Rm(S)$ can be written as the union
+  \[
+    \Rm(S) = \varinjlim_{c>0}\Rm(S)_{\leq c}
+  \]
+  where $\Rm(S)_{\leq c} = \left\{F \in \Rm(S) \text{ such that } \Vert F \Vert_{\ell^{p'}}\leq c\right\}$.
+  Now, given a profinite set $S=\varprojlim S_i$, where all $S_i$'s are finite sets, and a positive real number $c>0$, define $\Rm(S)_{\leq c}$ as
+  \[
+    \Rm(S)_{\leq c}=\varprojlim \Rm(S_i)_{\leq c}
+  \]
+  endowed with the projective limit topology.
+  Finally, set $\Rm(S)=\varinjlim_{c}\Rm(S)_{\leq c}$.
+\end{definition}
 
 \begin{definition}
   \label{laurent-measures-fin}
   \lean{laurent_measures}
   \leanok
-  Let $0 < r' < 1$ be a real number, and let $S$ be a finite set. We denote by $\Lm_{r'}(S)$ the group
+  Let $0 < r' < 1$ be a real number, and let $S$ be a finite set. Then $\Lm_{r'}(S)$ denotes the group
 \[
 	\Lm_{r'}(S)=\{\sum_{s\in S,n\in \Z}a_{n,s}T^n[s] \mid a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
 < + \infty\}.
 \]
-and we refer to its elements as Laurent measures (on $S$).
+\end{definition}
+
 The group $\Lm_{r'}(S)$ is filtered by the subsets
 \[
 	\Lm_{r'}(S)_{\leq c}=\bigl\{\sum_{s\in S,n\in \Z}a_{n,s}T^n[s] \mid a_{n,s}\in \Z, \sum_{n\in\Z, s\in S}\lvert a_{n,s}\rvert r^n
@@ -47,22 +49,21 @@ where $A$ runs through the finite subsets of $\Z$ and $\Lm_{r'}(S)_{A,\leq c}$ i
 	\Lm_{r'}(S)_{A,\leq c}=\bigl\{\sum_{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \Z, \sum_{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr\}.
 \]
 This defines a profinite topology on $\Lm_{r'}(S)_{\leq c}$, for each $c>0$.
+
+\begin{definition}
+  \label{laurent-measures}
+  \uses{laurent-measures-fin}
+  \lean{laurent_measures}
+  \leanok
+  Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set with a presentation $S=\varprojlim S_i$, where all $S_i$ are finite. For all $c>0$, let $\Lm_{r'}(S)_{\leq c}$ denote the projective limit
+  \[
+  \Lm_{r'}(S)_{\leq c}=\varprojlim\Lm_{r'}(S_i)_{\leq c},
+  \]
+  endowed with the projective limit topology, and set
+  \[
+  \Lm_{r'}(S)=\varinjlim_{c > 0}\Lm_{r'}(S)_{\leq c}.
+  \]
 \end{definition}
-Passing to the limit, we obtain the Laurent measures on an arbitrary profinite set $S$ as follows. 
-%\begin{definition}
-% \label{laurent-measures}
-% \lean{laurent_measures}
-% \leanok
-%  Let $0 < r' < 1$ be a real number, and let $S$ be a profinite set with 
-Choose a presentation $S=\varprojlim S_i$, where all the $S_i$ are finite; given any $c>0$, define the space $\Lm_{r'}(S)_{\leq c}$ as the limit
-\[
-\Lm_{r'}(S)_{\leq c}=\varprojlim\Lm_{r'}(S_i)_{\leq c},
-\]
-endowed with the inductive limit topology. Then set
-\[
-\Lm_{r'}(S)=\varinjlim_{c > 0}\Lm_{r'}(S)_{\leq c}
-\]
-%\end{definition}
 
 %For every $\alpha\in\R$ let $\lfloor \alpha\rfloor\in\Z$ be the largest integer that satisfies $\lfloor \alpha\rfloor\le \alpha$: in particular,
 %\[
@@ -70,10 +71,6 @@ endowed with the inductive limit topology. Then set
 %  \qquad\text{and}\qquad
 %  \alpha\geq 0 \Longrightarrow \lfloor \alpha\rfloor \geq 0.
 %\]
-
-%Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$.
-For simplicity, we denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$. 
-%The next theorem is the first statement of Theorem~6.9 in~\cite{Analytic}.
 
 %\begin{lemma}
 %  \label{theta.finite_sum}
@@ -195,29 +192,35 @@ For simplicity, we denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$.
 %  The result follows from Lemma~\ref{theta.limit_y}.
 %\end{proof}
 
-%Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$.
-%One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the following map.
+Now fix $0< \xi<1$ and let $x\in\R_{\geq 0}$. For simplicity, denote by $\Z(\!(T)\!)_{r'}$ the group $\Lm_{r'}(\ast)$.
+One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the following map.
 
 \begin{definition}
   \label{theta}
   \lean{theta.ϑ}
   \uses{laurent-measures}
   \leanok
-  Let $0<\xi <1$ be a real number. Denote by $\vartheta_{\xi}\colon \Z(\!(T)\!)_{r'}\rightarrow \R$ the evaluation map
+  Fix $0<\xi <1$, and let $\vartheta_{\xi}\colon \Z(\!(T)\!)_r\rightarrow \R$ be the evaluation map
   \[
     \sum a_nT^n\longmapsto \sum a_n\xi^n.
   \]
-induced by $T\mapsto \xi$.
 \end{definition}
 
-One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and continuity of the map $\vartheta_\xi$, together with a proof that its kernel is principal for every $0<\xi<1$. To state this result, we begin with the following lemma.
-
-% \begin{definition}
-%  \label{theta.y}
-%  \lean{theta.y}
-%  \leanok
-%	, namely the greatest integer that is less or equal than $\ast$.
-%\end{definition}
+In order to prove the surjectivity, we use the following construction.
+\begin{definition}
+  \label{theta-y}
+  \lean{theta-y}
+  \leanok
+  For all $x \in \R$ and $n\in\N$, set
+  \[
+    Y_\xi(x, n)=
+    \begin{cases}
+      x&\text{ if } n = 0 \\
+      Y_\xi(x,n-1) - \left\lfloor \frac{Y_\xi(x,n-1)}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
+    \end{cases}
+  \]
+where $\lfloor \ast \rfloor$ denotes the floor of $\ast$, namely the greatest integer that is less or equal than $\ast$.
+\end{definition}
 
 \begin{lemma}
   \label{theta-surjective}
@@ -230,19 +233,11 @@ One of the key results proven in \cite[\S 6]{Analytic} is the surjectivity and c
 \begin{proof}
   \uses{theta-y}
   \leanok
-  Given $n\in\N$ and $x\in\R$, set
-	\[
-		Y_\xi(x, n)=
-		\begin{cases}
-			x&\text{ if } n = 0 \\
-			Y_\xi(x,n-1) - \left\lfloor \frac{Y_\xi(x,n-1)}{\xi^{n-1}} \right\rfloor \xi^{n-1} & \text{ if } n \ge 1
-		\end{cases}
-	\]
-where $\lfloor \ast \rfloor$ denotes the floor of $\ast$. Consider the power series
+  Pick $x\in \R$, and consider the power series
   \[
-    F(T)=\sum_{n\geq 0}\left\lfloor \frac{Y_\xi(x,n)}{\xi^n}\right\rfloor T^n\in\Z[\![T]\!].
+    F(T)=\sum_{n\geq 0}\left\lfloor \frac{Y_\xi(x,n)}{\xi^n}\right\rfloor T^n\in\Z[\![T]\!]
   \]
-	The fact that $0<\xi<1$ ensures that the series converges on the open unit disk, so it actually belongs to $\Z(\!(T)\!)_{r'}$ and it can be proven that $F(\xi)=x$.
+  where $\{Y_\xi(x,n)\}_{n}$ is the sequence defined in Definition~\ref{theta-y}. The fact that $0<\xi<1$ ensures that the series converges on the open unit disk, and it can be proven that $F(\xi)=x$.
 %  By Proposition~\ref{theta.has_sum_x}, the series converges on the open unit disks,
 %  so it belongs to $\Z((T))_r$ and it specializes to $x$ when evaluated at $T=\xi$.
 \end{proof}
@@ -254,6 +249,7 @@ The next lemma allows to compare the seemingly uncorrelated topologies on the sp
 	\leanok
 Fix a finite set $S$, real numbers $0<\xi,p'<1$ and set $r'=(\xi)^{p'}$. The map $\vartheta_\xi$ of Definition~\ref{theta} is continuous when endowing $\Lm_{r'}(S)$ with the topology defined in Definition~\ref{laurent-measures-fin} and $\Rm(S)$ with the topology defined in Definition~\ref{real-measures}
 \end{lemma}
+
 \begin{proof}
   \proves{theta-continuous}
   \leanok
