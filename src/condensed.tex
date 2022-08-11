@@ -63,7 +63,7 @@
 
 \begin{proposition}
   \label{CHPNG-Cond-exact}
-  \lean{condensed.exact_of_exact_with_constant}
+  \lean{Condensed.exact_of_exact_with_constant}
   \leanok
   \uses{CHPNG-to-Cond, exact-with-constant}
   Consider an exact sequence of abelian groups
@@ -316,7 +316,7 @@
   \label{M-ses}
   \lean{laurent_measures.short_exact}
   \leanok
-  \uses{laurent-measures, real-measures}
+  \uses{laurent-measures, real-measures, theta-exact_finite, CHPNG-Cond-exact, exact-with-constants-lim}
   Let $0 < p' < 1$ be a real number,
   let $S$ be a profinite set,
   and let $r'$ denote $(\tfrac12)^{p'}$.
@@ -326,7 +326,7 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{theta-surjective, CHPNG-Cond-exact, exact-with-constants-lim, theta-continuous}
+  \uses{theta-exact_finite, CHPNG-Cond-exact, exact-with-constants-lim}
   \leanok
   By Proposition~\ref{CHPNG-Cond-exact} it suffices to show
   that the corresponding sequence of pseudonormed groups is short exact,
