@@ -8,7 +8,7 @@ they are surjective).
 
 \begin{definition}
   \label{def:surjective_with_bound}
-  \lean{normed_group_hom.surjective_on_with}
+  \lean{normed_add_group_hom.surjective_on_with}
   \leanok
   Let $G$ and $H$ be semi-normed groups, let $K$ be a subgroup of $H$ and $C$ be
   a positive real number.
@@ -450,7 +450,7 @@ In particular,
 Now weak exactness of $M'$ gives $x \in M'^{i-1}_c$ such that
 \[
   ‖m'_{\mathrm{new}|c} - dx‖ ≤ K'‖dm'_{\mathrm{new}}‖ + ε_1 \leq
-    K'((K K'' + 1) \ndn + (KK'' + 2) ε_1) + ε_1.
+    K'\bigl((K K'' + 1) \ndn + (KK'' + 2) ε_1\bigr) + ε_1.
 \]
 In particular, letting $y \in N^{i-1}_c$ be the image of $x$, we get
 \[

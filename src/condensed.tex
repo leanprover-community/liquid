@@ -63,7 +63,7 @@
 
 \begin{proposition}
   \label{CHPNG-Cond-exact}
-  \lean{condensed.exact_of_exact_with_constant}
+  \lean{Condensed.exact_of_exact_with_constant}
   \leanok
   \uses{CHPNG-to-Cond, exact-with-constant}
   Consider an exact sequence of abelian groups
@@ -264,20 +264,20 @@
   \lean{Lbar.short_exact}
   \leanok
   Let $0 < r < 1$ be a real number, and let $S$ be a profinite set.
-  Decomposing $\mathbb Z((T))_r$ into positive and nonpositive coefficients yields a direct sum decomposition
-  \[ \mathbb Z((T))_r = T\mathbb Z[[T]]_r \oplus \mathbb Z[T^{-1}]. \]
+  Decomposing $\mathbb Z(\!(T)\!)_r$ into positive and nonpositive coefficients yields a direct sum decomposition
+  \[ \mathbb Z(\!(T)\!)_r = T\mathbb Z[\![T]\!]_r \oplus \mathbb Z[T^{-1}]. \]
   This extends to a decomposition of spaces of measures
-  \[ \Lm_r(S) = \mathcal L(S,T\mathbb Z((T))_r) = \mathcal L(S,T\mathbb Z[[T]]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}]) \]
+  \[ \Lm_r(S) = \mathcal L(S,T\mathbb Z(\!(T)\!)_r) = \mathcal L(S,T\mathbb Z[\![T]\!]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}]) \]
   where $\mathcal M(S,\mathbb Z[T^{-1}]) = \mathbb Z[T^{-1}][S]$ is the free condensed $\mathbb Z[T^{-1}]$-module on $S$.
-  Letting $\Lbar_r(S)= \mathcal L(S,T\mathbb Z[[T]]_r)$, we get a short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
+  Letting $\Lbar_r(S)= \mathcal L(S,T\mathbb Z[\![T]\!]_r)$, we get a short exact sequence of condensed $\mathbb Z[T^{-1}]$-modules
   \[ 0 \to \mathbb Z[T^{-1}][S] \to \Lm_r(S) \to \Lbar_r(S) \to 0. \]
 \end{proposition}
 
 \begin{proof}
   \uses{free-png}
   \leanok
-  On $\mathbb Z((T))_{r,\leq c}$, only finitely many nonpositive coefficients can possibly be nonzero, and each of them is bounded.
-  This shows that the nonpositive summand of $\mathbb Z((T))_r$ is given by $\mathbb Z[T^{-1}]$.
+  On $\mathbb Z(\!(T)\!)_{r,\leq c}$, only finitely many nonpositive coefficients can possibly be nonzero, and each of them is bounded.
+  This shows that the nonpositive summand of $\mathbb Z(\!(T)\!)_r$ is given by $\mathbb Z[T^{-1}]$.
   To pass to profinite $S$, use Proposition~\ref{free-png}.
 \end{proof}
 
@@ -308,7 +308,7 @@
   And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar_{r'}(S), V)$ vanish for $i \ge 0$.
   The result follows.
 
-  The "In other words" version can be proved without mentioning $\mathbb Z[T^{-1}]$-linear Ext groups,
+  The ``In other words'' version can be proved without mentioning $\mathbb Z[T^{-1}]$-linear Ext groups,
   by using the same ingredients and the five lemma.
 \end{proof}
 
@@ -316,7 +316,7 @@
   \label{M-ses}
   \lean{laurent_measures.short_exact}
   \leanok
-  \uses{laurent-measures, real-measures}
+  \uses{laurent-measures, real-measures, theta-exact_finite, CHPNG-Cond-exact, exact-with-constants-lim}
   Let $0 < p' < 1$ be a real number,
   let $S$ be a profinite set,
   and let $r'$ denote $(\tfrac12)^{p'}$.
@@ -326,21 +326,21 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{theta-surjective, CHPNG-Cond-exact, exact-with-constants-lim, theta-continuous}
+  \uses{theta-exact_finite, CHPNG-Cond-exact, exact-with-constants-lim}
   \leanok
   By Proposition~\ref{CHPNG-Cond-exact} it suffices to show
   that the corresponding sequence of pseudonormed groups is short exact,
-  and by Proposition~\ref{exact-with-constants-lim} we may also assume that $S$ is finite.
+  and by Proposition~\ref{exact-with-constants-lim} we may also assume that $S$ is finite. With these reductions, the result is Theorem~\ref{theta-exact_finite}.
   
-  For finite $S$, the sequence is a termwise direct sum (indexed by $s \in S$) of the sequences
-  \[ 0 \to \Lm_{r'}(\{s\}) \to \Lm_{r'}(\{*\}) \to \Rm(\{*\}) \to 0. \]
-  Hence it suffices to show that the sequence
-  \[ 0 \to \Z(\!(T)\!)_{r'} \to \Z(\!(T)\!)_{r'} \to \R \to 0 \]
-  is short exact.
-  The Lemmas~\ref{theta-surjective} and~\ref{theta-continuous} show that the evaluation map is indeed
-  continuous and surjective.
-  A computation (omitted here for now, but done in Lean) shows that the kernel of the evaluation map
-  is exactly $(2T-1) \Z(\!(T)\!)_{r'}$.
+%  For finite $S$, the sequence is a termwise direct sum (indexed by $s \in S$) of the sequences
+%  \[ 0 \to \Lm_{r'}(\{s\}) \to \Lm_{r'}(\{*\}) \to \Rm(\{*\}) \to 0. \]
+%  Hence it suffices to show that the sequence
+%  \[ 0 \to \Z(\!(T)\!)_{r'} \to \Z(\!(T)\!)_{r'} \to \R \to 0 \]
+%  is short exact.
+%  The Lemmas~\ref{theta.surjective} and~\ref{theta.continuous} show that the evaluation map is indeed
+%  continuous and surjective.
+%  A computation (omitted here for now, but done in Lean) shows that the kernel of the evaluation map
+%  is exactly $(2T-1) \Z(\!(T)\!)_{r'}$.
 \end{proof}
 
 \begin{theorem}[Clausen--Scholze]
@@ -351,7 +351,7 @@
   Let $0 < p' < p \le 1$ be real numbers,
   let $S$ be a profinite set,
   and let $V$ be a $p$-Banach space.
-  Let $\Rm(S)$ be the space of rel $p'$-measures on $S$. Then
+  Let $\Rm(S)$ be the space of real $p'$-measures on $S$. Then
   \[
 \Ext^i_{\Cond(\Ab)}(\Rm(S),V) = 0
 \]
