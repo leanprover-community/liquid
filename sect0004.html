@@ -140,7 +140,7 @@
   <div class="theorem_thmcontent">
   <p>   Let \(\mathsf{BD}= (n,f,h)\) be a Breen–Deligne package, and let \(\kappa = (\kappa _0, \kappa _1, \kappa _2, \dots )\) be a sequence of constants in \(\mathbb R_{\ge 0}\) that is \(\mathsf{BD}\)-suitable. Fix radii \(1{\gt}r'{\gt}r{\gt}0\). For any \(m\) there is some \(k\) and \(c_0\) such that for all profinite sets \(S\) and all \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-modules \(V\), the system of complexes </p>
 <div class="displaymath" id="a0000000114">
-  \[  C^{\mathsf{BD}}_{\kappa }(\overline{\mathcal L}_{r'}(S))_c^\bullet \colon \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq c})^{T^{-1}} \to \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq \kappa _1c}^2)^{T^{-1}} \to \ldots  \]
+  \[  C^{\mathsf{BD}}_{\kappa }(\overline{\mathcal L}_{r'}(S))_c^\bullet \colon \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq c})^{T^{-1}} \longrightarrow \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq \kappa _1c}^2)^{T^{-1}} \longrightarrow \ldots  \]
 </div>
 <p> is \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\). </p>
 
@@ -195,7 +195,7 @@
   <div class="theorem_thmcontent">
   <p>   Fix radii \(1{\gt}r'{\gt}r{\gt}0\). For any \(m\) there is some \(k\) such that for all polyhedral lattices \(\Lambda \) there is a constant \(c_0(\Lambda ){\gt}0\) such that for all profinite sets \(S\) and all \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-modules \(V\), the system of complexes </p>
 <div class="displaymath" id="a0000000116">
-  \[  C_{\Lambda ,c}^\bullet \colon \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq \kappa _1c}^2)^{T^{-1}} \to \ldots  \]
+  \[  C_{\Lambda ,c}^\bullet \colon \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq c})^{T^{-1}} \longrightarrow \widehat{V}(\operatorname{Hom}(\Lambda ,\overline{\mathcal L}_{r'}(S))_{\leq \kappa _1c}^2)^{T^{-1}} \longrightarrow \ldots  \]
 </div>
 <p> is \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0(\Lambda )\). </p>
 
@@ -520,7 +520,7 @@
   <div class="proposition_thmcontent">
   <p>   Let \(\pi : X \to B\) be a surjective morphism of profinite sets, and let \(S_\bullet \to S_{-1}\), \(S_{-1} := B\), be its augmented Čech nerve. Let \(V\) be a semi-normed group. Then the complex </p>
 <div class="displaymath" id="a0000000128">
-  \[  0\to \widehat{V}(S_{-1})\to \widehat{V}(S_0)\to \widehat{V}(S_1)\to \cdots  \]
+  \[  0\longrightarrow \widehat{V}(S_{-1})\longrightarrow \widehat{V}(S_0)\longrightarrow \widehat{V}(S_1)\longrightarrow \cdots  \]
 </div>
 <p> is exact. Furthermore, for all \(\epsilon {\gt} 0\) and \(f \in \ker (\widehat{V}(S_{m}) \to \widehat{V}(S_{m+1}))\), there exists some \(g\in \widehat{V}(S_{m-1})\) such that \(d(g) = f\) and \(‖g‖\leq (1+\epsilon ) \cdot ‖f‖\). In other words, the complex is normed exact in the sense of Definition&#160;<a href="sec-some_normed_homological_algebra.html#norm_exact_complex">1.4.6</a>. </p>
 
@@ -542,7 +542,7 @@
 	]
 </span>, as follows. By applying Lemma&#160;<a href="sec-some_normed_homological_algebra.html#lem:controlled_exactness">1.4.3</a>, we first reduce to a statement which does not involve \(\epsilon \) or completions. Explicitly, we must show that </p>
 <div class="displaymath" id="a0000000129">
-  \[  0 \to V(S_{1}) \to V(S_{0}) \to V(S_{1}) \to \cdots  \]
+  \[  0 \longrightarrow V(S_{1}) \longrightarrow V(S_{0}) \longrightarrow V(S_{1}) \longrightarrow \cdots  \]
 </div>
 <p> is exact, and that whenever \(f \in \ker (V(S_{m}) \to V(S_{m+1}))\), there exists \(g \in V(S_{m-1})\) such that \(‖g‖\leq ‖f‖\) and \(d(g) = f\). The map \(V(S_{-1}) \to V(S_{0})\) is the one induced by \(S_0 \to S_{-1}\) which agrees with \(X \to B\). Since \(X \to B\) is surjective, we easily see that \(V(S_{-1}) \to V(S_{0})\) is injective. </p>
 <p>If \(X\) and \(B\) are finite, then the remaining assertions follow from the existence of a splitting \(\sigma : B \to X\) of \(\pi : X \to B\), as follows. The map \(\sigma \) provides maps \(S_{m} \to S_{m+1}\) for all \(m \geq -1\), defined explicitly as </p>
@@ -552,7 +552,7 @@
 <p> if \(m \geq 0\) and simply as \(\sigma \) if \(m = -1\). Here, for \(m \geq 0\), we have identified \(S_{m}\) with the \(m+1\)-fold fibered product \(X \times _{B} \cdots \times _{B} X\). Applying \(V(-)\), these maps induce \(h_{m} : V(S_{m+1}) \to V(S_{m})\), which form a contracting homotopy for the complex in question, and which are norm nonincreasing by the definition of \(V(-)\). If \(f \in \ker (V_{m} \to V_{m+1})\) is as above, then \(g := h_{m}(f)\) satisfies \(d(g) = f\) and \(‖g‖\leq ‖f‖\), as required. </p>
 <p>In the general case, write \(X = \varprojlim _{i} X_{i}\) where \(X_{i}\) vary over the discrete (hence finite) quotients of \(X\). Since \(X \to B\) is surjective, for each \(i\) there exists a unique maximal discrete quotient \(B_{i}\) of \(B\) such that \(X \to B\) descends to \(X_{i} \to B_{i}\). The maps \(X_{i} \to B_{i}\) are again surjective, and one has </p>
 <div class="displaymath" id="a0000000131">
-  \[  (X \to B) = \varprojlim _{i} (X_{i} \to B_{i}).  \]
+  \[  (X \longrightarrow B) = \varprojlim _{i} (X_{i} \longrightarrow B_{i}).  \]
 </div>
 <p> Let \(S_{i,\bullet } \to S_{i,-1}\), \(S_{i,-1} := B_{i}\), denote the augmented Čech nerve of \(X_{i} \to B_{i}\). </p>
 <p>The terms in the Čech nerve are themselves limits, hence we have \(S_{m} = \varprojlim _{i} S_{i,m}\), with each \(S_{i,m}\) finite. The functor \(V(-)\), when considered as taking values in abelian groups, sends cofiltered limits to filtered colimits. Also, if \(f \in V(S_{m})\) is the pullback of \(f_{i} \in V(S_{i,m})\), then for a sufficiently small index \(j \leq i\), the image of \(f : S_{m} \to V\) agrees with the image of \(f_{j} : S_{j,m} \to V\), where \(f_{j}\) is the image of \(f_{i}\) under the map \(V(S_{i,m}) \to V(S_{j,m})\) induced by the transition map \(S_{j,m} \to S_{i,m}\). </p>
@@ -617,7 +617,7 @@
   <div class="lemma_thmcontent">
   <p>   Let \(M\) be a profinitely filtered pseudo-normed group with \(T^{-1}\)-action that is \(N\)-splittable with error term&#160;\(d \ge 0\). Let \(k \ge 1\) be a real number, and let \(c_0 {\gt} 0\) satisfy \(d \le \frac{(k - 1) c_0}{N}\). For every \(c\), consider the Cech nerve of the summation map \(M^N_{c/N} \to M_c\). By applying the functor \(\hat V(\_ )\) and taking the alternating face map complex, we obtain a system of complexes </p>
 <div class="displaymath" id="a0000000134">
-  \[  \hat V(M_{\le c}) \to \hat V(M^N_{\le c/N}) \to \dots  \]
+  \[  \hat V(M_{\le c}) \longrightarrow \hat V(M^N_{\le c/N}) \longrightarrow \dots  \]
 </div>
 <p> This system of complexes is weakly \(\le k\)-exact in degrees \(\le m\) and for \(c \ge c_0\) with bound&#160;\(1\). </p>
 
@@ -766,7 +766,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p>   Let \(h\) be the homotopy packaged with \(\mathsf{BD}\), and let \(h^N\) denote the \(n\)-th iterated composition of \(h\) (see Def&#160;<a href="BD_orig.html#BD_h_mul">1.1.11</a>) which is a homotopy between \(\pi ^N\) and \(\sigma ^N \colon N \otimes \mathsf{BD}\to \mathsf{BD}\). </p>
-<p>Let \(H \in \mathbb {R}_{\ge 0}\) be such that for \(i = 0, \dots , m\) the universal map \(h^N_i\) is bound by \(H\) (see Def&#160;<a href="BD_orig.html#universal_map_bound_by">1.1.3</a>). </p>
+<p>Let \(H \in \mathbf{R}_{\ge 0}\) be such that for \(i = 0, \dots , m\) the universal map \(h^N_i\) is bound by \(H\) (see Def&#160;<a href="BD_orig.html#universal_map_bound_by">1.1.3</a>). </p>
 <p>Then the double complex satisfies the normed homotopy homotopy condition (Def&#160;<a href="sec-some_normed_homological_algebra.html#spectral-htpy">1.4.14</a>) for \(m\), \(H\), and \(c_0\). </p>
 
   </div>
@@ -786,11 +786,11 @@
 <p> Now it is important to recall that we have chosen \(k' \ge \kappa '_i\) for all \(i = 0, \dots , m+1\). </p>
 <p>Our goal is to find, in degrees \(\leq m\), a homotopy between the two maps from the first row </p>
 <div class="displaymath" id="a0000000143">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c})^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c}^2)^{T^{-1}}\to \ldots  \]
+  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c})^{T^{-1}}\longrightarrow \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c}^2)^{T^{-1}}\longrightarrow \ldots  \]
 </div>
 <p> to the second row </p>
 <div class="displaymath" id="a0000000144">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c/N}^N)^{T^{-1}}\to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c/N}^{2N})^{T^{-1}}\to \ldots  \]
+  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq c/N}^N)^{T^{-1}}\longrightarrow \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _1c/N}^{2N})^{T^{-1}}\longrightarrow \ldots  \]
 </div>
 <p> respectively induced by \(\sigma ^N\) and \(\pi ^N\) (which are maps \(N \otimes \mathsf{BD}\) </p>
 <p>By Definition&#160;<a href="BD_orig.html#BD_h_mul">1.1.11</a> and Lemma&#160;<a href="BD_orig.html#BD_h_mul_suitable">1.1.18</a> we can find this homotopy between the complex for \(k'c\) and the complex for&#160;\(c\). (Here we use \(k'\geq c_i'\) for \(i=0,\ldots ,m\).) By assumption, the norm of these maps is bounded by&#160;\(H\). </p>
@@ -800,15 +800,15 @@
 </div>
 <p> that is the sum of the \(N\) pullbacks along the \(N\) projection maps \(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i}\to \operatorname{Hom}(\Lambda ,M)_{\leq k'^2\kappa _ic}^{a_i}\). We note that these actually take image in \(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i}\) as \(N\geq k'\), so this actually gives a well-defined map </p>
 <div class="displaymath" id="a0000000146">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
+  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \longrightarrow \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
 </div>
 <p> We need to see that this map is of norm \(\leq \epsilon \). Now note that by our choice of \(N\), we actually have \(k'\kappa _ic/N\leq (r')^b \kappa _ic\), so this can be written as the composite of the restriction map </p>
 <div class="displaymath" id="a0000000147">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}}  \]
+  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq \kappa _ic}^{a_i})^{T^{-1}} \longrightarrow \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}}  \]
 </div>
 <p> and </p>
 <div class="displaymath" id="a0000000148">
-  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}} \to \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
+  \[  \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq (r')^b \kappa _ic}^{a_i})^{T^{-1}} \longrightarrow \widehat{V}(\operatorname{Hom}(\Lambda ,M)_{\leq k'\kappa _ic/N}^{Na_i})^{T^{-1}}.  \]
 </div>
 <p> The first map has norm exactly \(r^b\), by \(T^{-1}\)-invariance, and as multiplication by \(T\) scales the norm with a factor of \(r\) on \(\widehat{V}\). (Here is where we use \(r'{\gt}r\), ensuring different scaling behaviour of the norm on source and target.) The second map has norm at most \(N\) (as it is a sum of \(N\) maps of norm \(\leq 1\)). Thus, the total map has norm \(\leq r^bN\). But by our choice of \(N\), we have \(r^bN\leq \epsilon \), giving the result. </p>
 

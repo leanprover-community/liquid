@@ -62,11 +62,11 @@
       <span class="proposition_thmlabel">2.4.7</span></div>
     <div class="thm_thmcontent"><p>  Let </p>
 <div class="displaymath" id="a0000000201">
-  \[  M \colon \mathrm{ProFin}^{\mathrm{op}}\to \mathrm{Ab}  \]
+  \[  M \colon \mathrm{ProFin}^{\mathrm{op}}\longrightarrow \mathrm{Ab}  \]
 </div>
 <p> be a functor, i.e.&#160;a presheaf of abelian groups on \(\mathrm{ProFin}\). Assume that \(M\) preserves finite products, and that for any surjective map \(f: T\to S\), the complex </p>
 <div class="displaymath" id="a0000000202">
-  \[  0\to M(S)\to M(T)\to M(T\times _S T)\to M(T\times _S T\times _S T)\to \ldots  \]
+  \[  0\longrightarrow M(S)\longrightarrow M(T)\longrightarrow M(T\times _S T)\longrightarrow M(T\times _S T\times _S T)\longrightarrow \ldots  \]
 </div>
 <p> is exact. </p>
 <p>Then \(M\) is a condensed abelian group, and for all profinite sets \(S\) and \(i{\gt}0\), one has \(H^i(S,M)=0\) for \(i{\gt}0\). </p>
@@ -166,11 +166,11 @@
       <span class="proposition_thmlabel">2.4.5</span></div>
     <div class="thm_thmcontent"><p>   Consider an exact sequence of abelian groups </p>
 <div class="displaymath" id="a0000000197">
-  \[  X'\xrightarrow {f} X\xrightarrow {g} X''  \]
+  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
 <p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is exact with constant \(c_f\), then the sequence </p>
 <div class="displaymath" id="a0000000198">
-  \[  \underline{X'}\to \underline{X}\to \underline{X''}  \]
+  \[  \underline{X'}\longrightarrow \underline{X}\longrightarrow \underline{X''}  \]
 </div>
 <p> of condensed abelian groups is exact. </p>
 </div>
@@ -261,7 +261,7 @@
       <span class="definition_thmlabel">2.4.4</span></div>
     <div class="thm_thmcontent"><p>   There is a natural functor </p>
 <div class="displaymath" id="a0000000194">
-  \begin{align*}  \text{CHPNG} & \to \operatorname{Cond}(\operatorname{Ab}) \\ M & \mapsto \underline{M} \end{align*}
+  \begin{align*}  \text{CHPNG} & \longrightarrow \operatorname{Cond}(\operatorname{Ab}) \\ M & \longmapsto \underline{M} \end{align*}
 </div>
 <p> where \(\underline{M}(S)\) is defined to be collection of functions \(f \colon S \to M\) that factor as continuous through \(M_c\), for some \(c\). In symbols: </p>
 <div class="displaymath" id="a0000000195">
@@ -291,7 +291,7 @@
       <span class="definition_thmlabel">2.4.2</span></div>
     <div class="thm_thmcontent"><p>   Consider an exact sequence of abelian groups </p>
 <div class="displaymath" id="a0000000190">
-  \[  X'\xrightarrow {f} X\xrightarrow {g} X''  \]
+  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
 <p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). We say that the sequence is <em>exact with constant \(c_f\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\). </p>
 </div>
@@ -318,11 +318,11 @@
       <span class="proposition_thmlabel">2.4.3</span></div>
     <div class="thm_thmcontent"><p>   Consider an inverse system </p>
 <div class="displaymath" id="a0000000192">
-  \[  (X'_i\xrightarrow {f_i} X_i\xrightarrow {g_i} X_i'')_i  \]
+  \[  (X_i'\overset {f}{\longrightarrow } X_i\overset {g}{\longrightarrow } X_i'')_i  \]
 </div>
 <p> of exact sequences that are exact with constant \(c_f\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
 <div class="displaymath" id="a0000000193">
-  \[  X'\xrightarrow {f} X\xrightarrow {g} X''  \]
+  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
 <p> is exact with the same constant \(c_f\). </p>
 </div>
@@ -403,11 +403,11 @@
       <span class="lemma_thmlabel">2.4.11</span></div>
     <div class="thm_thmcontent"><p>   Assume that in each degree \(i\), the map </p>
 <div class="displaymath" id="a0000000224">
-  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V)  \]
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq c},V)\longrightarrow \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S))_{\leq r' c},V)  \]
 </div>
 <p> is a pro-isomorphism in \(c\) (i.e., pro-systems of kernels, and of cokernels, are pro-zero). Then </p>
 <div class="displaymath" id="a0000000225">
-  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\to \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V).  \]
+  \[  (T^{-1})_V - (T^{-1})_{\mathcal M}: \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V)\longrightarrow \mathrm{Ext}^i(Q'(\overline{\mathcal M}_{r'}(S)),V).  \]
 </div>
 <p> is an isomorphism. </p>
 </div>
@@ -443,7 +443,7 @@
       <span class="theorem_thmlabel">1.7.1</span></div>
     <div class="thm_thmcontent"><p>   Let \(\mathsf{BD}= (n,f,h)\) be a Breen–Deligne package, and let \(\kappa = (\kappa _0, \kappa _1, \kappa _2, \dots )\) be a sequence of constants in \(\mathbb R_{\ge 0}\) that is \(\mathsf{BD}\)-suitable. Fix radii \(1{\gt}r'{\gt}r{\gt}0\). For any \(m\) there is some \(k\) and \(c_0\) such that for all profinite sets \(S\) and all \(r\)-normed \(\mathbb Z[T^{\pm 1}]\)-modules \(V\), the system of complexes </p>
 <div class="displaymath" id="a0000000114">
-  \[  C^{\mathsf{BD}}_{\kappa }(\overline{\mathcal L}_{r'}(S))_c^\bullet \colon \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq c})^{T^{-1}} \to \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq \kappa _1c}^2)^{T^{-1}} \to \ldots  \]
+  \[  C^{\mathsf{BD}}_{\kappa }(\overline{\mathcal L}_{r'}(S))_c^\bullet \colon \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq c})^{T^{-1}} \longrightarrow \widehat{V}(\overline{\mathcal L}_{r'}(S)_{\leq \kappa _1c}^2)^{T^{-1}} \longrightarrow \ldots  \]
 </div>
 <p> is \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\). </p>
 </div>
@@ -528,6 +528,36 @@
 
 
     
+    <div class="dep-modal-container" id="laurent-measures_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="laurent-measures" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.2.3</span></div>
+    <div class="thm_thmcontent"><p>   Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set with a presentation \(S=\varprojlim S_i\), where all \(S_i\) are finite. For all \(c{\gt}0\), let \(\mathcal L_{r'}(S)_{\leq c}\) denote the projective limit </p>
+<div class="displaymath" id="a0000000162">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim \mathcal L_{r'}(S_i)_{\leq c},  \]
+</div>
+<p> endowed with the projective limit topology, and set </p>
+<div class="displaymath" id="a0000000163">
+  \[  \mathcal L_{r'}(S)=\varinjlim _{c {\gt} 0}\mathcal L_{r'}(S)_{\leq c}.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#laurent-measures">LaTeX</a>
+  <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/basic.lean#L26">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="laurent-measures-fin_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -540,23 +570,10 @@
       Definition
       </span>
       <span class="definition_thmlabel">2.2.2</span></div>
-    <div class="thm_thmcontent"><p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a finite set. We denote by \(\mathcal L_{r'}(S)\) the group </p>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal L_{r'}(S)\) denotes the group </p>
 <div class="displaymath" id="a0000000158">
-  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbb {Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in \mathbb {Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
+  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
 </div>
-<p> and we refer to its elements as Laurent measures (on \(S\)). The group \(\mathcal L_{r'}(S)\) is filtered by the subsets </p>
-<div class="displaymath" id="a0000000159">
-  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbb {Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in \mathbb {Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
-</div>
-<p> for \(c{\gt} 0\). Each subset \(\mathcal L_{r'}(S)_{\leq c}\) can be written as </p>
-<div class="displaymath" id="a0000000160">
-  \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim _{A}\mathcal L_{r'}(S)_{A,\leq c}  \]
-</div>
-<p> where \(A\) runs through the finite subsets of \(\mathbb {Z}\) and \(\mathcal L_{r'}(S)_{A,\leq c}\) is the finite set </p>
-<div class="displaymath" id="a0000000161">
-  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
-</div>
-<p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). </p>
 </div>
 
     <a class="latex_link" href="sect0005.html#laurent-measures-fin">LaTeX</a>
@@ -579,17 +596,17 @@
       Proposition
       </span>
       <span class="proposition_thmlabel">2.4.12</span></div>
-    <div class="thm_thmcontent"><p>   Let \(0 {\lt} r {\lt} 1\) be a real number, and let \(S\) be a profinite set. Decomposing \(\mathbb Z(\! (T)\! )_r\) into positive and nonpositive coefficients yields a direct sum decomposition </p>
+    <div class="thm_thmcontent"><p>   Let \(0 {\lt} r {\lt} 1\) be a real number, and let \(S\) be a profinite set. Decomposing \(\mathbb Z((T))_r\) into positive and nonpositive coefficients yields a direct sum decomposition </p>
 <div class="displaymath" id="a0000000230">
-  \[  \mathbb Z(\! (T)\! )_r = T\mathbb Z[\! [T]\! ]_r \oplus \mathbb Z[T^{-1}].  \]
+  \[  \mathbb Z((T))_r = T\mathbb Z[[T]]_r \oplus \mathbb Z[T^{-1}].  \]
 </div>
 <p> This extends to a decomposition of spaces of measures </p>
 <div class="displaymath" id="a0000000231">
-  \[  \mathcal L_r(S) = \mathcal L(S,T\mathbb Z(\! (T)\! )_r) = \mathcal L(S,T\mathbb Z[\! [T]\! ]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}])  \]
+  \[  \mathcal L_r(S) = \mathcal L(S,T\mathbb Z((T))_r) = \mathcal L(S,T\mathbb Z[[T]]_r) \oplus \mathcal L(S,\mathbb Z[T^{-1}])  \]
 </div>
-<p> where \(\mathcal M(S,\mathbb Z[T^{-1}]) = \mathbb Z[T^{-1}][S]\) is the free condensed \(\mathbb Z[T^{-1}]\)-module on \(S\). Letting \(\overline{\mathcal L}_r(S)= \mathcal L(S,T\mathbb Z[\! [T]\! ]_r)\), we get a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
+<p> where \(\mathcal M(S,\mathbb Z[T^{-1}]) = \mathbb Z[T^{-1}][S]\) is the free condensed \(\mathbb Z[T^{-1}]\)-module on \(S\). Letting \(\overline{\mathcal L}_r(S)= \mathcal L(S,T\mathbb Z[[T]]_r)\), we get a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
 <div class="displaymath" id="a0000000232">
-  \[  0 \to \mathbb Z[T^{-1}][S] \to \mathcal L_r(S) \to \overline{\mathcal L}_r(S) \to 0.  \]
+  \[  0 \longrightarrow \mathbb Z[T^{-1}][S] \longrightarrow \mathcal L_r(S) \longrightarrow \overline{\mathcal L}_r(S) \longrightarrow 0.  \]
 </div>
 </div>
 
@@ -615,7 +632,7 @@
       <span class="lemma_thmlabel">2.4.14</span></div>
     <div class="thm_thmcontent"><p>   Let \(0 {\lt} p' {\lt} 1\) be a real number, let \(S\) be a profinite set, and let \(r'\) denote \((\tfrac 12)^{p'}\). There is a short exact sequence of condensed \(\mathbb Z[T^{-1}]\)-modules </p>
 <div class="displaymath" id="a0000000237">
-  \[  0 \to \mathcal L_{r'}(S) \to \mathcal L_{r'}(S) \to \mathcal M_{p'}(S) \to 0  \]
+  \[  0 \longrightarrow \mathcal L_{r'}(S) \longrightarrow \mathcal L_{r'}(S) \longrightarrow \mathcal M_{p'}(S) \longrightarrow 0  \]
 </div>
 <p> where the first map is multiplication by \(2T - 1\), and the second is evaluation at \(T = \tfrac 12\). </p>
 </div>
@@ -640,8 +657,8 @@
       Theorem
       </span>
       <span class="theorem_thmlabel">2.4.15</span><span class="theorem_thmtitle">Clausen–Scholze</span></div>
-    <div class="thm_thmcontent"><p>    Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of real \(p'\)-measures on \(S\). Then </p>
-<div class="displaymath" id="a0000000239">
+    <div class="thm_thmcontent"><p>    Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of rel \(p'\)-measures on \(S\). Then </p>
+<div class="displaymath" id="a0000000241">
   \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) = 0  \]
 </div>
 <p> for \(i \ge 1\). </p>
@@ -914,11 +931,20 @@
       Definition
       </span>
       <span class="definition_thmlabel">2.2.1</span></div>
-    <div class="thm_thmcontent"><p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a finite set. Denote by \(\mathcal M_{p'}(S)\) the real vector space </p>
+    <div class="thm_thmcontent"><p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal M_{p'}(S)\) denotes the real vector space </p>
 <div class="displaymath" id="a0000000155">
-  \[  \mathcal M_{p'}(S)=\left\{ \sum _{s\in S}a_{s}[s] \text{ such that } a_{s}\in \mathbb {R}\right\}   \]
+  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s}[s] \text{ such that } a_{s}\in \mathbf{R}\right\}   \]
 </div>
-<p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s[s]\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). We refer to its elements as (real) \(\ell ^{p'}\)-measures on \(S\). </p>
+<p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s[s]\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). </p>
+<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the union </p>
+<div class="displaymath" id="a0000000156">
+  \[  \mathcal M_{p'}(S) = \varinjlim _{c{\gt}0}\mathcal M_{p'}(S)_{\leq c}  \]
+</div>
+<p> where \(\mathcal M_{p'}(S)_{\leq c} = \left\{ F \in \mathcal M_{p'}(S) \text{ such that } \Vert F \Vert _{\ell ^{p'}}\leq c\right\} \). Now, given a profinite set \(S=\varprojlim S_i\), where all \(S_i\)’s are finite sets, and a positive real number \(c{\gt}0\), define \(\mathcal M_{p'}(S)_{\leq c}\) as </p>
+<div class="displaymath" id="a0000000157">
+  \[  \mathcal M_{p'}(S)_{\leq c}=\varprojlim \mathcal M_{p'}(S_i)_{\leq c}  \]
+</div>
+<p> endowed with the projective limit topology. Finally, set \(\mathcal M_{p'}(S)=\varinjlim _{c}\mathcal M_{p'}(S)_{\leq c}\). </p>
 </div>
 
     <a class="latex_link" href="sect0005.html#real-measures">LaTeX</a>
@@ -940,12 +966,11 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.2.3</span></div>
-    <div class="thm_thmcontent"><p>   Let \(0{\lt}\xi {\lt}1\) be a real number. Denote by \(\vartheta _{\xi }\colon \mathbb {Z}(\! (T)\! )_{r'}\rightarrow \mathbb {R}\) the evaluation map </p>
+      <span class="definition_thmlabel">2.2.4</span></div>
+    <div class="thm_thmcontent"><p>   Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbf{Z}(\! (T)\! )_r\rightarrow \mathbf{R}\) be the evaluation map </p>
 <div class="displaymath" id="a0000000164">
   \[  \sum a_nT^n\longmapsto \sum a_n\xi ^n.  \]
 </div>
-<p> induced by \(T\mapsto \xi \). </p>
 </div>
 
     <a class="latex_link" href="sect0005.html#theta">LaTeX</a>
@@ -967,8 +992,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">2.2.5</span></div>
-    <div class="thm_thmcontent"><p>   Fix a finite set \(S\), real numbers \(0{\lt}\xi ,p'{\lt}1\) and set \(r'=(\xi )^{p'}\). The map \(\vartheta _\xi \) of Definition&#160;<a href="sect0005.html#theta">2.2.3</a> is continuous when endowing \(\mathcal L_{r'}(S)\) with the topology defined in Definition&#160;<a href="sect0005.html#laurent-measures-fin">2.2.2</a> and \(\mathcal M_{p'}(S)\) with the topology defined in Definition&#160;<a href="sect0005.html#real-measures">2.2.1</a> </p>
+      <span class="lemma_thmlabel">2.2.7</span></div>
+    <div class="thm_thmcontent"><p>   Fix a finite set \(S\), real numbers \(0{\lt}\xi ,p'{\lt}1\) and set \(r'=(\xi )^{p'}\). The map \(\vartheta _\xi \) of Definition&#160;<a href="sect0005.html#theta">2.2.4</a> is continuous when endowing \(\mathcal L_{r'}(S)\) with the topology defined in Definition&#160;<a href="sect0005.html#laurent-measures-fin">2.2.2</a> and \(\mathcal M_{p'}(S)\) with the topology defined in Definition&#160;<a href="sect0005.html#real-measures">2.2.1</a> </p>
 </div>
 
     <a class="latex_link" href="sect0005.html#theta-continuous">LaTeX</a>
@@ -990,7 +1015,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">2.2.6</span></div>
+      <span class="theorem_thmlabel">2.2.8</span></div>
     <div class="thm_thmcontent"><p>   Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a finite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The sequence </p>
 <div class="displaymath" id="a0000000170">
   \[  0\longrightarrow \mathcal L_{r'}(S)\longrightarrow \mathcal L_{r'}(S)\overset {\theta _S}{\longrightarrow } \mathcal M_{p'}(S)\longrightarrow 0,  \]
@@ -1017,12 +1042,39 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">2.2.4</span></div>
+      <span class="lemma_thmlabel">2.2.6</span></div>
     <div class="thm_thmcontent"><p>   The map \(\vartheta _{\xi }\) is surjective. </p>
 </div>
 
     <a class="latex_link" href="sect0005.html#theta-surjective">LaTeX</a>
   <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/theta.lean#L363">Lean</a></div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="theta-y_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="theta-y" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.2.5</span></div>
+    <div class="thm_thmcontent"><p>  For all \(x \in \mathbf{R}\) and \(n\in \mathbf{N}\), set </p>
+<div class="displaymath" id="a0000000165">
+  \[  Y_\xi (x, n)= \begin{cases}  x& \text{ if } n = 0 \\ Y_\xi (x,n-1) - \left\lfloor \frac{Y_\xi (x,n-1)}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
+</div>
+<p> where \(\lfloor \ast \rfloor \) denotes the floor of \(\ast \), namely the greatest integer that is less or equal than \(\ast \). </p>
+</div>
+
+    <a class="latex_link" href="sect0005.html#theta-y">LaTeX</a>
+  </div>
     
       </div>
     </div>
@@ -1045,7 +1097,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"theta-surjective"	[color=green,		fillcolor="#9cec8b",		label="theta-surjective",		shape=ellipse,		style=filled];	"free-png"	[color=green,		fillcolor="#9cec8b",		label="free-png",		shape=ellipse,		style=filled];	"Lbar-ses"	[color=green,		fillcolor="#9cec8b",		label="Lbar-ses",		shape=ellipse,		style=filled];	"free-png" -> "Lbar-ses";	"homology-Qprime"	[color=green,		fillcolor="#9cec8b",		label="homology-Qprime",		shape=ellipse,		style=filled];	"Qprime-prop"	[color=green,		fillcolor="#9cec8b",		label="Qprime-prop",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-prop";	"Qprime-Cond"	[color=green,		fillcolor="#9cec8b",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-Cond"	[style=dashed];	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	"png-cats"	[color=green,		fillcolor="#b0eca3",		label="png-cats",		shape=box,		style=filled];	"chpng-Tinv" -> "png-cats"	[style=dashed];	"Ext-L"	[color=green,		fillcolor="#9cec8b",		label="Ext-L",		shape=ellipse,		style=filled];	"main-thm"	[color=green,		fillcolor="#9cec8b",		label="main-thm",		shape=ellipse,		style=filled];	"Ext-L" -> "main-thm";	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "Ext-L"	[style=dashed];	"Ext-Lbar"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar",		shape=ellipse,		style=filled];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	"p-banach-r-normed"	[color=green,		fillcolor="#9cec8b",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	"Ext-Lbar-aux"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];	"Ext-Lbar" -> "Ext-L";	"Lbar-ses" -> "Ext-L";	"laurent-measures-fin"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures-fin",		shape=box,		style=filled];	"theta-continuous"	[color=green,		fillcolor="#9cec8b",		label="theta-continuous",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-continuous"	[style=dashed];	"theta-exact_finite"	[color=green,		fillcolor="#9cec8b",		label="theta-exact_finite",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-exact_finite"	[style=dashed];	"bounded-limits"	[color=green,		fillcolor="#9cec8b",		label="bounded-limits",		shape=ellipse,		style=filled];	"png-cats" -> "bounded-limits"	[style=dashed];	"exact-with-constant"	[color=green,		fillcolor="#b0eca3",		label="exact-with-constant",		shape=box,		style=filled];	"png-cats" -> "exact-with-constant"	[style=dashed];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"M-ses"	[color=green,		fillcolor="#9cec8b",		label="M-ses",		shape=ellipse,		style=filled];	"M-ses" -> "main-thm";	"exact-with-constants-lim"	[color=green,		fillcolor="#9cec8b",		label="exact-with-constants-lim",		shape=ellipse,		style=filled];	"bounded-limits" -> "exact-with-constants-lim"	[style=dashed];	"Qprime-prop" -> "Ext-Lbar";	"exact-with-constants-lim" -> "M-ses"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	theta -> "theta-surjective"	[style=dashed];	theta -> "theta-continuous"	[style=dashed];	theta -> "theta-exact_finite"	[style=dashed];	"exact-with-constant" -> "exact-with-constants-lim"	[style=dashed];	"CHPNG-Cond-exact"	[color=green,		fillcolor="#9cec8b",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"exact-with-constant" -> "CHPNG-Cond-exact"	[style=dashed];	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach" -> "main-thm"	[style=dashed];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"p-banach-r-normed" -> "main-thm";	"Ext-Lbar-aux" -> "Ext-Lbar";	"normed-to-cond"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond",		shape=ellipse,		style=filled];	"normed-to-cond-acyclic"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond-acyclic",		shape=ellipse,		style=filled];	"normed-to-cond" -> "normed-to-cond-acyclic";	"real-measures"	[color=green,		fillcolor="#b0eca3",		label="real-measures",		shape=box,		style=filled];	"real-measures" -> "M-ses"	[style=dashed];	"real-measures" -> "main-thm"	[style=dashed];	"real-measures" -> "theta-continuous"	[style=dashed];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond-acyclic"	[style=dashed];	"CHPNG-Cond-exact" -> "M-ses"	[style=dashed];	"acyclic-sheaf"	[color=green,		fillcolor="#9cec8b",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "normed-to-cond-acyclic";	"normed-to-cond-acyclic" -> "Ext-L";	"normed-to-cond-acyclic" -> "Ext-Lbar";	"theta-exact_finite" -> "M-ses"	[style=dashed];	"Qprime-Cond" -> "Qprime-prop";	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	chpng -> "chpng-hom"	[style=dashed];	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";}')
+    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"p-banach-r-normed"	[color=green,		fillcolor="#9cec8b",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	"main-thm"	[color=green,		fillcolor="#9cec8b",		label="main-thm",		shape=ellipse,		style=filled];	"p-banach-r-normed" -> "main-thm";	"Ext-L"	[color=green,		fillcolor="#9cec8b",		label="Ext-L",		shape=ellipse,		style=filled];	"Ext-L" -> "main-thm";	"Qprime-prop"	[color=green,		fillcolor="#9cec8b",		label="Qprime-prop",		shape=ellipse,		style=filled];	"Ext-Lbar"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar",		shape=ellipse,		style=filled];	"Qprime-prop" -> "Ext-Lbar";	"acyclic-sheaf"	[color=green,		fillcolor="#9cec8b",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"normed-to-cond-acyclic"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond-acyclic",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "normed-to-cond-acyclic";	"normed-to-cond-acyclic" -> "Ext-L";	"normed-to-cond-acyclic" -> "Ext-Lbar";	"png-cats"	[color=green,		fillcolor="#b0eca3",		label="png-cats",		shape=box,		style=filled];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"exact-with-constant"	[color=green,		fillcolor="#b0eca3",		label="exact-with-constant",		shape=box,		style=filled];	"png-cats" -> "exact-with-constant"	[style=dashed];	"bounded-limits"	[color=green,		fillcolor="#9cec8b",		label="bounded-limits",		shape=ellipse,		style=filled];	"png-cats" -> "bounded-limits"	[style=dashed];	"laurent-measures-fin"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures-fin",		shape=box,		style=filled];	"laurent-measures"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures",		shape=box,		style=filled];	"laurent-measures-fin" -> "laurent-measures"	[style=dashed];	"theta-continuous"	[color=green,		fillcolor="#9cec8b",		label="theta-continuous",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-continuous"	[style=dashed];	"theta-exact_finite"	[color=green,		fillcolor="#9cec8b",		label="theta-exact_finite",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-exact_finite"	[style=dashed];	"Ext-Lbar" -> "Ext-L";	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	normed_with_aut -> "Ext-L"	[style=dashed];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	"Ext-Lbar-aux"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";	"laurent-measures" -> "Ext-L"	[style=dashed];	"Lbar-ses"	[color=green,		fillcolor="#9cec8b",		label="Lbar-ses",		shape=ellipse,		style=filled];	"laurent-measures" -> "Lbar-ses"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	"laurent-measures" -> theta	[style=dashed];	"M-ses"	[color=green,		fillcolor="#9cec8b",		label="M-ses",		shape=ellipse,		style=filled];	"laurent-measures" -> "M-ses"	[style=dashed];	"exact-with-constants-lim"	[color=green,		fillcolor="#9cec8b",		label="exact-with-constants-lim",		shape=ellipse,		style=filled];	"exact-with-constants-lim" -> "M-ses"	[style=dashed];	"theta-y"	[color=green,		fillcolor="#b0eca3",		label="theta-y",		shape=box,		style=filled];	"theta-surjective"	[color=green,		fillcolor="#9cec8b",		label="theta-surjective",		shape=ellipse,		style=filled];	"theta-y" -> "theta-surjective";	"free-png"	[color=green,		fillcolor="#9cec8b",		label="free-png",		shape=ellipse,		style=filled];	"free-png" -> "Lbar-ses";	"Qprime-Cond"	[color=green,		fillcolor="#9cec8b",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"Qprime-Cond" -> "Qprime-prop";	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond-acyclic"	[style=dashed];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"CHPNG-Cond-exact"	[color=green,		fillcolor="#9cec8b",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"normed-to-cond"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond",		shape=ellipse,		style=filled];	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"homology-Qprime"	[color=green,		fillcolor="#9cec8b",		label="homology-Qprime",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-prop";	"homology-Qprime" -> "Qprime-Cond"	[style=dashed];	"CHPNG-Cond-exact" -> "M-ses"	[style=dashed];	"Lbar-ses" -> "Ext-L";	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	"normed-to-cond" -> "normed-to-cond-acyclic";	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"p-banach" -> "main-thm"	[style=dashed];	"real-measures"	[color=green,		fillcolor="#b0eca3",		label="real-measures",		shape=box,		style=filled];	"real-measures" -> "main-thm"	[style=dashed];	"real-measures" -> "theta-continuous"	[style=dashed];	"real-measures" -> "M-ses"	[style=dashed];	theta -> "theta-continuous"	[style=dashed];	theta -> "theta-surjective"	[style=dashed];	theta -> "theta-exact_finite"	[style=dashed];	"Ext-Lbar-aux" -> "Ext-Lbar";	"M-ses" -> "main-thm";	chpng -> "chpng-hom"	[style=dashed];	"exact-with-constant" -> "exact-with-constants-lim"	[style=dashed];	"exact-with-constant" -> "CHPNG-Cond-exact"	[style=dashed];	"bounded-limits" -> "exact-with-constants-lim"	[style=dashed];	"theta-exact_finite" -> "M-ses"	[style=dashed];	"chpng-Tinv" -> "png-cats"	[style=dashed];}')
     .on("end", interactive);
 
 clickNode = function() {
