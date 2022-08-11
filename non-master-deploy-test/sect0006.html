@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blueprint for the Liquid Tensor Experiment: The MacLane \(Q'\)-construction</title>
+<link rel="next" href="sect0007.html" title="Condensed abelian groups" />
+<link rel="prev" href="sect0005.html" title="Spaces of Measures" />
+<link rel="up" href="cha-two.html" title="Second part" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Blueprint for the Liquid Tensor Experiment</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="cha-one.html"><span class="toc_ref">1</span> <span class="toc_entry">First part</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="BD_orig.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+ </li>
+<li class="">
+  <a href="sec-normed_groups.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class="">
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Some normed homological algebra</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+ </li>
+<li class="">
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="cha-two.html"><span class="toc_ref">2</span> <span class="toc_entry">Second part</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sec-normed_groups2.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Spaces of Measures</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0006.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
+<li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h2 id="a0000000007">2.3 The MacLane \(Q'\)-construction</h2>
+<p>In this subsection we will focus on the functorial complex induced by the Breen–Deligne package described in Definition&#160;<a href="BD_orig.html#BD_eg">1.1.12</a>. This complex is also known as MacLane’s \(Q'\)-construction. (TODO: Rewrite the subsection on Breen–Deligne packages to reflect this.) </p>
+<p><div class="proposition_thmwrapper" id="homology-Qprime">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">2.3.1</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#homology-Qprime">#</a>
+    <a class="icon proof" href="sect0006.html#a0000000171"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="BD_orig.html#BD_eg">Definition 1.1.12</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/breen_deligne/eval2.lean#L21">breen_deligne.package.eval_additive</a></li>
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/breen_deligne/eval.lean#L253">breen_deligne.data.eval_functor_preserves_filtered_colimits</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   For any \(i\geq 0\), the functor \(A\mapsto H_i(Q'(A))\) has the following properties: </p>
+<ol class="enumerate">
+  <li><p>It is additive, i.e. </p>
+<div class="displaymath" id="a0000000172">
+  \[  H_i(Q'(A\oplus B))\cong H_i(Q'(A))\oplus H_i(Q'(B)).  \]
+</div>
+</li>
+  <li><p>It commutes with filtered colimits, i.e.&#160;for a filtered inductive system \(A_i\), </p>
+<div class="displaymath" id="a0000000173">
+  \[  \varinjlim _i H_i(Q'(A))\cong H_i(Q'(\varinjlim _i A_i)).  \]
+</div>
+</li>
+</ol>
+<p>In particular, for torsion-free abelian groups \(A\), there is a functorial isomorphism </p>
+<div class="displaymath" id="a0000000174">
+  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A.  \]
+</div>
+
+  </div>
+</div> </p>
+<p>As the proof shows, we do not really need the \(Q'\)-construction here: Any Breen–Deligne package will do. </p>
+<div class="proof_wrapper" id="a0000000171">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let us do the easy things first. Part (2) is clear as everything in sight commutes with filtered colimits. Assuming (1), we note that there is a natural map </p>
+<div class="displaymath" id="a0000000175">
+  \[  H_i(Q'(\mathbb Z))\times A\longrightarrow H_i(Q'(A))  \]
+</div>
+<p> induced by functoriality of \(H_i(Q'(-))\). To check that this is bilinear and induces an isomorphism </p>
+<div class="displaymath" id="a0000000176">
+  \[  H_i(Q'(\mathbb Z))\otimes A\cong H_i(Q'(A)),  \]
+</div>
+<p> we can reduce to the case that \(A\) is finitely generated by (2). In that case \(A\) is finite free, and the result follows from (1). </p>
+<p>Thus, it remains to prove part (1), which has already been formalized. We recall that the direct sum of two abelian groups \(M\) and \(N\) is characterized as the abelian group \(P\) with maps \(i_M: M\to P\), \(i_N: N\to P\), \(p_M: P\to M\), \(p_N: P\to N\), satisfying \(p_M i_M=\mathrm{id}_M\), \(p_N i_N = \mathrm{id}_N\), \(p_M i_N=0\), \(p_N i_M = 0\), \(\mathrm{id}_P = i_M p_M + i_N p_N\). Apply this to \(M=H_i(Q'(A))\), \(N=H_i(Q'(B))\) and \(P=H_i(Q'(A\oplus B))\), with all maps induced by applying \(H_i(Q'(-))\) to the similar maps for \(A\), \(B\) and \(A\oplus B\). The fact that \(H_i(Q'(-))\) is a functor already gives all identities except \(\mathrm{id}_P = i_M p_M + i_N p_N\), and the only issue is the question whether \(H_i(Q'(-))\) induces additive maps on morphism spaces. But if \(f,g: C\to D\) are any two maps of abelian groups, then \(H_i(Q'(f+g)) = H_i(Q'(f))+H_i(Q'(g))\), by reducing to the universal case of the two projections \(D^2\to D\) and using the homotopy baked into Definition&#160;<a href="BD_orig.html#BD_eg">1.1.12</a>. </p>
+
+  </div>
+</div>
+<p>We note that by functoriality of the \(Q'\)-construction, it can also be applied to condensed abelian groups. </p>
+<p><div class="corollary_thmwrapper" id="Qprime-Cond">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">2.3.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#Qprime-Cond">#</a>
+    <a class="icon proof" href="sect0006.html#a0000000177"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="BD_orig.html#BD_eg">Definition 1.1.12</a></li>
+          <li><a href="sect0006.html#homology-Qprime">Proposition 2.3.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/condensed/bd_lemma.lean#L373">Condensed.exists_tensor_iso</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>   For torsion-free condensed abelian groups \(A\), there is a natural isomorphism </p>
+<div class="displaymath" id="a0000000178">
+  \[  H_i(Q'(A))\cong H_i(Q'(\mathbb Z))\otimes A  \]
+</div>
+<p> of condensed abelian groups. </p>
+
+  </div>
+</div> </p>
+<p>Here, we only need to be able to tensor condensed abelian groups with (abstract) abelian groups. (With more effort, one could prove that \(H_i(Q'(\mathbb Z))\) is even finitely generated.) In that case, the tensor product functor can be defined very naively by tensoring the values at any \(S\) with the given abstract abelian group. </p>
+<div class="proof_wrapper" id="a0000000177">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Evaluating at \(S\in \mathrm{ExtrDisc}\), we note that \(S\mapsto H_i(Q'(A(S)))\) is already a condensed abelian group, and agrees with \(H_i(Q'(\mathbb Z))\otimes A(S)\). Thus, the same is true after sheafification. </p>
+
+  </div>
+</div>
+<p>If \(A\) is a torsion-free condensed abelian group equipped with an endomorphism \(f\), then \(Q'(A)\) is also equipped with the endomorphism \(f\) induced by functoriality, and by functoriality all previous assertions upgrade to \(\mathbb Z[f]\)-modules. </p>
+<p><div class="proposition_thmwrapper" id="Qprime-prop">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">2.3.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#Qprime-prop">#</a>
+    <a class="icon proof" href="sect0006.html#a0000000179"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="BD_orig.html#BD_eg">Definition 1.1.12</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/breen_deligne/main.lean#L749">breen_deligne.package.main_lemma</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   Let \(M\) and \(N\) be condensed abelian groups with endomorphisms \(f_M\), \(f_N\). Assume that \(M\) is torsion-free (over \(\mathbb Z\)). Then </p>
+<div class="displaymath" id="a0000000180">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(M,N)=0  \]
+</div>
+<p> for all \(i\geq 0\) if and only if </p>
+<div class="displaymath" id="a0000000181">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(Q'(M),N)=0  \]
+</div>
+<p> for all \(i\geq 0\). More precisely, the first vanishes for \(0\leq i\leq j\) if and only if the second vanishes for \(0\leq i\leq j\). </p>
+
+  </div>
+</div> </p>
+<p>At this point, we need to be able to talk about \(\mathrm{Ext}\)-groups of (bounded to the right) complexes of condensed abelian groups (against condensed abelian groups). </p>
+<p>The statement is also true without the torsion-freeness assumption on \(M\), but slightly more nasty to prove then (and not required for the application). </p>
+<div class="proof_wrapper" id="a0000000179">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> We induct on \(j\). Consider first the case \(j=0\); then any map \(Q'(M)\to N\) factors uniquely over \(H_0 Q'(M)[0]=M[0]\), yielding the result. Now assume that both sides vanish for \(0\leq i{\lt}j\); we need to see that the vanishing of the \(\mathrm{Ext}^i\)’s is equivalent. Consider the triangle </p>
+<div class="displaymath" id="a0000000182">
+  \[  \tau _{\geq 1} Q'(M)\longrightarrow Q'(M)\longrightarrow M[0]\longrightarrow .  \]
+</div>
+<p> Taking the corresponding long exact sequence of \(\mathrm{Ext}\)-groups against \(N\), we see that it suffices to see that </p>
+<div class="displaymath" id="a0000000183">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(\tau _{\geq 1} Q'(M),N)=0  \]
+</div>
+<p> for \(0\leq i\leq j\). But we can prove by descending induction on \(t\) that </p>
+<div class="displaymath" id="a0000000184">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(\tau _{\geq t} Q'(M),N)=0.  \]
+</div>
+<p> This is trivially true for \(t{\gt}i\). Now look at the triangle </p>
+<div class="displaymath" id="a0000000185">
+  \[  \tau _{\geq t+1} Q'(M)\longrightarrow \tau _{\geq t} Q'(M)\longrightarrow H_t(Q'(M))[t]\longrightarrow  \]
+</div>
+<p> and the corresponding long exact sequence. It becomes sufficient to prove that </p>
+<div class="displaymath" id="a0000000186">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(H_t(Q'(M))[t],N)=0  \]
+</div>
+<p> for \(0\leq i\leq j\). Trivially, </p>
+<div class="displaymath" id="a0000000187">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(H_t(Q'(M))[t],N)=\mathrm{Ext}^{i-t}_{\mathbb Z[f]}(H_t(Q'(M)),N).  \]
+</div>
+<p> Note that \(t\geq 1\) here, so \(i-t{\lt}j\) (and can be assumed \(\geq 0\)). Also \(H_t(Q'(M))\cong H_t(Q'(\mathbb Z))\otimes M\). Thus, it suffices to show that for every abelian group \(A\) and every \(0\leq i{\lt}j\), </p>
+<div class="displaymath" id="a0000000188">
+  \[  \mathrm{Ext}^i_{\mathbb Z[f]}(A\otimes M,N)=0.  \]
+</div>
+<p> If \(A\) is free, then \(A\otimes M\) is a direct sum of copies of \(M\), and the result follows as \(\mathrm{Ext}\) turns direct sums into products (and we assumed the vanishing of \(\mathrm{Ext}^i_{\mathbb Z[f]}(M,N)\) for \(0\leq i{\lt}j\)). In general, one can pick a two-term free resolution of \(A\) and use the long exact sequence. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0005.html" title="Spaces of Measures"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="cha-two.html" title="Second part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0007.html" title="Condensed abelian groups"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
