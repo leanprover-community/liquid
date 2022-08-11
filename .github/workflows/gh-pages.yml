@@ -1,7 +1,7 @@
 on:
   push:
-    branches:
-      - master
+    branches-ignore:
+      - gh-pages
 
 jobs:
   deploy:
@@ -36,6 +36,7 @@ jobs:
           inv decls
 
       - name: Install Leanblueprint and generate web in tex env
+        id: generate_files
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
@@ -45,12 +46,24 @@ jobs:
             python3 -m pip install --upgrade pip requests wheel
             apk add pkgconfig graphviz graphviz-dev gcc musl-dev && \
             python3 -m pip install pygraphviz --global-option=build_ext --global-option="-L/usr/lib/graphviz/" --global-option="-R/usr/lib/graphviz/"
-            python3 -m pip install invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git 
+            python3 -m pip install invoke git+https://github.com/plastex/plastex.git git+https://github.com/PatrickMassot/leanblueprint.git
             inv pdf; cp print/blueprint.bbl src/web.bbl; inv qweb
             cp print/blueprint.pdf web/
+
+            branch=${GITHUB_REF##*/}
+            if [[ $branch != "master" ]]; then
+              mv web web2
+              mkdir web
+              mv web2 "web/$branch"
+            fi
+            echo "##[set-output name=keep_files;]$([[ ${GITHUB_REF##*/} == "master" ]] && echo "false" || echo "true")"
+
+      # For non-master branches we temporarily deploy to https://leanprover-community.github.io/liquid/<branch_name>
+      # All such files will then get deleted when there's a deploy to master.
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.github_token }}
           publish_dir: ./web
+          keep_files: ${{ steps.generate_files.outputs.keep_files }}
