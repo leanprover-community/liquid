@@ -52,7 +52,7 @@ started in Subsection~\ref{sec:normed_groups}.
   Then
   \[ X_{\leq c} := \varprojlim_i X_{i,\leq c} \]
   is compact Hausdorff, and
-  \[ X=\bigcup_c X_{\leq c} \]
+  \[ X=\varinjlim_c X_{\leq c} \]
   is naturally a compact-Hausdorffly-filtered pseudonormed abelian group
   which is the limit of $(X_i)_i$ in the strict category structure.
 \end{proposition}
@@ -60,7 +60,7 @@ started in Subsection~\ref{sec:normed_groups}.
 \begin{proof}
   \leanok
   One can define negation and addition on $X$ as continuous maps
-  $-: X_{\leq c}\to X_{\leq c}$ and $+: X_{\leq c}\times X_{\leq c'}\to X_{\leq c+c'}$, and these pass to the unions.
+  $-: X_{\leq c}\to X_{\leq c}$ and $+: X_{\leq c}\times X_{\leq c'}\to X_{\leq c+c'}$, and these pass to the colimit.
   It should then be straightforward to check the axioms.
 \end{proof}
 

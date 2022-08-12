@@ -100,7 +100,7 @@
   where $\mathbb Z[S_i]_{\le c}$ is the set $\{\sum_{s \in S_i} n_s[s] \mid \sum_s |n_s| \le c\}$.
 
   There is a natural isomorphism between the free condensed abelian group $\mathbb Z[S]$
-  and the colimit $\bigcup_c \mathbb Z[S]_{\le c}$ of condensed sets.
+  and the colimit $\varinjlim_c \mathbb Z[S]_{\le c}$ of condensed sets.
 \end{lemma}
 
 \begin{proof}
@@ -242,7 +242,7 @@
   \uses{first_target}
   \leanok
   We have
-  \[ Q'(\overline{\mathcal M}_{r'}(S)) = \bigcup_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}, \]
+  \[ Q'(\overline{\mathcal M}_{r'}(S)) = \varinjlim_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}, \]
   inducing a resolution
   \[ 0\to \bigoplus_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to \bigoplus_n Q'(\overline{\mathcal M}_{r'}(S))_{\leq n}\to Q'(\overline{\mathcal M}_{r'}(S))\to 0.  \]
   Passing to a corresponding long exact sequence reduces one to checking that the squares
