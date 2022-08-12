@@ -308,7 +308,7 @@
   And by Lemma~\ref{Ext-Lbar} all groups $\Ext_{\CondMod_{\mathbb Z[T^{-1}]}}^i(\Lbar_{r'}(S), V)$ vanish for $i \ge 0$.
   The result follows.
 
-  The "In other words" version can be proved without mentioning $\mathbb Z[T^{-1}]$-linear Ext groups,
+  The ``In other words'' version can be proved without mentioning $\mathbb Z[T^{-1}]$-linear Ext groups,
   by using the same ingredients and the five lemma.
 \end{proof}
 
@@ -330,17 +330,7 @@
   \leanok
   By Proposition~\ref{CHPNG-Cond-exact} it suffices to show
   that the corresponding sequence of pseudonormed groups is short exact,
-  and by Proposition~\ref{exact-with-constants-lim} we may also assume that $S$ is finite.
-  
-  For finite $S$, the sequence is a termwise direct sum (indexed by $s \in S$) of the sequences
-  \[ 0 \to \Lm_{r'}(\{s\}) \to \Lm_{r'}(\{*\}) \to \Rm(\{*\}) \to 0. \]
-  Hence it suffices to show that the sequence
-  \[ 0 \to \Z(\!(T)\!)_{r'} \to \Z(\!(T)\!)_{r'} \to \R \to 0 \]
-  is short exact.
-  The Lemmas~\ref{theta-surjective} and~\ref{theta-continuous} show that the evaluation map is indeed
-  continuous and surjective.
-  A computation (omitted here for now, but done in Lean) shows that the kernel of the evaluation map
-  is exactly $(2T-1) \Z(\!(T)\!)_{r'}$.
+  and by Proposition~\ref{exact-with-constants-lim} we may also assume that $S$ is finite. With this reductions, the lemma is precisely Theorem~\ref{theta-exact_finite}.
 \end{proof}
 
 \begin{theorem}[Clausen--Scholze]
