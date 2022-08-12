@@ -960,7 +960,7 @@
 </div>
 <p> by applying \(\operatorname{Ext}^*(\_ , V)\). </p>
 <p>By Lemma&#160;<a href="sect0007.html#acyclic-sheaf">2.4.7</a> all groups \(\operatorname{Ext}_{\operatorname{Cond}(\operatorname{Ab})}^i(\mathbb {Z}[S], V)\) vanish for \(i {\gt} 0\). And by Lemma&#160;<a href="sect0007.html#Ext-Lbar">2.4.10</a> all groups \(\operatorname{Ext}_{\mathrm{Mod}^{\mathrm{cond}}_{\mathbb Z[T^{-1}]}}^i(\overline{\mathcal L}_{r'}(S), V)\) vanish for \(i \ge 0\). The result follows. </p>
-<p>The "In other words" version can be proved without mentioning \(\mathbb Z[T^{-1}]\)-linear Ext groups, by using the same ingredients and the five lemma. </p>
+<p>The “In other words” version can be proved without mentioning \(\mathbb Z[T^{-1}]\)-linear Ext groups, by using the same ingredients and the five lemma. </p>
 
   </div>
 </div>
@@ -1028,16 +1028,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> By Proposition&#160;<a href="sect0007.html#CHPNG-Cond-exact">2.4.5</a> it suffices to show that the corresponding sequence of pseudonormed groups is short exact, and by Proposition&#160;<a href="sect0007.html#exact-with-constants-lim">2.4.3</a> we may also assume that \(S\) is finite. </p>
-<p>For finite \(S\), the sequence is a termwise direct sum (indexed by \(s \in S\)) of the sequences </p>
-<div class="displaymath" id="a0000000238">
-  \[  0 \to \mathcal L_{r'}(\{ s\} ) \to \mathcal L_{r'}(\{ *\} ) \to \mathcal M_{p'}(\{ *\} ) \to 0.  \]
-</div>
-<p> Hence it suffices to show that the sequence </p>
-<div class="displaymath" id="a0000000239">
-  \[  0 \to \mathbb {Z}(\! (T)\! )_{r'} \to \mathbb {Z}(\! (T)\! )_{r'} \to \mathbb {R}\to 0  \]
-</div>
-<p> is short exact. The Lemmas&#160;<a href="sect0005.html#theta-surjective">2.2.6</a> and&#160;<a href="sect0005.html#theta-continuous">2.2.7</a> show that the evaluation map is indeed continuous and surjective. A computation (omitted here for now, but done in Lean) shows that the kernel of the evaluation map is exactly \((2T-1) \mathbb {Z}(\! (T)\! )_{r'}\). </p>
+  <p> By Proposition&#160;<a href="sect0007.html#CHPNG-Cond-exact">2.4.5</a> it suffices to show that the corresponding sequence of pseudonormed groups is short exact, and by Proposition&#160;<a href="sect0007.html#exact-with-constants-lim">2.4.3</a> we may also assume that \(S\) is finite. With this reductions, the lemma is precisely Theorem&#160;<a href="sect0005.html#theta-exact_finite">2.2.8</a>. </p>
 
   </div>
 </div>
@@ -1051,7 +1042,7 @@
     ✓
     <div class="thm_icons">
     <a class="icon proof" href="sect0007.html#main-thm">#</a>
-    <a class="icon proof" href="sect0007.html#a0000000240"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000238"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
@@ -1088,14 +1079,14 @@
   </div>
   <div class="theorem_thmcontent">
   <p>    Let \(0 {\lt} p' {\lt} p \le 1\) be real numbers, let \(S\) be a profinite set, and let \(V\) be a \(p\)-Banach space. Let \(\mathcal M_{p'}(S)\) be the space of rel \(p'\)-measures on \(S\). Then </p>
-<div class="displaymath" id="a0000000241">
+<div class="displaymath" id="a0000000239">
   \[  \operatorname{Ext}^i_{\operatorname{Cond}(\operatorname{Ab})}(\mathcal M_{p'}(S),V) = 0  \]
 </div>
 <p> for \(i \ge 1\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000240">
+<div class="proof_wrapper" id="a0000000238">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1104,7 +1095,7 @@
   </div>
   <div class="proof_content">
   <p> Recall from Lemma <a href="sect0007.html#M-ses">2.4.14</a> the short exact sequence </p>
-<div class="displaymath" id="a0000000242">
+<div class="displaymath" id="a0000000240">
   \[  0 \longrightarrow \mathcal L_{r'}(S) \longrightarrow \mathcal L_{r'}(S) \longrightarrow \mathcal M_{p'}(S) \longrightarrow 0.  \]
 </div>
 <p> Apply to this \(\text{Ext}^*(\_ , V)\) to obtain a long exact sequence. Note that \(T\) acts on \(V\) via multiplication by \(\tfrac 12\) (by Lemma&#160;<a href="sec-normed_groups2.html#p-banach-r-normed">2.1.2</a>. Hence we can use Lemma&#160;<a href="sect0007.html#Ext-L">2.4.13</a> to obtain isomorphisms between the Ext-groups involving \(\mathcal L_{r'}(S)\), for \(i {\gt} 0\), and a surjection for \(i = 0\). The result follows. </p>
