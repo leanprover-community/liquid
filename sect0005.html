@@ -122,10 +122,10 @@
   <div class="definition_thmcontent">
   <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal M_{p'}(S)\) denotes the real vector space </p>
 <div class="displaymath" id="a0000000155">
-  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s}[s] \text{ such that } a_{s}\in \mathbf{R}\right\}   \]
+  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s}[s] \text{ such that } a_{s}\in \mathbb {R}\right\}   \]
 </div>
 <p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s[s]\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). </p>
-<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the union </p>
+<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the colimit (or simply the union, in this case) </p>
 <div class="displaymath" id="a0000000156">
   \[  \mathcal M_{p'}(S) = \varinjlim _{c{\gt}0}\mathcal M_{p'}(S)_{\leq c}  \]
 </div>
@@ -166,22 +166,22 @@
   <div class="definition_thmcontent">
   <p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal L_{r'}(S)\) denotes the group </p>
 <div class="displaymath" id="a0000000158">
-  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
+  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbb {Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in \mathbb {Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
 </div>
 
   </div>
 </div> </p>
 <p>The group \(\mathcal L_{r'}(S)\) is filtered by the subsets </p>
 <div class="displaymath" id="a0000000159">
-  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbf{Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in \mathbf{Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
+  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbb {Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in \mathbb {Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
 </div>
 <p> for \(c{\gt} 0\). Each subset \(\mathcal L_{r'}(S)_{\leq c}\) can be written as </p>
 <div class="displaymath" id="a0000000160">
   \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim _{A}\mathcal L_{r'}(S)_{A,\leq c}  \]
 </div>
-<p> where \(A\) runs through the finite subsets of \(\mathbf{Z}\) and \(\mathcal L_{r'}(S)_{A,\leq c}\) is the finite set </p>
+<p> where \(A\) runs through the finite subsets of \(\mathbb {Z}\) and \(\mathcal L_{r'}(S)_{A,\leq c}\) is the finite set </p>
 <div class="displaymath" id="a0000000161">
-  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbf{Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
+  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
 </div>
 <p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). </p>
 <p><div class="definition_thmwrapper" id="laurent-measures">
@@ -237,7 +237,7 @@
 
   </div>
 </div> </p>
-<p>Now fix \(0{\lt} \xi {\lt}1\) and let \(x\in \mathbf{R}_{\geq 0}\). For simplicity, denote by \(\mathbf{Z}(\! (T)\! )_{r'}\) the group \(\mathcal L_{r'}(\ast )\). One of the key results proven in <span class="cite">
+<p>Now fix \(0{\lt} \xi {\lt}1\) and let \(x\in \mathbb {R}_{\geq 0}\). For simplicity, denote by \(\mathbb {Z}(\! (T)\! )_{r'}\) the group \(\mathcal L_{r'}(\ast )\). One of the key results proven in <span class="cite">
 	[
 	<a href="sect0008.html#Analytic" >Sch20</a>
 	, 
@@ -287,7 +287,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbf{Z}(\! (T)\! )_r\rightarrow \mathbf{R}\) be the evaluation map </p>
+  <p>   Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbb {Z}(\! (T)\! )_r\rightarrow \mathbb {R}\) be the evaluation map </p>
 <div class="displaymath" id="a0000000164">
   \[  \sum a_nT^n\longmapsto \sum a_n\xi ^n.  \]
 </div>
@@ -320,7 +320,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  For all \(x \in \mathbf{R}\) and \(n\in \mathbf{N}\), set </p>
+  <p>  For all \(x \in \mathbb {R}\) and \(n\in \mathbb {N}\), set </p>
 <div class="displaymath" id="a0000000165">
   \[  Y_\xi (x, n)= \begin{cases}  x& \text{ if } n = 0 \\ Y_\xi (x,n-1) - \left\lfloor \frac{Y_\xi (x,n-1)}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
 </div>
@@ -384,9 +384,9 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> Pick \(x\in \mathbf{R}\), and consider the power series </p>
+  <p> Pick \(x\in \mathbb {R}\), and consider the power series </p>
 <div class="displaymath" id="a0000000167">
-  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{Y_\xi (x,n)}{\xi ^n}\right\rfloor T^n\in \mathbf{Z}[\! [T]\! ]  \]
+  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{Y_\xi (x,n)}{\xi ^n}\right\rfloor T^n\in \mathbb {Z}[\! [T]\! ]  \]
 </div>
 <p> where \(\{ Y_\xi (x,n)\} _{n}\) is the sequence defined in Definition&#160;<a href="sect0005.html#theta-y">2.2.5</a>. The fact that \(0{\lt}\xi {\lt}1\) ensures that the series converges on the open unit disk, and it can be proven that \(F(\xi )=x\). </p>
 
