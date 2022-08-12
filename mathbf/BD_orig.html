@@ -113,7 +113,7 @@
 
   </div>
 </div> </p>
-<p>What does a homomorphism \(f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) that is functorial in&#160;\(A\) look like? We should perhaps say more precisely what we mean by this. The idea is that \(m\) and \(n\) are fixed, and for each abelian group \(A\) we have a group homomorphism \(f_A\colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) such that if \(\phi \colon A\to B\) is a group homomorphism inducing \(\phi _i \colon \mathbb {Z}[A^i]\to \mathbb {Z}[B^i]\) for each natural number \(i\) then the obvious square commutes: \(\phi _n \circ f_A = f_B \circ \phi _m\). </p>
+<p>What does a homomorphism \(f \colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) that is functorial in&#160;\(A\) look like? We should perhaps say more precisely what we mean by this. The idea is that \(m\) and \(n\) are fixed, and for each abelian group \(A\) we have a group homomorphism \(f_A\colon \mathbb Z[A^m] \to \mathbb Z[A^n]\) such that if \(\phi \colon A\to B\) is a group homomorphism inducing \(\phi _i \colon \mathbf{Z}[A^i]\to \mathbf{Z}[B^i]\) for each natural number \(i\) then the obvious square commutes: \(\phi _n \circ f_A = f_B \circ \phi _m\). </p>
 <p>The map \(f_A\) is specified by what it does to the generators \((a_1, a_2, a_3, \dots , a_m)\in A^m\). It can send such an element to an arbitrary element of \(\mathbb Z[A^n]\), but one can check that universality implies that \(f_A\) will be a \(\mathbb Z\)-linear combination of “basic universal maps”, where a “basic universal map” is one that sends \((a_1, a_2, \dots , a_m)\) to \((t_1, \dots , t_n)\), where \(t_i\) is a \(\mathbb Z\)-linear combination \(c_{i,1} \cdot a_1 + \dots + c_{i,m} \cdot a_m\). So a “basic universal map” is specified by the \(n \times m\)-matrix \(c\). </p>
 <p><div class="definition_thmwrapper" id="basic_universal_map">
   <div class="definition_thmheading">
@@ -239,7 +239,7 @@
 
   </div>
 </div> </p>
-<p>We point out that basic universal maps can be composed by matrix multiplication, and this formally induces a composition of universal maps. As mentioned above, one can also check (this has been formalised in Lean) that this construction gives a bijection between universal maps from exponent \(m\) to \(n\) and functorial collections \(f_A \colon \mathbb {Z}[A^m]\to \mathbb {Z}[A^n]\). </p>
+<p>We point out that basic universal maps can be composed by matrix multiplication, and this formally induces a composition of universal maps. As mentioned above, one can also check (this has been formalised in Lean) that this construction gives a bijection between universal maps from exponent \(m\) to \(n\) and functorial collections \(f_A \colon \mathbf{Z}[A^m]\to \mathbf{Z}[A^n]\). </p>
 <p><div class="definition_thmwrapper" id="FreeMat">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -409,7 +409,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(N\) and&#160;\(n\) be natural numbers. Then \(\pi ^N_n\) denotes the universal map from exponent \(N \cdot n\) to \(n\) given by \(\sum _{i {\lt} N} [\pi '_{N,i} \otimes n]\). </p>
-<p>(On \(\mathbb {Z}[A^{N \cdot n}] \to \mathbb {Z}[A^n]\) this map is the formal sum of the maps \(\mathbb {Z}[A^{N \cdot n}] \to \mathbb {Z}[A^n]\) induced by the projection maps \(A^{N \cdot n} = (A^n)^N \to A^n\).) </p>
+<p>(On \(\mathbf{Z}[A^{N \cdot n}] \to \mathbf{Z}[A^n]\) this map is the formal sum of the maps \(\mathbf{Z}[A^{N \cdot n}] \to \mathbf{Z}[A^n]\) induced by the projection maps \(A^{N \cdot n} = (A^n)^N \to A^n\).) </p>
 
   </div>
 </div> </p>
@@ -456,7 +456,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(N\) and&#160;\(n\) be natural numbers. Then \(\sigma ^N_n\) denotes the universal map from exponent \(N \cdot n\) to \(n\) given by \([\sum _{i {\lt} N} \pi '_{N,i} \otimes n]\). </p>
-<p>(On \(\mathbb {Z}[A^{N \cdot n}] \to \mathbb {Z}[A^n]\) this map is induced by the summation map \(A^{N \cdot n} = (A^n)^N \to A^n\).) </p>
+<p>(On \(\mathbf{Z}[A^{N \cdot n}] \to \mathbf{Z}[A^n]\) this map is induced by the summation map \(A^{N \cdot n} = (A^n)^N \to A^n\).) </p>
 
   </div>
 </div> </p>
@@ -842,7 +842,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   Let \(f\) be a universal map and let \(r, r', c_1, c_2 \in \mathbb R_{\ge 0}\). We say that \((c_1, c_2)\) is <em>very suitable</em> for \((f, r, r')\) if there exist \(N, b \in \mathbb {N}\) and \(c' \in \mathbb {R}_{\ge 0}\) such that: </p>
+  <p>   Let \(f\) be a universal map and let \(r, r', c_1, c_2 \in \mathbb R_{\ge 0}\). We say that \((c_1, c_2)\) is <em>very suitable</em> for \((f, r, r')\) if there exist \(N, b \in \mathbf{N}\) and \(c' \in \mathbf{R}_{\ge 0}\) such that: </p>
 <ul class="itemize">
   <li><p>\(f\) is bound by \(N\) (see Definition&#160;<a href="BD_orig.html#universal_map_bound_by">1.1.3</a>) </p>
 </li>
@@ -900,7 +900,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>    Let \(\mathsf{BD}= (n, f)\) be Breen–Deligne data, let \(r, r' \in \mathbb {R}_{\ge 0}\), and let \(\kappa = (\kappa _0, \kappa _1, \dots )\) be a sequence of nonnegative real numbers. We say that \(\kappa \) is \(\mathsf{BD}\)-<em>suitable</em> (resp. <em>very suitable</em> for \((\mathsf{BD}, r, r')\)), if for all \(i\), the pair \((\kappa _{i+1}, \kappa _i)\) is \(f_i\)-suitable (resp. <em>very suitable</em> for \((f_i, r, r')\)). </p>
+  <p>    Let \(\mathsf{BD}= (n, f)\) be Breen–Deligne data, let \(r, r' \in \mathbf{R}_{\ge 0}\), and let \(\kappa = (\kappa _0, \kappa _1, \dots )\) be a sequence of nonnegative real numbers. We say that \(\kappa \) is \(\mathsf{BD}\)-<em>suitable</em> (resp. <em>very suitable</em> for \((\mathsf{BD}, r, r')\)), if for all \(i\), the pair \((\kappa _{i+1}, \kappa _i)\) is \(f_i\)-suitable (resp. <em>very suitable</em> for \((f_i, r, r')\)). </p>
 <p>(Note! The order \((\kappa _{i+1}, \kappa _i)\) is contravariant compared to Definition&#160;<a href="BD_orig.html#universal_suitable">1.1.14</a>. This is because of the contravariance of \(\hat V(\_ )\); see Definition&#160;<a href="sect0003.html#eval_CLCFPTinv">1.5.9</a>.) </p>
 
   </div>
