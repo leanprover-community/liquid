@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blueprint for the Liquid Tensor Experiment: Spaces of Measures</title>
+<link rel="next" href="sect0006.html" title="The MacLane Q'-construction" />
+<link rel="prev" href="sec-normed_groups2.html" title="Variants of normed groups" />
+<link rel="up" href="cha-two.html" title="Second part" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Blueprint for the Liquid Tensor Experiment</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="cha-one.html"><span class="toc_ref">1</span> <span class="toc_entry">First part</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="BD_orig.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+ </li>
+<li class="">
+  <a href="sec-normed_groups.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class="">
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Some normed homological algebra</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+ </li>
+<li class="">
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="cha-two.html"><span class="toc_ref">2</span> <span class="toc_entry">Second part</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sec-normed_groups2.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0005.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Spaces of Measures</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
+<li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h2 id="a0000000006">2.2 Spaces of Measures</h2>
+<p><div class="definition_thmwrapper" id="real-measures">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.1</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#real-measures">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/real_measures/basic.lean#L28">real_measures</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(0 {\lt} p' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal M_{p'}(S)\) denotes the real vector space </p>
+<div class="displaymath" id="a0000000155">
+  \[  \mathcal M_{p'}(S) = \left\{ \sum _{s\in S}a_{s}[s] \text{ such that } a_{s}\in \mathbb {R}\right\}   \]
+</div>
+<p> endowed with the \(\ell ^{p'}\)-norm \(\Vert \sum _{s\in S}a_s[s]\Vert _{\ell ^{p'}}=\sum _{s\in S}\lvert a_s\rvert ^{p'}\). </p>
+<p>For every finite set \(S\), the space \(\mathcal M_{p'}(S)\) can be written as the union </p>
+<div class="displaymath" id="a0000000156">
+  \[  \mathcal M_{p'}(S) = \varinjlim _{c{\gt}0}\mathcal M_{p'}(S)_{\leq c}  \]
+</div>
+<p> where \(\mathcal M_{p'}(S)_{\leq c} = \left\{ F \in \mathcal M_{p'}(S) \text{ such that } \Vert F \Vert _{\ell ^{p'}}\leq c\right\} \). Now, given a profinite set \(S=\varprojlim S_i\), where all \(S_i\)’s are finite sets, and a positive real number \(c{\gt}0\), define \(\mathcal M_{p'}(S)_{\leq c}\) as </p>
+<div class="displaymath" id="a0000000157">
+  \[  \mathcal M_{p'}(S)_{\leq c}=\varprojlim \mathcal M_{p'}(S_i)_{\leq c}  \]
+</div>
+<p> endowed with the projective limit topology. Finally, set \(\mathcal M_{p'}(S)=\varinjlim _{c}\mathcal M_{p'}(S)_{\leq c}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="laurent-measures-fin">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#laurent-measures-fin">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a finite set. Then \(\mathcal L_{r'}(S)\) denotes the group </p>
+<div class="displaymath" id="a0000000158">
+  \[  \mathcal L_{r'}(S)=\{ \sum _{s\in S,n\in \mathbb {Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in \mathbb {Z}, s\in S}\lvert a_{n,s}\rvert r^n {\lt} + \infty \} .  \]
+</div>
+
+  </div>
+</div> </p>
+<p>The group \(\mathcal L_{r'}(S)\) is filtered by the subsets </p>
+<div class="displaymath" id="a0000000159">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\bigl \{ \sum _{s\in S,n\in \mathbb {Z}}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in \mathbb {Z}, s\in S}\lvert a_{n,s}\rvert r^n \leq c\bigr \}   \]
+</div>
+<p> for \(c{\gt} 0\). Each subset \(\mathcal L_{r'}(S)_{\leq c}\) can be written as </p>
+<div class="displaymath" id="a0000000160">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim _{A}\mathcal L_{r'}(S)_{A,\leq c}  \]
+</div>
+<p> where \(A\) runs through the finite subsets of \(\mathbb {Z}\) and \(\mathcal L_{r'}(S)_{A,\leq c}\) is the finite set </p>
+<div class="displaymath" id="a0000000161">
+  \[  \mathcal L_{r'}(S)_{A,\leq c}=\bigl \{ \sum _{s\in S,n\in A}a_{n,s}T^n[s] \mid a_{n,s}\in \mathbb {Z}, \sum _{n\in A, s\in S}\lvert a_{n,s}\rvert r^n\leq c\bigr \} .  \]
+</div>
+<p> This defines a profinite topology on \(\mathcal L_{r'}(S)_{\leq c}\), for each \(c{\gt}0\). </p>
+<p><div class="definition_thmwrapper" id="laurent-measures">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#laurent-measures">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#laurent-measures-fin">Definition 2.2.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/basic.lean#L26">laurent_measures</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(0 {\lt} r' {\lt} 1\) be a real number, and let \(S\) be a profinite set with a presentation \(S=\varprojlim S_i\), where all \(S_i\) are finite. For all \(c{\gt}0\), let \(\mathcal L_{r'}(S)_{\leq c}\) denote the projective limit </p>
+<div class="displaymath" id="a0000000162">
+  \[  \mathcal L_{r'}(S)_{\leq c}=\varprojlim \mathcal L_{r'}(S_i)_{\leq c},  \]
+</div>
+<p> endowed with the projective limit topology, and set </p>
+<div class="displaymath" id="a0000000163">
+  \[  \mathcal L_{r'}(S)=\varinjlim _{c {\gt} 0}\mathcal L_{r'}(S)_{\leq c}.  \]
+</div>
+
+  </div>
+</div> </p>
+<p>Now fix \(0{\lt} \xi {\lt}1\) and let \(x\in \mathbb {R}_{\geq 0}\). For simplicity, denote by \(\mathbb {Z}(\! (T)\! )_{r'}\) the group \(\mathcal L_{r'}(\ast )\). One of the key results proven in <span class="cite">
+	[
+	<a href="sect0008.html#Analytic" >Sch20</a>
+	, 
+	§
+	6
+	]
+</span> is the surjectivity and continuity of the following map. </p>
+<p><div class="definition_thmwrapper" id="theta">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#laurent-measures">Definition 2.2.3</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/theta.lean#L327">theta.ϑ</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Fix \(0{\lt}\xi {\lt}1\), and let \(\vartheta _{\xi }\colon \mathbb {Z}(\! (T)\! )_r\rightarrow \mathbb {R}\) be the evaluation map </p>
+<div class="displaymath" id="a0000000164">
+  \[  \sum a_nT^n\longmapsto \sum a_n\xi ^n.  \]
+</div>
+
+  </div>
+</div> </p>
+<p>In order to prove the surjectivity, we use the following construction. <div class="definition_thmwrapper" id="theta-y">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2.5</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta-y">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  For all \(x \in \mathbb {R}\) and \(n\in \mathbb {N}\), set </p>
+<div class="displaymath" id="a0000000165">
+  \[  Y_\xi (x, n)= \begin{cases}  x& \text{ if } n = 0 \\ Y_\xi (x,n-1) - \left\lfloor \frac{Y_\xi (x,n-1)}{\xi ^{n-1}} \right\rfloor \xi ^{n-1} &  \text{ if } n \ge 1 \end{cases}  \]
+</div>
+<p> where \(\lfloor \ast \rfloor \) denotes the floor of \(\ast \), namely the greatest integer that is less or equal than \(\ast \). </p>
+
+  </div>
+</div> </p>
+<p><div class="lemma_thmwrapper" id="theta-surjective">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.2.6</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta-surjective">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000166"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#theta">Definition 2.2.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/theta.lean#L363">theta.ϑ_surjective</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   The map \(\vartheta _{\xi }\) is surjective. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000166">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Pick \(x\in \mathbb {R}\), and consider the power series </p>
+<div class="displaymath" id="a0000000167">
+  \[  F(T)=\sum _{n\geq 0}\left\lfloor \frac{Y_\xi (x,n)}{\xi ^n}\right\rfloor T^n\in \mathbb {Z}[\! [T]\! ]  \]
+</div>
+<p> where \(\{ Y_\xi (x,n)\} _{n}\) is the sequence defined in Definition&#160;<a href="sect0005.html#theta-y">2.2.5</a>. The fact that \(0{\lt}\xi {\lt}1\) ensures that the series converges on the open unit disk, and it can be proven that \(F(\xi )=x\). </p>
+
+  </div>
+</div>
+<p> The next lemma allows to compare the seemingly uncorrelated topologies on the spaces of <em>real</em> and of <em>Laurent</em> measures: <div class="lemma_thmwrapper" id="theta-continuous">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.2.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta-continuous">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000168"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#theta">Definition 2.2.4</a></li>
+          <li><a href="sect0005.html#laurent-measures-fin">Definition 2.2.2</a></li>
+          <li><a href="sect0005.html#real-measures">Definition 2.2.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/ses.lean#L947">laurent_measures_ses.continuous_θ_c</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Fix a finite set \(S\), real numbers \(0{\lt}\xi ,p'{\lt}1\) and set \(r'=(\xi )^{p'}\). The map \(\vartheta _\xi \) of Definition&#160;<a href="sect0005.html#theta">2.2.4</a> is continuous when endowing \(\mathcal L_{r'}(S)\) with the topology defined in Definition&#160;<a href="sect0005.html#laurent-measures-fin">2.2.2</a> and \(\mathcal M_{p'}(S)\) with the topology defined in Definition&#160;<a href="sect0005.html#real-measures">2.2.1</a> </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000168">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Omitted for now, but done in Lean. </p>
+
+  </div>
+</div>
+<p>Given any finite set \(S\), the map \(\vartheta _{\xi }\) defines a map \(\vartheta _{\xi ,S}\colon \mathcal L_{r'}(S)\longrightarrow \mathcal M_{p'}(S)\) by extending \(\vartheta _{\xi }\) componentwise. For the purpose of this project, the special case where \(\xi =1/2\) is enough, and we write \(\theta _S\) from now on to denote \(\vartheta _{\xi ,S}\). </p>
+<p><div class="theorem_thmwrapper" id="theta-exact_finite">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">2.2.8</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#theta-exact_finite">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000169"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#theta">Definition 2.2.4</a></li>
+          <li><a href="sect0005.html#laurent-measures-fin">Definition 2.2.2</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/laurent_measures/thm69.lean#L637">θ_ϕ_exact</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(0{\lt}p'{\lt}1\) be a real number, let \(S\) be a finite set, and let \(r'\) denote \(\left(\frac{1}{2}\right)^{p'}\). The sequence </p>
+<div class="displaymath" id="a0000000170">
+  \[  0\longrightarrow \mathcal L_{r'}(S)\longrightarrow \mathcal L_{r'}(S)\overset {\theta _S}{\longrightarrow } \mathcal M_{p'}(S)\longrightarrow 0,  \]
+</div>
+<p> where the first map is multiplication by \(2T-1\), is exact. In particular, the kernel of \(\theta _S\) is principal, generated by \(2T-1\).</p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000169">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> The proof of surjectivity for finite \(S\) follows immediately from Lemma&#160;<a href="sect0005.html#theta-surjective">2.2.6</a>, and the description of the kernel is straightforward. Similarly, the proof of continuity is a direct consequence of Lemma&#160;<a href="sect0005.html#theta-continuous">2.2.7</a>. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sec-normed_groups2.html" title="Variants of normed groups"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="cha-two.html" title="Second part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0006.html" title="The MacLane \(Q'\)-construction"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blueprint for the Liquid Tensor Experiment: Some normed homological algebra</title>
+<link rel="next" href="sect0003.html" title="Completions of locally constant functions" />
+<link rel="prev" href="sect0002.html" title="Spaces of convergent power series" />
+<link rel="up" href="cha-one.html" title="First part" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Blueprint for the Liquid Tensor Experiment</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class=" active">
+  <a href="cha-one.html"><span class="toc_ref">1</span> <span class="toc_entry">First part</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="BD_orig.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Breen–Deligne data</span></a>
+ </li>
+<li class="">
+  <a href="sec-normed_groups.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Spaces of convergent power series</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-some_normed_homological_algebra.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Some normed homological algebra</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Completions of locally constant functions</span></a>
+ </li>
+<li class="">
+  <a href="sec-polyhedral_lattice.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Polyhedral lattices</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Key technical result</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="cha-two.html"><span class="toc_ref">2</span> <span class="toc_entry">Second part</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sec-normed_groups2.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Variants of normed groups</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Spaces of Measures</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The MacLane \(Q'\)-construction</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Condensed abelian groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_section_1.html">Section 1 graph</a></li>
+<li ><a href="dep_graph_section_2.html">Section 2 graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h2 id="sec:some_normed_homological_algebra">1.4 Some normed homological algebra</h2>
+
+<p>It will be convenient to use the following definition generalizing the notion of a bound on the norm of a right inverse of a normed group morphism (note that the morphisms we consider have no reason to have a right inverse, even when they are surjective). </p>
+<p><div class="definition_thmwrapper" id="def:surjective_with_bound">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.1</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#def:surjective_with_bound">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/mathlib/blob/168d6ba8e13d66a5fa26131eeb24aceefc749dee/src/analysis/normed/group/hom.lean#L132">normed_add_group_hom.surjective_on_with</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(G\) and \(H\) be semi-normed groups, let \(K\) be a subgroup of \(H\) and \(C\) be a positive real number. A morphism \(f : G → H\) is \(C\)-surjective onto \(K\) if, for all \(x\) in \(K\), there exists some \(g\) in \(G\) such that \(f(g) = x\) and \(\| g\|  ≤ C\| x\| \). If \(K = H\) we simply say \(f\) is \(C\)-surjective. </p>
+
+  </div>
+</div> </p>
+<p>The following controlled surjectivity lemma will be used to prove Lemma&#160;<a href="sec-some_normed_homological_algebra.html#lem:controlled_exactness">1.4.3</a> and Lemma&#160;<a href="sect0003.html#lem:Tinv">1.5.8</a>. </p>
+<p><div class="lemma_thmwrapper" id="lem:closure_surjective">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#lem:closure_surjective">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#def:surjective_with_bound">Definition 1.4.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/mathlib/blob/168d6ba8e13d66a5fa26131eeb24aceefc749dee/src/analysis/normed/group/hom.lean#L761">controlled_closure_of_complete</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(G\) and \(H\) be normed groups. Let \(K\) be a subgroup of \(H\) and \(f\) a morphism from \(G\) to&#160;\(H\). Assume that \(G\) is complete and \(f\) is \(C\)-surjective onto \(K\). Then \(f\) is \((C + ε)\)-surjective onto the topological closure of \(K\) for every positive \(ε\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000030">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(x\) be any element of the closure of \(K\). First note the conclusion is trivial when \(x = 0\), so we can assume \(x ≠ 0\). Then write \(x\) as a sum \(\sum _{i \ge 0} x_i\) with all \(x_i \in K\), \(\| x - x_0\|  ≤ ε_0\) and \(‖x_i‖\leq \epsilon _i\) for \(i{\gt}0\) for some sequence of positive numbers \(\epsilon _i\) to be chosen later. By assumption, we can then lift each \(x_i\) to \(g_i\) such that \(f(g_i) = x_i\) and \(‖g_i‖\leq C‖x_i‖\), and then set \(g = \sum g_i\). Because \(G\) is complete, this sum converges provided the \(ε_i\) sequence converges fast enough to zero. We then have \(f(g) = x\) and </p>
+<div class="displaymath" id="a0000000031">
+  \[  ‖g‖ ≤ C\sum _{i \geq 0} ‖x_i‖ ≤ C(\| x\|  + ε_0) + C\sum _{i{\gt}0} ε_i ≤ (C + ε)‖x‖  \]
+</div>
+<p> where the last inequality holds provided the \(ε_i\) sequence converges fast enough to zero. For instance \(ε_i = ε∥x∥/(2^{i+1}C)\) satisfies all our constraints on the \(ε_i\) sequence (in particular they are positive because \(x ≠ 0\)). </p>
+
+  </div>
+</div>
+<p>The first application of the above lemma is a completion result for a quantitative version of being a complex. </p>
+<p><div class="lemma_thmwrapper" id="lem:controlled_exactness">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#lem:controlled_exactness">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#def:surjective_with_bound">Definition 1.4.1</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/normed_group/controlled_exactness.lean#L17">controlled_exactness</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(f : M_0 → M_1\) and \(g : M_1 → M_2\) be bounded maps between normed groups. Assume there are positive constants \(C\) and \(D\) such that: </p>
+<ul class="itemize">
+  <li><p>\(f\) is \(C\)-surjective onto \(\ker g\). </p>
+</li>
+  <li><p>\(g\) is \(D\)-surjective onto its image. </p>
+</li>
+</ul>
+<p> Then for every positive \(ε\), \(\widehat{f}\) is \((C + ε)\)-surjective onto \(\ker \widehat{g}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000032">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Since \(f\) is \(C\)-surjective onto \(\ker g\), \(\widehat{f}\) is \(C\)-surjective onto \(\ker g\) seen as a subset of \(\widehat{M_1}\). Hence this lemma will follow directly from Lemma&#160;<a href="sec-some_normed_homological_algebra.html#lem:closure_surjective">1.4.2</a> once we’ll have proven that \(\ker g\) is dense in \(\ker \widehat{g}\). Let \(\widehat y\) be an element of \(\ker \widehat{g}\). Pick any \(\delta {\gt} 0\) and take \(y\in M_1\) such that \(‖\widehat{y}-y‖\leq \delta \). Let \(z=g(y)\in M_2\), which has norm \(‖z‖=‖g(y)‖=‖g(y-\widehat{y})‖\) bounded by \(C_{g}\delta \), where \(C_{g}\) is the norm of \(g\). We can thus find some \(y'\in M_1\) with \(‖y'‖\leq DC_{g}\delta \) and \(g(y')=z\). Replacing \(y\) by \(y-y'\), we can thus find \(y\in \ker (g: M_1\to M_2)\) such that still \(‖\widehat{y}-y‖\leq (1+DC_{g})\delta \); as \(\delta \) was arbitrary, this gives the desired density. </p>
+
+  </div>
+</div>
+<p><div class="definition_thmwrapper" id="system_of_complexes">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#system_of_complexes">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/system_of_complexes/basic.lean#L46">system_of_complexes</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A <em>system of complexes</em> of normed abelian groups is for each \(c \in \mathbb R_{\ge 0}\) a complex </p>
+<div class="displaymath" id="a0000000033">
+  \[  C_c^\bullet : C_c^0\longrightarrow C_c^1\longrightarrow \ldots  \]
+</div>
+<p> of normed abelian groups together with maps of complexes \(\mathrm{res}_{c',c}: C_{c'}^\bullet \to C_c^\bullet \), for \(c' ≥ c\), satisfying \(\mathrm{res}_{c,c}=\mathrm{id}\) and the obvious associativity condition. In other words, a functor from \((\mathbb R_{\ge 0})^{\mathrm{op}}\) to cochain complexes of semi-normed groups. </p>
+
+  </div>
+</div> </p>
+<p>By convention, for every system of complexes \(C_\bullet ^\bullet \), we will set \(C^{-1}_c = 0\) for all \(c\). This will come up each time we write \(C^{i-1}_c\) and \(i\) could be \(0\). </p>
+<p>In this subsection, given \(x ∈ C^•_{c'}\) and \(c_0\leq c ≤ c'\) we will use the notation \(x_{|c} := \mathrm{res}_{c', c}(x)\). </p>
+<p><div class="definition_thmwrapper" id="admissible">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.5</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#admissible">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#system_of_complexes">Definition 1.4.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/system_of_complexes/basic.lean#L185">system_of_complexes.admissible</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A system of complexes is <em>admissible</em> if all differentials and maps \(\mathrm{res}_{c',c}^i\) are norm-nonincreasing. </p>
+
+  </div>
+</div> </p>
+<p>Throughout the rest of this subsection, \(k\) (and \(k'\), \(k''\)) will denote reals at least 1, \(m\) will be a non-negative integer, and \(K\), \(K'\), \(K''\) will denote non-negative reals. </p>
+<p><div class="definition_thmwrapper" id="norm_exact_complex">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.6</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#norm_exact_complex">#</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/thm95/col_exact_prep.lean#L21">system_of_complexes.norm_exact_complex</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A cochain complex&#160;\(C\) of semi-normed groups is <em>normed exact</em> if for all \(i \ge 0\), all \(\varepsilon {\gt} 0\), and all \(x \in C^i\) with \(d(x) = 0\) there exists a \(y \in C^{i-1}\) such that \(d(y) = x\) and \(\| y\|  \le (1 + \varepsilon )\| x\| \). </p>
+
+  </div>
+</div> </p>
+<p><div class="definition_thmwrapper" id="is_bounded_exact">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#is_bounded_exact">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#system_of_complexes">Definition 1.4.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/system_of_complexes/basic.lean#L235">system_of_complexes.is_bounded_exact</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(C_\bullet ^\bullet \) be a system of complexes. For an integer \(m\geq 0\) and reals \(k \ge 1\), \(K \ge 0\) and \(c_0 \ge 0\), we say the datum \(C_\bullet ^\bullet \) is <em>\(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0\) with bound \(K\)</em> if the following condition is satisfied. For all \(c\geq c_0\) and all \(x\in C_{kc}^i\) with \(i\leq m\) there is some \(y\in C_c^{i-1}\) such that </p>
+<div class="displaymath" id="a0000000034">
+  \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖.  \]
+</div>
+
+  </div>
+</div> </p>
+<p>We will also need a version where the inequality is relaxed by some arbitrary small additive constant. </p>
+<p><div class="definition_thmwrapper" id="is_weak_bounded_exact">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.8</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#system_of_complexes">Definition 1.4.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/system_of_complexes/basic.lean#L242">system_of_complexes.is_weak_bounded_exact</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(C_\bullet ^\bullet \) be a system of complexes. For an integer \(m\geq 0\) and reals \(k \ge 1\), \(K \ge 0\) and \(c_0 \ge 0\), the datum \((C_c^\bullet )_c\) is <em>weakly \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0\) with bound \(K\)</em> if the following condition is satisfied. For all \(c\geq c_0\), all \(x\in C_{kc}^i\) with \(i\leq m\) and any \(ε {\gt} 0\) there is some \(y\in C_c^{i-1}\) such that </p>
+<div class="displaymath" id="a0000000035">
+  \[  ‖x_{|c} - dy‖ ≤ K ‖dx‖ + ε.  \]
+</div>
+
+  </div>
+</div> </p>
+<p>We first note that the difference between those two definitions is only about cocyles if we are ready to lose a tiny something on the norm bound \(K\). </p>
+<p><div class="lemma_thmwrapper" id="is_bounded_exact_of_weakly">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.9</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#is_bounded_exact_of_weakly">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000036"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_bounded_exact">Definition 1.4.7</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 1.4.8</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/system_of_complexes/basic.lean#L353">system_of_complexes.is_weak_bounded_exact.to_exact</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(C_\bullet ^\bullet \) be a system of complexes. If \(C_\bullet ^\bullet \) is weakly \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0\) with bound \(K\) and if, for all \(c\geq c_0\) and all \(x\in C_{kc}^i\) with \(i\leq m\) such that \(dx = 0\) there is some \(y\in C_c^{i-1}\) such that \(x_{|c} = dy\) then, for every positive \(δ\), \(C_\bullet ^\bullet \) is \(\leq k\)-exact in degrees \(\leq m\) and for \(c\geq c_0\) with bound \(K + δ\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000036">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(δ\) be some positive real number. Let \(x\) be an element of \(C_{kc}^i\) for some \(c ≥ c_0\) and \(i ≤ m\). If \(dx = 0\) then the assumption we made about exact elements is exactly what we want. </p>
+<p>Assume now that \(dx ≠ 0\). The weak exactness assumption applied to \(ε = δ‖dx‖\) gives some \(y\in C_c^{i-1}\) such that </p>
+<div class="displaymath" id="a0000000037">
+  \begin{align*}  ‖x_{|c} - dy‖ & ≤ K‖dx‖ + δ‖dx‖ \\ & = (K + δ)‖dx‖ \end{align*}
+</div>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="weak_exact_of_factor_exact">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.10</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#weak_exact_of_factor_exact">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 1.4.8</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#norm_exact_complex">Definition 1.4.6</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/thm95/col_exact_prep.lean#L25">system_of_complexes.weak_exact_of_factor_exact</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(k \ge 1\), \(c_0 \ge 0\) be real numbers, and \(m \in \mathbb N\). Let \(C_\bullet ^\bullet \) be a system of complexes, and for each \(c \ge 0\) let \(D_c\) be a cochain complex of semi-normed groups. Let \(f_c \colon C^\bullet _{kc} \to D^\bullet _c\) and \(g_c \colon D^\bullet _c \to C^\bullet _c\) be norm-nonincreasing morphisms of cochain complexes of semi-normed groups such that \(g_c \circ f_c\) is the restriction map \(C^\bullet _{kc} \to C^\bullet _c\). Assume that for all \(c \ge c_0\) the cochain complex \(D_c\) is normed exact. Then \(C_\bullet ^\bullet \) is weakly \(\le k\)-exact in degrees \(\le m\) and for \(c \ge c_0\) with bound&#160;\(1\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Fix \(c \ge c_0\), \(i \le m\), \(x \in C_{kc}^i\), and \(\varepsilon {\gt} 0\). Denote by \(\delta \) the positive real number \(\frac{\varepsilon }{\| x\|  + 1}\). </p>
+<p>Clearly \(f(d(x))\) is killed by \(d\), so by normed exactness of \(D_c\) we find \(x' \in D_c^i\) such that \(d(x') = f(d(x))\) and \(\| x'\|  \le (1 + \delta )\| f(d(x))\| \). Similarly \(d(f(x) - x') = 0\), so by exactness of \(D_c\) we find \(y \in D_c^{i-1}\) such that \(d(y) = f(x) - x'\). </p>
+<p>We are done if we show that \(\| x_{|c} - d(g(y))\|  \le \| d(x)\|  + \varepsilon \). Observe that \(x_{|c} - d(g(y)) = g(f(x)) - g(d(y)) = g(x')\), and therefore we shall show \(\| g(x')\|  \le \| d(x)\|  + \varepsilon \). </p>
+<p>Now we use that \(f\) and \(g\) are norm-nonincreasing to calculate </p>
+<div class="displaymath" id="a0000000039">
+  \[  \| g(x')\|  \le \| x'\|  \le (1 + \delta ) \| f(d(x))\|  \le (1 + \delta ) \| d(x)\| .  \]
+</div>
+<p> Finally, we have \((1 + \delta ) \| d(x)\|  \le \| d(x)\|  + \varepsilon \) by our choice of \(\delta \). </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="weakexact_implies_exact">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.11</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#weakexact_implies_exact">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 1.4.8</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#is_bounded_exact">Definition 1.4.7</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#admissible">Definition 1.4.5</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/system_of_complexes/completion.lean#L44">system_of_complexes.is_weak_bounded_exact.strong_of_complete</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(M^\bullet _\bullet \) be an admissible collection of complexes of complete normed abelian groups. </p>
+<p>Assume that \(M^\bullet _c\) is weakly \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\). Then \(M^\bullet _c\), for every \(δ {\gt} 0\), it is \(\leq k^2\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K+δ\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Lemma&#160;<a href="sec-some_normed_homological_algebra.html#is_bounded_exact_of_weakly">1.4.9</a> ensures we only need to care about cocycles of \(M\). More precisely, let \(x\) be a cocycle in \(M^i_{k^2c}\) for some \(i ≤ m\) and \(c ≥ c_0\). We need to find \(y \in M^{i-1}_c\) such that \(dy = x_{|c}\). </p>
+<p>By weak \(\leq k\)-exactness applied to \(x\) and a sequence \(ε_j\) to be chosen later, we can find a sequence \(w^j \in M^{i-1}_{kc}\) such that </p>
+<div class="displaymath" id="a0000000041">
+  \[  ‖x_{kc} - dw^j‖ ≤ ε_j.  \]
+</div>
+<p> Then, by weak \(\leq k\)-exactness applied to each \(w^{j + 1} - w^j\) and a sequence \(δ_j\) to be chosen later, we can find a sequence \(z^j \in M^{i-2}_{c}\) such that </p>
+<div class="displaymath" id="a0000000042">
+  \[  ‖(w^{j+1} - w^j)_{|c} - dz^j‖ ≤ K‖dw^{j+1} - dw^j‖ + δ_j.  \]
+</div>
+<p> We set \(y^j := w^j_{|c} - \sum _{l=0}^{j-1} dz^l ∈ M^{i-1}_c\). </p>
+<p>We have </p>
+<div class="displaymath" id="a0000000043">
+  \begin{align*}  ‖y^{j + 1} - y^j‖ & = \left\| (w^{j + 1} - w^j)_{|c} - dz^j\right\|  \\ & ≤ K‖dw^{j+1} - dw^j‖ + δ_j \\ & ≤ 2Kε_j + δ_j. \end{align*}
+</div>
+<p> So \(y^j\) is a Cauchy sequence as long as we make sure \(2Kε_j + δ_j ≤ 2^{-j}\) for instance. Since \(M^{i-1}_c\) is complete, this sequence converges to some \(y\). Because \(dy^j = dw^j_{|c}\), we get that \(‖x_{|c} - dy^j‖ ≤ ε_j\) and in the limit \(x_{|c} = dy\). </p>
+
+  </div>
+</div>
+<p><div class="proposition_thmwrapper" id="weaksnakelemma">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.4.12</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#weaksnakelemma">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000044"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 1.4.8</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#admissible">Definition 1.4.5</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/normed_snake.lean#L13">weak_normed_snake</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   Let \(M^\bullet _\bullet \) and \(M'^\bullet _\bullet \) be two admissible collections of complexes of complete normed abelian groups. For each \(c\geq c_0\) let \(f^\bullet _c: M^\bullet _c\to M'^\bullet _c\) be a collection of maps between these collections of complexes that are norm-nonincreasing and which all commute with all restriction maps, and assume that there exists these maps satisfy </p>
+<div class="displaymath" id="a0000000045">
+  \[  ‖x_{|c}‖ ≤ K''‖f(x)‖  \]
+</div>
+<p> for all \(i ≤ m+1\) and all \(x\in M^i_{k''c}\). Let \(N^\bullet _c=M'^\bullet _c/M^\bullet _c\) be the collection of quotient complexes, with the quotient norm; this is again an admissible collection of complexes. </p>
+<p>Assume that \(M^\bullet _c\) (resp. \(M'^\bullet _c\)) is weakly \(\leq k\)-exact (resp. \(≤ k'\)-exact) in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\) (resp. \(K'\)). Then \(N^\bullet _c\) is weakly \(\leq kk'k''\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K'(KK'' + 1)\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000044">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Let \(n \in N^i_{kk'k''c}\) for \(i\leq m-1\). We fix \(ε {\gt} 0\). We need to find an element \(y \in N^{i-1}_c\) such that </p>
+<div class="displaymath" id="a0000000046">
+  \[  ‖n_{|c} - dy‖ \leq K'(KK'' + 1)‖dn‖ + \epsilon .  \]
+</div>
+<p>Pick any preimage \(m' \in M'^i_{kk'k''c}\) of \(n\). In particular \(dm'\) is a preimage of \(dn\). By definition of the quotient norm, we can find \(m_1 ∈ M^{i+1}_{kk'k''c}\) and \(m_1'' ∈ (M')^{i+1}_{kk'k''c}\) such that </p>
+<div class="displaymath" id="a0000000047">
+  \[  dm' = f(m_1) + m_1''  \]
+</div>
+<p> with \(‖m_1''‖ \leq ‖dn‖ + ε_1\), for some positive \(ε_1\) to be chosen later. </p>
+<p>Applying the differential to the last displayed equation, and using that this kills the image of \(d\), and that \(f\) is a map of complexes, we see that </p>
+<div class="displaymath" id="a0000000048">
+  \[  f(dm_1) = -dm_1''.  \]
+</div>
+<p> Using the norm bound on \(f\), we get </p>
+<div class="displaymath" id="a0000000049">
+  \[ \begin{aligned}  ‖dm_{1|kk'c}‖ & ≤ K”‖f(dm_1)‖ = K”‖dm_1”‖\\ & ≤ K”‖m_1”‖ ≤ K”‖dn‖ + K”ε_1. \end{aligned} \]
+</div>
+<p> On the other hand, weak exactness of \(M\) applied to \(m_{1|kk'c}\) gives \(m_0 ∈ M^i_{k'c}\) such that </p>
+<div class="displaymath" id="a0000000050">
+  \[  ‖m_{1|kk'c|k'c} - dm_0‖ \leq K‖dm_{1|kk'c}‖ + ε_1  \]
+</div>
+<p> which combines with the previous estimate to give: </p>
+<div class="displaymath" id="a0000000051">
+  \[  ‖m_{1|k'c} - dm_0‖ \leq K K'' \left\| d n\right\|  + (KK'' + 1)ε_1.  \]
+</div>
+<p> Now let \(m'_{\mathrm{new}} = m'_{|k'c} - f(m_0) \in M'^i_{k'c}\); this is a lift of \(n_{|k'c}\). Then </p>
+<div class="displaymath" id="a0000000052">
+  \[  dm'_{\mathrm{new}} = dm'_{|k'c} - f(m_{1|k'c}) + f(m_{1|k'c} - dm_0) = m''_{1|k'c} + f(m_{1|k'c} - dm_0).  \]
+</div>
+<p> In particular, </p>
+<div class="displaymath" id="a0000000053">
+  \[  ‖dm'_{\mathrm{new}}‖ ≤ (KK'' + 1)\left\| dn\right\| + (KK'' + 2) ε_1.  \]
+</div>
+<p> Now weak exactness of \(M'\) gives \(x \in M'^{i-1}_c\) such that </p>
+<div class="displaymath" id="a0000000054">
+  \[  ‖m'_{\mathrm{new}|c} - dx‖ ≤ K'‖dm'_{\mathrm{new}}‖ + ε_1 \leq K'((K K'' + 1) \left\| dn\right\| + (KK'' + 2) ε_1) + ε_1.  \]
+</div>
+<p> In particular, letting \(y \in N^{i-1}_c\) be the image of \(x\), we get </p>
+<div class="displaymath" id="a0000000055">
+  \[  ‖n_{|c} - dy‖ ≤ K'(K K'' + 1)\left\| dn\right\| + (K'(K K'' + 2) + 1) ε_1,  \]
+</div>
+<p> which is exactly what we wanted if we choose \(ε_1 = ε/(K'(K K'' + 2) + 1)\). </p>
+
+  </div>
+</div>
+<p>We also need the ‘dual’ version of <a href="sec-some_normed_homological_algebra.html#weaksnakelemma">1.4.12</a>, for kernels instead of cokernels. Note that this is actually a bit easier to prove. (Should we put it first in the presentation?) </p>
+<p><div class="proposition_thmwrapper" id="weakdualsnakelemma">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.4.13</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#weakdualsnakelemma">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000056"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 1.4.8</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#admissible">Definition 1.4.5</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/normed_snake_dual.lean#L300">weak_normed_snake_dual</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   Let \(M^\bullet _\bullet \) and \(M'^\bullet _\bullet \) be two admissible collections of complexes of complete normed abelian groups. For each \(c\geq c_0\) let \(f^\bullet _c: M^\bullet _c\to M'^\bullet _c\) be a collection of maps between these collections of complexes which all commute with all restriction maps. Assume moreover that we are given two constants \(r_1, r_2 \geq 0\) such that: </p>
+<ul class="itemize">
+  <li><p>for all \(i, c\geq c_0\) and all \(x\in M^i_c\) </p>
+<div class="displaymath" id="a0000000057">
+  \[  ‖f(x)‖ ≤ r_1‖x‖;  \]
+</div>
+</li>
+  <li><p>for all \(i ≤ m+1, c \geq c_0\) and all \(y\in M'^i_c\), there exists \(x\in M^i_c\) such that </p>
+<div class="displaymath" id="a0000000058">
+  \[  f(x) = y \mbox{ and } ‖x‖ ≤ r_2‖y‖.  \]
+</div>
+</li>
+</ul>
+<p>Let \(N^\bullet _c\) be the collection of kernel complexes, with the induced norm; this is again an admissible collection of complexes. </p>
+<p>Assume that \(M^\bullet _c\) (resp. \(M'^\bullet _c\)) is weakly \(\leq k\)-exact (resp. \(≤ k'\)-exact) in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\) (resp. \(K'\)). Then \(N^\bullet _c\) is weakly \(\leq kk'\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K + r_1r_2KK'\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000056">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(n \in N^i_{kk'c} \subseteq M^i_{kk'c}\) for \(i\leq m-1\) and let \(ε {\gt} 0\). We need to find an element \(y \in N^{i-1}_c\) such that </p>
+<div class="displaymath" id="a0000000059">
+  \[  ‖n_{|c} - dy‖ \leq K + r_1r_2KK'‖dn‖ + \epsilon .  \]
+</div>
+<p> By weak exactness of \(M^\bullet _\bullet \), we can find \(m \in M^{i-i}_{k'c}\) such that </p>
+<div class="displaymath" id="a0000000060">
+  \[  ‖n_{|k'c} - dm‖ \leq K‖dn‖ + \epsilon _1,  \]
+</div>
+<p> where \(\epsilon _1 {\gt} 0\) to be chosen later. By weak exactness of \(M'^\bullet _\bullet \), we can find \(m' \in M'^{i-2}_c\) such that </p>
+<div class="displaymath" id="a0000000061">
+  \[  ‖f(m)_{|c} - dm'‖ \leq K'‖df(m)‖ + \epsilon _2,  \]
+</div>
+<p> where \(\epsilon _2 {\gt} 0\) to be chosen later. Let \(m_1 \in M^{i-2}_c\) be a lift of \(m'\) and let \(m_2 \in M^{i-1}_c\) be such that </p>
+<div class="displaymath" id="a0000000062">
+  \[  f(m_2) = f(m_{|c} - dm_1) \mbox{ and } ‖m_2‖ \leq r_2 ‖f(m_{|c} - dm_1)‖.  \]
+</div>
+<p> Set \(y = m_{|c} - dm_1 - m_2 \in M^{i-1}_c\). By construction \(f(y) = 0\), so \(y \in N^{i-1}_c\). We compute </p>
+<div class="displaymath" id="a0000000063">
+  \begin{gather*}  ‖n_{|c} - dy‖ = ‖n_{|c} - dm_{|c} + d^2m_1 - dm_2‖ = ‖n_{|c} - dm_{|c} - dm_2‖ \leq \\ ‖n_{|c} - dm_{|c} ‖ + ‖dm_2‖ = ‖(n_{|k'c} - dm)_{|c}‖ + ‖dm_2‖ \leq ‖(n_{|k'c} - dm)‖ + ‖dm_2‖ \leq \\ K‖dn‖ + \epsilon _1 + ‖dm_2‖. \end{gather*}
+</div>
+<p> Where we have used the defining property of \(m\) and admissibility of \(M^\bullet _\bullet \). By the same assumption and since \(f(n_{|k'c}) = f(n)_{|k'c} = 0\), we have </p>
+<div class="displaymath" id="a0000000064">
+  \begin{gather*}  ‖dm_2‖ \leq ‖m_2‖ \leq r_2 ‖f(m_{|c} - dm_1)‖ = r_2 ‖f(m)_{|c} - df(m_1)‖ = r_2 ‖f(m)_{|c} - dm’‖ \leq \\ r_2(K’‖df(m)‖ + \epsilon _2) = r_2(K’‖f(dm)‖ + \epsilon _2) = r_2(K’‖f(n_{|k'c}) - f(dm)‖ + \epsilon _2) = \\ r_2(K’‖f(n_{|k'c} - dm)‖ + \epsilon _2) \leq r_2(K’r_1‖n_{|k'c} - dm‖ + \epsilon _2) \leq r_2(K’r_1(K‖dn‖ + \epsilon _1) + \epsilon _2) \end{gather*}
+</div>
+<p> In particular we get </p>
+<div class="displaymath" id="a0000000065">
+  \begin{gather*}  ‖n_{|c} - dy‖ \leq K‖dn‖ + \epsilon _1 + r_2(K’r_1(K‖dn‖ + \epsilon _1) + \epsilon _2) = \\ (K + r_1r_2KK’)‖dn‖ + \epsilon _1(1+r_1r_2K’) + r_2\epsilon _2. \end{gather*}
+</div>
+<p> Now let </p>
+<div class="displaymath" id="a0000000066">
+  \[  \epsilon _1 = \frac{\epsilon }{2(1+r_1r_2K')} \mbox{ and } \epsilon _2 = \begin{cases}  \frac{\epsilon }{2r_2} \mbox{ if } r_2 \neq 0 \\ 1 \mbox{ if } r_2 = 0 \end{cases}  \]
+</div>
+<p> In any case \(r_2 \epsilon _2 \leq \frac{\epsilon }{2}\) and so </p>
+<div class="displaymath" id="a0000000067">
+  \[  ‖n_{|c} - dy‖ \leq (K + r_1r_2KK')‖dn‖ + \epsilon  \]
+</div>
+<p> as required. </p>
+<p>If \(i=0\), then all \(m\), \(m'\), \(m_1\) and \(m_2\) are \(0\), so \(y=0\) as required. </p>
+
+  </div>
+</div>
+<p>Consider a system of double complexes \(M^{p,q}_c\), \(p,q\geq 0\), \(c\geq c_0\), </p>
+<div class="centered"> <div class="tikzcd" id="a0000000068">
+    <img src="images/img-0001.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+    M^{0,0}_c \ar[r]{d&#39;^{0,0}_c}\ar[d]{d^{0,0}_c} &amp; M^{0,1}_c\ar[r]{d&#39;^{0,1}_c}\ar[d]{d^{0,1}_c} &amp; M^{0,2}_c\ar[r]{d&#39;^{0,2}_c}\ar[d]{d^{0,2}_c} &amp; \ldots\\
+M^{1,0}_c\ar[r]{d&#39;^{1,0}_c}\ar[d]{d^{1,0}_c} &amp; M^{1,1}_c\ar[r]{d&#39;^{1,1}_c}\ar[d]{d^{1,1}_c} &amp; M^{1,2}_c\ar[r]{d&#39;^{1,2}_c}\ar[d]{d^{1,2}_c} &amp; \ldots\\
+M^{2,0}_c\ar[r]{d&#39;^{2,0}_c}\ar[d]{d^{2,0}_c} &amp; M^{2,1}_c\ar[r]{d&#39;^{2,1}_c}\ar[d]{d^{2,1}_c} &amp; \ddots\\
+\vdots &amp; \vdots
+  \end{tikzcd}" />
+</div> </div>
+<p> of complete normed abelian groups. </p>
+<p><div class="definition_thmwrapper" id="spectral-htpy">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.14</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#spectral-htpy">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#system_of_complexes">Definition 1.4.4</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/normed_spectral.lean#L71">system_of_double_complexes.normed_spectral_homotopy</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   We say that the system of double complexes \(M^{p,q}_c\) satisfies the <em>normed spectral homotopy condition</em> for \(m \in \mathbb {N}\) and \(H, c_0 \in \mathbb {R}_{\ge 0}\) if the following condition is satisfied: </p>
+<p>For \(q=0,\ldots ,m\) and \(c\geq c_0\), there is a map \(h^q_{k'c} \colon M^{0,q+1}_{k'c}\to M^{1,q}_c\) with </p>
+<div class="displaymath" id="a0000000069">
+  \[  \| h^q_{k'c}(x)\| _{M^{1,q}_c} \leq H\| x\| _{M^{0,q+1}_{k'c}}  \]
+</div>
+<p> for all \(x\in M^{0,q+1}_{k'c}\), and such that for all \(c\geq c_0\) and \(q=0,\ldots ,m\) the “homotopic” map </p>
+<div class="displaymath" id="a0000000070">
+  \[  \mathrm{res}_{k'^2c,k'c}^{1,q}\circ d^{0,q} + h^q_{k'^2c}\circ d'^{0,q}_{k'^2c} + d'^{1,q-1}_{k'c}\circ h^{q-1}_{k'^2c} \colon M^{0,q}_{k'^2c}\to M^{1,q}_{k'c}  \]
+</div>
+<p> factors as a composite of the restriction \(\mathrm{res}_{k'^2c,c}^{0,q}\) and a map </p>
+<div class="displaymath" id="a0000000071">
+  \[  \delta ^{0,q}_c \colon M^{0,q}_c\to M^{1,q}_{k'c}  \]
+</div>
+<p> that is a map of complexes (in degrees \(\leq m\)), and satisfies the estimate </p>
+<div class="equation" id="eq:homotopicmapsmall">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:homotopicmapsmall} \| \delta ^{0,q}_c(x)\| _{M^{1,q}_{k'c}}\leq \epsilon \| x\| _{M^{0,q}_c} \end{equation}
+  </div>
+  <span class="equation_label">1.4.3</span>
+</p>
+</div>
+<p> for all \(x\in M^{0,q}_c\). </p>
+
+  </div>
+</div> </p>
+<p><div class="proposition_thmwrapper" id="spectral">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.4.15</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#spectral">#</a>
+    <a class="icon proof" href="sec-some_normed_homological_algebra.html#a0000000072"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sec-some_normed_homological_algebra.html#admissible">Definition 1.4.5</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#is_weak_bounded_exact">Definition 1.4.8</a></li>
+          <li><a href="sec-some_normed_homological_algebra.html#spectral-htpy">Definition 1.4.14</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/9701fc4a29514852b599e9732c2409f34153ce2a/src/normed_spectral.lean#L375">system_of_double_complexes.normed_spectral</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   Fix an integer \(m\geq 0\) and constants \(k\), \(K\). Then there exists an \(\epsilon {\gt}0\) and constants \(k_0\), \(K_0\), depending (only) on \(k\), \(K\) and \(m\), with the following property. </p>
+<p>Let \(M^{p,q}_c\) be a system of double complexes as above, and assume that it is admissible. Assume further that there is some \(k'\geq k_0\) and some \(H{\gt}0\), such that </p>
+<ol class="enumerate">
+  <li><p>for \(i=0,\ldots ,m+1\), the rows \(M^{i,q}_c\) are weakly \(\leq k\)-exact in degrees \(\leq m-1\) for \(c\geq c_0\) with bound \(K\); </p>
+</li>
+  <li><p>for \(j=0,\ldots ,m\), the columns \(M^{p,j}_c\) are weakly \(\leq k\)-exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(K\); </p>
+</li>
+  <li><p>it satisfies the normed spectral homotopy condition for \(m\), \(H\) and \(c_0\). </p>
+</li>
+</ol>
+<p> Then the first row is weakly \(\leq k'^2\) exact in degrees \(\leq m\) for \(c\geq c_0\) with bound \(2K_0H\). </p>
+
+  </div>
+</div> </p>
+<p>We note that the bound on the homotopy is of a peculiar nature, in that the bound only depends on a deep restriction of \(x\). </p>
+<div class="proof_wrapper" id="a0000000072">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof of Proposition&#160;<a href="sec-some_normed_homological_algebra.html#spectral">1.4.15</a>
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>   First, we treat the case \(m=0\). If \(m=0\), we claim that one can take \(\epsilon =\tfrac 1{2k}\) and \(k_0=k\). We have to prove exactness at the first step. Let \(x_{k'^2c}\in M^{0,0}_{k'^2c}\) and denote \(x_{k'c}=\mathrm{res}_{k'^2c,k'c}^{0,0}(x)\) and \(x_c=\mathrm{res}_{k'^2c,c}^{0,0}(x)\). Then by assumption (2) (and \(k'\geq k\)), we have </p>
+<div class="displaymath" id="a0000000073">
+  \[  ‖x_c‖_{M^{0,0}_c}\leq k‖d^{0,0}_{k'c}(x_{k'c})‖_{M^{1,0}_{k'c}}.  \]
+</div>
+<p> On the other hand, by (3), </p>
+<div class="displaymath" id="a0000000074">
+  \[  ‖\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x))\pm h^0_{k'^2c}(d'^{0,0}_{k'^2c}(x))‖_{M^{1,0}_{k'c}}\leq \epsilon ‖x_c‖_{M^{0,0}_c}.  \]
+</div>
+<p> In particular, noting that \(\mathrm{res}_{k'^2c,k'c}^{1,0}(d^{0,0}_{k'^2c}(x)) = d^{0,0}_{k'c}(x_{k'c})\), we get </p>
+<div class="displaymath" id="a0000000075">
+  \[  ‖x_c‖_{M^{0,0}_c}\leq k‖d^{0,0}_{k'c}(x_{k'c})‖_{M^{1,0}_{k'c}}\leq k\epsilon ‖x_c‖_{M^{0,0}_c} + kH ‖d'^{0,0}_{k'^2c}(x)‖_{M^{0,1}_{k'^2c}}.  \]
+</div>
+<p> Thus, taking \(\epsilon =\tfrac 1{2k}\) as promised, this implies </p>
+<div class="displaymath" id="a0000000076">
+  \[  ‖x_c‖_{M^{0,0}_c}\leq 2kH ‖d'^{0,0}_{k'^2c}(x)‖_{M^{0,1}_{k'^2c}}.  \]
+</div>
+<p> This gives the desired \(\leq \max (k'^2,2k_0H)\)-exactness in degrees \(\leq m\) for \(c\geq c_0\). </p>
+<p>Now we argue by induction on \(m\). Consider the complex \(N^{p,q}\) given by \(M^{p,q+1}\) for \(q\geq 1\) and \(N^{p,0} = M^{p,1}/\overline{M^{p,0}}\) (the quotient by the closure of the image, which is also the completion of \(M^{p,1}/M^{p,0}\)), equipped with the quotient norm. Using the normed version of the snake lemma, Proposition&#160;<a href="sec-some_normed_homological_algebra.html#weaksnakelemma">1.4.12</a>, one checks that this satisfies the assumptions for \(m-1\), with \(k\) replaced by \(\max (k^4,k^3+k+1)\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0002.html" title="Spaces of convergent power series"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="cha-one.html" title="First part"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0003.html" title="Completions of locally constant functions"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
