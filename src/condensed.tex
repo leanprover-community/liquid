@@ -78,15 +78,17 @@
 
 \begin{proof}
   \leanok
-  TODO: Rewrite this proof. It is written for the case $\bullet \stackrel{g}{\to} \bullet \stackrel{0}{\to} \bullet$.
-
   We evaluate at $S\in \mathrm{ExtrDisc}$.
-  Any map $S\to X''$ factors over some $X''_{\leq c}$,
-  and then $g: X_{\leq c_gc}\times_{X''} X''_{\leq c}\to X''_{\leq c}$ is a surjection of compact Hausdorff spaces;
-  as $S$ is extremally disconnected, the map $S\to X''_{\leq c}$ can be lifted,
-  showing that $g: X(S)\to X''(S)$ is surjective.
-  A similar argument shows that the kernel of $g: X(S)\to X''(S)$ is in the image of $f: X'(S)\to X(S)$,
-  the latter clearly being injective.
+  Since the sequence is exact with constant~$c_f$,
+  we know that for all~$c$ the natural map
+  \[
+    \phi \colon X_{\le c} \times_{X_{\le c_fc}} X'_{\le c_fc} \to X_{\le c} \times_{X''_c} \{*\}
+  \]
+  is surjective.
+  Therefore, any continuous map from $S$ to the codomain of $\phi$ can be lifted;
+  as $S$ is extremally disconnected.
+  Since every map $S \to X$ factors over some $X_{\le c}$,
+  this shows that the kernel of $g \colon X(S)\to X''(S)$ is in the image of $f \colon X'(S)\to X(S)$.
 \end{proof}
 
 \begin{lemma}
