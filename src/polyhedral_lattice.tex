@@ -1,6 +1,8 @@
 \subsection{Polyhedral lattices}
 \label{sec:polyhedral_lattice}
 
+The following definition deviates slightly from~\cite{Analytic}.
+
 \begin{definition}
   \label{polyhedral_lattice}
   \lean{polyhedral_lattice}
@@ -10,14 +12,8 @@
   such that there exists a finite set $\{\lambda_1, \dots, \lambda_n\} \subset \Lambda$
   that generate the norm:
   that is to say, for every $\lambda \in \Lambda$ there exist
-  $c_1, \dots, c_n \in \mathbb Q$ such that
-  $\lambda = \sum c_i \lambda_i$ and $\|\lambda\| = c_i\|\lambda_i\|$.
-
-  Equivalently (but not verified in Lean):
-  the norm is given by the supremum of finitely many linear functions on $\Lambda$;
-  or once more,
-  equivalently, the ``unit ball''
-  $\{\lambda\in \Lambda\otimes \mathbb R\mid ‖\lambda‖_\Lambda\leq 1\}$ is a polyhedron.
+  $c_1, \dots, c_n \in \mathbb N$ such that
+  $\lambda = \sum c_i \lambda_i$ and $\|\lambda\| = \sum c_i\|\lambda_i\|$.
 \end{definition}
 
 Finally, we can prove the key combinatorial lemma,
