@@ -14,8 +14,8 @@
 \end{remark}
 
 \begin{definition}
-  \label{exact-with-constant}
-  \lean{CompHausFiltPseuNormGrp₁.exact_with_constant}
+  \label{strongly-exact}
+  \lean{CompHausFiltPseuNormGrp₁.strongly_exact}
   \leanok
   \uses{png-cats}
   Consider an exact sequence of abelian groups
@@ -27,10 +27,10 @@
 \end{definition}
 
 \begin{proposition}
-  \label{exact-with-constants-lim}
-  \lean{CompHausFiltPseuNormGrp₁.exact_with_constant.extend}
+  \label{strongly-exact-lim}
+  \lean{CompHausFiltPseuNormGrp₁.strongly_exact.extend}
   \leanok
-  \uses{bounded-limits, exact-with-constant}
+  \uses{bounded-limits, strongly-exact}
   Consider an inverse system
 \[ (X_i'\overset{f}{\longrightarrow} X_i\overset{g}{\longrightarrow} X_i'')_i \]
   of exact sequences that are exact with constant $c_f$ (independent of $i$).
@@ -63,9 +63,9 @@
 
 \begin{proposition}
   \label{CHPNG-Cond-exact}
-  \lean{Condensed.exact_of_exact_with_constant}
+  \lean{Condensed.exact_of_strongly_exact}
   \leanok
-  \uses{CHPNG-to-Cond, exact-with-constant}
+  \uses{CHPNG-to-Cond, strongly-exact}
   Consider an exact sequence of abelian groups
   \[ X'\overset{f}{\longrightarrow} X\overset{g}{\longrightarrow} X'' \]
   such that all of $X'$, $X$ and $X''$ carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups.
@@ -318,7 +318,7 @@
   \label{M-ses}
   \lean{laurent_measures.short_exact}
   \leanok
-  \uses{laurent-measures, real-measures, theta-exact_finite, CHPNG-Cond-exact, exact-with-constants-lim}
+  \uses{laurent-measures, real-measures, theta-exact_finite, CHPNG-Cond-exact, strongly-exact-lim}
   Let $0 < p' < 1$ be a real number,
   let $S$ be a profinite set,
   and let $r'$ denote $(\tfrac12)^{p'}$.
@@ -328,11 +328,11 @@
 \end{lemma}
 
 \begin{proof}
-  \uses{theta-exact_finite, CHPNG-Cond-exact, exact-with-constants-lim}
+  \uses{theta-exact_finite, CHPNG-Cond-exact, strongly-exact-lim}
   \leanok
   By Proposition~\ref{CHPNG-Cond-exact} it suffices to show
   that the corresponding sequence of pseudonormed groups is short exact,
-  and by Proposition~\ref{exact-with-constants-lim} we may also assume that $S$ is finite. With this reductions, the lemma is precisely Theorem~\ref{theta-exact_finite}.
+  and by Proposition~\ref{strongly-exact-lim} we may also assume that $S$ is finite. With this reductions, the lemma is precisely Theorem~\ref{theta-exact_finite}.
 \end{proof}
 
 \begin{theorem}[Clausen--Scholze]
