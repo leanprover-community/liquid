@@ -22,8 +22,9 @@
   \[ X'\overset{f}{\longrightarrow} X\overset{g}{\longrightarrow} X'' \]
   such that all of $X'$, $X$ and $X''$ carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups.
   Assume that the maps are strict, i.e., $f(X'_{\leq c})\subset X_{\leq c}$ and $g(X_{\leq c})\subset X''_{\leq c}$.
-  We say that the sequence is \emph{exact with constant $c_f$} if
-  $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})$.
+  Let $r \colon \mathbb{R}_{\ge0} \to \mathbb{R}_{\ge0}$ be a function satisfying $c \le r(c)$ for all~$c$.
+  We say that the sequence is \emph{strongly exact with respect to $r$} if
+  $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq r(c)})$.
 \end{definition}
 
 \begin{proposition}
@@ -33,16 +34,16 @@
   \uses{bounded-limits, strongly-exact}
   Consider an inverse system
 \[ (X_i'\overset{f}{\longrightarrow} X_i\overset{g}{\longrightarrow} X_i'')_i \]
-  of exact sequences that are exact with constant $c_f$ (independent of $i$).
+  of exact sequences that are strongly exact with respect to~$r$ (independent of $i$).
   Moreover, assume that the transition maps $X'_i\to X'_j$, $X_i\to X_j$ and $X''_i\to X''_j$ are strict, and let $X'$, $X$ and $X''$ be their limits.
   Then
   \[ X'\overset{f}{\longrightarrow} X\overset{g}{\longrightarrow} X'' \]
-  is exact with the same constant $c_f$.
+  is strongly exact with respect to $r$.
 \end{proposition}
 
 \begin{proof}
   \leanok
-  Pass to cofiltered limits of compact Hausdorff spaces in the statements $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})$,
+  Pass to cofiltered limits of compact Hausdorff spaces in the statements $\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq r(c)})$,
   noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff).
 \end{proof}
 
@@ -70,7 +71,7 @@
   \[ X'\overset{f}{\longrightarrow} X\overset{g}{\longrightarrow} X'' \]
   such that all of $X'$, $X$ and $X''$ carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups.
   Assume that $f(X'_{\leq c})\subset X_{\leq c}$ and $g(X_{\leq c})\subset X''_{\leq c}$.
-  If the sequence is exact with constant $c_f$,
+  If the sequence is strongly exact with respect to~$r$,
   then the sequence
   \[ \underline{X'}\longrightarrow \underline{X}\longrightarrow\underline{X''} \]
   of condensed abelian groups is exact.
@@ -79,10 +80,10 @@
 \begin{proof}
   \leanok
   We evaluate at $S\in \mathrm{ExtrDisc}$.
-  Since the sequence is exact with constant~$c_f$,
+  Since the sequence is exact with respect to~$r$,
   we know that for all~$c$ the natural map
   \[
-    \phi \colon X_{\le c} \times_{X_{\le c_fc}} X'_{\le c_fc} \to X_{\le c} \times_{X''_c} \{*\}
+    \phi \colon X_{\le c} \times_{X_{\le r(c)}} X'_{\le r(c)} \to X_{\le c} \times_{X''_c} \{*\}
   \]
   is surjective.
   Therefore, any continuous map from $S$ to the codomain of $\phi$ can be lifted;
