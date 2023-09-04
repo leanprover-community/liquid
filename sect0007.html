@@ -117,7 +117,7 @@
 
   </div>
 </div> </p>
-<p><div class="definition_thmwrapper" id="exact-with-constant">
+<p><div class="definition_thmwrapper" id="strongly-exact">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
@@ -125,7 +125,7 @@
     <span class="definition_thmlabel">2.4.2</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0007.html#exact-with-constant">#</a>
+    <a class="icon proof" href="sect0007.html#strongly-exact">#</a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
 </button>
     <div class="modal-container">
@@ -150,7 +150,6 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/exact.lean#L143">CompHausFiltPseuNormGrp₁.exact_with_constant</a></li>
         </ul>
 
       </div>
@@ -163,11 +162,11 @@
 <div class="displaymath" id="a0000000196">
   \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). We say that the sequence is <em>exact with constant \(c_f\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\). </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). Let \(r \colon \mathbb {R}_{\ge 0} \to \mathbb {R}_{\ge 0}\) be a function satisfying \(c \le r(c)\) for all&#160;\(c\). We say that the sequence is <em>strongly exact with respect to \(r\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq r(c)})\). </p>
 
   </div>
 </div> </p>
-<p><div class="proposition_thmwrapper" id="exact-with-constants-lim">
+<p><div class="proposition_thmwrapper" id="strongly-exact-lim">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
@@ -175,7 +174,7 @@
     <span class="proposition_thmlabel">2.4.3</span>
     ✓
     <div class="thm_icons">
-    <a class="icon proof" href="sect0007.html#exact-with-constants-lim">#</a>
+    <a class="icon proof" href="sect0007.html#strongly-exact-lim">#</a>
     <a class="icon proof" href="sect0007.html#a0000000197"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -189,7 +188,7 @@
         </header>
                 <ul class="uses">
           <li><a href="sec-normed_groups2.html#bounded-limits">Proposition 2.1.4</a></li>
-          <li><a href="sect0007.html#exact-with-constant">Definition 2.4.2</a></li>
+          <li><a href="sect0007.html#strongly-exact">Definition 2.4.2</a></li>
         </ul>
 
       </div>
@@ -203,7 +202,6 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/exact.lean#L514">CompHausFiltPseuNormGrp₁.exact_with_constant.extend</a></li>
         </ul>
 
       </div>
@@ -216,11 +214,11 @@
 <div class="displaymath" id="a0000000198">
   \[  (X_i'\overset {f}{\longrightarrow } X_i\overset {g}{\longrightarrow } X_i'')_i  \]
 </div>
-<p> of exact sequences that are exact with constant \(c_f\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
+<p> of exact sequences that are strongly exact with respect to&#160;\(r\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
 <div class="displaymath" id="a0000000199">
   \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
-<p> is exact with the same constant \(c_f\). </p>
+<p> is strongly exact with respect to \(r\). </p>
 
   </div>
 </div> </p>
@@ -232,7 +230,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Pass to cofiltered limits of compact Hausdorff spaces in the statements \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
+  <p>Pass to cofiltered limits of compact Hausdorff spaces in the statements \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq r(c)})\), noting that cofiltered limits of surjections of compact Hausdorff spaces are still surjective (by an application of Tychonoff). </p>
 
   </div>
 </div>
@@ -311,7 +309,7 @@
         </header>
                 <ul class="uses">
           <li><a href="sect0007.html#CHPNG-to-Cond">Definition 2.4.4</a></li>
-          <li><a href="sect0007.html#exact-with-constant">Definition 2.4.2</a></li>
+          <li><a href="sect0007.html#strongly-exact">Definition 2.4.2</a></li>
         </ul>
 
       </div>
@@ -325,7 +323,6 @@
 </button>
         </header>
                 <ul class="uses">
-          <li><a href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/exact.lean#L659">Condensed.exact_of_exact_with_constant</a></li>
         </ul>
 
       </div>
@@ -338,7 +335,7 @@
 <div class="displaymath" id="a0000000203">
   \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is exact with constant \(c_f\), then the sequence </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is strongly exact with respect to&#160;\(r\), then the sequence </p>
 <div class="displaymath" id="a0000000204">
   \[  \underline{X'}\longrightarrow \underline{X}\longrightarrow \underline{X''}  \]
 </div>
@@ -354,9 +351,9 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Since the sequence is exact with constant&#160;\(c_f\), we know that for all&#160;\(c\) the natural map </p>
+  <p>We evaluate at \(S\in \mathrm{ExtrDisc}\). Since the sequence is exact with respect to&#160;\(r\), we know that for all&#160;\(c\) the natural map </p>
 <div class="displaymath" id="a0000000205">
-  \[  \phi \colon X_{\le c} \times _{X_{\le c_fc}} X'_{\le c_fc} \to X_{\le c} \times _{X''_c} \{ *\}   \]
+  \[  \phi \colon X_{\le c} \times _{X_{\le r(c)}} X'_{\le r(c)} \to X_{\le c} \times _{X''_c} \{ *\}   \]
 </div>
 <p> is surjective. Therefore, any continuous map from \(S\) to the codomain of \(\phi \) can be lifted; as \(S\) is extremally disconnected. Since every map \(S \to X\) factors over some \(X_{\le c}\), this shows that the kernel of \(g \colon X(S)\to X''(S)\) is in the image of \(f \colon X'(S)\to X(S)\). </p>
 
@@ -992,7 +989,7 @@
           <li><a href="sect0005.html#real-measures">Definition 2.2.1</a></li>
           <li><a href="sect0005.html#theta-exact_finite">Theorem 2.2.8</a></li>
           <li><a href="sect0007.html#CHPNG-Cond-exact">Proposition 2.4.5</a></li>
-          <li><a href="sect0007.html#exact-with-constants-lim">Proposition 2.4.3</a></li>
+          <li><a href="sect0007.html#strongly-exact-lim">Proposition 2.4.3</a></li>
         </ul>
 
       </div>
@@ -1031,7 +1028,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p> By Proposition&#160;<a href="sect0007.html#CHPNG-Cond-exact">2.4.5</a> it suffices to show that the corresponding sequence of pseudonormed groups is short exact, and by Proposition&#160;<a href="sect0007.html#exact-with-constants-lim">2.4.3</a> we may also assume that \(S\) is finite. With this reductions, the lemma is precisely Theorem&#160;<a href="sect0005.html#theta-exact_finite">2.2.8</a>. </p>
+  <p> By Proposition&#160;<a href="sect0007.html#CHPNG-Cond-exact">2.4.5</a> it suffices to show that the corresponding sequence of pseudonormed groups is short exact, and by Proposition&#160;<a href="sect0007.html#strongly-exact-lim">2.4.3</a> we may also assume that \(S\) is finite. With this reductions, the lemma is precisely Theorem&#160;<a href="sect0005.html#theta-exact_finite">2.2.8</a>. </p>
 
   </div>
 </div>

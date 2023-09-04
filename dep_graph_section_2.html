@@ -168,7 +168,7 @@
 <div class="displaymath" id="a0000000203">
   \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
 </div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is exact with constant \(c_f\), then the sequence </p>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). If the sequence is strongly exact with respect to&#160;\(r\), then the sequence </p>
 <div class="displaymath" id="a0000000204">
   \[  \underline{X'}\longrightarrow \underline{X}\longrightarrow \underline{X''}  \]
 </div>
@@ -176,7 +176,7 @@
 </div>
 
     <a class="latex_link" href="sect0007.html#CHPNG-Cond-exact">LaTeX</a>
-  <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/exact.lean#L659">Lean</a></div>
+  </div>
     
       </div>
     </div>
@@ -271,64 +271,6 @@
 
     <a class="latex_link" href="sect0007.html#CHPNG-to-Cond">LaTeX</a>
   <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/ab.lean#L384">Lean</a></div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="exact-with-constant_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="exact-with-constant" style="display: none">
-    <div class="thm_thmheading">
-      <span class="definition_thmcaption">
-      Definition
-      </span>
-      <span class="definition_thmlabel">2.4.2</span></div>
-    <div class="thm_thmcontent"><p>   Consider an exact sequence of abelian groups </p>
-<div class="displaymath" id="a0000000196">
-  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
-</div>
-<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). We say that the sequence is <em>exact with constant \(c_f\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq c_fc})\). </p>
-</div>
-
-    <a class="latex_link" href="sect0007.html#exact-with-constant">LaTeX</a>
-  <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/exact.lean#L143">Lean</a></div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="exact-with-constants-lim_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="exact-with-constants-lim" style="display: none">
-    <div class="thm_thmheading">
-      <span class="proposition_thmcaption">
-      Proposition
-      </span>
-      <span class="proposition_thmlabel">2.4.3</span></div>
-    <div class="thm_thmcontent"><p>   Consider an inverse system </p>
-<div class="displaymath" id="a0000000198">
-  \[  (X_i'\overset {f}{\longrightarrow } X_i\overset {g}{\longrightarrow } X_i'')_i  \]
-</div>
-<p> of exact sequences that are exact with constant \(c_f\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
-<div class="displaymath" id="a0000000199">
-  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
-</div>
-<p> is exact with the same constant \(c_f\). </p>
-</div>
-
-    <a class="latex_link" href="sect0007.html#exact-with-constants-lim">LaTeX</a>
-  <a class="lean_link" href="https://github.com/leanprover-community/lean-liquid//blob/92f188bd17f34dbfefc92a83069577f708851aec/src/condensed/exact.lean#L514">Lean</a></div>
     
       </div>
     </div>
@@ -955,6 +897,64 @@
 
 
     
+    <div class="dep-modal-container" id="strongly-exact_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="strongly-exact" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.4.2</span></div>
+    <div class="thm_thmcontent"><p>   Consider an exact sequence of abelian groups </p>
+<div class="displaymath" id="a0000000196">
+  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
+</div>
+<p> such that all of \(X'\), \(X\) and \(X''\) carry the structure of compact-Hausdorffly-filtered-pseudonormed abelian groups. Assume that the maps are strict, i.e., \(f(X'_{\leq c})\subset X_{\leq c}\) and \(g(X_{\leq c})\subset X''_{\leq c}\). Let \(r \colon \mathbb {R}_{\ge 0} \to \mathbb {R}_{\ge 0}\) be a function satisfying \(c \le r(c)\) for all&#160;\(c\). We say that the sequence is <em>strongly exact with respect to \(r\)</em> if \(\mathrm{ker}(g)\cap X_{\leq c}\subset f(X'_{\leq r(c)})\). </p>
+</div>
+
+    <a class="latex_link" href="sect0007.html#strongly-exact">LaTeX</a>
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="strongly-exact-lim_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="strongly-exact-lim" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2.4.3</span></div>
+    <div class="thm_thmcontent"><p>   Consider an inverse system </p>
+<div class="displaymath" id="a0000000198">
+  \[  (X_i'\overset {f}{\longrightarrow } X_i\overset {g}{\longrightarrow } X_i'')_i  \]
+</div>
+<p> of exact sequences that are strongly exact with respect to&#160;\(r\) (independent of \(i\)). Moreover, assume that the transition maps \(X'_i\to X'_j\), \(X_i\to X_j\) and \(X''_i\to X''_j\) are strict, and let \(X'\), \(X\) and \(X''\) be their limits. Then </p>
+<div class="displaymath" id="a0000000199">
+  \[  X'\overset {f}{\longrightarrow } X\overset {g}{\longrightarrow } X''  \]
+</div>
+<p> is strongly exact with respect to \(r\). </p>
+</div>
+
+    <a class="latex_link" href="sect0007.html#strongly-exact-lim">LaTeX</a>
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="theta_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -1097,7 +1097,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"laurent-measures-fin"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures-fin",		shape=box,		style=filled];	"theta-exact_finite"	[color=green,		fillcolor="#9cec8b",		label="theta-exact_finite",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-exact_finite"	[style=dashed];	"theta-continuous"	[color=green,		fillcolor="#9cec8b",		label="theta-continuous",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-continuous"	[style=dashed];	"laurent-measures"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures",		shape=box,		style=filled];	"laurent-measures-fin" -> "laurent-measures"	[style=dashed];	"exact-with-constant"	[color=green,		fillcolor="#b0eca3",		label="exact-with-constant",		shape=box,		style=filled];	"exact-with-constants-lim"	[color=green,		fillcolor="#9cec8b",		label="exact-with-constants-lim",		shape=ellipse,		style=filled];	"exact-with-constant" -> "exact-with-constants-lim"	[style=dashed];	"CHPNG-Cond-exact"	[color=green,		fillcolor="#9cec8b",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"exact-with-constant" -> "CHPNG-Cond-exact"	[style=dashed];	"M-ses"	[color=green,		fillcolor="#9cec8b",		label="M-ses",		shape=ellipse,		style=filled];	"exact-with-constants-lim" -> "M-ses"	[style=dashed];	"acyclic-sheaf"	[color=green,		fillcolor="#9cec8b",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"normed-to-cond-acyclic"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond-acyclic",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "normed-to-cond-acyclic";	"theta-exact_finite" -> "M-ses"	[style=dashed];	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	"normed-to-cond"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond",		shape=ellipse,		style=filled];	"normed-to-cond" -> "normed-to-cond-acyclic";	"Qprime-Cond"	[color=green,		fillcolor="#9cec8b",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"Qprime-prop"	[color=green,		fillcolor="#9cec8b",		label="Qprime-prop",		shape=ellipse,		style=filled];	"Qprime-Cond" -> "Qprime-prop";	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	"png-cats"	[color=green,		fillcolor="#b0eca3",		label="png-cats",		shape=box,		style=filled];	"chpng-Tinv" -> "png-cats"	[style=dashed];	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach-r-normed"	[color=green,		fillcolor="#9cec8b",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"main-thm"	[color=green,		fillcolor="#9cec8b",		label="main-thm",		shape=ellipse,		style=filled];	"p-banach" -> "main-thm"	[style=dashed];	"real-measures"	[color=green,		fillcolor="#b0eca3",		label="real-measures",		shape=box,		style=filled];	"real-measures" -> "theta-continuous"	[style=dashed];	"real-measures" -> "M-ses"	[style=dashed];	"real-measures" -> "main-thm"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	theta -> "theta-exact_finite"	[style=dashed];	theta -> "theta-continuous"	[style=dashed];	"theta-surjective"	[color=green,		fillcolor="#9cec8b",		label="theta-surjective",		shape=ellipse,		style=filled];	theta -> "theta-surjective"	[style=dashed];	"M-ses" -> "main-thm";	"CHPNG-Cond-exact" -> "M-ses"	[style=dashed];	"Lbar-ses"	[color=green,		fillcolor="#9cec8b",		label="Lbar-ses",		shape=ellipse,		style=filled];	"Ext-L"	[color=green,		fillcolor="#9cec8b",		label="Ext-L",		shape=ellipse,		style=filled];	"Lbar-ses" -> "Ext-L";	"free-png"	[color=green,		fillcolor="#9cec8b",		label="free-png",		shape=ellipse,		style=filled];	"free-png" -> "Lbar-ses";	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	"Ext-Lbar-aux"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";	"Ext-L" -> "main-thm";	chpng -> "chpng-hom"	[style=dashed];	"png-cats" -> "exact-with-constant"	[style=dashed];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"bounded-limits"	[color=green,		fillcolor="#9cec8b",		label="bounded-limits",		shape=ellipse,		style=filled];	"png-cats" -> "bounded-limits"	[style=dashed];	"p-banach-r-normed" -> "main-thm";	"Ext-Lbar"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar",		shape=ellipse,		style=filled];	"Qprime-prop" -> "Ext-Lbar";	"normed-to-cond-acyclic" -> "Ext-L";	"normed-to-cond-acyclic" -> "Ext-Lbar";	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond-acyclic"	[style=dashed];	"Ext-Lbar" -> "Ext-L";	"Ext-Lbar-aux" -> "Ext-Lbar";	"laurent-measures" -> theta	[style=dashed];	"laurent-measures" -> "M-ses"	[style=dashed];	"laurent-measures" -> "Lbar-ses"	[style=dashed];	"laurent-measures" -> "Ext-L"	[style=dashed];	"theta-y"	[color=green,		fillcolor="#b0eca3",		label="theta-y",		shape=box,		style=filled];	"theta-y" -> "theta-surjective";	"bounded-limits" -> "exact-with-constants-lim"	[style=dashed];	"homology-Qprime"	[color=green,		fillcolor="#9cec8b",		label="homology-Qprime",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-Cond"	[style=dashed];	"homology-Qprime" -> "Qprime-prop";	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "Ext-L"	[style=dashed];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];}')
+    .renderDot('strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	chpng	[color=green,		fillcolor="#b0eca3",		label=chpng,		shape=box,		style=filled];	"chpng-hom"	[color=green,		fillcolor="#b0eca3",		label="chpng-hom",		shape=box,		style=filled];	chpng -> "chpng-hom"	[style=dashed];	"theta-continuous"	[color=green,		fillcolor="#9cec8b",		label="theta-continuous",		shape=ellipse,		style=filled];	"p-banach"	[color=green,		fillcolor="#b0eca3",		label="p-banach",		shape=box,		style=filled];	"p-banach-r-normed"	[color=green,		fillcolor="#9cec8b",		label="p-banach-r-normed",		shape=ellipse,		style=filled];	"p-banach" -> "p-banach-r-normed"	[style=dashed];	"main-thm"	[color=green,		fillcolor="#9cec8b",		label="main-thm",		shape=ellipse,		style=filled];	"p-banach" -> "main-thm"	[style=dashed];	"png-cats"	[color=green,		fillcolor="#b0eca3",		label="png-cats",		shape=box,		style=filled];	"strongly-exact"	[color=green,		fillcolor="#b0eca3",		label="strongly-exact",		shape=box,		style=filled];	"png-cats" -> "strongly-exact"	[style=dashed];	"CHPNG-to-Cond"	[color=green,		fillcolor="#b0eca3",		label="CHPNG-to-Cond",		shape=box,		style=filled];	"png-cats" -> "CHPNG-to-Cond"	[style=dashed];	"bounded-limits"	[color=green,		fillcolor="#9cec8b",		label="bounded-limits",		shape=ellipse,		style=filled];	"png-cats" -> "bounded-limits"	[style=dashed];	"laurent-measures-fin"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures-fin",		shape=box,		style=filled];	"laurent-measures-fin" -> "theta-continuous"	[style=dashed];	"laurent-measures"	[color=green,		fillcolor="#b0eca3",		label="laurent-measures",		shape=box,		style=filled];	"laurent-measures-fin" -> "laurent-measures"	[style=dashed];	"theta-exact_finite"	[color=green,		fillcolor="#9cec8b",		label="theta-exact_finite",		shape=ellipse,		style=filled];	"laurent-measures-fin" -> "theta-exact_finite"	[style=dashed];	"theta-y"	[color=green,		fillcolor="#b0eca3",		label="theta-y",		shape=box,		style=filled];	"theta-surjective"	[color=green,		fillcolor="#9cec8b",		label="theta-surjective",		shape=ellipse,		style=filled];	"theta-y" -> "theta-surjective";	"p-banach-r-normed" -> "main-thm";	"Qprime-prop"	[color=green,		fillcolor="#9cec8b",		label="Qprime-prop",		shape=ellipse,		style=filled];	"Ext-Lbar"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar",		shape=ellipse,		style=filled];	"Qprime-prop" -> "Ext-Lbar";	"strongly-exact-lim"	[color=green,		fillcolor="#9cec8b",		label="strongly-exact-lim",		shape=ellipse,		style=filled];	"M-ses"	[color=green,		fillcolor="#9cec8b",		label="M-ses",		shape=ellipse,		style=filled];	"strongly-exact-lim" -> "M-ses"	[style=dashed];	"CHPNG-Cond-exact"	[color=green,		fillcolor="#9cec8b",		label="CHPNG-Cond-exact",		shape=ellipse,		style=filled];	"CHPNG-Cond-exact" -> "M-ses"	[style=dashed];	"acyclic-sheaf"	[color=green,		fillcolor="#9cec8b",		label="acyclic-sheaf",		shape=ellipse,		style=filled];	"normed-to-cond-acyclic"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond-acyclic",		shape=ellipse,		style=filled];	"acyclic-sheaf" -> "normed-to-cond-acyclic";	normed_with_aut	[color=green,		fillcolor="#b0eca3",		label=normed_with_aut,		shape=box,		style=filled];	normed_with_aut -> "p-banach-r-normed"	[style=dashed];	normed_with_aut -> "Ext-Lbar"	[style=dashed];	"Ext-Lbar-aux"	[color=green,		fillcolor="#9cec8b",		label="Ext-Lbar-aux",		shape=ellipse,		style=filled];	normed_with_aut -> "Ext-Lbar-aux"	[style=dashed];	"Ext-L"	[color=green,		fillcolor="#9cec8b",		label="Ext-L",		shape=ellipse,		style=filled];	normed_with_aut -> "Ext-L"	[style=dashed];	"normed-to-cond-acyclic" -> "Ext-Lbar";	"normed-to-cond-acyclic" -> "Ext-L";	"Qprime-Cond"	[color=green,		fillcolor="#9cec8b",		label="Qprime-Cond",		shape=ellipse,		style=filled];	"Qprime-Cond" -> "Qprime-prop";	"Lbar-ses"	[color=green,		fillcolor="#9cec8b",		label="Lbar-ses",		shape=ellipse,		style=filled];	"Lbar-ses" -> "Ext-L";	first_target	[color=green,		fillcolor="#9cec8b",		label=first_target,		shape=ellipse,		style=filled];	first_target -> "Ext-Lbar-aux";	"normed-to-cond"	[color=green,		fillcolor="#9cec8b",		label="normed-to-cond",		shape=ellipse,		style=filled];	"normed-to-cond" -> "normed-to-cond-acyclic";	"free-png"	[color=green,		fillcolor="#9cec8b",		label="free-png",		shape=ellipse,		style=filled];	"free-png" -> "Lbar-ses";	"homology-Qprime"	[color=green,		fillcolor="#9cec8b",		label="homology-Qprime",		shape=ellipse,		style=filled];	"homology-Qprime" -> "Qprime-prop";	"homology-Qprime" -> "Qprime-Cond"	[style=dashed];	"M-ses" -> "main-thm";	"Ext-Lbar" -> "Ext-L";	"real-measures"	[color=green,		fillcolor="#b0eca3",		label="real-measures",		shape=box,		style=filled];	"real-measures" -> "theta-continuous"	[style=dashed];	"real-measures" -> "main-thm"	[style=dashed];	"real-measures" -> "M-ses"	[style=dashed];	"laurent-measures" -> "Lbar-ses"	[style=dashed];	"laurent-measures" -> "M-ses"	[style=dashed];	theta	[color=green,		fillcolor="#b0eca3",		label=theta,		shape=box,		style=filled];	"laurent-measures" -> theta	[style=dashed];	"laurent-measures" -> "Ext-L"	[style=dashed];	theta -> "theta-continuous"	[style=dashed];	theta -> "theta-surjective"	[style=dashed];	theta -> "theta-exact_finite"	[style=dashed];	"strongly-exact" -> "strongly-exact-lim"	[style=dashed];	"strongly-exact" -> "CHPNG-Cond-exact"	[style=dashed];	"CHPNG-to-Cond" -> "CHPNG-Cond-exact"	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond-acyclic"	[style=dashed];	"CHPNG-to-Cond" -> "normed-to-cond"	[style=dashed];	"CHPNG-to-Cond" -> "free-png"	[style=dashed];	"Ext-Lbar-aux" -> "Ext-Lbar";	pseudo_normed_group	[color=green,		fillcolor="#b0eca3",		label=pseudo_normed_group,		shape=box,		style=filled];	pseudo_normed_group -> chpng	[style=dashed];	"chpng-Tinv"	[color=green,		fillcolor="#b0eca3",		label="chpng-Tinv",		shape=box,		style=filled];	"chpng-Tinv" -> "png-cats"	[style=dashed];	"theta-exact_finite" -> "M-ses"	[style=dashed];	"chpng-hom" -> "chpng-Tinv"	[style=dashed];	"Ext-L" -> "main-thm";	"bounded-limits" -> "strongly-exact-lim"	[style=dashed];}')
     .on("end", interactive);
 
 clickNode = function() {

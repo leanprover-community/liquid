@@ -94,6 +94,11 @@
 <div class="main-text">
 <h2 id="sec:polyhedral_lattice">1.6 Polyhedral lattices</h2>
 
+<p>The following definition deviates slightly from&#160;<span class="cite">
+	[
+	<a href="sect0008.html#Analytic" >Sch20</a>
+	]
+</span>. </p>
 <p><div class="definition_thmwrapper" id="polyhedral_lattice">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
@@ -121,8 +126,7 @@
   </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  A <em>polyhedral lattice</em> is a finite free abelian group&#160;\(\Lambda \) equipped with a norm \(‖\cdot ‖_\Lambda \colon \Lambda \otimes \mathbb R\to \mathbb R\) such that there exists a finite set \(\{ \lambda _1, \dots , \lambda _n\}  \subset \Lambda \) that generate the norm: that is to say, for every \(\lambda \in \Lambda \) there exist \(c_1, \dots , c_n \in \mathbb Q\) such that \(\lambda = \sum c_i \lambda _i\) and \(\| \lambda \|  = c_i\| \lambda _i\| \). </p>
-<p>Equivalently (but not verified in Lean): the norm is given by the supremum of finitely many linear functions on \(\Lambda \); or once more, equivalently, the “unit ball” \(\{ \lambda \in \Lambda \otimes \mathbb R\mid ‖\lambda ‖_\Lambda \leq 1\} \) is a polyhedron. </p>
+  <p>  A <em>polyhedral lattice</em> is a finite free abelian group&#160;\(\Lambda \) equipped with a norm \(‖\cdot ‖_\Lambda \colon \Lambda \otimes \mathbb R\to \mathbb R\) such that there exists a finite set \(\{ \lambda _1, \dots , \lambda _n\}  \subset \Lambda \) that generate the norm: that is to say, for every \(\lambda \in \Lambda \) there exist \(c_1, \dots , c_n \in \mathbb N\) such that \(\lambda = \sum c_i \lambda _i\) and \(\| \lambda \|  = \sum c_i\| \lambda _i\| \). </p>
 
   </div>
 </div> </p>
@@ -498,7 +502,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>   Pick \(\lambda _1,\ldots ,\lambda _m\in \Lambda \) generating the norm. We fix a finite subset \(A\subset \Lambda ^\vee \) satisfying the conclusion of the previous lemma. Write </p>
+  <p>   Pick \(\lambda _1,\ldots ,\lambda _m\in \Lambda \) generating the norm. We fix a finite subset \(A\subset \Lambda ^\vee \) satisfying the conclusion of Lemma&#160;<a href="sec-polyhedral_lattice.html#combi_aux">1.6.6</a>. Write </p>
 <div class="displaymath" id="a0000000112">
   \[  x=\sum _{n\geq 1, s\in S} x_{n,s} T^n [s]  \]
 </div>
